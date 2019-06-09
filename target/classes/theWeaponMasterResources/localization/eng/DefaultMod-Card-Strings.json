@@ -1,0 +1,66 @@
+{
+  "theWeaponMaster:Revolver": {
+    "NAME": "Revolver",
+    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "theWeaponMaster:HeavyRevolver": {
+    "NAME": "Heavy Revolver",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theWeaponMaster:MultiShot": {
+    "NAME": "Multi Shot",
+    "DESCRIPTION": "Deal !D! Damage !SHOTS! times (hopefully twice).",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage !theWeaponMaster:MultiShot! times (hopefully thrice)."
+  },
+  "theWeaponMaster:DefaultCommonSkill": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL theWeaponMaster:Multiword_Keyword."
+  },
+  "theWeaponMaster:DefaultCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! theWeaponMaster:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! theWeaponMaster:Keywords."
+  },
+  "theWeaponMaster:DefaultUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theWeaponMaster:DefaultUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "theWeaponMaster:DefaultUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X theWeaponMaster:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 theWeaponMaster:Keywords."
+  },
+  "theWeaponMaster:DefaultRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theWeaponMaster:DefaultRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+  },
+  "theWeaponMaster:DefaultRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "theWeaponMaster:DefaultAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !theWeaponMaster:ENERGY_DAMAGE! damage total.)"
+  },
+  "theWeaponMaster:DefaultSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! vulnerable and !theWeaponMaster:SecondMagic! poison to an enemy."
+  },
+  "theWeaponMaster:OrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "theWeaponMaster:AtlasBlade": {
+    "NAME": "Atlas Blade",
+    "DESCRIPTION": "Hit the opponent with !D! [#222222]Ink[] damage."
+  }
+}
