@@ -14,7 +14,7 @@ public class MultiShotVariable extends DynamicVariable
     @Override
     public String key()
     {
-        return makeID("MultiShot");
+        return makeID("RevolverMulti");
     }
 
     // Checks whether the current value is different than the base one.

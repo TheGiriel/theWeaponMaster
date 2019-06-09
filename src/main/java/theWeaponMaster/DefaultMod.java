@@ -33,15 +33,13 @@ import theWeaponMaster.util.IDCheckDontTouchPls;
 import theWeaponMaster.util.TextureLoader;
 import theWeaponMaster.variables.DefaultCustomVariable;
 import theWeaponMaster.variables.DefaultSecondMagicNumber;
+import theWeaponMaster.variables.shieldBuster;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
-//TODO: DON'T MASS RENAME/REFACTOR
-//TODO: DON'T MASS RENAME/REFACTOR
-//TODO: DON'T MASS RENAME/REFACTOR
 //TODO: DON'T MASS RENAME/REFACTOR
 // Please don't just mass replace "theWeaponMaster" with "yourMod" everywhere.
 // It'll be a bigger pain for you. You only need to replace it in 3 places.
@@ -86,15 +84,15 @@ public class DefaultMod implements
     public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
 
     //This is for the in-game mod settings panel.
-    private static final String MODNAME = "Default Mod";
-    private static final String AUTHOR = "Gremious"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String MODNAME = "Weapon Master";
+    private static final String AUTHOR = "TheGiriel"; // And pretty soon - You!
+    private static final String DESCRIPTION = "A new character that focuses on using his revolver and different weapons.";
     
     // =============== INPUT TEXTURE LOCATION =================
     
     // Colors (RGB)
     // Character Color
-    public static final Color DEFAULT_GRAY = CardHelper.getColor(40.0f, 53.0f, 59.0f);
+    public static final Color DEFAULT_GRAY = CardHelper.getColor(100.0f, 53.0f, 59.0f);
     
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
@@ -397,6 +395,7 @@ public class DefaultMod implements
         // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+        BaseMod.addDynamicVariable(new shieldBuster());
         
         logger.info("Adding cards");
         // Add the cards
@@ -406,11 +405,17 @@ public class DefaultMod implements
         
         BaseMod.addCard(new OrbSkill());
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
-        BaseMod.addCard(new Revolver());
-        BaseMod.addCard(new HeavyRevolver());
-        BaseMod.addCard(new MultiShot());
+        BaseMod.addCard(new Strike_WeaponMaster());
+        BaseMod.addCard(new AntiMagicAbbadon());
+        BaseMod.addCard(new AntiMagicBrahmaastra());
+        BaseMod.addCard(new AntiMagicCerberus());
+        BaseMod.addCard(new AntiMagicShears());
+        BaseMod.addCard(new BreakerAtlasBlade());
+        BaseMod.addCard(new BreakerCleaver());
+        BaseMod.addCard(new BreakerFenrir());
+        BaseMod.addCard(new BreakerShockwaveGauntlet());
         BaseMod.addCard(new DefaultAttackWithVariable());
-        BaseMod.addCard(new DefaultCommonSkill());
+        BaseMod.addCard(new Defend_WeaponMaster());
         BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new DefaultUncommonSkill());
         BaseMod.addCard(new DefaultUncommonAttack());
@@ -418,7 +423,7 @@ public class DefaultMod implements
         BaseMod.addCard(new DefaultRareAttack());
         BaseMod.addCard(new DefaultRareSkill());
         BaseMod.addCard(new DefaultRarePower());
-        BaseMod.addCard(new AtlasBlade());
+        BaseMod.addCard(new BreakerAtlasBlade());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -426,11 +431,17 @@ public class DefaultMod implements
         // before playing your mod.
         UnlockTracker.unlockCard(OrbSkill.ID);
         UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
-        UnlockTracker.unlockCard(Revolver.ID);
-        UnlockTracker.unlockCard(HeavyRevolver.ID);
-        UnlockTracker.unlockCard(MultiShot.ID);
+        UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
+        UnlockTracker.unlockCard(AntiMagicAbbadon.ID);
+        UnlockTracker.unlockCard(AntiMagicBrahmaastra.ID);
+        UnlockTracker.unlockCard(AntiMagicCerberus.ID);
+        UnlockTracker.unlockCard(AntiMagicShears.ID);
+        UnlockTracker.unlockCard(BreakerAtlasBlade.ID);
+        UnlockTracker.unlockCard(BreakerCleaver.ID);
+        UnlockTracker.unlockCard(BreakerFenrir.ID);
+        UnlockTracker.unlockCard(BreakerShockwaveGauntlet.ID);
         UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
-        UnlockTracker.unlockCard(DefaultCommonSkill.ID);
+        UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
         UnlockTracker.unlockCard(DefaultCommonPower.ID);
         UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
         UnlockTracker.unlockCard(DefaultUncommonAttack.ID);
@@ -438,7 +449,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(DefaultRareAttack.ID);
         UnlockTracker.unlockCard(DefaultRareSkill.ID);
         UnlockTracker.unlockCard(DefaultRarePower.ID);
-        UnlockTracker.unlockCard(AtlasBlade.ID);
+        UnlockTracker.unlockCard(BreakerAtlasBlade.ID);
         
         logger.info("Done adding cards!");
     }

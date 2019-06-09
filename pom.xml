@@ -6,8 +6,8 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.0.2</version>
-    <description>Began adding simple cards, advanced card logic is to follow later.</description>
+    <version>0.0.3</version>
+    <description>Began adding and implementing the special weapon cards.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

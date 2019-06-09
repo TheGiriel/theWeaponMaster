@@ -156,22 +156,26 @@ public class TheDefault extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(Revolver.ID);
-        retVal.add(HeavyRevolver.ID);
-        retVal.add(MultiShot.ID);
-        retVal.add(AtlasBlade.ID);
+        retVal.add(Strike_WeaponMaster.ID);
         retVal.add(DefaultUncommonAttack.ID);
-        retVal.add(DefaultRareAttack.ID);
-
-        retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultUncommonSkill.ID);
-        retVal.add(DefaultRareSkill.ID);
-        retVal.add(DefaultCommonPower.ID);
-        retVal.add(DefaultUncommonPower.ID);
-        retVal.add(DefaultRarePower.ID);
+        //retVal.add(DefaultRareAttack.ID);
+        retVal.add(Defend_WeaponMaster.ID);
+        //retVal.add(DefaultUncommonSkill.ID);
+        //retVal.add(DefaultRareSkill.ID);
+        //retVal.add(DefaultCommonPower.ID);
+        //retVal.add(DefaultUncommonPower.ID);
+        //retVal.add(DefaultRarePower.ID);
         retVal.add(DefaultAttackWithVariable.ID);
         retVal.add(DefaultSecondMagicNumberSkill.ID);
         retVal.add(OrbSkill.ID);
+        //retVal.add(AntiMagicAbbadon.ID);
+        //retVal.add(AntiMagicBrahmaastra.ID);
+        //retVal.add(AntiMagicCerberus.ID);
+        //retVal.add(AntiMagicShears.ID);
+        //retVal.add(BreakerAtlasBlade.ID);
+        retVal.add(BreakerCleaver.ID);
+        retVal.add(BreakerFenrir.ID);
+        retVal.add(BreakerShockwaveGauntlet.ID);
         return retVal;
     }
 
@@ -239,7 +243,7 @@ public class TheDefault extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Revolver();
+        return new Strike_WeaponMaster();
     }
 
     // The class name as it appears next to your player name in-game

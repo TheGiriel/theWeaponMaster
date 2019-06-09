@@ -4,7 +4,7 @@ import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 public abstract class AbstractDynamicCard extends AbstractDefaultCard {
 
-    // "How come Revolver extends CustomCard and not DynamicCard like all the rest?"
+    // "How come Strike_WeaponMaster extends CustomCard and not DynamicCard like all the rest?"
 
     // Well every card, at the end of the day, extends CustomCard.
     // Abstract Default Card extends CustomCard and builds up on it, adding a second magic number. Your card can extend it and

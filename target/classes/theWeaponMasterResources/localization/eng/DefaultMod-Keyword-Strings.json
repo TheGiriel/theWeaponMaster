@@ -16,5 +16,11 @@
       "multikeyword"
     ],
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "NAMES": [
+      "Berserk"
+    ],
+    "DESCRIPTION": "Take and deal 1 extra damage per Berserk stack. Certain cards gain new effects based on Berserk."
   }
 ]
