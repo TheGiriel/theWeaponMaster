@@ -156,11 +156,6 @@ public class TheDefault extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(DefaultUncommonAttack.ID);
-        retVal.add(Defend_WeaponMaster.ID);
-        retVal.add(Defend_WeaponMaster.ID);
         retVal.add(BullyTaunt.ID);
         retVal.add(BullyHostility.ID);
         retVal.add(BullyWimp.ID);

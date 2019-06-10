@@ -6,8 +6,8 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.0.4</version>
-    <description>Added the first few Bully cards, removed revolvers for now.</description>
+    <version>0.0.5</version>
+    <description>Added all currently planned keywords and made them pretty. This all sucks.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

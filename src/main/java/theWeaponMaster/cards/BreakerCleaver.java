@@ -36,30 +36,33 @@ public class BreakerCleaver extends AbstractDynamicCard {
 
     public BreakerCleaver() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.damage = baseDamage = DAMAGE;
     }
 
     //Basic: Heal for half the unblocked damage dealt
     //TODO: Drawback: Gain Berserk - take and deal 1 extra damage per stack. Upgrade: Additional attacks the higher your Berserk stack is (one attack per 3 stacks)
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if(damage > m.currentBlock && m.currentBlock > 0) {
+            dmgDEALT = (damage-m.currentBlock)/2;
+        } else if (m.currentBlock > damage) {
+            dmgDEALT = 0;
+        } else {
+            dmgDEALT = damage / 2;
+        }
+
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, dmgDEALT));
+        dmgDEALT = 0;
+    }
+
     @Override
     public void upgrade() {
         if(!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
-        }
-    }
-
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.damage > m.currentBlock) {
-            dmgDEALT = (int) Math.ceil((baseDamage-m.currentBlock)/2);
-        }
-
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, baseDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-
-        if (dmgDEALT>0) {
-            AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, dmgDEALT));
         }
     }
 }

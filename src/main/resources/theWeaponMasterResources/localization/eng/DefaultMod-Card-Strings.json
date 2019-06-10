@@ -1,113 +1,113 @@
-{
-  "theWeaponMaster:Strike_WeaponMaster": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
-  "theWeaponMaster:Defend_WeaponMaster": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block. NL theWeaponMaster:Multiword_Keyword."
-  },
-  "theWeaponMaster:DefaultCommonPower": {
-    "NAME": "Hold Place",
-    "DESCRIPTION": "Gain !M! Keyword.",
-    "UPGRADE_DESCRIPTION": "Gain !M! theWeaponMaster:Keywords."
-  },
-  "theWeaponMaster:DefaultUncommonAttack": {
-    "NAME": "Big slap",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
-  "theWeaponMaster:DefaultUncommonSkill": {
-    "NAME": "A Better Defend",
-    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
-  },
-  "theWeaponMaster:DefaultUncommonPower": {
-    "NAME": "Weirdness",
-    "DESCRIPTION": "Gain X Keywords.",
-    "UPGRADE_DESCRIPTION": "Gain X +1 theWeaponMaster:Keywords."
-  },
-  "theWeaponMaster:DefaultRareAttack": {
-    "NAME": "TOUCH",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
-  "theWeaponMaster:DefaultRareSkill": {
-    "NAME": "For Each Loop x2",
-    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
-    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
-  },
-  "theWeaponMaster:DefaultRarePower": {
-    "NAME": "In-Progress Form",
-    "DESCRIPTION": "At the start of your turn, play a TOUCH."
-  },
-  "theWeaponMaster:DefaultAttackWithVariable": {
-    "NAME": "Special Strike",
-    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !theWeaponMaster:ENERGY_DAMAGE! damage total.)"
-  },
-  "theWeaponMaster:DefaultSecondMagicNumberSkill": {
-    "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! vulnerable and !theWeaponMaster:SecondMagic! poison to an enemy."
-  },
-  "theWeaponMaster:OrbSkill": {
-    "NAME": "Get Orb",
-    "DESCRIPTION": "Channel 1 Default Orb."
-  },
-  "theWeaponMaster:BreakerAtlasBlade": {
-    "NAME": "Atlas Blade",
-    "DESCRIPTION": "Not implemented. NL Hit the opponent with !D! [#000072]Ink damage."
-  },
-  "theWeaponMaster:BreakerCleaver": {
-    "NAME": "[#bf3a3b]Cleaver",
-    "DESCRIPTION": "Deal !D! damage and heal for half the unblocked damage dealt. Not Implemented - Gain 1 theWeaponMaster:Berserk stack."
-  },
-  "theWeaponMaster:BreakerFenrir": {
-    "NAME": "Fenrir",
-    "DESCRIPTION": "Lose 3 HP and deal !D! damage. NL Not Implemented - Permanently increase damage by 2 every time you break shields.",
-    "UPGRADE_DESCRIPTION": "Lose 3 HP and deal !D! damage. NL Not Implemented - Permanently increase damage by 2 every time you break shields and deal 25% extra damage."
-  },
-  "theWeaponMaster:BreakerShockwaveGauntlet": {
-    "NAME": "Leviathan Gauntlets",
-    "DESCRIPTION": "Hit the opponent for !D! damage. NL Deal double damage to enemies with block. NL Take !D!/2 damage if the opponent doesn't have block.",
-    "UPGRADE_DESCRIPTION": "Hit the opponent for !D! damage. NL Deal !D! damage and !D! HP loss to enemies with block. NL Take half damage if the opponent doesn't have block."
-  },
-  "theWeaponMaster:AntiMagicAbbadon": {
-    "NAME": "Abbadon",
-    "DESCRIPTION": "Not implemented - Deal !D! damage and drain Strength. NL Drain Dexterity if the opponent is casting a non-block skill."
-  },
-  "theWeaponMaster:AntiMagicBrahmaastra": {
-    "NAME": "Brahmaastra",
-    "DESCRIPTION": "Not implemented - All enemies lose !D! HP. NL Gain 2 Vulnerable"
-  },
-  "theWeaponMaster:AntiMagicCerberus": {
-    "NAME": "Cerberus",
-    "DESCRIPTION": "Not Implemented - Deal !D! plus 2 bonus damage for every buff an enemy has."
-  },
-  "theWeaponMaster:AntiMagicShears": {
-    "NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
-    "DESCRIPTION": "Not Implemented - Deal !D! damage to your target and apply 2 theWeaponMaster:Mana_Burn."
-  },
-  "theWeaponMaster:BullyIntimidate": {
-    "NAME": "Intimidate",
-    "DESCRIPTION": "theWeaponMaster:Bully NL Reduce enemy strength by !M!."
-  },
-  "theWeaponMaster:BullyTaunt": {
-    "NAME": "Taunt",
-    "DESCRIPTION": "theWeaponMaster:Bully NL Apply 2 Weak to an enemy intent on attacking you. Otherwise apply 1 weak and force the enemy to attack.",
-    "UPGRADE_DESCRIPTION": "theWeaponMaster:Bully NL Apply 3 Weak to an enemy intent on attacking you. Otherwise apply 2 weak and force the enemy to attack."
-  },
-  "theWeaponMaster:BullyHuh": {
-    "NAME": "HUH?!",
-    "DESCRIPTION": "theWeaponMaster:Bully NL Not Implemented."
-  },
-  "theWeaponMaster:BullyWimp": {
-    "NAME": "[#ff3300]Wimp",
-    "DESCRIPTION": "theWeaponMaster:Bully NL Apply !M! Weak to all enemies."
-  },
-  "theWeaponMaster:BullySlap": {
-    "NAME": "Slap",
-    "DESCRIPTION": "theWeaponMaster:Bully NL Not Implemented."
-  },
-  "theWeaponMaster:BullyHostility": {
-    "NAME": "Hostility",
-    "DESCRIPTION": "theWeaponMaster:Bully NL Placeholder - Gain !M! Strength every turn.",
-    "UPGRADE_DESCRIPTION": "theWeaponMaster:Bully NL Innate. Placeholder - Innate. Gain !M! Strength every turn."
+
+  {
+    "theWeaponMaster:Strike_WeaponMaster": {
+      "NAME": "Strike",
+      "DESCRIPTION": "Deal !D! Damage."
+    },
+    "theWeaponMaster:Defend_WeaponMaster": {
+      "NAME": "Defend",
+      "DESCRIPTION": "Gain !B! Block. NL theWeaponMaster:Multiword_Keyword."
+    },
+    "theWeaponMaster:DefaultCommonPower": {
+      "NAME": "Hold Place",
+      "DESCRIPTION": "Gain !M! Keyword.",
+      "UPGRADE_DESCRIPTION": "Gain !M! theWeaponMaster:Keywords."
+    },
+    "theWeaponMaster:DefaultUncommonAttack": {
+      "NAME": "Big slap",
+      "DESCRIPTION": "Deal !D! Damage."
+    },
+    "theWeaponMaster:DefaultUncommonSkill": {
+      "NAME": "A Better Defend",
+      "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+    },
+    "theWeaponMaster:DefaultUncommonPower": {
+      "NAME": "Weirdness",
+      "DESCRIPTION": "Gain X Keywords.",
+      "UPGRADE_DESCRIPTION": "Gain X +1 theWeaponMaster:Keywords."
+    },
+    "theWeaponMaster:DefaultRareAttack": {
+      "NAME": "TOUCH",
+      "DESCRIPTION": "Deal !D! Damage."
+    },
+    "theWeaponMaster:DefaultRareSkill": {
+      "NAME": "For Each Loop x2",
+      "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
+      "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+    },
+    "theWeaponMaster:DefaultRarePower": {
+      "NAME": "In-Progress Form",
+      "DESCRIPTION": "At the start of your turn, play a TOUCH."
+    },
+    "theWeaponMaster:DefaultAttackWithVariable": {
+      "NAME": "Special Strike",
+      "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !theWeaponMaster:ENERGY_DAMAGE! damage total.)"
+    },
+    "theWeaponMaster:DefaultSecondMagicNumberSkill": {
+      "NAME": "Cool 2 Number Card",
+      "DESCRIPTION": "Apply !M! vulnerable and !theWeaponMaster:SecondMagic! poison to an enemy."
+    },
+    "theWeaponMaster:OrbSkill": {
+      "NAME": "Get Orb",
+      "DESCRIPTION": "Channel 1 Default Orb."
+    },
+    "theWeaponMaster:BreakerAtlasBlade": {
+      "NAME": "Atlas Blade",
+      "DESCRIPTION": "Legendary_Weapon NL Not implemented. NL Hit the opponent with !D! Ink damage."
+    },
+    "theWeaponMaster:BreakerCleaver": {
+      "NAME": "[#bf3a3b]Cleaver",
+      "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage and heal for half the unblocked damage dealt. Not Implemented - Gain 1 Berserk stack."
+    },
+    "theWeaponMaster:BreakerFenrir": {
+      "NAME": "Fenrir",
+      "DESCRIPTION": "Legendary_Weapon NL Lose 3 HP and deal !D! damage. NL Upgrade this card every time you break shields.",
+      "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Lose 3 HP and deal !D! damage. NL Deal 25% extra damage and upgrade this card every time you break shields."
+    },
+    "theWeaponMaster:BreakerShockwaveGauntlet": {
+      "NAME": "Leviathan Gauntlets",
+      "DESCRIPTION": "Legendary_Weapon NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
+      "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Armor_Break, Crush NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block."
+    },
+    "theWeaponMaster:AntiMagicAbbadon": {
+      "NAME": "Abbadon",
+      "DESCRIPTION": "Legendary_Weapon NL Not implemented - Deal !D! damage and drain Strength. NL Drain Dexterity if the opponent is casting a non-block skill."
+    },
+    "theWeaponMaster:AntiMagicBrahmaastra": {
+      "NAME": "Brahmaastra",
+      "DESCRIPTION": "Legendary_Weapon NL  Not implemented - All enemies lose !D! HP. NL Gain 2 Vulnerable"
+    },
+    "theWeaponMaster:AntiMagicCerberus": {
+      "NAME": "Cerberus",
+      "DESCRIPTION": "Legendary_Weapon NL  Not Implemented - Deal !D! plus 2 bonus damage for every buff an enemy has."
+    },
+    "theWeaponMaster:AntiMagicShears": {
+      "NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
+      "DESCRIPTION": "Legendary_Weapon NL  Not Implemented - Deal !D! damage to your target and apply 2 Mana_Burn."
+    },
+    "theWeaponMaster:BullyIntimidate": {
+      "NAME": "Intimidate",
+      "DESCRIPTION": "Bully NL Reduce enemy strength by !M!."
+    },
+    "theWeaponMaster:BullyTaunt": {
+      "NAME": "Taunt",
+      "DESCRIPTION": "Bully NL Apply 2 Vulnerable to an attacking enemy. NL Otherwise apply 2 weak and force the enemy to attack.",
+      "UPGRADE_DESCRIPTION": "Bully NL Apply 3 Weak to an attacking enemy. NL Otherwise apply 2 weak and force the enemy to attack."
+    },
+    "theWeaponMaster:BullyHuh": {
+      "NAME": "HUH?!",
+      "DESCRIPTION": "Bully NL Not Implemented."
+    },
+    "theWeaponMaster:BullyWimp": {
+      "NAME": "Wimp",
+      "DESCRIPTION": "Bully NL Apply !M! Weak to all enemies."
+    },
+    "theWeaponMaster:BullySlap": {
+      "NAME": "Slap",
+      "DESCRIPTION": "Bully NL Not Implemented."
+    },
+    "theWeaponMaster:BullyHostility": {
+      "NAME": "Hostility",
+      "DESCRIPTION": "Bully NL Placeholder - Gain !M! Strength every turn."
+    }
   }
-}
