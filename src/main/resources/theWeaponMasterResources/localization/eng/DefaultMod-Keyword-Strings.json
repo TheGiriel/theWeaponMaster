@@ -19,8 +19,28 @@
   },
   {
     "NAMES": [
-      "Berserk"
+      "berserk"
     ],
     "DESCRIPTION": "Take and deal 1 extra damage per Berserk stack. Certain cards gain new effects based on Berserk."
+  },
+  {
+    "NAMES": [
+      "bully"
+    ],
+    "DESCRIPTION": "Drain your Ego to debuff your enemies or force their actions."
+  },
+  {
+    "PROPER_NAME": "Mana Burn",
+    "NAMES": [
+      "Mana Burn",
+      "mana burn",
+      "mana_burn",
+      "manaburn",
+      "mana burned",
+      "Mana Burned",
+      "mana_burned",
+      "manaburned"
+    ],
+    "DESCRIPTION": "Mana burned enemies lose HP when  casting buffs, debuffs and spells."
   }
 ]

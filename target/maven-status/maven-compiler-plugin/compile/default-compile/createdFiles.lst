@@ -1,4 +1,6 @@
+theWeaponMaster\powers\Ego.class
 theWeaponMaster\variables\DefaultCustomVariable.class
+theWeaponMaster\cards\BullyIntimidate.class
 theWeaponMaster\cards\CardTemplate.class
 theWeaponMaster\patches\DefaultInsertPatch.class
 theWeaponMaster\relics\PlaceholderRelic2.class
@@ -33,6 +35,7 @@ theWeaponMaster\cards\BreakerAtlasBlade.class
 theWeaponMaster\cards\AntiMagicCerberus.class
 theWeaponMaster\variables\MultiShotVariable.class
 theWeaponMaster\cards\Defend_WeaponMaster.class
+theWeaponMaster\cards\BullyHuh.class
 theWeaponMaster\cards\AbstractDynamicCard.class
 theWeaponMaster\patches\relics\BottledPlaceholderField.class
 theWeaponMaster\potions\PlaceholderPotion.class
@@ -40,8 +43,11 @@ theWeaponMaster\variables\shieldBuster.class
 theWeaponMaster\cards\DefaultUncommonSkill.class
 theWeaponMaster\variables\DefaultSecondMagicNumber.class
 theWeaponMaster\cards\DefaultSecondMagicNumberSkill.class
+theWeaponMaster\cards\BullyTaunt.class
 theWeaponMaster\characters\TheDefault.class
 theWeaponMaster\cards\BreakerFenrir.class
 theWeaponMaster\cards\BreakerCleaver.class
+theWeaponMaster\cards\BullyHostility.class
 theWeaponMaster\events\IdentityCrisisEvent.class
 theWeaponMaster\relics\DefaultClickableRelic.class
+theWeaponMaster\cards\BullyWimp.class

@@ -9,7 +9,7 @@
   },
   "theWeaponMaster:DefaultCommonPower": {
     "NAME": "Hold Place",
-    "DESCRIPTION": "Gain !M! theWeaponMaster:Keyword.",
+    "DESCRIPTION": "Gain !M! Keyword.",
     "UPGRADE_DESCRIPTION": "Gain !M! theWeaponMaster:Keywords."
   },
   "theWeaponMaster:DefaultUncommonAttack": {
@@ -22,7 +22,7 @@
   },
   "theWeaponMaster:DefaultUncommonPower": {
     "NAME": "Weirdness",
-    "DESCRIPTION": "Gain X theWeaponMaster:Keywords.",
+    "DESCRIPTION": "Gain X Keywords.",
     "UPGRADE_DESCRIPTION": "Gain X +1 theWeaponMaster:Keywords."
   },
   "theWeaponMaster:DefaultRareAttack": {
@@ -52,11 +52,11 @@
   },
   "theWeaponMaster:BreakerAtlasBlade": {
     "NAME": "Atlas Blade",
-    "DESCRIPTION": "Not implemented. NL Hit the opponent with !D! [#000072]Ink[] damage."
+    "DESCRIPTION": "Not implemented. NL Hit the opponent with !D! [#000072]Ink damage."
   },
   "theWeaponMaster:BreakerCleaver": {
-    "NAME": "Cleaver",
-    "DESCRIPTION": "Deal !D! damage and heal for half the unblocked damage dealt. Not Implemented - Gain 1 [#bf3a3b]Berserk[] stack."
+    "NAME": "[#bf3a3b]Cleaver",
+    "DESCRIPTION": "Deal !D! damage and heal for half the unblocked damage dealt. Not Implemented - Gain 1 theWeaponMaster:Berserk stack."
   },
   "theWeaponMaster:BreakerFenrir": {
     "NAME": "Fenrir",
@@ -65,7 +65,7 @@
   },
   "theWeaponMaster:BreakerShockwaveGauntlet": {
     "NAME": "Leviathan Gauntlets",
-    "DESCRIPTION": "Hit the opponent for !D! damage. NL Deal !theWeaponMaster:SHIELD_BUSTER! damage to enemies with block. NL Take !D!/2 damage if the opponent doesn't have block.",
+    "DESCRIPTION": "Hit the opponent for !D! damage. NL Deal double damage to enemies with block. NL Take !D!/2 damage if the opponent doesn't have block.",
     "UPGRADE_DESCRIPTION": "Hit the opponent for !D! damage. NL Deal !D! damage and !D! HP loss to enemies with block. NL Take half damage if the opponent doesn't have block."
   },
   "theWeaponMaster:AntiMagicAbbadon": {
@@ -81,7 +81,33 @@
     "DESCRIPTION": "Not Implemented - Deal !D! plus 2 bonus damage for every buff an enemy has."
   },
   "theWeaponMaster:AntiMagicShears": {
-    "NAME": "Atropos' Shears",
-    "DESCRIPTION": "Not Implemented - Deal !D! damage to your target and apply 2 [#3abfbe]Mana[] [#3abfbe]Burn[]."
+    "NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
+    "DESCRIPTION": "Not Implemented - Deal !D! damage to your target and apply 2 theWeaponMaster:Mana_Burn."
+  },
+  "theWeaponMaster:BullyIntimidate": {
+    "NAME": "Intimidate",
+    "DESCRIPTION": "theWeaponMaster:Bully NL Reduce enemy strength by !M!."
+  },
+  "theWeaponMaster:BullyTaunt": {
+    "NAME": "Taunt",
+    "DESCRIPTION": "theWeaponMaster:Bully NL Apply 2 Weak to an enemy intent on attacking you. Otherwise apply 1 weak and force the enemy to attack.",
+    "UPGRADE_DESCRIPTION": "theWeaponMaster:Bully NL Apply 3 Weak to an enemy intent on attacking you. Otherwise apply 2 weak and force the enemy to attack."
+  },
+  "theWeaponMaster:BullyHuh": {
+    "NAME": "HUH?!",
+    "DESCRIPTION": "theWeaponMaster:Bully NL Not Implemented."
+  },
+  "theWeaponMaster:BullyWimp": {
+    "NAME": "[#ff3300]Wimp",
+    "DESCRIPTION": "theWeaponMaster:Bully NL Apply !M! Weak to all enemies."
+  },
+  "theWeaponMaster:BullySlap": {
+    "NAME": "Slap",
+    "DESCRIPTION": "theWeaponMaster:Bully NL Not Implemented."
+  },
+  "theWeaponMaster:BullyHostility": {
+    "NAME": "Hostility",
+    "DESCRIPTION": "theWeaponMaster:Bully NL Placeholder - Gain !M! Strength every turn.",
+    "UPGRADE_DESCRIPTION": "theWeaponMaster:Bully NL Innate. Placeholder - Innate. Gain !M! Strength every turn."
   }
 }

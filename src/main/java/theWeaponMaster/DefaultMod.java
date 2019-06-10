@@ -132,7 +132,7 @@ public class DefaultMod implements
     // Atlas and JSON files for the Animations
     public static final String THE_DEFAULT_SKELETON_ATLAS = "theWeaponMasterResources/images/char/defaultCharacter/skeleton.atlas";
     public static final String THE_DEFAULT_SKELETON_JSON = "theWeaponMasterResources/images/char/defaultCharacter/skeleton.json";
-    
+
     // =============== MAKE IMAGE PATHS =================
     
     public static String makeCardPath(String resourcePath) {
@@ -391,7 +391,7 @@ public class DefaultMod implements
         //Ignore this
         pathCheck();
         // Add the Custom Dynamic Variables
-        logger.info("Add variabls");
+        logger.info("Add variables");
         // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
@@ -406,6 +406,7 @@ public class DefaultMod implements
         BaseMod.addCard(new OrbSkill());
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         BaseMod.addCard(new Strike_WeaponMaster());
+        BaseMod.addCard(new Defend_WeaponMaster());
         BaseMod.addCard(new AntiMagicAbbadon());
         BaseMod.addCard(new AntiMagicBrahmaastra());
         BaseMod.addCard(new AntiMagicCerberus());
@@ -415,7 +416,6 @@ public class DefaultMod implements
         BaseMod.addCard(new BreakerFenrir());
         BaseMod.addCard(new BreakerShockwaveGauntlet());
         BaseMod.addCard(new DefaultAttackWithVariable());
-        BaseMod.addCard(new Defend_WeaponMaster());
         BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new DefaultUncommonSkill());
         BaseMod.addCard(new DefaultUncommonAttack());
@@ -424,6 +424,11 @@ public class DefaultMod implements
         BaseMod.addCard(new DefaultRareSkill());
         BaseMod.addCard(new DefaultRarePower());
         BaseMod.addCard(new BreakerAtlasBlade());
+        BaseMod.addCard(new BullyTaunt());
+        BaseMod.addCard(new BullyHostility());
+        BaseMod.addCard(new BullyHuh());
+        BaseMod.addCard(new BullyWimp());
+        BaseMod.addCard(new BullyIntimidate());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -450,6 +455,11 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(DefaultRareSkill.ID);
         UnlockTracker.unlockCard(DefaultRarePower.ID);
         UnlockTracker.unlockCard(BreakerAtlasBlade.ID);
+        UnlockTracker.unlockCard(BullyTaunt.ID);
+        UnlockTracker.unlockCard(BullyHostility.ID);
+        UnlockTracker.unlockCard(BullyHuh.ID);
+        UnlockTracker.unlockCard(BullyWimp.ID);
+        UnlockTracker.unlockCard(BullyIntimidate.ID);
         
         logger.info("Done adding cards!");
     }

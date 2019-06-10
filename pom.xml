@@ -6,8 +6,8 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.0.3</version>
-    <description>Began adding and implementing the special weapon cards.</description>
+    <version>0.0.4</version>
+    <description>Added the first few Bully cards, removed revolvers for now.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

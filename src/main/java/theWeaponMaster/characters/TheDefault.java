@@ -64,8 +64,8 @@ public class TheDefault extends CustomPlayer {
     public static final int STARTING_HP = 75;
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 9;
-    public static final int ORB_SLOTS = 3;
+    public static final int CARD_DRAW = 5;
+    public static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================
 
@@ -157,22 +157,16 @@ public class TheDefault extends CustomPlayer {
         logger.info("Begin loading starter Deck Strings");
 
         retVal.add(Strike_WeaponMaster.ID);
+        retVal.add(Strike_WeaponMaster.ID);
         retVal.add(DefaultUncommonAttack.ID);
-        //retVal.add(DefaultRareAttack.ID);
         retVal.add(Defend_WeaponMaster.ID);
-        //retVal.add(DefaultUncommonSkill.ID);
-        //retVal.add(DefaultRareSkill.ID);
-        //retVal.add(DefaultCommonPower.ID);
-        //retVal.add(DefaultUncommonPower.ID);
-        //retVal.add(DefaultRarePower.ID);
-        retVal.add(DefaultAttackWithVariable.ID);
+        retVal.add(Defend_WeaponMaster.ID);
+        retVal.add(BullyTaunt.ID);
+        retVal.add(BullyHostility.ID);
+        retVal.add(BullyWimp.ID);
+        retVal.add(BullyIntimidate.ID);
         retVal.add(DefaultSecondMagicNumberSkill.ID);
         retVal.add(OrbSkill.ID);
-        //retVal.add(AntiMagicAbbadon.ID);
-        //retVal.add(AntiMagicBrahmaastra.ID);
-        //retVal.add(AntiMagicCerberus.ID);
-        //retVal.add(AntiMagicShears.ID);
-        //retVal.add(BreakerAtlasBlade.ID);
         retVal.add(BreakerCleaver.ID);
         retVal.add(BreakerFenrir.ID);
         retVal.add(BreakerShockwaveGauntlet.ID);

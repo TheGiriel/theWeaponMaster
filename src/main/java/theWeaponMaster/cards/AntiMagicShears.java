@@ -43,7 +43,6 @@ public class AntiMagicShears extends AbstractDynamicCard{
         if(!upgraded){
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            rawDescription = UPGRADED_DESCRIPTION;
             initializeDescription();
         }
     }

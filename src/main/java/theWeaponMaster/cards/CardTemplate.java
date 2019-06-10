@@ -36,8 +36,7 @@ public class CardTemplate extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    // public static final String ID = DefaultMod.makeID(${NAME}.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String ID = DefaultMod.makeID("Atlas Blade"); // DELETE THIS ONE.
+    public static final String ID = DefaultMod.makeID(BullyHuh.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;

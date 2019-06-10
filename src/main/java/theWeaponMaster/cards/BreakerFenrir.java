@@ -57,14 +57,14 @@ public class BreakerFenrir extends AbstractDynamicCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (upgraded) {
             if (this.baseDamage > m.currentBlock && m.currentBlock>0) {
-                this.baseDamage = (int) Math.ceil(this.baseDamage * 1.25);
+                damage = (int) Math.ceil(damage * 1.25);
                 shieldsBroken++;
             }
         }
         if (this.baseDamage > m.currentBlock && m.currentBlock > 0){
             shieldsBroken++;
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.baseDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, 3, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.POISON));
 
     }
