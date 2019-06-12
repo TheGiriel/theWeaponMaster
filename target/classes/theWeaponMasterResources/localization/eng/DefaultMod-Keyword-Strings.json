@@ -7,6 +7,15 @@
     "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
   },
   {
+    "PROPER_NAME": "Not Implemented",
+    "NAMES": [
+      "Not Implemented",
+      "not implemented",
+      "not_implemented"
+    ],
+    "DESCRIPTION": "This effect has not yet been included and is currently on my to-do list."
+  },
+  {
     "PROPER_NAME": "Multiword Keyword",
     "NAMES": [
       "Multiword Keyword",
@@ -18,29 +27,112 @@
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
   },
   {
+    "PROPER_NAME": "[#8b0000]Berserk",
     "NAMES": [
       "berserk"
     ],
-    "DESCRIPTION": "Take and deal 1 extra damage per Berserk stack. Certain cards gain new effects based on Berserk."
+    "DESCRIPTION": "Take and deal 1 extra damage per [#8b0000]Berserk stack. Certain cards gain new effects based on [#8b0000]Berserk."
   },
   {
+    "PROPER_NAME": "[#ff4500]Bully",
     "NAMES": [
       "bully"
     ],
-    "DESCRIPTION": "Drain your Ego to debuff your enemies or force their actions."
+    "DESCRIPTION": "Use [#ffc200]Ego to debuff your enemies or force their actions."
   },
   {
-    "PROPER_NAME": "Mana Burn",
+    "PROPER_NAME": "[#3abfbe]Mana [#3abfbe]Burn",
     "NAMES": [
-      "Mana Burn",
       "mana burn",
       "mana_burn",
-      "manaburn",
       "mana burned",
-      "Mana Burned",
-      "mana_burned",
-      "manaburned"
+      "mana_burned"
     ],
-    "DESCRIPTION": "Mana burned enemies lose HP when  casting buffs, debuffs and spells."
+    "DESCRIPTION": "[#3abfbe]Mana [#3abfbe]burned enemies lose HP when casting buffs, debuffs and spells. Certain cards gain new effects against [#3abfbe]Mana [#3abfbe]burned enemies."
+  },
+  {
+    "PROPER_NAME": "[#98fb98]Armor [#98fb98]Break",
+    "NAMES": [
+      "armor break",
+      "armor_break",
+      "armor broken"
+    ],
+    "DESCRIPTION": "Deal double damage to enemies with Block."
+  },
+  {
+    "PROPER_NAME": "[#7fdcfa]Crush",
+    "NAMES": [
+      "crush",
+      "crushed"
+    ],
+    "DESCRIPTION": "Enemies lose HP equal to half the destroyed Block."
+  },
+  {
+    "PROPER_NAME": "[#3333aa]Ink",
+    "NAMES": [
+      "ink"
+    ],
+    "DESCRIPTION": "Increase the [#3333aa]Ink counter to create delayed attacks or reactive defense."
+  },
+  {
+    "PROPER_NAME": "[#ffc200]Ego",
+    "NAMES": [
+      "ego"
+    ],
+    "DESCRIPTION": "Gain [#ffc200]Ego whenever you attack enemies or take damage. Certain cards gain extra effects based on [#ffc200]Ego."
+  },
+  {
+    "PROPER_NAME": "[#cccccc]Bullets",
+    "NAMES": [
+      "bullets",
+      "bullet"
+    ],
+    "DESCRIPTION": "[#2a3439]Revolver cards use [#cccccc]Bullets for special effects."
+  },
+  {
+    "PROPER_NAME": "[#2a3439]Revolver",
+    "NAMES": [
+      "revolver"
+    ],
+    "DESCRIPTION": "[#2a3439]Revolver cards use [#cccccc]Bullets for special effects."
+  },
+
+
+  {
+    "NAMES": [
+      "fenrir"
+    ],
+    "DESCRIPTION": "Fenrir evolves over the course of the fight and gets stronger whenever certain conditions are met."
+  },
+  {
+    "PROPER_NAME": "[#990000]Lacerate",
+    "NAMES": [
+      "lacerate"
+    ],
+    "DESCRIPTION": "[#990000]Lacerated creatures lose 2% of their Max HP every turn (minimum 1)."
+  },
+  {
+    "NAMES": [
+      "evolve",
+      "evolved",
+      "evolutions"
+    ],
+    "DESCRIPTION": "Upgrade this and other Fenrir cards for the current combat whenever you meet the condition after 'Evolve'"
+  },
+  {
+    "NAMES": [
+      "overkill"
+    ],
+    "DESCRIPTION": "Add excess damage to your next 'Destroyer's Blade' attack whenever you kill an enemy."
+  },
+  {
+    "PROPER_NAME": "[#9aa3a3]Legendary [#9aa3a3]Weapon",
+    "NAMES": [
+      "legendary weapon",
+      "legendary weapons",
+      "legendary_weapon",
+      "lwpn"
+    ],
+    "DESCRIPTION": "[#9aa3a3]Legendary [#9aa3a3]Weapons are unique cards with strong effects and drawbacks."
   }
 ]

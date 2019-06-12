@@ -7,6 +7,15 @@
     "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
   },
   {
+    "PROPER_NAME": "Not Implemented",
+    "NAMES": [
+      "Not Implemented",
+      "not implemented",
+      "not_implemented"
+    ],
+    "DESCRIPTION": "This effect has not yet been included and is currently on my to-do list."
+  },
+  {
     "PROPER_NAME": "Multiword Keyword",
     "NAMES": [
       "Multiword Keyword",
@@ -87,12 +96,42 @@
     ],
     "DESCRIPTION": "[#2a3439]Revolver cards use [#cccccc]Bullets for special effects."
   },
+
+
+  {
+    "NAMES": [
+      "fenrir"
+    ],
+    "DESCRIPTION": "Fenrir evolves over the course of the fight and gets stronger whenever certain conditions are met."
+  },
+  {
+    "PROPER_NAME": "[#990000]Lacerate",
+    "NAMES": [
+      "lacerate"
+    ],
+    "DESCRIPTION": "[#990000]Lacerated creatures lose 2% of their Max HP every turn (minimum 1)."
+  },
+  {
+    "NAMES": [
+      "evolve",
+      "evolved",
+      "evolutions"
+    ],
+    "DESCRIPTION": "Upgrade this and other Fenrir cards for the current combat whenever you meet the condition after 'Evolve'"
+  },
+  {
+    "NAMES": [
+      "overkill"
+    ],
+    "DESCRIPTION": "Add excess damage to your next 'Destroyer's Blade' attack whenever you kill an enemy."
+  },
   {
     "PROPER_NAME": "[#9aa3a3]Legendary [#9aa3a3]Weapon",
     "NAMES": [
       "legendary weapon",
       "legendary weapons",
-      "legendary_weapon"
+      "legendary_weapon",
+      "lwpn"
     ],
     "DESCRIPTION": "[#9aa3a3]Legendary [#9aa3a3]Weapons are unique cards with strong effects and drawbacks."
   }

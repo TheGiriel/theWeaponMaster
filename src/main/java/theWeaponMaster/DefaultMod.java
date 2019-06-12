@@ -22,7 +22,10 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.*;
-import theWeaponMaster.characters.TheDefault;
+import theWeaponMaster.cards.bully.*;
+import theWeaponMaster.cards.legendary_weapons.atlas.LW_Atlas;
+import theWeaponMaster.cards.legendary_weapons.fenrir.*;
+import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.events.IdentityCrisisEvent;
 import theWeaponMaster.potions.PlaceholderPotion;
 import theWeaponMaster.relics.BottledPlaceholderRelic;
@@ -197,9 +200,9 @@ public class DefaultMod implements
         
         logger.info("Done subscribing");
         
-        logger.info("Creating the color " + TheDefault.Enums.COLOR_GRAY.toString());
+        logger.info("Creating the color " + TheWeaponMaster.Enums.COLOR_GRAY.toString());
         
-        BaseMod.addColor(TheDefault.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
+        BaseMod.addColor(TheWeaponMaster.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
                 DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
@@ -282,13 +285,13 @@ public class DefaultMod implements
     
     @Override
     public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheDefault.Enums.THE_DEFAULT.toString());
+        logger.info("Beginning to edit characters. " + "Add " + TheWeaponMaster.Enums.THE_DEFAULT.toString());
         
-        BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_DEFAULT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addCharacter(new TheWeaponMaster("the Default", TheWeaponMaster.Enums.THE_DEFAULT),
+                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheWeaponMaster.Enums.THE_DEFAULT);
         
         receiveEditPotions();
-        logger.info("Added " + TheDefault.Enums.THE_DEFAULT.toString());
+        logger.info("Added " + TheWeaponMaster.Enums.THE_DEFAULT.toString());
     }
     
     // =============== /LOAD THE CHARACTER/ =================
@@ -353,7 +356,7 @@ public class DefaultMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheWeaponMaster.Enums.THE_DEFAULT);
         
         logger.info("Done editing potions");
     }
@@ -368,9 +371,9 @@ public class DefaultMod implements
         logger.info("Adding relics");
         
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
@@ -407,14 +410,18 @@ public class DefaultMod implements
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         BaseMod.addCard(new Strike_WeaponMaster());
         BaseMod.addCard(new Defend_WeaponMaster());
-        BaseMod.addCard(new AntiMagicAbbadon());
-        BaseMod.addCard(new AntiMagicBrahmaastra());
-        BaseMod.addCard(new AntiMagicCerberus());
-        BaseMod.addCard(new AntiMagicShears());
-        BaseMod.addCard(new BreakerAtlasBlade());
-        BaseMod.addCard(new BreakerCleaver());
-        BaseMod.addCard(new BreakerFenrir());
-        BaseMod.addCard(new BreakerShockwaveGauntlet());
+        //BaseMod.addCard(new LW_Abaddon());
+        //BaseMod.addCard(new LW_Astra());
+        //BaseMod.addCard(new LW_Atlas());
+        //BaseMod.addCard(new LW_Atropos());
+        //BaseMod.addCard(new LW_Cerberus());
+        //BaseMod.addCard(new LW_Fenrir());
+        BaseMod.addCard(new FenrirLacerate());
+        BaseMod.addCard(new FenrirShieldEater());
+        BaseMod.addCard(new FenrirViciousSwing());
+        BaseMod.addCard(new FenrirUnrestrainedViolence());
+        //BaseMod.addCard(new LW_Leviathan());
+        //BaseMod.addCard(new LW_Revenant());
         BaseMod.addCard(new DefaultAttackWithVariable());
         BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new DefaultUncommonSkill());
@@ -423,7 +430,6 @@ public class DefaultMod implements
         BaseMod.addCard(new DefaultRareAttack());
         BaseMod.addCard(new DefaultRareSkill());
         BaseMod.addCard(new DefaultRarePower());
-        BaseMod.addCard(new BreakerAtlasBlade());
         BaseMod.addCard(new BullyTaunt());
         BaseMod.addCard(new BullyHostility());
         BaseMod.addCard(new BullyHuh());
@@ -437,14 +443,18 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(OrbSkill.ID);
         UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
         UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
-        UnlockTracker.unlockCard(AntiMagicAbbadon.ID);
-        UnlockTracker.unlockCard(AntiMagicBrahmaastra.ID);
-        UnlockTracker.unlockCard(AntiMagicCerberus.ID);
-        UnlockTracker.unlockCard(AntiMagicShears.ID);
-        UnlockTracker.unlockCard(BreakerAtlasBlade.ID);
-        UnlockTracker.unlockCard(BreakerCleaver.ID);
-        UnlockTracker.unlockCard(BreakerFenrir.ID);
-        UnlockTracker.unlockCard(BreakerShockwaveGauntlet.ID);
+        //UnlockTracker.unlockCard(LW_Abaddon.ID);
+        //UnlockTracker.unlockCard(LW_Astra.ID);
+        //UnlockTracker.unlockCard(LW_Atropos.ID);
+        //UnlockTracker.unlockCard(LW_Atlas.ID);
+        //UnlockTracker.unlockCard(LW_Cerberus.ID);
+        //UnlockTracker.unlockCard(LW_Fenrir.ID);
+        UnlockTracker.unlockCard(FenrirLacerate.ID);
+        UnlockTracker.unlockCard(FenrirViciousSwing.ID);
+        UnlockTracker.unlockCard(FenrirShieldEater.ID);
+        UnlockTracker.unlockCard(FenrirUnrestrainedViolence.ID);
+        //UnlockTracker.unlockCard(LW_Leviathan.ID);
+        //UnlockTracker.unlockCard(LW_Revenant.ID);
         UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
         UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
         UnlockTracker.unlockCard(DefaultCommonPower.ID);
@@ -454,7 +464,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(DefaultRareAttack.ID);
         UnlockTracker.unlockCard(DefaultRareSkill.ID);
         UnlockTracker.unlockCard(DefaultRarePower.ID);
-        UnlockTracker.unlockCard(BreakerAtlasBlade.ID);
+        UnlockTracker.unlockCard(LW_Atlas.ID);
         UnlockTracker.unlockCard(BullyTaunt.ID);
         UnlockTracker.unlockCard(BullyHostility.ID);
         UnlockTracker.unlockCard(BullyHuh.ID);

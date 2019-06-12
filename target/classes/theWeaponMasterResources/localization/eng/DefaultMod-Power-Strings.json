@@ -1,10 +1,22 @@
 {
-"theWeaponMaster:CommonPower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-},
-"theWeaponMaster:RarePower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-}
+        "theWeaponMaster:CommonPower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+        },
+        "theWeaponMaster:RarePower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+        },
+        "theWeaponMaster:BerserkPower": {
+                "NAME": "Berserk",
+                "DESCRIPTIONS": ["Deal #b", " and take #b", " more damage."]
+        },
+        "theWeaponMaster:ManaBurn": {
+                "NAME": "Mana Burn",
+                "DESCRIPTIONS": ["[#3abfbe]Mana [#3abfbe]burned creatures lose 3% Max HP when taking actions other than attack or defend."]
+        },
+        "LaceratePower": {
+                "NAME": "Lacerate",
+                "DESCRIPTIONS": ["Lacerated creatures lose 2% Max HP #r(", ") every turn."]
+        }
 }
