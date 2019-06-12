@@ -37,12 +37,12 @@ public class FenrirLacerate extends AbstractDynamicCard {
     private static final int DAMAGE = 7;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADE_MAGIC_NUMBER = 1;
 
     public FenrirLacerate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        isInnate = true;
     }
 
     @Override
@@ -61,7 +61,8 @@ public class FenrirLacerate extends AbstractDynamicCard {
             isLacerated = (0.15 + this.magicNumber*.1);
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int)(damage*(1+isLacerated)), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        //TODO: Increase Bleed Stacks.
-        if (!m.hasPower("LaceratePower")){AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, magicNumber)));}
+
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, this.magicNumber),magicNumber));
+
     }
 }

@@ -46,7 +46,7 @@ public class OrbSkill extends AbstractDynamicCard {
 
     public OrbSkill() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
+        exhaustOnUseOnce = true;
     }
 
     // Actions the card should do.

@@ -24,6 +24,7 @@ import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.cards.bully.*;
 import theWeaponMaster.cards.legendary_weapons.atlas.LW_Atlas;
+import theWeaponMaster.cards.legendary_weapons.atropos.AtroposSever;
 import theWeaponMaster.cards.legendary_weapons.fenrir.*;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.events.IdentityCrisisEvent;
@@ -412,6 +413,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Defend_WeaponMaster());
         //BaseMod.addCard(new LW_Abaddon());
         //BaseMod.addCard(new LW_Astra());
+        BaseMod.addCard(new AtroposSever());
         //BaseMod.addCard(new LW_Atlas());
         //BaseMod.addCard(new LW_Atropos());
         //BaseMod.addCard(new LW_Cerberus());
@@ -445,6 +447,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
         //UnlockTracker.unlockCard(LW_Abaddon.ID);
         //UnlockTracker.unlockCard(LW_Astra.ID);
+        UnlockTracker.unlockCard(AtroposSever.ID);
         //UnlockTracker.unlockCard(LW_Atropos.ID);
         //UnlockTracker.unlockCard(LW_Atlas.ID);
         //UnlockTracker.unlockCard(LW_Cerberus.ID);
