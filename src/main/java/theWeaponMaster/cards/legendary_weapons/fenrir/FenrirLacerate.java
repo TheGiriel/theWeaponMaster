@@ -61,8 +61,9 @@ public class FenrirLacerate extends AbstractDynamicCard {
             isLacerated = (0.15 + this.magicNumber*.1);
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int)(damage*(1+isLacerated)), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, this.magicNumber),magicNumber));
+        if(!m.hasPower("HemorrhagePower")){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, this.magicNumber),magicNumber));
+        }
 
     }
 }

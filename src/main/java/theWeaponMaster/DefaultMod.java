@@ -36,7 +36,6 @@ import theWeaponMaster.relics.PlaceholderRelic2;
 import theWeaponMaster.util.IDCheckDontTouchPls;
 import theWeaponMaster.util.TextureLoader;
 import theWeaponMaster.variables.DefaultCustomVariable;
-import theWeaponMaster.variables.DefaultSecondMagicNumber;
 import theWeaponMaster.variables.shieldBuster;
 
 import java.io.InputStream;
@@ -398,7 +397,6 @@ public class DefaultMod implements
         logger.info("Add variables");
         // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
         BaseMod.addDynamicVariable(new shieldBuster());
         
         logger.info("Adding cards");

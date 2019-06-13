@@ -52,14 +52,13 @@ public class AtroposSever extends AbstractDynamicCard {
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
-
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, this.magicNumber),magicNumber));
-
+        if(!m.hasPower("ManablazePower")) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, this.magicNumber), magicNumber));
+        }
     }
 }
