@@ -122,7 +122,7 @@
   },
   "theWeaponMaster:AtroposSever": {
     "NAME": "Severed Source",
-    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 2 Mana_Burn.",
+    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:AtroposCard2": {

@@ -165,12 +165,13 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(BullyTaunt.ID);
         retVal.add(BullyHostility.ID);
         retVal.add(BullyWimp.ID);
-        retVal.add(BullyWimp.ID);
-        retVal.add(BullyIntimidate.ID);
         retVal.add(BullyIntimidate.ID);
         retVal.add(AtroposSever.ID);
-        retVal.add(FenrirUnrestrainedViolence.ID);
-        retVal.add(FenrirShieldEater.ID);
+        retVal.add(FenrirLacerate.ID);
+        retVal.add(AtroposSever.ID);
+        retVal.add(FenrirLacerate.ID);
+        retVal.add(AtroposSever.ID);
+        retVal.add(FenrirLacerate.ID);
         retVal.add(OrbSkill.ID);
         return retVal;
     }

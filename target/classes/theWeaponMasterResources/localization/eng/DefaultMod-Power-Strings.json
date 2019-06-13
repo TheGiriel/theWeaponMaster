@@ -11,12 +11,19 @@
                 "NAME": "Berserk",
                 "DESCRIPTIONS": ["Deal #b", " and take #b", " more damage."]
         },
-        "theWeaponMaster:ManaBurn": {
+        "ManaBurnPower": {
                 "NAME": "Mana Burn",
-                "DESCRIPTIONS": ["[#3abfbe]Mana [#3abfbe]burned creatures lose 3% Max HP when taking actions other than attack or defend."]
+                "DESCRIPTIONS": [
+                        "[#3abfbe]Mana [#3abfbe]burned creatures lose ",
+                        "-",
+                        "% Max HP when casting spells or skills (depending on intent). NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
+                        "% Max HP when casting spells or skills (depending on intent). NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."]
         },
         "LaceratePower": {
                 "NAME": "Lacerate",
-                "DESCRIPTIONS": ["Lacerated creatures lose 2% Max HP #r(", ") every turn."]
+                "DESCRIPTIONS": ["Lacerated creatures lose ",
+                        "% Max HP #r(",
+                        ") every turn. NL [#990000]Lacerate Stacks: ",
+                        ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."]
         }
 }
