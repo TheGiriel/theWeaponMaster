@@ -27,11 +27,11 @@
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
   },
   {
-    "PROPER_NAME": "[#8b0000]Berserk",
+    "PROPER_NAME": "[#8b0000]Vicious",
     "NAMES": [
-      "berserk"
+      "vicious"
     ],
-    "DESCRIPTION": "Take and deal 1 extra damage per [#8b0000]Berserk stack. Certain cards gain new effects based on [#8b0000]Berserk."
+    "DESCRIPTION": "Take and deal 1 extra damage per [#8b0000]Vicious stack. Certain cards gain new effects based on [#8b0000]Vicious."
   },
   {
     "PROPER_NAME": "[#ff4500]Bully",

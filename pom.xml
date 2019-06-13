@@ -6,8 +6,8 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.0.5</version>
-    <description>Added all currently planned keywords and made them pretty. This all sucks.</description>
+    <version>0.0.6</version>
+    <description>Mana Burn, Manablaze, Lacerate and Hemorrhage are now in the game.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

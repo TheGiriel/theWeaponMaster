@@ -1,9 +1,9 @@
 package theWeaponMaster.cards.legendary_weapons.revenant;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.AbstractDynamicCard;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.powers.ViciousPower;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -33,25 +34,13 @@ public class RevenantRavenousStrikes extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int DAMAGE = 7;
     private static final int UPGRADED_DAMAGE = 3;
+    private static final int MAGIC_NUMBER = 1;
     private int dmgDEALT = 0;
-
     public RevenantRavenousStrikes() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
-    }
+        magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        if(damage > m.currentBlock && m.currentBlock > 0) {
-            dmgDEALT = (damage-m.currentBlock)/2;
-        } else if (m.currentBlock > damage) {
-            dmgDEALT = 0;
-        } else {
-            dmgDEALT = damage / 2;
-        }
-
-        AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, dmgDEALT));
-        dmgDEALT = 0;
     }
 
     @Override
@@ -62,4 +51,26 @@ public class RevenantRavenousStrikes extends AbstractDynamicCard {
             initializeDescription();
         }
     }
+
+
+    public void use(AbstractPlayer p, AbstractMonster m) {
+
+        DefaultMod.logger.info("calculating heal amount.");
+        dmgDEALT = (damage-m.currentBlock)/2;
+
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        DefaultMod.logger.info("dealing damage.");
+        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, dmgDEALT));
+        DefaultMod.logger.info("healing: " + dmgDEALT);
+        dmgDEALT = 0;
+
+        DefaultMod.logger.info("Gain Vicious - Ravenous Strikes.");
+
+        DefaultMod.logger.info("Gained Vicious - Ravenous Strikes.");
+
+        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, magicNumber), magicNumber));
+        this.magicNumber++;
+        DefaultMod.logger.info("updating magic number");
+    }
+
 }

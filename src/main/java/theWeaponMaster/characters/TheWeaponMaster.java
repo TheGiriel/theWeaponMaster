@@ -29,6 +29,7 @@ import theWeaponMaster.cards.bully.BullyTaunt;
 import theWeaponMaster.cards.bully.BullyWimp;
 import theWeaponMaster.cards.legendary_weapons.atropos.AtroposSever;
 import theWeaponMaster.cards.legendary_weapons.fenrir.*;
+import theWeaponMaster.cards.legendary_weapons.revenant.RevenantRavenousStrikes;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
 import theWeaponMaster.relics.PlaceholderRelic2;
@@ -166,12 +167,9 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(BullyHostility.ID);
         retVal.add(BullyWimp.ID);
         retVal.add(BullyIntimidate.ID);
-        retVal.add(AtroposSever.ID);
-        retVal.add(FenrirLacerate.ID);
-        retVal.add(AtroposSever.ID);
-        retVal.add(FenrirLacerate.ID);
-        retVal.add(AtroposSever.ID);
-        retVal.add(FenrirLacerate.ID);
+        retVal.add(RevenantRavenousStrikes.ID);
+        retVal.add(RevenantRavenousStrikes.ID);
+        retVal.add(RevenantRavenousStrikes.ID);
         retVal.add(OrbSkill.ID);
         return retVal;
     }

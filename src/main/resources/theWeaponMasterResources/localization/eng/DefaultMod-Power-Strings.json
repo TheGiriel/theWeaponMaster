@@ -7,9 +7,13 @@
                 "NAME": "Placeholder Power",
                 "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
         },
-        "theWeaponMaster:BerserkPower": {
-                "NAME": "Berserk",
-                "DESCRIPTIONS": ["Deal #b", " and take #b", " more damage."]
+        "ViciousPower": {
+                "NAME": "Vicious",
+                "DESCRIPTIONS": [
+                        "Deal #r",
+                        " and take #r",
+                        " more damage."
+                ]
         },
         "ManaBurnPower": {
                 "NAME": "Mana Burn",
@@ -28,7 +32,7 @@
                 "NAME": "Lacerate",
                 "DESCRIPTIONS": ["Lacerated creatures lose ",
                         "% Max HP #r(",
-                        ") every turn. NL [#990000]Lacerate Stacks: ",
+                        ") every turn. NL [#990055]Lacerate Stacks: ",
                         ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."]
         },
         "HemorrhagePower": {

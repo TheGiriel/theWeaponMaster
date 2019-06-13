@@ -58,6 +58,7 @@ public class BullyHostility extends AbstractDynamicCard {
     public BullyHostility() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        isInnate = true;
     }
 
 

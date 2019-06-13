@@ -1,10 +1,10 @@
 package theWeaponMaster.powers;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,9 +15,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.util.TextureLoader;
-public class ManaBurnPower
-        extends AbstractPower
-{
+
+public class ManaBurnPower extends AbstractPower {
     private static final String POWER_ID = "ManaBurnPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ManaBurnPower");
     public static final String NAME = powerStrings.NAME;
@@ -34,7 +33,7 @@ public class ManaBurnPower
         this.name = NAME;
         this.ID = "ManaBurnPower";
         this.owner = owner;
-            this.amount = manaBurn;
+        this.amount = manaBurn;
         this.source = source;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -57,11 +56,7 @@ public class ManaBurnPower
     }
 
     public void updateDescription() {
-        if (this.amount < 3) {
-            this.description = DESCRIPTION[0] + this.amount + DESCRIPTION[1] + (this.amount * 3) + DESCRIPTION[2] + this.amount;
-        } else {
-            this.description = DESCRIPTION[0] + this.amount + DESCRIPTION[1] + (this.amount * 3) + DESCRIPTION[3];
-        }
+        this.description = DESCRIPTION[0] + this.amount + DESCRIPTION[1] + (this.amount * 3) + DESCRIPTION[2] + this.amount;
     }
 
     public void stackPower(int stackAmount) {
