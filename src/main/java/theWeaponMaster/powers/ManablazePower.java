@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.util.TextureLoader;
-public class ManablazePower extends  AbstractPower{
+public class ManablazePower extends AbstractPower{
     private static final String POWER_ID = "ManablazePower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ManablazePower");
     public static final String NAME = powerStrings.NAME;
@@ -34,15 +34,24 @@ public class ManablazePower extends  AbstractPower{
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
         this.type = AbstractPower.PowerType.DEBUFF;
         this.m = (AbstractMonster)this.owner;
 
         this.manablazeIntensity = (int)Math.ceil(this.owner.maxHealth * 0.03D);
-        this.description = DESCRIPTION[0]+this.manablazeIntensity + DESCRIPTION[1]+ this.manablazeIntensity*3 + DESCRIPTION[1];
+
+
+        updateDescription();
+    }
+
+    public void updateDescription(){
+        if ((int)Math.ceil(this.m.maxHealth*0.03D*this.amount*3) == 1){
+            this.description = DESCRIPTION[0] + (int) Math.ceil(this.m.maxHealth * 0.03D * this.amount) + DESCRIPTION[2];
+        } else {
+            this.description = DESCRIPTION[0] + (int) Math.ceil(this.m.maxHealth * 0.03D) + DESCRIPTION[1] + (int) Math.ceil(this.m.maxHealth * 0.03D * 3) + DESCRIPTION[2];
+        }
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source));
     }
 }

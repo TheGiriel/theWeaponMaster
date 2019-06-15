@@ -48,7 +48,7 @@
       "mana burned",
       "mana_burned"
     ],
-    "DESCRIPTION": "[#3abfbe]Mana [#3abfbe]burned enemies lose HP when casting buffs, debuffs and spells. Certain cards gain new effects against [#3abfbe]Mana [#3abfbe]burned enemies."
+    "DESCRIPTION": "[#3abfbe]Mana [#3abfbe]burned creatures lose 1-3% Max HP per stack when casting buffs, debuffs and spells. Certain cards gain new effects against [#3abfbe]Mana [#3abfbe]burned enemies."
   },
   {
     "PROPER_NAME": "[#98fb98]Armor [#98fb98]Break",

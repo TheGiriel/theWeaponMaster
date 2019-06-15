@@ -55,6 +55,7 @@ theWeaponMaster\powers\ManablazePower.class
 theWeaponMaster\cards\legendary_weapons\cerberus\CerberusModularSlash.class
 theWeaponMaster\cards\bully\BullyHuh.class
 theWeaponMaster\cards\DefaultCommonPower.class
+theWeaponMaster\actions\ManaBurnAction.class
 theWeaponMaster\cards\legendary_weapons\cerberus\LW_Cerberus.class
 theWeaponMaster\cards\legendary_weapons\abaddon\AbaddonJudgment.class
 theWeaponMaster\cards\legendary_weapons\astra\LW_Astra.class

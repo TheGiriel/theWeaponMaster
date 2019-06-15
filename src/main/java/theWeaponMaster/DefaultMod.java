@@ -289,7 +289,7 @@ public class DefaultMod implements
     public void receiveEditCharacters() {
         logger.info("Beginning to edit characters. " + "Add " + TheWeaponMaster.Enums.THE_DEFAULT.toString());
         
-        BaseMod.addCharacter(new TheWeaponMaster("the Default", TheWeaponMaster.Enums.THE_DEFAULT),
+        BaseMod.addCharacter(new TheWeaponMaster("the Weapon Master", TheWeaponMaster.Enums.THE_DEFAULT),
                 THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheWeaponMaster.Enums.THE_DEFAULT);
         
         receiveEditPotions();

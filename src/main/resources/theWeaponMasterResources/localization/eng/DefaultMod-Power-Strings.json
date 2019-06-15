@@ -19,17 +19,17 @@
         "ManaBurnPower": {
                 "NAME": "Mana Burn",
                 "DESCRIPTIONS": [
-                        "[#3abfbe]Mana [#3abfbe]burned creatures lose ",
+                        "[#3abfbe]Mana [#3abfbe]Burn deals ",
                         "-",
-                        " HP when casting spells or skills (depending on intent). NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
+                        " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
                         " HP when casting spells or skills (depending on intent)."]
         },
         "ManablazePower": {
                 "NAME": "Manablaze",
                 "DESCRIPTIONS": [
-                        "Creatures affected by [#4acfce]Manablaze lose ",
+                        "[#4acfce]Manablaze deals ",
                         "-",
-                        " HP when casting spells or skills (depending on intent). NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."]
+                        " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."]
         },
         "LaceratePower": {
                 "NAME": "Lacerate",

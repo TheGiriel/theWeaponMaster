@@ -14,24 +14,28 @@ public class ManaBurnAction extends AbstractGameAction {
     private AbstractMonster m;
     private int manaBurnIntensity;
 
-    public ManaBurnAction(AbstractCreature owner, AbstractCreature source, int amount) {
+    public ManaBurnAction(AbstractCreature owner, AbstractCreature source) {
         this.owner = owner;
         this.m = (AbstractMonster) this.owner;
-        this.amount = amount;
-        this.manaBurnIntensity = (int)(this.owner.maxHealth*0.01D*amount);
         this.source = source;
 
+        this.manaBurnIntensity = (int)(Math.ceil(this.m.maxHealth*0.03D));
+
+    }
+
+    public int burnDamage (AbstractMonster m, int multiplier){
+        return (int)(Math.ceil(this.m.maxHealth*0.03D*multiplier));
     }
 
     @Override
     public void update() {
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             if (this.m.intent == AbstractMonster.Intent.ATTACK_BUFF || this.m.intent == AbstractMonster.Intent.ATTACK_DEBUFF || this.m.intent == AbstractMonster.Intent.DEFEND_BUFF || this.m.intent == AbstractMonster.Intent.DEFEND_DEBUFF) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.manaBurnIntensity, AbstractGameAction.AttackEffect.FIRE));
+                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, burnDamage(m, 1), AbstractGameAction.AttackEffect.FIRE));
             } else if (this.m.intent == AbstractMonster.Intent.BUFF || this.m.intent == AbstractMonster.Intent.DEBUFF) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.manaBurnIntensity * 2, AbstractGameAction.AttackEffect.FIRE));
+                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, burnDamage(m, 2), AbstractGameAction.AttackEffect.FIRE));
             } else if (this.m.intent == AbstractMonster.Intent.STRONG_DEBUFF || this.m.intent == AbstractMonster.Intent.MAGIC) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.manaBurnIntensity * 3, AbstractGameAction.AttackEffect.FIRE));
+                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, burnDamage(m, 3), AbstractGameAction.AttackEffect.FIRE));
             }
         }
         isDone = true;

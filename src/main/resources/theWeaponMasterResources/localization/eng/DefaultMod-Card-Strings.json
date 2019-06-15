@@ -123,7 +123,8 @@
   "theWeaponMaster:AtroposSever": {
     "NAME": "Severed Source",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.",
-    "UPGRADE_DESCRIPTION": ""
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION":["Enhanced Effect 1", "Enhanced Effect 2"]
   },
   "theWeaponMaster:AtroposCard2": {
     "NAME": "Twin Strike",

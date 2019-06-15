@@ -37,12 +37,12 @@ public class ManaBurnPower extends AbstractPower {
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
         this.type = AbstractPower.PowerType.DEBUFF;
         this.m = (AbstractMonster)this.owner;
 
         this.manaBurnIntensity = (int)Math.ceil(owner.maxHealth * 0.01D * this.amount);
         this.isTurnBased = true;
+        updateDescription();
     }
 
     private void updateDamage() {
@@ -54,7 +54,11 @@ public class ManaBurnPower extends AbstractPower {
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTION[0] + this.manaBurnIntensity + DESCRIPTION[1] + (this.manaBurnIntensity * 3) + DESCRIPTION[2] + this.amount;
+        if ((int)Math.ceil(this.m.maxHealth*0.01D*this.amount*3) == 1){
+            this.description = DESCRIPTION[0] + (int) Math.ceil(this.m.maxHealth * 0.01D * this.amount) + DESCRIPTION[2] + this.amount;
+        } else {
+            this.description = DESCRIPTION[0] + (int) Math.ceil(this.m.maxHealth * 0.01D * this.amount) + DESCRIPTION[1] + (int) Math.ceil(this.m.maxHealth * 0.01D * this.amount * 3) + DESCRIPTION[2] + this.amount;
+        }
     }
 
     public void stackPower(int stackAmount) {
@@ -69,6 +73,6 @@ public class ManaBurnPower extends AbstractPower {
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source));
     }
 }
