@@ -67,12 +67,12 @@ public class TheWeaponMaster extends CustomPlayer {
 
     // =============== BASE STATS =================
 
-    public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 75;
-    public static final int MAX_HP = 75;
-    public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 5;
-    public static final int ORB_SLOTS = 0;
+    private static final int ENERGY_PER_TURN = 3;
+    private static final int STARTING_HP = 75;
+    private static final int MAX_HP = 75;
+    private static final int STARTING_GOLD = 99;
+    private static final int CARD_DRAW = 5;
+    private static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================
 
@@ -89,7 +89,7 @@ public class TheWeaponMaster extends CustomPlayer {
 
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
-    public static final String[] orbTextures = {
+    private static final String[] orbTextures = {
             "theWeaponMasterResources/images/char/defaultCharacter/orb/layer1.png",
             "theWeaponMasterResources/images/char/defaultCharacter/orb/layer2.png",
             "theWeaponMasterResources/images/char/defaultCharacter/orb/layer3.png",
@@ -170,6 +170,7 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(RevenantRavenousStrikes.ID);
         retVal.add(RevenantRavenousStrikes.ID);
         retVal.add(RevenantRavenousStrikes.ID);
+        retVal.add(AtroposSever.ID);
         retVal.add(OrbSkill.ID);
         return retVal;
     }

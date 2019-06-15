@@ -2,9 +2,7 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.util.TextureLoader;
 
 public class ManaBurnPower extends AbstractPower {
@@ -56,7 +54,7 @@ public class ManaBurnPower extends AbstractPower {
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTION[0] + this.amount + DESCRIPTION[1] + (this.amount * 3) + DESCRIPTION[2] + this.amount;
+        this.description = DESCRIPTION[0] + this.manaBurnIntensity + DESCRIPTION[1] + (this.manaBurnIntensity * 3) + DESCRIPTION[2] + this.amount;
     }
 
     public void stackPower(int stackAmount) {
@@ -71,16 +69,6 @@ public class ManaBurnPower extends AbstractPower {
     }
 
     public void atStartOfTurn() {
-        if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            flashWithoutSound();
-            if (this.m.intent == AbstractMonster.Intent.ATTACK_BUFF || this.m.intent == AbstractMonster.Intent.ATTACK_DEBUFF || this.m.intent == AbstractMonster.Intent.DEFEND_BUFF || this.m.intent == AbstractMonster.Intent.DEFEND_DEBUFF) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.manaBurnIntensity, AbstractGameAction.AttackEffect.FIRE));
-            } else if (this.m.intent == AbstractMonster.Intent.BUFF || this.m.intent == AbstractMonster.Intent.DEBUFF) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.manaBurnIntensity * 2, AbstractGameAction.AttackEffect.FIRE));
-            }
-            else if (this.m.intent == AbstractMonster.Intent.STRONG_DEBUFF || this.m.intent == AbstractMonster.Intent.MAGIC) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.manaBurnIntensity * 3, AbstractGameAction.AttackEffect.FIRE));
-            }
-        }
+        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount));
     }
 }

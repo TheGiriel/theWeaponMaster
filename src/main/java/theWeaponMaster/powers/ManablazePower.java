@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.util.TextureLoader;
 public class ManablazePower extends  AbstractPower{
     private static final String POWER_ID = "ManablazePower";
@@ -38,17 +39,10 @@ public class ManablazePower extends  AbstractPower{
         this.m = (AbstractMonster)this.owner;
 
         this.manablazeIntensity = (int)Math.ceil(this.owner.maxHealth * 0.03D);
-        this.description = DESCRIPTION[0];
+        this.description = DESCRIPTION[0]+this.manablazeIntensity + DESCRIPTION[1]+ this.manablazeIntensity*3 + DESCRIPTION[1];
     }
 
     public void atStartOfTurn() {
-        if (this.m.intent == AbstractMonster.Intent.ATTACK_BUFF || this.m.intent == AbstractMonster.Intent.ATTACK_DEBUFF || this.m.intent == AbstractMonster.Intent.DEFEND_BUFF || this.m.intent == AbstractMonster.Intent.DEFEND_DEBUFF) {
-             AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.manablazeIntensity, AbstractGameAction.AttackEffect.FIRE));
-        } else if (this.m.intent == AbstractMonster.Intent.BUFF || this.m.intent == AbstractMonster.Intent.DEBUFF) {
-             AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.manablazeIntensity * 2, AbstractGameAction.AttackEffect.FIRE));
-        }
-        else if (this.m.intent == AbstractMonster.Intent.STRONG_DEBUFF || this.m.intent == AbstractMonster.Intent.MAGIC) {
-             AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.manablazeIntensity * 3, AbstractGameAction.AttackEffect.FIRE));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount));
     }
 }
