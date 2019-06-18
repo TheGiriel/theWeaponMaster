@@ -20,8 +20,8 @@ public class ManaBurnPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Mana_Burn_placeholder_84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Mana_Burn_placeholder_32.png"));
 
     private AbstractCreature source;
     private int manaBurnIntensity;
@@ -64,6 +64,7 @@ public class ManaBurnPower extends AbstractPower {
     public void stackPower(int stackAmount) {
         this.amount += stackAmount;
         if (this.amount > 2) {
+            this.amount = 3;
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, "ManaBurnPower"));
             DefaultMod.logger.info("Removing Mana burn, applying Manablaze.");
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.source, new ManablazePower(this.owner, this.source)));
@@ -73,6 +74,6 @@ public class ManaBurnPower extends AbstractPower {
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source));
+        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount));
     }
 }

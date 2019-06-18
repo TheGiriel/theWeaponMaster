@@ -13,18 +13,20 @@ public class ManaBurnAction extends AbstractGameAction {
     private final AbstractCreature source;
     private AbstractMonster m;
     private int manaBurnIntensity;
+    private int manaBurnStack;
 
-    public ManaBurnAction(AbstractCreature owner, AbstractCreature source) {
+    public ManaBurnAction(AbstractCreature owner, AbstractCreature source, int manaBurnStack) {
         this.owner = owner;
         this.m = (AbstractMonster) this.owner;
         this.source = source;
+        this.manaBurnStack = manaBurnStack;
 
-        this.manaBurnIntensity = (int)(Math.ceil(this.m.maxHealth*0.03D));
+        this.manaBurnIntensity = (int)(Math.ceil(this.m.maxHealth*0.01D*manaBurnStack));
 
     }
 
     public int burnDamage (AbstractMonster m, int multiplier){
-        return (int)(Math.ceil(this.m.maxHealth*0.03D*multiplier));
+        return this.manaBurnIntensity*multiplier;
     }
 
     @Override

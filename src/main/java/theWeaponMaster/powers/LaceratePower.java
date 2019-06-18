@@ -2,18 +2,15 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.actions.LacerateAction;
 import theWeaponMaster.util.TextureLoader;
 
 
@@ -25,8 +22,8 @@ public class LaceratePower
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Lacerate_placeholder_84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Lacerate_placeholder_32.png"));
 
     private AbstractCreature source;
     private int bleedDamage;
@@ -81,9 +78,7 @@ public class LaceratePower
 
 
     public void atStartOfTurn() {
-        if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            flashWithoutSound();
-            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, this.bleedDamage, AbstractGameAction.AttackEffect.POISON));
-        }
+        AbstractDungeon.actionManager.addToBottom(new LacerateAction(this.owner, this.source, this.amount));
+
     }
 }

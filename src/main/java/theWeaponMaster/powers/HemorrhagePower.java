@@ -19,8 +19,8 @@ public class HemorrhagePower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Hemorrhage_placeholder_84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Hemorrhage_placeholder_32.png"));
 
     private AbstractCreature source;
     private int hemorrhage;

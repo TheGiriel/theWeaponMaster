@@ -19,8 +19,8 @@ public class ViciousPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("vicious_placeholder_84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("vicious_placeholder_32.png"));
 
     public ViciousPower(final AbstractCreature owner, int amnt) {
         this.name = NAME;

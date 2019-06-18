@@ -1,8 +1,6 @@
 package theWeaponMaster.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,8 +16,8 @@ public class ManablazePower extends AbstractPower{
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("manablaze_placeholder_84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("manablaze_placeholder_32.png"));
 
     private AbstractCreature source;
     private int manablazeIntensity;
@@ -52,6 +50,6 @@ public class ManablazePower extends AbstractPower{
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source));
+        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source,3));
     }
 }
