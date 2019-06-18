@@ -3,6 +3,7 @@ package theWeaponMaster.cards.legendary_weapons.atropos;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,7 +14,6 @@ import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.AbstractDynamicCard;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.ManaBurnPower;
-
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -47,24 +47,10 @@ public class AtroposSever extends AbstractDynamicCard {
         initializeDescription();
     }
 
-    /*public void update(){
-        if (this.lastTarget != this.target){
-            this.updateCurrentEffect(this.target);
-            this.lastTarget = this.target;
-        }
-    }*/
-
     public void calculateCardDamage(AbstractMonster m){
         super.calculateCardDamage(m);
         this.target = m;
     }
-
-    /*private void updateCurrentEffect(AbstractMonster monster){
-        if (monster.hasPower("ManablazePower")){
-
-        }
-
-    }*/
 
     @Override
     public void upgrade() {
@@ -77,10 +63,12 @@ public class AtroposSever extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         if(!m.hasPower("ManablazePower")) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, this.magicNumber), this.magicNumber));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (Math.ceil(m.currentHealth*0.09))+damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "ManablazePower"));
         }
     }
-
 }

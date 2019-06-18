@@ -9,7 +9,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -24,9 +23,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.cards.bully.*;
+import theWeaponMaster.cards.legendary_weapons.atlas.AtlasInkSlash;
 import theWeaponMaster.cards.legendary_weapons.atlas.LW_Atlas;
 import theWeaponMaster.cards.legendary_weapons.atropos.AtroposSever;
-import theWeaponMaster.cards.legendary_weapons.fenrir.*;
+import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirLacerate;
+import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirShieldEater;
+import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirUnrestrainedViolence;
+import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirViciousSwing;
 import theWeaponMaster.cards.legendary_weapons.revenant.RevenantRavenousStrikes;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.events.IdentityCrisisEvent;
@@ -84,9 +87,9 @@ public class DefaultMod implements
     private static String modID;
 
     // Mod-settings settings. This is if you want an on/off savable button
-    public static Properties theDefaultDefaultSettings = new Properties();
-    public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
-    public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
+    private static Properties theDefaultDefaultSettings = new Properties();
+    private static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
+    private static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Weapon Master";
@@ -100,9 +103,9 @@ public class DefaultMod implements
     public static final Color DEFAULT_GRAY = CardHelper.getColor(100.0f, 53.0f, 59.0f);
     
     // Potion Colors in RGB
-    public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
-    public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
-    public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
+    private static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
+    private static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
+    private static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
     
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
@@ -132,7 +135,7 @@ public class DefaultMod implements
     public static final String THE_DEFAULT_CORPSE = "theWeaponMasterResources/images/char/defaultCharacter/corpse.png";
     
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
-    public static final String BADGE_IMAGE = "theWeaponMasterResources/images/Badge.png";
+    private static final String BADGE_IMAGE = "theWeaponMasterResources/images/Badge.png";
     
     // Atlas and JSON files for the Animations
     public static final String THE_DEFAULT_SKELETON_ATLAS = "theWeaponMasterResources/images/char/defaultCharacter/skeleton.atlas";
@@ -153,7 +156,7 @@ public class DefaultMod implements
     }
     
     public static String makeOrbPath(String resourcePath) {
-        return getModID() + "Resources/orbs/" + resourcePath;
+        return getModID() + "Resources/images/orbs/" + resourcePath;
     }
     
     public static String makePowerPath(String resourcePath) {
@@ -233,7 +236,7 @@ public class DefaultMod implements
     // DON'T TOUCH THIS STUFF. IT IS HERE FOR STANDARDIZATION BETWEEN MODS AND TO ENSURE GOOD CODE PRACTICES.
     // IF YOU MODIFY THIS I WILL HUNT YOU DOWN AND DOWNVOTE YOUR MOD ON WORKSHOP
     
-    public static void setModID(String ID) { // DON'T EDIT
+    private static void setModID(String ID) { // DON'T EDIT
         Gson coolG = new Gson(); // EY DON'T EDIT THIS
         //   String IDjson = Gdx.files.internal("IDCheckStringsDONT-EDIT-AT-ALL.json").readString(String.valueOf(StandardCharsets.UTF_8)); // i hate u Gdx.files
         InputStream in = DefaultMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json"); // DON'T EDIT THIS ETHER
@@ -249,7 +252,7 @@ public class DefaultMod implements
         logger.info("Success! ID is " + modID); // WHY WOULD U WANT IT NOT TO LOG?? DON'T EDIT THIS.
     } // NO
     
-    public static String getModID() { // NO
+    private static String getModID() { // NO
         return modID; // DOUBLE NO
     } // NU-UH
     
@@ -352,7 +355,7 @@ public class DefaultMod implements
     
     // ================ ADD POTIONS ===================
     
-    public void receiveEditPotions() {
+    private void receiveEditPotions() {
         logger.info("Beginning to edit potions");
         
         // Class Specific Potion. If you want your potion to not be class-specific,
@@ -415,6 +418,7 @@ public class DefaultMod implements
         //BaseMod.addCard(new LW_Astra());
         BaseMod.addCard(new AtroposSever());
         //BaseMod.addCard(new LW_Atlas());
+        BaseMod.addCard(new AtlasInkSlash());
         //BaseMod.addCard(new LW_Atropos());
         //BaseMod.addCard(new LW_Cerberus());
         //BaseMod.addCard(new LW_Fenrir());
@@ -451,6 +455,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(AtroposSever.ID);
         //UnlockTracker.unlockCard(LW_Atropos.ID);
         //UnlockTracker.unlockCard(LW_Atlas.ID);
+        UnlockTracker.unlockCard(AtlasInkSlash.ID);
         //UnlockTracker.unlockCard(LW_Cerberus.ID);
         //UnlockTracker.unlockCard(LW_Fenrir.ID);
         UnlockTracker.unlockCard(FenrirLacerate.ID);

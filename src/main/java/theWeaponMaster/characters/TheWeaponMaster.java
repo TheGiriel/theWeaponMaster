@@ -22,13 +22,11 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.cards.*;
-import theWeaponMaster.cards.bully.BullyHostility;
-import theWeaponMaster.cards.bully.BullyIntimidate;
-import theWeaponMaster.cards.bully.BullyTaunt;
-import theWeaponMaster.cards.bully.BullyWimp;
+import theWeaponMaster.cards.OrbSkill;
+import theWeaponMaster.cards.Strike_WeaponMaster;
+import theWeaponMaster.cards.legendary_weapons.atlas.AtlasInkSlash;
 import theWeaponMaster.cards.legendary_weapons.atropos.AtroposSever;
-import theWeaponMaster.cards.legendary_weapons.fenrir.*;
+import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirLacerate;
 import theWeaponMaster.cards.legendary_weapons.revenant.RevenantRavenousStrikes;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
@@ -163,13 +161,14 @@ public class TheWeaponMaster extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(BullyTaunt.ID);
-        retVal.add(BullyHostility.ID);
-        retVal.add(BullyWimp.ID);
-        retVal.add(BullyIntimidate.ID);
+        //retVal.add(BullyTaunt.ID);
+        //retVal.add(BullyHostility.ID);
+        //retVal.add(BullyWimp.ID);
+        //retVal.add(BullyIntimidate.ID);
         retVal.add(RevenantRavenousStrikes.ID);
         retVal.add(RevenantRavenousStrikes.ID);
-        retVal.add(RevenantRavenousStrikes.ID);
+        retVal.add(AtlasInkSlash.ID);
+        retVal.add(FenrirLacerate.ID);
         retVal.add(AtroposSever.ID);
         retVal.add(OrbSkill.ID);
         return retVal;

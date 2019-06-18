@@ -13,10 +13,8 @@ import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.LacerateAction;
 import theWeaponMaster.util.TextureLoader;
 
+public class LaceratePower extends AbstractPower {
 
-public class LaceratePower
-        extends AbstractPower
-{
     private static final String POWER_ID = "LaceratePower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LaceratePower");
     public static final String NAME = powerStrings.NAME;
@@ -45,7 +43,7 @@ public class LaceratePower
         this.isTurnBased = true;
     }
 
-    public void updateDamage() {
+    private void updateDamage() {
         if (this.amount > 3) {
             this.amount = 3;
         }

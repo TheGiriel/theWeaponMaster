@@ -14,7 +14,7 @@ import static theWeaponMaster.DefaultMod.makePowerPath;
 
 public class ViciousPower extends AbstractPower {
 
-    public static final String POWER_ID = "ViciousPower";
+    private static final String POWER_ID = "ViciousPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ViciousPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -24,7 +24,7 @@ public class ViciousPower extends AbstractPower {
 
     public ViciousPower(final AbstractCreature owner, int amnt) {
         this.name = NAME;
-        this.ID = "ViciousPower";
+        this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amnt;
 

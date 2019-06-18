@@ -1,4 +1,5 @@
 package theWeaponMaster.powers;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.util.TextureLoader;
+
 public class ManablazePower extends AbstractPower{
     private static final String POWER_ID = "ManablazePower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ManablazePower");
