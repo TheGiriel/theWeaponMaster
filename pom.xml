@@ -6,8 +6,8 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.0.6</version>
-    <description>Mana Burn, Manablaze, Lacerate and Hemorrhage are now in the game.</description>
+    <version>0.0.7</version>
+    <description>First version of Ink Orb/Effects, more will be added to the Atlas Blade "archetype".</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
