@@ -1,0 +1,46 @@
+{
+  "theGodHunters:CommonPower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+        },
+  "theGodHunters:RarePower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+        },
+        "ViciousPower": {
+                "NAME": "Vicious",
+                "DESCRIPTIONS": [
+                        "Deal #r",
+                        " and take #r",
+                        " more damage.",
+                        " more damage. NL [#8b0000]Special [#8b0000]Attacks [#8b0000]are [#8b0000]available [#8b0000]to [#8b0000]you."
+                ]
+        },
+        "ManaBurnPower": {
+                "NAME": "Mana Burn",
+                "DESCRIPTIONS": [
+                        "[#3abfbe]Mana [#3abfbe]Burn deals ",
+                        "-",
+                        " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
+                        " HP when casting spells or skills (depending on intent)."]
+        },
+        "ManablazePower": {
+                "NAME": "Manablaze",
+                "DESCRIPTIONS": [
+                        "[#4acfce]Manablaze deals ",
+                        "-",
+                        " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."]
+        },
+        "LaceratePower": {
+                "NAME": "Lacerate",
+                "DESCRIPTIONS": ["Lacerated creatures lose ",
+                        "% Max HP #r(",
+                        ") every turn. NL [#990055]Lacerate Stacks: ",
+                        ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."]
+        },
+        "HemorrhagePower": {
+                "NAME": "Hemorrhage",
+                "DESCRIPTIONS": [
+                        "Creatures affected by [#990000]Hemorrhage lose 6% Max HP every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."]
+        }
+}

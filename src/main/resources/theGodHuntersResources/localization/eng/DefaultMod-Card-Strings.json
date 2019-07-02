@@ -1,270 +1,256 @@
 {
-  "theWeaponMaster:Strike_WeaponMaster": {
+  "theGodHunters:Strike_WeaponMaster": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage."
   },
-  "theWeaponMaster:Defend_WeaponMaster": {
+  "theGodHunters:Defend_WeaponMaster": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block. NL theWeaponMaster:Multiword_Keyword."
+    "DESCRIPTION": "Gain !B! Block. NL theGodHunters:Multiword_Keyword."
   },
-  "theWeaponMaster:DefaultCommonPower": {
+  "theGodHunters:DefaultCommonPower": {
     "NAME": "Hold Place",
     "DESCRIPTION": "Gain !M! Keyword.",
-    "UPGRADE_DESCRIPTION": "Gain !M! theWeaponMaster:Keywords."
+    "UPGRADE_DESCRIPTION": "Gain !M! theGodHunters:Keywords."
   },
-  "theWeaponMaster:DefaultUncommonAttack": {
+  "theGodHunters:DefaultUncommonAttack": {
     "NAME": "Big slap",
     "DESCRIPTION": "Deal !D! Damage."
   },
-  "theWeaponMaster:DefaultUncommonSkill": {
+  "theGodHunters:DefaultUncommonSkill": {
     "NAME": "A Better Defend",
     "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
   },
-  "theWeaponMaster:DefaultUncommonPower": {
+  "theGodHunters:DefaultUncommonPower": {
     "NAME": "Weirdness",
     "DESCRIPTION": "Gain X Keywords.",
-    "UPGRADE_DESCRIPTION": "Gain X +1 theWeaponMaster:Keywords."
+    "UPGRADE_DESCRIPTION": "Gain X +1 theGodHunters:Keywords."
   },
-  "theWeaponMaster:DefaultRareAttack": {
+  "theGodHunters:DefaultRareAttack": {
     "NAME": "TOUCH",
     "DESCRIPTION": "Deal !D! Damage."
   },
-  "theWeaponMaster:DefaultRareSkill": {
+  "theGodHunters:DefaultRareSkill": {
     "NAME": "For Each Loop x2",
     "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
     "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
   },
-  "theWeaponMaster:DefaultRarePower": {
+  "theGodHunters:DefaultRarePower": {
     "NAME": "In-Progress Form",
     "DESCRIPTION": "At the start of your turn, play a TOUCH."
   },
-  "theWeaponMaster:DefaultAttackWithVariable": {
+  "theGodHunters:DefaultAttackWithVariable": {
     "NAME": "Special Strike",
-    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !theWeaponMaster:ENERGY_DAMAGE! damage total.)"
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !theGodHunters:ENERGY_DAMAGE! damage total.)"
   },
-  "theWeaponMaster:DefaultSecondMagicNumberSkill": {
+  "theGodHunters:DefaultSecondMagicNumberSkill": {
     "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! vulnerable and !theWeaponMaster:SecondMagic! poison to an enemy."
+    "DESCRIPTION": "Apply !M! vulnerable and !theGodHunters:SecondMagic! poison to an enemy."
   },
-  "theWeaponMaster:OrbSkill": {
+  "theGodHunters:OrbSkill": {
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
-
-
-  "theWeaponMaster:LW_Abaddon": {
+  "theGodHunters:LW_Abaddon": {
     "NAME": "Abaddon",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage and drain Strength. NL Drain Dexterity if the opponent is casting a non-block skill.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AbaddonCard1": {
+  "theGodHunters:AbaddonCard1": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AbaddonCard2": {
+  "theGodHunters:AbaddonCard2": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AbaddonCard3": {
+  "theGodHunters:AbaddonCard3": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AbaddonCard4": {
+  "theGodHunters:AbaddonCard4": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AbaddonCard5": {
+  "theGodHunters:AbaddonCard5": {
     "NAME": "Judgment",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-
-
-  "theWeaponMaster:LW_Atlas": {
+  "theGodHunters:LW_Atlas": {
     "NAME": "Atlas Blade",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented. NL Hit the opponent with !D! Ink damage."
   },
-  "theWeaponMaster:AtlasInkSlash": {
+  "theGodHunters:AtlasInkSlash": {
     "NAME": "Ink Slash",
     "DESCRIPTION": "Create an Ink Orb that blocks or deals damage with other Atlas Blade cards.",
     "UPGRADE_DESCRIPTION": "Upgrade the Ink Orb."
   },
-  "theWeaponMaster:AtlasCard2": {
+  "theGodHunters:AtlasCard2": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AtlasCard3": {
+  "theGodHunters:AtlasCard3": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AtlasCard4": {
+  "theGodHunters:AtlasCard4": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AtlasCard5": {
+  "theGodHunters:AtlasCard5": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-
-
-  "theWeaponMaster:LW_Atropos": {
+  "theGodHunters:LW_Atropos": {
     "NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AtroposSever": {
+  "theGodHunters:AtroposSever": {
     "NAME": "Severed Source",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION":["Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.", "Legendary_Weapon NL not_implemented - Deal full Manablaze damage to your target and remove Manablaze.", "Strings of Fate"]
   },
-  "theWeaponMaster:AtroposCard2": {
+  "theGodHunters:AtroposCard2": {
     "NAME": "Twin Strike",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AtroposCard3": {
+  "theGodHunters:AtroposCard3": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AtroposCard4": {
+  "theGodHunters:AtroposCard4": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AtroposCard5": {
+  "theGodHunters:AtroposCard5": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-
-
-  "theWeaponMaster:LW_Astra": {
+  "theGodHunters:LW_Astra": {
     "NAME": "The Astras",
     "DESCRIPTION": "not_implemented NL Summon the legendary Astras and gain their corresponding cards.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AstraCard1": {
+  "theGodHunters:AstraCard1": {
     "NAME": "Brahmaastra",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - All enemies lose !D! HP. NL Gain 2 Vulnerable",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AstraCard2": {
+  "theGodHunters:AstraCard2": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AstraCard3": {
+  "theGodHunters:AstraCard3": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AstraCard4": {
+  "theGodHunters:AstraCard4": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AstraCard5": {
+  "theGodHunters:AstraCard5": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-
-
-  "theWeaponMaster:LW_Cerberus": {
+  "theGodHunters:LW_Cerberus": {
     "NAME": "Cerberus",
     "DESCRIPTION": "not_implemented NL Equip the Weapon Master's first sword and gain its corresponding cards.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:CerberusDrawSlash": {
+  "theGodHunters:CerberusDrawSlash": {
     "NAME": "Draw Slash",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:CerberusEssenceSlash": {
+  "theGodHunters:CerberusEssenceSlash": {
     "NAME": "Essence Slash",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:CerberusModularSlash": {
+  "theGodHunters:CerberusModularSlash": {
     "NAME": "Modular Slash",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:CerberusSlash": {
+  "theGodHunters:CerberusSlash": {
     "NAME": "Slash",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus 2 bonus damage for every buff an enemy has.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:CerberusCard5": {
+  "theGodHunters:CerberusCard5": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-
-
-  "theWeaponMaster:LW_Chronos": {
+  "theGodHunters:LW_Chronos": {
     "NAME": "Chronophage",
     "DESCRIPTION": "not_implemented NL Summon the Chronophage from across space and time and gain its corresponding cards.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:ChronosCard1": {
+  "theGodHunters:ChronosCard1": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:ChronosCard2": {
+  "theGodHunters:ChronosCard2": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:ChronosCard3": {
+  "theGodHunters:ChronosCard3": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:ChronosCard4": {
+  "theGodHunters:ChronosCard4": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:ChronosCard5": {
+  "theGodHunters:ChronosCard5": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-
-
-  "theWeaponMaster:BreakerFenrir": {
+  "theGodHunters:BreakerFenrir": {
     "NAME": "Fenrir",
     "DESCRIPTION": "not_implemented NL Equip the evolving Fenrir and gain its corresponding cards.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:FenrirLacerate": {
+  "theGodHunters:FenrirLacerate": {
     "NAME": "Lacerate",
     "DESCRIPTION": "Legendary_Weapon NL Take 2 damage to deal !D! damage. Apply !M! Lacerate. NL Evolve - Hit enemies with 3+ Lacerate.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 3 damage and deal !D! damage. Apply !M! Lacerate. Deal 33% bonus damage to enemies with Lacerate. NL Evolve - Hit enemies with 3+ Lacerate."
   },
-  "theWeaponMaster:FenrirShieldEater": {
+  "theGodHunters:FenrirShieldEater": {
     "NAME": "Shield Eater",
     "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. NL Evolve - Destroy enemy Block.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Enemies lose health equal to 25% blocked damage. NL Evolve - Destroy enemy Block."
   },
-  "theWeaponMaster:FenrirIgnite": {
+  "theGodHunters:FenrirIgnite": {
     "NAME": "Ignite",
     "DESCRIPTION": "Legendary_Weapon NL Take 2 damage to gain Block equal to triple the number of Fenrir upgrades (including from this use). NL Evolve - All enemies intend to attack you.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 3 damage to gain Block equal to 4 times the number of Fenrir upgrades (including from this use). NL Evolve - All enemies intend to attack."
   },
-  "theWeaponMaster:FenrirViciousSwing": {
+  "theGodHunters:FenrirViciousSwing": {
     "NAME": "Vicious Swing",
     "DESCRIPTION": "Legendary_Weapon NL Take 2 damage to deal !D! damage. NL Evolve - Play without holding other cards.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 3 damage to deal !D! damage. Vicious. NL Evolve - Play without holding other cards.",
@@ -272,125 +258,121 @@
       "Vicious", "Deal 5% bonus damage for every card you discarded this turn."
     ]
   },
-  "theWeaponMaster:FenrirUnrestrainedViolence": {
+  "theGodHunters:FenrirUnrestrainedViolence": {
     "NAME": "Unrestrained Violence",
     "DESCRIPTION": "Legendary_Weapon NL Take 3 damage to deal !D! damage to all enemies, one after another. NL Evolve - Kill an opponent.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 3 damage to deal !D! damage to all enemies, one after another. Overkill. NL Evolve - Kill an opponent."
   },
-  "theWeaponMaster:LW_GaeBulg": {
+  "theGodHunters:LW_GaeBulg": {
     "NAME": "Gáe Bulg",
     "DESCRIPTION": "Legendary_Weapon",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:GaeBulgCard1": {
+  "theGodHunters:GaeBulgCard1": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:GaeBulgCard2": {
+  "theGodHunters:GaeBulgCard2": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:GaeBulgCard3": {
+  "theGodHunters:GaeBulgCard3": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:GaeBulgCard4": {
+  "theGodHunters:GaeBulgCard4": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:GaeBulgCard5": {
+  "theGodHunters:GaeBulgCard5": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-
-
-  "theWeaponMaster:LW_Leviathan": {
+  "theGodHunters:LW_Leviathan": {
     "NAME": "Leviathan Gauntlets",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:LeviathanCrush": {
+  "theGodHunters:LeviathanCrush": {
     "NAME": "Crush",
     "DESCRIPTION": "Legendary_Weapon NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Armor_Break, Crush NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block."
   },
-  "theWeaponMaster:LeviathanEject": {
+  "theGodHunters:LeviathanEject": {
     "NAME": "Eject",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:LeviathanCard3": {
+  "theGodHunters:LeviathanCard3": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:LeviathanCard4": {
+  "theGodHunters:LeviathanCard4": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:LeviathanCard5": {
+  "theGodHunters:LeviathanCard5": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:LW_Revenant": {
+  "theGodHunters:LW_Revenant": {
     "NAME": "[#bf3a3b]Revenant [#bf3a3b]Cleaver",
     "DESCRIPTION": "not_implemented - Equip the Revenant Cleaver and its corresponding cards."
   },
-  "theWeaponMaster:RevenantRavenousStrikes": {
+  "theGodHunters:RevenantRavenousStrikes": {
     "NAME": "[#bf3a3b]Ravenous [#bf3a3b]Strikes",
     "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage and heal for half the unblocked damage dealt. NL not_implemented - Gain !M! Vicious stack(s)."
   },
-  "theWeaponMaster:RevenantCard2": {
+  "theGodHunters:RevenantCard2": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:RevenantCard3": {
+  "theGodHunters:RevenantCard3": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:RevenantCard4": {
+  "theGodHunters:RevenantCard4": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:RevenantCard5": {
+  "theGodHunters:RevenantCard5": {
     "NAME": "[#bf3a3b]Bloodbath",
     "DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 10). Lose all Berserk stacks.",
     "UPGRADE_DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 15). Lose all Berserk stacks."
   },
-
-
-  "theWeaponMaster:BullyIntimidate": {
+  "theGodHunters:BullyIntimidate": {
     "NAME": "Intimidate",
     "DESCRIPTION": "Bully NL Reduce enemy strength by !M!."
   },
-  "theWeaponMaster:BullyTaunt": {
+  "theGodHunters:BullyTaunt": {
     "NAME": "Taunt",
     "DESCRIPTION": "Bully NL Apply 2 Vulnerable to an attacking enemy. NL Otherwise apply 2 weak and force the enemy to attack.",
     "UPGRADE_DESCRIPTION": "Bully NL Apply 3 Weak to an attacking enemy. NL Otherwise apply 2 weak and force the enemy to attack."
   },
-  "theWeaponMaster:BullyHuh": {
+  "theGodHunters:BullyHuh": {
     "NAME": "HUH?!",
     "DESCRIPTION": "Bully NL not_implemented."
   },
-  "theWeaponMaster:BullyWimp": {
+  "theGodHunters:BullyWimp": {
     "NAME": "Wimp",
     "DESCRIPTION": "Bully NL Apply !M! Weak to all enemies."
   },
-  "theWeaponMaster:BullySlap": {
+  "theGodHunters:BullySlap": {
     "NAME": "Slap",
     "DESCRIPTION": "Bully NL not_implemented."
   },
-  "theWeaponMaster:BullyHostility": {
+  "theGodHunters:BullyHostility": {
     "NAME": "Hostility",
     "DESCRIPTION": "Bully NL Placeholder - Gain !M! Strength every turn."
   }

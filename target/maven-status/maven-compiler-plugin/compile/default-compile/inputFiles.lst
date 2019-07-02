@@ -31,6 +31,7 @@ C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWe
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\revenant\LW_Revenant.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\relics\CrystalEdge.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\relics\DefaultClickableRelic.java
+C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\powers\InkPower.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\fenrir\FenrirShieldEater.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\variables\DefaultCustomVariable.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\patches\relics\BottledPlaceholderField.java
@@ -55,6 +56,7 @@ C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWe
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\atropos\LW_Atropos.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\DefaultRareSkill.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\actions\UncommonPowerAction.java
+C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\actions\InkAction.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyWimp.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\AbstractDefaultCard.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\cerberus\CerberusDrawSlash.java
@@ -76,6 +78,7 @@ C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWe
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\leviathan\LW_Leviathan.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\fenrir\FenrirLacerate.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\relics\BottledPlaceholderRelic.java
+C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\orbs\InkOrb.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\DefaultCommonPower.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyTaunt.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\StS-DefaultModBase-master\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\leviathan\LeviathanCrush.java
