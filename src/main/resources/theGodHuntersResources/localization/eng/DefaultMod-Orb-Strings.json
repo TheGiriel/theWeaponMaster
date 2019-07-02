@@ -1,5 +1,5 @@
 {
-  "theWeaponMaster:DefaultOrb": {
+  "theGodHunters:DefaultOrb": {
     "NAME": "Default Orb",
     "DESCRIPTION": [
       "#yPassive: At the start of your turn, draw #b",
@@ -8,7 +8,7 @@
       "NL #yEvoke: Deal #b damage to all enemies."
     ]
   },
-  "theWeaponMaster:InkOrb": {
+  "theGodHunters:InkOrb": {
     "NAME": "Ink Orb",
     "DESCRIPTION": [
       "[#5035c6]Passive: Block up to [#5035c6]",
