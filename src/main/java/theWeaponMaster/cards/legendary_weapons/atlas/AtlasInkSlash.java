@@ -44,10 +44,6 @@ public class AtlasInkSlash extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(p.orbs.get(0) instanceof InkOrb) {
-            ((InkOrb) p.orbs.get(0)).addInk(this.damage);
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new InkOrb(this.damage)));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ChannelAction(new InkOrb(this.damage)));
     }
 }

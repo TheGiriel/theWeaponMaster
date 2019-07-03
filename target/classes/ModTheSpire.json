@@ -1,9 +1,9 @@
 {
   "modid": "WeaponMaster",
   "name": "Weapon Master Mod",
-  "author_list": ["Gremious"],
-  "description": "Mana Burn, Manablaze, Lacerate and Hemorrhage are now in the game.",
-  "version": "0.0.6",
+  "author_list": ["TheGiriel"],
+  "description": "Tried updating the Vicious icon.",
+  "version": "0.0.8",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",
   "dependencies": ["basemod", "stslib"],

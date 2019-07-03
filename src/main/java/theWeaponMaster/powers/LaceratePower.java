@@ -43,7 +43,7 @@ public class LaceratePower extends AbstractPower {
         this.isTurnBased = true;
     }
 
-    private void updateDamage() {
+    public void updateDamage() {
         if (this.amount > 3) {
             this.amount = 3;
         }

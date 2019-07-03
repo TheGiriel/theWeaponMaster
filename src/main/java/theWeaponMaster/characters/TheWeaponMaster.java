@@ -8,15 +8,18 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -28,6 +31,7 @@ import theWeaponMaster.cards.legendary_weapons.atlas.AtlasInkSlash;
 import theWeaponMaster.cards.legendary_weapons.atropos.AtroposSever;
 import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirLacerate;
 import theWeaponMaster.cards.legendary_weapons.revenant.RevenantRavenousStrikes;
+import theWeaponMaster.powers.EgoPower;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
 import theWeaponMaster.relics.PlaceholderRelic2;
@@ -167,6 +171,7 @@ public class TheWeaponMaster extends CustomPlayer {
         //retVal.add(BullyIntimidate.ID);
         retVal.add(RevenantRavenousStrikes.ID);
         retVal.add(RevenantRavenousStrikes.ID);
+        retVal.add(RevenantRavenousStrikes.ID);
         retVal.add(AtlasInkSlash.ID);
         retVal.add(FenrirLacerate.ID);
         retVal.add(AtroposSever.ID);
@@ -188,6 +193,12 @@ public class TheWeaponMaster extends CustomPlayer {
 
         return retVal;
     }
+
+    /*public void preBattlePrep(){
+        super.preBattlePrep();
+        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EgoPower(AbstractDungeon.player)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EgoPower(AbstractDungeon.player)));
+    }*/
 
     // character Select screen effect
     @Override

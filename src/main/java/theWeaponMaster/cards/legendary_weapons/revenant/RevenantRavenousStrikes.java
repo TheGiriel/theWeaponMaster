@@ -67,8 +67,11 @@ public class RevenantRavenousStrikes extends AbstractDynamicCard {
         DefaultMod.logger.info("Gain Vicious - Ravenous Strikes.");
 
         DefaultMod.logger.info("Gained Vicious - Ravenous Strikes.");
-
-        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, magicNumber), magicNumber));
+        if (AbstractDungeon.player.hasPower("ViciousPower")) {
+            AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, magicNumber), magicNumber));
+        } else {
+            AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, magicNumber), magicNumber));
+        }
         this.magicNumber++;
         DefaultMod.logger.info("updating magic number");
     }

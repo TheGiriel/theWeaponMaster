@@ -12,6 +12,7 @@ theWeaponMaster\cards\legendary_weapons\fenrir\FenrirIgnite.class
 theWeaponMaster\cards\legendary_weapons\cerberus\CerberusDrawSlash.class
 theWeaponMaster\cards\legendary_weapons\fenrir\FenrirShieldEater.class
 theWeaponMaster\relics\PlaceholderRelic2.class
+theWeaponMaster\actions\InkAction.class
 theWeaponMaster\util\IDCheckDontTouchPls.class
 theWeaponMaster\cards\AbstractDefaultCard.class
 theWeaponMaster\cards\DefaultAttackWithVariable.class
@@ -19,6 +20,7 @@ theWeaponMaster\relics\RazorEdge.class
 theWeaponMaster\cards\legendary_weapons\astra\AstraBrahmaastra.class
 theWeaponMaster\cards\legendary_weapons\cerberus\CerberusSlash.class
 theWeaponMaster\cards\legendary_weapons\chronos\LW_Chronos.class
+theWeaponMaster\orbs\InkOrb.class
 theWeaponMaster\powers\CommonPower.class
 theWeaponMaster\cards\bully\BullyTaunt.class
 theWeaponMaster\cards\legendary_weapons\revenant\RevenantBloodbath.class
@@ -61,6 +63,7 @@ theWeaponMaster\cards\legendary_weapons\abaddon\AbaddonJudgment.class
 theWeaponMaster\cards\legendary_weapons\astra\LW_Astra.class
 theWeaponMaster\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 theWeaponMaster\cards\AbstractWeapons.class
+theWeaponMaster\powers\InkPower.class
 theWeaponMaster\variables\MultiShotVariable.class
 theWeaponMaster\cards\Defend_WeaponMaster.class
 theWeaponMaster\actions\LacerateAction.class

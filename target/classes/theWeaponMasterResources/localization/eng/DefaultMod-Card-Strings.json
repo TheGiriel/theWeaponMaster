@@ -88,10 +88,10 @@
     "NAME": "Atlas Blade",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented. NL Hit the opponent with !D! Ink damage."
   },
-  "theWeaponMaster:AtlasCard1": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+  "theWeaponMaster:AtlasInkSlash": {
+    "NAME": "Ink Slash",
+    "DESCRIPTION": "Create an Ink Orb that blocks or deals damage with other Atlas Blade cards.",
+    "UPGRADE_DESCRIPTION": "Upgrade the Ink Orb."
   },
   "theWeaponMaster:AtlasCard2": {
     "NAME": "",
@@ -124,7 +124,7 @@
     "NAME": "Severed Source",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.",
     "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION":["Enhanced Effect 1", "Enhanced Effect 2"]
+    "EXTENDED_DESCRIPTION":["Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.", "Legendary_Weapon NL not_implemented - Deal full Manablaze damage to your target and remove Manablaze.", "Strings of Fate"]
   },
   "theWeaponMaster:AtroposCard2": {
     "NAME": "Twin Strike",
