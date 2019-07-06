@@ -23,14 +23,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.cards.bully.*;
-import theWeaponMaster.cards.legendary_weapons.atlas.AtlasInkSlash;
-import theWeaponMaster.cards.legendary_weapons.atlas.LW_Atlas;
-import theWeaponMaster.cards.legendary_weapons.atropos.AtroposSever;
-import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirLacerate;
-import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirShieldEater;
-import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirUnrestrainedViolence;
-import theWeaponMaster.cards.legendary_weapons.fenrir.FenrirViciousSwing;
-import theWeaponMaster.cards.legendary_weapons.revenant.RevenantRavenousStrikes;
+import theWeaponMaster.cards.legendary_weapons.*;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.events.IdentityCrisisEvent;
 import theWeaponMaster.potions.PlaceholderPotion;
@@ -439,7 +432,7 @@ public class DefaultMod implements
         BaseMod.addCard(new DefaultRarePower());
         BaseMod.addCard(new BullyTaunt());
         BaseMod.addCard(new BullyHostility());
-        BaseMod.addCard(new BullyHuh());
+        //BaseMod.addCard(new BullyHuh());
         BaseMod.addCard(new BullyWimp());
         BaseMod.addCard(new BullyIntimidate());
         
@@ -477,7 +470,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(LW_Atlas.ID);
         UnlockTracker.unlockCard(BullyTaunt.ID);
         UnlockTracker.unlockCard(BullyHostility.ID);
-        UnlockTracker.unlockCard(BullyHuh.ID);
+        //UnlockTracker.unlockCard(BullyHuh.ID);
         UnlockTracker.unlockCard(BullyWimp.ID);
         UnlockTracker.unlockCard(BullyIntimidate.ID);
         

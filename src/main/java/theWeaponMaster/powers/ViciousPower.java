@@ -19,15 +19,17 @@ public class ViciousPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
     public static final int TIER_TWO = 3;
-    public static final int TIER_THREE = 6;
+    public static final int TIER_THREE = TIER_TWO*2;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_32.png"));
-    /*private static final Texture vicious2_84 = TextureLoader.getTexture("vicious2_placeholder_84.png");
+    private static final Texture vicious1_84 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_84.png"));
+    private static final Texture vicious1_32 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_32.png"));
+    private static final Texture vicious2_84 = TextureLoader.getTexture("vicious2_placeholder_84.png");
     private static final Texture vicious2_32 = TextureLoader.getTexture("vicious2_placeholder_32.png");
     private static final Texture vicious3_84 = TextureLoader.getTexture("vicious3_placeholder_84.png");
-    private static final Texture vicious3_32 = TextureLoader.getTexture("vicious3_placeholder_32.png");*/
+    private static final Texture vicious3_32 = TextureLoader.getTexture("vicious3_placeholder_32.png");
 
+    private static Texture tex84;
+    private static Texture tex32;
     public ViciousPower(final AbstractCreature owner, int amnt) {
         this.name = NAME;
         this.ID = POWER_ID;
@@ -37,15 +39,18 @@ public class ViciousPower extends AbstractPower {
         type = PowerType.BUFF;
         isTurnBased = false;
 
+        tex32 = vicious1_32;
+        tex84 = vicious1_84;
+
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48  = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
     }
-/*
+
     public void tier1(){
-        this.region128 = new TextureAtlas.AtlasRegion(vicious1_84, 0, 0, 84, 84);
-        this.region48  = new TextureAtlas.AtlasRegion(vicious1_32, 0, 0, 32, 32);
+        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
+        this.region48  = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
     }
 
     public void tier2(){
@@ -78,11 +83,6 @@ public class ViciousPower extends AbstractPower {
         } else {
             updateDescription();
         }
-    }*/
-
-    public void stackPower(int amt){
-        this.amount += amt;
-        updateDescription();
     }
 
     @Override

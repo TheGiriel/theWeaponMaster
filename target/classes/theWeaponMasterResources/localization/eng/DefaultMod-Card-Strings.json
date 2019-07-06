@@ -44,7 +44,7 @@
   },
   "theWeaponMaster:DefaultSecondMagicNumberSkill": {
     "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! vulnerable and !theWeaponMaster:SecondMagic! poison to an enemy."
+    "DESCRIPTION": "Apply !M! vulnerable and 4 poison to an enemy."
   },
   "theWeaponMaster:OrbSkill": {
     "NAME": "Get Orb",
@@ -57,8 +57,8 @@
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage and drain Strength. NL Drain Dexterity if the opponent is casting a non-block skill.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AbaddonCard1": {
-    "NAME": "",
+  "theWeaponMaster:AbaddonDrain": {
+    "NAME": "Drain",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
@@ -77,7 +77,7 @@
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AbaddonCard5": {
+  "theWeaponMaster:AbaddonJudgment": {
     "NAME": "Judgment",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
@@ -153,7 +153,7 @@
     "DESCRIPTION": "not_implemented NL Summon the legendary Astras and gain their corresponding cards.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AstraCard1": {
+  "theWeaponMaster:AstraBrahmaastra": {
     "NAME": "Brahmaastra",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - All enemies lose !D! HP. NL Gain 2 Vulnerable",
     "UPGRADE_DESCRIPTION": ""
@@ -173,7 +173,7 @@
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AstraCard5": {
+  "theWeaponMaster:AstraTrishula": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
@@ -185,7 +185,7 @@
     "DESCRIPTION": "not_implemented NL Equip the Weapon Master's first sword and gain its corresponding cards.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:CerberusDrawSlash": {
+  "theWeaponMaster:CerberusSlash": {
     "NAME": "Draw Slash",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard.",
     "UPGRADE_DESCRIPTION": ""
@@ -200,7 +200,7 @@
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:CerberusSlash": {
+  "theWeaponMaster:CerberusIaiSlash": {
     "NAME": "Slash",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus 2 bonus damage for every buff an enemy has.",
     "UPGRADE_DESCRIPTION": ""
@@ -244,7 +244,7 @@
   },
 
 
-  "theWeaponMaster:BreakerFenrir": {
+  "theWeaponMaster:LW_Fenrir": {
     "NAME": "Fenrir",
     "DESCRIPTION": "not_implemented NL Equip the evolving Fenrir and gain its corresponding cards.",
     "UPGRADE_DESCRIPTION": ""
@@ -324,7 +324,7 @@
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:LeviathanCard3": {
+  "theWeaponMaster:LeviathanGroundSplitter": {
     "NAME": "",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
@@ -362,7 +362,7 @@
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:RevenantCard5": {
+  "theWeaponMaster:RevenantBloodbath": {
     "NAME": "[#bf3a3b]Bloodbath",
     "DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 10). Lose all Berserk stacks.",
     "UPGRADE_DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 15). Lose all Berserk stacks."
