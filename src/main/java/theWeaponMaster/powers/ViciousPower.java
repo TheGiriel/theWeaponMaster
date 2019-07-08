@@ -48,27 +48,16 @@ public class ViciousPower extends AbstractPower {
         updateDescription();
     }
 
-    public void tier1(){
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48  = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-    }
-
-    public void tier2(){
-        this.region128 = new TextureAtlas.AtlasRegion(vicious2_84, 0, 0, 84, 84);
-        this.region48  = new TextureAtlas.AtlasRegion(vicious2_32, 0, 0, 32, 32);
-    }
-
-    public void tier3(){
-        this.region128 = new TextureAtlas.AtlasRegion(vicious3_84, 0, 0, 84, 84);
-        this.region48  = new TextureAtlas.AtlasRegion(vicious3_32, 0, 0, 32, 32);
-    }
-
     public void stackPower(int stackAmount){
         this.amount += stackAmount;
         if (this.amount >= TIER_TWO) {
-            tier2();
+            this.region128 = new TextureAtlas.AtlasRegion(vicious2_84, 0, 0, 84, 84);
+            this.region48 = new TextureAtlas.AtlasRegion(vicious2_32, 0, 0, 32, 32);
+            updateDescription();
         } if (this.amount >= TIER_THREE) {
-            tier3();
+            this.region128 = new TextureAtlas.AtlasRegion(vicious3_84, 0, 0, 84, 84);
+            this.region48 = new TextureAtlas.AtlasRegion(vicious3_32, 0, 0, 32, 32);
+            updateDescription();
         } else {
             updateDescription();
         }
@@ -77,9 +66,13 @@ public class ViciousPower extends AbstractPower {
     public void reducePower(int stackAmount){
         this.amount -= stackAmount;
         if (this.amount <TIER_THREE) {
-            tier2();
+            this.region128 = new TextureAtlas.AtlasRegion(vicious2_84, 0, 0, 84, 84);
+            this.region48 = new TextureAtlas.AtlasRegion(vicious2_32, 0, 0, 32, 32);
+            updateDescription();
         } if (this.amount <TIER_TWO) {
-            tier1();
+            this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
+            this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+            updateDescription();
         } else {
             updateDescription();
         }

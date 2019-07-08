@@ -41,6 +41,6 @@ public class FenrirIgnite extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //Todo: Take damage to strengthen Fenrir type cards
+        //TODO: Take damage to strengthen Fenrir type cards
     }
 }

@@ -1,7 +1,11 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
@@ -31,6 +35,8 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
 
     public CerberusIaiSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+        this.damage = baseDamage = DAMAGE;
     }
 
     @Override
@@ -39,7 +45,8 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         //TODO: More damage the more cards discarded.
+
     }
 }

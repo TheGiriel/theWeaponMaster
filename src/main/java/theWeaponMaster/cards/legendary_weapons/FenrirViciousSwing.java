@@ -44,6 +44,6 @@ public class FenrirViciousSwing extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        //Todo: Extra heavy attack, expends all energy. Maybe lacerate?
+        //TODO: Heavier attack. (fewer cards)+(more energy)
     }
 }

@@ -18,12 +18,11 @@
                 ]
         },
         "EgoPower":{
-                "NAME": "Ego: ",
+          "NAME": "[#ffc200]Ego: ",
                 "DESCRIPTIONS":[
                         "afgadggh"
                 ]
         },
-
         "ManaBurnPower": {
                 "NAME": "Mana Burn",
                 "DESCRIPTIONS": [
@@ -44,11 +43,21 @@
                 "DESCRIPTIONS": ["Lacerated creatures lose ",
                         "% Max HP #r(",
                         ") every turn. NL [#990055]Lacerate Stacks: ",
-                        ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."]
+                  ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks.",
+                  "Creatures affected by [#990000]Lacerate lose 2-6% Max HP every turn."
+                ]
         },
         "HemorrhagePower": {
                 "NAME": "Hemorrhage",
                 "DESCRIPTIONS": [
                         "Creatures affected by [#990000]Hemorrhage lose 6% Max HP every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."]
+        },
+  "StaggerPower": {
+    "NAME": "Staggered",
+    "DESCRIPTIONS": [
+      "Staggered creatures deal ",
+      "% less damage and have their block reduced by ",
+      "%"
+    ]
         }
 }

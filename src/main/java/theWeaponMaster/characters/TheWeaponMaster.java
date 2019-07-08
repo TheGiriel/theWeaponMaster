@@ -25,6 +25,7 @@ import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.OrbSkill;
 import theWeaponMaster.cards.Strike_WeaponMaster;
 import theWeaponMaster.cards.legendary_weapons.*;
+import theWeaponMaster.cards.legendary_weapons.not_yet_relevant.AtlasInkSlash;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
 import theWeaponMaster.relics.PlaceholderRelic2;
@@ -169,6 +170,7 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(FenrirLacerate.ID);
         retVal.add(AtroposSever.ID);
         retVal.add(OrbSkill.ID);
+        retVal.add(LeviathanGroundSplitter.ID);
         return retVal;
     }
 

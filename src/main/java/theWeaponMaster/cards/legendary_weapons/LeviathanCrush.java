@@ -53,7 +53,7 @@ public class LeviathanCrush extends AbstractDynamicCard {
 
 
         update();
-
+        //TODO: Review the code and write something better.
         if (m.currentBlock>0 && !upgraded){
             if (m.currentBlock < damage*2) {
                 armorCrush = (int) Math.ceil(m.currentBlock*.5);

@@ -81,6 +81,7 @@
     ],
     "DESCRIPTION": "Gain [#ffc200]Ego whenever you attack enemies or take damage. Certain cards gain extra effects based on [#ffc200]Ego."
   },
+
   {
     "PROPER_NAME": "[#cccccc]Bullets",
     "NAMES": [
@@ -89,6 +90,7 @@
     ],
     "DESCRIPTION": "[#2a3439]Revolver cards use [#cccccc]Bullets for special effects."
   },
+
   {
     "PROPER_NAME": "[#2a3439]Revolver",
     "NAMES": [
@@ -97,8 +99,8 @@
     "DESCRIPTION": "[#2a3439]Revolver cards use [#cccccc]Bullets for special effects."
   },
 
-
   {
+    "PROPER_NAME": "Fenrir",
     "NAMES": [
       "fenrir"
     ],
@@ -112,6 +114,7 @@
     "DESCRIPTION": "[#990000]Lacerated creatures lose 2% of their Max HP every turn (minimum 1)."
   },
   {
+    "PROPER_NAME": "Evolve",
     "NAMES": [
       "evolve",
       "evolved",
@@ -120,6 +123,7 @@
     "DESCRIPTION": "Upgrade this and other Fenrir cards for the current combat whenever you meet the condition after 'Evolve'"
   },
   {
+    "PROPER_NAME": "Overkill",
     "NAMES": [
       "overkill"
     ],
@@ -134,5 +138,13 @@
       "lwpn"
     ],
     "DESCRIPTION": "[#9aa3a3]Legendary [#9aa3a3]Weapons are unique cards with strong effects and drawbacks."
+  },
+  {
+    "PROPER_NAME": "Stagger",
+    "NAMES": [
+      "stagger",
+      "staggered"
+    ],
+    "DESCRIPTION": "Staggered creatures deal and gain 25-50% less damage and block respectively."
   }
 ]

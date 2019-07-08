@@ -69,7 +69,7 @@ public class FenrirUnrestrainedViolence extends AbstractDynamicCard{
             effect += 2;
             p.getRelic(ChemicalX.ID).flash();
         }
-        //Todo: Very trash effect, currently just placeholder.
+        //TODO: Very trash effect, currently just placeholder.
         for (int i = 0; i< effect; i++){
             for (int j = 0; j< effect; j++) {
                 AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, (int) Math.ceil(damage * (1 + (escalate * .25))), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));

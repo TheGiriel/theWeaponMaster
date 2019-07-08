@@ -6,8 +6,11 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.0.8</version>
-    <description>Tried updating the Vicious icon.</description>
+    <version>0.0.9</version>
+    <description>Vicious Icon didn't update, but ground splitter works (almost) as intended. Gotta iron out that last
+        bug. Oh, and I added the weapon relevant power cards since I'll need them for various calculations (Fenrir power
+        ups, Leviathan charges, Atlas and Atropos debuff etc.)
+    </description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

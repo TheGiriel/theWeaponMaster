@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.AbstractDynamicCard;
+import theWeaponMaster.cards.legendary_weapons.not_yet_relevant.AbaddonJudgment;
 import theWeaponMaster.characters.TheWeaponMaster;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
@@ -40,6 +41,6 @@ public class CerberusModularSlash extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        //Todo: Change effect based on what types of cards are discarded.
+        //TODO: Change effect based on what types of cards are discarded.
     }
 }

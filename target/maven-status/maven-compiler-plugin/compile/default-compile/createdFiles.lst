@@ -114,6 +114,8 @@ theWeaponMaster\relics\HeavyDrumRelic.class
 theWeaponMaster\cards\bully\BullyHostility.class
 theWeaponMaster\cards\legendary_weapons\AbaddonDrain.class
 theWeaponMaster\cards\legendary_weapons\LeviathanCard4.class
+theWeaponMaster\powers\StaggerPower.class
+theWeaponMaster\relics\ShockwaveModulatorRelic.class
 theWeaponMaster\cards\legendary_weapons\LW_Chronos.class
 theWeaponMaster\cards\legendary_weapons\FenrirIgnite.class
 theWeaponMaster\events\IdentityCrisisEvent.class

@@ -325,9 +325,9 @@
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:LeviathanGroundSplitter": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+    "NAME": "Ground Splitter",
+    "DESCRIPTION": "Stagger all enemy cards depending on their total block for two turns.",
+    "UPGRADE_DESCRIPTION": "Stagger all enemy cards depending on their total block for three turns."
   },
   "theWeaponMaster:LeviathanCard4": {
     "NAME": "",

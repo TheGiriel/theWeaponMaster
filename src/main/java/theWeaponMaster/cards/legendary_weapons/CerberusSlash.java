@@ -40,6 +40,6 @@ public class CerberusSlash extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        //Todo: Simple attack
+        //TODO: Simple attack
     }
 }
