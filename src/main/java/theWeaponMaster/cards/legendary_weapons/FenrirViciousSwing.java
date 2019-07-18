@@ -1,7 +1,11 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
@@ -25,12 +29,15 @@ public class FenrirViciousSwing extends AbstractDynamicCard {
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
-    private static final int UPGRADED_DAMAGE = 3;
+    private static final int DAMAGE = 2;
+    private static final int UPGRADED_DAMAGE = 1;
+    private static final int MAGIC_NUMBER = 3;
+    private static AbstractPlayer player;
 
     public FenrirViciousSwing() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
     }
 
     @Override
@@ -42,8 +49,13 @@ public class FenrirViciousSwing extends AbstractDynamicCard {
         }
     }
 
+    public int heavyDamage(AbstractPlayer player) {
+        return damage * player.hand.size();
+    }
+
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        //TODO: Heavier attack. (fewer cards)+(more energy)
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, magicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.POISON));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, heavyDamage(p), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 }

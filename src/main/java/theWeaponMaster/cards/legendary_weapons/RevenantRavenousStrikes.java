@@ -34,13 +34,13 @@ public class RevenantRavenousStrikes extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int DAMAGE = 7;
     private static final int UPGRADED_DAMAGE = 3;
-    private static final int MAGIC_NUMBER = 1;
+    private static final int MAGIC_NUMBER = 2;
     private int dmgDEALT = 0;
 
     public RevenantRavenousStrikes() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
     }
 
     @Override

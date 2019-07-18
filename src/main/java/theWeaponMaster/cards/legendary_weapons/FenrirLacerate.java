@@ -22,10 +22,9 @@ public class FenrirLacerate extends AbstractDynamicCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
@@ -43,15 +42,6 @@ public class FenrirLacerate extends AbstractDynamicCard {
     }
 
     @Override
-    public void upgrade() {
-        if(!upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADED_DAMAGE);
-            initializeDescription();
-        }
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         double isLacerated = 0;
         if (m.hasPower("LaceratePower")){
@@ -61,6 +51,14 @@ public class FenrirLacerate extends AbstractDynamicCard {
         if(!m.hasPower("HemorrhagePower")){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, this.magicNumber),magicNumber));
         }
+    }
 
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADED_DAMAGE);
+            initializeDescription();
+        }
     }
 }

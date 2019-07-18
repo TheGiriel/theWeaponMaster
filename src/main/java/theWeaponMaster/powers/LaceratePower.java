@@ -31,7 +31,6 @@ public class LaceratePower extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = bleedStack;
-
         this.source = source;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -51,7 +50,6 @@ public class LaceratePower extends AbstractPower {
         updateDescription();
     }
 
-
     public void updateDescription() {
         if (this.amount < 3) {
             this.description = DESCRIPTION[0] + (this.amount * 2) + DESCRIPTION[1] + this.bleedDamage + DESCRIPTION[2] + this.amount;
@@ -59,7 +57,6 @@ public class LaceratePower extends AbstractPower {
             this.description = DESCRIPTION[0] + (this.amount * 2) + DESCRIPTION[1] + this.bleedDamage + DESCRIPTION[3];
         }
     }
-
 
     public void stackPower(int stackAmount) {
         if (!owner.hasPower("HemorrhagePower")) {
@@ -73,7 +70,6 @@ public class LaceratePower extends AbstractPower {
             updateDescription();
         }
     }
-
 
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new LacerateAction(this.owner, this.source, this.amount));

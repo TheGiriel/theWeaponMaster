@@ -50,6 +50,129 @@
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
+  "theWeaponMaster:LW_Cerberus": {
+    "NAME": "Cerberus",
+    "DESCRIPTION": "not_implemented NL Equip the Weapon Master's first sword and gain its corresponding cards.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:CerberusSlash": {
+    "NAME": "[#fcc72d]Slash",
+    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard."
+  },
+  "theWeaponMaster:CerberusEssenceSlash": {
+    "NAME": "[#fcc72d]Essence [#fcc72d]Slash",
+    "DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:CerberusModularSlash": {
+    "NAME": "[#fcc72d]Modular [#fcc72d]Slash",
+    "DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:CerberusIaiSlash": {
+    "NAME": "[#fcc72d]Iai [#fcc72d]Slash",
+    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus 2 bonus damage for every buff an enemy has.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:CerberusCard5": {
+    "NAME": "[#fcc72d] [#fcc72d]",
+    "DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:LW_Fenrir": {
+    "NAME": "Fenrir",
+    "DESCRIPTION": "not_implemented NL Equip the evolving Fenrir and gain its corresponding cards.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:FenrirLacerate": {
+    "NAME": "Lacerate",
+    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. Apply !M! Lacerate. NL Evolve - Hit enemies with 3+ Lacerate.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 33% bonus damage to enemies with Lacerate. NL Evolve - Hit enemies with 3+ Lacerate."
+  },
+  "theWeaponMaster:FenrirShieldEater": {
+    "NAME": "Shield Eater",
+    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. NL Evolve - Destroy enemy Block.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Enemies lose health equal to 25% blocked damage. NL Evolve - Destroy enemy Block."
+  },
+  "theWeaponMaster:FenrirIgnite": {
+    "NAME": "Ignite",
+    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to gain Block equal to triple the number of Fenrir upgrades (including from this use). NL Evolve - All enemies intend to attack you.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage to gain Block equal to 4 times the number of Fenrir upgrades (including from this use). NL Evolve - All enemies intend to attack."
+  },
+  "theWeaponMaster:FenrirViciousSwing": {
+    "NAME": "Vicious Swing",
+    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. NL Evolve - Play holding 3 or fewer cards.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. Vicious. NL Evolve - Play holding 3 or fewer cards."
+  },
+  "theWeaponMaster:FenrirUnrestrainedViolence": {
+    "NAME": "Unrestrained Violence",
+    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage to all enemies, one after another. NL Evolve - Kill an opponent.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage to all enemies, one after another. Overkill. NL Evolve - Kill an opponent."
+  },
+  "theWeaponMaster:LW_Leviathan": {
+    "NAME": "[#808080]Leviathan [#808080]Gauntlets",
+    "DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:LeviathanCrush": {
+    "NAME": "[#808080]Crush",
+    "DESCRIPTION": "Legendary_Weapon NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Armor_Break, Crush NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block."
+  },
+  "theWeaponMaster:LeviathanEject": {
+    "NAME": "[#808080]Eject [#808080]->",
+    "DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy.",
+    "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy."
+  },
+  "theWeaponMaster:LeviathanReload": {
+    "NAME": "[#808080]<- [#808080]Reload",
+    "DESCIRPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:LeviathanGroundSplitter": {
+    "NAME": "[#808080]Ground [#808080]Splitter",
+    "DESCRIPTION": "Stagger all enemy cards depending on their total block for two turns.",
+    "UPGRADE_DESCRIPTION": "Stagger all enemy cards depending on their total block for three turns."
+  },
+  "theWeaponMaster:LeviathanCard4": {
+    "NAME": "[#808080] [#808080]",
+    "DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:LeviathanCard5": {
+    "NAME": "[#808080] [#808080]",
+    "DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:LW_Revenant": {
+    "NAME": "[#bf3a3b]Revenant [#bf3a3b]Cleaver",
+    "DESCRIPTION": "not_implemented - Equip the Revenant Cleaver and its corresponding cards."
+  },
+  "theWeaponMaster:RevenantRavenousStrikes": {
+    "NAME": "[#bf3a3b]Ravenous [#bf3a3b]Strikes",
+    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage and heal for one third of the unblocked damage dealt. NL Gain !M! Vicious."
+  },
+  "theWeaponMaster:RevenantCard2": {
+    "NAME": "[#bf3a3b] [#bf3a3b]",
+    "DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:RevenantCard3": {
+    "NAME": "[#bf3a3b] [#bf3a3b]",
+    "DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:RevenantCard4": {
+    "NAME": "[#bf3a3b] [#bf3a3b]",
+    "DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:RevenantBloodbath": {
+    "NAME": "[#bf3a3b]Bloodbath",
+    "DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 10). Lose all Berserk stacks.",
+    "UPGRADE_DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 15). Lose all Berserk stacks."
+  },
 
 
   "theWeaponMaster:LW_Abaddon": {
@@ -121,15 +244,15 @@
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:AtroposSever": {
-    "NAME": "Severed Source",
+    "NAME": "[#3abfbe]Severed [#3abfbe]Source",
     "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION":["Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.", "Legendary_Weapon NL not_implemented - Deal full Manablaze damage to your target and remove Manablaze.", "Strings of Fate"]
   },
   "theWeaponMaster:AtroposCard2": {
-    "NAME": "Twin Strike",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+    "NAME": "[#3abfbe]Split [#3abfbe]Scissors",
+    "DESCRIPTION": "Deal !D! damage twice to target enemy. NL Deal !M! Extra damage for each Mana_Blaze stack.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice to target enemy. NL Deal !M! Extra damage for each Mana_Blaze stack."
   },
   "theWeaponMaster:AtroposCard3": {
     "NAME": "",
@@ -180,38 +303,6 @@
   },
 
 
-  "theWeaponMaster:LW_Cerberus": {
-    "NAME": "Cerberus",
-    "DESCRIPTION": "not_implemented NL Equip the Weapon Master's first sword and gain its corresponding cards.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:CerberusSlash": {
-    "NAME": "Draw Slash",
-    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:CerberusEssenceSlash": {
-    "NAME": "Essence Slash",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:CerberusModularSlash": {
-    "NAME": "Modular Slash",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:CerberusIaiSlash": {
-    "NAME": "Slash",
-    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus 2 bonus damage for every buff an enemy has.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:CerberusCard5": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-
-
   "theWeaponMaster:LW_Chronos": {
     "NAME": "Chronophage",
     "DESCRIPTION": "not_implemented NL Summon the Chronophage from across space and time and gain its corresponding cards.",
@@ -244,39 +335,6 @@
   },
 
 
-  "theWeaponMaster:LW_Fenrir": {
-    "NAME": "Fenrir",
-    "DESCRIPTION": "not_implemented NL Equip the evolving Fenrir and gain its corresponding cards.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:FenrirLacerate": {
-    "NAME": "Lacerate",
-    "DESCRIPTION": "Legendary_Weapon NL Take 2 damage to deal !D! damage. Apply !M! Lacerate. NL Evolve - Hit enemies with 3+ Lacerate.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 3 damage and deal !D! damage. Apply !M! Lacerate. Deal 33% bonus damage to enemies with Lacerate. NL Evolve - Hit enemies with 3+ Lacerate."
-  },
-  "theWeaponMaster:FenrirShieldEater": {
-    "NAME": "Shield Eater",
-    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. NL Evolve - Destroy enemy Block.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Enemies lose health equal to 25% blocked damage. NL Evolve - Destroy enemy Block."
-  },
-  "theWeaponMaster:FenrirIgnite": {
-    "NAME": "Ignite",
-    "DESCRIPTION": "Legendary_Weapon NL Take 2 damage to gain Block equal to triple the number of Fenrir upgrades (including from this use). NL Evolve - All enemies intend to attack you.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 3 damage to gain Block equal to 4 times the number of Fenrir upgrades (including from this use). NL Evolve - All enemies intend to attack."
-  },
-  "theWeaponMaster:FenrirViciousSwing": {
-    "NAME": "Vicious Swing",
-    "DESCRIPTION": "Legendary_Weapon NL Take 2 damage to deal !D! damage. NL Evolve - Play without holding other cards.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 3 damage to deal !D! damage. Vicious. NL Evolve - Play without holding other cards.",
-    "EXTENDED_DESCRIPTION": [
-      "Vicious", "Deal 5% bonus damage for every card you discarded this turn."
-    ]
-  },
-  "theWeaponMaster:FenrirUnrestrainedViolence": {
-    "NAME": "Unrestrained Violence",
-    "DESCRIPTION": "Legendary_Weapon NL Take 3 damage to deal !D! damage to all enemies, one after another. NL Evolve - Kill an opponent.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 3 damage to deal !D! damage to all enemies, one after another. Overkill. NL Evolve - Kill an opponent."
-  },
   "theWeaponMaster:LW_GaeBulg": {
     "NAME": "Gáe Bulg",
     "DESCRIPTION": "Legendary_Weapon",
@@ -309,69 +367,9 @@
   },
 
 
-  "theWeaponMaster:LW_Leviathan": {
-    "NAME": "Leviathan Gauntlets",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:LeviathanCrush": {
-    "NAME": "Crush",
-    "DESCRIPTION": "Legendary_Weapon NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Armor_Break, Crush NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block."
-  },
-  "theWeaponMaster:LeviathanEject": {
-    "NAME": "Eject",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:LeviathanGroundSplitter": {
-    "NAME": "Ground Splitter",
-    "DESCRIPTION": "Stagger all enemy cards depending on their total block for two turns.",
-    "UPGRADE_DESCRIPTION": "Stagger all enemy cards depending on their total block for three turns."
-  },
-  "theWeaponMaster:LeviathanCard4": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:LeviathanCard5": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:LW_Revenant": {
-    "NAME": "[#bf3a3b]Revenant [#bf3a3b]Cleaver",
-    "DESCRIPTION": "not_implemented - Equip the Revenant Cleaver and its corresponding cards."
-  },
-  "theWeaponMaster:RevenantRavenousStrikes": {
-    "NAME": "[#bf3a3b]Ravenous [#bf3a3b]Strikes",
-    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage and heal for half the unblocked damage dealt. NL not_implemented - Gain !M! Vicious stack(s)."
-  },
-  "theWeaponMaster:RevenantCard2": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:RevenantCard3": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:RevenantCard4": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:RevenantBloodbath": {
-    "NAME": "[#bf3a3b]Bloodbath",
-    "DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 10). Lose all Berserk stacks.",
-    "UPGRADE_DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 15). Lose all Berserk stacks."
-  },
-
-
   "theWeaponMaster:BullyIntimidate": {
     "NAME": "Intimidate",
-    "DESCRIPTION": "Bully NL Reduce enemy strength by !M!."
+    "DESCRIPTION": "Expend !M! Vicious to force target enemy to defend."
   },
   "theWeaponMaster:BullyTaunt": {
     "NAME": "Taunt",
@@ -393,5 +391,9 @@
   "theWeaponMaster:BullyHostility": {
     "NAME": "Hostility",
     "DESCRIPTION": "Bully NL Placeholder - Gain !M! Strength every turn."
+  },
+  "theWeaponMaster:BullyTerrifyingHowl": {
+    "NAME": "Terrifying Howl",
+    "DESCRIPTION": "Expend !M! Vicious to force all attacking enemies to defend."
   }
 }

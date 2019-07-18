@@ -57,10 +57,10 @@ public class StaggerPower extends AbstractPower {
                 AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "StaggerPower", 2));
         }
         else {*/
-        if (this.amount == 0) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "StaggerPower"));
+        if (this.amount <= 1) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         } else
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "StaggerPower", 1));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
         //}
     }
 

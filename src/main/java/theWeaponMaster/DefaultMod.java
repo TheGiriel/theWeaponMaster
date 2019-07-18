@@ -3,6 +3,7 @@ package theWeaponMaster;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.devcommands.unlock.Unlock;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -101,12 +102,7 @@ public class DefaultMod implements
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
     public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
-    
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
+
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
   
     // Card backgrounds - The actual rectangular card.
@@ -417,7 +413,7 @@ public class DefaultMod implements
         //BaseMod.addCard(new AbaddonJudgment());
         //BaseMod.addCard(new LW_Astra());
         //BaseMod.addCard(new LW_Atropos());
-        BaseMod.addCard(new AtroposSever());
+        //BaseMod.addCard(new AtroposSever());
         //BaseMod.addCard(new AtroposCard2());
         //BaseMod.addCard(new AtroposCard3());
         //BaseMod.addCard(new AtroposCard4());
@@ -448,18 +444,19 @@ public class DefaultMod implements
         //BaseMod.addCard(new RevenantCard4());
         //BaseMod.addCard(new RevenantBloodbath());
         //BaseMod.addCard(new DefaultAttackWithVariable());
-        //BaseMod.addCard(new DefaultCommonPower());
+        BaseMod.addCard(new DefaultCommonPower());
         //BaseMod.addCard(new DefaultUncommonSkill());
         //BaseMod.addCard(new DefaultUncommonAttack());
         //BaseMod.addCard(new DefaultUncommonPower());
         //BaseMod.addCard(new DefaultRareAttack());
         //BaseMod.addCard(new DefaultRareSkill());
         //BaseMod.addCard(new DefaultRarePower());
-        BaseMod.addCard(new BullyTaunt());
-        BaseMod.addCard(new BullyHostility());
+        //BaseMod.addCard(new BullyTaunt());
+        //BaseMod.addCard(new BullyHostility());
         //BaseMod.addCard(new BullyHuh());
-        BaseMod.addCard(new BullyWimp());
+        //BaseMod.addCard(new BullyWimp());
         BaseMod.addCard(new BullyIntimidate());
+        //BaseMod.addCard(new BullyTerrifyingHowl());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -476,7 +473,7 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(LW_Abaddon.ID);
         //UnlockTracker.unlockCard(LW_Astra.ID);
         //UnlockTracker.unlockCard(LW_Atropos.ID);
-        UnlockTracker.unlockCard(AtroposSever.ID);
+        //UnlockTracker.unlockCard(AtroposSever.ID);
         //UnlockTracker.unlockCard(AtroposCard2.ID);
         //UnlockTracker.unlockCard(AtroposCard3.ID);
         //UnlockTracker.unlockCard(AtroposCard4.ID);
@@ -508,18 +505,19 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(RevenantBloodbath.ID);
         //UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
         //UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
-        //UnlockTracker.unlockCard(DefaultCommonPower.ID);
+        UnlockTracker.unlockCard(DefaultCommonPower.ID);
         //UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
         //UnlockTracker.unlockCard(DefaultUncommonAttack.ID);
         //UnlockTracker.unlockCard(DefaultUncommonPower.ID);
         //UnlockTracker.unlockCard(DefaultRareAttack.ID);
         //UnlockTracker.unlockCard(DefaultRareSkill.ID);
         //UnlockTracker.unlockCard(DefaultRarePower.ID);
-        UnlockTracker.unlockCard(BullyTaunt.ID);
-        UnlockTracker.unlockCard(BullyHostility.ID);
+        //UnlockTracker.unlockCard(BullyTaunt.ID);
+        //UnlockTracker.unlockCard(BullyHostility.ID);
         //UnlockTracker.unlockCard(BullyHuh.ID);
-        UnlockTracker.unlockCard(BullyWimp.ID);
+        //UnlockTracker.unlockCard(BullyWimp.ID);
         UnlockTracker.unlockCard(BullyIntimidate.ID);
+        //UnlockTracker.unlockCard(BullyTerrifyingHowl.ID);
         
         logger.info("Done adding cards!");
     }

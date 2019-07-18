@@ -39,7 +39,7 @@
                         " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."]
         },
         "LaceratePower": {
-                "NAME": "Lacerate",
+          "NAME": "Lacerated",
                 "DESCRIPTIONS": ["Lacerated creatures lose ",
                         "% Max HP #r(",
                         ") every turn. NL [#990055]Lacerate Stacks: ",
@@ -48,7 +48,7 @@
                 ]
         },
         "HemorrhagePower": {
-                "NAME": "Hemorrhage",
+          "NAME": "Hemorrhaging",
                 "DESCRIPTIONS": [
                         "Creatures affected by [#990000]Hemorrhage lose 6% Max HP every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."]
         },
@@ -59,5 +59,11 @@
       "% less damage and have their block reduced by ",
       "%"
     ]
-        }
+  },
+  "IntimidatePower": {
+    "NAME": "Intimidated",
+    "DESCRIPTIONS": [
+      "Intimidated Creatures defend, gaining Block equal to 10 plus half of your Vicious stacks. NL Total Block: "
+    ]
+  }
 }

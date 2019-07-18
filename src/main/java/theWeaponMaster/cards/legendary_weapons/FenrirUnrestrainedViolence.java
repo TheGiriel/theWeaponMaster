@@ -72,9 +72,9 @@ public class FenrirUnrestrainedViolence extends AbstractDynamicCard{
         //TODO: Very trash effect, currently just placeholder.
         for (int i = 0; i< effect; i++){
             for (int j = 0; j< effect; j++) {
-                AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, (int) Math.ceil(damage * (1 + (escalate * .25))), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, (int) (damage * (1 + (escalate * .25))), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 DefaultMod.logger.info("Attacks: " + escalate);
-                DefaultMod.logger.info("Damage: " + (damage*(1 + (escalate*.25))));
+                DefaultMod.logger.info("Damage: " + (int) (damage * (1 + escalate * .25)));
                 escalate++;
             }
             escalate++;
