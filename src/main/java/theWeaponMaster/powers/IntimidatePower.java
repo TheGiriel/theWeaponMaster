@@ -27,6 +27,8 @@ public class IntimidatePower extends AbstractPower {
     public AbstractCreature source;
     public AbstractMonster m;
     private int bonusBlock = 0;
+    private byte originalMove;
+    private AbstractMonster.Intent originalIntent;
 
     public IntimidatePower(AbstractCreature owner, AbstractCreature source) {
         this.name = NAME;
@@ -45,6 +47,11 @@ public class IntimidatePower extends AbstractPower {
 
     @Override
     public void onInitialApplication() {
+        originalMove = this.m.nextMove;
+        originalIntent = this.m.intent;
+        if (m.hasPower("TauntPower")) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, "TauntPower"));
+        }
         this.m.setMove((byte) -2, AbstractMonster.Intent.DEFEND);
         this.m.createIntent();
     }
@@ -58,11 +65,14 @@ public class IntimidatePower extends AbstractPower {
         if (source.hasPower("ViciousPower")) {
             return bonusBlock = source.getPower("ViciousPower").amount / 2;
         } else return 0;
+
     }
 
-    public void atStartOfTurn() {
+    public void atEndOfRound() {
+        updateDescription();
         owner.addBlock(10 + bonusBlock);
-        this.m.rollMove();
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
+        this.m.setMove(originalMove, originalIntent);
+        this.m.createIntent();
     }
 }

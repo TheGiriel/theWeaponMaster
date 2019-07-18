@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.AbstractDynamicCard;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.powers.TauntPower;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -51,11 +52,7 @@ public class BullyTaunt extends AbstractDynamicCard {
             //TODO: Force the enemy to attack you somehow.
             m.intent = AbstractMonster.Intent.ATTACK;
             //m.setMove();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
-            m.createIntent();
-            m.update();
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TauntPower(m, p)));
         }
     }
 

@@ -26,6 +26,7 @@ import theWeaponMaster.cards.DefaultCommonPower;
 import theWeaponMaster.cards.OrbSkill;
 import theWeaponMaster.cards.Strike_WeaponMaster;
 import theWeaponMaster.cards.bully.BullyIntimidate;
+import theWeaponMaster.cards.bully.BullyTaunt;
 import theWeaponMaster.cards.bully.BullyTerrifyingHowl;
 import theWeaponMaster.cards.legendary_weapons.*;
 import theWeaponMaster.cards.legendary_weapons.not_yet_relevant.AtlasInkSlash;
@@ -162,7 +163,7 @@ public class TheWeaponMaster extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        //retVal.add(BullyTaunt.ID);
+        retVal.add(BullyTaunt.ID);
         //retVal.add(BullyHostility.ID);
         //retVal.add(BullyWimp.ID);
         retVal.add(BullyIntimidate.ID);

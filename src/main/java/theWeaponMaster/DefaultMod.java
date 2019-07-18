@@ -451,7 +451,7 @@ public class DefaultMod implements
         //BaseMod.addCard(new DefaultRareAttack());
         //BaseMod.addCard(new DefaultRareSkill());
         //BaseMod.addCard(new DefaultRarePower());
-        //BaseMod.addCard(new BullyTaunt());
+        BaseMod.addCard(new BullyTaunt());
         //BaseMod.addCard(new BullyHostility());
         //BaseMod.addCard(new BullyHuh());
         //BaseMod.addCard(new BullyWimp());
@@ -512,7 +512,7 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(DefaultRareAttack.ID);
         //UnlockTracker.unlockCard(DefaultRareSkill.ID);
         //UnlockTracker.unlockCard(DefaultRarePower.ID);
-        //UnlockTracker.unlockCard(BullyTaunt.ID);
+        UnlockTracker.unlockCard(BullyTaunt.ID);
         //UnlockTracker.unlockCard(BullyHostility.ID);
         //UnlockTracker.unlockCard(BullyHuh.ID);
         //UnlockTracker.unlockCard(BullyWimp.ID);

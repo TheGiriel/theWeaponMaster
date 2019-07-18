@@ -65,5 +65,11 @@
     "DESCRIPTIONS": [
       "Intimidated Creatures defend, gaining Block equal to 10 plus half of your Vicious stacks. NL Total Block: "
     ]
+  },
+  "TauntPower": {
+    "NAME": "Taunted",
+    "DESCRIPTIONS": [
+      "Taunted creatures attack, gaining a 25% attack damage boost but take 25% more damage."
+    ]
   }
 }

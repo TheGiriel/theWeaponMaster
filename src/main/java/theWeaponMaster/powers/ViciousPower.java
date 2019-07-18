@@ -93,8 +93,8 @@ public class ViciousPower extends AbstractPower {
     }
 
     public void setTierThree() {
-        this.region128 = new TextureAtlas.AtlasRegion(vicious2_84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(vicious2_32, 0, 0, 32, 32);
+        this.region128 = new TextureAtlas.AtlasRegion(vicious3_84, 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(vicious3_32, 0, 0, 32, 32);
     }
 
     public void setTierOne() {
