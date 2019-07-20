@@ -2,9 +2,13 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -27,6 +31,7 @@ public class TauntPower extends AbstractPower {
     public AbstractMonster m;
     private byte originalMove;
     private AbstractMonster.Intent originalIntent;
+    private DamageInfo.DamageType test = DamageInfo.DamageType.NORMAL;
 
     public TauntPower(AbstractCreature owner, AbstractCreature source) {
         this.name = NAME;
@@ -47,15 +52,13 @@ public class TauntPower extends AbstractPower {
     public void onInitialApplication() {
         originalMove = this.m.nextMove;
         originalIntent = this.m.intent;
+        //TODO: Lagavulin special case.
         if (m.hasPower("IntimidatePower")) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, "IntimidatePower"));
         }
 
-        //TODO: Step 1: Stop the initial move. Check.
-        // Step 2: Make them actually attack you.
-        this.m.setMove((byte) -2, AbstractMonster.Intent.ATTACK);
+        this.m.setMove((byte) -2, AbstractMonster.Intent.ATTACK, (int) Math.ceil(source.maxHealth / 10));
         this.m.createIntent();
-        this.m.setIntentBaseDmg(12);
     }
 
     public void updateDescription() {
@@ -63,17 +66,9 @@ public class TauntPower extends AbstractPower {
     }
 
     @Override
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return damage * 1.25F;
-    }
-
-    @Override
-    public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        return damage * 1.25F;
-    }
-
     public void atEndOfRound() {
         updateDescription();
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(source, (int) Math.ceil(source.maxHealth / 10), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
         this.m.setMove(originalMove, originalIntent);
         this.m.createIntent();

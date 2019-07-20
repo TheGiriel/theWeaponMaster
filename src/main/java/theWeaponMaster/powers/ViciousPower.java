@@ -76,28 +76,27 @@ public class ViciousPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        if (this.amount >= TIER_TWO) {
-            if (this.amount >= TIER_THREE) {
-                description = DESCRIPTION[0] + amount + DESCRIPTION[1] + amount + DESCRIPTION[4];
-            } else description = DESCRIPTION[0] + amount + DESCRIPTION[1] + amount + DESCRIPTION[3];
+        if (this.amount >= TIER_THREE) {
+            description = DESCRIPTION[0] + amount + DESCRIPTION[1] + amount + DESCRIPTION[4];
+        } else if (this.amount >= TIER_TWO) {
+            description = DESCRIPTION[0] + amount + DESCRIPTION[1] + amount + DESCRIPTION[3];
         }
-
         else {
             description = DESCRIPTION[0] + amount + DESCRIPTION[1] + amount + DESCRIPTION[2];
         }
     }
 
-    public void setTierTwo() {
+    private void setTierTwo() {
         this.region128 = new TextureAtlas.AtlasRegion(vicious2_84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(vicious2_32, 0, 0, 32, 32);
     }
 
-    public void setTierThree() {
+    private void setTierThree() {
         this.region128 = new TextureAtlas.AtlasRegion(vicious3_84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(vicious3_32, 0, 0, 32, 32);
     }
 
-    public void setTierOne() {
+    private void setTierOne() {
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
     }

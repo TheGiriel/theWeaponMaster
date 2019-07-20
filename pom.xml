@@ -4,7 +4,7 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.0.11b</version>
+    <version>0.0.12</version>
     <description>Intimidate works for standard enemies for now, but doesn't cost Vicious yet. Taunt works kinda by
         stopping the move and delaying it by one turn, but you are not attacked by the enemy. No freezes this time!
     </description>
