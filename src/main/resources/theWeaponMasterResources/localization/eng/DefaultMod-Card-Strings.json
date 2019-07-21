@@ -397,5 +397,9 @@
   "theWeaponMaster:BullyTerrifyingHowl": {
     "NAME": "Terrifying Howl",
     "DESCRIPTION": "Force all attacking enemies to defend."
+  },
+  "theWeaponMaster:BullyDinerArgument": {
+    "NAME": "Diner Argument",
+    "DESCRIPTION": "Can only be played as the first card. NL End your turn, force every enemy to "
   }
 }

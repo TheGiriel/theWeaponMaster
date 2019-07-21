@@ -21,8 +21,8 @@ public class StaggerPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
     public float staggerAmount;
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("stagger_power_placeholder_84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("stagger_power_placeholder_32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("stagger_placeholder_84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("stagger_placeholder_32.png"));
 
     public StaggerPower(final AbstractCreature owner, final AbstractCreature source, int staggerAmount, int amount) {
         this.name = NAME;

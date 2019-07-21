@@ -52,7 +52,9 @@ public class FenrirViciousSwing extends AbstractDynamicCard {
     }
 
     public int heavyDamage(AbstractPlayer player) {
-        return damage * player.hand.size() - player.getPower("ViciousPower").amount;
+        if (player.hasPower("ViciousPower")) {
+            return damage * player.hand.size() - player.getPower("ViciousPower").amount;
+        } else return damage * player.hand.size();
     }
 
     @Override

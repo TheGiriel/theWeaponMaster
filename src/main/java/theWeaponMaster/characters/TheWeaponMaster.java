@@ -160,7 +160,7 @@ public class TheWeaponMaster extends CustomPlayer {
         logger.info("Begin loading starter Deck Strings");
 
         retVal.add(BullyTaunt.ID);
-        //retVal.add(BullyMeanToEveryone.ID);
+        retVal.add(BullyMeanToEveryone.ID);
         retVal.add(BullyHuh.ID);
         retVal.add(BullyIntimidate.ID);
         retVal.add(BullyTerrifyingHowl.ID);

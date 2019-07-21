@@ -42,11 +42,11 @@ public class BullyMeanToEveryone extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster t : AbstractDungeon.getMonsters().monsters) {
-            if (t.intent != AbstractMonster.Intent.ATTACK && t.intent != AbstractMonster.Intent.ATTACK_BUFF && t.intent != AbstractMonster.Intent.ATTACK_DEBUFF && t.intent != AbstractMonster.Intent.ATTACK_DEFEND) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(t, p, new TauntPower(t, p)));
+        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+            if (monster.intent != AbstractMonster.Intent.ATTACK && monster.intent != AbstractMonster.Intent.ATTACK_BUFF && monster.intent != AbstractMonster.Intent.ATTACK_DEBUFF && monster.intent != AbstractMonster.Intent.ATTACK_DEFEND) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new TauntPower(monster, p)));
 
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(t, p, new StrengthPower(t, 2)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StrengthPower(monster, 2)));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
                 DefaultMod.logger.info("Gaining +" + magicNumber + " Strength.");
             }
