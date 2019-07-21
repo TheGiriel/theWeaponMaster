@@ -9,6 +9,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -455,6 +456,7 @@ public class DefaultMod implements
         //BaseMod.addCard(new BullyWimp());
         BaseMod.addCard(new BullyIntimidate());
         BaseMod.addCard(new BullyTerrifyingHowl());
+        BaseMod.addCard(new BullyDinerArgument());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -516,6 +518,7 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(BullyWimp.ID);
         UnlockTracker.unlockCard(BullyIntimidate.ID);
         UnlockTracker.unlockCard(BullyTerrifyingHowl.ID);
+        UnlockTracker.unlockCard(BullyDinerArgument.ID);
         
         logger.info("Done adding cards!");
     }

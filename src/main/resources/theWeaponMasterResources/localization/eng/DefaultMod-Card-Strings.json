@@ -400,6 +400,6 @@
   },
   "theWeaponMaster:BullyDinerArgument": {
     "NAME": "Diner Argument",
-    "DESCRIPTION": "Can only be played as the first card. NL End your turn, force every enemy to "
+    "DESCRIPTION": "Can only be played as the first card. NL Force every enemy to take a random action."
   }
 }

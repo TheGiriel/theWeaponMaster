@@ -164,6 +164,7 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(BullyHuh.ID);
         retVal.add(BullyIntimidate.ID);
         retVal.add(BullyTerrifyingHowl.ID);
+        retVal.add(BullyDinerArgument.ID);
         retVal.add(RevenantRavenousStrikes.ID);
         retVal.add(DefaultCommonPower.ID);
         retVal.add(FenrirUnleashed.ID);
