@@ -1,6 +1,10 @@
 {
-"theWeaponMaster:PlaceholderPotion": {
-        "NAME": "Placeholder Potion",
-        "DESCRIPTIONS": ["Gain ", " At the end of your turn, lose ", " Strength."]
-}
+  "theWeaponMaster:PlaceholderPotion": {
+    "NAME": "Placeholder Potion",
+    "DESCRIPTIONS": [
+      "Gain ",
+      " At the end of your turn, lose ",
+      " Strength."
+    ]
+  }
 }

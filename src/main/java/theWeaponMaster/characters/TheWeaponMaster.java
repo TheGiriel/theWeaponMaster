@@ -23,13 +23,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.DefaultCommonPower;
-import theWeaponMaster.cards.OrbSkill;
 import theWeaponMaster.cards.Strike_WeaponMaster;
-import theWeaponMaster.cards.bully.BullyIntimidate;
-import theWeaponMaster.cards.bully.BullyTaunt;
-import theWeaponMaster.cards.bully.BullyTerrifyingHowl;
+import theWeaponMaster.cards.bully.*;
 import theWeaponMaster.cards.legendary_weapons.*;
-import theWeaponMaster.cards.legendary_weapons.not_yet_relevant.AtlasInkSlash;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
 import theWeaponMaster.relics.PlaceholderRelic2;
@@ -164,16 +160,16 @@ public class TheWeaponMaster extends CustomPlayer {
         logger.info("Begin loading starter Deck Strings");
 
         retVal.add(BullyTaunt.ID);
-        //retVal.add(BullyHostility.ID);
-        //retVal.add(BullyWimp.ID);
+        //retVal.add(BullyMeanToEveryone.ID);
+        retVal.add(BullyHuh.ID);
         retVal.add(BullyIntimidate.ID);
-        //retVal.add(BullyTerrifyingHowl.ID);
+        retVal.add(BullyTerrifyingHowl.ID);
         retVal.add(RevenantRavenousStrikes.ID);
         retVal.add(DefaultCommonPower.ID);
-        //retVal.add(AtlasInkSlash.ID);
+        retVal.add(FenrirUnleashed.ID);
         retVal.add(FenrirLacerate.ID);
-        //retVal.add(AtroposSever.ID);
-        retVal.add(LeviathanGroundSplitter.ID);
+        retVal.add(FenrirShieldEater.ID);
+        retVal.add(FenrirViciousSwing.ID);
         return retVal;
     }
 

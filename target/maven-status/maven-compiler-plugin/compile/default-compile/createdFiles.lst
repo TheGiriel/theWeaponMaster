@@ -2,6 +2,7 @@ theWeaponMaster\cards\legendary_weapons\not_yet_relevant\ChronosCard2.class
 theWeaponMaster\cards\legendary_weapons\not_yet_relevant\LW_GaeBulg.class
 theWeaponMaster\relics\CrystalEdgeRelic.class
 theWeaponMaster\cards\legendary_weapons\LeviathanEject.class
+theWeaponMaster\actions\OverkillAction.class
 theWeaponMaster\variables\DefaultCustomVariable.class
 theWeaponMaster\cards\CardTemplate.class
 theWeaponMaster\powers\AtroposPower.class
@@ -16,6 +17,7 @@ theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AbaddonCard4.class
 theWeaponMaster\cards\legendary_weapons\RevenantCard4.class
 theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AbaddonJudgment.class
 theWeaponMaster\cards\legendary_weapons\CerberusModularSlash.class
+theWeaponMaster\cards\bully\BullyMeanToEveryone.class
 theWeaponMaster\powers\HemorrhagePower.class
 theWeaponMaster\cards\bully\BullyIntimidate.class
 theWeaponMaster\cards\legendary_weapons\not_yet_relevant\LW_Fenrir.class
@@ -102,13 +104,14 @@ theWeaponMaster\powers\InkPower.class
 theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AbaddonCard2.class
 theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AbaddonDrain.class
 theWeaponMaster\cards\legendary_weapons\RevenantCard2.class
-theWeaponMaster\cards\legendary_weapons\FenrirUnrestrainedViolence.class
 theWeaponMaster\variables\MultiShotVariable.class
 theWeaponMaster\cards\Defend_WeaponMaster.class
+theWeaponMaster\cards\bully\BullyDinerArgument.class
 theWeaponMaster\actions\LacerateAction.class
 theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AtroposCard5.class
 theWeaponMaster\cards\AbstractDynamicCard.class
 theWeaponMaster\powers\FenrirPower.class
+theWeaponMaster\cards\legendary_weapons\FenrirUnleashed.class
 theWeaponMaster\patches\relics\BottledPlaceholderField.class
 theWeaponMaster\cards\legendary_weapons\not_yet_relevant\ChronosCard1.class
 theWeaponMaster\potions\PlaceholderPotion.class
@@ -120,7 +123,6 @@ theWeaponMaster\cards\legendary_weapons\LeviathanReload.class
 theWeaponMaster\cards\DefaultUncommonSkill.class
 theWeaponMaster\cards\DefaultSecondMagicNumberSkill.class
 theWeaponMaster\relics\HeavyDrumRelic.class
-theWeaponMaster\cards\bully\BullyHostility.class
 theWeaponMaster\cards\legendary_weapons\LeviathanCard4.class
 theWeaponMaster\powers\StaggerPower.class
 theWeaponMaster\relics\ShockwaveModulatorRelic.class

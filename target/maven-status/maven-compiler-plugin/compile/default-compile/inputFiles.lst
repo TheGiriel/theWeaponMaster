@@ -28,6 +28,7 @@ C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\relics\RandomizedArsenalRelic.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\powers\TauntPower.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\variables\MultiShotVariable.java
+C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\actions\OverkillAction.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\DefaultUncommonAttack.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\ChronosCard4.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\RevenantBloodbath.java
@@ -35,6 +36,7 @@ C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\OrbSkill.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\relics\PlaceholderRelic2.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AstraCard2.java
+C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyMeanToEveryone.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\AbstractDefaultCard.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AtlasInkSlash.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\powers\RevenantPower.java
@@ -64,7 +66,6 @@ C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\relics\ArsenalRelic.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyIntimidate.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\Defend_WeaponMaster.java
-C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\FenrirUnrestrainedViolence.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\powers\ViciousPower.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\CerberusSlash.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\LW_GaeBulg.java
@@ -97,7 +98,6 @@ C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\LeviathanEject.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AtroposSever.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\LW_Atlas.java
-C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyHostility.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\DefaultUncommonSkill.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\powers\FenrirPower.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\DefaultAttackWithVariable.java
@@ -109,12 +109,14 @@ C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AbaddonCard4.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\powers\HemorrhagePower.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\powers\ManablazePower.java
+C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyDinerArgument.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\AtlasCard4.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\LeviathanCard4.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\events\IdentityCrisisEvent.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\FenrirLacerate.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\ChronosCard2.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\actions\ManaBurnAction.java
+C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\FenrirUnleashed.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\variables\shieldBuster.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_yet_relevant\ChronosCard5.java
 C:\Users\TheGiriel\Documents\switchdrive\StS-Mod\theWeaponMaster\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyWimp.java

@@ -3,7 +3,6 @@ package theWeaponMaster;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.devcommands.unlock.Unlock;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -26,7 +25,6 @@ import theWeaponMaster.cards.*;
 import theWeaponMaster.cards.bully.*;
 import theWeaponMaster.cards.legendary_weapons.*;
 import theWeaponMaster.cards.legendary_weapons.not_yet_relevant.AtlasInkSlash;
-import theWeaponMaster.cards.legendary_weapons.not_yet_relevant.LW_Atlas;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.events.IdentityCrisisEvent;
 import theWeaponMaster.potions.PlaceholderPotion;
@@ -273,7 +271,7 @@ public class DefaultMod implements
         DefaultMod defaultmod = new DefaultMod();
         logger.info("========================= /Default Mod Initialized. Hello World./ =========================");
     }
-    
+
     // ============== /SUBSCRIBE, CREATE THE COLOR_GRAY, INITIALIZE/ =================
     
     
@@ -422,7 +420,7 @@ public class DefaultMod implements
         //BaseMod.addCard(new AtlasInkSlash());
         //BaseMod.addCard(new LW_Cerberus());
         BaseMod.addCard(new CerberusSlash());
-        BaseMod.addCard(new CerberusEssenceSlash());
+        //BaseMod.addCard(new CerberusEssenceSlash());
         BaseMod.addCard(new CerberusModularSlash());
         BaseMod.addCard(new CerberusIaiSlash());
         //BaseMod.addCard(new CerberusCard5());
@@ -430,7 +428,7 @@ public class DefaultMod implements
         BaseMod.addCard(new FenrirLacerate());
         BaseMod.addCard(new FenrirShieldEater());
         BaseMod.addCard(new FenrirViciousSwing());
-        BaseMod.addCard(new FenrirUnrestrainedViolence());
+        BaseMod.addCard(new FenrirUnleashed());
         //BaseMod.addCard(new LW_Leviathan());
         BaseMod.addCard(new LeviathanCrush());
         //BaseMod.addCard(new LeviathanEject());
@@ -452,11 +450,11 @@ public class DefaultMod implements
         //BaseMod.addCard(new DefaultRareSkill());
         //BaseMod.addCard(new DefaultRarePower());
         BaseMod.addCard(new BullyTaunt());
-        //BaseMod.addCard(new BullyHostility());
-        //BaseMod.addCard(new BullyHuh());
+        BaseMod.addCard(new BullyMeanToEveryone());
+        BaseMod.addCard(new BullyHuh());
         //BaseMod.addCard(new BullyWimp());
         BaseMod.addCard(new BullyIntimidate());
-        //BaseMod.addCard(new BullyTerrifyingHowl());
+        BaseMod.addCard(new BullyTerrifyingHowl());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -482,7 +480,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(AtlasInkSlash.ID);
         //UnlockTracker.unlockCard(LW_Cerberus.ID);
         UnlockTracker.unlockCard(CerberusSlash.ID);
-        UnlockTracker.unlockCard(CerberusEssenceSlash.ID);
+        //UnlockTracker.unlockCard(CerberusEssenceSlash.ID);
         UnlockTracker.unlockCard(CerberusIaiSlash.ID);
         UnlockTracker.unlockCard(CerberusModularSlash.ID);
         //UnlockTracker.unlockCard(CerberusCard5.ID);
@@ -490,7 +488,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(FenrirLacerate.ID);
         UnlockTracker.unlockCard(FenrirViciousSwing.ID);
         UnlockTracker.unlockCard(FenrirShieldEater.ID);
-        UnlockTracker.unlockCard(FenrirUnrestrainedViolence.ID);
+        UnlockTracker.unlockCard(FenrirUnleashed.ID);
         //UnlockTracker.unlockCard(LW_Leviathan.ID);
         UnlockTracker.unlockCard(LeviathanCrush.ID);
         //UnlockTracker.unlockCard(LeviathanEject.ID);
@@ -513,11 +511,11 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(DefaultRareSkill.ID);
         //UnlockTracker.unlockCard(DefaultRarePower.ID);
         UnlockTracker.unlockCard(BullyTaunt.ID);
-        //UnlockTracker.unlockCard(BullyHostility.ID);
-        //UnlockTracker.unlockCard(BullyHuh.ID);
+        UnlockTracker.unlockCard(BullyMeanToEveryone.ID);
+        UnlockTracker.unlockCard(BullyHuh.ID);
         //UnlockTracker.unlockCard(BullyWimp.ID);
         UnlockTracker.unlockCard(BullyIntimidate.ID);
-        //UnlockTracker.unlockCard(BullyTerrifyingHowl.ID);
+        UnlockTracker.unlockCard(BullyTerrifyingHowl.ID);
         
         logger.info("Done adding cards!");
     }

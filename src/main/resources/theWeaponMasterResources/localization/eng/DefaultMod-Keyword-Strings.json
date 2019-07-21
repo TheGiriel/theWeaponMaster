@@ -57,7 +57,7 @@
       "armor_break",
       "armor broken"
     ],
-    "DESCRIPTION": "Deal double damage to enemies with Block."
+    "DESCRIPTION": "Deal 50% bonus damage to enemies with Block."
   },
   {
     "PROPER_NAME": "[#7fdcfa]Crush",
@@ -98,20 +98,12 @@
     ],
     "DESCRIPTION": "[#2a3439]Revolver cards use [#cccccc]Bullets for special effects."
   },
-
-  {
-    "PROPER_NAME": "Fenrir",
-    "NAMES": [
-      "fenrir"
-    ],
-    "DESCRIPTION": "Fenrir evolves over the course of the fight and gets stronger whenever certain conditions are met."
-  },
   {
     "PROPER_NAME": "[#990000]Lacerate",
     "NAMES": [
       "lacerate"
     ],
-    "DESCRIPTION": "[#990000]Lacerated creatures lose 2% of their Max HP every turn (minimum 1)."
+    "DESCRIPTION": "[#990000]Lacerated creatures lose 2-6% of their Max HP per stack every turn (minimum 1)."
   },
   {
     "PROPER_NAME": "Evolve",
@@ -120,22 +112,21 @@
       "evolved",
       "evolutions"
     ],
-    "DESCRIPTION": "Upgrade this and other Fenrir cards for the current combat whenever you meet the condition after 'Evolve'"
+    "DESCRIPTION": "Upgrade this and other Fenrir cards for the current combat whenever you meet the condition after 'Evolve'. Currently not yet implemented."
   },
   {
     "PROPER_NAME": "Overkill",
     "NAMES": [
       "overkill"
     ],
-    "DESCRIPTION": "Add excess damage to your next 'Destroyer's Blade' attack whenever you kill an enemy."
+    "DESCRIPTION": "Add excess damage to your next 'Fenrir Unleashed' attack whenever you kill an enemy."
   },
   {
     "PROPER_NAME": "[#9aa3a3]Legendary [#9aa3a3]Weapon",
     "NAMES": [
       "legendary weapon",
       "legendary weapons",
-      "legendary_weapon",
-      "lwpn"
+      "legendary_weapon"
     ],
     "DESCRIPTION": "[#9aa3a3]Legendary [#9aa3a3]Weapons are unique cards with strong effects and drawbacks."
   },

@@ -1,57 +1,69 @@
 {
-        "theWeaponMaster:CommonPower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-        },
-        "theWeaponMaster:RarePower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-        },
-        "ViciousPower": {
-                "NAME": "Vicious",
-                "DESCRIPTIONS": [
-                        "Deal #r",
-                        " and take #r",
-                        " more damage.",
-                        " more damage. NL [#8b0000]Special [#8b0000]Attacks [#8b0000]are [#8b0000]available [#8b0000]to [#8b0000]you.",
-                        " more damage. NL [#8b0000]Kill [#8b0000]them [#8b0000]all."
-                ]
-        },
-        "EgoPower":{
-          "NAME": "[#ffc200]Ego: ",
-                "DESCRIPTIONS":[
-                        "afgadggh"
-                ]
-        },
-        "ManaBurnPower": {
-                "NAME": "Mana Burn",
-                "DESCRIPTIONS": [
-                        "[#3abfbe]Mana [#3abfbe]Burn deals ",
-                        "-",
-                        " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
-                        " HP when casting spells or skills (depending on intent)."]
-        },
-        "ManablazePower": {
-                "NAME": "Manablaze",
-                "DESCRIPTIONS": [
-                        "[#4acfce]Manablaze deals ",
-                        "-",
-                        " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."]
-        },
-        "LaceratePower": {
-          "NAME": "Lacerated",
-                "DESCRIPTIONS": ["Lacerated creatures lose ",
-                        "% Max HP #r(",
-                        ") every turn. NL [#990055]Lacerate Stacks: ",
-                  ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks.",
-                  "Creatures affected by [#990000]Lacerate lose 2-6% Max HP every turn."
-                ]
-        },
-        "HemorrhagePower": {
-          "NAME": "Hemorrhaging",
-                "DESCRIPTIONS": [
-                        "Creatures affected by [#990000]Hemorrhage lose 6% Max HP every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."]
-        },
+  "theWeaponMaster:CommonPower": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied #b",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theWeaponMaster:RarePower": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "At the start of your turn, TOUCH #b",
+      " enemy.",
+      " enemies."
+    ]
+  },
+  "theWeaponMaster:ViciousPower": {
+    "NAME": "Vicious",
+    "DESCRIPTIONS": [
+      "Deal #r",
+      " and take #r",
+      " more damage.",
+      " more damage. NL [#8b0000]Special [#8b0000]Attacks [#8b0000]are [#8b0000]available [#8b0000]to [#8b0000]you.",
+      " more damage. NL [#8b0000]Kill [#8b0000]them [#8b0000]all."
+    ]
+  },
+  "theWeaponMaster:EgoPower": {
+    "NAME": "[#ffc200]Ego: ",
+    "DESCRIPTIONS": [
+      "afgadggh"
+    ]
+  },
+  "theWeaponMaster:ManaBurnPower": {
+    "NAME": "Mana Burn",
+    "DESCRIPTIONS": [
+      "[#3abfbe]Mana [#3abfbe]Burn deals ",
+      "-",
+      " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
+      " HP when casting spells or skills (depending on intent)."
+    ]
+  },
+  "theWeaponMaster:ManablazePower": {
+    "NAME": "Manablaze",
+    "DESCRIPTIONS": [
+      "[#4acfce]Manablaze deals ",
+      "-",
+      " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."
+    ]
+  },
+  "theWeaponMaster:LaceratePower": {
+    "NAME": "Lacerated",
+    "DESCRIPTIONS": [
+      "Lacerated creatures lose ",
+      "% Max HP #r(",
+      ") every turn. NL [#990055]Lacerate Stacks: ",
+      ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks.",
+      "Creatures affected by [#990000]Lacerate lose 2-6% Max HP every turn."
+    ]
+  },
+  "theWeaponMaster:HemorrhagePower": {
+    "NAME": "Hemorrhaging",
+    "DESCRIPTIONS": [
+      "Creatures affected by [#990000]Hemorrhage lose 6% Max HP every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."
+    ]
+  },
   "StaggerPower": {
     "NAME": "Staggered",
     "DESCRIPTIONS": [

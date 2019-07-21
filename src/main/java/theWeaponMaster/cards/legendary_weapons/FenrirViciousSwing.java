@@ -2,10 +2,13 @@ package theWeaponMaster.cards.legendary_weapons;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.GetAllInBattleInstances;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
@@ -28,11 +31,10 @@ public class FenrirViciousSwing extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int DAMAGE = 2;
     private static final int UPGRADED_DAMAGE = 1;
     private static final int MAGIC_NUMBER = 3;
-    private static AbstractPlayer player;
 
     public FenrirViciousSwing() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -50,12 +52,12 @@ public class FenrirViciousSwing extends AbstractDynamicCard {
     }
 
     public int heavyDamage(AbstractPlayer player) {
-        return damage * player.hand.size();
+        return damage * player.hand.size() - player.getPower("ViciousPower").amount;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, magicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.POISON));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, heavyDamage(p), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, magicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.POISON));
     }
 }

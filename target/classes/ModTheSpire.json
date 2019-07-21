@@ -2,9 +2,8 @@
   "modid": "WeaponMaster",
   "name": "Weapon Master Mod",
   "author_list": ["TheGiriel"],
-  "description": "Intimidate works for standard enemies for now, but doesn't cost Vicious yet. Jaw Worm (and possibly
-        more) freezes out.",
-  "version": "0.0.11",
+  "description": "Bully cards still don't cost vicious, Mean to Everyone turns into a null pointer exception.",
+  "version": "0.0.12.1",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",
   "dependencies": ["basemod", "stslib"],

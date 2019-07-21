@@ -1,7 +1,7 @@
 package theWeaponMaster.cards.legendary_weapons;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,9 +17,9 @@ import theWeaponMaster.patches.WeaponMasterTags;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
-public class FenrirUnrestrainedViolence extends AbstractDynamicCard{
+public class FenrirUnleashed extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(FenrirUnrestrainedViolence.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(FenrirUnleashed.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -28,19 +28,22 @@ public class FenrirUnrestrainedViolence extends AbstractDynamicCard{
     public static final String IMG = makeCardPath("Attack.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = -1;
     private static final int DAMAGE = 8;
     private static final int UPGRADED_DAMAGE =5;
+    private static final double OVERKILL_MOD = 1.5;
+    private static double overkill_mod = 1;
+    private static AbstractMonster weakest;
 
-    public FenrirUnrestrainedViolence() {
+    public FenrirUnleashed() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         isInnate = true;
 
-        damage = baseDamage = DAMAGE;
+        this.damage = baseDamage = DAMAGE;
         this.tags.add(WeaponMasterTags.LW_FENRIR);
         isMultiDamage = true;
     }
@@ -50,6 +53,7 @@ public class FenrirUnrestrainedViolence extends AbstractDynamicCard{
         if(!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
+            this.overkill_mod = OVERKILL_MOD;
             rawDescription = UPGRADED_DESCRIPTION;
             initializeDescription();
         }
@@ -58,26 +62,41 @@ public class FenrirUnrestrainedViolence extends AbstractDynamicCard{
 
     //TODO: Attack random y enemies x energy times.
     // Add Overkill damage.
+    private AbstractMonster weakestMonster() {
+        weakest = null;
+        for (AbstractMonster target : AbstractDungeon.getMonsters().monsters) {
+            if (!target.isDeadOrEscaped() && !target.isDying) {
+                if (weakest == null) {
+                    weakest = target;
+                }
+                if (target.currentHealth < weakest.currentHealth) {
+                    weakest = target;
+                    DefaultMod.logger.info("New weakest target: " + weakest.toString());
+                }
+            }
+        }
+        return weakest;
+    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-
-        int escalate = 0;
+        int overkill;
         int effect = EnergyPanel.totalCount;
         if (p.hasRelic(ChemicalX.ID)) {
             effect += 2;
             p.getRelic(ChemicalX.ID).flash();
         }
-        //TODO: Very trash effect, currently just placeholder.
-        for (int i = 0; i< effect; i++){
-            for (int j = 0; j< effect; j++) {
-                AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, (int) (damage * (1 + (escalate * .25))), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                DefaultMod.logger.info("Attacks: " + escalate);
-                DefaultMod.logger.info("Damage: " + (int) (damage * (1 + escalate * .25)));
-                escalate++;
+        for (int i = 0; i < effect; i++) {
+            weakestMonster();
+            if (damage > weakest.currentHealth) {
+                overkill = damage - weakest.currentHealth;
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(weakest, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+            } else {
+                overkill = 0;
             }
-            escalate++;
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(weakest, new DamageInfo(p, damage + (int) (overkill * overkill_mod), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }
+        //TODO: Very trash effect, currently just placeholder.
     }
 }

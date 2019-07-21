@@ -88,12 +88,12 @@
   "theWeaponMaster:FenrirLacerate": {
     "NAME": "Lacerate",
     "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. Apply !M! Lacerate. NL Evolve - Hit enemies with 3+ Lacerate.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 33% bonus damage to enemies with Lacerate. NL Evolve - Hit enemies with 3+ Lacerate."
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 20% bonus damage to enemies with Lacerate. NL Evolve - Hit enemies with 3+ Lacerate."
   },
   "theWeaponMaster:FenrirShieldEater": {
     "NAME": "Shield Eater",
-    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. NL Evolve - Destroy enemy Block.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Enemies lose health equal to 25% blocked damage. NL Evolve - Destroy enemy Block."
+    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage and absorb an equal amount of block. NL Evolve - Destroy enemy Block.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal  !D! damage and absorb an equal amount of block. Enemies lose health equal to 25% blocked damage. NL Evolve - Destroy enemy Block."
   },
   "theWeaponMaster:FenrirIgnite": {
     "NAME": "Ignite",
@@ -105,11 +105,12 @@
     "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. NL Evolve - Play holding 3 or fewer cards.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. Vicious. NL Evolve - Play holding 3 or fewer cards."
   },
-  "theWeaponMaster:FenrirUnrestrainedViolence": {
-    "NAME": "Unrestrained Violence",
-    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage to all enemies, one after another. NL Evolve - Kill an opponent.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage to all enemies, one after another. Overkill. NL Evolve - Kill an opponent."
+  "theWeaponMaster:FenrirUnleashed": {
+    "NAME": "Fenrir Unleashed",
+    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage to all enemies, one after another. Overkill. NL Evolve - Kill an opponent.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage to all enemies, one after another. Improved overkill. NL Evolve - Kill an opponent."
   },
+
   "theWeaponMaster:LW_Leviathan": {
     "NAME": "[#808080]Leviathan [#808080]Gauntlets",
     "DESCRIPTION": "",
@@ -145,6 +146,7 @@
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
+
   "theWeaponMaster:LW_Revenant": {
     "NAME": "[#bf3a3b]Revenant [#bf3a3b]Cleaver",
     "DESCRIPTION": "not_implemented - Equip the Revenant Cleaver and its corresponding cards."
@@ -170,8 +172,8 @@
   },
   "theWeaponMaster:RevenantBloodbath": {
     "NAME": "[#bf3a3b]Bloodbath",
-    "DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 10). Lose all Berserk stacks.",
-    "UPGRADE_DESCRIPTION": "Attack a random enemy for !D! damage. Repeat for every Berserk stack (max 15). Lose all Berserk stacks."
+    "DESCRIPTION": "Attack a random enemy for !D! damage. Use half your Berserk stacks to attack again until you run out.",
+    "UPGRADE_DESCRIPTION": "Attack a random enemy for !D! damage. Use half your Berserk stacks to attack again until you run out."
   },
 
 
@@ -202,8 +204,8 @@
   },
   "theWeaponMaster:AbaddonJudgment": {
     "NAME": "Judgment",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "This shouldn't show up",
+    "UPGRADE_DESCRIPTION": "This shouldn't show up"
   },
 
 
@@ -378,7 +380,7 @@
   },
   "theWeaponMaster:BullyHuh": {
     "NAME": "HUH?!",
-    "DESCRIPTION": "Bully NL not_implemented."
+    "DESCRIPTION": "Bully NL Gain 1 Artifact."
   },
   "theWeaponMaster:BullyWimp": {
     "NAME": "Wimp",
@@ -388,12 +390,12 @@
     "NAME": "Slap",
     "DESCRIPTION": "Bully NL not_implemented."
   },
-  "theWeaponMaster:BullyHostility": {
-    "NAME": "Hostility",
-    "DESCRIPTION": "Bully NL Placeholder - Gain !M! Strength every turn."
+  "theWeaponMaster:BullyMeanToEveryone": {
+    "NAME": "Mean to everyone!",
+    "DESCRIPTION": "Bully NL Taunt all non-attacking enemies, they gain 2 Strength and you gain !M! Strength for every applied Taunt."
   },
   "theWeaponMaster:BullyTerrifyingHowl": {
     "NAME": "Terrifying Howl",
-    "DESCRIPTION": "Expend !M! Vicious to force all attacking enemies to defend."
+    "DESCRIPTION": "Force all attacking enemies to defend."
   }
 }

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ModTheSpire">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../lib/ModTheSpire.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -34,7 +34,8 @@ public class FenrirShieldEater extends AbstractDynamicCard {
     private static final int DAMAGE = 7;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 2;
-    private static final int UPGRADE_MAGIC_NUMBER = 1;
+    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    private static final float EVOLUTION = 2 / 3F;
 
     public FenrirShieldEater() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -47,19 +48,19 @@ public class FenrirShieldEater extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int shieldEater;
-        if (damage*1.25 > m.currentBlock) {
+        int shieldEater = 0;
+        if (damage * 1.2 > m.currentBlock) {
             shieldEater = m.currentBlock;
         } else {
-            shieldEater = (int) (damage*1.25);
+            shieldEater = (int) (damage * 1.2);
         }
 
         if (m.currentBlock > 0){
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (damage*1.25), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (damage * 1.2), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, shieldEater));
         } else{
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, shieldEater));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, this.magicNumber, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.POISON));
     }
 
@@ -68,7 +69,7 @@ public class FenrirShieldEater extends AbstractDynamicCard {
         if(!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            upgradeMagicNumber(UPGRADE_MAGIC_NUMBER);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }
