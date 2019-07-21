@@ -56,7 +56,7 @@ public class BullyDinerArgument extends AbstractDynamicCard {
         }
     }
 
-    public void randomArgument(AbstractPlayer p, AbstractMonster m) {
+    private void randomArgument(AbstractPlayer p, AbstractMonster m) {
         switch (new Random().nextInt(5) + 1) {
             case 1:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new IntimidatePower(m, p)));
