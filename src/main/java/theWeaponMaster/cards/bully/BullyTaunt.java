@@ -22,7 +22,6 @@ public class BullyTaunt extends AbstractDynamicCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public EnemyMoveInfo enemyIntent;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
