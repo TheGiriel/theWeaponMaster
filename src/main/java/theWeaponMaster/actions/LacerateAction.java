@@ -11,31 +11,22 @@ public class LacerateAction extends AbstractGameAction{
 
     private final AbstractCreature owner;
     private final AbstractCreature source;
-    private AbstractMonster m;
-    private int lacerateDamage;
-    private int lacerateStack;
 
     public LacerateAction(AbstractCreature owner, AbstractCreature source, int lacerateStack){
         this.owner = owner;
         this.source = source;
-        this.lacerateStack = lacerateStack;
-
+        this.amount = lacerateStack;
     }
 
-    public int bleedDamage(AbstractCreature owner, int lacerateStack){
-        return this.lacerateDamage = (int) (Math.ceil(this.owner.maxHealth*0.02D*this.lacerateStack));
-    }
-
-    public void atStartOfTurn() {
-
+    public int bleedDamage() {
+        return (int) (Math.ceil(this.owner.maxHealth * 0.02D * this.amount));
     }
 
     @Override
     public void update() {
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, bleedDamage(owner, lacerateStack), AbstractGameAction.AttackEffect.POISON));
+            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, bleedDamage(), AbstractGameAction.AttackEffect.POISON));
         }
         isDone = true;
     }
-    //TODO: Everything
 }

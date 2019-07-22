@@ -159,14 +159,12 @@ public class TheWeaponMaster extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(BullyTaunt.ID);
         retVal.add(BullyMeanToEveryone.ID);
         retVal.add(BullyHuh.ID);
         retVal.add(BullyIntimidate.ID);
-        retVal.add(BullyTerrifyingHowl.ID);
-        retVal.add(BullyDinerArgument.ID);
+        retVal.add(BullyShakedown.ID);
+        retVal.add(BullySlap.ID);
         retVal.add(RevenantRavenousStrikes.ID);
-        retVal.add(DefaultCommonPower.ID);
         retVal.add(FenrirUnleashed.ID);
         retVal.add(FenrirLacerate.ID);
         retVal.add(FenrirShieldEater.ID);

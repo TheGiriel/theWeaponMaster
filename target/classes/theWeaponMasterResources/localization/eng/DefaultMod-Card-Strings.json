@@ -50,6 +50,7 @@
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
+
   "theWeaponMaster:LW_Cerberus": {
     "NAME": "Cerberus",
     "DESCRIPTION": "not_implemented NL Equip the Weapon Master's first sword and gain its corresponding cards.",
@@ -380,7 +381,8 @@
   },
   "theWeaponMaster:BullyHuh": {
     "NAME": "HUH?!",
-    "DESCRIPTION": "Bully NL Gain 1 Artifact."
+    "DESCRIPTION": "Bully NL Gain !M! Artifact.",
+    "UPGRADE_DESCRIPTION": "Bully NL Gain !M! Artifact, gain !M! block."
   },
   "theWeaponMaster:BullyWimp": {
     "NAME": "Wimp",
@@ -388,11 +390,11 @@
   },
   "theWeaponMaster:BullySlap": {
     "NAME": "Slap",
-    "DESCRIPTION": "Bully NL not_implemented."
+    "DESCRIPTION": "Bully NL Slap target enemy for !D! damage and apply Frail for !M! turns."
   },
   "theWeaponMaster:BullyMeanToEveryone": {
     "NAME": "Mean to everyone!",
-    "DESCRIPTION": "Bully NL Taunt all non-attacking enemies, they gain 2 Strength and you gain !M! Strength for every applied Taunt."
+    "DESCRIPTION": "Bully NL Taunt all enemies. They gain !M! Strength and you gain !M! Strength for every applied Taunt."
   },
   "theWeaponMaster:BullyTerrifyingHowl": {
     "NAME": "Terrifying Howl",
@@ -401,5 +403,14 @@
   "theWeaponMaster:BullyDinerArgument": {
     "NAME": "Diner Argument",
     "DESCRIPTION": "Can only be played as the first card. NL Force every enemy to take a random action."
+  },
+  "theWeaponMaster:BullyShakedown": {
+    "NAME": "Shakedown",
+    "DESCRIPTION": "Bully NL Deal !D! damage and 'convince' target enemy to 'donate' a random amount of gold to you (max 12).",
+    "UPGRADE_DESCRIPTION": "Bully NL Deal !D! damage and 'convince' target enemy to 'donate' a random amount of gold to you (max 18)."
+  },
+  "theWeaponMaster:BullyCard10": {
+    "NAME": "Card10",
+    "DESCRIPTION": "Not Implemented."
   }
 }

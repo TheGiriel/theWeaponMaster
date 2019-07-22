@@ -42,7 +42,7 @@ public class LaceratePower extends AbstractPower {
         this.isTurnBased = true;
     }
 
-    public void updateDamage() {
+    private void updateDamage() {
         if (this.amount > 3) {
             this.amount = 3;
         }
@@ -73,6 +73,5 @@ public class LaceratePower extends AbstractPower {
 
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new LacerateAction(this.owner, this.source, this.amount));
-
     }
 }

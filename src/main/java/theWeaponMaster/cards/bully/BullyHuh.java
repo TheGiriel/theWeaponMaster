@@ -1,6 +1,7 @@
 package theWeaponMaster.cards.bully;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -31,6 +32,7 @@ public class BullyHuh extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
     private static final int MAGIC_NUMBER = 1;
+    private static final int UPGRADED_MAGIC_NUMBER = 1;
 
     public BullyHuh() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -41,6 +43,9 @@ public class BullyHuh extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, magicNumber)));
+        if (upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, (int) (magicNumber * 7.5)));
+        }
     }
 
     @Override

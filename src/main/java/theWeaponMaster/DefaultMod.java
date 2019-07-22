@@ -3,6 +3,7 @@ package theWeaponMaster;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.devcommands.unlock.Unlock;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -401,7 +402,6 @@ public class DefaultMod implements
         //TODO: Add new cards whenever they are added to the pool.
         
         BaseMod.addCard(new OrbSkill());
-        //BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         BaseMod.addCard(new Strike_WeaponMaster());
         BaseMod.addCard(new Defend_WeaponMaster());
         //BaseMod.addCard(new LW_Abaddon());
@@ -420,10 +420,10 @@ public class DefaultMod implements
         //BaseMod.addCard(new LW_Atlas());
         //BaseMod.addCard(new AtlasInkSlash());
         //BaseMod.addCard(new LW_Cerberus());
-        BaseMod.addCard(new CerberusSlash());
+        //BaseMod.addCard(new CerberusSlash());
         //BaseMod.addCard(new CerberusEssenceSlash());
-        BaseMod.addCard(new CerberusModularSlash());
-        BaseMod.addCard(new CerberusIaiSlash());
+        //BaseMod.addCard(new CerberusModularSlash());
+        //BaseMod.addCard(new CerberusIaiSlash());
         //BaseMod.addCard(new CerberusCard5());
         //BaseMod.addCard(new LW_Fenrir());
         BaseMod.addCard(new FenrirLacerate());
@@ -444,12 +444,6 @@ public class DefaultMod implements
         //BaseMod.addCard(new RevenantBloodbath());
         //BaseMod.addCard(new DefaultAttackWithVariable());
         BaseMod.addCard(new DefaultCommonPower());
-        //BaseMod.addCard(new DefaultUncommonSkill());
-        //BaseMod.addCard(new DefaultUncommonAttack());
-        //BaseMod.addCard(new DefaultUncommonPower());
-        //BaseMod.addCard(new DefaultRareAttack());
-        //BaseMod.addCard(new DefaultRareSkill());
-        //BaseMod.addCard(new DefaultRarePower());
         BaseMod.addCard(new BullyTaunt());
         BaseMod.addCard(new BullyMeanToEveryone());
         BaseMod.addCard(new BullyHuh());
@@ -457,20 +451,21 @@ public class DefaultMod implements
         BaseMod.addCard(new BullyIntimidate());
         BaseMod.addCard(new BullyTerrifyingHowl());
         BaseMod.addCard(new BullyDinerArgument());
+        BaseMod.addCard(new BullySlap());
+        BaseMod.addCard(new BullyShakedown());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
         UnlockTracker.unlockCard(OrbSkill.ID);
-        //UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
         UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
+        //UnlockTracker.unlockCard(LW_Abaddon.ID);
         //UnlockTracker.unlockCard(AbaddonDrain.ID);
         //UnlockTracker.unlockCard(AbaddonCard2.ID);
         //UnlockTracker.unlockCard(AbaddonCard3.ID);
         //UnlockTracker.unlockCard(AbaddonCard4.ID);
         //UnlockTracker.unlockCard(AbaddonJudgment.ID);
-        //UnlockTracker.unlockCard(LW_Abaddon.ID);
         //UnlockTracker.unlockCard(LW_Astra.ID);
         //UnlockTracker.unlockCard(LW_Atropos.ID);
         //UnlockTracker.unlockCard(AtroposSever.ID);
@@ -479,12 +474,12 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(AtroposCard4.ID);
         //UnlockTracker.unlockCard(AtroposCard5.ID);
         //UnlockTracker.unlockCard(LW_Atlas.ID);
-        UnlockTracker.unlockCard(AtlasInkSlash.ID);
+        //UnlockTracker.unlockCard(AtlasInkSlash.ID);
         //UnlockTracker.unlockCard(LW_Cerberus.ID);
-        UnlockTracker.unlockCard(CerberusSlash.ID);
+        //UnlockTracker.unlockCard(CerberusSlash.ID);
         //UnlockTracker.unlockCard(CerberusEssenceSlash.ID);
-        UnlockTracker.unlockCard(CerberusIaiSlash.ID);
-        UnlockTracker.unlockCard(CerberusModularSlash.ID);
+        //UnlockTracker.unlockCard(CerberusIaiSlash.ID);
+        //UnlockTracker.unlockCard(CerberusModularSlash.ID);
         //UnlockTracker.unlockCard(CerberusCard5.ID);
         //UnlockTracker.unlockCard(LW_Fenrir.ID);
         UnlockTracker.unlockCard(FenrirLacerate.ID);
@@ -506,12 +501,6 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
         //UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
         UnlockTracker.unlockCard(DefaultCommonPower.ID);
-        //UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
-        //UnlockTracker.unlockCard(DefaultUncommonAttack.ID);
-        //UnlockTracker.unlockCard(DefaultUncommonPower.ID);
-        //UnlockTracker.unlockCard(DefaultRareAttack.ID);
-        //UnlockTracker.unlockCard(DefaultRareSkill.ID);
-        //UnlockTracker.unlockCard(DefaultRarePower.ID);
         UnlockTracker.unlockCard(BullyTaunt.ID);
         UnlockTracker.unlockCard(BullyMeanToEveryone.ID);
         UnlockTracker.unlockCard(BullyHuh.ID);
@@ -519,6 +508,8 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(BullyIntimidate.ID);
         UnlockTracker.unlockCard(BullyTerrifyingHowl.ID);
         UnlockTracker.unlockCard(BullyDinerArgument.ID);
+        UnlockTracker.unlockCard(BullySlap.ID);
+        UnlockTracker.unlockCard(BullyShakedown.ID);
         
         logger.info("Done adding cards!");
     }

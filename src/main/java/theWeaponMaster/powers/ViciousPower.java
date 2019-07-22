@@ -76,13 +76,11 @@ public class ViciousPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        if (this.amount >= TIER_THREE) {
-            description = DESCRIPTION[0] + amount + DESCRIPTION[1] + amount + DESCRIPTION[4];
-        } else if (this.amount >= TIER_TWO) {
-            description = DESCRIPTION[0] + amount + DESCRIPTION[1] + amount + DESCRIPTION[3];
+        if (this.amount >= TIER_TWO) {
+            description = DESCRIPTION[0] + Math.max(1, this.amount / 3) + DESCRIPTION[1] + Math.max(1, this.amount * 2 / 3) + DESCRIPTION[3];
         }
         else {
-            description = DESCRIPTION[0] + amount + DESCRIPTION[1] + amount + DESCRIPTION[2];
+            description = DESCRIPTION[0] + Math.max(1, this.amount / 3) + DESCRIPTION[1] + Math.max(1, this.amount * 2 / 3) + DESCRIPTION[2];
         }
     }
 
@@ -102,11 +100,11 @@ public class ViciousPower extends AbstractPower {
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return damage + this.amount;
+        return damage + Math.max(1, this.amount / 3);
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
         DefaultMod.logger.info("taking extra damage.");
-        return damage + this.amount;
+        return damage + Math.max(1, this.amount * 2 / 3);
     }
 }

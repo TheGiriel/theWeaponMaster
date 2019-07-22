@@ -31,14 +31,14 @@
     "NAMES": [
       "vicious"
     ],
-    "DESCRIPTION": "Take and deal 1 extra damage per [#8b0000]Vicious stack. Certain cards gain new effects based on [#8b0000]Vicious."
+    "DESCRIPTION": "For every 3 stacks of [#8b0000]Vicious you deal 1 and take 2 extra damage. Certain cards gain new effects based on [#8b0000]Vicious."
   },
   {
     "PROPER_NAME": "[#ff4500]Bully",
     "NAMES": [
       "bully"
     ],
-    "DESCRIPTION": "Use [#ffc200]Ego to debuff your enemies or force their actions."
+    "DESCRIPTION": "Spend [#8b0000]Vicious to debuff your enemies or force their actions."
   },
   {
     "PROPER_NAME": "[#3abfbe]Mana [#3abfbe]Burn",
@@ -106,13 +106,20 @@
     "DESCRIPTION": "[#990000]Lacerated creatures lose 2-6% of their Max HP per stack every turn (minimum 1)."
   },
   {
+    "PROPER_NAME": "[#990000]Hemorrhage",
+    "NAMES": [
+      "hemorrhage"
+    ],
+    "DESCRIPTION": "[#990000]Hemorrhaging creatures lose 6% of their Max HP per stack every turn (minimum 1)."
+  },
+  {
     "PROPER_NAME": "Evolve",
     "NAMES": [
       "evolve",
       "evolved",
       "evolutions"
     ],
-    "DESCRIPTION": "Upgrade this and other Fenrir cards for the current combat whenever you meet the condition after 'Evolve'. Currently not yet implemented."
+    "DESCRIPTION": "Currently not yet implemented. Increase the power of this and other Fenrir cards for the current combat whenever you meet the condition."
   },
   {
     "PROPER_NAME": "Overkill",
@@ -137,5 +144,21 @@
       "staggered"
     ],
     "DESCRIPTION": "Staggered creatures deal and gain 25-50% less damage and block respectively."
+  },
+  {
+    "PROPER_NAME": "Taunt",
+    "NAMES": [
+      "taunt",
+      "taunted"
+    ],
+    "DESCRIPTION": "Can only be applied to non-attacking enemies. NL Taunted enemies are forced to attack and deal 10% max HP damage."
+  },
+  {
+    "PROPER_NAME": "Intimidate",
+    "NAMES": [
+      "intimidate",
+      "intimidated"
+    ],
+    "DESCRIPTION": "Can only be applied to attacking enemies. NL Intimidated enemies are forced to defend and gain Block equal to 10 plus half your Vicious."
   }
 ]

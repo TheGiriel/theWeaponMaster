@@ -21,8 +21,7 @@
       "Deal #r",
       " and take #r",
       " more damage.",
-      " more damage. NL [#8b0000]Special [#8b0000]Attacks [#8b0000]are [#8b0000]available [#8b0000]to [#8b0000]you.",
-      " more damage. NL [#8b0000]Kill [#8b0000]them [#8b0000]all."
+      " more damage. NL [#8b0000]Special [#8b0000]Attacks [#8b0000]are [#8b0000]available [#8b0000]to [#8b0000]you."
     ]
   },
   "EgoPower": {
@@ -51,9 +50,9 @@
   "LaceratePower": {
     "NAME": "Lacerated",
     "DESCRIPTIONS": [
-      "Lacerated creatures lose ",
+      "This creature loses ",
       "% Max HP #r(",
-      ") every turn. NL [#990055]Lacerate Stacks: ",
+      ") every turn. NL [#990055]Lacerate Stacks: #r",
       ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks.",
       "Creatures affected by [#990000]Lacerate lose 2-6% Max HP every turn."
     ]
@@ -61,7 +60,9 @@
   "HemorrhagePower": {
     "NAME": "Hemorrhaging",
     "DESCRIPTIONS": [
-      "Creatures affected by [#990000]Hemorrhage lose 6% Max HP every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks."
+      "This creature loses 6% Max HP #r(",
+      ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks.",
+      "Creatures affected by [#990000]Hemorrhage lose 6% Max HP every turn."
     ]
   },
   "StaggerPower": {
@@ -81,7 +82,7 @@
   "TauntPower": {
     "NAME": "Taunted",
     "DESCRIPTIONS": [
-      "Taunted creatures attack, gaining a 25% attack damage boost but take 25% more damage."
+      "Taunted creatures are forced to attack and deal base damage equal to 10% of your max HP."
     ]
   }
 }

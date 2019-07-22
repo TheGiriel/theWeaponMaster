@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.AbstractDynamicCard;
@@ -57,7 +58,10 @@ public class BullyDinerArgument extends AbstractDynamicCard {
     }
 
     private void randomArgument(AbstractPlayer p, AbstractMonster m) {
-        switch (new Random().nextInt(5) + 1) {
+        switch (new Random().nextInt(5)) {
+            case 0:
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 10), AbstractGameAction.AttackEffect.SMASH));
+                break;
             case 1:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new IntimidatePower(m, p)));
                 break;
@@ -68,13 +72,10 @@ public class BullyDinerArgument extends AbstractDynamicCard {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, p, 8, 1)));
                 break;
             case 4:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, 3)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, 3)));
                 break;
             case 5:
                 AbstractDungeon.actionManager.addToBottom(new HealAction(m, p, 10));
-                break;
-            case 6:
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 10), AbstractGameAction.AttackEffect.SMASH));
                 break;
         }
     }

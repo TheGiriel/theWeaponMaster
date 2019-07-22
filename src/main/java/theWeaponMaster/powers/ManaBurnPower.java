@@ -40,7 +40,7 @@ public class ManaBurnPower extends AbstractPower {
         this.type = AbstractPower.PowerType.DEBUFF;
         this.m = (AbstractMonster)this.owner;
 
-        this.manaBurnIntensity = (int)Math.ceil(owner.maxHealth * 0.01D * this.amount);
+        this.manaBurnIntensity = manaBurnDamage();
         this.isTurnBased = true;
         updateDescription();
     }
@@ -53,11 +53,15 @@ public class ManaBurnPower extends AbstractPower {
         updateDescription();
     }
 
+    private int manaBurnDamage() {
+        return (int) Math.ceil(this.owner.maxHealth * 0.01D * this.amount);
+    }
+
     public void updateDescription() {
         if ((int)Math.ceil(this.m.maxHealth*0.01D*this.amount*3) == 1){
-            this.description = DESCRIPTION[0] + (int) Math.ceil(this.m.maxHealth * 0.01D * this.amount) + DESCRIPTION[2] + this.amount;
+            this.description = DESCRIPTION[0] + manaBurnDamage() + DESCRIPTION[2] + this.amount;
         } else {
-            this.description = DESCRIPTION[0] + (int) Math.ceil(this.m.maxHealth * 0.01D * this.amount) + DESCRIPTION[1] + (int) Math.ceil(this.m.maxHealth * 0.01D * this.amount * 3) + DESCRIPTION[2] + this.amount;
+            this.description = DESCRIPTION[0] + manaBurnDamage() + DESCRIPTION[1] + manaBurnDamage() * 3 + DESCRIPTION[2] + this.amount;
         }
     }
 

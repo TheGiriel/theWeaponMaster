@@ -15,40 +15,24 @@ import static theWeaponMaster.DefaultMod.makeCardPath;
 
 public class BullyWimp extends AbstractDynamicCard {
 
-    // TEXT DECLARATION
-
     public static final String ID = DefaultMod.makeID(BullyWimp.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
-
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.SKILL;       //
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
 
-
-
-    // /STAT DECLARATION/
-
-
     public BullyWimp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, CardTarget.ALL_ENEMY);
 
-        baseMagicNumber = 2;
-        magicNumber = baseMagicNumber;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
     }
 
 
@@ -65,8 +49,6 @@ public class BullyWimp extends AbstractDynamicCard {
         }
     }
 
-
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

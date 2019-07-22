@@ -37,7 +37,7 @@ public class HemorrhagePower extends AbstractPower {
 
         this.type = AbstractPower.PowerType.DEBUFF;
         this.isTurnBased = true;
-        this.description = DESCRIPTION[0];
+        this.description = DESCRIPTION[0] + hemorrhage + DESCRIPTION[1];
     }
 
     public void atStartOfTurn() {
