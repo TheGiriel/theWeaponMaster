@@ -22,8 +22,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.*;
-import theWeaponMaster.cards.bully.*;
-import theWeaponMaster.cards.legendary_weapons.*;
+import theWeaponMaster.cards.legendary_weapons.not_relevant.DefaultCommonPower;
+import theWeaponMaster.cards.legendary_weapons.not_relevant.OrbSkill;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.events.IdentityCrisisEvent;
 import theWeaponMaster.potions.PlaceholderPotion;
@@ -33,8 +33,8 @@ import theWeaponMaster.relics.PlaceholderRelic;
 import theWeaponMaster.relics.PlaceholderRelic2;
 import theWeaponMaster.util.IDCheckDontTouchPls;
 import theWeaponMaster.util.TextureLoader;
+import theWeaponMaster.variables.BullyVariable;
 import theWeaponMaster.variables.DefaultCustomVariable;
-import theWeaponMaster.variables.shieldBuster;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -390,7 +390,7 @@ public class DefaultMod implements
         logger.info("Add variables");
         // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        BaseMod.addDynamicVariable(new shieldBuster());
+        //BaseMod.addDynamicVariable(new BullyVariable());
         
         logger.info("Adding cards");
         // Add the cards
@@ -425,8 +425,9 @@ public class DefaultMod implements
         //BaseMod.addCard(new LW_Fenrir());
         BaseMod.addCard(new FenrirLacerate());
         BaseMod.addCard(new FenrirShieldEater());
-        BaseMod.addCard(new FenrirViciousSwing());
+        BaseMod.addCard(new FenrirHeavySwing());
         BaseMod.addCard(new FenrirUnleashed());
+        BaseMod.addCard(new FenrirIgnite());
         //BaseMod.addCard(new LW_Leviathan());
         BaseMod.addCard(new LeviathanCrush());
         //BaseMod.addCard(new LeviathanEject());
@@ -444,7 +445,7 @@ public class DefaultMod implements
         BaseMod.addCard(new BullyTaunt());
         BaseMod.addCard(new BullyMeanToEveryone());
         BaseMod.addCard(new BullyHuh());
-        //BaseMod.addCard(new BullyWimp());
+        BaseMod.addCard(new BullyWimp());
         BaseMod.addCard(new BullyIntimidate());
         BaseMod.addCard(new BullyTerrifyingHowl());
         BaseMod.addCard(new BullyDinerArgument());
@@ -480,9 +481,10 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(CerberusCard5.ID);
         //UnlockTracker.unlockCard(LW_Fenrir.ID);
         UnlockTracker.unlockCard(FenrirLacerate.ID);
-        UnlockTracker.unlockCard(FenrirViciousSwing.ID);
+        UnlockTracker.unlockCard(FenrirHeavySwing.ID);
         UnlockTracker.unlockCard(FenrirShieldEater.ID);
         UnlockTracker.unlockCard(FenrirUnleashed.ID);
+        UnlockTracker.unlockCard(FenrirIgnite.ID);
         //UnlockTracker.unlockCard(LW_Leviathan.ID);
         UnlockTracker.unlockCard(LeviathanCrush.ID);
         //UnlockTracker.unlockCard(LeviathanEject.ID);
@@ -501,7 +503,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(BullyTaunt.ID);
         UnlockTracker.unlockCard(BullyMeanToEveryone.ID);
         UnlockTracker.unlockCard(BullyHuh.ID);
-        //UnlockTracker.unlockCard(BullyWimp.ID);
+        UnlockTracker.unlockCard(BullyWimp.ID);
         UnlockTracker.unlockCard(BullyIntimidate.ID);
         UnlockTracker.unlockCard(BullyTerrifyingHowl.ID);
         UnlockTracker.unlockCard(BullyDinerArgument.ID);

@@ -74,13 +74,6 @@
     ],
     "DESCRIPTION": "Increase the [#3333aa]Ink counter to create delayed attacks or reactive defense."
   },
-  {
-    "PROPER_NAME": "[#ffc200]Ego",
-    "NAMES": [
-      "ego"
-    ],
-    "DESCRIPTION": "Gain [#ffc200]Ego whenever you attack enemies or take damage. Certain cards gain extra effects based on [#ffc200]Ego."
-  },
 
   {
     "PROPER_NAME": "[#cccccc]Bullets",
@@ -119,7 +112,7 @@
       "evolved",
       "evolutions"
     ],
-    "DESCRIPTION": "Currently not yet implemented. Increase the power of this and other Fenrir cards for the current combat whenever you meet the condition."
+    "DESCRIPTION": "Currently partially implemented. Whenever you meet the condition increase the power of this and other Fenrir cards by the indicated amount until the end of combat."
   },
   {
     "PROPER_NAME": "Overkill",

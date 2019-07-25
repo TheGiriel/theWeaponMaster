@@ -22,10 +22,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.cards.DefaultCommonPower;
-import theWeaponMaster.cards.Strike_WeaponMaster;
-import theWeaponMaster.cards.bully.*;
-import theWeaponMaster.cards.legendary_weapons.*;
+import theWeaponMaster.cards.*;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
 import theWeaponMaster.relics.PlaceholderRelic2;
@@ -159,16 +156,17 @@ public class TheWeaponMaster extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(BullyMeanToEveryone.ID);
+        /*retVal.add(BullyMeanToEveryone.ID);
         retVal.add(BullyHuh.ID);
         retVal.add(BullyIntimidate.ID);
         retVal.add(BullyShakedown.ID);
-        retVal.add(BullySlap.ID);
+        retVal.add(BullySlap.ID);*/
         retVal.add(RevenantRavenousStrikes.ID);
         retVal.add(FenrirUnleashed.ID);
         retVal.add(FenrirLacerate.ID);
         retVal.add(FenrirShieldEater.ID);
-        retVal.add(FenrirViciousSwing.ID);
+        retVal.add(FenrirHeavySwing.ID);
+        retVal.add(FenrirIgnite.ID);
         return retVal;
     }
 

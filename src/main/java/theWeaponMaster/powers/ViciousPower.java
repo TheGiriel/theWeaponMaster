@@ -100,7 +100,7 @@ public class ViciousPower extends AbstractPower {
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return damage + Math.max(1, this.amount / 3);
+        return damage + (this.amount / 3);
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {

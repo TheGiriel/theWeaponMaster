@@ -88,28 +88,28 @@
   },
   "theWeaponMaster:FenrirLacerate": {
     "NAME": "Lacerate",
-    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. Apply !M! Lacerate. NL Evolve - Hit enemies with 3+ Lacerate.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 20% bonus damage to enemies with Lacerate. NL Evolve - Hit enemies with 3+ Lacerate."
+    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage. Apply !M! Lacerate. NL Evolve: Hit enemies with Hemorrhage or 3+ Lacerate.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 20% bonus damage to enemies with Lacerate. NL Evolve: Hit enemies with Hemorrhage or 3+ Lacerate."
   },
   "theWeaponMaster:FenrirShieldEater": {
     "NAME": "Shield Eater",
-    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage and absorb an equal amount of block. NL Evolve - Destroy enemy Block.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal  !D! damage and absorb an equal amount of block. Enemies lose health equal to 25% blocked damage. NL Evolve - Destroy enemy Block."
+    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage and absorb an equal amount of block. NL Evolve !M! - Destroy more than 10 Block.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal  !D! damage and absorb an equal amount of block. Enemies lose health equal to 25% blocked damage. NL Evolve !M! - Destroy more than 10 Block."
   },
   "theWeaponMaster:FenrirIgnite": {
     "NAME": "Ignite",
-    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to gain Block equal to triple the number of Fenrir upgrades (including from this use). NL Evolve - All enemies intend to attack you.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage to gain Block equal to 4 times the number of Fenrir upgrades (including from this use). NL Evolve - All enemies intend to attack."
+    "DESCRIPTION": "Legendary_Weapon NL Gain Block equal to !B! plus 150% of Fenrir upgrades. NL Evolve: All enemies intend to attack you.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 2 damage to gain Block equal to !B! plus double the number of Fenrir upgrades (including from this use). NL Evolve !M! - All enemies intend to attack."
   },
-  "theWeaponMaster:FenrirViciousSwing": {
-    "NAME": "Vicious Swing",
-    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. NL Evolve - Play holding 3 or fewer cards.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage. Vicious. NL Evolve - Play holding 3 or fewer cards."
+  "theWeaponMaster:FenrirHeavySwing": {
+    "NAME": "Heavy Swing",
+    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage per card in your hand. NL Evolve: Play holding 3 or fewer cards.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Deal !D! damage per card in your hand. NL Evolve: Play holding 3 or fewer cards."
   },
   "theWeaponMaster:FenrirUnleashed": {
     "NAME": "Fenrir Unleashed",
-    "DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage to all enemies, one after another. Overkill. NL Evolve - Kill an opponent.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage to deal !D! damage to all enemies, one after another. Improved overkill. NL Evolve - Kill an opponent."
+    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Kill an opponent.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Every time you kill an opponent."
   },
 
   "theWeaponMaster:LW_Leviathan": {
@@ -381,16 +381,18 @@
   },
   "theWeaponMaster:BullyHuh": {
     "NAME": "HUH?!",
-    "DESCRIPTION": "Bully NL Gain !M! Artifact.",
-    "UPGRADE_DESCRIPTION": "Bully NL Gain !M! Artifact, gain !M! block."
+    "DESCRIPTION": "Bully 10 NL Gain !M! Artifact.",
+    "UPGRADE_DESCRIPTION": "Bully 7 NL Gain !M! Artifact, gain 10 block."
   },
   "theWeaponMaster:BullyWimp": {
     "NAME": "Wimp",
-    "DESCRIPTION": "Bully NL Apply !M! Weak to all enemies."
+    "DESCRIPTION": "Bully 6 NL Apply !M! Weak to target enemy.",
+    "UPGRADE_DESCRIPTION": "Bully 6 NL Apply !M! Weak to all enemies."
   },
   "theWeaponMaster:BullySlap": {
     "NAME": "Slap",
-    "DESCRIPTION": "Bully NL Slap target enemy for !D! damage and apply Frail for !M! turns."
+    "DESCRIPTION": "Bully 5 NL Slap target enemy for !D! damage and apply Frail for !M! turns.",
+    "UPGRADE_DESCRIPTION": "Bully 5 Slap target enemy for !D! damage twice each and apply Frail for !M! turns."
   },
   "theWeaponMaster:BullyMeanToEveryone": {
     "NAME": "Mean to everyone!",
@@ -398,16 +400,16 @@
   },
   "theWeaponMaster:BullyTerrifyingHowl": {
     "NAME": "Terrifying Howl",
-    "DESCRIPTION": "Force all attacking enemies to defend."
+    "DESCRIPTION": "Bully  NL Force all attacking enemies to defend."
   },
   "theWeaponMaster:BullyDinerArgument": {
     "NAME": "Diner Argument",
-    "DESCRIPTION": "Can only be played as the first card. NL Force every enemy to take a random action."
+    "DESCRIPTION": "Bully NL Can only be played as the first card. NL Force every enemy to take a random action."
   },
   "theWeaponMaster:BullyShakedown": {
     "NAME": "Shakedown",
-    "DESCRIPTION": "Bully NL Deal !D! damage and 'convince' target enemy to 'donate' a random amount of gold to you (max 12).",
-    "UPGRADE_DESCRIPTION": "Bully NL Deal !D! damage and 'convince' target enemy to 'donate' a random amount of gold to you (max 18)."
+    "DESCRIPTION": "Bully NL Deal !D! damage and 'convince' target enemy to 'donate' a random amount of gold to you (6-12 Gold).",
+    "UPGRADE_DESCRIPTION": "Bully NL Deal !D! damage and 'convince' target enemy to 'donate' a random amount of gold to you (9-18 Gold)."
   },
   "theWeaponMaster:BullyCard10": {
     "NAME": "Card10",
