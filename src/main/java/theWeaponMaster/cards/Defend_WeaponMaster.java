@@ -38,10 +38,6 @@ public class Defend_WeaponMaster extends AbstractDynamicCard {
     private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
-
-    // /STAT DECLARATION/
-
-
     public Defend_WeaponMaster() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
