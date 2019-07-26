@@ -1,12 +1,16 @@
 package theWeaponMaster.cards.Not_finished;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.AbstractDynamicCard;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.powers.FenrirPower;
+import theWeaponMaster.powers.LeviathanPower;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -21,26 +25,19 @@ public class LW_Leviathan extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Attack.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADED_DAMAGE = 2;
-    private int armorCrush = 0;
-
+    private static final int COST = 0;
     public LW_Leviathan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage = baseDamage = DAMAGE;
     }
-
-    //TODO: Basic: Deal extra damage to enemies who have block. Drawback: Take 50% damage when you attack enemies without block.
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        update();
-
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LeviathanPower(p)));
+        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LW_Leviathan");
     }
 
     @Override

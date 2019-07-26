@@ -23,7 +23,7 @@ public class FenrirShieldEater extends AbstractDynamicCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("fenrirshieldeater.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;

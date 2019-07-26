@@ -52,323 +52,158 @@
   },
 
   "theWeaponMaster:LW_Cerberus": {
-    "NAME": "Cerberus",
-    "DESCRIPTION": "not_implemented NL Equip the Weapon Master's first sword and gain its corresponding cards.",
+    "NAME": "[#cdfcfe]Cerberus",
+    "DESCRIPTION": "Legendary Weapon NL Discarding, cards specializing against enemy buffs.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:CerberusSlash": {
-    "NAME": "[#fcc72d]Slash",
-    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard."
+    "NAME": "[#cdfcfe]Slash",
+    "DESCRIPTION": "Cerberus NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard.",
+    "UPGRADE_DESCRIPTION": "Cerberus NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard."
   },
   "theWeaponMaster:CerberusEssenceSlash": {
-    "NAME": "[#fcc72d]Essence [#fcc72d]Slash",
-    "DESCRIPTION": "",
+    "NAME": "[#cdfcfe]Essence [#cdfcfe]Slash",
+    "DESCRIPTION": "Cerberus",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:CerberusModularSlash": {
-    "NAME": "[#fcc72d]Modular [#fcc72d]Slash",
-    "DESCRIPTION": "",
+    "NAME": "[#cdfcfe]Modular [#cdfcfe]Slash",
+    "DESCRIPTION": "Cerberus",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:CerberusIaiSlash": {
-    "NAME": "[#fcc72d]Iai [#fcc72d]Slash",
-    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus 2 bonus damage for every buff an enemy has.",
-    "UPGRADE_DESCRIPTION": ""
+    "NAME": "[#cdfcfe]Iai [#cdfcfe]Slash",
+    "DESCRIPTION": "Cerberus NL not_implemented - Deal !D! plus 2 bonus damage for every buff an enemy has.",
+    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus 2 bonus damage for every buff an enemy has."
   },
-  "theWeaponMaster:CerberusCard5": {
-    "NAME": "[#fcc72d] [#fcc72d]",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+  "theWeaponMaster:CerberusDrainSlash": {
+    "NAME": "[#cdfcfe]Drain [#cdfcfe]Slash",
+    "DESCRIPTION": "Cerberus NL not_implemented - Deal !D! damage and steal !M! enemy buff.",
+    "UPGRADE_DESCRIPTION": "Legendary Weapon NL not_implemented - Deal !D! damage and steal !M! enemy buffs."
   },
+
   "theWeaponMaster:LW_Fenrir": {
-    "NAME": "Fenrir",
-    "DESCRIPTION": "not_implemented NL Equip the evolving Fenrir and gain its corresponding cards.",
+    "NAME": "[#b7410e]Fenrir",
+    "DESCRIPTION": "Fenrir Weapon NL Evolving cards specializing in Lacerate.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:FenrirLacerate": {
-    "NAME": "Lacerate",
-    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage. Apply !M! Lacerate. NL Evolve: Hit enemies with Hemorrhage or 3+ Lacerate.",
+    "NAME": "[#b7410e]Lacerate",
+    "DESCRIPTION": "Fenrir NL Deal !D! damage. Apply !M! Lacerate. NL Evolve: Hit enemies with Hemorrhage or 3+ Lacerate.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 20% bonus damage to enemies with Lacerate. NL Evolve: Hit enemies with Hemorrhage or 3+ Lacerate."
   },
   "theWeaponMaster:FenrirShieldEater": {
-    "NAME": "Shield Eater",
-    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage and absorb an equal amount of block. NL Evolve !M! - Destroy more than 10 Block.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal  !D! damage and absorb an equal amount of block. Enemies lose health equal to 25% blocked damage. NL Evolve !M! - Destroy more than 10 Block."
+    "NAME": "[#b7410e]Shield [#b7410e]Eater",
+    "DESCRIPTION": "Fenrir NL Deal !D! damage and absorb an equal amount of block. NL Evolve !M! - Destroy more than 10 Block.",
+    "UPGRADE_DESCRIPTION": "Fenrir NL Take !M! damage and deal  !D! damage and absorb an equal amount of block. Enemies lose health equal to 25% blocked damage. NL Evolve !M! - Destroy more than 10 Block."
   },
   "theWeaponMaster:FenrirIgnite": {
-    "NAME": "Ignite",
-    "DESCRIPTION": "Legendary_Weapon NL Gain Block equal to !B! plus 150% of Fenrir upgrades. NL Evolve: All enemies intend to attack you.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take 2 damage to gain Block equal to !B! plus double the number of Fenrir upgrades (including from this use). NL Evolve !M! - All enemies intend to attack."
+    "NAME": "[#b7410e]Ignite",
+    "DESCRIPTION": "Fenrir NL Gain Block equal to !B! plus 150% of Fenrir upgrades. NL Evolve: All enemies intend to attack you.",
+    "UPGRADE_DESCRIPTION": "Fenrir NL Take 2 damage to gain Block equal to !B! plus double the number of Fenrir upgrades (including from this use). NL Evolve !M! - All enemies intend to attack."
   },
   "theWeaponMaster:FenrirHeavySwing": {
-    "NAME": "Heavy Swing",
-    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage per card in your hand. NL Evolve: Play holding 3 or fewer cards.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Deal !D! damage per card in your hand. NL Evolve: Play holding 3 or fewer cards."
+    "NAME": "[#b7410e]Heavy [#b7410e]Swing",
+    "DESCRIPTION": "Fenrir NL Deal !D! damage per card in your hand. NL Evolve: Play holding 3 or fewer cards.",
+    "UPGRADE_DESCRIPTION": "Fenrir NL Deal !D! damage per card in your hand. NL Evolve: Play holding 3 or fewer cards."
   },
   "theWeaponMaster:FenrirUnleashed": {
-    "NAME": "Fenrir Unleashed",
-    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Kill an opponent.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Every time you kill an opponent."
+    "NAME": "[#b7410e]Fenrir [#b7410e]Unleashed",
+    "DESCRIPTION": "Fenrir NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Kill an opponent.",
+    "UPGRADE_DESCRIPTION": "Fenrir NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Every time you kill an opponent."
   },
 
   "theWeaponMaster:LW_Leviathan": {
-    "NAME": "[#808080]Leviathan [#808080]Gauntlets",
+    "NAME": "[#663399]Leviathan [#663399]Gauntlets",
     "DESCRIPTION": "",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:LeviathanCrush": {
-    "NAME": "[#808080]Crush",
-    "DESCRIPTION": "Legendary_Weapon NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
+    "NAME": "[#663399]Crush",
+    "DESCRIPTION": "Leviathan_Gauntlet NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Armor_Break, Crush NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block."
   },
   "theWeaponMaster:LeviathanEject": {
-    "NAME": "[#808080]Eject [#808080]->",
-    "DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy.",
+    "NAME": "[#663399]Eject [#663399]->",
+    "DESCRIPTION": "Leviathan_Gauntlet NL Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy.",
     "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy."
   },
   "theWeaponMaster:LeviathanReload": {
-    "NAME": "[#808080]<- [#808080]Reload",
-    "DESCIRPTION": "",
+    "NAME": "[#663399]<- [#663399]Reload",
+    "DESCIRPTION": "Leviathan_Gauntlet NL ",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:LeviathanGroundSplitter": {
-    "NAME": "[#808080]Ground [#808080]Splitter",
-    "DESCRIPTION": "Stagger all enemy cards depending on their total block for two turns.",
+    "NAME": "[#663399]Ground [#663399]Splitter",
+    "DESCRIPTION": "Leviathan_Gauntlet NL Stagger all enemy cards depending on their total block for two turns.",
     "UPGRADE_DESCRIPTION": "Stagger all enemy cards depending on their total block for three turns."
   },
-  "theWeaponMaster:LeviathanCard4": {
-    "NAME": "[#808080] [#808080]",
-    "DESCRIPTION": "",
+  "theWeaponMaster:LeviathanImpactStrike": {
+    "NAME": "[#663399]Impact [#663399]Strike",
+    "DESCRIPTION": "Leviathan_Gauntlet NL ",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:LeviathanCard5": {
-    "NAME": "[#808080] [#808080]",
-    "DESCRIPTION": "",
+  "theWeaponMaster:LeviathanEarthquake": {
+    "NAME": "[#663399]Earthquake",
+    "DESCRIPTION": "Leviathan_Gauntlet NL ",
     "UPGRADE_DESCRIPTION": ""
   },
 
   "theWeaponMaster:LW_Revenant": {
-    "NAME": "[#bf3a3b]Revenant [#bf3a3b]Cleaver",
-    "DESCRIPTION": "not_implemented - Equip the Revenant Cleaver and its corresponding cards."
+    "NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
+    "DESCRIPTION": "Focused on the player's HP and Vicious generation."
   },
   "theWeaponMaster:RevenantRavenousStrikes": {
-    "NAME": "[#bf3a3b]Ravenous [#bf3a3b]Strikes",
-    "DESCRIPTION": "Legendary_Weapon NL Deal !D! damage and heal for one third of the unblocked damage dealt. NL Gain !M! Vicious."
+    "NAME": "[#e3dac9]Ravenous [#e3dac9]Strikes",
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and heal for one third of the unblocked damage dealt. NL Gain !M! Vicious."
   },
-  "theWeaponMaster:RevenantCard2": {
-    "NAME": "[#bf3a3b] [#bf3a3b]",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+  "theWeaponMaster:RevenantChopChopCHOP": {
+    "NAME": "[#e3dac9]Chop [#e3dac9]Chop [#e3dac9]CHOP",
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and heal 1 HP three times. NL Healing left: !M!."
   },
-  "theWeaponMaster:RevenantCard3": {
-    "NAME": "[#bf3a3b] [#bf3a3b]",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+  "theWeaponMaster:RevenantHungrySteel": {
+    "NAME": "[#e3dac9]Hungry [#e3dac9]Steel",
+    "DESCRIPTION": "Revenant_Cleaver NL Designate target enemy and deal !D! damage."
   },
-  "theWeaponMaster:RevenantCard4": {
-    "NAME": "[#bf3a3b] [#bf3a3b]",
-    "DESCRIPTION": "",
+  "theWeaponMaster:RevenantSnoutToTail": {
+    "NAME": "[#e3dac9]Snout [#e3dac9]To [#e3dac9]Tail",
+    "DESCRIPTION": "Revenant_Cleaver NL ",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:RevenantBloodbath": {
-    "NAME": "[#bf3a3b]Bloodbath",
-    "DESCRIPTION": "Attack a random enemy for !D! damage. Use half your Berserk stacks to attack again until you run out.",
-    "UPGRADE_DESCRIPTION": "Attack a random enemy for !D! damage. Use half your Berserk stacks to attack again until you run out."
+    "NAME": "[#e3dac9]Bloodbath",
+    "DESCRIPTION": "Revenant_Cleaver NL Attack a random enemy for !D! damage. Use half your Vicious stacks to attack again until you run out."
   },
-
-
-  "theWeaponMaster:LW_Abaddon": {
-    "NAME": "Abaddon",
-    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage and drain Strength. NL Drain Dexterity if the opponent is casting a non-block skill.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AbaddonDrain": {
-    "NAME": "Drain",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AbaddonCard2": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AbaddonCard3": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AbaddonCard4": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AbaddonJudgment": {
-    "NAME": "Judgment",
-    "DESCRIPTION": "This shouldn't show up",
-    "UPGRADE_DESCRIPTION": "This shouldn't show up"
-  },
-
-
-  "theWeaponMaster:LW_Atlas": {
-    "NAME": "Atlas Blade",
-    "DESCRIPTION": "Legendary_Weapon NL not_implemented. NL Hit the opponent with !D! Ink damage."
-  },
-  "theWeaponMaster:AtlasInkSlash": {
-    "NAME": "Ink Slash",
-    "DESCRIPTION": "Create an Ink Orb that blocks or deals damage with other Atlas Blade cards.",
-    "UPGRADE_DESCRIPTION": "Upgrade the Ink Orb."
-  },
-  "theWeaponMaster:AtlasCard2": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AtlasCard3": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AtlasCard4": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AtlasCard5": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-
 
   "theWeaponMaster:LW_Atropos": {
     "NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Balanced in Attacks and Skills, specializing in Mana Burn."
   },
-  "theWeaponMaster:AtroposSever": {
+  "theWeaponMaster:AtroposSeveredSource": {
     "NAME": "[#3abfbe]Severed [#3abfbe]Source",
-    "DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.",
+    "DESCRIPTION": "Atropos_Shears NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION":["Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.", "Legendary_Weapon NL not_implemented - Deal full Manablaze damage to your target and remove Manablaze.", "Strings of Fate"]
   },
-  "theWeaponMaster:AtroposCard2": {
-    "NAME": "[#3abfbe]Split [#3abfbe]Scissors",
-    "DESCRIPTION": "Deal !D! damage twice to target enemy. NL Deal !M! Extra damage for each Mana_Blaze stack.",
+  "theWeaponMaster:AtroposServeredScissors": {
+    "NAME": "[#3abfbe]Severed [#3abfbe]Scissors",
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice to target enemy. NL Deal !M! Extra damage for each Mana_Blaze stack.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage twice to target enemy. NL Deal !M! Extra damage for each Mana_Blaze stack."
   },
-  "theWeaponMaster:AtroposCard3": {
-    "NAME": "",
-    "DESCRIPTION": "",
+  "theWeaponMaster:AtroposSeveredPath": {
+    "NAME": "[#3abfbe]Severed [#3abfbe]Path",
+    "DESCRIPTION": "Atropos_Shears NL Target Enemy attacks itself this turn.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:AtroposCard4": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+  "theWeaponMaster:AtroposSeveredPain": {
+    "NAME": "[#3abfbe]Severed [#3abfbe]Pain",
+    "DESCRIPTION": "Atropos_Shears NL Reduce all damage you take by half until your next turn.",
+    "UPGRADE_DESCRIPTION": "Reduce all damage you take by half for two turns."
   },
-  "theWeaponMaster:AtroposCard5": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
+  "theWeaponMaster:AtroposSeveredSoul": {
+    "NAME": "[#3abfbe]Severed [#3abfbe]Soul",
+    "DESCRIPTION": "Atropos_Shears NL Deal massive damage to target enemy."
   },
-
-
-  "theWeaponMaster:LW_Astra": {
-    "NAME": "The Astras",
-    "DESCRIPTION": "not_implemented NL Summon the legendary Astras and gain their corresponding cards.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AstraBrahmaastra": {
-    "NAME": "Brahmaastra",
-    "DESCRIPTION": "Legendary_Weapon NL not_implemented - All enemies lose !D! HP. NL Gain 2 Vulnerable",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AstraCard2": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AstraCard3": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AstraCard4": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:AstraTrishula": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-
-
-  "theWeaponMaster:LW_Chronos": {
-    "NAME": "Chronophage",
-    "DESCRIPTION": "not_implemented NL Summon the Chronophage from across space and time and gain its corresponding cards.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:ChronosCard1": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:ChronosCard2": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:ChronosCard3": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:ChronosCard4": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:ChronosCard5": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-
-
-  "theWeaponMaster:LW_GaeBulg": {
-    "NAME": "Gáe Bulg",
-    "DESCRIPTION": "Legendary_Weapon",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:GaeBulgCard1": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:GaeBulgCard2": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:GaeBulgCard3": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:GaeBulgCard4": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:GaeBulgCard5": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "UPGRADE_DESCRIPTION": ""
-  },
-
 
   "theWeaponMaster:BullyIntimidate": {
     "NAME": "Intimidate",
@@ -376,8 +211,7 @@
   },
   "theWeaponMaster:BullyTaunt": {
     "NAME": "Taunt",
-    "DESCRIPTION": "Bully NL Apply 2 Vulnerable to an attacking enemy. NL Otherwise apply 2 weak and force the enemy to attack.",
-    "UPGRADE_DESCRIPTION": "Bully NL Apply 3 Weak to an attacking enemy. NL Otherwise apply 2 weak and force the enemy to attack."
+    "DESCRIPTION": "Bully NL Force the enemy to attack."
   },
   "theWeaponMaster:BullyHuh": {
     "NAME": "HUH?!",
@@ -414,5 +248,9 @@
   "theWeaponMaster:BullyCard10": {
     "NAME": "Card10",
     "DESCRIPTION": "Not Implemented."
+  },
+  "theWeaponMaster:SeveredHope": {
+    "NAME": "Severed Hope",
+    "DESCRIPTION": "Die."
   }
 }

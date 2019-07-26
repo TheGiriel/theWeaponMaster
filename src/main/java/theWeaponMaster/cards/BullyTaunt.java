@@ -57,7 +57,6 @@ public class BullyTaunt extends AbstractBullyCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             reduceBullyCost(REDUCED_BULLY_COST);
-            rawDescription = UPGRADED_DESCRIPTION;
             initializeDescription();
         }
     }

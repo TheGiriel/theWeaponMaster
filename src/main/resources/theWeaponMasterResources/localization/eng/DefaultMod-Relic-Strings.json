@@ -30,5 +30,12 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "theWeaponMaster:ArsenalRelic": {
+    "NAME": "The Arsenal",
+    "FLAVOR": "I might just have the right tool for the job.",
+    "DESCRIPTIONS": [
+      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck."
+    ]
   }
 }

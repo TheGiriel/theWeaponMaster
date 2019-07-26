@@ -68,30 +68,6 @@
     "DESCRIPTION": "Enemies lose HP equal to half the destroyed Block."
   },
   {
-    "PROPER_NAME": "[#3333aa]Ink",
-    "NAMES": [
-      "ink"
-    ],
-    "DESCRIPTION": "Increase the [#3333aa]Ink counter to create delayed attacks or reactive defense."
-  },
-
-  {
-    "PROPER_NAME": "[#cccccc]Bullets",
-    "NAMES": [
-      "bullets",
-      "bullet"
-    ],
-    "DESCRIPTION": "[#2a3439]Revolver cards use [#cccccc]Bullets for special effects."
-  },
-
-  {
-    "PROPER_NAME": "[#2a3439]Revolver",
-    "NAMES": [
-      "revolver"
-    ],
-    "DESCRIPTION": "[#2a3439]Revolver cards use [#cccccc]Bullets for special effects."
-  },
-  {
     "PROPER_NAME": "[#990000]Lacerate",
     "NAMES": [
       "lacerate"
@@ -112,7 +88,7 @@
       "evolved",
       "evolutions"
     ],
-    "DESCRIPTION": "Currently partially implemented. Whenever you meet the condition increase the power of this and other Fenrir cards by the indicated amount until the end of combat."
+    "DESCRIPTION": "Increase the power of all Fenrir cards by 1 whenever you meet the condition."
   },
   {
     "PROPER_NAME": "Overkill",
@@ -124,9 +100,10 @@
   {
     "PROPER_NAME": "[#9aa3a3]Legendary [#9aa3a3]Weapon",
     "NAMES": [
-      "legendary weapon",
+      "Legendary Weapon",
       "legendary weapons",
-      "legendary_weapon"
+      "legendary_weapon",
+      "Legendary_Weapon"
     ],
     "DESCRIPTION": "[#9aa3a3]Legendary [#9aa3a3]Weapons are unique cards with strong effects and drawbacks."
   },
@@ -153,5 +130,57 @@
       "intimidated"
     ],
     "DESCRIPTION": "Can only be applied to attacking enemies. NL Intimidated enemies are forced to defend and gain Block equal to 10 plus half your Vicious."
+  },
+  {
+    "PROPER_NAME": "Designate",
+    "NAMES": [
+      "designate",
+      "designated"
+    ],
+    "DESCRIPTION": "If you kill target enemy you gain max HP. Gain more the higher their HP is."
+  },
+  {
+    "PROPER_NAME": "[#b7410e]Fenrir",
+    "NAMES": [
+      "fenrir"
+    ],
+    "DESCRIPTION": "Evolving Cards specializing in Lacerate."
+  },
+  {
+    "PROPER_NAME": "[#cdfcfe]Cerberus",
+    "NAMES": [
+      "cerberus"
+    ],
+    "DESCRIPTION": "Cards specializing in discarding and against buffed enemies."
+  },
+  {
+    "PROPER_NAME": "[#3abfbe]Atropos [#3abfbe]Shears",
+    "NAMES": [
+      "Atropos Shears",
+      "atropos shears",
+      "atropos_shears",
+      "Atropos_Shears"
+    ],
+    "DESCRIPTION": "Balanced in Attacks and Skills, specializing in Mana Burn."
+  },
+  {
+    "PROPER_NAME": "[#663399]Leviathan [#663399]Gauntlet",
+    "NAMES": [
+      "Leviathan Gauntlet",
+      "leviathan gauntlet",
+      "leviathan_gauntlet",
+      "Leviathan_Gauntlet"
+    ],
+    "DESCRIPTION": ""
+  },
+  {
+    "PROPER_NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
+    "NAMES": [
+      "Revenant Cleaver",
+      "revenant cleaver",
+      "revenant_cleaver",
+      "Revenant_Cleaver"
+    ],
+    "DESCRIPTION": "Focused on the player's HP and Vicious generation."
   }
 ]

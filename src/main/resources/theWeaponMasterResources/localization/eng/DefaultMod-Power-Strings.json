@@ -76,13 +76,20 @@
   "IntimidatePower": {
     "NAME": "Intimidated",
     "DESCRIPTIONS": [
-      "Intimidated Creatures defend, gaining Block equal to 10 plus half of your Vicious stacks. NL Total Block: "
+      "Intimidated Creatures defend, gaining ",
+      " Block."
     ]
   },
   "TauntPower": {
     "NAME": "Taunted",
     "DESCRIPTIONS": [
       "Taunted creatures are forced to attack and deal base damage equal to 10% of your max HP."
+    ]
+  },
+  "DesignatePower": {
+    "NAME": "Designated",
+    "DESCRIPTIONS": [
+      "Designated"
     ]
   }
 }

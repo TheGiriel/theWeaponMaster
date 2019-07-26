@@ -25,7 +25,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("fenrirunleashed.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

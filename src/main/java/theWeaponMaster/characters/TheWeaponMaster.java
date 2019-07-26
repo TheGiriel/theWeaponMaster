@@ -23,6 +23,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.*;
+import theWeaponMaster.cards.Not_finished.LW_Fenrir;
+import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
 import theWeaponMaster.relics.PlaceholderRelic2;
@@ -162,7 +164,9 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(BullyShakedown.ID);
         retVal.add(BullySlap.ID);*/
         retVal.add(RevenantRavenousStrikes.ID);
-        retVal.add(FenrirUnleashed.ID);
+        retVal.add(RevenantHungrySteel.ID);
+        retVal.add(RevenantChopChopCHOP.ID);
+        retVal.add(LW_Fenrir.ID);
         retVal.add(FenrirLacerate.ID);
         retVal.add(FenrirShieldEater.ID);
         retVal.add(FenrirHeavySwing.ID);
@@ -177,6 +181,7 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(PlaceholderRelic.ID);
         retVal.add(PlaceholderRelic2.ID);
         retVal.add(DefaultClickableRelic.ID);
+        retVal.add(ArsenalRelic.ID);
 
         UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
         UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);

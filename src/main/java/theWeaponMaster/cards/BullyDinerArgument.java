@@ -25,7 +25,7 @@ import static theWeaponMaster.DefaultMod.makeCardPath;
 public class BullyDinerArgument extends AbstractBullyCard {
 
     public static final String ID = DefaultMod.makeID(BullyDinerArgument.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("bullydinerargument.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
