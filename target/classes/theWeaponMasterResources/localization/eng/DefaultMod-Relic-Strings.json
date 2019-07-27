@@ -46,7 +46,7 @@
       "dadadada"
     ]
   },
-  "theWeaponMaster:ManaWhetstoneRelic":{
+  "theWeaponMaster:ManaWhetstoneRelic": {
     "NAME": "Mana Whetstone",
     "FLAVOR": "To keep those ethereal edges extra sharp.",
     "DESCRIPTIONS": [
@@ -54,7 +54,7 @@
       ""
     ]
   },
-  "theWeaponMaster:GhoulSkinSheathRelic":{
+  "theWeaponMaster:GhoulSkinSheathRelic": {
     "NAME": "Ghoul Skin Sheath",
     "FLAVOR": "Makes transporting the cleaver much more safe.",
     "DESCRIPTIONS": [
@@ -62,7 +62,7 @@
       ""
     ]
   },
-  "theWeaponMaster:HellhoundOilRelic":{
+  "theWeaponMaster:HellhoundOilRelic": {
     "NAME": "Hellhound Oil(tm)",
     "FLAVOR": "The very best in keeping your favorite edge sharp for only 24.99 for a can!",
     "DESCRIPTIONS": [
@@ -70,7 +70,7 @@
       ""
     ]
   },
-  "theWeaponMaster:ShockwaveModulatorRelic":{
+  "theWeaponMaster:ShockwaveModulatorRelic": {
     "NAME": "Shockwave Modulator",
     "FLAVOR": "What do you mean \"this has been underclocked all along\"?",
     "DESCRIPTIONS": [

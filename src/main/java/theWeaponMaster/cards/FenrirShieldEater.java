@@ -55,11 +55,13 @@ public class FenrirShieldEater extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int shieldEater = 0;
         boolean canEvolve = false;
-        if (damage >= m.currentBlock) {
-            shieldEater = m.currentBlock;
-            canEvolve = true;
-        } else {
-            shieldEater = damage;
+        if (m.currentBlock != 0) {
+            if (damage >= m.currentBlock) {
+                shieldEater = m.currentBlock;
+                canEvolve = true;
+            } else {
+                shieldEater = damage;
+            }
         }
 
         AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));

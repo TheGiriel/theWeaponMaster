@@ -180,7 +180,11 @@
     "NAME": "[#3abfbe]Severed [#3abfbe]Source",
     "DESCRIPTION": "Atropos_Shears NL Deal !D! damage to your target and apply 1 Mana_Burn.",
     "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION":["Legendary_Weapon NL Deal !D! damage to your target and apply 1 Mana_Burn.", "Legendary_Weapon NL not_implemented - Deal full Manablaze damage to your target and remove Manablaze.", "Strings of Fate"]
+    "EXTENDED_DESCRIPTION": [
+      "Legendary_Weapon NL Deal !D! damage to your target and apply 1 Mana_Burn.",
+      "Legendary_Weapon NL not_implemented - Deal full Manablaze damage to your target and remove Manablaze.",
+      "Strings of Fate"
+    ]
   },
   "theWeaponMaster:AtroposSeveredScissors": {
     "NAME": "[#3abfbe]Severed [#3abfbe]Scissors",
