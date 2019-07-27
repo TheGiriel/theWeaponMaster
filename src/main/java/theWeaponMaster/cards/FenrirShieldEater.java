@@ -65,9 +65,9 @@ public class FenrirShieldEater extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         if (shieldEater >= 1) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, shieldEater));
-            if (m.currentBlock == 0) {
-                new FenrirEvolveAction();
-            }
+        }
+        if (canEvolve) {
+            new FenrirEvolveAction();
         }
     }
 

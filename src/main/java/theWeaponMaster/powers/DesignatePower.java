@@ -29,7 +29,7 @@ public class DesignatePower extends AbstractPower {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = Math.min(5, Math.max(1, owner.currentHealth / 20 + 1));
+        this.amount = Math.min(5, Math.max(1, (owner.currentHealth / 20 + 1)));
         this.source = source;
         this.countDown = countDown;
 

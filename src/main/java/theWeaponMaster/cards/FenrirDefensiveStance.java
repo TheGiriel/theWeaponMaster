@@ -28,10 +28,8 @@ public class FenrirDefensiveStance extends AbstractWeaponCard {
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 0;
     private static final int BLOCK = 6;
     private static final int UPGRADED_BLOCK = 3;
-    private static final int EVOLUTION = 1;
 
     public static final String weapon = "Fenrir";
 
