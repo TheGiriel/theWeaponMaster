@@ -73,8 +73,8 @@
   },
   "theWeaponMaster:CerberusIaiSlash": {
     "NAME": "[#cdfcfe]Iai [#cdfcfe]Slash",
-    "DESCRIPTION": "Cerberus NL not_implemented - Deal !D! plus 2 bonus damage for every buff an enemy has.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL not_implemented - Deal !D! plus 2 bonus damage for every buff an enemy has."
+    "DESCRIPTION": "Cerberus NL Deal !D! damage. Discards !M! random cards from your hand to deal 2 bonus damage each.",
+    "UPGRADE_DESCRIPTION": "Cerberus NL Deal !D! damage. Discards !M! random cards from your hand to deal 2 bonus damage each."
   },
   "theWeaponMaster:CerberusDrainSlash": {
     "NAME": "[#cdfcfe]Drain [#cdfcfe]Slash",
@@ -90,22 +90,19 @@
   "theWeaponMaster:FenrirLacerate": {
     "NAME": "[#b7410e]Lacerate",
     "DESCRIPTION": "Fenrir NL Deal !D! damage. Apply !M! Lacerate. NL Evolve: Hit enemies with Hemorrhage or 3+ Lacerate.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 20% bonus damage to enemies with Lacerate. NL Evolve: Hit enemies with Hemorrhage or 3+ Lacerate."
+    "UPGRADE_DESCRIPTION": "Fenrir NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 10% bonus damage per Lacerate stack. NL Evolve: Attack enemy with Hemorrhage."
   },
   "theWeaponMaster:FenrirShieldEater": {
     "NAME": "[#b7410e]Shield [#b7410e]Eater",
-    "DESCRIPTION": "Fenrir NL Deal !D! damage and absorb an equal amount of block. NL Evolve !M! - Destroy more than 10 Block.",
-    "UPGRADE_DESCRIPTION": "Fenrir NL Take !M! damage and deal  !D! damage and absorb an equal amount of block. Enemies lose health equal to 25% blocked damage. NL Evolve !M! - Destroy more than 10 Block."
+    "DESCRIPTION": "Fenrir NL Deal !D! damage and absorb an equal amount of block. NL Evolve: Destroy all enemy Block."
   },
-  "theWeaponMaster:FenrirIgnite": {
-    "NAME": "[#b7410e]Ignite",
-    "DESCRIPTION": "Fenrir NL Gain Block equal to !B! plus 150% of Fenrir upgrades. NL Evolve: All enemies intend to attack you.",
-    "UPGRADE_DESCRIPTION": "Fenrir NL Take 2 damage to gain Block equal to !B! plus double the number of Fenrir upgrades (including from this use). NL Evolve !M! - All enemies intend to attack."
+  "theWeaponMaster:FenrirDefensiveStance": {
+    "NAME": "[#b7410e]Defensive [#b7410e]Stance",
+    "DESCRIPTION": "Fenrir NL Gain !B! Block and Defensive Stance. Lose 20% of this block whenever you play a Fenrir card. NL Evolve: All enemies intend to attack you."
   },
   "theWeaponMaster:FenrirHeavySwing": {
     "NAME": "[#b7410e]Heavy [#b7410e]Swing",
-    "DESCRIPTION": "Fenrir NL Deal !D! damage per card in your hand. NL Evolve: Play holding 3 or fewer cards.",
-    "UPGRADE_DESCRIPTION": "Fenrir NL Deal !D! damage per card in your hand. NL Evolve: Play holding 3 or fewer cards."
+    "DESCRIPTION": "Fenrir NL Deal !D! damage per card in your hand, gains half the Evolution bonuses. NL Evolve: Play holding 3 or fewer cards."
   },
   "theWeaponMaster:FenrirUnleashed": {
     "NAME": "[#b7410e]Fenrir [#b7410e]Unleashed",
@@ -114,38 +111,38 @@
   },
 
   "theWeaponMaster:LW_Leviathan": {
-    "NAME": "[#663399]Leviathan [#663399]Gauntlets",
-    "DESCRIPTION": "",
+    "NAME": "[#746550]Leviathan [#746550]Gauntlet",
+    "DESCRIPTION": "Leviathan_Gauntlet",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:LeviathanCrush": {
-    "NAME": "[#663399]Crush",
+    "NAME": "[#746550]Crush",
     "DESCRIPTION": "Leviathan_Gauntlet NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Armor_Break, Crush NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block."
   },
   "theWeaponMaster:LeviathanEject": {
-    "NAME": "[#663399]Eject [#663399]->",
+    "NAME": "[#746550]Eject [#746550]->",
     "DESCRIPTION": "Leviathan_Gauntlet NL Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy.",
     "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy."
   },
   "theWeaponMaster:LeviathanReload": {
-    "NAME": "[#663399]<- [#663399]Reload",
+    "NAME": "[#746550]<- [#746550]Reload",
     "DESCIRPTION": "Leviathan_Gauntlet NL ",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:LeviathanGroundSplitter": {
-    "NAME": "[#663399]Ground [#663399]Splitter",
+    "NAME": "[#746550]Ground [#746550]Splitter",
     "DESCRIPTION": "Leviathan_Gauntlet NL Stagger all enemy cards depending on their total block for two turns.",
     "UPGRADE_DESCRIPTION": "Stagger all enemy cards depending on their total block for three turns."
   },
   "theWeaponMaster:LeviathanImpactStrike": {
-    "NAME": "[#663399]Impact [#663399]Strike",
+    "NAME": "[#746550]Impact [#746550]Strike",
     "DESCRIPTION": "Leviathan_Gauntlet NL ",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:LeviathanEarthquake": {
-    "NAME": "[#663399]Earthquake",
-    "DESCRIPTION": "Leviathan_Gauntlet NL ",
+    "NAME": "[#746550]Earthquake",
+    "DESCRIPTION": "Leviathan_Gauntlet NL Deal !D! damage to all enemies, ignores thorns.",
     "UPGRADE_DESCRIPTION": ""
   },
 
@@ -153,8 +150,8 @@
     "NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
     "DESCRIPTION": "Focused on the player's HP and Vicious generation."
   },
-  "theWeaponMaster:RevenantRavenousStrikes": {
-    "NAME": "[#e3dac9]Ravenous [#e3dac9]Strikes",
+  "theWeaponMaster:RevenantRavenous": {
+    "NAME": "[#e3dac9]Ravenous",
     "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and heal for one third of the unblocked damage dealt. NL Gain !M! Vicious."
   },
   "theWeaponMaster:RevenantChopChopCHOP": {
@@ -181,14 +178,14 @@
   },
   "theWeaponMaster:AtroposSeveredSource": {
     "NAME": "[#3abfbe]Severed [#3abfbe]Source",
-    "DESCRIPTION": "Atropos_Shears NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.",
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage to your target and apply 1 Mana_Burn.",
     "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION":["Legendary_Weapon NL not_implemented - Deal !D! damage to your target and apply 1 Mana_Burn.", "Legendary_Weapon NL not_implemented - Deal full Manablaze damage to your target and remove Manablaze.", "Strings of Fate"]
+    "EXTENDED_DESCRIPTION":["Legendary_Weapon NL Deal !D! damage to your target and apply 1 Mana_Burn.", "Legendary_Weapon NL not_implemented - Deal full Manablaze damage to your target and remove Manablaze.", "Strings of Fate"]
   },
-  "theWeaponMaster:AtroposServeredScissors": {
+  "theWeaponMaster:AtroposSeveredScissors": {
     "NAME": "[#3abfbe]Severed [#3abfbe]Scissors",
-    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice to target enemy. NL Deal !M! Extra damage for each Mana_Blaze stack.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice to target enemy. NL Deal !M! Extra damage for each Mana_Blaze stack."
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice to target enemy. NL This enemy loses HP equal to their Mana Burn once.",
+    "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice to target enemy. NL This enemy loses HP equal to their Mana Burn twice."
   },
   "theWeaponMaster:AtroposSeveredPath": {
     "NAME": "[#3abfbe]Severed [#3abfbe]Path",
@@ -249,7 +246,6 @@
     "NAME": "Card10",
     "DESCRIPTION": "Not Implemented."
   },
-
   "theWeaponMaster:SeveredHope": {
     "NAME": "Severed Hope",
     "DESCRIPTION": "Die."

@@ -31,7 +31,7 @@ public class FenrirShieldEater extends AbstractDynamicCard {
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
@@ -47,6 +47,11 @@ public class FenrirShieldEater extends AbstractDynamicCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic("Splintering Steel");
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int shieldEater = 0;
         boolean canEvolve = false;
@@ -58,12 +63,11 @@ public class FenrirShieldEater extends AbstractDynamicCard {
         }
 
         AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-
-        if (shieldEater > 0) {
+        if (shieldEater >= 1) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, shieldEater));
-        }
-        if (canEvolve) {
-            new FenrirEvolveAction();
+            if (m.currentBlock == 0) {
+                new FenrirEvolveAction();
+            }
         }
     }
 
@@ -75,11 +79,5 @@ public class FenrirShieldEater extends AbstractDynamicCard {
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
-    }
-
-
-    @Override
-    public boolean canUpgrade() {
-        return true;
     }
 }

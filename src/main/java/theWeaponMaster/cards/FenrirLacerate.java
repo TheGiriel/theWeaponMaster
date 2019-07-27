@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.characters.TheWeaponMaster;
@@ -31,10 +33,12 @@ public class FenrirLacerate extends AbstractDynamicCard {
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 2;
-    private static final int EVOLUTION = 2;
+    private static final int EVOLUTION = 1;
+
+    public static final String weapon = "Fenrir";
 
     public FenrirLacerate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

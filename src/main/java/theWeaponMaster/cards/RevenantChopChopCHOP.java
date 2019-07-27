@@ -32,7 +32,6 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
     private static final int DAMAGE = 2;
     private static final int UPGRADED_DAMAGE = 1;
     private static final int MAGIC_NUMBER = 1;
-    private static final int MISC = 1;
 
     public RevenantChopChopCHOP() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -43,7 +42,7 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
-        if(!upgraded){
+        if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
@@ -54,11 +53,7 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < 3; i++) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage)));
-            if (p.currentHealth < p.maxHealth) {
-                AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, magicNumber));
-            } else {
-                AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, magicNumber));
-            }
+            AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, magicNumber));
         }
         baseMagicNumber = 0;
     }

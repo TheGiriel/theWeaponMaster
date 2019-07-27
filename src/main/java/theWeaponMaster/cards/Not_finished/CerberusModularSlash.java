@@ -25,7 +25,7 @@ public class CerberusModularSlash extends AbstractDynamicCard {
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
 
@@ -35,11 +35,15 @@ public class CerberusModularSlash extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
-
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADED_DAMAGE);
+            initializeDescription();
+        }
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         //TODO: Change effect based on what types of cards are discarded.
     }
 }

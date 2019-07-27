@@ -91,5 +91,11 @@
     "DESCRIPTIONS": [
       "Designated"
     ]
+  },
+  "DefensiveStancePower": {
+    "NAME": "Defensive Stance",
+    "DESCRIPTIONS": [
+      "Rewording needed: Using Fenrir cards other than 'Defensive Stance' will lower the block gained from this card by 20%."
+    ]
   }
 }

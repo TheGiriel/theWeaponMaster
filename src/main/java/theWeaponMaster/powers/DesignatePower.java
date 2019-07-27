@@ -35,7 +35,7 @@ public class DesignatePower extends AbstractPower {
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
+        this.description = DESCRIPTION[0];
         updateDescription();
         this.type = AbstractPower.PowerType.DEBUFF;
         this.isTurnBased = true;

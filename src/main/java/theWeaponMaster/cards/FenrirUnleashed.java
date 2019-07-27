@@ -50,6 +50,11 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic("Splintering Steel");
+    }
+
+    @Override
     public void upgrade() {
         if(!upgraded) {
             upgradeName();
@@ -61,8 +66,6 @@ public class FenrirUnleashed extends AbstractDynamicCard {
 
     }
 
-    //TODO: Attack random y enemies x energy times.
-    // Add Overkill damage.
     private AbstractMonster weakestMonster() {
         weakest = null;
         for (AbstractMonster target : AbstractDungeon.getMonsters().monsters) {

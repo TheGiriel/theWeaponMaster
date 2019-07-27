@@ -29,16 +29,25 @@ public class FenrirHeavySwing extends AbstractDynamicCard {
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 3;
     private static final int UPGRADED_DAMAGE = 1;
-    private static final int MAGIC_NUMBER = 3;
+    private static final int MAGIC_NUMBER = 0;
     private static final int EVOLUTION = 1;
+    private static final int d = 0;
+
+    public static final String weapon = "Fenrir";
 
     public FenrirHeavySwing() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.damage = baseDamage = DAMAGE + magicNumber / 2;
+
         initializeDescription();
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic("Splintering Steel");
     }
 
     @Override
@@ -52,8 +61,8 @@ public class FenrirHeavySwing extends AbstractDynamicCard {
 
     private int heavySwing(AbstractPlayer player) {
         if (player.hasPower("ViciousPower")) {
-            return (damage / 4) * player.hand.size() + player.getPower("ViciousPower").amount;
-        } else return (damage / 4) * player.hand.size();
+            return damage * player.hand.size() + player.getPower("ViciousPower").amount;
+        } else return damage * player.hand.size();
     }
 
     @Override

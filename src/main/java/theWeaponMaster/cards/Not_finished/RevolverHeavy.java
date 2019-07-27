@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.AbstractDynamicCard;
+import theWeaponMaster.cards.CerberusIaiSlash;
 import theWeaponMaster.characters.TheWeaponMaster;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
@@ -41,7 +42,7 @@ public class RevolverHeavy extends AbstractDynamicCard {
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
 
     }
 }

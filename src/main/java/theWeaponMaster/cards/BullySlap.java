@@ -30,7 +30,7 @@ public class BullySlap extends AbstractBullyCard {
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = -2;
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;

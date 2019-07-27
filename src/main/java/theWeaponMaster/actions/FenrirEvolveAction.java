@@ -2,7 +2,6 @@ package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.HashSet;
@@ -12,12 +11,14 @@ public class FenrirEvolveAction extends AbstractGameAction {
 
     public FenrirEvolveAction() {
         for (AbstractCard c : getFenrirCards()) {
-            if (c.cardID.equals("theWeaponMaster:FenrirIgnite")) {
+            if (c.cardID.equals("theWeaponMaster:FenrirDefensiveStance")) {
                 c.baseBlock++;
+            } else if (c.cardID.equals("theWeaponMaster:FenrirHeavySwing")) {
+                c.baseMagicNumber++;
             } else {
                 c.baseDamage++;
-                c.applyPowers();
             }
+            c.applyPowers();
         }
     }
 
@@ -26,7 +27,7 @@ public class FenrirEvolveAction extends AbstractGameAction {
         HashSet<AbstractCard> fenrirUpgrades = new HashSet<AbstractCard>();
 
         AbstractCard card = AbstractDungeon.player.cardInUse;
-        if (card != null && card.cardID.equals(card.cardID)) {
+        if (card != null && card.cardID.equals(this)) {
             fenrirUpgrades.add(card);
         }
 
@@ -53,7 +54,7 @@ public class FenrirEvolveAction extends AbstractGameAction {
         AbstractCard c;
         while (cardIterator.hasNext()) {
             c = (AbstractCard) cardIterator.next();
-            if (c.cardID.equals("theWeaponMaster:FenrirLacerate") || c.cardID.equals("theWeaponMaster:FenrirShieldEater") || c.cardID.equals("theWeaponMaster:FenrirUnleashed") || c.cardID.equals("theWeaponMaster:FenrirIgnite") || c.cardID.equals("theWeaponMaster:FenrirHeavySwing")) {
+            if (c.cardID.equals("theWeaponMaster:FenrirLacerate") || c.cardID.equals("theWeaponMaster:FenrirShieldEater") || c.cardID.equals("theWeaponMaster:FenrirUnleashed") || c.cardID.equals("theWeaponMaster:FenrirDefensiveStance") || c.cardID.equals("theWeaponMaster:FenrirHeavySwing")) {
                 fenrirUpgrades.add(c);
             }
         }

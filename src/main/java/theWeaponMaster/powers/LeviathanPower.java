@@ -42,8 +42,8 @@ public class LeviathanPower extends AbstractPower {
         AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new LeviathanEject(), true, false));
         AbstractDungeon.player.masterDeck.addToBottom(new LeviathanGroundSplitter());
         AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new LeviathanGroundSplitter(), true, false));
-        AbstractDungeon.player.masterDeck.addToBottom(new LeviathanImpactStrike());
-        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new LeviathanImpactStrike(), true, false));
+        AbstractDungeon.player.masterDeck.addToBottom(new LeviathanDeepImpact());
+        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new LeviathanDeepImpact(), true, false));
         AbstractDungeon.player.masterDeck.addToBottom(new LeviathanEarthquake());
         AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new LeviathanEarthquake(), true, false));
     }
@@ -53,7 +53,7 @@ public class LeviathanPower extends AbstractPower {
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LeviathanCrush");
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LeviathanEject");
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LeviathanGroundSplitter");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LeviathanImpactStrike");
+        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LeviathanDeepImpact");
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LeviathanEarthquake");
     }
 

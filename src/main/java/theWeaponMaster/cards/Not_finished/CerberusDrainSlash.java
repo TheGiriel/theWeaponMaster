@@ -35,11 +35,15 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
-
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADED_DAMAGE);
+            initializeDescription();
+        }
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
 
     }
 }

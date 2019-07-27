@@ -48,6 +48,11 @@ public class LeviathanCrush extends AbstractDynamicCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic("ShockwaveModulatorRelic");
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
 

@@ -365,13 +365,22 @@ public class DefaultMod implements
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ArsenalRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new SplinteringSteelRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new HellhoundOilRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new ManaWhetstoneRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new ShockwaveModulatorRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new GhoulSkinSheathRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
-        UnlockTracker.markRelicAsSeen(ArsenalRelic.ID);
+        UnlockTracker.markRelicAsSeen(SplinteringSteelRelic.ID);
+        UnlockTracker.markRelicAsSeen(HellhoundOilRelic.ID);
+        UnlockTracker.markRelicAsSeen(ManaWhetstoneRelic.ID);
+        UnlockTracker.markRelicAsSeen(ShockwaveModulatorRelic.ID);
+        UnlockTracker.markRelicAsSeen(GhoulSkinSheathRelic.ID);
         logger.info("Done adding relics!");
     }
     
@@ -401,31 +410,31 @@ public class DefaultMod implements
         BaseMod.addCard(new Strike_WeaponMaster());
         BaseMod.addCard(new Defend_WeaponMaster());
         //BaseMod.addCard(new LW_Atropos());
-        //BaseMod.addCard(new AtroposSeveredSource());
-        //BaseMod.addCard(new AtroposSeveredScissors());
+        BaseMod.addCard(new AtroposSeveredSource());
+        BaseMod.addCard(new AtroposSeveredScissors());
         //BaseMod.addCard(new AtroposSeveredPath());
-        //BaseMod.addCard(new AtroposSeveredPain());
+        BaseMod.addCard(new AtroposSeveredPain());
         //BaseMod.addCard(new AtroposSeveredSoul());
         //BaseMod.addCard(new LW_Cerberus());
-        //BaseMod.addCard(new CerberusSlash());
+        BaseMod.addCard(new CerberusSlash());
         //BaseMod.addCard(new CerberusEssenceSlash());
         //BaseMod.addCard(new CerberusModularSlash());
-        //BaseMod.addCard(new CerberusIaiSlash());
+        BaseMod.addCard(new CerberusIaiSlash());
         //BaseMod.addCard(new CerberusDrainSlash());
         BaseMod.addCard(new LW_Fenrir());
         BaseMod.addCard(new FenrirLacerate());
         BaseMod.addCard(new FenrirShieldEater());
         BaseMod.addCard(new FenrirHeavySwing());
         BaseMod.addCard(new FenrirUnleashed());
-        BaseMod.addCard(new FenrirIgnite());
+        BaseMod.addCard(new FenrirDefensiveStance());
         //BaseMod.addCard(new LW_Leviathan());
-        //BaseMod.addCard(new LeviathanCrush());
+        BaseMod.addCard(new LeviathanCrush());
         //BaseMod.addCard(new LeviathanEject());
-        //BaseMod.addCard(new LeviathanGroundSplitter());
-        //BaseMod.addCard(new LeviathanImpactStrike());
-        //BaseMod.addCard(new LeviathanEarthquake());
+        BaseMod.addCard(new LeviathanGroundSplitter());
+        //BaseMod.addCard(new LeviathanDeepImpact());
+        BaseMod.addCard(new LeviathanEarthquake());
         //BaseMod.addCard(new LW_Revenant());
-        BaseMod.addCard(new RevenantRavenousStrikes());
+        BaseMod.addCard(new RevenantRavenous());
         BaseMod.addCard(new RevenantChopChopCHOP());
         BaseMod.addCard(new RevenantHungrySteel());
         //BaseMod.addCard(new RevenantSnoutToTail());
@@ -449,15 +458,15 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(OrbSkill.ID);
         UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
         //UnlockTracker.unlockCard(LW_Atropos.ID);
-        //UnlockTracker.unlockCard(AtroposSeveredSource.ID);
-        //UnlockTracker.unlockCard(AtroposSeveredScissors.ID);
+        UnlockTracker.unlockCard(AtroposSeveredSource.ID);
+        UnlockTracker.unlockCard(AtroposSeveredScissors.ID);
         //UnlockTracker.unlockCard(AtroposSeveredPath.ID);
-        //UnlockTracker.unlockCard(AtroposSeveredPain.ID);
+        UnlockTracker.unlockCard(AtroposSeveredPain.ID);
         //UnlockTracker.unlockCard(AtroposSeveredSoul.ID);
         //UnlockTracker.unlockCard(LW_Cerberus.ID);
         //UnlockTracker.unlockCard(CerberusSlash.ID);
         //UnlockTracker.unlockCard(CerberusEssenceSlash.ID);
-        //UnlockTracker.unlockCard(CerberusIaiSlash.ID);
+        UnlockTracker.unlockCard(CerberusIaiSlash.ID);
         //UnlockTracker.unlockCard(CerberusModularSlash.ID);
         //UnlockTracker.unlockCard(CerberusDrainSlash.ID);
         UnlockTracker.unlockCard(LW_Fenrir.ID);
@@ -465,15 +474,15 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(FenrirHeavySwing.ID);
         UnlockTracker.unlockCard(FenrirShieldEater.ID);
         UnlockTracker.unlockCard(FenrirUnleashed.ID);
-        UnlockTracker.unlockCard(FenrirIgnite.ID);
+        UnlockTracker.unlockCard(FenrirDefensiveStance.ID);
         //UnlockTracker.unlockCard(LW_Leviathan.ID);
-        //UnlockTracker.unlockCard(LeviathanCrush.ID);
+        UnlockTracker.unlockCard(LeviathanCrush.ID);
         //UnlockTracker.unlockCard(LeviathanEject.ID);
-        //UnlockTracker.unlockCard(LeviathanGroundSplitter.ID);
-        //UnlockTracker.unlockCard(LeviathanImpactStrike.ID);
-        //UnlockTracker.unlockCard(LeviathanEarthquake.ID);
+        UnlockTracker.unlockCard(LeviathanGroundSplitter.ID);
+        //UnlockTracker.unlockCard(LeviathanDeepImpact.ID);
+        UnlockTracker.unlockCard(LeviathanEarthquake.ID);
         //UnlockTracker.unlockCard(LW_Revenant.ID);
-        UnlockTracker.unlockCard(RevenantRavenousStrikes.ID);
+        UnlockTracker.unlockCard(RevenantRavenous.ID);
         UnlockTracker.unlockCard(RevenantChopChopCHOP.ID);
         UnlockTracker.unlockCard(RevenantHungrySteel.ID);
         //UnlockTracker.unlockCard(RevenantSnoutToTail.ID);

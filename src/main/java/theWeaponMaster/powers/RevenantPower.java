@@ -31,13 +31,14 @@ public class RevenantPower extends AbstractPower {
         type = PowerType.BUFF;
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        this.description = DESCRIPTION[0];
         updateDescription();
     }
 
     @Override
     public void onInitialApplication() {
-        AbstractDungeon.player.masterDeck.addToBottom(new RevenantRavenousStrikes());
-        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new RevenantRavenousStrikes(), true, false));
+        AbstractDungeon.player.masterDeck.addToBottom(new RevenantRavenous());
+        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new RevenantRavenous(), true, false));
         AbstractDungeon.player.masterDeck.addToBottom(new RevenantChopChopCHOP());
         AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new RevenantChopChopCHOP(), true, false));
         AbstractDungeon.player.masterDeck.addToBottom(new RevenantHungrySteel());

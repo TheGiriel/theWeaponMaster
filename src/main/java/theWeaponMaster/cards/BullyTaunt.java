@@ -41,7 +41,7 @@ public class BullyTaunt extends AbstractBullyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m.intent != AbstractMonster.Intent.ATTACK && m.intent != AbstractMonster.Intent.ATTACK_BUFF && m.intent != AbstractMonster.Intent.ATTACK_DEBUFF && m.intent != AbstractMonster.Intent.ATTACK_DEFEND) {
+        if (m.intent != AbstractMonster.Intent.ATTACK && m.intent != AbstractMonster.Intent.ATTACK_BUFF && m.intent != AbstractMonster.Intent.ATTACK_DEBUFF && m.intent != AbstractMonster.Intent.ATTACK_DEFEND && m.intent != AbstractMonster.Intent.SLEEP && m.intent != AbstractMonster.Intent.STUN) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TauntPower(m, p)));
         }
         p.getPower("ViciousPower").amount -= bullyNumber;

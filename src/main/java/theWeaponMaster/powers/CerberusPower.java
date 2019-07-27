@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.cards.CerberusIaiSlash;
 import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.util.TextureLoader;
 

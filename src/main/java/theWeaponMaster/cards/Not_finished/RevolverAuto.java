@@ -41,7 +41,7 @@ public class RevolverAuto extends AbstractDynamicCard {
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
 
     }
 }

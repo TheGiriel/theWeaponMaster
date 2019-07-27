@@ -37,5 +37,45 @@
     "DESCRIPTIONS": [
       "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck."
     ]
+  },
+  "theWeaponMaster:SplinteringSteelRelic": {
+    "NAME": "Splintering Steel",
+    "FLAVOR": "The best offense is a layer of sharp steel shards.",
+    "DESCRIPTIONS": [
+      "Upgrades Fenrir cards upon switching weapons.",
+      "dadadada"
+    ]
+  },
+  "theWeaponMaster:ManaWhetstoneRelic":{
+    "NAME": "Mana Whetstone",
+    "FLAVOR": "To keep those ethereal edges extra sharp.",
+    "DESCRIPTIONS": [
+      "Upgrades Atropos cards upon switching weapons.",
+      ""
+    ]
+  },
+  "theWeaponMaster:GhoulSkinSheathRelic":{
+    "NAME": "Ghoul Skin Sheath",
+    "FLAVOR": "Makes transporting the cleaver much more safe.",
+    "DESCRIPTIONS": [
+      "Upgrades Revenant cards upon switching weapons.",
+      ""
+    ]
+  },
+  "theWeaponMaster:HellhoundOilRelic":{
+    "NAME": "Hellhound Oil(tm)",
+    "FLAVOR": "The very best in keeping your favorite edge sharp for only 24.99 for a can!",
+    "DESCRIPTIONS": [
+      "Upgrades Cerberus cards upon switching weapons.",
+      ""
+    ]
+  },
+  "theWeaponMaster:ShockwaveModulatorRelic":{
+    "NAME": "Shockwave Modulator",
+    "FLAVOR": "What do you mean \"this has been underclocked all along\"?",
+    "DESCRIPTIONS": [
+      "Upgrades Leviathan cards upon switching weapons.",
+      ""
+    ]
   }
 }

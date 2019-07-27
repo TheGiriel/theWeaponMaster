@@ -16,9 +16,9 @@ import theWeaponMaster.powers.ViciousPower;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
-public class RevenantRavenousStrikes extends AbstractDynamicCard {
+public class RevenantRavenous extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(RevenantRavenousStrikes.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(RevenantRavenous.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -31,12 +31,12 @@ public class RevenantRavenousStrikes extends AbstractDynamicCard {
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 2;
     private int dmgDEALT = 0;
 
-    public RevenantRavenousStrikes() {
+    public RevenantRavenous() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;

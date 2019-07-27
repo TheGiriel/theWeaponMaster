@@ -43,7 +43,7 @@
   {
     "PROPER_NAME": "[#3abfbe]Mana [#3abfbe]Burn",
     "NAMES": [
-      "mana burn",
+      "Mana Burn",
       "mana_burn",
       "mana burned",
       "mana_burned"
@@ -72,14 +72,14 @@
     "NAMES": [
       "lacerate"
     ],
-    "DESCRIPTION": "[#990000]Lacerated creatures lose 2-6% of their Max HP per stack every turn (minimum 1)."
+    "DESCRIPTION": "[#990000]Lacerated creatures lose 2 of their Max HP per stack every turn (minimum 1)."
   },
   {
     "PROPER_NAME": "[#990000]Hemorrhage",
     "NAMES": [
       "hemorrhage"
     ],
-    "DESCRIPTION": "[#990000]Hemorrhaging creatures lose 6% of their Max HP per stack every turn (minimum 1)."
+    "DESCRIPTION": "[#990000]Hemorrhaging creatures lose 6% of their Max HP every turn (minimum 1)."
   },
   {
     "PROPER_NAME": "Evolve",
@@ -159,19 +159,23 @@
       "Atropos Shears",
       "atropos shears",
       "atropos_shears",
-      "Atropos_Shears"
+      "Atropos_Shears",
+      "Atropos",
+      "atropos"
     ],
-    "DESCRIPTION": "Balanced in Attacks and Skills, specializing in Mana Burn."
+    "DESCRIPTION": "Balanced in offense and defense, specializing in Mana Burn."
   },
   {
-    "PROPER_NAME": "[#663399]Leviathan [#663399]Gauntlet",
+    "PROPER_NAME": "[#746550]Leviathan [#746550]Gauntlet",
     "NAMES": [
       "Leviathan Gauntlet",
       "leviathan gauntlet",
       "leviathan_gauntlet",
-      "Leviathan_Gauntlet"
+      "Leviathan_Gauntlet",
+      "Leviathan",
+      "leviathan"
     ],
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Cards specializing against enemies with Block and defensive powers."
   },
   {
     "PROPER_NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
@@ -179,7 +183,9 @@
       "Revenant Cleaver",
       "revenant cleaver",
       "revenant_cleaver",
-      "Revenant_Cleaver"
+      "Revenant_Cleaver",
+      "Revenant",
+      "revenant"
     ],
     "DESCRIPTION": "Focused on the player's HP and Vicious generation."
   }

@@ -24,10 +24,9 @@ import org.apache.logging.log4j.Logger;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.cards.Not_finished.LW_Fenrir;
-import theWeaponMaster.relics.ArsenalRelic;
+import theWeaponMaster.cards.Not_finished.LeviathanEarthquake;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
-import theWeaponMaster.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
 
@@ -163,14 +162,15 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(BullyIntimidate.ID);
         retVal.add(BullyShakedown.ID);
         retVal.add(BullySlap.ID);*/
-        retVal.add(RevenantRavenousStrikes.ID);
+        retVal.add(LeviathanEarthquake.ID);
+        retVal.add(RevenantRavenous.ID);
         retVal.add(RevenantHungrySteel.ID);
         retVal.add(RevenantChopChopCHOP.ID);
         retVal.add(LW_Fenrir.ID);
         retVal.add(FenrirLacerate.ID);
         retVal.add(FenrirShieldEater.ID);
         retVal.add(FenrirHeavySwing.ID);
-        retVal.add(FenrirIgnite.ID);
+        retVal.add(FenrirDefensiveStance.ID);
         return retVal;
     }
 
@@ -179,12 +179,9 @@ public class TheWeaponMaster extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         retVal.add(PlaceholderRelic.ID);
-        retVal.add(PlaceholderRelic2.ID);
         retVal.add(DefaultClickableRelic.ID);
-        retVal.add(ArsenalRelic.ID);
 
         UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
         UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 
         return retVal;

@@ -47,7 +47,7 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         //TODO: Discard cards to destroy enemy powers
     }
 }
