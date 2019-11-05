@@ -15,8 +15,8 @@ import theWeaponMaster.util.TextureLoader;
 
 public class CerberusPower extends AbstractPower {
 
-    private static final String POWER_ID = "CerberusPower";
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("CerberusPower");
+    public static final String POWER_ID = "CerberusPower";
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("CerberusPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 

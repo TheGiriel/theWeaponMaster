@@ -2,7 +2,7 @@
   "modid": "WeaponMaster",
   "name": "Weapon Master Mod",
   "author_list": ["TheGiriel"],
-  "description": "A few Bully cards were implemented.",
+  "description": "First pass at the Arsenal Relic",
   "version": "0.0.13",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",

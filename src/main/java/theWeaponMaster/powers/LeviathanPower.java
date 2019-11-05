@@ -15,9 +15,8 @@ import theWeaponMaster.util.TextureLoader;
 
 public class LeviathanPower extends AbstractPower {
 
-
-    private static final String POWER_ID = "LeviathanPower";
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LeviathanPower");
+    public static final String POWER_ID = "LeviathanPower";
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LeviathanPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 

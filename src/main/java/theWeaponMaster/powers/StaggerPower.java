@@ -71,7 +71,6 @@ public class StaggerPower extends AbstractPower {
 
     @Override
     public float atDamageFinalGive(float damage, DamageInfo.DamageType type) {
-
         return damage * staggerAmount;
     }
 

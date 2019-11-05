@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="StSLib">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../lib/StSLib.jar!/" />
+      <root url="jar://E:/SteamLibrary/steamapps/workshop/content/646570/1609158507/StSLib.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

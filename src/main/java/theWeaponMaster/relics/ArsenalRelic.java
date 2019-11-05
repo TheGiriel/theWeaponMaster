@@ -4,10 +4,14 @@ import basemod.abstracts.CustomPlayer;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.cards.Not_finished.*;
+import theWeaponMaster.powers.*;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.DefaultMod.makeRelicOutlinePath;
@@ -31,7 +35,6 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     public ArsenalRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
-
     }
 
     @Override
@@ -39,14 +42,32 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
         flash();
     }
 
-    //TODO: Clickable relic that allows you to modify your deck on the fly 1x per turn. Every activation costs HP.
+
     @Override
     public void onRightClick() {
         if (!isObtained || usedThisTurn || !isPlayerTurn) {
             return;
         }
+        //TODO: Clickable relic that allows you to modify your deck on the fly 1x per turn. Every activation costs HP.
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            CardGroup weaponGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            if (!AbstractDungeon.player.hasPower(FenrirPower.POWER_ID)){
+                weaponGroup.addToTop(new LW_Fenrir());
+            }
+            if (!AbstractDungeon.player.hasPower(CerberusPower.POWER_ID)){
+                weaponGroup.addToTop(new LW_Cerberus());
+            }
+            if (!AbstractDungeon.player.hasPower(AtroposPower.POWER_ID)){
+                weaponGroup.addToTop(new LW_Atropos());
+            }
+            if (!AbstractDungeon.player.hasPower(RevenantPower.POWER_ID)){
+                weaponGroup.addToTop(new LW_Revenant());
+            }
+            if (!AbstractDungeon.player.hasPower(LeviathanPower.POWER_ID)){
+                weaponGroup.addToTop(new LW_Leviathan());
+            }
         }
+        return;
     }
 
     @Override

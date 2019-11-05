@@ -15,7 +15,6 @@ theWeaponMaster\cards\Not_finished\LW_Cerberus.class
 theWeaponMaster\variables\BullyVariable.class
 theWeaponMaster\cards\FenrirLacerate.class
 theWeaponMaster\powers\LeviathanPower.class
-theWeaponMaster\relics\GhoulSkinSheathRelic.class
 theWeaponMaster\cards\Not_finished\RevolverRifle.class
 theWeaponMaster\relics\PlaceholderRelic2.class
 theWeaponMaster\powers\DesignatePower.class
@@ -57,6 +56,7 @@ theWeaponMaster\cards\Not_finished\RevolverShotgun.class
 theWeaponMaster\cards\Not_finished\BullyCard10.class
 theWeaponMaster\powers\ViciousPower.class
 theWeaponMaster\cards\Not_finished\RevolverDouble.class
+theWeaponMaster\powers\SeveredPainDelayedPower.class
 theWeaponMaster\powers\EgoPower.class
 theWeaponMaster\powers\TauntPower.class
 theWeaponMaster\powers\DefensiveStancePower.class
@@ -71,6 +71,7 @@ theWeaponMaster\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.cl
 theWeaponMaster\cards\BullyTerrifyingHowl.class
 theWeaponMaster\cards\AbstractWeapons.class
 theWeaponMaster\cards\Not_finished\CerberusDrainSlash.class
+theWeaponMaster\relics\GhoulskinSheathRelic.class
 theWeaponMaster\cards\BullyMeanToEveryone.class
 theWeaponMaster\powers\RevenantPower.class
 theWeaponMaster\powers\InkPower.class

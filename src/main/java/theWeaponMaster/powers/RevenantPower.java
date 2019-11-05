@@ -16,8 +16,8 @@ import theWeaponMaster.util.TextureLoader;
 public class RevenantPower extends AbstractPower {
 
 
-    private static final String POWER_ID = "RevenantPower";
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LeviathanPower");
+    public static final String POWER_ID = "RevenantPower";
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LeviathanPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 

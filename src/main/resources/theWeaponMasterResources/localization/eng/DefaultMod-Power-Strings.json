@@ -73,6 +73,19 @@
       "%"
     ]
   },
+  "SeveredPainPower": {
+    "NAME": "Severed Pain",
+    "DESCRIPTIONS": [
+      "Take half damage this turn, take the reduced damage next turn.",
+      "Take one third damage this turn, take one third damage next turn, deal one third damge to all enemies."
+    ]
+  },
+  "SeveredPainDelayedPower": {
+    "NAME": "Delayed Pain",
+    "DESCRIPTIONS": [
+      "Take ", " damage this turn."
+    ]
+  },
   "IntimidatePower": {
     "NAME": "Intimidated",
     "DESCRIPTIONS": [

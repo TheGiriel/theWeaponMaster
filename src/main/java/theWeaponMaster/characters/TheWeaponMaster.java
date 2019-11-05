@@ -25,6 +25,8 @@ import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.cards.Not_finished.LW_Fenrir;
 import theWeaponMaster.cards.Not_finished.LeviathanEarthquake;
+import theWeaponMaster.powers.SeveredPainPower;
+import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
 
@@ -166,21 +168,23 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(RevenantRavenous.ID);
         retVal.add(RevenantHungrySteel.ID);
         retVal.add(RevenantChopChopCHOP.ID);
-        retVal.add(LW_Fenrir.ID);
         retVal.add(FenrirLacerate.ID);
         retVal.add(FenrirShieldEater.ID);
         retVal.add(FenrirHeavySwing.ID);
         retVal.add(FenrirDefensiveStance.ID);
+        retVal.add(AtroposSeveredPain.ID);
         return retVal;
     }
 
     // Starting Relics	
     public ArrayList<String> getStartingRelics() {
+        logger.info("Begin loading starting relic Strings");
         ArrayList<String> retVal = new ArrayList<>();
-
+        retVal.add(ArsenalRelic.ID);
         retVal.add(PlaceholderRelic.ID);
         retVal.add(DefaultClickableRelic.ID);
 
+        UnlockTracker.markRelicAsSeen(ArsenalRelic.ID);
         UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
         UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 

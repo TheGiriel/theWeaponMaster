@@ -34,6 +34,7 @@ public class AtroposSeveredPain extends AbstractWeaponCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         weapon = "Atropos";
+        initializeDescription();
     }
 
     @Override
@@ -47,6 +48,6 @@ public class AtroposSeveredPain extends AbstractWeaponCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SeveredPainPower(p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SeveredPainPower(p)));
     }
 }

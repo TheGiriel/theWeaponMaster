@@ -54,8 +54,8 @@
       ""
     ]
   },
-  "theWeaponMaster:GhoulSkinSheathRelic": {
-    "NAME": "Ghoul Skin Sheath",
+  "theWeaponMaster:GhoulskinSheathRelic": {
+    "NAME": "Ghoulskin Sheath",
     "FLAVOR": "Makes transporting the cleaver much more safe.",
     "DESCRIPTIONS": [
       "Upgrades Revenant cards upon switching weapons.",
