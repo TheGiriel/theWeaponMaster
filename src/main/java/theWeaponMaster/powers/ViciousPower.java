@@ -13,7 +13,7 @@ import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.DefaultMod.makePowerPath;
 
-public class ViciousPower extends TwoAmountPower {
+public class ViciousPower extends AbstractPower {
 
     public static final String POWER_ID = "ViciousPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ViciousPower");
@@ -22,7 +22,6 @@ public class ViciousPower extends TwoAmountPower {
     private static final int TIER_TWO = 3;
     private static final int TIER_THREE = TIER_TWO*2;
     private int bonusDamage = 0;
-    private int takeDamage = 0;
 
     private static final Texture vicious1_84 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_84.png"));
     private static final Texture vicious1_32 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_32.png"));
@@ -38,8 +37,7 @@ public class ViciousPower extends TwoAmountPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amnt;
-        viciousDamageMod();
-        this.amount2 = bonusDamage;
+        bonusDamage = amnt;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -55,7 +53,6 @@ public class ViciousPower extends TwoAmountPower {
 
     public void stackPower(int stackAmount){
         this.amount += stackAmount;
-        viciousDamageMod();
         if (this.amount >= TIER_THREE) {
             setTierThree();
             updateDescription();
@@ -67,14 +64,8 @@ public class ViciousPower extends TwoAmountPower {
         }
     }
 
-    private void viciousDamageMod(){
-        this.amount2 = bonusDamage = Math.max(1, this.amount / 3);
-        takeDamage  = Math.max(1, this.amount * 2 / 3);
-    }
-
     public void reducePower(int stackAmount){
         this.amount -= stackAmount;
-        viciousDamageMod();
         if (this.amount < TIER_THREE && this.amount > TIER_TWO) {
             setTierTwo();
             updateDescription();
@@ -89,10 +80,10 @@ public class ViciousPower extends TwoAmountPower {
     @Override
     public void updateDescription() {
         if (this.amount >= TIER_TWO) {
-            description = DESCRIPTION[0] + bonusDamage + DESCRIPTION[1] + takeDamage + DESCRIPTION[3];
+            description = DESCRIPTION[0] + bonusDamage + DESCRIPTION[1] + bonusDamage + DESCRIPTION[3];
         }
         else {
-            description = DESCRIPTION[0] + bonusDamage + DESCRIPTION[1] + takeDamage + DESCRIPTION[2];
+            description = DESCRIPTION[0] + bonusDamage + DESCRIPTION[1] + bonusDamage + DESCRIPTION[2];
         }
     }
 
@@ -112,19 +103,16 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return damage + (this.amount / 3);
+        return damage + bonusDamage;
     }
 
     public void atEndOfTurn(boolean isPlayer){
-            this.amount2 = takeDamage;
-    }
-
-    public void atStartOfTurn(){
-            this.amount2 = bonusDamage;
+        this.amount = this.amount/3*2;
+            //this.amount2 = takeDamage;
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
         DefaultMod.logger.info("taking extra damage.");
-        return damage + Math.max(1, this.amount * 2 / 3);
+        return damage + bonusDamage;
     }
 }

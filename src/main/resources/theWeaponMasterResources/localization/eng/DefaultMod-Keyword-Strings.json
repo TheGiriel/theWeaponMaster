@@ -48,7 +48,7 @@
       "mana burned",
       "mana_burned"
     ],
-    "DESCRIPTION": "[#3abfbe]Mana [#3abfbe]burned creatures lose 1-3% Max HP per stack when casting buffs, debuffs and spells. Certain cards gain new effects against [#3abfbe]Mana [#3abfbe]burned enemies."
+    "DESCRIPTION": "[#3abfbe]Mana [#3abfbe]burned creatures lose 1-3% Max HP, per stack, when casting buffs, debuffs and spells. Certain cards gain new effects against [#3abfbe]Mana [#3abfbe]burned enemies."
   },
   {
     "PROPER_NAME": "[#98fb98]Armor [#98fb98]Break",
@@ -70,9 +70,10 @@
   {
     "PROPER_NAME": "[#990000]Lacerate",
     "NAMES": [
-      "lacerate"
+      "lacerate",
+      "lacerating"
     ],
-    "DESCRIPTION": "[#990000]Lacerated creatures lose 2 of their Max HP per stack every turn (minimum 1)."
+    "DESCRIPTION": "[#990000]Lacerated creatures lose 2% of their Max HP, per stack, every turn (minimum 1)."
   },
   {
     "PROPER_NAME": "[#990000]Hemorrhage",
@@ -156,36 +157,35 @@
   {
     "PROPER_NAME": "[#3abfbe]Atropos [#3abfbe]Shears",
     "NAMES": [
+      "[#3abfbe]Atropos [#3abfbe]Shears",
       "Atropos Shears",
       "atropos shears",
       "atropos_shears",
       "Atropos_Shears",
-      "Atropos",
-      "atropos"
+      "Atropos' Shears"
     ],
     "DESCRIPTION": "Balanced in offense and defense, specializing in Mana Burn."
   },
   {
     "PROPER_NAME": "[#746550]Leviathan [#746550]Gauntlet",
     "NAMES": [
+      "[#746550]Leviathan [#746550]Gauntlet",
       "Leviathan Gauntlet",
       "leviathan gauntlet",
       "leviathan_gauntlet",
       "Leviathan_Gauntlet",
-      "Leviathan",
-      "leviathan"
+      "Leviathan Gauntlet"
     ],
     "DESCRIPTION": "Cards specializing against enemies with Block and defensive powers."
   },
   {
     "PROPER_NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
     "NAMES": [
+      "[#e3dac9]Revenant [#e3dac9]Cleaver",
       "Revenant Cleaver",
       "revenant cleaver",
       "revenant_cleaver",
-      "Revenant_Cleaver",
-      "Revenant",
-      "revenant"
+      "Revenant_Cleaver"
     ],
     "DESCRIPTION": "Focused on the player's HP and Vicious generation."
   }

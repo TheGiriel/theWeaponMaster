@@ -1,3 +1,4 @@
+theWeaponMaster\actions\ExchangeWeaponsAction.class
 theWeaponMaster\actions\OverkillAction.class
 theWeaponMaster\variables\DefaultCustomVariable.class
 theWeaponMaster\cards\BullyIntimidate.class
@@ -33,9 +34,11 @@ theWeaponMaster\relics\ArsenalRelic.class
 theWeaponMaster\cards\Not_finished\RevenantSnoutToTail.class
 theWeaponMaster\cards\Not_finished\LeviathanEject.class
 theWeaponMaster\cards\Not_finished\LeviathanReload.class
+theWeaponMaster\actions\OctopusAction.class
 theWeaponMaster\cards\AtroposSeveredScissors.class
 theWeaponMaster\util\TextureLoader.class
 theWeaponMaster\actions\ViciousAction.class
+theWeaponMaster\actions\OctopusAction$ShiftingChoiceCard.class
 theWeaponMaster\cards\BullyShakedown.class
 theWeaponMaster\patches\DefaultInsertPatch$Locator.class
 theWeaponMaster\cards\Not_finished\LW_Revenant.class
@@ -64,6 +67,7 @@ theWeaponMaster\powers\ManablazePower.class
 theWeaponMaster\cards\legendary_weapons\not_relevant\CardTemplate.class
 theWeaponMaster\cards\RevenantRavenous.class
 theWeaponMaster\cards\AbstractWeaponCard.class
+theWeaponMaster\cards\WeaponSwap.class
 theWeaponMaster\actions\ManaBurnAction.class
 theWeaponMaster\cards\Not_finished\CerberusModularSlash.class
 theWeaponMaster\relics\SplinteringSteelRelic.class
@@ -101,6 +105,7 @@ theWeaponMaster\cards\AtroposSeveredPain.class
 theWeaponMaster\actions\ThornBypassAction.class
 theWeaponMaster\powers\StaggerPower.class
 theWeaponMaster\relics\ShockwaveModulatorRelic.class
+theWeaponMaster\patches\CenterGridCardSelectScreen.class
 theWeaponMaster\cards\Not_finished\AtroposSeveredSoul.class
 theWeaponMaster\cards\FenrirShieldEater.class
 theWeaponMaster\cards\BullyDinerArgument.class

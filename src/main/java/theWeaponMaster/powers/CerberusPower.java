@@ -2,6 +2,7 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,6 +13,9 @@ import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.CerberusIaiSlash;
 import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.util.TextureLoader;
+
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class CerberusPower extends AbstractPower {
 
@@ -54,5 +58,50 @@ public class CerberusPower extends AbstractPower {
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:CerberusEssenceSlash");
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:CerberusModularSlash");
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:CerberusDrainSlash");
+
+        removeCerberus();
     }
+
+    private HashSet<AbstractCard> removeCerberus() {
+        HashSet<AbstractCard> cerberusCards = new HashSet<AbstractCard>();
+
+        AbstractCard card = AbstractDungeon.player.cardInUse;
+        if (card != null && card.cardID.equals(this)) {
+            cerberusCards.remove(card);
+        }
+
+        Iterator cardIterator = AbstractDungeon.player.drawPile.group.iterator();
+        removeCards(cerberusCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.discardPile.group.iterator();
+        removeCards(cerberusCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.exhaustPile.group.iterator();
+        removeCards(cerberusCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.limbo.group.iterator();
+        removeCards(cerberusCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.hand.group.iterator();
+        removeCards(cerberusCards, cardIterator);
+        return cerberusCards;
+    }
+
+    private void removeCards(HashSet<AbstractCard> cerberusCards, Iterator cardIterator) {
+        AbstractCard c;
+        while (cardIterator.hasNext()) {
+            c = (AbstractCard) cardIterator.next();
+            if (
+                    c.cardID.equals("theWeaponMaster:CerberusSlash")        ||
+                    c.cardID.equals("theWeaponMaster:CerberusIaiSlash")     ||
+                    c.cardID.equals("theWeaponMaster:CerberusEssenceSlash") ||
+                    c.cardID.equals("theWeaponMaster:CerberusModularSlash") ||
+                    c.cardID.equals("theWeaponMaster:CerberusDrainSlash")
+            ) {
+                cerberusCards.remove(c);
+            }
+        }
+    }
+
+
 }

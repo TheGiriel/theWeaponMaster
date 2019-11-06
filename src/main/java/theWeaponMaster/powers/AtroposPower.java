@@ -2,6 +2,7 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,6 +13,9 @@ import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.util.TextureLoader;
+
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class AtroposPower extends AbstractPower {
 
@@ -54,5 +58,48 @@ public class AtroposPower extends AbstractPower {
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:AtroposSeveredPath");
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:AtroposSeveredPain");
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:AtroposSeveredSoul");
+
+        removeAtropos();
+    }
+
+    private HashSet<AbstractCard> removeAtropos() {
+        HashSet<AbstractCard> atroposCards = new HashSet<AbstractCard>();
+
+        AbstractCard card = AbstractDungeon.player.cardInUse;
+        if (card != null && card.cardID.equals(this)) {
+            atroposCards.remove(card);
+        }
+
+        Iterator cardIterator = AbstractDungeon.player.drawPile.group.iterator();
+        removeCards(atroposCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.discardPile.group.iterator();
+        removeCards(atroposCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.exhaustPile.group.iterator();
+        removeCards(atroposCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.limbo.group.iterator();
+        removeCards(atroposCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.hand.group.iterator();
+        removeCards(atroposCards, cardIterator);
+        return atroposCards;
+    }
+
+    private void removeCards(HashSet<AbstractCard> atroposCards, Iterator cardIterator) {
+        AbstractCard c;
+        while (cardIterator.hasNext()) {
+            c = (AbstractCard) cardIterator.next();
+            if (
+                    c.cardID.equals("theWeaponMaster:AtroposSeveredSource") ||
+                    c.cardID.equals("theWeaponMaster:AtroposSeveredScissors") ||
+                    c.cardID.equals("theWeaponMaster:AtroposSeveredPath") ||
+                    c.cardID.equals("theWeaponMaster:AtroposSeveredPain") ||
+                    c.cardID.equals("theWeaponMaster:AtroposSeveredSoul")
+            ) {
+                atroposCards.remove(c);
+            }
+        }
     }
 }

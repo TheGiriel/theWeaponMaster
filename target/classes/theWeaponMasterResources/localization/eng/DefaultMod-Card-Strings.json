@@ -253,5 +253,9 @@
   "theWeaponMaster:SeveredHope": {
     "NAME": "Severed Hope",
     "DESCRIPTION": "Die."
+  },
+  "theWeaponMaster:WeaponSwap": {
+    "NAME": "Weapon Swap",
+    "DESCRIPTION": "Equip a new weapon."
   }
 }

@@ -19,6 +19,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ca
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\BullyCard10.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\ViciousPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullyDinerArgument.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\patches\CenterGridCardSelectScreen.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\ArsenalRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\patches\WeaponMasterTags.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\OverkillAction.java
@@ -51,6 +52,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\pa
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\LaceratePower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\variables\BullyVariable.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\LacerateAction.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\SeveredPainDelayedPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\IntimidatePower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\AtroposSeveredSoul.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\events\IdentityCrisisEvent.java
@@ -75,7 +77,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ca
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\CerberusPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullySlap.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\orbs\DefaultOrb.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\GhoulSkinSheathRelic.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\GhoulskinSheathRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\AbstractWeapons.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\RevenantSnoutToTail.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\CerberusDrainSlash.java
@@ -85,6 +87,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ca
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\UncommonPowerAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\FenrirEvolveAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\LW_Atropos.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\WeaponSwap.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\LeviathanPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\EgoPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Strike_WeaponMaster.java
@@ -104,5 +107,6 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ac
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullyTerrifyingHowl.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\LeviathanDeepImpact.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\variables\shieldBuster.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\OctopusAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_relevant\CardTemplate.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\StaggerPower.java

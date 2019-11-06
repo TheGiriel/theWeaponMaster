@@ -2,6 +2,7 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,6 +13,9 @@ import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.util.TextureLoader;
+
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class LeviathanPower extends AbstractPower {
 
@@ -54,6 +58,48 @@ public class LeviathanPower extends AbstractPower {
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LeviathanGroundSplitter");
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LeviathanDeepImpact");
         AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:LeviathanEarthquake");
+
+        removeLeviathan();
     }
 
+    private HashSet<AbstractCard> removeLeviathan() {
+        HashSet<AbstractCard> leviathanCards = new HashSet<AbstractCard>();
+
+        AbstractCard card = AbstractDungeon.player.cardInUse;
+        if (card != null && card.cardID.equals(this)) {
+            leviathanCards.remove(card);
+        }
+
+        Iterator cardIterator = AbstractDungeon.player.drawPile.group.iterator();
+        removeCards(leviathanCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.discardPile.group.iterator();
+        removeCards(leviathanCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.exhaustPile.group.iterator();
+        removeCards(leviathanCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.limbo.group.iterator();
+        removeCards(leviathanCards, cardIterator);
+
+        cardIterator = AbstractDungeon.player.hand.group.iterator();
+        removeCards(leviathanCards, cardIterator);
+        return leviathanCards;
+    }
+
+    private void removeCards(HashSet<AbstractCard> leviathanCards, Iterator cardIterator) {
+        AbstractCard c;
+        while (cardIterator.hasNext()) {
+            c = (AbstractCard) cardIterator.next();
+            if (
+                    c.cardID.equals("theWeaponMaster:LeviathanCrush") ||
+                    c.cardID.equals("theWeaponMaster:LeviathanEject") ||
+                    c.cardID.equals("theWeaponMaster:LeviathanGroundSplitter") ||
+                    c.cardID.equals("theWeaponMaster:LeviathanDeepImpact") ||
+                    c.cardID.equals("theWeaponMaster:LeviathanEarthquake")
+            ) {
+                leviathanCards.remove(c);
+            }
+        }
+    }
 }

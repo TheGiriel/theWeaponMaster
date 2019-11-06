@@ -35,6 +35,7 @@ public class AtroposSeveredPain extends AbstractWeaponCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         weapon = "Atropos";
         initializeDescription();
+
     }
 
     @Override

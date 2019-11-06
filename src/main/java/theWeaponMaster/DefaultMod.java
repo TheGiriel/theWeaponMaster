@@ -450,6 +450,7 @@ public class DefaultMod implements
         BaseMod.addCard(new BullyDinerArgument());
         BaseMod.addCard(new BullySlap());
         BaseMod.addCard(new BullyShakedown());
+        BaseMod.addCard(new WeaponSwap());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -499,6 +500,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(BullyDinerArgument.ID);
         UnlockTracker.unlockCard(BullySlap.ID);
         UnlockTracker.unlockCard(BullyShakedown.ID);
+        UnlockTracker.unlockCard(WeaponSwap.ID);
         
         logger.info("Done adding cards!");
     }
