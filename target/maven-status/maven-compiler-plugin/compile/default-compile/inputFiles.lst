@@ -24,6 +24,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\re
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\patches\WeaponMasterTags.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\OverkillAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\patches\DefaultInsertPatch.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\WeaponCardRemovalAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_relevant\DefaultCommonPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\RevolverHeavy.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullyIntimidate.java
@@ -73,9 +74,9 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\re
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\variables\MultiShotVariable.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullyHuh.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_relevant\OrbSkill.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\CerberusSlash.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\CerberusPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullySlap.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\CerberusSlash.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\orbs\DefaultOrb.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\GhoulskinSheathRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\AbstractWeapons.java
@@ -98,6 +99,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ca
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\InkPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\RevenantRavenous.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\LeviathanEject.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\ExchangeWeaponsAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\AbstractWeaponCard.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\RevolverAuto.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\LeviathanCrush.java

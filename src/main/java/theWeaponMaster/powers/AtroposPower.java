@@ -3,6 +3,7 @@ package theWeaponMaster.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,10 +11,12 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.actions.WeaponCardRemovalAction;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.util.TextureLoader;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -26,6 +29,15 @@ public class AtroposPower extends AbstractPower {
 
     private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("atropos_placeholder_84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("atropos_placeholder_32.png"));
+
+    CardGroup group;
+    String a = "theWeaponMaster:AtroposSeveredSource";
+    String b = "theWeaponMaster:AtroposSeveredScissors";
+    String c = "theWeaponMaster:AtroposSeveredPath";
+    String d = "theWeaponMaster:AtroposSeveredPain";
+    String e = "theWeaponMaster:AtroposSeveredSoul";
+    String f = "";
+    String g = "";
 
     public AtroposPower(AbstractPlayer player) {
         this.name = NAME;
@@ -53,53 +65,6 @@ public class AtroposPower extends AbstractPower {
 
     @Override
     public void onRemove() {
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:AtroposSeveredSource");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:AtroposSeveredScissors");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:AtroposSeveredPath");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:AtroposSeveredPain");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:AtroposSeveredSoul");
-
-        removeAtropos();
-    }
-
-    private HashSet<AbstractCard> removeAtropos() {
-        HashSet<AbstractCard> atroposCards = new HashSet<AbstractCard>();
-
-        AbstractCard card = AbstractDungeon.player.cardInUse;
-        if (card != null && card.cardID.equals(this)) {
-            atroposCards.remove(card);
-        }
-
-        Iterator cardIterator = AbstractDungeon.player.drawPile.group.iterator();
-        removeCards(atroposCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.discardPile.group.iterator();
-        removeCards(atroposCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.exhaustPile.group.iterator();
-        removeCards(atroposCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.limbo.group.iterator();
-        removeCards(atroposCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.hand.group.iterator();
-        removeCards(atroposCards, cardIterator);
-        return atroposCards;
-    }
-
-    private void removeCards(HashSet<AbstractCard> atroposCards, Iterator cardIterator) {
-        AbstractCard c;
-        while (cardIterator.hasNext()) {
-            c = (AbstractCard) cardIterator.next();
-            if (
-                    c.cardID.equals("theWeaponMaster:AtroposSeveredSource") ||
-                    c.cardID.equals("theWeaponMaster:AtroposSeveredScissors") ||
-                    c.cardID.equals("theWeaponMaster:AtroposSeveredPath") ||
-                    c.cardID.equals("theWeaponMaster:AtroposSeveredPain") ||
-                    c.cardID.equals("theWeaponMaster:AtroposSeveredSoul")
-            ) {
-                atroposCards.remove(c);
-            }
-        }
+        new WeaponCardRemovalAction(a,b,c,d,e,f,g);
     }
 }

@@ -3,6 +3,7 @@ package theWeaponMaster.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,10 +11,12 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.actions.WeaponCardRemovalAction;
 import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.util.TextureLoader;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -27,6 +30,15 @@ public class RevenantPower extends AbstractPower {
 
     private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("leviathan_placeholder_84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("leviathan_placeholder_32.png"));
+
+    CardGroup group;
+    String a = "theWeaponMaster:RevenantRavenous";
+    String b = "theWeaponMaster:RevenantChopChopCHOP";
+    String c = "theWeaponMaster:RevenantHungrySteel";
+    String d = "theWeaponMaster:RevenantSnoutToTail";
+    String e = "theWeaponMaster:RevenantBloodbath";
+    String f = "";
+    String g = "";
 
     public RevenantPower(AbstractPlayer player) {
         this.name = NAME;
@@ -55,54 +67,6 @@ public class RevenantPower extends AbstractPower {
 
     @Override
     public void onRemove() {
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:RevenantRavenous");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:RevenantChopChopCHOP");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:RevenantHungrySteel");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:RevenantSnoutToTail");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:RevenantBloodbath");
-
-        removeRevenant();
+        new WeaponCardRemovalAction(a,b,c,d,e,f,g);
     }
-
-    private HashSet<AbstractCard> removeRevenant() {
-        HashSet<AbstractCard> revenantCards = new HashSet<AbstractCard>();
-
-        AbstractCard card = AbstractDungeon.player.cardInUse;
-        if (card != null && card.cardID.equals(this)) {
-            revenantCards.remove(card);
-        }
-
-        Iterator cardIterator = AbstractDungeon.player.drawPile.group.iterator();
-        removeCards(revenantCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.discardPile.group.iterator();
-        removeCards(revenantCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.exhaustPile.group.iterator();
-        removeCards(revenantCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.limbo.group.iterator();
-        removeCards(revenantCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.hand.group.iterator();
-        removeCards(revenantCards, cardIterator);
-        return revenantCards;
-    }
-
-    private void removeCards(HashSet<AbstractCard> revenantCards, Iterator cardIterator) {
-        AbstractCard c;
-        while (cardIterator.hasNext()) {
-            c = (AbstractCard) cardIterator.next();
-            if (
-                    c.cardID.equals("theWeaponMaster:RevenantRavenous")|
-                    c.cardID.equals("theWeaponMaster:RevenantChopChopCHOP")||
-                    c.cardID.equals("theWeaponMaster:RevenantHungrySteel")||
-                    c.cardID.equals("theWeaponMaster:RevenantSnoutToTail")||
-                    c.cardID.equals("theWeaponMaster:RevenantBloodbath")
-            ) {
-                revenantCards.remove(c);
-            }
-        }
-    }
-
 }

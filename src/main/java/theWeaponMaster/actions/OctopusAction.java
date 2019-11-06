@@ -52,30 +52,26 @@ public class OctopusAction extends AbstractGameAction {
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             CenterGridCardSelectScreen.centerGridSelect = false;
 
+            new ExchangeWeaponsAction(owner);
 
             if (cardChoice.name.equals("Fenrir")) {
-                new ExchangeWeaponsAction(owner, "Fenrir");
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new FenrirPower(owner)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FenrirPower(owner)));
                 ArsenalRelic.currentWeapon = "Fenrir";
             }
             if (cardChoice.name.equals("Cerberus")) {
-                new ExchangeWeaponsAction(owner, "Cerberus");
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new CerberusPower(owner)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new CerberusPower(owner)));
                 ArsenalRelic.currentWeapon = "Cerberus";
             }
             if (cardChoice.name.equals("Revenant")) {
-                new ExchangeWeaponsAction(owner, "Revenant");
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new RevenantPower(owner)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new RevenantPower(owner)));
                 ArsenalRelic.currentWeapon = "Revenant";
             }
             if (cardChoice.name.equals("Atropos")) {
-                new ExchangeWeaponsAction(owner, "Atropos");
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new AtroposPower(owner)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new AtroposPower(owner)));
                 ArsenalRelic.currentWeapon = "Atropos";
             }
             if (cardChoice.name.equals("Leviathan")) {
-                new ExchangeWeaponsAction(owner, "Leviathan");
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new LeviathanPower(owner)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new LeviathanPower(owner)));
                 ArsenalRelic.currentWeapon = "Leviathan";
             }
 

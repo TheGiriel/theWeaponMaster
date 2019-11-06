@@ -11,23 +11,13 @@ public class ExchangeWeaponsAction extends AbstractGameAction {
 
     private final AbstractCreature owner;
 
-    public ExchangeWeaponsAction(AbstractCreature owner, String power){
+    public ExchangeWeaponsAction(AbstractCreature owner){
         this.owner = owner;
-        if (!power.equals("Fenrir")) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, FenrirPower.POWER_ID));
-        }
-        if (!power.equals("Cerberus")) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, CerberusPower.POWER_ID));
-        }
-        if (!power.equals("Revenant")) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, RevenantPower.POWER_ID));
-        }
-        if (!power.equals("Atropos")) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, AtroposPower.POWER_ID));
-        }
-        if (!power.equals("Leviathan")) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, LeviathanPower.POWER_ID));
-        }
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, FenrirPower.POWER_ID));
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, CerberusPower.POWER_ID));
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, RevenantPower.POWER_ID));
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, AtroposPower.POWER_ID));
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, LeviathanPower.POWER_ID));
     }
     @Override
     public void update() {

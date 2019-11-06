@@ -29,7 +29,6 @@ theWeaponMaster\cards\LeviathanCrush.class
 theWeaponMaster\powers\IntimidatePower.class
 theWeaponMaster\orbs\InkOrb.class
 theWeaponMaster\powers\CommonPower.class
-theWeaponMaster\cards\Not_finished\CerberusSlash.class
 theWeaponMaster\relics\ArsenalRelic.class
 theWeaponMaster\cards\Not_finished\RevenantSnoutToTail.class
 theWeaponMaster\cards\Not_finished\LeviathanEject.class
@@ -95,6 +94,7 @@ theWeaponMaster\patches\relics\BottledPlaceholderField.class
 theWeaponMaster\cards\Not_finished\LeviathanEarthquake.class
 theWeaponMaster\potions\PlaceholderPotion.class
 theWeaponMaster\variables\shieldBuster.class
+theWeaponMaster\cards\CerberusSlash.class
 theWeaponMaster\cards\LeviathanGroundSplitter.class
 theWeaponMaster\relics\ManaWhetstoneRelic.class
 theWeaponMaster\cards\legendary_weapons\not_relevant\DefaultAttackWithVariable.class
@@ -112,6 +112,7 @@ theWeaponMaster\cards\BullyDinerArgument.class
 theWeaponMaster\events\IdentityCrisisEvent.class
 theWeaponMaster\patches\WeaponMasterTags.class
 theWeaponMaster\relics\DefaultClickableRelic.class
+theWeaponMaster\actions\WeaponCardRemovalAction.class
 theWeaponMaster\cards\BullyWimp.class
 theWeaponMaster\cards\Not_finished\LW_Atropos.class
 theWeaponMaster\powers\SeveredPainPower.class

@@ -3,6 +3,7 @@ package theWeaponMaster.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,12 +11,13 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.actions.WeaponCardRemovalAction;
 import theWeaponMaster.cards.CerberusIaiSlash;
+import theWeaponMaster.cards.CerberusSlash;
 import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.util.TextureLoader;
 
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.ArrayList;
 
 public class CerberusPower extends AbstractPower {
 
@@ -26,6 +28,15 @@ public class CerberusPower extends AbstractPower {
 
     private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("cerberus_placeholder_84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("cerberus_placeholder_32.png"));
+
+    CardGroup group;
+    String a = "theWeaponMaster:CerberusSlash";
+    String b = "theWeaponMaster:CerberusIaiSlash";
+    String c = "theWeaponMaster:CerberusEssenceSlash";
+    String d = "theWeaponMaster:CerberusModularSlash";
+    String e = "theWeaponMaster:CerberusDrainSlash";
+    String f = "";
+    String g = "";
 
     public CerberusPower(AbstractPlayer player) {
         this.name = NAME;
@@ -53,55 +64,6 @@ public class CerberusPower extends AbstractPower {
 
     @Override
     public void onRemove() {
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:CerberusSlash");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:CerberusIaiSlash");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:CerberusEssenceSlash");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:CerberusModularSlash");
-        AbstractDungeon.player.masterDeck.removeCard("theWeaponMaster:CerberusDrainSlash");
-
-        removeCerberus();
+        new WeaponCardRemovalAction(a,b,c,d,e,f,g);
     }
-
-    private HashSet<AbstractCard> removeCerberus() {
-        HashSet<AbstractCard> cerberusCards = new HashSet<AbstractCard>();
-
-        AbstractCard card = AbstractDungeon.player.cardInUse;
-        if (card != null && card.cardID.equals(this)) {
-            cerberusCards.remove(card);
-        }
-
-        Iterator cardIterator = AbstractDungeon.player.drawPile.group.iterator();
-        removeCards(cerberusCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.discardPile.group.iterator();
-        removeCards(cerberusCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.exhaustPile.group.iterator();
-        removeCards(cerberusCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.limbo.group.iterator();
-        removeCards(cerberusCards, cardIterator);
-
-        cardIterator = AbstractDungeon.player.hand.group.iterator();
-        removeCards(cerberusCards, cardIterator);
-        return cerberusCards;
-    }
-
-    private void removeCards(HashSet<AbstractCard> cerberusCards, Iterator cardIterator) {
-        AbstractCard c;
-        while (cardIterator.hasNext()) {
-            c = (AbstractCard) cardIterator.next();
-            if (
-                    c.cardID.equals("theWeaponMaster:CerberusSlash")        ||
-                    c.cardID.equals("theWeaponMaster:CerberusIaiSlash")     ||
-                    c.cardID.equals("theWeaponMaster:CerberusEssenceSlash") ||
-                    c.cardID.equals("theWeaponMaster:CerberusModularSlash") ||
-                    c.cardID.equals("theWeaponMaster:CerberusDrainSlash")
-            ) {
-                cerberusCards.remove(c);
-            }
-        }
-    }
-
-
 }
