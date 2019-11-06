@@ -1,7 +1,8 @@
 package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 
 public class WeaponCardRemovalAction extends AbstractGameAction {
 
+    //TODO: Almost perfect, just gotta get the purge effect to happen before the cards are removed.
     public WeaponCardRemovalAction(String a, String b, String c, String d, String e, String f, String g){
 
         ArrayList<AbstractCard> masterDeckCopy = new ArrayList<>();
@@ -29,7 +31,9 @@ public class WeaponCardRemovalAction extends AbstractGameAction {
             }
         }
         for (AbstractCard card : handCopy) {
-            AbstractDungeon.actionManager.addToTop((AbstractGameAction) new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand, true));
+            AbstractDungeon.actionManager.addToBottom((AbstractGameAction) new ShowCardAndPoofAction(card));
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
+            AbstractDungeon.player.hand.removeCard(card);
         }
         handCopy.clear();
 
@@ -40,7 +44,9 @@ public class WeaponCardRemovalAction extends AbstractGameAction {
             }
         }
         for (AbstractCard card : deckCopy) {
-            AbstractDungeon.actionManager.addToTop((AbstractGameAction) new ExhaustSpecificCardAction(card, AbstractDungeon.player.drawPile, true));
+            AbstractDungeon.actionManager.addToBottom((AbstractGameAction) new ShowCardAndPoofAction(card));
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
+            AbstractDungeon.player.drawPile.removeCard(card);
         }
         deckCopy.clear();
 
@@ -51,7 +57,9 @@ public class WeaponCardRemovalAction extends AbstractGameAction {
             }
         }
         for (AbstractCard card : discardCopy) {
-            AbstractDungeon.actionManager.addToTop((AbstractGameAction) new ExhaustSpecificCardAction(card, AbstractDungeon.player.discardPile, true));
+            AbstractDungeon.actionManager.addToBottom((AbstractGameAction) new ShowCardAndPoofAction(card));
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
+            AbstractDungeon.player.discardPile.removeCard(card);
         }
         discardCopy.clear();
     }

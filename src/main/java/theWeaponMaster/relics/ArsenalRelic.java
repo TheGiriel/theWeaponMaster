@@ -64,7 +64,7 @@ public class ArsenalRelic extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + currentWeapon;
     }
 /*
     @Override
