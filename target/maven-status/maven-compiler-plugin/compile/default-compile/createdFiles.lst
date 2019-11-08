@@ -1,4 +1,3 @@
-theWeaponMaster\actions\ExchangeWeaponsAction.class
 theWeaponMaster\actions\OverkillAction.class
 theWeaponMaster\variables\DefaultCustomVariable.class
 theWeaponMaster\cards\BullyIntimidate.class
@@ -34,12 +33,14 @@ theWeaponMaster\cards\AtroposSeveredScissors.class
 theWeaponMaster\util\TextureLoader.class
 theWeaponMaster\actions\ViciousAction.class
 theWeaponMaster\actions\OctopusAction$ShiftingChoiceCard.class
+theWeaponMaster\actions\GiveWeaponsAction.class
 theWeaponMaster\cards\BullyShakedown.class
 theWeaponMaster\patches\DefaultInsertPatch$Locator.class
 theWeaponMaster\cards\Strike_WeaponMaster.class
 theWeaponMaster\cards\FenrirDefensiveStance.class
 theWeaponMaster\characters\TheWeaponMaster.class
 theWeaponMaster\powers\LaceratePower.class
+theWeaponMaster\cards\AtroposScissorHalf.class
 theWeaponMaster\cards\legendary_weapons\not_relevant\DefaultCommonPower.class
 theWeaponMaster\cards\FenrirUnleashed.class
 theWeaponMaster\relics\BottledPlaceholderRelic.class
@@ -71,7 +72,6 @@ theWeaponMaster\cards\AbstractWeapons.class
 theWeaponMaster\cards\Not_finished\CerberusDrainSlash.class
 theWeaponMaster\relics\GhoulskinSheathRelic.class
 theWeaponMaster\cards\BullyMeanToEveryone.class
-theWeaponMaster\powers\InkPower.class
 theWeaponMaster\variables\MultiShotVariable.class
 theWeaponMaster\cards\Defend_WeaponMaster.class
 theWeaponMaster\relics\HellhoundOilRelic.class

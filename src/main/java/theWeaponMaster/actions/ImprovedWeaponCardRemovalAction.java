@@ -36,12 +36,14 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
 
         weaponSetHash.add("theWeaponMaster:AtroposSeveredSource");
         weaponSetHash.add("theWeaponMaster:AtroposSeveredScissors");
+        weaponSetHash.add("theWeaponMaster:AtroposScissorHalf");//unlisted
         weaponSetHash.add("theWeaponMaster:AtroposSeveredPath");
         weaponSetHash.add("theWeaponMaster:AtroposSeveredPain");
         weaponSetHash.add("theWeaponMaster:AtroposSeveredSoul");
 
         weaponSetHash.add("theWeaponMaster:LeviathanCrush");
         weaponSetHash.add("theWeaponMaster:LeviathanEject");
+        weaponSetHash.add("theWeaponMaster:LeviathanReload");//unlisted
         weaponSetHash.add("theWeaponMaster:LeviathanGroundSplitter");
         weaponSetHash.add("theWeaponMaster:LeviathanDeepImpact");
         weaponSetHash.add("theWeaponMaster:LeviathanEarthquake");

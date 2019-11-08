@@ -37,10 +37,11 @@ public class ArsenalRelic extends CustomRelic {
     //Fenrir and Cerberus should be the two basic weapons that the player has access to under normal circumstances.
     public static boolean fenrirUnlocked = true;
     public static boolean cerberusUnlocked = true;
-    public static boolean atroposUnlocked = false;
+    public static boolean atroposUnlocked = true;
     public static boolean leviathanUnlocked = true;
-    public static boolean revenantUnlocked = false;
+    public static boolean revenantUnlocked = true;
     public static String currentWeapon; //this is where the current weapon is saved under
+    public static int leviathanShots = 3;
 
     public AbstractPlayer player = AbstractDungeon.player;
 

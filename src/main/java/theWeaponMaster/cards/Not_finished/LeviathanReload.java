@@ -1,37 +1,40 @@
 package theWeaponMaster.cards.Not_finished;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.actions.GiveWeaponsAction;
 import theWeaponMaster.cards.AbstractDynamicCard;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.relics.ArsenalRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
 public class LeviathanReload extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(LeviathanEject.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(LeviathanReload.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String IMG = makeCardPath("Skill.png");
 
-    public static final String IMG = makeCardPath("Attack.png");
-
-    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.RARE;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
-    public static final AbstractCard.CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
+    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
-    private static final int UPGRADED_DAMAGE = 3;
-    private static final int MAGIC_NUMBER = 1;
+    private static final int BLOCK = 8;
 
     public LeviathanReload() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+        block = baseBlock = BLOCK;
     }
 
     @Override
@@ -41,7 +44,9 @@ public class LeviathanReload extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //TODO: Reload
-
+        ArsenalRelic.leviathanShots = 3;
+        AbstractDungeon.player.masterDeck.removeCard(this.cardID);
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction("Eject"));
     }
 }

@@ -48,7 +48,27 @@
       "mana burned",
       "mana_burned"
     ],
-    "DESCRIPTION": "[#3abfbe]Mana [#3abfbe]burned creatures lose 1-3% Max HP, per stack, when casting buffs, debuffs and spells. Certain cards gain new effects against [#3abfbe]Mana [#3abfbe]burned enemies."
+    "DESCRIPTION": "Creatures affected by [#3abfbe]Mana [#3abfbe]burn lose 1-3% Max HP, per stack, when casting buffs, debuffs and spells. Certain cards gain new effects against creatures affected by [#3abfbe]Mana [#3abfbe]burn."
+  },
+  {
+    "PROPER_NAME": "[#3abfbe]Manablaze",
+    "NAMES": [
+      "Mana Burn",
+      "mana_burn",
+      "mana burned",
+      "mana_burned"
+    ],
+    "DESCRIPTION": "Creatures affected by [#3abfbe]Manablaze lose 3-9% Max HP, when casting buffs, debuffs and spells. Certain cards gain new effects against creatures affected by [#3abfbe]Manablaze."
+  },
+  {
+    "PROPER_NAME": "[#3abfbe]Igniting",
+    "NAMES": [
+      "Igniting",
+      "ignites",
+      "igniting",
+      "Ignites"
+    ],
+    "DESCRIPTION": "Trigger target enemy's Mana Burn (2% per stack)."
   },
   {
     "PROPER_NAME": "[#98fb98]Armor [#98fb98]Break",
@@ -155,33 +175,31 @@
     "DESCRIPTION": "Cards specializing in discarding and against buffed enemies."
   },
   {
-    "PROPER_NAME": "[#3abfbe]Atropos [#3abfbe]Shears",
+    "PROPER_NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
     "NAMES": [
-      "[#3abfbe]Atropos [#3abfbe]Shears",
+      "Atropos' Shears",
       "Atropos Shears",
       "atropos shears",
       "atropos_shears",
       "Atropos_Shears",
-      "Atropos' Shears"
+      "Atropos Shears"
     ],
     "DESCRIPTION": "Balanced in offense and defense, specializing in Mana Burn."
   },
   {
     "PROPER_NAME": "[#746550]Leviathan [#746550]Gauntlet",
     "NAMES": [
-      "[#746550]Leviathan [#746550]Gauntlet",
       "Leviathan Gauntlet",
       "leviathan gauntlet",
       "leviathan_gauntlet",
-      "Leviathan_Gauntlet",
-      "Leviathan Gauntlet"
+      "Leviathan_Gauntlet"
     ],
     "DESCRIPTION": "Cards specializing against enemies with Block and defensive powers."
   },
   {
     "PROPER_NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
     "NAMES": [
-      "[#e3dac9]Revenant [#e3dac9]Cleaver",
+      "Revenant Cleaver",
       "Revenant Cleaver",
       "revenant cleaver",
       "revenant_cleaver",

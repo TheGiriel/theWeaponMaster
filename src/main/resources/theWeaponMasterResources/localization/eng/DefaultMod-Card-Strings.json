@@ -121,14 +121,14 @@
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Armor_Break, Crush NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block."
   },
   "theWeaponMaster:LeviathanEject": {
-    "NAME": "[#746550]Eject [#746550]->",
+    "NAME": "[#746550]Eject",
     "DESCRIPTION": "Leviathan_Gauntlet NL Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy.",
     "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy."
   },
   "theWeaponMaster:LeviathanReload": {
-    "NAME": "[#746550]<- [#746550]Reload",
-    "DESCIRPTION": "Leviathan_Gauntlet NL ",
-    "UPGRADE_DESCRIPTION": ""
+    "NAME": "[#746550]Reload",
+    "DESCIRPTION": "Leviathan_Gauntlet NL Reload your Gauntlet and gain !B! block.",
+    "UPGRADE_DESCRIPTION": "Leviathan_Gauntlet NL Reload your Gauntlet and gain !B! block."
   },
   "theWeaponMaster:LeviathanGroundSplitter": {
     "NAME": "[#746550]Ground [#746550]Splitter",
@@ -190,6 +190,11 @@
     "NAME": "[#3abfbe]Severed [#3abfbe]Scissors",
     "DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice to target enemy. NL This enemy loses HP equal to their Mana Burn once.",
     "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice to target enemy. NL This enemy loses HP equal to their Mana Burn twice."
+  },
+  "theWeaponMaster:AtroposScissorHalf": {
+    "NAME": "[#3abfbe]Scissor [#3abfbe]Half",
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage to target enemy, deal !M! bonus damage if the last card was Scissor Half. NL Igniting.",
+    "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage to target enemy, deal !M! bonus damage if the last card was Scissor Half. NL Igniting."
   },
   "theWeaponMaster:AtroposSeveredPath": {
     "NAME": "[#3abfbe]Severed [#3abfbe]Path",

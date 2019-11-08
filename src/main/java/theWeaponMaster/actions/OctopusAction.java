@@ -25,13 +25,11 @@ public class OctopusAction extends AbstractGameAction {
     private boolean pickCard = false;
     private AbstractPlayer owner;
     private AbstractCard funCard;
-    private AbstractPower power;
     private ArrayList<AbstractCard> weapon = new ArrayList<>();
 
     public OctopusAction(AbstractPlayer player, AbstractCard q) {
         duration = Settings.ACTION_DUR_XFAST;
         actionType = ActionType.WAIT;
-        owner = player;
         funCard = q;
     }
 
@@ -69,64 +67,28 @@ public class OctopusAction extends AbstractGameAction {
             new ImprovedWeaponCardRemovalAction();
 
             if (cardChoice.name.equals("Fenrir")) {
-                weapon.add(new FenrirLacerate());
-                weapon.add(new FenrirHeavySwing());
-                weapon.add(new FenrirUnleashed());
-                weapon.add(new FenrirShieldEater());
-                weapon.add(new FenrirDefensiveStance());
-
+                AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Fenrir");
             }
             if (cardChoice.name.equals("Cerberus")) {
-                weapon.add(new CerberusSlash());
-                weapon.add(new CerberusIaiSlash());
-                weapon.add(new CerberusEssenceSlash());
-                weapon.add(new CerberusModularSlash());
-                weapon.add(new CerberusDrainSlash());
-
+                AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Cerberus");
             }
             if (cardChoice.name.equals("Revenant Cleaver")) {
-                weapon.add(new RevenantRavenous());
-                weapon.add(new RevenantChopChopCHOP());
-                weapon.add(new RevenantHungrySteel());
-                weapon.add(new RevenantSnoutToTail());
-                weapon.add(new RevenantBloodbath());
-
+                AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Revenant Cleaver");
             }
             if (cardChoice.name.equals("Atropos' Shears")) {
-                weapon.add(new AtroposSeveredSource());
-                weapon.add(new AtroposSeveredScissors());
-                weapon.add(new AtroposSeveredPath());
-                weapon.add(new AtroposSeveredPain());
-                weapon.add(new AtroposSeveredSoul());
-
+                AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Atropos' Shears");
             }
             if (cardChoice.name.equals("Leviathan Gauntlet")) {
-                weapon.add(new LeviathanCrush());
-                weapon.add(new LeviathanEject());
-                weapon.add(new LeviathanGroundSplitter());
-                weapon.add(new LeviathanDeepImpact());
-                weapon.add(new LeviathanEarthquake());
-
+                AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Leviathan Gauntlet");
             }
-
-            giveWeapons();
-            weapon.clear();
-
             isDone = true;
         }
         tickDuration();
-    }
-
-    private void giveWeapons(){
-        for (AbstractCard c : weapon){
-            AbstractDungeon.player.masterDeck.addToBottom(c);
-            AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
-        }
     }
 
     private static class ShiftingChoiceCard extends CustomCard {

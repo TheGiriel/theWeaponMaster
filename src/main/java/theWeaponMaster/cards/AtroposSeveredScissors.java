@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.actions.GiveWeaponsAction;
 import theWeaponMaster.characters.TheWeaponMaster;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
@@ -68,5 +69,7 @@ public class AtroposSeveredScissors extends AbstractDynamicCard {
         manaBurnDamage(p, m);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         manaBurnDamage(p, m);
+        AbstractDungeon.player.masterDeck.removeCard(this.cardID);
+        AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction("Scissor Half"));
     }
 }

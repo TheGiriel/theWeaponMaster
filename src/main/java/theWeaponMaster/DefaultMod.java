@@ -411,9 +411,10 @@ public class DefaultMod implements
         BaseMod.addCard(new Defend_WeaponMaster());
         BaseMod.addCard(new AtroposSeveredSource());
         BaseMod.addCard(new AtroposSeveredScissors());
-        //BaseMod.addCard(new AtroposSeveredPath());
+        BaseMod.addCard(new AtroposScissorHalf());
+        BaseMod.addCard(new AtroposSeveredPath());
         BaseMod.addCard(new AtroposSeveredPain());
-        //BaseMod.addCard(new AtroposSeveredSoul());
+        BaseMod.addCard(new AtroposSeveredSoul());
         BaseMod.addCard(new CerberusSlash());
         //BaseMod.addCard(new CerberusEssenceSlash());
         //BaseMod.addCard(new CerberusModularSlash());
@@ -425,9 +426,10 @@ public class DefaultMod implements
         BaseMod.addCard(new FenrirUnleashed());
         BaseMod.addCard(new FenrirDefensiveStance());
         BaseMod.addCard(new LeviathanCrush());
-        //BaseMod.addCard(new LeviathanEject());
+        BaseMod.addCard(new LeviathanEject());
+        //BaseMod.addCard(new LeviathanReload());
         BaseMod.addCard(new LeviathanGroundSplitter());
-        //BaseMod.addCard(new LeviathanDeepImpact());
+        BaseMod.addCard(new LeviathanDeepImpact());
         BaseMod.addCard(new LeviathanEarthquake());
         BaseMod.addCard(new RevenantRavenous());
         BaseMod.addCard(new RevenantChopChopCHOP());
@@ -445,7 +447,6 @@ public class DefaultMod implements
         BaseMod.addCard(new BullyDinerArgument());
         BaseMod.addCard(new BullySlap());
         BaseMod.addCard(new BullyShakedown());
-        BaseMod.addCard(new WeaponSwap());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -456,6 +457,7 @@ public class DefaultMod implements
         //UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
         UnlockTracker.unlockCard(AtroposSeveredSource.ID);
         UnlockTracker.unlockCard(AtroposSeveredScissors.ID);
+        UnlockTracker.unlockCard(AtroposScissorHalf.ID);
         //UnlockTracker.unlockCard(AtroposSeveredPath.ID);
         UnlockTracker.unlockCard(AtroposSeveredPain.ID);
         //UnlockTracker.unlockCard(AtroposSeveredSoul.ID);
@@ -470,15 +472,16 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(FenrirUnleashed.ID);
         UnlockTracker.unlockCard(FenrirDefensiveStance.ID);
         UnlockTracker.unlockCard(LeviathanCrush.ID);
-        //UnlockTracker.unlockCard(LeviathanEject.ID);
+        UnlockTracker.unlockCard(LeviathanEject.ID);
+        //UnlockTracker.unlockCard(LeviathanReload.ID);
         UnlockTracker.unlockCard(LeviathanGroundSplitter.ID);
-        //UnlockTracker.unlockCard(LeviathanDeepImpact.ID);
+        UnlockTracker.unlockCard(LeviathanDeepImpact.ID);
         UnlockTracker.unlockCard(LeviathanEarthquake.ID);
         UnlockTracker.unlockCard(RevenantRavenous.ID);
         UnlockTracker.unlockCard(RevenantChopChopCHOP.ID);
         UnlockTracker.unlockCard(RevenantHungrySteel.ID);
-        //UnlockTracker.unlockCard(RevenantSnoutToTail.ID);
-        //UnlockTracker.unlockCard(RevenantBloodbath.ID);
+        UnlockTracker.unlockCard(RevenantSnoutToTail.ID);
+        UnlockTracker.unlockCard(RevenantBloodbath.ID);
         //UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
         UnlockTracker.unlockCard(DefaultCommonPower.ID);
         UnlockTracker.unlockCard(BullyTaunt.ID);
@@ -490,7 +493,6 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(BullyDinerArgument.ID);
         UnlockTracker.unlockCard(BullySlap.ID);
         UnlockTracker.unlockCard(BullyShakedown.ID);
-        UnlockTracker.unlockCard(WeaponSwap.ID);
         
         logger.info("Done adding cards!");
     }
