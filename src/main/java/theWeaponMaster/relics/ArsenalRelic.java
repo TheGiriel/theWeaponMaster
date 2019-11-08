@@ -35,18 +35,18 @@ public class ArsenalRelic extends CustomRelic {
 
     //as the name implies this is where the respective weapons are marked as (un)locked
     //Fenrir and Cerberus should be the two basic weapons that the player has access to under normal circumstances.
-    public boolean fenrirUnlocked = true;
-    public boolean cerberusUnlocked = true;
-    public boolean atroposUnlocked = false;
-    public boolean leviathanUnlocked = false;
-    public boolean revenantUnlocked = false;
+    public static boolean fenrirUnlocked = true;
+    public static boolean cerberusUnlocked = true;
+    public static boolean atroposUnlocked = false;
+    public static boolean leviathanUnlocked = true;
+    public static boolean revenantUnlocked = false;
     public static String currentWeapon; //this is where the current weapon is saved under
 
     public AbstractPlayer player = AbstractDungeon.player;
 
     public ArsenalRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
-        this.currentWeapon = "Fenrir";
+        setCurrentWeapon("Fenrir");
     }
 
     @Override
@@ -61,6 +61,15 @@ public class ArsenalRelic extends CustomRelic {
             return;
         }
     }*/
+
+    public void setCurrentWeapon(String newWeapon){
+        currentWeapon = newWeapon;
+        this.description = DESCRIPTIONS[0] + currentWeapon;
+    }
+
+    public void updateDescription(){
+
+    }
 
     @Override
     public String getUpdatedDescription() {

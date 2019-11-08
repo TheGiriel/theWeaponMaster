@@ -24,8 +24,8 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Attack.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
@@ -57,7 +57,7 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
         if (p.hand.size() == 2) {
             iaiBonus = 2;
         } else iaiBonus = 4;
-        AbstractDungeon.actionManager.addToBottom(new DiscardAction(m, p, magicNumber, true));
+        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, true));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage + iaiBonus), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
     }
 }

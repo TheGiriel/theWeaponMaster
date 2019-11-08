@@ -23,9 +23,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.*;
-import theWeaponMaster.cards.Not_finished.LW_Fenrir;
 import theWeaponMaster.cards.Not_finished.LeviathanEarthquake;
-import theWeaponMaster.powers.SeveredPainPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.PlaceholderRelic;
@@ -159,11 +157,11 @@ public class TheWeaponMaster extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        /*retVal.add(BullyMeanToEveryone.ID);
+        retVal.add(BullyMeanToEveryone.ID);
         retVal.add(BullyHuh.ID);
         retVal.add(BullyIntimidate.ID);
         retVal.add(BullyShakedown.ID);
-        retVal.add(BullySlap.ID);*/
+        retVal.add(BullySlap.ID);
         retVal.add(LeviathanEarthquake.ID);
         retVal.add(RevenantRavenous.ID);
         retVal.add(RevenantHungrySteel.ID);
