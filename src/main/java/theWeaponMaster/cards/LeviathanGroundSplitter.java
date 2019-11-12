@@ -41,8 +41,12 @@ public class LeviathanGroundSplitter extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
-        this.magicNumber = this.magicNumber + UPGRADED_MAGIC_NUMBER;
-        this.damage = this.damage + UPGRADED_DAMAGE;
+        if(!upgraded){
+            upgradeName();
+            upgradeDamage(UPGRADED_DAMAGE);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
+            initializeDescription();
+        }
     }
 
     @Override

@@ -77,6 +77,7 @@ public class GiveWeaponsAction extends AbstractGameAction {
         for (AbstractCard c : weaponList){
             owner.masterDeck.addToBottom(c);
             AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
+            c.upgrade();
         }
     }
 

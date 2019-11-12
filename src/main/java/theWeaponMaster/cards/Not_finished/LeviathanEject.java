@@ -42,7 +42,11 @@ public class LeviathanEject extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
-
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADED_DAMAGE);
+            initializeDescription();
+        }
     }
 
     @Override

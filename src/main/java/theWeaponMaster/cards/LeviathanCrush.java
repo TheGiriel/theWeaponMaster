@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.relics.ShockwaveModulatorRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -39,17 +40,12 @@ public class LeviathanCrush extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
-        if(!upgraded){
+        if(!upgraded && AbstractDungeon.player.hasRelic(ShockwaveModulatorRelic.ID) && ShockwaveModulatorRelic.level1){
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             rawDescription = UPGRADED_DESCRIPTION;
             initializeDescription();
         }
-    }
-
-    @Override
-    public boolean canUpgrade() {
-        return AbstractDungeon.player.hasRelic("ShockwaveModulatorRelic");
     }
 
     @Override
