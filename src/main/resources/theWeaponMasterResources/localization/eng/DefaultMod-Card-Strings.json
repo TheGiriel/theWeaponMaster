@@ -145,8 +145,7 @@
   },
   "theWeaponMaster:RevenantNoseToTail": {
     "NAME": "Nose To Tail",
-    "DESCRIPTION": "Revenant_Cleaver NL  NL Gain !M! Vicious.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Revenant_Cleaver NL ??? NL Gain !M! Vicious."
   },
   "theWeaponMaster:RevenantBloodbath": {
     "NAME": "Bloodbath",
@@ -188,21 +187,29 @@
     "NAME": "Severed Soul",
     "DESCRIPTION": "Atropos_Shears NL Can only be played as the first card of your turn. Deal massive damage."
   },
+  "theWeaponMaster:RevolverStandard": {
+    "NAME": "Single Shot",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theWeaponMaster:RevolverDouble": {
+    "NAME": "Twin Shot",
+    "DESCRIPTION": "Deal !D! damage twice."
+  },
   "theWeaponMaster:RevolverHeavy": {
     "NAME": "Magnum Shot",
     "DESCRIPTION": "Deal !D! damage."
   },
   "theWeaponMaster:RevolverLowRecoil": {
     "NAME": "Low Recoil Shot",
-    "DESCRIPTION": "Deal !D! damage. Draw 1 card."
+    "DESCRIPTION": "Deal !D! damage. Play the top card if it's a Revolver card."
   },
   "theWeaponMaster:RevolverFullMetal": {
     "NAME": "Full Metal Jacket Shot",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. Deal !M!% bonus damage to enemies with Block."
   },
   "theWeaponMaster:RevolverHollowPoint": {
     "NAME": "Hollow-Point Shot",
-    "DESCRIPTION": "Deal !D! damage. Hollow-point."
+    "DESCRIPTION": "Deal !D! damage. Deal !M!% bonus damage to enemies without Block."
   },
   "theWeaponMaster:RevolverBuckshot": {
     "NAME": "Buckshot",

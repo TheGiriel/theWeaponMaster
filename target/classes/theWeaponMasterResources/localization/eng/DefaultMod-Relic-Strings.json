@@ -38,6 +38,13 @@
       "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck. \nCurrent Weapon: "
     ]
   },
+  "theWeaponMaster:RevolverRelic": {
+    "NAME": "The Revolver",
+    "FLAVOR": "Your trusty six-shooter.",
+    "DESCRIPTIONS": [
+      "Expend one shot every time you use a Revolver card."
+    ]
+  },
   "theWeaponMaster:SplinteringSteelRelic": {
     "NAME": "Splintering Steel",
     "FLAVOR": "The best offense is a layer of sharp steel shards.",

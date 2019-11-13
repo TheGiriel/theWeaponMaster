@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
-import theWeaponMaster.patches.WeaponMasterTags;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -44,7 +43,6 @@ public class FenrirUnleashed extends AbstractDynamicCard {
         isInnate = true;
 
         this.damage = baseDamage = DAMAGE;
-        this.tags.add(WeaponMasterTags.LW_FENRIR);
         isMultiDamage = true;
     }
 

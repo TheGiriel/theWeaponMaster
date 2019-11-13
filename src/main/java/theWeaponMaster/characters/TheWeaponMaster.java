@@ -22,10 +22,11 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.cards.*;
+import theWeaponMaster.cards.Not_finished.*;
+import theWeaponMaster.cards.Strike_WeaponMaster;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.DefaultClickableRelic;
-import theWeaponMaster.relics.PlaceholderRelic;
+import theWeaponMaster.relics.RevolverRelic;
 
 import java.util.ArrayList;
 
@@ -164,13 +165,19 @@ public class TheWeaponMaster extends CustomPlayer {
         //retVal.add(LeviathanEarthquake.ID);
         //retVal.add(RevenantRavenous.ID);
         //retVal.add(RevenantHungrySteel.ID);
-        retVal.add(RevenantChopChopCHOP.ID);
-        retVal.add(FenrirLacerate.ID);
-        retVal.add(FenrirShieldEater.ID);
-        retVal.add(FenrirHeavySwing.ID);
-        retVal.add(FenrirUnleashed.ID);
-        retVal.add(FenrirDefensiveStance.ID);
-        retVal.add(AtroposSeveredPain.ID);
+        retVal.add(RevolverLowRecoil.ID);
+        retVal.add(RevolverStandard.ID);
+        retVal.add(RevolverHeavy.ID);
+        retVal.add(RevolverHollowPoint.ID);
+        retVal.add(RevolverFullMetal.ID);
+        retVal.add(RevolverDouble.ID);
+        retVal.add(RevolverLowRecoil.ID);
+        //retVal.add(FenrirLacerate.ID);
+        //retVal.add(FenrirShieldEater.ID);
+        //retVal.add(FenrirHeavySwing.ID);
+        //retVal.add(FenrirUnleashed.ID);
+        //retVal.add(FenrirDefensiveStance.ID);
+        //retVal.add(AtroposSeveredPain.ID);
         return retVal;
     }
 
@@ -179,11 +186,11 @@ public class TheWeaponMaster extends CustomPlayer {
         logger.info("Begin loading starting relic Strings");
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(ArsenalRelic.ID);
-        retVal.add(PlaceholderRelic.ID);
+        retVal.add(RevolverRelic.ID);
         retVal.add(DefaultClickableRelic.ID);
 
         UnlockTracker.markRelicAsSeen(ArsenalRelic.ID);
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
+        UnlockTracker.markRelicAsSeen(RevolverRelic.ID);
         UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 
         return retVal;

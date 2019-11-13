@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.characters.TheWeaponMaster;
-import theWeaponMaster.patches.WeaponMasterTags;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -43,7 +42,6 @@ public class FenrirShieldEater extends AbstractDynamicCard {
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
-        this.tags.add(WeaponMasterTags.LW_FENRIR);
     }
 
     @Override

@@ -361,7 +361,7 @@ public class DefaultMod implements
         logger.info("Adding relics");
         
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new RevolverRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ArsenalRelic(), TheWeaponMaster.Enums.COLOR_GRAY);
@@ -447,6 +447,12 @@ public class DefaultMod implements
         BaseMod.addCard(new BullyDinerArgument());
         BaseMod.addCard(new BullySlap());
         BaseMod.addCard(new BullyShakedown());
+        BaseMod.addCard(new RevolverLowRecoil());
+        BaseMod.addCard(new RevolverStandard());
+        BaseMod.addCard(new RevolverHeavy());
+        BaseMod.addCard(new RevolverHollowPoint());
+        BaseMod.addCard(new RevolverFullMetal());
+        BaseMod.addCard(new RevolverDouble());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -493,6 +499,13 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(BullyDinerArgument.ID);
         UnlockTracker.unlockCard(BullySlap.ID);
         UnlockTracker.unlockCard(BullyShakedown.ID);
+        UnlockTracker.unlockCard(RevolverLowRecoil.ID);
+        UnlockTracker.unlockCard(RevolverStandard.ID);
+        UnlockTracker.unlockCard(RevolverHeavy.ID);
+        UnlockTracker.unlockCard(RevolverHollowPoint.ID);
+        UnlockTracker.unlockCard(RevolverFullMetal.ID);
+        UnlockTracker.unlockCard(RevolverDouble.ID);
+
         
         logger.info("Done adding cards!");
     }

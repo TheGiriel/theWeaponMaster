@@ -50,71 +50,56 @@
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
-
-  "theWeaponMaster:LW_Cerberus": {
-    "NAME": "[#cdfcfe]Cerberus",
-    "DESCRIPTION": "Legendary Weapon NL Discarding, cards specializing against enemy buffs.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:CerberusSlash": {
-    "NAME": "[#cdfcfe]Slash",
-    "DESCRIPTION": "Cerberus NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard.",
-    "UPGRADE_DESCRIPTION": "Cerberus NL not_implemented - Deal !D! plus !M! bonus damage for every card you discard."
-  },
-  "theWeaponMaster:CerberusEssenceSlash": {
-    "NAME": "[#cdfcfe]Essence [#cdfcfe]Slash",
-    "DESCRIPTION": "Cerberus",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:CerberusModularSlash": {
-    "NAME": "[#cdfcfe]Modular [#cdfcfe]Slash",
-    "DESCRIPTION": "Cerberus",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:CerberusIaiSlash": {
-    "NAME": "[#cdfcfe]Iai [#cdfcfe]Slash",
-    "DESCRIPTION": "Cerberus NL Deal !D! damage. Discards !M! random cards from your hand to deal 2 bonus damage each.",
-    "UPGRADE_DESCRIPTION": "Cerberus NL Deal !D! damage. Discards !M! random cards from your hand to deal 2 bonus damage each."
-  },
-  "theWeaponMaster:CerberusDrainSlash": {
-    "NAME": "[#cdfcfe]Drain [#cdfcfe]Slash",
-    "DESCRIPTION": "Cerberus NL not_implemented - Deal !D! damage and steal !M! enemy buff.",
-    "UPGRADE_DESCRIPTION": "Legendary Weapon NL not_implemented - Deal !D! damage and steal !M! enemy buffs."
-  },
-
-  "theWeaponMaster:LW_Fenrir": {
-    "NAME": "[#b7410e]Fenrir",
-    "DESCRIPTION": "Fenrir Weapon NL Evolving cards specializing in Lacerate.",
-    "UPGRADE_DESCRIPTION": ""
-  },
   "theWeaponMaster:FenrirLacerate": {
-    "NAME": "[#b7410e]Lacerate",
+    "NAME": "Lacerate",
     "DESCRIPTION": "Fenrir NL Deal !D! damage. Apply !M! Lacerate. NL Evolve: Hit enemies with Hemorrhage or 3+ Lacerate.",
     "UPGRADE_DESCRIPTION": "Fenrir NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 10% bonus damage per Lacerate stack. NL Evolve: Attack enemy with Hemorrhage."
   },
   "theWeaponMaster:FenrirShieldEater": {
-    "NAME": "[#b7410e]Shield [#b7410e]Eater",
+    "NAME": "Shield Eater",
     "DESCRIPTION": "Fenrir NL Deal !D! damage and absorb an equal amount of block. NL Evolve: Destroy all enemy Block."
   },
   "theWeaponMaster:FenrirDefensiveStance": {
-    "NAME": "[#b7410e]Defensive [#b7410e]Stance",
+    "NAME": "Defensive Stance",
     "DESCRIPTION": "Fenrir NL Gain !B! Block and Defensive Stance. Lose 20% of this block whenever you play a Fenrir card. NL Evolve: All enemies intend to attack you."
   },
   "theWeaponMaster:FenrirHeavySwing": {
-    "NAME": "[#b7410e]Heavy [#b7410e]Swing",
+    "NAME": "Heavy Swing",
     "DESCRIPTION": "Fenrir NL Deal !D! damage per card in your hand, gains half the Evolution bonuses. NL Evolve: Play holding 3 or fewer cards."
   },
   "theWeaponMaster:FenrirUnleashed": {
-    "NAME": "[#b7410e]Fenrir [#b7410e]Unleashed",
+    "NAME": "Fenrir Unleashed",
     "DESCRIPTION": "Fenrir NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Kill an opponent.",
     "UPGRADE_DESCRIPTION": "Fenrir NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Every time you kill an opponent."
   },
 
-  "theWeaponMaster:LW_Leviathan": {
-    "NAME": "[#746550]Leviathan [#746550]Gauntlet",
-    "DESCRIPTION": "Leviathan_Gauntlet",
+  "theWeaponMaster:CerberusSlash": {
+    "NAME": "Slash",
+    "DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! damage. NL Quickdraw 1.",
+    "UPGRADE_DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! plus !M! bonus damage for every card you discard. NL Quickdraw 1."
+  },
+  "theWeaponMaster:CerberusEssenceSlash": {
+    "NAME": "Essence Slash",
+    "DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! damage. Enemies take !M! damage for every buff they have. NL Quickdraw 1.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "theWeaponMaster:CerberusModularSlash": {
+    "NAME": "Modular Slash",
+    "DESCRIPTION": "Cerberus NL not_implemented NL",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theWeaponMaster:CerberusIaiSlash": {
+    "NAME": "Iai Slash",
+    "DESCRIPTION": "Cerberus NL Deal !D! damage. Discards !M! random cards to deal 2 bonus damage each. NL Quickdraw 2.",
+    "UPGRADE_DESCRIPTION": "Cerberus NL Deal !D! damage. Discards !M! random cards to deal 2 bonus damage each. NL Quickdraw 2."
+  },
+  "theWeaponMaster:CerberusDrainSlash": {
+    "NAME": "Drain Slash",
+    "DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! damage. Exhaust one card and steal !M! random enemy buff. NL Quickdraw 1.",
+    "UPGRADE_DESCRIPTION": "Legendary Weapon NL not_implemented NL Deal !D! damage. Exhaust one card and steal !M! random enemy buffs. NL Quickdraw 1."
+  },
+
+
   "theWeaponMaster:LeviathanCrush": {
     "NAME": "Crush",
     "DESCRIPTION": "Leviathan_Gauntlet NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
@@ -122,8 +107,8 @@
   },
   "theWeaponMaster:LeviathanEject": {
     "NAME": "Eject",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy.",
-    "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy."
+    "DESCRIPTION": "Leviathan_Gauntlet NL Eject all spent Leviathan cartridges and deal !D! damage X times to random enemies.",
+    "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to random enemies."
   },
   "theWeaponMaster:LeviathanReload": {
     "NAME": "Reload",
@@ -145,38 +130,31 @@
     "UPGRADE_DESCRIPTION": ""
   },
 
-  "theWeaponMaster:LW_Revenant": {
-    "NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
-    "DESCRIPTION": "Focused on the player's HP and Vicious generation."
-  },
+
   "theWeaponMaster:RevenantRavenous": {
-    "NAME": "[#e3dac9]Ravenous",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and heal for one third of the unblocked damage dealt. NL Gain !M! Vicious."
+    "NAME": "Ravenous",
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. NL Gain !M! Vicious."
   },
   "theWeaponMaster:RevenantChopChopCHOP": {
-    "NAME": "[#e3dac9]Chop [#e3dac9]Chop [#e3dac9]CHOP",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and heal 1 HP three times. NL Healing left: !M!."
+    "NAME": "Chop Chop CHOP",
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and gain 1 temporary HP !M! times."
   },
   "theWeaponMaster:RevenantHungrySteel": {
-    "NAME": "[#e3dac9]Hungry [#e3dac9]Steel",
-    "DESCRIPTION": "Revenant_Cleaver NL Designate target enemy and deal !D! damage."
+    "NAME": "Hungry Steel",
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and apply Hungering. NL Gain !M! Vicious."
   },
-  "theWeaponMaster:RevenantSnoutToTail": {
-    "NAME": "[#e3dac9]Snout [#e3dac9]To [#e3dac9]Tail",
-    "DESCRIPTION": "Revenant_Cleaver NL ",
-    "UPGRADE_DESCRIPTION": ""
+  "theWeaponMaster:RevenantNoseToTail": {
+    "NAME": "Nose To Tail",
+    "DESCRIPTION": "Revenant_Cleaver NL ??? NL Gain !M! Vicious."
   },
   "theWeaponMaster:RevenantBloodbath": {
-    "NAME": "[#e3dac9]Bloodbath",
-    "DESCRIPTION": "Revenant_Cleaver NL Attack a random enemy for !D! damage. Use half your Vicious stacks to attack again until you run out."
+    "NAME": "Bloodbath",
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage to a random enemy. Continue: 5+ Vicious."
   },
 
-  "theWeaponMaster:LW_Atropos": {
-    "NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
-    "DESCRIPTION": "Balanced in Attacks and Skills, specializing in Mana Burn."
-  },
+
   "theWeaponMaster:AtroposSeveredSource": {
-    "NAME": "[#3abfbe]Severed [#3abfbe]Source",
+    "NAME": "Severed Source",
     "DESCRIPTION": "Atropos_Shears NL Deal !D! damage to your target and apply 1 Mana_Burn.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
@@ -186,52 +164,82 @@
     ]
   },
   "theWeaponMaster:AtroposSeveredScissors": {
-    "NAME": "[#3abfbe]Severed [#3abfbe]Scissors",
-    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice to target enemy. NL This enemy loses HP equal to their Mana Burn once.",
-    "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice to target enemy. NL This enemy loses HP equal to their Mana Burn twice."
+    "NAME": "Severed Scissors",
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice. NL Igniting 1.",
+    "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice. NL Igniting 2."
   },
   "theWeaponMaster:AtroposScissorHalf": {
-    "NAME": "[#3abfbe]Scissor [#3abfbe]Half",
-    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage to target enemy, deal !M! bonus damage if the last card was Scissor Half. NL Igniting.",
-    "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage to target enemy, deal !M! bonus damage if the last card was Scissor Half. NL Igniting."
+    "NAME": "Scissor Half",
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage. NL Deal !M! bonus damage if the last card was Severed Scissors or Scissor Half. NL Igniting 1.",
+    "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage. Deal !M! bonus damage if the last card was Severed Scissors or Scissor Half. NL Igniting 1."
   },
   "theWeaponMaster:AtroposSeveredPath": {
-    "NAME": "[#3abfbe]Severed [#3abfbe]Path",
+    "NAME": "Severed Path",
     "DESCRIPTION": "Atropos_Shears NL Target Enemy attacks itself this turn.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:AtroposSeveredPain": {
-    "NAME": "[#3abfbe]Severed [#3abfbe]Pain",
+    "NAME": "Severed Pain",
     "DESCRIPTION": "Atropos_Shears NL Reduce all damage you take by half until your next turn.",
     "UPGRADE_DESCRIPTION": "Reduce all damage you take by half for two turns."
   },
   "theWeaponMaster:AtroposSeveredSoul": {
-    "NAME": "[#3abfbe]Severed [#3abfbe]Soul",
-    "DESCRIPTION": "Atropos_Shears NL Deal massive damage to target enemy."
+    "NAME": "Severed Soul",
+    "DESCRIPTION": "Atropos_Shears NL Can only be played as the first card of your turn. Deal massive damage."
   },
+
+  "theWeaponMaster:RevolverStandard": {
+    "NAME": "Single Shot",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theWeaponMaster:RevolverDouble": {
+    "NAME": "Twin Shot",
+    "DESCRIPTION": "Deal !D! damage twice."
+  },
+  "theWeaponMaster:RevolverHeavy": {
+    "NAME": "Magnum Shot",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theWeaponMaster:RevolverLowRecoil": {
+    "NAME": "Low Recoil Shot",
+    "DESCRIPTION": "Deal !D! damage. Play the top card if it's a Revolver card."
+  },
+  "theWeaponMaster:RevolverFullMetal": {
+    "NAME": "Full Metal Jacket Shot",
+    "DESCRIPTION": "Deal !D! damage. Deal !M!% bonus damage to enemies with Block."
+  },
+  "theWeaponMaster:RevolverHollowPoint": {
+    "NAME": "Hollow-Point Shot",
+    "DESCRIPTION": "Deal !D! damage. Deal !M!% bonus damage to enemies without Block."
+  },
+  "theWeaponMaster:RevolverBuckshot": {
+    "NAME": "Buckshot",
+    "DESCRIPTION": "Deal !D! damage to all enemies."
+  },
+
 
   "theWeaponMaster:BullyIntimidate": {
     "NAME": "Intimidate",
-    "DESCRIPTION": "Expend !M! Vicious to force target enemy to defend."
+    "DESCRIPTION": "Bully NL Force an attacking enemy to defend."
   },
   "theWeaponMaster:BullyTaunt": {
     "NAME": "Taunt",
-    "DESCRIPTION": "Bully NL Force the enemy to attack."
+    "DESCRIPTION": "Bully NL Force a defending enemy to attack."
   },
   "theWeaponMaster:BullyHuh": {
     "NAME": "HUH?!",
     "DESCRIPTION": "Bully 10 NL Gain !M! Artifact.",
-    "UPGRADE_DESCRIPTION": "Bully 7 NL Gain !M! Artifact, gain 10 block."
+    "UPGRADE_DESCRIPTION": "Bully 7 NL Gain !M! Artifact, gain !B! block."
   },
   "theWeaponMaster:BullyWimp": {
     "NAME": "Wimp",
-    "DESCRIPTION": "Bully 6 NL Apply !M! Weak to target enemy.",
+    "DESCRIPTION": "Bully 6 NL Apply !M! Weak.",
     "UPGRADE_DESCRIPTION": "Bully 6 NL Apply !M! Weak to all enemies."
   },
   "theWeaponMaster:BullySlap": {
     "NAME": "Slap",
-    "DESCRIPTION": "Bully 5 NL Slap target enemy for !D! damage and apply Frail for !M! turns.",
-    "UPGRADE_DESCRIPTION": "Bully 5 Slap target enemy for !D! damage twice each and apply Frail for !M! turns."
+    "DESCRIPTION": "Bully 5 NL Deal !D! damage and apply !M! Frail.",
+    "UPGRADE_DESCRIPTION": "Bully 5 NL Deal !D! damage damage twice each and apply !M! Frail."
   },
   "theWeaponMaster:BullyMeanToEveryone": {
     "NAME": "Mean to everyone!",
@@ -239,7 +247,7 @@
   },
   "theWeaponMaster:BullyTerrifyingHowl": {
     "NAME": "Terrifying Howl",
-    "DESCRIPTION": "Bully  NL Force all attacking enemies to defend."
+    "DESCRIPTION": "Bully NL Force all attacking enemies to defend."
   },
   "theWeaponMaster:BullyDinerArgument": {
     "NAME": "Diner Argument",
@@ -247,16 +255,12 @@
   },
   "theWeaponMaster:BullyShakedown": {
     "NAME": "Shakedown",
-    "DESCRIPTION": "Bully NL Deal !D! damage and 'convince' target enemy to 'donate' a random amount of gold to you (6-12 Gold).",
-    "UPGRADE_DESCRIPTION": "Bully NL Deal !D! damage and 'convince' target enemy to 'donate' a random amount of gold to you (9-18 Gold)."
+    "DESCRIPTION": "Bully NL Deal !D! damage. Target enemy 'donates' a little random amount of gold (3-6 Gold).",
+    "UPGRADE_DESCRIPTION": "Bully NL Deal !D! damage. Target enemy 'donates' a little random amount of gold (6-9 Gold)."
   },
   "theWeaponMaster:BullyCard10": {
     "NAME": "Card10",
     "DESCRIPTION": "Not Implemented."
-  },
-  "theWeaponMaster:SeveredHope": {
-    "NAME": "Severed Hope",
-    "DESCRIPTION": "Die."
   },
   "theWeaponMaster:WeaponSwap": {
     "NAME": "Weapon Swap",

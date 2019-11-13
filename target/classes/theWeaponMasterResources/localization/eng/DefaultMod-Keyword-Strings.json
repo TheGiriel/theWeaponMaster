@@ -48,7 +48,7 @@
       "mana burned",
       "mana_burned"
     ],
-    "DESCRIPTION": "Creatures affected by [#3abfbe]Mana [#3abfbe]burn lose 1-3% Max HP, per stack, when casting buffs, debuffs and spells. Certain cards gain new effects against creatures affected by [#3abfbe]Mana [#3abfbe]burn."
+    "DESCRIPTION": "Creatures affected by [#3abfbe]Mana [#3abfbe]burn lose 3% Max HP per stack when casting buffs, debuffs and spells. Certain cards gain new effects against creatures affected by [#3abfbe]Mana [#3abfbe]burn."
   },
   {
     "PROPER_NAME": "[#3abfbe]Manablaze",
@@ -58,7 +58,7 @@
       "mana burned",
       "mana_burned"
     ],
-    "DESCRIPTION": "Creatures affected by [#3abfbe]Manablaze lose 3-9% Max HP, when casting buffs, debuffs and spells. Certain cards gain new effects against creatures affected by [#3abfbe]Manablaze."
+    "DESCRIPTION": "Creatures affected by [#3abfbe]Manablaze lose 9% Max HP when casting buffs, debuffs and spells. Certain cards gain new effects against creatures affected by [#3abfbe]Manablaze."
   },
   {
     "PROPER_NAME": "[#3abfbe]Igniting",
@@ -68,7 +68,7 @@
       "igniting",
       "Ignites"
     ],
-    "DESCRIPTION": "Trigger target enemy's Mana Burn (2% per stack)."
+    "DESCRIPTION": "Trigger target enemy's Mana Burn or Manablaze."
   },
   {
     "PROPER_NAME": "[#98fb98]Armor [#98fb98]Break",
@@ -112,23 +112,6 @@
     "DESCRIPTION": "Increase the power of all Fenrir cards by 1 whenever you meet the condition."
   },
   {
-    "PROPER_NAME": "Overkill",
-    "NAMES": [
-      "overkill"
-    ],
-    "DESCRIPTION": "Add excess damage to your next 'Fenrir Unleashed' attack whenever you kill an enemy."
-  },
-  {
-    "PROPER_NAME": "[#9aa3a3]Legendary [#9aa3a3]Weapon",
-    "NAMES": [
-      "Legendary Weapon",
-      "legendary weapons",
-      "legendary_weapon",
-      "Legendary_Weapon"
-    ],
-    "DESCRIPTION": "[#9aa3a3]Legendary [#9aa3a3]Weapons are unique cards with strong effects and drawbacks."
-  },
-  {
     "PROPER_NAME": "Stagger",
     "NAMES": [
       "stagger",
@@ -142,7 +125,7 @@
       "taunt",
       "taunted"
     ],
-    "DESCRIPTION": "Can only be applied to non-attacking enemies. NL Taunted enemies are forced to attack and deal 10% max HP damage."
+    "DESCRIPTION": "Can only be applied to non-attacking enemies. NL Taunted enemies are forced to attack."
   },
   {
     "PROPER_NAME": "Intimidate",
@@ -161,12 +144,12 @@
     "DESCRIPTION": "Continue attacking if the stated condition is fulfilled."
   },
   {
-    "PROPER_NAME": "Designate",
+    "PROPER_NAME": "Hungering",
     "NAMES": [
-      "designate",
-      "designated"
+      "hungering",
+      "hunger"
     ],
-    "DESCRIPTION": "If you kill target enemy you gain max HP. Gain more the higher their HP is."
+    "DESCRIPTION": "Gain max HP if you kill the target before the end of your turn. Gain more the higher their current HP is."
   },
   {
     "PROPER_NAME": "[#b7410e]Fenrir",
@@ -180,7 +163,7 @@
     "NAMES": [
       "cerberus"
     ],
-    "DESCRIPTION": "Cards specializing in discarding and against buffed enemies."
+    "DESCRIPTION": "Cards specializing in deck cycling and against buffed enemies."
   },
   {
     "PROPER_NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
