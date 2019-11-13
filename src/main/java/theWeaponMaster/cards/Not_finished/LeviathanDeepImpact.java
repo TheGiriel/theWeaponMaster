@@ -8,11 +8,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.AbstractDynamicCard;
 import theWeaponMaster.characters.TheWeaponMaster;
-import theWeaponMaster.relics.ShockwaveModulatorRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -44,9 +42,10 @@ public class LeviathanDeepImpact extends AbstractDynamicCard {
     }
 
 
+
     @Override
     public void upgrade() {
-        if (!upgraded && AbstractDungeon.player.hasRelic(ShockwaveModulatorRelic.ID) && ShockwaveModulatorRelic.level4){
+        if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);

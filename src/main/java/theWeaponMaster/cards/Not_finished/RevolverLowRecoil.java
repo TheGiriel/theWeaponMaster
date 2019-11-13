@@ -10,9 +10,9 @@ import theWeaponMaster.characters.TheWeaponMaster;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
-public class RevolverAuto extends AbstractDynamicCard {
+public class RevolverLowRecoil extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(RevolverAuto.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(RevolverLowRecoil.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -29,7 +29,7 @@ public class RevolverAuto extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
 
-    public RevolverAuto() {
+    public RevolverLowRecoil() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;

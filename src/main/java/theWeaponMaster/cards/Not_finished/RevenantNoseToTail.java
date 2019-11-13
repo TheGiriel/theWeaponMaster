@@ -10,9 +10,9 @@ import theWeaponMaster.characters.TheWeaponMaster;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
-public class RevenantSnoutToTail extends AbstractDynamicCard {
+public class RevenantNoseToTail extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(RevenantSnoutToTail.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(RevenantNoseToTail.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
@@ -29,7 +29,7 @@ public class RevenantSnoutToTail extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
 
-    public RevenantSnoutToTail() {
+    public RevenantNoseToTail() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }
 

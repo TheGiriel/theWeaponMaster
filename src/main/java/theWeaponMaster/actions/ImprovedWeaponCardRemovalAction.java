@@ -31,7 +31,7 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
         weaponSetHash.add("theWeaponMaster:RevenantRavenous");
         weaponSetHash.add("theWeaponMaster:RevenantChopChopCHOP");
         weaponSetHash.add("theWeaponMaster:RevenantHungrySteel");
-        weaponSetHash.add("theWeaponMaster:RevenantSnoutToTail");
+        weaponSetHash.add("theWeaponMaster:RevenantNoseToTail");
         weaponSetHash.add("theWeaponMaster:RevenantBloodbath");
 
         weaponSetHash.add("theWeaponMaster:AtroposSeveredSource");
@@ -94,7 +94,7 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
                 break;
             case "Hand":
                 for (AbstractCard card : deleteGroup) {
-                    AbstractDungeon.actionManager.addToBottom((AbstractGameAction) new ShowCardAndPoofAction(card));
+                    AbstractDungeon.actionManager.addToBottom(new ShowCardAndPoofAction(card));
                     AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
                     AbstractDungeon.player.hand.removeCard(card);
                 }

@@ -434,7 +434,7 @@ public class DefaultMod implements
         BaseMod.addCard(new RevenantRavenous());
         BaseMod.addCard(new RevenantChopChopCHOP());
         BaseMod.addCard(new RevenantHungrySteel());
-        //BaseMod.addCard(new RevenantSnoutToTail());
+        //BaseMod.addCard(new RevenantNoseToTail());
         //BaseMod.addCard(new RevenantBloodbath());
         //BaseMod.addCard(new DefaultAttackWithVariable());
         BaseMod.addCard(new DefaultCommonPower());
@@ -480,7 +480,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(RevenantRavenous.ID);
         UnlockTracker.unlockCard(RevenantChopChopCHOP.ID);
         UnlockTracker.unlockCard(RevenantHungrySteel.ID);
-        UnlockTracker.unlockCard(RevenantSnoutToTail.ID);
+        UnlockTracker.unlockCard(RevenantNoseToTail.ID);
         UnlockTracker.unlockCard(RevenantBloodbath.ID);
         //UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
         UnlockTracker.unlockCard(DefaultCommonPower.ID);

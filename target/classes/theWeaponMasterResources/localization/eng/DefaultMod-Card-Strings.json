@@ -116,32 +116,31 @@
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:LeviathanCrush": {
-    "NAME": "[#746550]Crush",
+    "NAME": "Crush",
     "DESCRIPTION": "Leviathan_Gauntlet NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
     "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Armor_Break, Crush NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block."
   },
   "theWeaponMaster:LeviathanEject": {
-    "NAME": "[#746550]Eject",
+    "NAME": "Eject",
     "DESCRIPTION": "Leviathan_Gauntlet NL Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy.",
     "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to target enemy."
   },
   "theWeaponMaster:LeviathanReload": {
-    "NAME": "[#746550]Reload",
+    "NAME": "Reload",
     "DESCIRPTION": "Leviathan_Gauntlet NL Reload your Gauntlet and gain !B! block.",
     "UPGRADE_DESCRIPTION": "Leviathan_Gauntlet NL Reload your Gauntlet and gain !B! block."
   },
   "theWeaponMaster:LeviathanGroundSplitter": {
-    "NAME": "[#746550]Ground [#746550]Splitter",
+    "NAME": "Ground Splitter",
     "DESCRIPTION": "Leviathan_Gauntlet NL Stagger all enemy cards depending on their total block for two turns.",
     "UPGRADE_DESCRIPTION": "Stagger all enemy cards depending on their total block for three turns."
   },
-  "theWeaponMaster:LeviathanImpactStrike": {
-    "NAME": "[#746550]Impact [#746550]Strike",
-    "DESCRIPTION": "Leviathan_Gauntlet NL ",
-    "UPGRADE_DESCRIPTION": ""
+  "theWeaponMaster:LeviathanDeepImpact": {
+    "NAME": "Deep Impact",
+    "DESCRIPTION": "Leviathan_Gauntlet NL Deal !D! damage to the first enemy. Continue: Enemy Block. NL Deal !M! bonus damage and attack the enemy behind it."
   },
   "theWeaponMaster:LeviathanEarthquake": {
-    "NAME": "[#746550]Earthquake",
+    "NAME": "Earthquake",
     "DESCRIPTION": "Leviathan_Gauntlet NL Deal !D! damage to all enemies, ignores thorns.",
     "UPGRADE_DESCRIPTION": ""
   },

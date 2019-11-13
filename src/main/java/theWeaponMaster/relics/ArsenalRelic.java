@@ -1,21 +1,12 @@
 package theWeaponMaster.relics;
 
-import basemod.abstracts.CustomPlayer;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.actions.OctopusAction;
-import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.cards.WeaponSwap;
-import theWeaponMaster.powers.*;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.DefaultMod.makeRelicOutlinePath;
@@ -40,14 +31,13 @@ public class ArsenalRelic extends CustomRelic {
     public static boolean atroposUnlocked = true;
     public static boolean leviathanUnlocked = true;
     public static boolean revenantUnlocked = true;
-    public static String currentWeapon; //this is where the current weapon is saved under
+    public static String currentWeapon = "Fenrir"; //this is where the current weapon is saved under
     public static int leviathanShots = 3;
 
     public AbstractPlayer player = AbstractDungeon.player;
 
     public ArsenalRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
-        setCurrentWeapon("Fenrir");
     }
 
     @Override

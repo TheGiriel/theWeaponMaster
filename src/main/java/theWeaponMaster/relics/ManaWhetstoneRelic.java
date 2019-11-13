@@ -2,11 +2,15 @@ package theWeaponMaster.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.cards.AbstractWeaponCard;
+import theWeaponMaster.cards.AtroposSeveredPain;
+import theWeaponMaster.cards.AtroposSeveredScissors;
+import theWeaponMaster.cards.AtroposSeveredSource;
+import theWeaponMaster.cards.Not_finished.AtroposSeveredPath;
+import theWeaponMaster.cards.Not_finished.AtroposSeveredSoul;
 import theWeaponMaster.util.TextureLoader;
+
+import java.util.HashSet;
 
 import static theWeaponMaster.DefaultMod.makeRelicOutlinePath;
 import static theWeaponMaster.DefaultMod.makeRelicPath;
@@ -18,9 +22,39 @@ public class ManaWhetstoneRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("mana_whetstone_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("mana_whetstone_relic.png"));
 
-    public ManaWhetstoneRelic() {
+    public static boolean level1 = true;
+    public static boolean level2 = false;
+    public static boolean level3 = false;
+    public static boolean level4 = false;
+    public static boolean level5 = false;
+    public static HashSet<String> weaponUpgrade = new HashSet<>();
 
+    public ManaWhetstoneRelic() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        setWeaponUpgrade();
+    }
+
+    public static HashSet<String> getWeaponUpgrade() {
+        return weaponUpgrade;
+    }
+
+    public void setWeaponUpgrade() {
+        weaponUpgrade.clear();
+        if (level1) {
+            weaponUpgrade.add(AtroposSeveredScissors.ID);
+        }
+        if (level2) {
+            weaponUpgrade.add(AtroposSeveredSource.ID);
+        }
+        if (level3) {
+            weaponUpgrade.add(AtroposSeveredPain.ID);
+        }
+        if (level4) {
+            weaponUpgrade.add(AtroposSeveredPath.ID);
+        }
+        if (level5) {
+            weaponUpgrade.add(AtroposSeveredSoul.ID);
+        }
     }
 
     @Override
@@ -31,13 +65,5 @@ public class ManaWhetstoneRelic extends CustomRelic {
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
-    }
-
-    //TODO doesn't work yet
-    @Override
-    public void onObtainCard(AbstractCard c) {
-        if (c.cardID.equals("theWeaponMaster:AtroposSeveredSource") || c.cardID.equals("theWeaponMaster:AtroposSeveredScissors") || c.cardID.equals("theWeaponMaster:AtroposSeveredPain") || c.cardID.equals("theWeaponMaster:AtroposSeveredPath") || c.cardID.equals("theWeaponMaster:AtroposSeveredSoul")) {
-            c.upgrade();
-        }
     }
 }

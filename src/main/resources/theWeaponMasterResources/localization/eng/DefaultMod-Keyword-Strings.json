@@ -161,12 +161,12 @@
     "DESCRIPTION": "Continue attacking if the stated condition is fulfilled."
   },
   {
-    "PROPER_NAME": "Designate",
+    "PROPER_NAME": "Hungering",
     "NAMES": [
-      "designate",
-      "designated"
+      "hungering",
+      "hunger"
     ],
-    "DESCRIPTION": "If you kill target enemy you gain max HP. Gain more the higher their HP is."
+    "DESCRIPTION": "If you kill target enemy you gain max HP. Gain more the higher their current HP is."
   },
   {
     "PROPER_NAME": "[#b7410e]Fenrir",

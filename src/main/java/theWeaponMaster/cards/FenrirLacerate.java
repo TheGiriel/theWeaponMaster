@@ -10,12 +10,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.LaceratePower;
+import theWeaponMaster.relics.SplinteringSteelRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -69,5 +68,10 @@ public class FenrirLacerate extends AbstractDynamicCard {
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(SplinteringSteelRelic.ID);
     }
 }
