@@ -13,6 +13,7 @@ theWeaponMaster\actions\ImprovedWeaponCardRemovalAction.class
 theWeaponMaster\powers\HemorrhagePower.class
 theWeaponMaster\variables\BullyVariable.class
 theWeaponMaster\cards\FenrirLacerate.class
+theWeaponMaster\actions\CerberusEnemyPowerAction.class
 theWeaponMaster\cards\Not_finished\RevenantNoseToTail.class
 theWeaponMaster\relics\PlaceholderRelic2.class
 theWeaponMaster\cards\Not_finished\LeviathanDeepImpact.class

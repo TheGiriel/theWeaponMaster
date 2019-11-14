@@ -9,6 +9,7 @@ import java.util.Iterator;
 
 public class FenrirEvolveAction extends AbstractGameAction {
 
+    private HashSet<String> fenrirSet = new HashSet<>();
     public FenrirEvolveAction() {
         for (AbstractCard c : getFenrirCards()) {
             if (c.cardID.equals("theWeaponMaster:FenrirDefensiveStance")) {
@@ -54,7 +55,7 @@ public class FenrirEvolveAction extends AbstractGameAction {
         AbstractCard c;
         while (cardIterator.hasNext()) {
             c = (AbstractCard) cardIterator.next();
-            if (c.cardID.equals("theWeaponMaster:FenrirLacerate") || c.cardID.equals("theWeaponMaster:FenrirShieldEater") || c.cardID.equals("theWeaponMaster:FenrirUnleashed") || c.cardID.equals("theWeaponMaster:FenrirDefensiveStance") || c.cardID.equals("theWeaponMaster:FenrirHeavySwing")) {
+            if (fenrirSet.contains(c.cardID)) {
                 fenrirUpgrades.add(c);
             }
         }
@@ -62,6 +63,10 @@ public class FenrirEvolveAction extends AbstractGameAction {
 
     @Override
     public void update() {
-
+        fenrirSet.add("theWeaponMaster:FenrirLacerate");
+        fenrirSet.add("theWeaponMaster:FenrirHeavySwing");
+        fenrirSet.add("theWeaponMaster:FenrirShieldEater");
+        fenrirSet.add("theWeaponMaster:FenrirDefensiveStance");
+        fenrirSet.add("theWeaponMaster:FenrirUnleashed");
     }
 }

@@ -419,7 +419,7 @@ public class DefaultMod implements
         //BaseMod.addCard(new CerberusEssenceSlash());
         //BaseMod.addCard(new CerberusModularSlash());
         BaseMod.addCard(new CerberusIaiSlash());
-        //BaseMod.addCard(new CerberusDrainSlash());
+        BaseMod.addCard(new CerberusDrainSlash());
         BaseMod.addCard(new FenrirLacerate());
         BaseMod.addCard(new FenrirShieldEater());
         BaseMod.addCard(new FenrirHeavySwing());

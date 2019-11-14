@@ -1,12 +1,20 @@
 package theWeaponMaster.cards.Not_finished;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.*;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.AbstractDynamicCard;
 import theWeaponMaster.characters.TheWeaponMaster;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -29,8 +37,24 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
 
+    private int powerAmt = 0;
+
+    private HashSet<String> stolenPower = new HashSet<>();
+
     public CerberusDrainSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+        stolenPower.add(BarricadePower.POWER_ID);
+        stolenPower.add(StrengthPower.POWER_ID);
+        stolenPower.add(MetallicizePower.POWER_ID);
+        stolenPower.add(PlatedArmorPower.POWER_ID);
+        stolenPower.add(MalleablePower.POWER_ID);
+        stolenPower.add(ArtifactPower.POWER_ID);
+        stolenPower.add(AngryPower.POWER_ID);
+        stolenPower.add(IntangiblePower.POWER_ID);
+        stolenPower.add(RitualPower.POWER_ID);
+        stolenPower.add(ThieveryPower.POWER_ID);
+
     }
 
     @Override
@@ -45,5 +69,54 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
+
+        ArrayList<String> tempSteal = new ArrayList<>();
+        ArrayList<Integer> tempStealValue = new ArrayList<>();
+        if (m.powers.size() != 0) {
+            for (AbstractPower power : m.powers) {
+                if (stolenPower.contains(power.ID)) {
+                    tempSteal.add(power.ID);
+                    tempStealValue.add(power.amount);
+                }
+            }
+            if (tempSteal.size() != 0) {
+                int i = new Random().nextInt(tempSteal.size());
+                switch (tempSteal.get(i)) {
+                    case AngryPower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AngryPower(p, tempStealValue.get(i))));
+                        break;
+                    case BarricadePower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BarricadePower(p)));
+                        break;
+                    case ArtifactPower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, tempStealValue.get(i))));
+                        break;
+                    case StrengthPower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, tempStealValue.get(i))));
+                        break;
+                    case MalleablePower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MalleablePower(p, tempStealValue.get(i))));
+                        break;
+                    case PlatedArmorPower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, tempStealValue.get(i))));
+                        break;
+                    case MetallicizePower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MetallicizePower(p, tempStealValue.get(i))));
+                        break;
+                    case IntangiblePower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePower(p, tempStealValue.get(i))));
+                        break;
+                    case RitualPower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RitualPower(p, tempStealValue.get(i))));
+                        break;
+                    case ThieveryPower.POWER_ID:
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThieveryPower(p, tempStealValue.get(i))));
+                        break;
+                }
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(m, p, tempSteal.get(i), tempStealValue.get(i)));
+            }
+            //&& stolenPower.contains(m.powers.get(new Random().nextInt(m.powers.size())))
+
+        }
     }
 }
