@@ -4,8 +4,9 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.0.14</version>
-    <description>The Arsenal Relic saga continues: Weapon swapping and purging works mechanically 100%, visually not so much. But if it works it works, so who cares.</description>
+    <version>0.0.15</version>
+    <description>Weapon Swapping and relic locked upgrades. Revolver Cards are now added, reload mechanism is coming.
+    </description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

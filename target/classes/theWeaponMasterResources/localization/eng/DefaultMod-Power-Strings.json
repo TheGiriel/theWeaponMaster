@@ -34,9 +34,8 @@
     "NAME": "Mana Burn",
     "DESCRIPTIONS": [
       "[#3abfbe]Mana [#3abfbe]Burn deals ",
-      "-",
-      " HP damage when casting spells or skills (depending on intent). NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
-      " HP when casting spells or skills (depending on intent)."
+      " HP damage to enemies with Strategic intent. NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
+      " NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."
     ]
   },
   "ManablazePower": {
