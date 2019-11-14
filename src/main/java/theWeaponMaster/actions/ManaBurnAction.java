@@ -7,12 +7,17 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+import java.util.HashSet;
+
+import static com.megacrit.cardcrawl.monsters.AbstractMonster.Intent.*;
+
 public class ManaBurnAction extends AbstractGameAction {
 
     private final AbstractCreature owner;
     private final AbstractCreature source;
     private AbstractMonster m;
     private int manaBurnIntensity;
+    public static HashSet<AbstractMonster.Intent> intent = new HashSet<>();
     private int manaBurnStack;
 
     public ManaBurnAction(AbstractCreature owner, AbstractCreature source, int manaBurnStack) {
@@ -21,23 +26,28 @@ public class ManaBurnAction extends AbstractGameAction {
         this.source = source;
         this.manaBurnStack = manaBurnStack;
 
-        this.manaBurnIntensity = (int)(Math.ceil(this.m.maxHealth*0.01D*manaBurnStack));
+        this.manaBurnIntensity = (int) (Math.ceil(this.m.maxHealth * 0.03D * this.manaBurnStack));
+
+        intent.add(ATTACK_BUFF);
+        intent.add(ATTACK_DEBUFF);
+        intent.add(DEFEND_BUFF);
+        intent.add(DEFEND_DEBUFF);
+        intent.add(BUFF);
+        intent.add(DEBUFF);
+        intent.add(STRONG_DEBUFF);
+        intent.add(MAGIC);
 
     }
 
-    public int burnDamage (AbstractMonster m, int multiplier){
-        return this.manaBurnIntensity*multiplier;
+    public int burnDamage() {
+        return this.manaBurnIntensity;
     }
 
     @Override
     public void update() {
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            if (this.m.intent == AbstractMonster.Intent.ATTACK_BUFF || this.m.intent == AbstractMonster.Intent.ATTACK_DEBUFF || this.m.intent == AbstractMonster.Intent.DEFEND_BUFF || this.m.intent == AbstractMonster.Intent.DEFEND_DEBUFF) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, burnDamage(m, 1), AbstractGameAction.AttackEffect.FIRE));
-            } else if (this.m.intent == AbstractMonster.Intent.BUFF || this.m.intent == AbstractMonster.Intent.DEBUFF) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, burnDamage(m, 2), AbstractGameAction.AttackEffect.FIRE));
-            } else if (this.m.intent == AbstractMonster.Intent.STRONG_DEBUFF || this.m.intent == AbstractMonster.Intent.MAGIC) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, burnDamage(m, 3), AbstractGameAction.AttackEffect.FIRE));
+            if (intent.contains(this.m.intent)) {
+                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, burnDamage(), AbstractGameAction.AttackEffect.FIRE));
             }
         }
         isDone = true;

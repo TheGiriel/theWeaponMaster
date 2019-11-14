@@ -13,7 +13,7 @@ import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.util.TextureLoader;
 
 public class ManablazePower extends AbstractPower{
-    private static final String POWER_ID = "ManablazePower";
+    private static final String POWER_ID = DefaultMod.makeID("ManablazePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ManablazePower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;

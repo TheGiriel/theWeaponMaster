@@ -14,7 +14,7 @@ import static theWeaponMaster.DefaultMod.makeRelicPath;
 
 public class ArsenalRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID("ArsenalRelic");
+    public static final String ID = DefaultMod.makeID(ArsenalRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("arsenal_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("arsenal_relic.png"));

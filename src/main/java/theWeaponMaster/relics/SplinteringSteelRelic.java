@@ -13,7 +13,7 @@ import static theWeaponMaster.DefaultMod.makeRelicPath;
 
 public class SplinteringSteelRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID("SplinteringSteelRelic");
+    public static final String ID = DefaultMod.makeID(SplinteringSteelRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("splintering_steel_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("splintering_steel_relic.png"));

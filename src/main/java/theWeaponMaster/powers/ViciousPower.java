@@ -2,7 +2,6 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,7 +14,7 @@ import static theWeaponMaster.DefaultMod.makePowerPath;
 
 public class ViciousPower extends AbstractPower {
 
-    public static final String POWER_ID = "ViciousPower";
+    public static final String POWER_ID = DefaultMod.makeID(ViciousPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ViciousPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;

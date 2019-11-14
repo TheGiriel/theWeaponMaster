@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
-import theWeaponMaster.powers.DesignatePower;
+import theWeaponMaster.powers.HungeringPower;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -51,7 +51,7 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DesignatePower(m, p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new HungeringPower(m, p, magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 }

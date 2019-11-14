@@ -10,7 +10,7 @@ import theWeaponMaster.util.TextureLoader;
 
 public class EgoPower extends AbstractPower {
 
-    private static final String POWER_ID = "EgoPower";
+    private static final String POWER_ID = DefaultMod.makeID(EgoPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("EgoPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;

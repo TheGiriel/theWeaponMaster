@@ -10,13 +10,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import theWeaponMaster.DefaultMod;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.DefaultMod.makePowerPath;
 
 public class StaggerPower extends AbstractPower {
 
-    public static final String POWER_ID = "StaggerPower";
+    public static final String POWER_ID = DefaultMod.makeID(StaggerPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("StaggerPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;

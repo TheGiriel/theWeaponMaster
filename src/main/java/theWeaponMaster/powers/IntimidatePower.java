@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,7 +15,7 @@ import theWeaponMaster.util.TextureLoader;
 
 public class IntimidatePower extends AbstractPower {
 
-    private static final String POWER_ID = "IntimidatePower";
+    private static final String POWER_ID = DefaultMod.makeID(IntimidatePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("IntimidatePower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;

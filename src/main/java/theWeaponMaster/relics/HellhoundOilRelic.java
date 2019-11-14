@@ -18,7 +18,7 @@ import static theWeaponMaster.DefaultMod.makeRelicPath;
 
 public class HellhoundOilRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID("HellhoundOilRelic");
+    public static final String ID = DefaultMod.makeID(HellhoundOilRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("hellhound_oil_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("hellhound_oil_relic.png"));

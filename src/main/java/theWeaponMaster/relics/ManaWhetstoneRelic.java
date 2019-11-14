@@ -17,7 +17,7 @@ import static theWeaponMaster.DefaultMod.makeRelicPath;
 
 public class ManaWhetstoneRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID("ManaWhetstoneRelic");
+    public static final String ID = DefaultMod.makeID(ManaWhetstoneRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("mana_whetstone_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("mana_whetstone_relic.png"));

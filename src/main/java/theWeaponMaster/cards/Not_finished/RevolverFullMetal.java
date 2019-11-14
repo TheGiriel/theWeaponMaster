@@ -58,8 +58,8 @@ public class RevolverFullMetal extends AbstractDynamicCard {
         new ReloadAction();
         double bonusDamge = 1;
         if (m.currentBlock != 0) {
-            bonusDamge *= ((double) magicNumber / 100);
+            bonusDamge *= (1 + ((double) magicNumber / 100));
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (damage * bonusDamge), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) Math.ceil(damage * bonusDamge), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }

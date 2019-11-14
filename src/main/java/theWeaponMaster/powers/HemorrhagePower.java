@@ -14,7 +14,7 @@ import theWeaponMaster.DefaultMod;
 import theWeaponMaster.util.TextureLoader;
 
 public class HemorrhagePower extends AbstractPower {
-    private static final String POWER_ID = "HemorrhagePower";
+    private static final String POWER_ID = DefaultMod.makeID("HemorrhagePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("HemorrhagePower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;

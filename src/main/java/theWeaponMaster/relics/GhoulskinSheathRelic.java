@@ -17,7 +17,7 @@ import static theWeaponMaster.DefaultMod.*;
 
 public class GhoulskinSheathRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID("GhoulskinSheathRelic");
+    public static final String ID = DefaultMod.makeID(GhoulskinSheathRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghoul_skin_sheath_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghoul_skin_sheath_relic.png"));

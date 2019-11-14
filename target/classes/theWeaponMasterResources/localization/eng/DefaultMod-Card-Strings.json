@@ -187,7 +187,6 @@
     "NAME": "Severed Soul",
     "DESCRIPTION": "Atropos_Shears NL Can only be played as the first card of your turn. Deal massive damage."
   },
-
   "theWeaponMaster:RevolverStandard": {
     "NAME": "Single Shot",
     "DESCRIPTION": "Deal !D! damage."

@@ -17,7 +17,7 @@ import theWeaponMaster.util.TextureLoader;
 
 public class DefensiveStancePower extends AbstractPower {
 
-    private static final String POWER_ID = "DefensiveStancePower";
+    private static final String POWER_ID = DefaultMod.makeID(DefensiveStancePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("DefensiveStancePower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
