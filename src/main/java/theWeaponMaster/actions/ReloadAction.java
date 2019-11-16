@@ -22,7 +22,7 @@ public class ReloadAction extends AbstractGameAction {
         discardedAmmo.add(RevolverBuckshot.ID);
         discardedAmmo.add(RevolverFullMetal.ID);
         discardedAmmo.add(RevolverLowRecoil.ID);
-        if (player.hasRelic(RevolverRelic.ID) && player.getRelic(RevolverRelic.ID).counter <= 0 && player.discardPile.size() != 0) {
+        if (player.hasRelic(RevolverRelic.ID) && player.getRelic(RevolverRelic.ID).counter <= 0 && player.discardPile != null) {
             for (AbstractCard ammoCheck : player.discardPile.group) {
                 if (discardedAmmo.contains(ammoCheck.cardID)) {
                     player.drawPile.addToRandomSpot(ammoCheck);
