@@ -22,8 +22,6 @@ public class FenrirUnleashedSelectAction extends AbstractGameAction {
         for (AbstractMonster m : targetList) {
             DefaultMod.logger.info("Sorted list:"  + m.toString() + " <- monster, monster hp -> " + m.currentHealth);
         }*/
-
-
     }
 
     @Override

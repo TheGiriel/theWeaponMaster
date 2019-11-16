@@ -74,7 +74,7 @@
 
   "theWeaponMaster:CerberusSlash": {
     "NAME": "Slash",
-    "DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! damage. NL Quickdraw 1.",
+    "DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! damage. NL Flash !M!.",
     "UPGRADE_DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! plus !M! bonus damage for every card you discard. NL Quickdraw 1."
   },
   "theWeaponMaster:CerberusEssenceSlash": {
@@ -101,8 +101,7 @@
 
   "theWeaponMaster:LeviathanCrush": {
     "NAME": "Crush",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Armor_Break NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block.",
-    "UPGRADE_DESCRIPTION": "Legendary_Weapon NL Armor_Break, Crush NL Hit the enemy for !D! damage. NL Take quarter damage if they don't block."
+    "DESCRIPTION": "Leviathan_Gauntlet NL Hit the enemy for !D! damage. NL Armor_Piercing: !M!."
   },
   "theWeaponMaster:LeviathanEject": {
     "NAME": "Eject",
@@ -121,7 +120,7 @@
   },
   "theWeaponMaster:LeviathanDeepImpact": {
     "NAME": "Deep Impact",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Deal !D! damage to the first enemy. NL Unstoppable: Enemy Block. NL Deal !M! bonus damage and attack the enemy behind it."
+    "DESCRIPTION": "Leviathan_Gauntlet NL Deal !D! damage to the first enemy. NL Unstoppable: Enemy Block. NL Armor_Piercing: !M!."
   },
   "theWeaponMaster:LeviathanEarthquake": {
     "NAME": "Earthquake",
@@ -140,15 +139,15 @@
   },
   "theWeaponMaster:RevenantHungrySteel": {
     "NAME": "Hungry Steel",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and apply Hungering. NL Gain !M! Vicious."
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. Apply Hungering. NL Gain !M! Vicious."
   },
   "theWeaponMaster:RevenantNoseToTail": {
     "NAME": "Nose To Tail",
-    "DESCRIPTION": "Revenant_Cleaver NL ??? NL Gain !M! Vicious."
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious."
   },
   "theWeaponMaster:RevenantBloodbath": {
     "NAME": "Bloodbath",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage to a random enemy. NL Unstoppable: 5+ Vicious. Attack again, lose 5 Vicious."
+    "DESCRIPTION": "Revenant_Cleaver NL Requires 10 Vicious. NL Gain !EN_MULT! Vicious. Deal !D! damage to a random enemy. NL Unstoppable: 5+ Vicious. Attack again, lose 5 Vicious."
   },
 
 
@@ -158,7 +157,7 @@
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "Legendary_Weapon NL Deal !D! damage to your target and apply 1 Mana_Burn.",
-      "Legendary_Weapon NL not_implemented - Deal full Manablaze damage to your target and remove Manablaze.",
+      "Legendary_Weapon NL not_implemented - Ignite .",
       "Strings of Fate"
     ]
   },
@@ -169,8 +168,7 @@
   },
   "theWeaponMaster:AtroposScissorHalf": {
     "NAME": "Scissor Half",
-    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage. NL Deal !M! bonus damage if the last card was Severed Scissors or Scissor Half. NL Igniting 1.",
-    "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage. Deal !M! bonus damage if the last card was Severed Scissors or Scissor Half. NL Igniting 1."
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage. NL Deal !M! bonus damage if the last card was Severed Scissors or Scissor Half. NL Igniting 1."
   },
   "theWeaponMaster:AtroposSeveredPath": {
     "NAME": "Severed Path",
@@ -204,11 +202,11 @@
   },
   "theWeaponMaster:RevolverFullMetal": {
     "NAME": "Full Metal Jacket Shot",
-    "DESCRIPTION": "Deal !D! damage. Deal !M!% bonus damage to enemies with Block."
+    "DESCRIPTION": "Deal !D! damage. NL Armor_Piercing: !M!."
   },
   "theWeaponMaster:RevolverHollowPoint": {
     "NAME": "Hollow-Point Shot",
-    "DESCRIPTION": "Deal !D! damage. Deal !M!% bonus damage to enemies without Block."
+    "DESCRIPTION": "Deal !D! damage. NL Rending !M!."
   },
   "theWeaponMaster:RevolverBuckshot": {
     "NAME": "Buckshot",
@@ -263,5 +261,9 @@
   "theWeaponMaster:WeaponSwap": {
     "NAME": "Weapon Swap",
     "DESCRIPTION": "Equip a new weapon."
+  },
+  "theWeaponMaster:CounterBlow": {
+    "NAME": "Counter Blow",
+    "DESCRIPTION": "Discard the top card of your draw Pile counter an opponent's attack for !M! damage."
   }
 }

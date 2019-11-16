@@ -47,5 +47,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="TheAnimator" level="project" />
+    <orderEntry type="library" name="HierophantMod" level="project" />
   </component>
 </module>

@@ -14,7 +14,7 @@ import theWeaponMaster.util.TextureLoader;
 public class HungeringPower extends AbstractPower {
 
     private static final String POWER_ID = DefaultMod.makeID(HungeringPower.class.getSimpleName());
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("HungeringPower");
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(HungeringPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
@@ -28,16 +28,21 @@ public class HungeringPower extends AbstractPower {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = Math.min(5, Math.max(1, (owner.currentHealth / 20 + 1)));
+        this.amount = Math.max(1, (owner.currentHealth / 20 + 1));
         this.source = source;
         this.countDown = countDown;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-        this.description = DESCRIPTION[0];
         updateDescription();
         this.type = AbstractPower.PowerType.DEBUFF;
         this.isTurnBased = true;
+    }
+
+    @Override
+    public void updateDescription() {
+
+        this.description = DESCRIPTION[0] + amount + DESCRIPTION[1];
     }
 
     @Override
@@ -47,9 +52,6 @@ public class HungeringPower extends AbstractPower {
 
     @Override
     public void atEndOfRound() {
-        countDown--;
-        if (countDown < 1) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
-        }
     }
 }

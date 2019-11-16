@@ -10,6 +10,7 @@ import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.DefensiveStancePower;
+import theWeaponMaster.relics.SplinteringSteelRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -41,7 +42,7 @@ public class FenrirDefensiveStance extends AbstractDynamicCard {
 
     @Override
     public boolean canUpgrade() {
-        return AbstractDungeon.player.hasRelic("Splintering Steel");
+        return AbstractDungeon.player.hasRelic(SplinteringSteelRelic.ID);
     }
 
     @Override

@@ -2,7 +2,6 @@ package theWeaponMaster.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,6 +10,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.powers.ManaBurnPower;
+import theWeaponMaster.relics.ManaWhetstoneRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -48,45 +49,41 @@ public class AtroposScissorHalf extends AbstractDynamicCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(ManaWhetstoneRelic.ID);
+    }
+
+    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
     }
 
+    //TODO: make action
     public void manaBurnDamage(AbstractPlayer p, AbstractMonster m) {
-        if (m.hasPower("ManaBurnPower")) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, m.getPower("ManaBurnPower").amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
-        }
-        if (m.hasPower("ManablazePower")) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 3, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
+        if (m.hasPower(ManaBurnPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (Math.ceil(m.maxHealth * ManaBurnPower.igniteDamage * m.getPower(ManaBurnPower.POWER_ID).amount)), DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
         }
     }
 
-    public void triggerOnGlowCheck() {
-        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && ((AbstractCard)AbstractDungeon.actionManager.cardsPlayedThisCombat
-                .get(AbstractDungeon.actionManager.cardsPlayedThisCombat
-                        .size() - 1)).cardID.equals("theWeaponMaster:AtroposScissorHalf")) {
-            beginGlowing();
-        } else{
-            stopGlowing();
-        }
-    }
+    //TODO: improve code
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty() && ((AbstractCard)AbstractDungeon.actionManager.cardsPlayedThisCombat
-                .get(AbstractDungeon.actionManager.cardsPlayedThisTurn
-                        .size() - 2)).cardID.equals("theWeaponMaster:AtroposScissorHalf") || ((AbstractCard)AbstractDungeon.actionManager.cardsPlayedThisCombat
-                .get(AbstractDungeon.actionManager.cardsPlayedThisTurn
-                        .size() - 2)).cardID.equals("theWeaponMaster:AtroposSeveredScissors")) {
-            scissorCombo = scissorCombo+magicNumber;
-        } else {
-            scissorCombo = 0;
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() >= 2) {
+            if (AbstractDungeon.actionManager.cardsPlayedThisCombat
+                    .get(AbstractDungeon.actionManager.cardsPlayedThisTurn
+                            .size() - 2).cardID.equals(AtroposScissorHalf.ID) || AbstractDungeon.actionManager.cardsPlayedThisCombat
+                    .get(AbstractDungeon.actionManager.cardsPlayedThisTurn
+                            .size() - 2).cardID.equals(AtroposSeveredScissors.ID)) {
+                scissorCombo = scissorCombo + magicNumber;
+            } else {
+                scissorCombo = 0;
+            }
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage + scissorCombo, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         manaBurnDamage(p, m);

@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.ViciousPower;
+import theWeaponMaster.relics.GhoulskinSheathRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -51,7 +52,11 @@ public class RevenantRavenous extends AbstractDynamicCard {
         }
     }
 
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(GhoulskinSheathRelic.ID);
+    }
 
+    //TODO: Improve method
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         DefaultMod.logger.info("calculating heal amount.");

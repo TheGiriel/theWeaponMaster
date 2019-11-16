@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.GainGoldTextEffect;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.actions.ViciousAction;
 import theWeaponMaster.characters.TheWeaponMaster;
 
 import java.util.Random;
@@ -56,10 +55,6 @@ public class BullyShakedown extends AbstractBullyCard {
         p.getPower("ViciousPower").amount -= bullyNumber;
     }
 
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ViciousAction().viciousUse(p, this);
-    }
 
     @Override
     public void upgrade() {

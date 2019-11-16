@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.relics.HellhoundOilRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -46,6 +47,11 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(HellhoundOilRelic.ID);
     }
 
     @Override

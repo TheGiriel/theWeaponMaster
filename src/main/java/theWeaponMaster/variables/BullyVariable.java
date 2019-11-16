@@ -4,14 +4,12 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import theWeaponMaster.cards.AbstractBullyCard;
 
-import static theWeaponMaster.DefaultMod.makeID;
-
 public class BullyVariable extends DynamicVariable {
 
 
     @Override
     public String key() {
-        return makeID("BLY");
+        return "BULLY";
     }
 
     @Override

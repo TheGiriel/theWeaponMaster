@@ -2,17 +2,17 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.DefaultMod.makePowerPath;
 
-public class ViciousPower extends AbstractPower {
+public class ViciousPower extends TwoAmountPower {
 
     public static final String POWER_ID = DefaultMod.makeID(ViciousPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ViciousPower");
@@ -20,7 +20,8 @@ public class ViciousPower extends AbstractPower {
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
     private static final int TIER_TWO = 3;
     private static final int TIER_THREE = TIER_TWO*2;
-    private int bonusDamage = 0;
+    private static int bonusDamage = 0;
+
 
     private static final Texture vicious1_84 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_84.png"));
     private static final Texture vicious1_32 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_32.png"));
@@ -31,12 +32,13 @@ public class ViciousPower extends AbstractPower {
 
     private static Texture tex84;
     private static Texture tex32;
+
     public ViciousPower(final AbstractCreature owner, int amnt) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amnt;
-        bonusDamage = amnt;
+        this.amount2 = amount / 5;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -50,8 +52,13 @@ public class ViciousPower extends AbstractPower {
         updateDescription();
     }
 
+    private void setBonusDamage() {
+        amount2 = this.amount / 5;
+    }
+
     public void stackPower(int stackAmount){
         this.amount += stackAmount;
+        setBonusDamage();
         if (this.amount >= TIER_THREE) {
             setTierThree();
             updateDescription();
@@ -65,6 +72,7 @@ public class ViciousPower extends AbstractPower {
 
     public void reducePower(int stackAmount){
         this.amount -= stackAmount;
+        setBonusDamage();
         if (this.amount < TIER_THREE && this.amount > TIER_TWO) {
             setTierTwo();
             updateDescription();
@@ -78,11 +86,12 @@ public class ViciousPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
+        setBonusDamage();
         if (this.amount >= TIER_TWO) {
-            description = DESCRIPTION[0] + bonusDamage + DESCRIPTION[1] + bonusDamage + DESCRIPTION[3];
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[3];
         }
         else {
-            description = DESCRIPTION[0] + bonusDamage + DESCRIPTION[1] + bonusDamage + DESCRIPTION[2];
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
         }
     }
 
@@ -102,16 +111,17 @@ public class ViciousPower extends AbstractPower {
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return damage + bonusDamage;
+        return damage + amount2;
     }
 
-    public void atEndOfTurn(boolean isPlayer){
-        this.amount = this.amount/3*2;
-            //this.amount2 = takeDamage;
+    public void atEndOfRound() {
+        int reduceVicious = (this.amount / 3);
+        this.amount -= reduceVicious;
+        setBonusDamage();
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
         DefaultMod.logger.info("taking extra damage.");
-        return damage + bonusDamage;
+        return damage + amount2;
     }
 }

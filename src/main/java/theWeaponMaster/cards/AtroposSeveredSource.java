@@ -3,7 +3,6 @@ package theWeaponMaster.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.ManaBurnPower;
+import theWeaponMaster.relics.ManaWhetstoneRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -61,13 +61,15 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(ManaWhetstoneRelic.ID);
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(!m.hasPower("ManablazePower")) {
+        if (!m.hasPower(ManaBurnPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, this.magicNumber), this.magicNumber));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (Math.ceil(m.currentHealth*0.09))+damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "ManablazePower"));
         }
     }
 }

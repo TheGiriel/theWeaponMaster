@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.actions.FenrirUnleashedSelectAction;
@@ -59,7 +60,6 @@ public class FenrirUnleashed extends AbstractDynamicCard {
         if(!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            rawDescription = UPGRADED_DESCRIPTION;
             initializeDescription();
         }
 
@@ -98,7 +98,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        totalAttacks = 10;
+        totalAttacks = EnergyPanel.totalCount;
         if (p.hasRelic(ChemicalX.ID)) {
             totalAttacks += 2;
             p.getRelic(ChemicalX.ID).flash();

@@ -1,23 +1,24 @@
 package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 
 public class ThornBypassAction {
     //Todo: make this work
-    private int thorns;
+    private static int thorns;
     public AbstractMonster m;
 
     public ThornBypassAction(AbstractMonster m, int thorns) {
         this.m = m;
-        this.thorns = thorns;
-        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, ThornsPower.POWER_ID));
+        ThornBypassAction.thorns = thorns;
+        //m.getPower(ThornsPower.POWER_ID).amount=0;
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.m, this.m, ThornsPower.POWER_ID, ThornBypassAction.thorns));
     }
 
     public void ThornsReapply() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new ThornsPower(m, thorns), thorns, true));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new ThornsPower(m, thorns)));
     }
 }

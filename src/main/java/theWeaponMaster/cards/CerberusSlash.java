@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.relics.HellhoundOilRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -22,7 +23,7 @@ public class CerberusSlash extends AbstractDynamicCard {
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
@@ -36,6 +37,7 @@ public class CerberusSlash extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
     }
 
     @Override
@@ -48,7 +50,13 @@ public class CerberusSlash extends AbstractDynamicCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(HellhoundOilRelic.ID);
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        //new FlashAction(this, p, m, 2);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
     }
 }

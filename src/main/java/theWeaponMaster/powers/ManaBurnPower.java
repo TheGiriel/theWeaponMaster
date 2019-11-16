@@ -15,23 +15,27 @@ import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.util.TextureLoader;
 
 public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower {
-    private static final String POWER_ID = DefaultMod.makeID(ManaBurnPower.class.getSimpleName());
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ManaBurnPower");
+    public static final String POWER_ID = DefaultMod.makeID(ManaBurnPower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ManaBurnPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
-    private static final Texture manaburn_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Mana_Burn_placeholder_84.png"));
-    private static final Texture manaburn_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Mana_Burn_placeholder_32.png"));
-    private static final Texture manablaze_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("manablaze_placeholder_84.png"));
-    private static final Texture manablaze_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("manablaze_placeholder_32.png"));
+    public static final Texture manaburn_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Mana_Burn_placeholder_84.png"));
+    public static final Texture manaburn_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Mana_Burn_placeholder_32.png"));
+    public static final Texture manablaze_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("manablaze_placeholder_84.png"));
+    public static final Texture manablaze_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("manablaze_placeholder_32.png"));
 
     private AbstractCreature source;
     private int manaBurnIntensity;
-    private AbstractMonster m;
+    public static AbstractMonster m;
+    public static int igniteDamage;
+    public static double IGNITE = 0.03;
 
-    public ManaBurnPower(AbstractCreature owner, AbstractCreature source, int manaBurn) {
+    public ManaBurnPower(AbstractMonster owner, AbstractCreature source, int manaBurn) {
         this.name = NAME;
         this.ID = POWER_ID;
+        m = owner;
+        igniteDamage = manaBurn;
         this.owner = owner;
         this.amount = manaBurn;
         this.source = source;
@@ -40,16 +44,21 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
         this.region48 = new TextureAtlas.AtlasRegion(manaburn_32, 0, 0, 32, 32);
 
         this.type = AbstractPower.PowerType.DEBUFF;
-        this.m = (AbstractMonster)this.owner;
+        m = (AbstractMonster) this.owner;
 
         this.manaBurnIntensity = manaBurnDamage();
         this.isTurnBased = true;
-        updateDescription();
         getHealthBarAmount();
+        updateDescription();
+    }
+
+    public static int IgniteDamage() {
+        return (int) Math.ceil(m.currentHealth * 0.03D * igniteDamage);
     }
 
     private void updateDamage() {
         this.manaBurnIntensity = (int) Math.ceil(this.owner.maxHealth * 0.03D * this.amount);
+        getHealthBarAmount();
         updateDescription();
     }
 
@@ -58,11 +67,11 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
     }
 
     public void updateDescription() {
-        if ((int) Math.ceil(this.m.maxHealth * 0.01D * this.amount) == 1) {
-            this.description = DESCRIPTION[0] + manaBurnDamage() + DESCRIPTION[2] + this.amount;
-        } else {
-            this.description = DESCRIPTION[0] + manaBurnDamage() + DESCRIPTION[1] + manaBurnDamage() + DESCRIPTION[2] + this.amount;
+        this.description = DESCRIPTION[0] + manaBurnDamage() + DESCRIPTION[1] + this.amount;
+        if (this.amount >= 3) {
+            this.description += DESCRIPTION[2];
         }
+        getHealthBarAmount();
     }
 
     public int getHealthBarAmount() {
@@ -84,6 +93,7 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
             this.region128 = new TextureAtlas.AtlasRegion(manablaze_84, 0, 0, 84, 84);
             this.region48 = new TextureAtlas.AtlasRegion(manablaze_32, 0, 0, 32, 32);
         }
+        getHealthBarAmount();
         updateDamage();
     }
 
@@ -94,9 +104,11 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
             this.region128 = new TextureAtlas.AtlasRegion(manaburn_84, 0, 0, 84, 84);
             this.region48 = new TextureAtlas.AtlasRegion(manaburn_32, 0, 0, 32, 32);
         }
+        getHealthBarAmount();
+        updateDamage();
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount, 0.03));
     }
 }

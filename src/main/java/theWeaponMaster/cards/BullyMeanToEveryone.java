@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.TauntPower;
-import theWeaponMaster.actions.ViciousAction;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -55,10 +54,6 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
             }
         }
         p.getPower("ViciousPower").amount -= bullyNumber;
-    }
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ViciousAction().viciousUse(p, this);
     }
 
     @Override

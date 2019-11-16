@@ -31,7 +31,7 @@ public class ArsenalRelic extends CustomRelic {
     public static boolean atroposUnlocked = true;
     public static boolean leviathanUnlocked = true;
     public static boolean revenantUnlocked = true;
-    public static String currentWeapon = "Fenrir"; //this is where the current weapon is saved under
+    public static String currentWeapon = "none"; //this is where the current weapon is saved under
     public static int leviathanShots = 3;
 
     public AbstractPlayer player = AbstractDungeon.player;

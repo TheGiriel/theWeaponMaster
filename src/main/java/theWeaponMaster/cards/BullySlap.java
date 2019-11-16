@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.actions.ViciousAction;
 import theWeaponMaster.characters.TheWeaponMaster;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
@@ -48,16 +47,13 @@ public class BullySlap extends AbstractBullyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (upgraded) {
-            AbstractDungeon.actionManager.addToTop(new WaitAction(0.25F));
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25F));
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FrailPower(m, magicNumber, false), magicNumber));
         p.getPower("ViciousPower").amount -= bullyNumber;
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ViciousAction().viciousUse(p, this);
-    }
 
     @Override
     public void upgrade() {

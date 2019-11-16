@@ -2,6 +2,7 @@ package theWeaponMaster.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.GiveWeaponsAction;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.powers.ManaBurnPower;
+import theWeaponMaster.relics.ManaWhetstoneRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -52,23 +55,31 @@ public class AtroposSeveredScissors extends AbstractDynamicCard {
         }
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(ManaWhetstoneRelic.ID);
+    }
+
+    //TODO: Make action
     public void manaBurnDamage(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++) {
-            if (m.hasPower("ManaBurnPower")) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, m.getPower("ManaBurnPower").amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
-            }
-            if (m.hasPower("ManablazePower")) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 3, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
-            }
+        if (m.hasPower(ManaBurnPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (Math.ceil(m.maxHealth * ManaBurnPower.igniteDamage * m.getPower(ManaBurnPower.POWER_ID).amount)), DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
         }
     }
 
+    //TODO: Improve Code
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        manaBurnDamage(p, m);
+        if (upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
+            manaBurnDamage(p, m);
+        }
+        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
         manaBurnDamage(p, m);
+        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
         AbstractDungeon.player.masterDeck.removeCard(this.cardID);
         AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction("Scissor Half"));
     }

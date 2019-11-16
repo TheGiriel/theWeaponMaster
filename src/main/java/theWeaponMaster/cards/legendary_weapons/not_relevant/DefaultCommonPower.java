@@ -38,14 +38,11 @@ public class DefaultCommonPower extends AbstractDynamicCard {
         magicNumber = baseMagicNumber = MAGIC;
     }
 
-
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, 2), 2));
     }
 
-    //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

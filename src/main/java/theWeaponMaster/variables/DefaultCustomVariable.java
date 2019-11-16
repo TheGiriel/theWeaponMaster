@@ -4,8 +4,6 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import static theWeaponMaster.DefaultMod.makeID;
-
 public class DefaultCustomVariable extends DynamicVariable
 {   // Custom Dynamic Variables are what you do if you need your card text to display a cool, changing number that the base game doesn't provide.
     // If the !D! and !B! (for Damage and Block) etc. are not enough for you, this is how you make your own one. It Changes In Real Time!
@@ -15,7 +13,7 @@ public class DefaultCustomVariable extends DynamicVariable
     @Override
     public String key()
     {
-        return makeID("ENERGY_DAMAGE");
+        return "EN_MULT";
     }
 
     // Checks whether the current value is different than the base one. 
@@ -23,7 +21,7 @@ public class DefaultCustomVariable extends DynamicVariable
     @Override
     public boolean isModified(AbstractCard card)
     {
-        return card.isDamageModified;
+        return card.isMagicNumberModified;
     }
    
     // The value the variable should display.
@@ -31,21 +29,19 @@ public class DefaultCustomVariable extends DynamicVariable
     @Override
     public int value(AbstractCard card)
     {
-        return card.damage * EnergyPanel.getCurrentEnergy();
+        return (card.magicNumber * EnergyPanel.getCurrentEnergy());
     }
     
     // The baseValue the variable should display.
     // just like baseBlock or baseDamage, this is what the variable should reset to by default. (the base value before any modifications)
     @Override
-    public int baseValue(AbstractCard card)
-    {   
-        return card.baseDamage * EnergyPanel.getCurrentEnergy();
+    public int baseValue(AbstractCard card) {
+        return card.baseMagicNumber * EnergyPanel.getCurrentEnergy();
     }
     
     // If the card has it's damage upgraded, this variable will glow green on the upgrade selection screen as well.
     @Override
-    public boolean upgraded(AbstractCard card)
-    {               
-       return card.upgradedDamage;
+    public boolean upgraded(AbstractCard card) {
+        return card.upgradedMagicNumber;
     }
 }

@@ -5,9 +5,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.LeviathanCrush;
+import theWeaponMaster.cards.LeviathanDeepImpact;
+import theWeaponMaster.cards.LeviathanEarthquake;
 import theWeaponMaster.cards.LeviathanGroundSplitter;
-import theWeaponMaster.cards.Not_finished.LeviathanDeepImpact;
-import theWeaponMaster.cards.Not_finished.LeviathanEarthquake;
 import theWeaponMaster.cards.Not_finished.LeviathanEject;
 import theWeaponMaster.util.TextureLoader;
 
@@ -41,7 +41,6 @@ public class ShockwaveModulatorRelic extends CustomRelic {
     public void setWeaponUpgrade() {
         weaponUpgrade.clear();
         if(level1) {
-            logger.info("adding Crush");
             weaponUpgrade.add(LeviathanCrush.ID);
         }
         if(level2) {

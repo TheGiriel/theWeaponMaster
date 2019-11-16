@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.actions.ViciousAction;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.IntimidatePower;
 
@@ -46,10 +45,6 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
             reduceBullyCost(REDUCED_BULLY_COST);
             initializeDescription();
         }
-    }
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ViciousAction().viciousUse(p, this);
     }
 
     @Override

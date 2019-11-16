@@ -69,4 +69,5 @@ public class FenrirLacerate extends AbstractDynamicCard {
     public boolean canUpgrade() {
         return AbstractDungeon.player.hasRelic(SplinteringSteelRelic.ID);
     }
+
 }

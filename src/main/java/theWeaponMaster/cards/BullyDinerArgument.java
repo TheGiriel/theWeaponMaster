@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.actions.ViciousAction;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.IntimidatePower;
 import theWeaponMaster.powers.StaggerPower;
@@ -60,9 +59,6 @@ public class BullyDinerArgument extends AbstractBullyCard {
         }
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ViciousAction().viciousUse(p, this);
-    }
 
     private void randomArgument(AbstractPlayer p, AbstractMonster m) {
         switch (new Random().nextInt(5)) {
@@ -94,6 +90,5 @@ public class BullyDinerArgument extends AbstractBullyCard {
                 randomArgument(p, monster);
             }
         }
-        p.getPower("ViciousPower").amount -= bullyNumber;
     }
 }

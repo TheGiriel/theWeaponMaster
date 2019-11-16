@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.HungeringPower;
+import theWeaponMaster.relics.GhoulskinSheathRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -47,6 +48,10 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
+    }
+
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(GhoulskinSheathRelic.ID);
     }
 
     @Override

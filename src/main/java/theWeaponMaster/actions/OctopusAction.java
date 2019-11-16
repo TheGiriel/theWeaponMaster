@@ -3,16 +3,12 @@ package theWeaponMaster.actions;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.cards.*;
-import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.patches.CenterGridCardSelectScreen;
 import theWeaponMaster.relics.ArsenalRelic;
@@ -47,13 +43,13 @@ public class OctopusAction extends AbstractGameAction {
                 group.addToTop(new ShiftingChoiceCard("Cerberus", "Cerberus", makeCardPath("Power.png"), "Equip the quick Cerberus.", AbstractCard.CardType.POWER));
             }
             if (!ArsenalRelic.currentWeapon.equals("Revenant Cleaver") && ArsenalRelic.revenantUnlocked) {
-                group.addToTop(new ShiftingChoiceCard("Revenant Cleaver", "Revenant Cleaver", makeCardPath("Power.png"), "Equip the hungry Revenant Cleaver", AbstractCard.CardType.POWER));
+                group.addToTop(new ShiftingChoiceCard("Revenant Cleaver", "Revenant Cleaver", makeCardPath("Power.png"), "Equip the hungry Revenant_Cleaver", AbstractCard.CardType.POWER));
             }
             if (!ArsenalRelic.currentWeapon.equals("Atropos' Shears") && ArsenalRelic.atroposUnlocked) {
-                group.addToTop(new ShiftingChoiceCard("Atropos' Shears", "Atropos' Shears", makeCardPath("Power.png"), "Equip the versatile Atropos' Shears.", AbstractCard.CardType.POWER));
+                group.addToTop(new ShiftingChoiceCard("Atropos' Shears", "Atropos' Shears", makeCardPath("Power.png"), "Equip the versatile Atropos_Shears.", AbstractCard.CardType.POWER));
             }
             if (!ArsenalRelic.currentWeapon.equals("Leviathan Gauntlet") && ArsenalRelic.leviathanUnlocked) {
-                group.addToTop(new ShiftingChoiceCard("Leviathan Gauntlet", "Leviathan Gauntlet", makeCardPath("Power.png"), "Equip the oppressive Leviathan Gauntlet.", AbstractCard.CardType.POWER));
+                group.addToTop(new ShiftingChoiceCard("Leviathan Gauntlet", "Leviathan Gauntlet", makeCardPath("Power.png"), "Equip the oppressive Leviathan_Gauntlet.", AbstractCard.CardType.POWER));
             }
 
             CenterGridCardSelectScreen.centerGridSelect = true;
@@ -69,6 +65,7 @@ public class OctopusAction extends AbstractGameAction {
             if (cardChoice.name.equals("Fenrir")) {
                 AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Fenrir");
+
             }
             if (cardChoice.name.equals("Cerberus")) {
                 AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
@@ -86,6 +83,7 @@ public class OctopusAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Leviathan Gauntlet");
             }
+            AbstractDungeon.player.draw(5);
             isDone = true;
         }
         tickDuration();

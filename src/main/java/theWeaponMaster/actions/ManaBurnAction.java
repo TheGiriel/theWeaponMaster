@@ -20,13 +20,13 @@ public class ManaBurnAction extends AbstractGameAction {
     public static HashSet<AbstractMonster.Intent> intent = new HashSet<>();
     private int manaBurnStack;
 
-    public ManaBurnAction(AbstractCreature owner, AbstractCreature source, int manaBurnStack) {
+    public ManaBurnAction(AbstractCreature owner, AbstractCreature source, int manaBurnStack, double manaburnDamage) {
         this.owner = owner;
         this.m = (AbstractMonster) this.owner;
         this.source = source;
         this.manaBurnStack = manaBurnStack;
 
-        this.manaBurnIntensity = (int) (Math.ceil(this.m.maxHealth * 0.03D * this.manaBurnStack));
+        this.manaBurnIntensity = (int) (Math.ceil(this.m.maxHealth * manaburnDamage * this.manaBurnStack));
 
         intent.add(ATTACK_BUFF);
         intent.add(ATTACK_DEBUFF);
@@ -36,7 +36,6 @@ public class ManaBurnAction extends AbstractGameAction {
         intent.add(DEBUFF);
         intent.add(STRONG_DEBUFF);
         intent.add(MAGIC);
-
     }
 
     public int burnDamage() {

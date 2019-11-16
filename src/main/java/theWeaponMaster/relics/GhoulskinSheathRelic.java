@@ -4,16 +4,13 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.cards.Not_finished.RevenantBloodbath;
-import theWeaponMaster.cards.Not_finished.RevenantNoseToTail;
-import theWeaponMaster.cards.RevenantChopChopCHOP;
-import theWeaponMaster.cards.RevenantHungrySteel;
-import theWeaponMaster.cards.RevenantRavenous;
+import theWeaponMaster.cards.*;
 import theWeaponMaster.util.TextureLoader;
 
 import java.util.HashSet;
 
-import static theWeaponMaster.DefaultMod.*;
+import static theWeaponMaster.DefaultMod.makeRelicOutlinePath;
+import static theWeaponMaster.DefaultMod.makeRelicPath;
 
 public class GhoulskinSheathRelic extends CustomRelic {
 
@@ -44,7 +41,6 @@ public class GhoulskinSheathRelic extends CustomRelic {
             weaponUpgrade.add(RevenantRavenous.ID);
         }
         if (level2) {
-            logger.info("adding Eject");
             weaponUpgrade.add(RevenantChopChopCHOP.ID);
             //weaponSetHash.add(LeviathanReload.ID);//unlisted
         }

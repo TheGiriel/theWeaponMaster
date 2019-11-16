@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.actions.ViciousAction;
 import theWeaponMaster.characters.TheWeaponMaster;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
@@ -43,9 +42,6 @@ public class BullyHuh extends AbstractBullyCard {
         bullyNumber = baseBullyNumber = BULLY_COST;
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ViciousAction().viciousUse(p, this);
-    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

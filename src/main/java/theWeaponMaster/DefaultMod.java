@@ -22,7 +22,10 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.*;
-import theWeaponMaster.cards.Not_finished.*;
+import theWeaponMaster.cards.Not_finished.AtroposSeveredPath;
+import theWeaponMaster.cards.Not_finished.AtroposSeveredSoul;
+import theWeaponMaster.cards.Not_finished.CerberusDrainSlash;
+import theWeaponMaster.cards.Not_finished.LeviathanEject;
 import theWeaponMaster.cards.legendary_weapons.not_relevant.DefaultCommonPower;
 import theWeaponMaster.cards.legendary_weapons.not_relevant.OrbSkill;
 import theWeaponMaster.characters.TheWeaponMaster;
@@ -434,8 +437,8 @@ public class DefaultMod implements
         BaseMod.addCard(new RevenantRavenous());
         BaseMod.addCard(new RevenantChopChopCHOP());
         BaseMod.addCard(new RevenantHungrySteel());
-        //BaseMod.addCard(new RevenantNoseToTail());
-        //BaseMod.addCard(new RevenantBloodbath());
+        BaseMod.addCard(new RevenantNoseToTail());
+        BaseMod.addCard(new RevenantBloodbath());
         //BaseMod.addCard(new DefaultAttackWithVariable());
         BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new BullyTaunt());
@@ -447,12 +450,14 @@ public class DefaultMod implements
         BaseMod.addCard(new BullyDinerArgument());
         BaseMod.addCard(new BullySlap());
         BaseMod.addCard(new BullyShakedown());
-        BaseMod.addCard(new RevolverLowRecoil());
         BaseMod.addCard(new RevolverStandard());
         BaseMod.addCard(new RevolverHeavy());
+        BaseMod.addCard(new RevolverDouble());
+        BaseMod.addCard(new RevolverLowRecoil());
+        BaseMod.addCard(new RevolverBuckshot());
         BaseMod.addCard(new RevolverHollowPoint());
         BaseMod.addCard(new RevolverFullMetal());
-        BaseMod.addCard(new RevolverDouble());
+        BaseMod.addCard(new CounterBlow());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -499,12 +504,12 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(BullyDinerArgument.ID);
         UnlockTracker.unlockCard(BullySlap.ID);
         UnlockTracker.unlockCard(BullyShakedown.ID);
-        UnlockTracker.unlockCard(RevolverLowRecoil.ID);
         UnlockTracker.unlockCard(RevolverStandard.ID);
+        UnlockTracker.unlockCard(RevolverDouble.ID);
+        UnlockTracker.unlockCard(RevolverLowRecoil.ID);
         UnlockTracker.unlockCard(RevolverHeavy.ID);
         UnlockTracker.unlockCard(RevolverHollowPoint.ID);
         UnlockTracker.unlockCard(RevolverFullMetal.ID);
-        UnlockTracker.unlockCard(RevolverDouble.ID);
 
         
         logger.info("Done adding cards!");

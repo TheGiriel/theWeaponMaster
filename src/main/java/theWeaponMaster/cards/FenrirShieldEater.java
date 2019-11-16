@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.relics.SplinteringSteelRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -46,7 +47,7 @@ public class FenrirShieldEater extends AbstractDynamicCard {
 
     @Override
     public boolean canUpgrade() {
-        return AbstractDungeon.player.hasRelic("Splintering Steel");
+        return AbstractDungeon.player.hasRelic(SplinteringSteelRelic.ID);
     }
 
     @Override

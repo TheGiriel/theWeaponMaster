@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.SeveredPainPower;
+import theWeaponMaster.relics.ManaWhetstoneRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -44,6 +45,11 @@ public class AtroposSeveredPain extends AbstractDynamicCard {
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(ManaWhetstoneRelic.ID);
     }
 
     @Override

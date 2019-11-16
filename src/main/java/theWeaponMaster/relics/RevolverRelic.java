@@ -40,6 +40,13 @@ public class RevolverRelic extends CustomRelic {
         }
     }
 
+    @Override
+    public void update() {
+        if (this.counter <= 0) {
+            beginLongPulse();
+        }
+    }
+
     public void onEquip() {
     }
 

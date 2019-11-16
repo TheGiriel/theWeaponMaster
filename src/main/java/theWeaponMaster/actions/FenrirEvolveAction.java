@@ -30,11 +30,12 @@ public class FenrirEvolveAction extends AbstractGameAction {
                 DefaultMod.logger.info("Base Damage after Evolve: " + c.baseDamage);
             }
         }
+        this.isDone = true;
     }
 
 
     private HashSet<AbstractCard> getFenrirCards() {
-        HashSet<AbstractCard> fenrirUpgrades = new HashSet<AbstractCard>();
+        HashSet<AbstractCard> fenrirUpgrades = new HashSet<>();
 
         AbstractCard card = AbstractDungeon.player.cardInUse;
         if (card != null && card.cardID.equals(this)) {

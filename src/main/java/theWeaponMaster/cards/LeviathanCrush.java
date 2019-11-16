@@ -1,11 +1,16 @@
 package theWeaponMaster.cards;
 
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.patches.WeaponMasterTags;
+import theWeaponMaster.relics.ShockwaveModulatorRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -27,10 +32,14 @@ public class LeviathanCrush extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int DAMAGE = 8;
     private static final int UPGRADED_DAMAGE = 2;
+    private static int MAGIC_NUMBER = 25;
+    private static int UPGRADED_MAGIC_NUMBER = 25;
 
     public LeviathanCrush() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        tags.add(WeaponMasterTags.LEVIATHAN);
     }
 
     @Override
@@ -38,9 +47,13 @@ public class LeviathanCrush extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            rawDescription = UPGRADED_DESCRIPTION;
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
+    }
+
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(ShockwaveModulatorRelic.ID);
     }
 
     @Override
@@ -48,10 +61,15 @@ public class LeviathanCrush extends AbstractDynamicCard {
         int armorCrush = 0;
         //TODO: Review the code and write something better.
         if (m.currentBlock > 0) {
-
+            if (this.damage > m.currentBlock) {
+                armorCrush = (int) Math.ceil((this.damage - m.currentBlock) * (magicNumber / 100));
+            } else {
+                armorCrush = (int) Math.ceil((this.damage) * (magicNumber / 100));
+            }
         }
-        if (upgraded) {
-
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
+        if (armorCrush != 0) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorCrush, DamageInfo.DamageType.HP_LOSS)));
         }
     }
 }
