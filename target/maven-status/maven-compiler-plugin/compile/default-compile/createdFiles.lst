@@ -11,11 +11,13 @@ theWeaponMaster\cards\Not_finished\RevolverStandard.class
 theWeaponMaster\cards\AbstractBullyCard.class
 theWeaponMaster\actions\ImprovedWeaponCardRemovalAction.class
 theWeaponMaster\powers\HemorrhagePower.class
+theWeaponMaster\actions\FenrirUnleashedSelectAction.class
 theWeaponMaster\variables\BullyVariable.class
 theWeaponMaster\cards\FenrirLacerate.class
 theWeaponMaster\actions\CerberusEnemyPowerAction.class
 theWeaponMaster\cards\Not_finished\RevenantNoseToTail.class
 theWeaponMaster\relics\PlaceholderRelic2.class
+theWeaponMaster\cards\AbstractAmmoCard.class
 theWeaponMaster\cards\Not_finished\LeviathanDeepImpact.class
 theWeaponMaster\util\IDCheckDontTouchPls.class
 theWeaponMaster\cards\AbstractDefaultCard.class
@@ -63,7 +65,6 @@ theWeaponMaster\powers\DefensiveStancePower.class
 theWeaponMaster\powers\ManablazePower.class
 theWeaponMaster\cards\legendary_weapons\not_relevant\CardTemplate.class
 theWeaponMaster\cards\RevenantRavenous.class
-theWeaponMaster\cards\AbstractWeaponCard.class
 theWeaponMaster\cards\WeaponSwap.class
 theWeaponMaster\actions\ManaBurnAction.class
 theWeaponMaster\cards\Not_finished\CerberusModularSlash.class
@@ -81,6 +82,7 @@ theWeaponMaster\relics\HellhoundOilRelic.class
 theWeaponMaster\cards\RevenantHungrySteel.class
 theWeaponMaster\cards\BullyHuh.class
 theWeaponMaster\actions\LacerateAction.class
+theWeaponMaster\actions\FenrirUnleashedSelectAction$MonsterHPComparator.class
 theWeaponMaster\cards\AtroposSeveredSource.class
 theWeaponMaster\actions\ReloadAction.class
 theWeaponMaster\actions\FenrirEvolveAction.class

@@ -3,13 +3,16 @@ package theWeaponMaster.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theWeaponMaster.DefaultMod;
+import theWeaponMaster.cards.*;
 
 import java.util.HashSet;
 import java.util.Iterator;
 
 public class FenrirEvolveAction extends AbstractGameAction {
 
-    private HashSet<String> fenrirSet = new HashSet<>();
+    public HashSet<String> fenrirSet = new HashSet<>();
+
     public FenrirEvolveAction() {
         for (AbstractCard c : getFenrirCards()) {
             if (c.cardID.equals("theWeaponMaster:FenrirDefensiveStance")) {
@@ -17,9 +20,15 @@ public class FenrirEvolveAction extends AbstractGameAction {
             } else if (c.cardID.equals("theWeaponMaster:FenrirHeavySwing")) {
                 c.baseMagicNumber++;
             } else {
+                if (c.cardID.equals(FenrirUnleashed.ID)) {
+                    DefaultMod.logger.info("Base Damage before Evolve: " + c.baseDamage);
+                }
                 c.baseDamage++;
             }
             c.applyPowers();
+            if (c.cardID.equals(FenrirUnleashed.ID)) {
+                DefaultMod.logger.info("Base Damage after Evolve: " + c.baseDamage);
+            }
         }
     }
 
@@ -52,6 +61,8 @@ public class FenrirEvolveAction extends AbstractGameAction {
     }
 
     private void addCards(HashSet<AbstractCard> fenrirUpgrades, Iterator cardIterator) {
+        update();
+
         AbstractCard c;
         while (cardIterator.hasNext()) {
             c = (AbstractCard) cardIterator.next();
@@ -63,10 +74,10 @@ public class FenrirEvolveAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        fenrirSet.add("theWeaponMaster:FenrirLacerate");
-        fenrirSet.add("theWeaponMaster:FenrirHeavySwing");
-        fenrirSet.add("theWeaponMaster:FenrirShieldEater");
-        fenrirSet.add("theWeaponMaster:FenrirDefensiveStance");
-        fenrirSet.add("theWeaponMaster:FenrirUnleashed");
+        fenrirSet.add(FenrirLacerate.ID);
+        fenrirSet.add(FenrirHeavySwing.ID);
+        fenrirSet.add(FenrirShieldEater.ID);
+        fenrirSet.add(FenrirDefensiveStance.ID);
+        fenrirSet.add(FenrirUnleashed.ID);
     }
 }

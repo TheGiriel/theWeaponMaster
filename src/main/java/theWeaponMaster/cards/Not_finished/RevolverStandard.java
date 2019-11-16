@@ -9,13 +9,15 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
-import theWeaponMaster.cards.AbstractDynamicCard;
+import theWeaponMaster.actions.ReloadAction;
+import theWeaponMaster.cards.AbstractAmmoCard;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
 
-public class RevolverStandard extends AbstractDynamicCard {
+public class RevolverStandard extends AbstractAmmoCard {
 
     public static final String ID = DefaultMod.makeID(RevolverStandard.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
@@ -48,6 +50,10 @@ public class RevolverStandard extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.getRelic(RevolverRelic.ID).counter <= 0) {
+            new ReloadAction();
+            return;
+        }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }

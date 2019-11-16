@@ -10,13 +10,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.ReloadAction;
-import theWeaponMaster.cards.AbstractDynamicCard;
+import theWeaponMaster.cards.AbstractAmmoCard;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
 
-public class RevolverHollowPoint extends AbstractDynamicCard {
+public class RevolverHollowPoint extends AbstractAmmoCard {
 
     public static final String ID = DefaultMod.makeID(RevolverHollowPoint.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
@@ -52,10 +53,13 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        new ReloadAction();
+        if (p.getRelic(RevolverRelic.ID).counter <= 0) {
+            new ReloadAction();
+            return;
+        }
         double bonusDamge = 1;
         if (m.currentBlock == 0) {
-            bonusDamge = (1 + ((double) magicNumber / 100));
+            bonusDamge += ((double) magicNumber / 100);
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) Math.ceil(damage * bonusDamge), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 

@@ -12,13 +12,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.ReloadAction;
-import theWeaponMaster.cards.AbstractDynamicCard;
+import theWeaponMaster.cards.AbstractAmmoCard;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
 
-public class RevolverLowRecoil extends AbstractDynamicCard {
+public class RevolverLowRecoil extends AbstractAmmoCard {
 
     public static final String ID = DefaultMod.makeID(RevolverLowRecoil.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -54,7 +55,10 @@ public class RevolverLowRecoil extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        new ReloadAction();
+        if (p.getRelic(RevolverRelic.ID).counter <= 0) {
+            new ReloadAction();
+            return;
+        }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (AbstractDungeon.player.drawPile.group.size() >= 1 && AbstractDungeon.player.drawPile.getTopCard().hasTag(REVOLVER)) {
             AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, false));

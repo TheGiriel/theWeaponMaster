@@ -32,10 +32,11 @@ public class RevolverRelic extends CustomRelic {
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(REVOLVER)) {
-            this.counter--;
             if (this.counter <= 0) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ReloadPower()));
+                return;
             }
+            this.counter--;
         }
     }
 
@@ -45,7 +46,7 @@ public class RevolverRelic extends CustomRelic {
     @Override
     public void atBattleStart() {
         if (this.counter <= 0) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ReloadPower()));
+            counter = 0;
         }
     }
 

@@ -10,7 +10,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import theWeaponMaster.DefaultMod;
+import theWeaponMaster.actions.FenrirEvolveAction;
+import theWeaponMaster.actions.FenrirUnleashedSelectAction;
 import theWeaponMaster.characters.TheWeaponMaster;
+
+import java.util.ArrayList;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
@@ -32,17 +36,16 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     private static final int COST = -1;
     private static final int DAMAGE = 8;
     private static final int UPGRADED_DAMAGE =5;
-    private static final int EVOLUTION = 3;
-    private static final double OVERKILL_MOD = 1.5;
-    private static double overkill_mod = 1;
     private static int totalAttacks;
-    private AbstractMonster weakest = null;
+    public static int baseDamageStatic;
+    public static ArrayList<AbstractMonster> targetList = new ArrayList<>();
 
     public FenrirUnleashed() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         isInnate = true;
 
         this.damage = baseDamage = DAMAGE;
+        baseDamageStatic = baseDamage;
         isMultiDamage = true;
     }
 
@@ -56,7 +59,6 @@ public class FenrirUnleashed extends AbstractDynamicCard {
         if(!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            overkill_mod = OVERKILL_MOD;
             rawDescription = UPGRADED_DESCRIPTION;
             initializeDescription();
         }
@@ -64,33 +66,45 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     }
 
     private void weakestMonster(AbstractPlayer p) {
-        for (AbstractMonster target : AbstractDungeon.getMonsters().monsters) {
-            if (target != null && target.currentHealth > 0 && !target.isDead && !target.isDying && !target.isEscaping) {
-                if (weakest == null) {
-                    weakest = target;
-                    DefaultMod.logger.info("First weakest target: " + weakest.toString());
-                }
-                if (target.currentHealth < weakest.currentHealth) {
-                    weakest = target;
-                    DefaultMod.logger.info("New weakest target: " + weakest.toString());
-                }
-            }
+        targetList.clear();
+        int j = 0;
+        int totalDamage = 0;
+        int overKill = 0;
+        new FenrirUnleashedSelectAction();
+        for (AbstractMonster monster : targetList) {
+
+            DefaultMod.logger.info("Target List: " + monster + " Monster HP: " + monster.currentHealth);
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(weakest, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        weakest = null;
+        for (int i = 0; i < totalAttacks; i++) {
+            totalDamage += overKill;
+            overKill = 0;
+            if (totalDamage < targetList.get(j).currentHealth) {
+                DefaultMod.logger.info("New target: " + targetList.get(j));
+                totalDamage += this.damage;
+            } else if (totalDamage >= targetList.get(j).currentHealth) {
+                DefaultMod.logger.info(targetList.get(j) + " is dead. select new target:");
+                j++;
+                DefaultMod.logger.info("New target: " + targetList.get(j));
+                totalDamage = 0;
+                overKill = totalDamage - targetList.get(j).currentHealth;
+                new FenrirEvolveAction();
+                i--;
+            }
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(targetList.get(j), new DamageInfo(p, this.damage + overKill, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        }
+        targetList.clear();
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int effect = 10;
+        totalAttacks = 10;
         if (p.hasRelic(ChemicalX.ID)) {
-            effect += 2;
+            totalAttacks += 2;
             p.getRelic(ChemicalX.ID).flash();
         }
         //TODO: Automatically switch target when weakest monster is dying
-        for (int attacks = 0; attacks < effect; attacks++) {
-            weakestMonster(p);
-        }
+        weakestMonster(p);
+        targetList.clear();
     }
 }

@@ -13,7 +13,7 @@ import theWeaponMaster.powers.DefensiveStancePower;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
-public class FenrirDefensiveStance extends AbstractWeaponCard {
+public class FenrirDefensiveStance extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID(FenrirDefensiveStance.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

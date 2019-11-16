@@ -16,13 +16,13 @@ import theWeaponMaster.util.TextureLoader;
 public class LaceratePower extends AbstractPower implements HealthBarRenderPower {
 
     public static final Color bleed = new Color((float) (255 / 255), (float) (128 / 255), (float) (17 / 255), 1.0F);
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LaceratePower");
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LaceratePower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
-    private static final String POWER_ID = DefaultMod.makeID(LaceratePower.class.getSimpleName());
-    private static final Texture lacerate_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Lacerate_placeholder_84.png"));
-    private static final Texture lacerate_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Lacerate_placeholder_32.png"));
-    private static final Texture hemorrhage_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Hemorrhage_placeholder_84.png"));
+    public static final String POWER_ID = DefaultMod.makeID(LaceratePower.class.getSimpleName());
+    public static final Texture lacerate_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Lacerate_placeholder_84.png"));
+    public static final Texture lacerate_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Lacerate_placeholder_32.png"));
+    public static final Texture hemorrhage_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Hemorrhage_placeholder_84.png"));
 
     private AbstractCreature source;
     private int bleedDamage;

@@ -12,7 +12,7 @@ import theWeaponMaster.powers.SeveredPainPower;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 
-public class AtroposSeveredPain extends AbstractWeaponCard {
+public class AtroposSeveredPain extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID(AtroposSeveredPain.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -33,7 +33,6 @@ public class AtroposSeveredPain extends AbstractWeaponCard {
     public AtroposSeveredPain() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        weapon = "Atropos";
         initializeDescription();
 
     }

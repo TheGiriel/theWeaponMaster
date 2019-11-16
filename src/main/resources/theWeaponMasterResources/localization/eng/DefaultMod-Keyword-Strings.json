@@ -136,10 +136,10 @@
     "DESCRIPTION": "Can only be applied to attacking enemies. NL Intimidated enemies are forced to defend and gain Block equal to 10 plus half your Vicious."
   },
   {
-    "PROPER_NAME": "Continue",
+    "PROPER_NAME": "Unstoppable",
     "NAMES": [
-      "Continue",
-      "continue"
+      "Unstoppable",
+      "unstoppable"
     ],
     "DESCRIPTION": "Continue attacking if the stated condition is fulfilled."
   },

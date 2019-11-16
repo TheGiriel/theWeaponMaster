@@ -3,7 +3,6 @@ package theWeaponMaster.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -36,6 +35,7 @@ public class FenrirLacerate extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 2;
     private static final int EVOLUTION = 1;
+    private String lacerate = LaceratePower.POWER_ID;
 
     public static final String weapon = "Fenrir";
 
@@ -48,15 +48,10 @@ public class FenrirLacerate extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(!m.hasPower("HemorrhagePower")){
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, this.magicNumber),magicNumber));
-        }
-        if (m.hasPower("HemorrhagePower")) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (damage * 1.5), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-            //isLacerated = (0.15 + this.magicNumber*0.1);
-            new FenrirEvolveAction();
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "HemorrhagePower"));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, this.magicNumber), magicNumber));
+        if (m.hasPower(lacerate) && m.getPower(lacerate).amount >= 3) {
+            new FenrirEvolveAction(); //works properly now
         }
     }
 

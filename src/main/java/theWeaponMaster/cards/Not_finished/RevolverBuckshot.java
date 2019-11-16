@@ -12,13 +12,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 import theWeaponMaster.DefaultMod;
 import theWeaponMaster.actions.ReloadAction;
-import theWeaponMaster.cards.AbstractDynamicCard;
+import theWeaponMaster.cards.AbstractAmmoCard;
 import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.DefaultMod.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
 
-public class RevolverBuckshot extends AbstractDynamicCard {
+public class RevolverBuckshot extends AbstractAmmoCard {
 
     public static final String ID = DefaultMod.makeID(RevolverBuckshot.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -55,7 +56,10 @@ public class RevolverBuckshot extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        new ReloadAction();
+        if (p.getRelic(RevolverRelic.ID).counter <= 0) {
+            new ReloadAction();
+            return;
+        }
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(
                 AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));

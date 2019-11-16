@@ -5,6 +5,8 @@ import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theWeaponMaster.cards.*;
+import theWeaponMaster.cards.Not_finished.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -16,37 +18,37 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
 
     //TODO: Almost perfect, just gotta get the purge effect to happen before the cards are removed.
     private void populateArrayList(){
-        weaponSetHash.add("theWeaponMaster:FenrirLacerate");
-        weaponSetHash.add("theWeaponMaster:FenrirHeavySwing");
-        weaponSetHash.add("theWeaponMaster:FenrirShieldEater");
-        weaponSetHash.add("theWeaponMaster:FenrirDefensiveStance");
-        weaponSetHash.add("theWeaponMaster:FenrirUnleashed");
+        weaponSetHash.add(FenrirLacerate.ID);
+        weaponSetHash.add(FenrirHeavySwing.ID);
+        weaponSetHash.add(FenrirShieldEater.ID);
+        weaponSetHash.add(FenrirDefensiveStance.ID);
+        weaponSetHash.add(FenrirUnleashed.ID);
 
-        weaponSetHash.add("theWeaponMaster:CerberusSlash");
-        weaponSetHash.add("theWeaponMaster:CerberusIaiSlash");
-        weaponSetHash.add("theWeaponMaster:CerberusEssenceSlash");
-        weaponSetHash.add("theWeaponMaster:CerberusModularSlash");
-        weaponSetHash.add("theWeaponMaster:CerberusDrainSlash");
+        weaponSetHash.add(CerberusSlash.ID);
+        weaponSetHash.add(CerberusIaiSlash.ID);
+        weaponSetHash.add(CerberusEssenceSlash.ID);
+        weaponSetHash.add(CerberusModularSlash.ID);
+        weaponSetHash.add(CerberusDrainSlash.ID);
 
-        weaponSetHash.add("theWeaponMaster:RevenantRavenous");
-        weaponSetHash.add("theWeaponMaster:RevenantChopChopCHOP");
-        weaponSetHash.add("theWeaponMaster:RevenantHungrySteel");
-        weaponSetHash.add("theWeaponMaster:RevenantNoseToTail");
-        weaponSetHash.add("theWeaponMaster:RevenantBloodbath");
+        weaponSetHash.add(RevenantRavenous.ID);
+        weaponSetHash.add(RevenantChopChopCHOP.ID);
+        weaponSetHash.add(RevenantHungrySteel.ID);
+        weaponSetHash.add(RevenantNoseToTail.ID);
+        weaponSetHash.add(RevenantBloodbath.ID);
 
-        weaponSetHash.add("theWeaponMaster:AtroposSeveredSource");
-        weaponSetHash.add("theWeaponMaster:AtroposSeveredScissors");
-        weaponSetHash.add("theWeaponMaster:AtroposScissorHalf");//unlisted
-        weaponSetHash.add("theWeaponMaster:AtroposSeveredPath");
-        weaponSetHash.add("theWeaponMaster:AtroposSeveredPain");
-        weaponSetHash.add("theWeaponMaster:AtroposSeveredSoul");
+        weaponSetHash.add(AtroposSeveredSource.ID);
+        weaponSetHash.add(AtroposSeveredScissors.ID);
+        weaponSetHash.add(AtroposScissorHalf.ID);//unlisted
+        weaponSetHash.add(AtroposSeveredPath.ID);
+        weaponSetHash.add(AtroposSeveredPain.ID);
+        weaponSetHash.add(AtroposSeveredSoul.ID);
 
-        weaponSetHash.add("theWeaponMaster:LeviathanCrush");
-        weaponSetHash.add("theWeaponMaster:LeviathanEject");
-        weaponSetHash.add("theWeaponMaster:LeviathanReload");//unlisted
-        weaponSetHash.add("theWeaponMaster:LeviathanGroundSplitter");
-        weaponSetHash.add("theWeaponMaster:LeviathanDeepImpact");
-        weaponSetHash.add("theWeaponMaster:LeviathanEarthquake");
+        weaponSetHash.add(LeviathanCrush.ID);
+        weaponSetHash.add(LeviathanEject.ID);
+        weaponSetHash.add(LeviathanReload.ID);
+        weaponSetHash.add(LeviathanGroundSplitter.ID);
+        weaponSetHash.add(LeviathanDeepImpact.ID);
+        weaponSetHash.add(LeviathanEarthquake.ID);
     }
 
     public ImprovedWeaponCardRemovalAction() {

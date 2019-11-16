@@ -52,8 +52,8 @@
   },
   "theWeaponMaster:FenrirLacerate": {
     "NAME": "Lacerate",
-    "DESCRIPTION": "Fenrir NL Deal !D! damage. Apply !M! Lacerate. NL Evolve: Hit enemies with Hemorrhage or 3+ Lacerate.",
-    "UPGRADE_DESCRIPTION": "Fenrir NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 10% bonus damage per Lacerate stack. NL Evolve: Attack enemy with Hemorrhage."
+    "DESCRIPTION": "Fenrir NL Deal !D! damage. Apply !M! Lacerate. NL Evolve: Hit enemies with 3+ Lacerate.",
+    "UPGRADE_DESCRIPTION": "Fenrir NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 10% bonus damage per Lacerate stack. NL Evolve: Attack enemy with 3+ Lacerate."
   },
   "theWeaponMaster:FenrirShieldEater": {
     "NAME": "Shield Eater",
@@ -69,8 +69,7 @@
   },
   "theWeaponMaster:FenrirUnleashed": {
     "NAME": "Fenrir Unleashed",
-    "DESCRIPTION": "Fenrir NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Kill an opponent.",
-    "UPGRADE_DESCRIPTION": "Fenrir NL Deal !D! damage to all enemies, one after another. Overkill. NL Evolve: Every time you kill an opponent."
+    "DESCRIPTION": "Fenrir NL Deal !D! damage to the weakest enemy. Overkill damage is added to the next attack. NL Unstoppable, Evolve: Kill an opponent."
   },
 
   "theWeaponMaster:CerberusSlash": {
@@ -122,7 +121,7 @@
   },
   "theWeaponMaster:LeviathanDeepImpact": {
     "NAME": "Deep Impact",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Deal !D! damage to the first enemy. Continue: Enemy Block. NL Deal !M! bonus damage and attack the enemy behind it."
+    "DESCRIPTION": "Leviathan_Gauntlet NL Deal !D! damage to the first enemy. NL Unstoppable: Enemy Block. NL Deal !M! bonus damage and attack the enemy behind it."
   },
   "theWeaponMaster:LeviathanEarthquake": {
     "NAME": "Earthquake",
@@ -149,7 +148,7 @@
   },
   "theWeaponMaster:RevenantBloodbath": {
     "NAME": "Bloodbath",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage to a random enemy. Continue: 5+ Vicious."
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage to a random enemy. NL Unstoppable: 5+ Vicious. Attack again, lose 5 Vicious."
   },
 
 
