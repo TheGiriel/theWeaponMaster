@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.GiveWeaponsAction;
 import theWeaponMaster.actions.ManaBurnAction;
-import theWeaponMaster.powers.ManaBurnPower;
 import theWeaponMaster.relics.ManaWhetstoneRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -60,22 +59,17 @@ public class AtroposSeveredScissors extends AbstractDynamicCard {
         return AbstractDungeon.player.hasRelic(ManaWhetstoneRelic.ID);
     }
 
+
     //TODO: Improve Code
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         if (upgraded) {
-            if (m.hasPower(ManaBurnPower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
-                new ManaBurnAction(m, p, m.getPower(ManaBurnPower.POWER_ID).amount);
-            }
+            ManaBurnAction.ignite(m, p);
         }
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        if (m.hasPower(ManaBurnPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
-            new ManaBurnAction(m, p, m.getPower(ManaBurnPower.POWER_ID).amount);
-        }
+        ManaBurnAction.ignite(m, p);
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
         AbstractDungeon.player.masterDeck.removeCard(this.cardID);
         AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction("Scissor Half"));

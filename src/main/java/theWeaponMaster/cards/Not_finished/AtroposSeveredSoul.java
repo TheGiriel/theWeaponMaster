@@ -2,6 +2,7 @@ package theWeaponMaster.cards.Not_finished;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
@@ -39,6 +40,12 @@ public class AtroposSeveredSoul extends AbstractDynamicCard {
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
+    }
+
+
+    @Override
+    public boolean cardPlayable(AbstractMonster m) {
+        return AbstractDungeon.actionManager.cardsPlayedThisTurn.size() == 0;
     }
 
     @Override

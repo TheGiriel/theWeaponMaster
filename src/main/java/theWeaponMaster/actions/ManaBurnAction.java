@@ -2,6 +2,8 @@ package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -51,5 +53,12 @@ public class ManaBurnAction extends AbstractGameAction {
             }
         }
         isDone = true;
+    }
+
+    public static void ignite(AbstractMonster m, AbstractPlayer p) {
+        if (m.hasPower(ManaBurnPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
+            new ManaBurnAction(m, p, m.getPower(ManaBurnPower.POWER_ID).amount);
+        }
     }
 }

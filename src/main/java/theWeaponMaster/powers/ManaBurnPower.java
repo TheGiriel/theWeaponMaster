@@ -38,6 +38,7 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
         this.owner = owner;
         this.amount = manaBurn;
         this.source = source;
+        igniteDamage = amount;
 
         this.region128 = new TextureAtlas.AtlasRegion(manaburn_84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(manaburn_32, 0, 0, 32, 32);
@@ -52,17 +53,17 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
     }
 
     public static int IgniteDamage() {
-        return (int) Math.ceil(m.currentHealth * 0.03D * igniteDamage);
+        return (int) Math.ceil(m.currentHealth * IGNITE * igniteDamage);
     }
 
     private void updateDamage() {
-        this.manaBurnIntensity = (int) Math.ceil(this.owner.maxHealth * 0.03D * this.amount);
+        this.manaBurnIntensity = (int) Math.ceil(this.owner.maxHealth * IGNITE * this.amount);
         getHealthBarAmount();
         updateDescription();
     }
 
     private int manaBurnDamage() {
-        return (int) Math.ceil(this.owner.maxHealth * 0.03D * this.amount);
+        return (int) Math.ceil(this.owner.maxHealth * IGNITE * this.amount);
     }
 
     public void updateDescription() {
