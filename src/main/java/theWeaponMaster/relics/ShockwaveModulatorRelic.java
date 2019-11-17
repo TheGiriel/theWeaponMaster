@@ -3,7 +3,7 @@ package theWeaponMaster.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.LeviathanCrush;
 import theWeaponMaster.cards.LeviathanDeepImpact;
 import theWeaponMaster.cards.LeviathanEarthquake;
@@ -13,11 +13,11 @@ import theWeaponMaster.util.TextureLoader;
 
 import java.util.HashSet;
 
-import static theWeaponMaster.DefaultMod.*;
+import static theWeaponMaster.TheWeaponMaster.*;
 
 public class ShockwaveModulatorRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID(ShockwaveModulatorRelic.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(ShockwaveModulatorRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("shockwave_modulator_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("shockwave_modulator_relic.png"));

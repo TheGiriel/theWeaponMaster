@@ -3,7 +3,7 @@ package theWeaponMaster.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.CerberusIaiSlash;
 import theWeaponMaster.cards.CerberusSlash;
 import theWeaponMaster.cards.Not_finished.CerberusDrainSlash;
@@ -13,12 +13,12 @@ import theWeaponMaster.util.TextureLoader;
 
 import java.util.HashSet;
 
-import static theWeaponMaster.DefaultMod.makeRelicOutlinePath;
-import static theWeaponMaster.DefaultMod.makeRelicPath;
+import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
+import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
 
 public class HellhoundOilRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID(HellhoundOilRelic.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(HellhoundOilRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("hellhound_oil_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("hellhound_oil_relic.png"));

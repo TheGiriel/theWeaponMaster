@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="HierophantMod">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/decompiled/HierophantMod.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -21,24 +21,22 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theWeaponMaster.DefaultMod;
 import theWeaponMaster.cards.*;
-import theWeaponMaster.cards.Not_finished.CerberusDrainSlash;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.RevolverRelic;
 
 import java.util.ArrayList;
 
-import static theWeaponMaster.DefaultMod.*;
+import static theWeaponMaster.TheWeaponMaster.*;
 import static theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
 //Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
-//All text (starting description and loadout, anything labeled TEXT[]) can be found in DefaultMod-character-Strings.json in the resources
+//All text (starting description and loadout, anything labeled TEXT[]) can be found in TheWeaponMaster-character-Strings.json in the resources
 
 public class TheWeaponMaster extends CustomPlayer {
-    public static final Logger logger = LogManager.getLogger(DefaultMod.class.getName());
+    public static final Logger logger = LogManager.getLogger(theWeaponMaster.TheWeaponMaster.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
     // These are enums for your Characters color (both general color and for the card library) as well as
@@ -47,13 +45,44 @@ public class TheWeaponMaster extends CustomPlayer {
     // in the basegame (for fun and education) Ctrl+click on the PlayerClass, CardColor and/or LibraryType below and go down the
     // Ctrl+click rabbit hole
 
-    public static class Enums {
-        @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_DEFAULT;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
-        public static AbstractCard.CardColor COLOR_GRAY;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
-        public static CardLibrary.LibraryType LIBRARY_COLOR;
+    public TheWeaponMaster(String name, PlayerClass setClass) {
+        super(name, setClass, orbTextures,
+                "theWeaponMasterResources/images/char/defaultCharacter/orb/vfx.png", null,
+                new SpriterAnimation(
+                        "theWeaponMasterResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+
+
+        // =============== TEXTURES, ENERGY, LOADOUT =================
+
+        initializeClass(null, // required call to load textures and setup energy/loadout.
+                // I left these in TheWeaponMaster.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
+                THE_WEAPON_MASTER_SHOULDER_1, // campfire pose
+                THE_WEAPON_MASTER_SHOULDER_2, // another campfire pose
+                THE_WEAPON_MASTER_CORPSE, // dead corpse
+                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
+
+        // =============== /TEXTURES, ENERGY, LOADOUT/ =================
+
+
+        // =============== ANIMATIONS =================
+
+        loadAnimation(
+                THE_WEAPON_MASTER_SKELETON_ATLAS,
+                THE_WEAPON_MASTER_SKELETON_JSON,
+                1.0f);
+        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
+
+        // =============== /ANIMATIONS/ =================
+
+
+        // =============== TEXT BUBBLE LOCATION =================
+
+        dialogX = (drawX + 0.0F * Settings.scale); // set location for text bubbles
+        dialogY = (drawY + 220.0F * Settings.scale); // you can just copy these values
+
+        // =============== /TEXT BUBBLE LOCATION/ =================
+
     }
 
     // =============== CHARACTER ENUMERATORS  =================
@@ -100,44 +129,35 @@ public class TheWeaponMaster extends CustomPlayer {
 
     // =============== CHARACTER CLASS START =================
 
-    public TheWeaponMaster(String name, PlayerClass setClass) {
-        super(name, setClass, orbTextures,
-                "theWeaponMasterResources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpriterAnimation(
-                        "theWeaponMasterResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+    // Starting Deck
+    @Override
+    public ArrayList<String> getStartingDeck() {
+        ArrayList<String> retVal = new ArrayList<>();
 
+        logger.info("Begin loading starter Deck Strings");
 
-        // =============== TEXTURES, ENERGY, LOADOUT =================  
-
-        initializeClass(null, // required call to load textures and setup energy/loadout.
-                // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
-                THE_DEFAULT_SHOULDER_1, // campfire pose
-                THE_DEFAULT_SHOULDER_2, // another campfire pose
-                THE_DEFAULT_CORPSE, // dead corpse
-                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
-
-        // =============== /TEXTURES, ENERGY, LOADOUT/ =================
-
-
-        // =============== ANIMATIONS =================  
-
-        loadAnimation(
-                THE_DEFAULT_SKELETON_ATLAS,
-                THE_DEFAULT_SKELETON_JSON,
-                1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
-        e.setTime(e.getEndTime() * MathUtils.random());
-
-        // =============== /ANIMATIONS/ =================
-
-
-        // =============== TEXT BUBBLE LOCATION =================
-
-        dialogX = (drawX + 0.0F * Settings.scale); // set location for text bubbles
-        dialogY = (drawY + 220.0F * Settings.scale); // you can just copy these values
-
-        // =============== /TEXT BUBBLE LOCATION/ =================
-
+        retVal.add(BullyMeanToEveryone.ID);
+        retVal.add(BullyHuh.ID);
+        retVal.add(BullyIntimidate.ID);
+        retVal.add(BullyShakedown.ID);
+        retVal.add(BullySlap.ID);
+        retVal.add(BullyTerrifyingHowl.ID);
+        //retVal.add(LeviathanEarthquake.ID);
+        //retVal.add(RevenantRavenous.ID);
+        //retVal.add(RevenantHungrySteel.ID);
+        retVal.add(RevolverLowRecoil.ID);
+        //retVal.add(RevolverStandard.ID);
+        //retVal.add(RevolverDouble.ID);
+        //retVal.add(RevolverLowRecoil.ID);
+        //retVal.add(CerberusDrainSlash.ID);
+        //retVal.add(CerberusSlash.ID);
+        retVal.add(FenrirLacerate.ID);
+        retVal.add(FenrirShieldEater.ID);
+        retVal.add(FenrirHeavySwing.ID);
+        retVal.add(FenrirUnleashed.ID);
+        retVal.add(FenrirDefensiveStance.ID);
+        //retVal.add(AtroposSeveredPain.ID);
+        return retVal;
     }
 
     // =============== /CHARACTER CLASS END/ =================
@@ -150,34 +170,10 @@ public class TheWeaponMaster extends CustomPlayer {
                 getStartingDeck(), false);
     }
 
-    // Starting Deck
+    // Should return a color object to be used to color the trail of moving cards
     @Override
-    public ArrayList<String> getStartingDeck() {
-        ArrayList<String> retVal = new ArrayList<>();
-
-        logger.info("Begin loading starter Deck Strings");
-
-        //retVal.add(BullyMeanToEveryone.ID);
-        //retVal.add(BullyHuh.ID);
-        //retVal.add(BullyIntimidate.ID);
-        //retVal.add(BullyShakedown.ID);
-        //retVal.add(BullySlap.ID);
-        //retVal.add(LeviathanEarthquake.ID);
-        //retVal.add(RevenantRavenous.ID);
-        //retVal.add(RevenantHungrySteel.ID);
-        retVal.add(RevolverLowRecoil.ID);
-        retVal.add(RevolverStandard.ID);
-        retVal.add(RevolverDouble.ID);
-        retVal.add(RevolverLowRecoil.ID);
-        retVal.add(CerberusDrainSlash.ID);
-        retVal.add(CerberusSlash.ID);
-        //retVal.add(FenrirLacerate.ID);
-        //retVal.add(FenrirShieldEater.ID);
-        //retVal.add(FenrirHeavySwing.ID);
-        //retVal.add(FenrirUnleashed.ID);
-        //retVal.add(FenrirDefensiveStance.ID);
-        //retVal.add(AtroposSeveredPain.ID);
-        return retVal;
+    public Color getCardTrailColor() {
+        return theWeaponMaster.TheWeaponMaster.DEFAULT_GRAY;
     }
 
     // Starting Relics	
@@ -228,10 +224,10 @@ public class TheWeaponMaster extends CustomPlayer {
         return COLOR_GRAY;
     }
 
-    // Should return a color object to be used to color the trail of moving cards
+    // Should return a Color object to be used to color the miniature card images in run history.
     @Override
-    public Color getCardTrailColor() {
-        return theWeaponMaster.DefaultMod.DEFAULT_GRAY;
+    public Color getCardRenderColor() {
+        return theWeaponMaster.TheWeaponMaster.DEFAULT_GRAY;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -265,17 +261,21 @@ public class TheWeaponMaster extends CustomPlayer {
         return new TheWeaponMaster(name, chosenClass);
     }
 
-    // Should return a Color object to be used to color the miniature card images in run history.
-    @Override
-    public Color getCardRenderColor() {
-        return theWeaponMaster.DefaultMod.DEFAULT_GRAY;
-    }
-
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return theWeaponMaster.DefaultMod.DEFAULT_GRAY;
+        return theWeaponMaster.TheWeaponMaster.DEFAULT_GRAY;
+    }
+
+    public static class Enums {
+        @SpireEnum
+        public static AbstractPlayer.PlayerClass THE_WEAPON_MASTER;
+        @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
+        public static AbstractCard.CardColor COLOR_GRAY;
+        @SpireEnum(name = "DEFAULT_GRAY_COLOR")
+        @SuppressWarnings("unused")
+        public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

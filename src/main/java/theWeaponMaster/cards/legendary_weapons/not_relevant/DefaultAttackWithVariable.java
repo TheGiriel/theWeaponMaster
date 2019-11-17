@@ -9,11 +9,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.AbstractDynamicCard;
-import theWeaponMaster.characters.TheWeaponMaster;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class DefaultAttackWithVariable extends AbstractDynamicCard {
 
@@ -25,7 +24,7 @@ public class DefaultAttackWithVariable extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(DefaultAttackWithVariable.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(DefaultAttackWithVariable.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
@@ -39,7 +38,7 @@ public class DefaultAttackWithVariable extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int DAMAGE = 7;

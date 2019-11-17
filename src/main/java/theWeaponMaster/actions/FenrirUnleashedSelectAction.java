@@ -15,12 +15,12 @@ public class FenrirUnleashedSelectAction extends AbstractGameAction {
     public FenrirUnleashedSelectAction() {
         targetList.addAll(AbstractDungeon.getMonsters().monsters);
         /*for (AbstractMonster m : targetList) {
-            DefaultMod.logger.info(m.toString() + " <- monster, monster hp -> " + m.currentHealth);
+            TheWeaponMaster.logger.info(m.toString() + " <- monster, monster hp -> " + m.currentHealth);
         }*/
         Collections.sort(targetList, new MonsterHPComparator());
         /*
         for (AbstractMonster m : targetList) {
-            DefaultMod.logger.info("Sorted list:"  + m.toString() + " <- monster, monster hp -> " + m.currentHealth);
+            TheWeaponMaster.logger.info("Sorted list:"  + m.toString() + " <- monster, monster hp -> " + m.currentHealth);
         }*/
     }
 

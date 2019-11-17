@@ -7,15 +7,15 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
-import static theWeaponMaster.DefaultMod.makePowerPath;
+import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 public class ViciousPower extends TwoAmountPower {
 
-    public static final String POWER_ID = DefaultMod.makeID(ViciousPower.class.getSimpleName());
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ViciousPower");
+    public static final String POWER_ID = TheWeaponMaster.makeID(ViciousPower.class.getSimpleName());
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ViciousPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
     private static final int TIER_TWO = 3;
@@ -121,7 +121,7 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        DefaultMod.logger.info("taking extra damage.");
+        TheWeaponMaster.logger.info("taking extra damage.");
         return damage + amount2;
     }
 }

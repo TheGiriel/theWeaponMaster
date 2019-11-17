@@ -1,0 +1,19 @@
+{
+  "theWeaponMaster:DefaultOrb": {
+    "NAME": "Default Orb",
+    "DESCRIPTION": [
+      "#yPassive: At the start of your turn, draw #b",
+      " card.",
+      " cards.",
+      "NL #yEvoke: Deal #b damage to all enemies."
+    ]
+  },
+  "theWeaponMaster:InkOrb": {
+    "NAME": "Ink Orb",
+    "DESCRIPTION": [
+      "[#5035c6]Passive: Block up to [#5035c6]",
+      " damage when you are attacked. NL [#5035c6]Evoke: Deal [#5035c6]",
+      " damage to last attacked enemy (not implemented)."
+    ]
+  }
+}

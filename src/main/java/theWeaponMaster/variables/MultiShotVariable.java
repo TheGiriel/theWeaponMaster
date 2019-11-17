@@ -3,7 +3,7 @@ package theWeaponMaster.variables;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-import static theWeaponMaster.DefaultMod.makeID;
+import static theWeaponMaster.TheWeaponMaster.makeID;
 
 public class MultiShotVariable extends DynamicVariable
 {   // Custom Dynamic Variables are what you do if you need your card text to display a cool, changing number that the base game doesn't provide.

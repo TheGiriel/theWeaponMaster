@@ -2,22 +2,22 @@ package theWeaponMaster.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.AtroposSeveredPain;
+import theWeaponMaster.cards.AtroposSeveredPath;
 import theWeaponMaster.cards.AtroposSeveredScissors;
 import theWeaponMaster.cards.AtroposSeveredSource;
-import theWeaponMaster.cards.Not_finished.AtroposSeveredPath;
 import theWeaponMaster.cards.Not_finished.AtroposSeveredSoul;
 import theWeaponMaster.util.TextureLoader;
 
 import java.util.HashSet;
 
-import static theWeaponMaster.DefaultMod.makeRelicOutlinePath;
-import static theWeaponMaster.DefaultMod.makeRelicPath;
+import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
+import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
 
 public class ManaWhetstoneRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID(ManaWhetstoneRelic.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(ManaWhetstoneRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("mana_whetstone_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("mana_whetstone_relic.png"));

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.util.TextureLoader;
 
-import static theWeaponMaster.DefaultMod.makePowerPath;
+import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 public class SeveredPainDelayedPower extends AbstractPower {
 
@@ -21,16 +21,16 @@ public class SeveredPainDelayedPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("SeveredPainDelayedPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
-    private int blowback;
-    private int turns = 1;
+    int turns;
+    private int delayed;
 
-    SeveredPainDelayedPower(final AbstractCreature owner, int damage) {
+    SeveredPainDelayedPower(final AbstractCreature owner, int amount, int turns) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        blowback = damage;
+        delayed = this.amount = amount;
 
-        type = AbstractPower.PowerType.BUFF;
+        type = AbstractPower.PowerType.DEBUFF;
         isTurnBased = false;
 
         Texture tex32 = TextureLoader.getTexture(makePowerPath("severed_pain_placeholder_32.png"));
@@ -41,20 +41,16 @@ public class SeveredPainDelayedPower extends AbstractPower {
 
         updateDescription();
     }
-    public void atStartOfTurn(){
-        turns--;
-    }
 
     public void updateDescription(){
-        description = DESCRIPTION[0] + blowback + DESCRIPTION[1];
+        description = DESCRIPTION[0] + amount + DESCRIPTION[1];
     }
 
     @Override
-    public void atEndOfRound() {
-        if (turns<= 0) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, blowback)));
+    public void atEndOfTurn(boolean isPlayer) {
+        if (turns <= 1) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, delayed)));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
         }
-        turns--;
     }
 }

@@ -18,5 +18,12 @@ public class WeaponMasterTags extends BaseModCardTags {
     public static AbstractCard.CardTags ATROPOS;
     @SpireEnum
     public static AbstractCard.CardTags LEVIATHAN;
+    @SpireEnum
+    public static AbstractCard.CardTags INTIMIDATE;
+    @SpireEnum
+    public static AbstractCard.CardTags TAUNT;
+    @SpireEnum
+    public static AbstractCard.CardTags IGNITE;
+
 
 }

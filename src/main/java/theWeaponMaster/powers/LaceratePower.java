@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.LacerateAction;
 import theWeaponMaster.util.TextureLoader;
 
@@ -19,14 +19,14 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LaceratePower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
-    public static final String POWER_ID = DefaultMod.makeID(LaceratePower.class.getSimpleName());
-    public static final Texture lacerate_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Lacerate_placeholder_84.png"));
-    public static final Texture lacerate_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Lacerate_placeholder_32.png"));
-    public static final Texture hemorrhage_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Hemorrhage_placeholder_84.png"));
+    public static final String POWER_ID = TheWeaponMaster.makeID(LaceratePower.class.getSimpleName());
+    public static final Texture lacerate_84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Lacerate_placeholder_84.png"));
+    public static final Texture lacerate_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Lacerate_placeholder_32.png"));
+    public static final Texture hemorrhage_84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Hemorrhage_placeholder_84.png"));
 
     private AbstractCreature source;
     private int bleedDamage;
-    private static final Texture hemorrhage_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Hemorrhage_placeholder_32.png"));
+    private static final Texture hemorrhage_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Hemorrhage_placeholder_32.png"));
 
     public LaceratePower(AbstractCreature owner, AbstractCreature source, int bleedStack) {
         this.name = NAME;

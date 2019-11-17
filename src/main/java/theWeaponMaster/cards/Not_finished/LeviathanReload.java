@@ -1,23 +1,21 @@
 package theWeaponMaster.cards.Not_finished;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.GiveWeaponsAction;
 import theWeaponMaster.cards.AbstractDynamicCard;
-import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.relics.ArsenalRelic;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class LeviathanReload extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(LeviathanReload.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(LeviathanReload.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -26,7 +24,7 @@ public class LeviathanReload extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int BLOCK = 8;

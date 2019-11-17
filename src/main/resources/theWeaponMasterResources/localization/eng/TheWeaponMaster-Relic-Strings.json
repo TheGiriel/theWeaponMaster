@@ -1,0 +1,88 @@
+{
+  "theWeaponMaster:PlaceholderRelic": {
+    "NAME": "Placeholder Energy Relic",
+    "FLAVOR": "The snake is a friend.",
+    "DESCRIPTIONS": [
+      "Gain #b1 [E] ."
+    ]
+  },
+  "theWeaponMaster:PlaceholderRelic2": {
+    "NAME": "Placeholder Relic 2",
+    "FLAVOR": "You feel stronger.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b1 #yStrength."
+    ]
+  },
+  "theWeaponMaster:DefaultClickableRelic": {
+    "NAME": "Right-Clicky Relic",
+    "FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
+    "DESCRIPTIONS": [
+      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
+      "YOU ARE MINE!"
+    ]
+  },
+  "theWeaponMaster:BottledPlaceholderRelic": {
+    "NAME": "Bottled Placeholder",
+    "FLAVOR": "What is this?",
+    "DESCRIPTIONS": [
+      "Choose a card. Whenever you take play any card, draw the chosen card.",
+      "Whenever you play a card, draw ",
+      ".",
+      "Select a card to bottle for "
+    ]
+  },
+  "theWeaponMaster:ArsenalRelic": {
+    "NAME": "The Arsenal",
+    "FLAVOR": "I might just have the right tool for the job.",
+    "DESCRIPTIONS": [
+      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck. NL Current Weapon: "
+    ]
+  },
+  "theWeaponMaster:RevolverRelic": {
+    "NAME": "The Revolver",
+    "FLAVOR": "Your trusty six-shooter.",
+    "DESCRIPTIONS": [
+      "Expend one shot every time you use a Revolver card."
+    ]
+  },
+  "theWeaponMaster:SplinteringSteelRelic": {
+    "NAME": "Splintering Steel",
+    "FLAVOR": "The best offense is a layer of sharp steel shards.",
+    "DESCRIPTIONS": [
+      "Upgrades Fenrir cards upon switching weapons.",
+      "dadadada"
+    ]
+  },
+  "theWeaponMaster:ManaWhetstoneRelic": {
+    "NAME": "Mana Whetstone",
+    "FLAVOR": "To keep those ethereal edges extra sharp.",
+    "DESCRIPTIONS": [
+      "Upgrades Atropos cards upon switching weapons.",
+      ""
+    ]
+  },
+  "theWeaponMaster:GhoulskinSheathRelic": {
+    "NAME": "Ghoulskin Sheath",
+    "FLAVOR": "Makes transporting the cleaver much more safe.",
+    "DESCRIPTIONS": [
+      "Upgrades Revenant cards upon switching weapons.",
+      ""
+    ]
+  },
+  "theWeaponMaster:HellhoundOilRelic": {
+    "NAME": "Hellhound Oil(tm)",
+    "FLAVOR": "The very best in keeping your favorite edge sharp for only 24.99 for a can!",
+    "DESCRIPTIONS": [
+      "Upgrades Cerberus cards upon switching weapons.",
+      ""
+    ]
+  },
+  "theWeaponMaster:ShockwaveModulatorRelic": {
+    "NAME": "Shockwave Modulator",
+    "FLAVOR": "What do you mean \"this has been underclocked all along\"?",
+    "DESCRIPTIONS": [
+      "Upgrades Leviathan cards upon switching weapons.",
+      ""
+    ]
+  }
+}

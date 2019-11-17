@@ -3,18 +3,18 @@ package theWeaponMaster.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.util.TextureLoader;
 
 import java.util.HashSet;
 
-import static theWeaponMaster.DefaultMod.makeRelicOutlinePath;
-import static theWeaponMaster.DefaultMod.makeRelicPath;
+import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
+import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
 
 public class GhoulskinSheathRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID(GhoulskinSheathRelic.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(GhoulskinSheathRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghoul_skin_sheath_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghoul_skin_sheath_relic.png"));

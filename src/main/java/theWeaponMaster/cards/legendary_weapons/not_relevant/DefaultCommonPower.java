@@ -6,16 +6,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.AbstractDynamicCard;
-import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.powers.ViciousPower;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class DefaultCommonPower extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(DefaultCommonPower.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(DefaultCommonPower.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -27,7 +26,7 @@ public class DefaultCommonPower extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int MAGIC = 1;

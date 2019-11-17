@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="TheAnimator">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/decompiled/TheAnimator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/decompiled/Agrypnos.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

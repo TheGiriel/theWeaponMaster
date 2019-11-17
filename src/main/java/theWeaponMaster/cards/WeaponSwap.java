@@ -5,17 +5,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theWeaponMaster.DefaultMod;
-import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.OctopusAction;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class WeaponSwap extends AbstractDynamicCard{
 
     public static AbstractPlayer player;
 
-    public static final String ID = DefaultMod.makeID(WeaponSwap.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(WeaponSwap.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -26,7 +25,7 @@ public class WeaponSwap extends AbstractDynamicCard{
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 0;
 

@@ -3,7 +3,7 @@ package theWeaponMaster.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.*;
 
 import java.util.HashSet;
@@ -21,13 +21,13 @@ public class FenrirEvolveAction extends AbstractGameAction {
                 c.baseMagicNumber++;
             } else {
                 if (c.cardID.equals(FenrirUnleashed.ID)) {
-                    DefaultMod.logger.info("Base Damage before Evolve: " + c.baseDamage);
+                    TheWeaponMaster.logger.info("Base Damage before Evolve: " + c.baseDamage);
                 }
                 c.baseDamage++;
             }
             c.applyPowers();
             if (c.cardID.equals(FenrirUnleashed.ID)) {
-                DefaultMod.logger.info("Base Damage after Evolve: " + c.baseDamage);
+                TheWeaponMaster.logger.info("Base Damage after Evolve: " + c.baseDamage);
             }
         }
         this.isDone = true;

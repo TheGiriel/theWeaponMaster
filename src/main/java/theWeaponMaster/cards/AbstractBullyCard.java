@@ -1,5 +1,9 @@
 package theWeaponMaster.cards;
 
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.HashSet;
+
 public abstract class AbstractBullyCard extends AbstractDynamicCard {
 
 
@@ -7,6 +11,7 @@ public abstract class AbstractBullyCard extends AbstractDynamicCard {
     public int baseBullyNumber;
     public boolean upgradedBullyNumber;
     public boolean isBullyModified;
+    private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
 
     public AbstractBullyCard(String id,
                              String img,
@@ -27,10 +32,10 @@ public abstract class AbstractBullyCard extends AbstractDynamicCard {
         }
     }
 
-    public void reduceBullyCost(int amount) {
-        bullyNumber -= amount;
+    public void increaseVicious(int amount) {
+        bullyNumber += amount;
         bullyNumber = baseBullyNumber;
-        upgradedBullyNumber = true;
+        this.upgradedBullyNumber = true;
     }
 
 }

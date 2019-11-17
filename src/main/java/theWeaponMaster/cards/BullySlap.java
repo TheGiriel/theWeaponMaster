@@ -11,14 +11,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
-import theWeaponMaster.DefaultMod;
-import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.powers.ViciousPower;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class BullySlap extends AbstractBullyCard {
 
-    public static final String ID = DefaultMod.makeID(BullySlap.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(BullySlap.class.getSimpleName());
     public static final String IMG = makeCardPath("bullyslap.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
@@ -26,7 +26,7 @@ public class BullySlap extends AbstractBullyCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;
@@ -51,7 +51,7 @@ public class BullySlap extends AbstractBullyCard {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FrailPower(m, magicNumber, false), magicNumber));
-        p.getPower("ViciousPower").amount -= bullyNumber;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
     }
 
 

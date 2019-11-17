@@ -2,10 +2,8 @@ package theWeaponMaster.variables;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static theWeaponMaster.DefaultMod.makeID;
+import static theWeaponMaster.TheWeaponMaster.makeID;
 
 public class shieldBuster extends DynamicVariable {
     @Override

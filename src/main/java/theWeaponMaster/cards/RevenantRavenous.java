@@ -10,16 +10,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theWeaponMaster.DefaultMod;
-import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.GhoulskinSheathRelic;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class RevenantRavenous extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(RevenantRavenous.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(RevenantRavenous.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -29,7 +28,7 @@ public class RevenantRavenous extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;
@@ -59,22 +58,22 @@ public class RevenantRavenous extends AbstractDynamicCard {
     //TODO: Improve method
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        DefaultMod.logger.info("calculating heal amount.");
+        TheWeaponMaster.logger.info("calculating heal amount.");
         dmgDEALT = (damage-m.currentBlock)/2;
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        DefaultMod.logger.info("dealing damage.");
+        TheWeaponMaster.logger.info("dealing damage.");
         AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, dmgDEALT));
-        DefaultMod.logger.info("healing: " + dmgDEALT);
+        TheWeaponMaster.logger.info("healing: " + dmgDEALT);
         dmgDEALT = 0;
 
-        DefaultMod.logger.info("Gain Vicious - Ravenous Strikes.");
+        TheWeaponMaster.logger.info("Gain Vicious - Ravenous Strikes.");
 
-        DefaultMod.logger.info("Gained Vicious - Ravenous Strikes.");
+        TheWeaponMaster.logger.info("Gained Vicious - Ravenous Strikes.");
 
         AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, 15)));
         this.magicNumber++;
-        DefaultMod.logger.info("updating magic number");
+        TheWeaponMaster.logger.info("updating magic number");
     }
 
 }

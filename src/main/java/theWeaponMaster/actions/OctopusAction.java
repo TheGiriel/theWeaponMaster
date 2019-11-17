@@ -8,14 +8,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theWeaponMaster.DefaultMod;
-import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.patches.CenterGridCardSelectScreen;
 import theWeaponMaster.relics.ArsenalRelic;
 
 import java.util.ArrayList;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class OctopusAction extends AbstractGameAction {
     private boolean pickCard = false;
@@ -94,14 +93,14 @@ public class OctopusAction extends AbstractGameAction {
         private String baseID;
 
         ShiftingChoiceCard(String id, String name, String IMG, String description, CardType type) {
-            super(makeID(id), name, IMG, COST, description, type, TheWeaponMaster.Enums.COLOR_GRAY, CardRarity.SPECIAL, CardTarget.SELF);
+            super(makeID(id), name, IMG, COST, description, type, theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY, CardRarity.SPECIAL, CardTarget.SELF);
 
             baseID = id;
 
         }
 
         private static String makeID(String id) {
-            return DefaultMod.makeID("Legendary Weapon: " + id);
+            return TheWeaponMaster.makeID("Legendary Weapon: " + id);
         }
 
 

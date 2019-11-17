@@ -12,14 +12,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
-import static theWeaponMaster.DefaultMod.makeOrbPath;
+import static theWeaponMaster.TheWeaponMaster.makeOrbPath;
 
 public class InkOrb extends AbstractOrb {
 
-    private static final String ORB_ID = DefaultMod.makeID(InkOrb.class.getSimpleName());
+    private static final String ORB_ID = TheWeaponMaster.makeID(InkOrb.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     private static final String[] DESC = orbString.DESCRIPTION;
 

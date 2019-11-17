@@ -10,20 +10,20 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.util.TextureLoader;
 
 public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower {
-    public static final String POWER_ID = DefaultMod.makeID(ManaBurnPower.class.getSimpleName());
+    public static final String POWER_ID = TheWeaponMaster.makeID(ManaBurnPower.class.getSimpleName());
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("ManaBurnPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
-    public static final Texture manaburn_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("Mana_Burn_placeholder_84.png"));
-    public static final Texture manaburn_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("Mana_Burn_placeholder_32.png"));
-    public static final Texture manablaze_84 = TextureLoader.getTexture(DefaultMod.makePowerPath("manablaze_placeholder_84.png"));
-    public static final Texture manablaze_32 = TextureLoader.getTexture(DefaultMod.makePowerPath("manablaze_placeholder_32.png"));
+    public static final Texture manaburn_84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Mana_Burn_placeholder_84.png"));
+    public static final Texture manaburn_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Mana_Burn_placeholder_32.png"));
+    public static final Texture manablaze_84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("manablaze_placeholder_84.png"));
+    public static final Texture manablaze_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("manablaze_placeholder_32.png"));
 
     private AbstractCreature source;
     private int manaBurnIntensity;
@@ -35,7 +35,6 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
         this.name = NAME;
         this.ID = POWER_ID;
         m = owner;
-        igniteDamage = manaBurn;
         this.owner = owner;
         this.amount = manaBurn;
         this.source = source;
@@ -109,6 +108,6 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount, 0.03));
+        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount));
     }
 }

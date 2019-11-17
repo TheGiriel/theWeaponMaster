@@ -1,0 +1,119 @@
+{
+  "CommonPower": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied #b",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "RarePower": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "At the start of your turn, TOUCH #b",
+      " enemy.",
+      " enemies."
+    ]
+  },
+  "ViciousPower": {
+    "NAME": "Vicious",
+    "DESCRIPTIONS": [
+      "Deal #r",
+      " and take #r",
+      " more damage.",
+      " more damage. NL [#8b0000]Special [#8b0000]Attacks [#8b0000]are [#8b0000]available [#8b0000]to [#8b0000]you."
+    ]
+  },
+  "EgoPower": {
+    "NAME": "[#ffc200]Ego: ",
+    "DESCRIPTIONS": [
+      "afgadggh"
+    ]
+  },
+  "ManaBurnPower": {
+    "NAME": "Mana Burn",
+    "DESCRIPTIONS": [
+      "[#3abfbe]Mana [#3abfbe]Burn deals [#3abfbe](",
+      ") HP damage to enemies with Strategic intent. NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
+      " NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."
+    ]
+  },
+  "LaceratePower": {
+    "NAME": "Lacerated",
+    "DESCRIPTIONS": [
+      "This creature loses ",
+      "% Max HP #r(",
+      ") every turn. NL [#990055]Lacerate Stacks: #r",
+      ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks.",
+      "Creatures affected by [#990000]Lacerate lose 2-6% Max HP every turn."
+    ]
+  },
+  "NoseToTailPower": {
+    "NAME": "Nose To Tail",
+    "DESCRIPTIONS": [
+      "Gain 1 Temporary HP for every [#e3dac9]",
+      " damage you deal. NL Heal for one third of the gained Temporary HP [#e3dac9](",
+      ") instead when you kill the target before the end of the turn."
+    ]
+  },
+  "StaggerPower": {
+    "NAME": "Staggered",
+    "DESCRIPTIONS": [
+      "Staggered creatures deal ",
+      "% less damage and have their block reduced by ",
+      "%"
+    ]
+  },
+  "SeveredPainPower": {
+    "NAME": "Severed Pain",
+    "DESCRIPTIONS": [
+      "Delay half of the damage you take to next turn.",
+      "Delay one third of the damage you take to next turn. The remaining third is dealt to all enemies instead."
+    ]
+  },
+  "SeveredPathPower": {
+    "NAME": "Severed Path",
+    "DESCRIPTIONS": [
+      "This enemy attacks a random opponent instead this turn."
+    ]
+  },
+  "SeveredPainDelayedPower": {
+    "NAME": "Delayed Pain",
+    "DESCRIPTIONS": [
+      "Take ", " damage this turn."
+    ]
+  },
+  "IntimidatePower": {
+    "NAME": "Intimidated",
+    "DESCRIPTIONS": [
+      "Intimidated Creatures defend, gaining ",
+      " Block."
+    ]
+  },
+  "TauntPower": {
+    "NAME": "Taunted",
+    "DESCRIPTIONS": [
+      "Taunted creatures are forced to attack and deal base damage equal to 10% of your max HP."
+    ]
+  },
+  "HungeringPower": {
+    "NAME": "Hungering",
+    "DESCRIPTIONS": [
+      "Gain [#e3dac9]",
+      " Max HP when you kill the enemy before the turn ends."
+    ]
+  },
+  "DefensiveStancePower": {
+    "NAME": "Defensive Stance",
+    "DESCRIPTIONS": [
+      "Rewording needed: Using Fenrir cards other than 'Defensive Stance' will lower the block gained from this card by 20%."
+    ]
+  },
+  "CounterBlowPower": {
+    "NAME": "Counter Blow",
+    "DESCRIPTIONS": [
+      "Discard the top card of your draw Pile counter an opponent's attack for",
+      "damage."
+    ]
+  }
+}

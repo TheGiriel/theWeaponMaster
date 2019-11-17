@@ -2,18 +2,18 @@ package theWeaponMaster.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.*;
 import theWeaponMaster.util.TextureLoader;
 
 import java.util.HashSet;
 
-import static theWeaponMaster.DefaultMod.makeRelicOutlinePath;
-import static theWeaponMaster.DefaultMod.makeRelicPath;
+import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
+import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
 
 public class SplinteringSteelRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID(SplinteringSteelRelic.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(SplinteringSteelRelic.class.getSimpleName());
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("splintering_steel_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("splintering_steel_relic.png"));

@@ -10,15 +10,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
-import static theWeaponMaster.DefaultMod.makePowerPath;
+import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 public class StaggerPower extends AbstractPower {
 
-    public static final String POWER_ID = DefaultMod.makeID(StaggerPower.class.getSimpleName());
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("StaggerPower");
+    public static final String POWER_ID = TheWeaponMaster.makeID(StaggerPower.class.getSimpleName());
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(StaggerPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
     public float staggerAmount;

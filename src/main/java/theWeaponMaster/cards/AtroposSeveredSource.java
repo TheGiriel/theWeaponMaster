@@ -3,22 +3,23 @@ package theWeaponMaster.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theWeaponMaster.DefaultMod;
-import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.powers.ManaBurnPower;
 import theWeaponMaster.relics.ManaWhetstoneRelic;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class AtroposSeveredSource extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(AtroposSeveredSource.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(AtroposSeveredSource.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
@@ -28,7 +29,7 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int DAMAGE = 7;
@@ -42,7 +43,6 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         isInnate = true;
-        this.rawDescription = DESCRIPTION[0];
         initializeDescription();
     }
 
@@ -67,9 +67,13 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!m.hasPower(ManaBurnPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, this.magicNumber), this.magicNumber));
+        if (m.hasPower(ManaBurnPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
+            new ManaBurnAction(m, p, m.getPower(ManaBurnPower.POWER_ID).amount);
         }
+        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, magicNumber)));
     }
+
 }

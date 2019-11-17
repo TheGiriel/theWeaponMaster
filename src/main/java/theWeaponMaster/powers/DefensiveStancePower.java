@@ -12,18 +12,18 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
 public class DefensiveStancePower extends AbstractPower {
 
-    private static final String POWER_ID = DefaultMod.makeID(DefensiveStancePower.class.getSimpleName());
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("DefensiveStancePower");
+    public static final String POWER_ID = TheWeaponMaster.makeID(DefensiveStancePower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("DefensiveStancePower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("fenrir_placeholder_84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("fenrir_placeholder_32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("fenrir_placeholder_84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("fenrir_placeholder_32.png"));
     private int stanceBlock;
     private int blockStrength;
     private int gettingReckless = 5;

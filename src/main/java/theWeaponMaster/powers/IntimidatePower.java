@@ -2,6 +2,7 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -10,18 +11,18 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
 public class IntimidatePower extends AbstractPower {
 
-    private static final String POWER_ID = DefaultMod.makeID(IntimidatePower.class.getSimpleName());
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("IntimidatePower");
+    public static final String POWER_ID = TheWeaponMaster.makeID(IntimidatePower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("IntimidatePower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(DefaultMod.makePowerPath("leviathan_placeholder_84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(DefaultMod.makePowerPath("leviathan_placeholder_32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("leviathan_placeholder_84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("leviathan_placeholder_32.png"));
 
     public AbstractCreature source;
     public AbstractMonster m;
@@ -48,8 +49,10 @@ public class IntimidatePower extends AbstractPower {
     public void onInitialApplication() {
         originalMove = this.m.nextMove;
         originalIntent = this.m.intent;
-        if (m.hasPower("TauntPower")) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, "TauntPower"));
+        if (m.hasPower(TauntPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(m, AbstractDungeon.player));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, TauntPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
         }
         this.m.setMove((byte) -2, AbstractMonster.Intent.DEFEND);
         this.m.createIntent();

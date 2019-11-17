@@ -93,7 +93,8 @@
   "HungeringPower": {
     "NAME": "Hungering",
     "DESCRIPTIONS": [
-      "Gain [#e3dac9]", " Max HP when you kill the enemy before the turn ends."
+      "Gain [#e3dac9]",
+      " Max HP when you kill the enemy before the turn ends."
     ]
   },
   "DefensiveStancePower": {

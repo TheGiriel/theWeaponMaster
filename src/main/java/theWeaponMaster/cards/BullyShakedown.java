@@ -1,5 +1,6 @@
 package theWeaponMaster.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,16 +10,16 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.GainGoldTextEffect;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
-import theWeaponMaster.DefaultMod;
-import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.powers.ViciousPower;
 
 import java.util.Random;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class BullyShakedown extends AbstractBullyCard {
 
-    public static final String ID = DefaultMod.makeID(BullyShakedown.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(BullyShakedown.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
@@ -27,7 +28,7 @@ public class BullyShakedown extends AbstractBullyCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int DAMAGE = 5;
@@ -35,7 +36,7 @@ public class BullyShakedown extends AbstractBullyCard {
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int BULLY_COST = 8;
-    private static final int REDUCED_BULLY_COST = 3;
+    private static final int UPGRADED_BULLY_NUMBER = 3;
 
     public BullyShakedown() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -52,7 +53,7 @@ public class BullyShakedown extends AbstractBullyCard {
         AbstractDungeon.player.gainGold(stolenMoney);
         AbstractDungeon.effectList.add(new RainingGoldEffect(stolenMoney));
         AbstractDungeon.effectList.add(new GainGoldTextEffect(stolenMoney));
-        p.getPower("ViciousPower").amount -= bullyNumber;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
     }
 
 
@@ -63,7 +64,7 @@ public class BullyShakedown extends AbstractBullyCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            reduceBullyCost(REDUCED_BULLY_COST);
+            increaseVicious(UPGRADED_BULLY_NUMBER);
             initializeDescription();
         }
     }

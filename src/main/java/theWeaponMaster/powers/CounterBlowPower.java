@@ -12,14 +12,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
-import static theWeaponMaster.DefaultMod.makePowerPath;
+import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 public class CounterBlowPower extends AbstractPower {
 
-    public static final String POWER_ID = DefaultMod.makeID(CounterBlowPower.class.getSimpleName());
+    public static final String POWER_ID = TheWeaponMaster.makeID(CounterBlowPower.class.getSimpleName());
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(CounterBlowPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;

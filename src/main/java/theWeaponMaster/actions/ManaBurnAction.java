@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import theWeaponMaster.powers.ManaBurnPower;
 
 import java.util.HashSet;
 
@@ -20,13 +21,13 @@ public class ManaBurnAction extends AbstractGameAction {
     public static HashSet<AbstractMonster.Intent> intent = new HashSet<>();
     private int manaBurnStack;
 
-    public ManaBurnAction(AbstractCreature owner, AbstractCreature source, int manaBurnStack, double manaburnDamage) {
+    public ManaBurnAction(AbstractCreature owner, AbstractCreature source, int manaBurnStack) {
         this.owner = owner;
         this.m = (AbstractMonster) this.owner;
         this.source = source;
         this.manaBurnStack = manaBurnStack;
 
-        this.manaBurnIntensity = (int) (Math.ceil(this.m.maxHealth * manaburnDamage * this.manaBurnStack));
+        this.manaBurnIntensity = (int) (Math.ceil(this.m.maxHealth * ManaBurnPower.IGNITE * this.manaBurnStack));
 
         intent.add(ATTACK_BUFF);
         intent.add(ATTACK_DEBUFF);

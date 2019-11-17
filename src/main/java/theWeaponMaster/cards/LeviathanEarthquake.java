@@ -11,15 +11,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
-import theWeaponMaster.DefaultMod;
-import theWeaponMaster.characters.TheWeaponMaster;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.relics.ShockwaveModulatorRelic;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class LeviathanEarthquake extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(LeviathanEarthquake.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(LeviathanEarthquake.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
@@ -29,7 +28,7 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.RARE;
     private static final AbstractCard.CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
-    public static final AbstractCard.CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final AbstractCard.CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 3;
     private static final int DAMAGE = 12;

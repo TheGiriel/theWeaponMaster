@@ -8,19 +8,18 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
-import theWeaponMaster.characters.TheWeaponMaster;
 import theWeaponMaster.relics.RevolverRelic;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
 
 public class RevolverStandard extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(RevolverStandard.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(RevolverStandard.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

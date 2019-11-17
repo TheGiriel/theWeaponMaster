@@ -10,18 +10,17 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import theWeaponMaster.DefaultMod;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.actions.FenrirUnleashedSelectAction;
-import theWeaponMaster.characters.TheWeaponMaster;
 
 import java.util.ArrayList;
 
-import static theWeaponMaster.DefaultMod.makeCardPath;
+import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class FenrirUnleashed extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(FenrirUnleashed.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(FenrirUnleashed.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -32,7 +31,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = -1;
     private static final int DAMAGE = 8;
@@ -73,18 +72,18 @@ public class FenrirUnleashed extends AbstractDynamicCard {
         new FenrirUnleashedSelectAction();
         for (AbstractMonster monster : targetList) {
 
-            DefaultMod.logger.info("Target List: " + monster + " Monster HP: " + monster.currentHealth);
+            TheWeaponMaster.logger.info("Target List: " + monster + " Monster HP: " + monster.currentHealth);
         }
         for (int i = 0; i < totalAttacks; i++) {
             totalDamage += overKill;
             overKill = 0;
             if (totalDamage < targetList.get(j).currentHealth) {
-                DefaultMod.logger.info("New target: " + targetList.get(j));
+                TheWeaponMaster.logger.info("New target: " + targetList.get(j));
                 totalDamage += this.damage;
             } else if (totalDamage >= targetList.get(j).currentHealth) {
-                DefaultMod.logger.info(targetList.get(j) + " is dead. select new target:");
+                TheWeaponMaster.logger.info(targetList.get(j) + " is dead. select new target:");
                 j++;
-                DefaultMod.logger.info("New target: " + targetList.get(j));
+                TheWeaponMaster.logger.info("New target: " + targetList.get(j));
                 totalDamage = 0;
                 overKill = totalDamage - targetList.get(j).currentHealth;
                 new FenrirEvolveAction();
