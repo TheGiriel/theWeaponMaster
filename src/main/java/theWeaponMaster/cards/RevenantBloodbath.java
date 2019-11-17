@@ -65,6 +65,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int initialDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / 5;
         int totalAttacks = EnergyPanel.totalCount;
+        EnergyPanel.useEnergy(totalAttacks);
         if (p.hasRelic(ChemicalX.ID)) {
             totalAttacks += 2;
             p.getRelic(ChemicalX.ID).flash();
@@ -78,6 +79,5 @@ public class RevenantBloodbath extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
             p.getPower(ViciousPower.POWER_ID).reducePower(5);
         } while (p.getPower(ViciousPower.POWER_ID).amount >= 5);
-        EnergyPanel.useEnergy(totalAttacks);
     }
 }

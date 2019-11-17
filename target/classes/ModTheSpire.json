@@ -2,8 +2,22 @@
   "modid": "WeaponMaster",
   "name": "Weapon Master Mod",
   "author_list": ["TheGiriel"],
-  "description": "Bugfixes? Allegedly. Fixed Nose To Tail, Reload and Bloodbath. FlashAction is next.",
-  "version": "0.0.16",
+  "description": "Arsenal Relic, Fenrir, Revenant complete.
+Remaining:
+    Revolver support cards
+    Leviathan -> Eject/Reload, Charge mechanic
+    Cerberus -> FlashAction
+    Atropos -> Severed Soul
+    Bully cards & support
+    more generic cards.
+Current State:
+    Legendary Weapons: 20/25(+2),
+    Bully: 9/10?,
+    Revolver 7/12?,
+    Generic 3/26?
+        total: 52/75?
+No Art.",
+  "version": "0.1.0",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",
   "dependencies": ["basemod", "stslib"],

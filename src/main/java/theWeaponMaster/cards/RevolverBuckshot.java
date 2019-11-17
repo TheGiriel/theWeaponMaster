@@ -15,7 +15,7 @@ import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
-import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
+import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 
 public class RevolverBuckshot extends AbstractDynamicCard {
 
@@ -41,7 +41,7 @@ public class RevolverBuckshot extends AbstractDynamicCard {
 
         this.isMultiDamage = true;
         this.damage = baseDamage = DAMAGE;
-        tags.add(REVOLVER);
+        tags.add(AMMUNITION);
     }
 
     @Override

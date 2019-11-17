@@ -6,7 +6,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class WeaponMasterTags extends BaseModCardTags {
 
-    @SpireEnum public static AbstractCard.CardTags REVOLVER;
+    @SpireEnum
+    public static AbstractCard.CardTags AMMUNITION;
     @SpireEnum public static AbstractCard.CardTags BULLY;
     @SpireEnum
     public static AbstractCard.CardTags FENRIR;

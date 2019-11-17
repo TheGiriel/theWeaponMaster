@@ -98,6 +98,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         totalAttacks = EnergyPanel.totalCount;
+        EnergyPanel.useEnergy(totalAttacks);
         if (p.hasRelic(ChemicalX.ID)) {
             totalAttacks += 2;
             p.getRelic(ChemicalX.ID).flash();

@@ -13,7 +13,7 @@ import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
-import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
+import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 
 public class RevolverRelic extends CustomRelic {
 
@@ -31,7 +31,7 @@ public class RevolverRelic extends CustomRelic {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(REVOLVER)) {
+        if (card.hasTag(AMMUNITION)) {
             if (this.counter <= 0) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ReloadPower()));
                 return;

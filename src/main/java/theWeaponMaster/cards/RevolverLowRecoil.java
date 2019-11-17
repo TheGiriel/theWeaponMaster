@@ -15,7 +15,7 @@ import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
-import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
+import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 
 public class RevolverLowRecoil extends AbstractDynamicCard {
 
@@ -40,7 +40,7 @@ public class RevolverLowRecoil extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;
-        tags.add(REVOLVER);
+        tags.add(AMMUNITION);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class RevolverLowRecoil extends AbstractDynamicCard {
             return;
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (AbstractDungeon.player.drawPile.group.size() >= 1 && AbstractDungeon.player.drawPile.getTopCard().hasTag(REVOLVER)) {
+        if (AbstractDungeon.player.drawPile.group.size() >= 1 && AbstractDungeon.player.drawPile.getTopCard().hasTag(AMMUNITION)) {
             AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, false));
         } else {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));

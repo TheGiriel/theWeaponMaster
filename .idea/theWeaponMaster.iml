@@ -49,5 +49,6 @@
     </orderEntry>
     <orderEntry type="library" name="TheAnimator" level="project" />
     <orderEntry type="library" name="HierophantMod" level="project" />
+    <orderEntry type="library" name="desktop-1.0-beta" level="project" />
   </component>
 </module>

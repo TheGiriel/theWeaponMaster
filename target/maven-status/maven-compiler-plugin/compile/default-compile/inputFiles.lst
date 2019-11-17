@@ -15,7 +15,9 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ca
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\FenrirUnleashed.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\RevenantBloodbath.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\BullyCard10.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\not_relevant\CardTemplate.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\ViciousPower.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\not_relevant\DefaultCommonPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullyDinerArgument.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\patches\CenterGridCardSelectScreen.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\ArsenalRelic.java
@@ -23,7 +25,6 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\pa
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\CounterBlow.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\patches\DefaultInsertPatch.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\VariableDiscardAction.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_relevant\DefaultCommonPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullyIntimidate.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\FenrirHeavySwing.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\RevolverHeavy.java
@@ -33,6 +34,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\po
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\ThornBypassAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\FenrirUnleashedSelectAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\ShockwaveModulatorRelic.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\not_relevant\DefaultAttackWithVariable.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\FenrirShieldEater.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\RevolverStandard.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullyWimp.java
@@ -41,14 +43,14 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\re
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\AbstractDynamicCard.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\AbstractBullyCard.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\LeviathanGroundSplitter.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\AtroposSeveredPath.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\HellhoundOilRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\AtroposSeveredScissors.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_relevant\DefaultAttackWithVariable.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\AtroposSeveredPath.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\RevolverFullMetal.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\DefaultClickableRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Not_finished\LeviathanReload.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\RevolverBuckshot.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\EnemyForceAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\patches\relics\BottledPlaceholderField.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\LaceratePower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\variables\BullyVariable.java
@@ -77,7 +79,6 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\re
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\variables\MultiShotVariable.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\ArmorPiercingAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullyHuh.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_relevant\OrbSkill.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullySlap.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\CerberusSlash.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\GiveWeaponsAction.java
@@ -90,8 +91,8 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ca
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\UncommonPowerAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\FenrirEvolveAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\TheWeaponMaster.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\not_relevant\OrbSkill.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\FlashAction.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\WeaponSwap.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\RevolverRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\EgoPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\Strike_WeaponMaster.java
@@ -110,5 +111,4 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ac
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\BullyTerrifyingHowl.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\variables\shieldBuster.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\OctopusAction.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\not_relevant\CardTemplate.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\StaggerPower.java

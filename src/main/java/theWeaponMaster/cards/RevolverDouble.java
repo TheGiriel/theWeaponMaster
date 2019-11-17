@@ -15,7 +15,7 @@ import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
-import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
+import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 
 public class RevolverDouble extends AbstractDynamicCard {
 
@@ -40,7 +40,7 @@ public class RevolverDouble extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;
-        tags.add(REVOLVER);
+        tags.add(AMMUNITION);
     }
 
     @Override

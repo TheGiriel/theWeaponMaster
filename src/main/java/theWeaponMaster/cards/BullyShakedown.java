@@ -33,7 +33,7 @@ public class BullyShakedown extends AbstractBullyCard {
     private static final int COST = 1;
     private static final int DAMAGE = 5;
     private static final int UPGRADED_DAMAGE = 2;
-    private static final int MAGIC_NUMBER = 2;
+    private static final int MAGIC_NUMBER = 1;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int BULLY_COST = 8;
     private static final int UPGRADED_BULLY_NUMBER = 3;
@@ -48,7 +48,7 @@ public class BullyShakedown extends AbstractBullyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int stolenMoney = new Random().nextInt(3 * magicNumber) + 3 * magicNumber;
+        int stolenMoney = new Random().nextInt(3) + 3 * magicNumber;
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), stolenMoney));
         AbstractDungeon.player.gainGold(stolenMoney);
         AbstractDungeon.effectList.add(new RainingGoldEffect(stolenMoney));

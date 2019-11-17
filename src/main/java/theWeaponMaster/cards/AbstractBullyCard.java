@@ -33,7 +33,7 @@ public abstract class AbstractBullyCard extends AbstractDynamicCard {
     }
 
     public void increaseVicious(int amount) {
-        bullyNumber += amount;
+        baseBullyNumber += amount;
         bullyNumber = baseBullyNumber;
         this.upgradedBullyNumber = true;
     }

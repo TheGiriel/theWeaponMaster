@@ -13,7 +13,7 @@ import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
-import static theWeaponMaster.patches.WeaponMasterTags.REVOLVER;
+import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 
 public class RevolverHollowPoint extends AbstractDynamicCard {
 
@@ -37,7 +37,7 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        tags.add(REVOLVER);
+        tags.add(AMMUNITION);
     }
 
     @Override
