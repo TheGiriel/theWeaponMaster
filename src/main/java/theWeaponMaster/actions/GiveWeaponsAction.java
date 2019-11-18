@@ -66,14 +66,12 @@ public class GiveWeaponsAction extends AbstractGameAction {
                 }
                 break;
             case "Scissor Half":
-                weaponList.add(new AtroposScissorHalf());
-                weaponList.add(new AtroposScissorHalf());
+                weaponList.add(new AtroposSeveredScissors());
                 if (owner.hasRelic(ManaWhetstoneRelic.ID)) {
                     upgradeWeapons.addAll(ManaWhetstoneRelic.getWeaponUpgrade());
                 }
                 break;
 
-                //Leviathan cards
             case "Leviathan Gauntlet":
                 weaponList.add(new LeviathanCrush());
                 weaponList.add(new LeviathanEject());
@@ -83,19 +81,7 @@ public class GiveWeaponsAction extends AbstractGameAction {
                 if (owner.hasRelic(ShockwaveModulatorRelic.ID)) {
                     upgradeWeapons.addAll(ShockwaveModulatorRelic.getWeaponUpgrade());
                 }
-                break;/*
-            case "Eject":
-                weaponList.add(new LeviathanEject());
-                if(owner.hasRelic(ShockwaveModulatorRelic.ID)) {
-                    upgradeWeapons.addAll(ShockwaveModulatorRelic.getWeaponUpgrade());
-                }
                 break;
-            case "Reload":
-                weaponList.add(new LeviathanReload());
-                if(owner.hasRelic(ShockwaveModulatorRelic.ID)) {
-                    upgradeWeapons.addAll(ShockwaveModulatorRelic.getWeaponUpgrade());
-                }
-                break;*/
         }
         giveWeapons();
         weaponList.clear();

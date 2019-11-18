@@ -26,17 +26,16 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
-    private AbstractMonster lastTarget = null;
-    private AbstractMonster target  = null;
+    private static final int UPGRADED_MAGIC_NUMBER = 1;
 
     public AtroposSeveredSource() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -46,16 +45,12 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
         initializeDescription();
     }
 
-    public void calculateCardDamage(AbstractMonster m){
-        super.calculateCardDamage(m);
-        this.target = m;
-    }
-
     @Override
     public void upgrade() {
         if(!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }
@@ -67,13 +62,11 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m.hasPower(ManaBurnPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
-            new ManaBurnAction(m, p, m.getPower(ManaBurnPower.POWER_ID).amount);
-        }
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
+        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.2F));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.2F));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, 1)));
+        ManaBurnAction.ignite(m, magicNumber);
     }
 
 }

@@ -50,6 +50,7 @@
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
+
   "theWeaponMaster:FenrirLacerate": {
     "NAME": "Lacerate",
     "DESCRIPTION": "Fenrir NL Deal !D! damage. Apply !M! Lacerate. NL Evolve: Hit enemies with 3+ Lacerate.",
@@ -98,7 +99,6 @@
     "UPGRADE_DESCRIPTION": "Legendary Weapon NL not_implemented NL Deal !D! damage. Exhaust one card and steal !M! random enemy buffs. NL Quickdraw 1."
   },
 
-
   "theWeaponMaster:LeviathanCrush": {
     "NAME": "Crush",
     "DESCRIPTION": "Leviathan_Gauntlet NL Hit the enemy for !D! damage. NL Armor_Piercing: !M!."
@@ -106,7 +106,13 @@
   "theWeaponMaster:LeviathanEject": {
     "NAME": "Eject",
     "DESCRIPTION": "Leviathan_Gauntlet NL Eject all spent Leviathan cartridges and deal !D! damage X times to random enemies.",
-    "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to random enemies."
+    "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to random enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "Eject",
+      "Leviathan_Gauntlet NL Eject all unspent Leviathan cartridges and deal !D! damage X times to random enemies.",
+      "Reload",
+      "Leviathan_Gauntlet NL Reload your Gauntlet and gain !B! block."
+    ]
   },
   "theWeaponMaster:LeviathanReload": {
     "NAME": "Reload",
@@ -128,14 +134,13 @@
     "UPGRADE_DESCRIPTION": ""
   },
 
-
   "theWeaponMaster:RevenantRavenous": {
     "NAME": "Ravenous",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. NL Gain !M! Vicious."
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage, Gain !M! Vicious. NL Retain: Increase Vicious gain by 2 until Weapon_Swap or combat ends."
   },
   "theWeaponMaster:RevenantChopChopCHOP": {
     "NAME": "Chop Chop CHOP",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and gain 1 temporary HP !M! times."
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and gain !M! Temporary_HP 3 times."
   },
   "theWeaponMaster:RevenantHungrySteel": {
     "NAME": "Hungry Steel",
@@ -147,26 +152,30 @@
   },
   "theWeaponMaster:RevenantBloodbath": {
     "NAME": "Bloodbath",
-    "DESCRIPTION": "Revenant_Cleaver NL Requires 10 Vicious. NL Gain !EN_MULT! Vicious. Deal !D! damage to a random enemy. NL Unstoppable: 5+ Vicious. Attack again, lose 5 Vicious."
+    "DESCRIPTION": "Revenant_Cleaver NL Requires 15+ Vicious. NL Gain !EN_MULT! Vicious. Deal !D! damage to a random enemy. NL Unstoppable: 5+ Vicious. Attack again, lose 5 Vicious."
   },
-
 
   "theWeaponMaster:AtroposSeveredSource": {
     "NAME": "Severed Source",
-    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage to your target and apply 1 Mana_Burn."
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage to your target and apply Mana_Burn. NL Ignite !M!"
   },
   "theWeaponMaster:AtroposSeveredScissors": {
     "NAME": "Severed Scissors",
-    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice. NL Igniting !M!.",
-    "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice. NL Igniting 2."
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
+    "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice. NL Ignite !M!.",
+    "EXTENDED_DESCRIPTION": [
+      "Right Half",
+      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
+      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+    ]
   },
   "theWeaponMaster:AtroposScissorHalf": {
-    "NAME": "Scissor Half",
-    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage. NL Deal !M! bonus damage if the last card was Severed Scissors or Scissor Half. NL Igniting 1."
+    "NAME": "Left Half",
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
   },
   "theWeaponMaster:AtroposSeveredPath": {
     "NAME": "Severed Path",
-    "DESCRIPTION": "Atropos_Shears NL Target Enemy attacks a random enemy this turn. Apply !M! Mana Burn.",
+    "DESCRIPTION": "Atropos_Shears NL Target Enemy attacks a random enemy this turn. Apply !M! Mana_Burn.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:AtroposSeveredPain": {
@@ -176,7 +185,7 @@
   },
   "theWeaponMaster:AtroposSeveredSoul": {
     "NAME": "Severed Soul",
-    "DESCRIPTION": "Atropos_Shears NL Can only be played as the first card of your turn. Deal massive damage."
+    "DESCRIPTION": "Atropos_Shears NL Costs one less for every Mana Burn target enemy has. Deal !D! damage. NL Ignite \u221E. Consume all Mana_Burn stacks."
   },
   "theWeaponMaster:RevolverStandard": {
     "NAME": "Single Shot",
@@ -206,7 +215,6 @@
     "NAME": "Buckshot",
     "DESCRIPTION": "Deal !D! damage to all enemies."
   },
-
 
   "theWeaponMaster:BullyIntimidate": {
     "NAME": "Intimidate",
@@ -252,12 +260,12 @@
     "NAME": "Card10",
     "DESCRIPTION": "Not Implemented."
   },
-  "theWeaponMaster:WeaponSwap": {
-    "NAME": "Weapon Swap",
-    "DESCRIPTION": "Equip a new weapon."
-  },
   "theWeaponMaster:CounterBlow": {
     "NAME": "Counter Blow",
     "DESCRIPTION": "Discard the top card of your draw Pile counter an opponent's attack for !M! damage."
+  },
+  "theWeaponMaster:BerserkerStance": {
+    "NAME": "Berserker Stance",
+    "DESCRIPTION": "Vicious doesn't decay at the end of the turn anymore. Gain 1 extra Vicious every time you attack."
   }
 }

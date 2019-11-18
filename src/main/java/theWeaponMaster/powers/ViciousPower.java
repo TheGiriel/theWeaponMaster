@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.cards.Not_finished.BerserkerStance;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
@@ -19,7 +20,7 @@ public class ViciousPower extends TwoAmountPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
     private static final int TIER_TWO = 5;
-    private static final int TIER_THREE = TIER_TWO*2;
+    private static final int TIER_THREE = TIER_TWO * 3;
     private static int bonusDamage = 0;
 
 
@@ -32,6 +33,8 @@ public class ViciousPower extends TwoAmountPower {
 
     private static Texture tex84;
     private static Texture tex32;
+    private int reduceVicious;
+
 
     public ViciousPower(final AbstractCreature owner, int amnt) {
         this.name = NAME;
@@ -87,11 +90,18 @@ public class ViciousPower extends TwoAmountPower {
     @Override
     public void updateDescription() {
         setBonusDamage();
-
         if (this.amount > TIER_THREE) {
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[4] + (this.amount / 3) + DESCRIPTION[5];
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
+            if (!owner.hasPower(BerserkerStance.ID)) {
+                setReduceVicious(3);
+                description += DESCRIPTION[4] + reduceVicious + DESCRIPTION[5];
+            }
         } else if (this.amount > TIER_TWO) {
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[3] + (this.amount / 4) + DESCRIPTION[5];
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
+            if (!owner.hasPower(BerserkerStance.ID)) {
+                setReduceVicious(4);
+                description += DESCRIPTION[3] + reduceVicious + DESCRIPTION[5];
+            }
         }
         else {
             description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
@@ -117,19 +127,25 @@ public class ViciousPower extends TwoAmountPower {
         return damage + amount2;
     }
 
-    public void atEndOfRound() {
-        if (amount > TIER_THREE) {
-            int reduceVicious = (this.amount / 3);
-            this.amount -= reduceVicious;
-            setBonusDamage();
-        } else if (amount > TIER_TWO) {
-            int reduceVicious = (this.amount / 4);
-            this.amount -= reduceVicious;
-            setBonusDamage();
-        }
-    }
-
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
         return damage + amount2;
+    }
+
+    private void setReduceVicious(int modifier) {
+        reduceVicious = (this.amount / modifier);
+    }
+
+    public void atEndOfRound() {
+        if (!owner.hasPower(BerserkerStancePower.POWER_ID)) {
+            if (amount > TIER_THREE) {
+                setReduceVicious(3);
+                this.amount -= reduceVicious;
+                setBonusDamage();
+            } else if (amount > TIER_TWO) {
+                setReduceVicious(4);
+                this.amount -= reduceVicious;
+                setBonusDamage();
+            }
+        }
     }
 }

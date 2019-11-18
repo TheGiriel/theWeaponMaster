@@ -4,11 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.CerberusIaiSlash;
-import theWeaponMaster.cards.CerberusSlash;
-import theWeaponMaster.cards.Not_finished.CerberusDrainSlash;
-import theWeaponMaster.cards.Not_finished.CerberusEssenceSlash;
-import theWeaponMaster.cards.Not_finished.CerberusModularSlash;
+import theWeaponMaster.cards.Not_finished.*;
 import theWeaponMaster.util.TextureLoader;
 
 import java.util.HashSet;

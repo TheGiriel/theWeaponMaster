@@ -22,9 +22,9 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.*;
-import theWeaponMaster.cards.Not_finished.AtroposSeveredSoul;
+import theWeaponMaster.cards.Not_finished.BerserkerStance;
 import theWeaponMaster.cards.Not_finished.CerberusDrainSlash;
-import theWeaponMaster.cards.Not_finished.LeviathanEject;
+import theWeaponMaster.cards.Not_finished.CerberusSlash;
 import theWeaponMaster.cards.not_relevant.DefaultCommonPower;
 import theWeaponMaster.cards.not_relevant.OrbSkill;
 import theWeaponMaster.events.IdentityCrisisEvent;
@@ -410,14 +410,13 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new Defend_WeaponMaster());
         BaseMod.addCard(new AtroposSeveredSource());
         BaseMod.addCard(new AtroposSeveredScissors());
-        BaseMod.addCard(new AtroposScissorHalf());
         BaseMod.addCard(new AtroposSeveredPath());
         BaseMod.addCard(new AtroposSeveredPain());
         BaseMod.addCard(new AtroposSeveredSoul());
         BaseMod.addCard(new CerberusSlash());
         //BaseMod.addCard(new CerberusEssenceSlash());
         //BaseMod.addCard(new CerberusModularSlash());
-        BaseMod.addCard(new CerberusIaiSlash());
+        //BaseMod.addCard(new CerberusIaiSlash());
         BaseMod.addCard(new CerberusDrainSlash());
         BaseMod.addCard(new FenrirLacerate());
         BaseMod.addCard(new FenrirShieldEater());
@@ -426,7 +425,6 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new FenrirDefensiveStance());
         BaseMod.addCard(new LeviathanCrush());
         BaseMod.addCard(new LeviathanEject());
-        //BaseMod.addCard(new LeviathanReload());
         BaseMod.addCard(new LeviathanGroundSplitter());
         BaseMod.addCard(new LeviathanDeepImpact());
         BaseMod.addCard(new LeviathanEarthquake());
@@ -435,7 +433,6 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new RevenantHungrySteel());
         BaseMod.addCard(new RevenantNoseToTail());
         BaseMod.addCard(new RevenantBloodbath());
-        //BaseMod.addCard(new DefaultAttackWithVariable());
         BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new BullyTaunt());
         BaseMod.addCard(new BullyMeanToEveryone());
@@ -454,6 +451,7 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new RevolverHollowPoint());
         BaseMod.addCard(new RevolverFullMetal());
         BaseMod.addCard(new CounterBlow());
+        BaseMod.addCard(new BerserkerStance());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -461,18 +459,17 @@ public class TheWeaponMaster implements
         // before playing your mod.
         UnlockTracker.unlockCard(OrbSkill.ID);
         UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
-        //UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
+        UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
         UnlockTracker.unlockCard(AtroposSeveredSource.ID);
         UnlockTracker.unlockCard(AtroposSeveredScissors.ID);
-        UnlockTracker.unlockCard(AtroposScissorHalf.ID);
-        //UnlockTracker.unlockCard(AtroposSeveredPath.ID);
+        UnlockTracker.unlockCard(AtroposSeveredPath.ID);
         UnlockTracker.unlockCard(AtroposSeveredPain.ID);
-        //UnlockTracker.unlockCard(AtroposSeveredSoul.ID);
-        //UnlockTracker.unlockCard(CerberusSlash.ID);
+        UnlockTracker.unlockCard(AtroposSeveredSoul.ID);
+        UnlockTracker.unlockCard(CerberusSlash.ID);
         //UnlockTracker.unlockCard(CerberusEssenceSlash.ID);
-        UnlockTracker.unlockCard(CerberusIaiSlash.ID);
+        //UnlockTracker.unlockCard(CerberusIaiSlash.ID);
         //UnlockTracker.unlockCard(CerberusModularSlash.ID);
-        //UnlockTracker.unlockCard(CerberusDrainSlash.ID);
+        UnlockTracker.unlockCard(CerberusDrainSlash.ID);
         UnlockTracker.unlockCard(FenrirLacerate.ID);
         UnlockTracker.unlockCard(FenrirHeavySwing.ID);
         UnlockTracker.unlockCard(FenrirShieldEater.ID);
@@ -480,7 +477,6 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(FenrirDefensiveStance.ID);
         UnlockTracker.unlockCard(LeviathanCrush.ID);
         UnlockTracker.unlockCard(LeviathanEject.ID);
-        //UnlockTracker.unlockCard(LeviathanReload.ID);
         UnlockTracker.unlockCard(LeviathanGroundSplitter.ID);
         UnlockTracker.unlockCard(LeviathanDeepImpact.ID);
         UnlockTracker.unlockCard(LeviathanEarthquake.ID);
@@ -506,6 +502,8 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(RevolverHeavy.ID);
         UnlockTracker.unlockCard(RevolverHollowPoint.ID);
         UnlockTracker.unlockCard(RevolverFullMetal.ID);
+        UnlockTracker.unlockCard(CounterBlow.ID);
+        UnlockTracker.unlockCard(BerserkerStance.ID);
 
         
         logger.info("Done adding cards!");

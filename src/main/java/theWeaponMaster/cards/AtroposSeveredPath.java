@@ -27,14 +27,13 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     private static final int COST = 1;
-    private static final int DAMAGE = 5;
-    private static final int UPGRADED_DAMAGE = 5;
     private static final int MAGIC_NUMBER = 1;
     public String NAME = cardStrings.NAME;
     private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
 
     public AtroposSeveredPath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
         tags.add(INTIMIDATE);
         intents = EnemyForceAction.getIntents(this);
@@ -49,20 +48,9 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
     }
-
-    /*@Override
-    public boolean canPlay(AbstractCard card) {
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters){
-            if (m.intent == AbstractMonster.Intent.ATTACK || m.intent == AbstractMonster.Intent.ATTACK_BUFF || m.intent == AbstractMonster.Intent.ATTACK_DEBUFF || m.intent == AbstractMonster.Intent.ATTACK_DEFEND) {
-                enemyIntent = true;
-            } target
-        }
-        return enemyIntent;
-    }*/
 
     @Override
     public boolean cardPlayable(AbstractMonster m) {

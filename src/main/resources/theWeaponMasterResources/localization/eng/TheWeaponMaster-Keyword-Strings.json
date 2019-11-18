@@ -138,10 +138,11 @@
     "NAMES": [
       "Mana Burn",
       "mana_burn",
+      "Mana_burn",
       "mana burned",
       "mana_burned"
     ],
-    "DESCRIPTION": "Creatures affected by [#3abfbe]Mana [#3abfbe]burn lose 3% Max HP per stack when casting buffs, debuffs and spells. Certain cards gain new effects against creatures affected by [#3abfbe]Mana [#3abfbe]burn."
+    "DESCRIPTION": "Creatures affected by [#3abfbe]Mana [#3abfbe]burn lose 2% Max HP per stack when casting buffs, debuffs and spells. Certain cards gain new effects against creatures affected by [#3abfbe]Mana [#3abfbe]burn."
   },
   {
     "PROPER_NAME": "[#3abfbe]Igniting",
@@ -149,9 +150,11 @@
       "Igniting",
       "ignites",
       "igniting",
-      "Ignites"
+      "Ignites",
+      "ignite",
+      "Ignite"
     ],
-    "DESCRIPTION": "Trigger target enemy's Mana Burn."
+    "DESCRIPTION": "Ignite X: Trigger up to X stacks of target enemy's Mana Burn."
   },
   {
     "PROPER_NAME": "[#746550]Leviathan [#746550]Gauntlet",
@@ -189,5 +192,25 @@
       "hunger"
     ],
     "DESCRIPTION": "Gain max HP if you kill the target before the end of your turn. Gain more the higher their current HP is."
+  },
+  {
+    "PROPER_NAME": "Split Scissors",
+    "NAMES": [
+      "Split Scissors",
+      "split scissors",
+      "split_scissors",
+      "Split_Scissors"
+    ],
+    "DESCRIPTION": "Split Scissors X: Deal X Bonus damage if the last played card was Severed Scissors or Right/Left Half. NL Recombines to Severed Scissors when Right and Left Half exhaust."
+  },
+  {
+    "PROPER_NAME": "Weapon Swap",
+    "NAMES": [
+      "Weapon Swap",
+      "weapon swap",
+      "weapon_swap",
+      "Weapon_Swap"
+    ],
+    "DESCRIPTION": "Remove all of your Legendary Weapon cards from your deck and gain a new Weapon's cards."
   }
 ]

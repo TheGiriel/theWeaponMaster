@@ -13,8 +13,8 @@ import java.util.HashSet;
 
 public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
 
-    private ArrayList<AbstractCard> deleteGroup = new ArrayList<>();
     private HashSet<String> weaponSetHash = new HashSet<>();
+    private ArrayList<AbstractCard> deleteGroup = new ArrayList<>();
 
     //TODO: Almost perfect, just gotta get the purge effect to happen before the cards are removed.
     private void populateArrayList(){
@@ -38,14 +38,13 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
 
         weaponSetHash.add(AtroposSeveredSource.ID);
         weaponSetHash.add(AtroposSeveredScissors.ID);
-        weaponSetHash.add(AtroposScissorHalf.ID);//unlisted
+        weaponSetHash.add(AtroposScissorHalf.ID);
         weaponSetHash.add(AtroposSeveredPath.ID);
         weaponSetHash.add(AtroposSeveredPain.ID);
         weaponSetHash.add(AtroposSeveredSoul.ID);
 
         weaponSetHash.add(LeviathanCrush.ID);
         weaponSetHash.add(LeviathanEject.ID);
-        weaponSetHash.add(LeviathanReload.ID);
         weaponSetHash.add(LeviathanGroundSplitter.ID);
         weaponSetHash.add(LeviathanDeepImpact.ID);
         weaponSetHash.add(LeviathanEarthquake.ID);

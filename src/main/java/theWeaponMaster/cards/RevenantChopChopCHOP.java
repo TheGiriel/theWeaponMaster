@@ -16,13 +16,13 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 public class RevenantChopChopCHOP extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevenantChopChopCHOP.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public String NAME = cardStrings.NAME;
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
@@ -31,6 +31,7 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
     private static final int DAMAGE = 2;
     private static final int UPGRADED_DAMAGE = 1;
     private static final int MAGIC_NUMBER = 1;
+    private static final int UPGRADED_MAGIC_NUMBER = 1;
 
     public RevenantChopChopCHOP() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -44,6 +45,7 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }

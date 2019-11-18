@@ -5,21 +5,11 @@
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
     <version>0.1.0</version>
-    <description>Arsenal Relic, Fenrir, Revenant complete.
-        Remaining:
-        Revolver support cards
-        Leviathan -&gt; Eject/Re load, Charge mechanic
-        Cerberus -&gt; FlashAction
-        Atropos -&gt; Severed Soul
-        Bully cards &amp; support
-        more generic cards.
-        Current State:
-        Legendary Weapons: 20/25(+2),
-        Bully: 9/10?,
-        Revolver 7/12?,
-        Generic 3/28?
-        total: 49/75?
-        No Art.
+    <description>Arsenal Relic, Fenrir, Revenant, Atropos complete.
+        Remaining: Revolver support cards; Leviathan -&gt; Charge mechanic; Cerberus -&gt; FlashAction; Bully cards
+        &amp; support; more generic cards.
+        Current State: Legendary Weapons: 20/25(+2); Bully: 9/10?; Revolver 7/12?; Generic 3/28?;
+        total: 39/75?; No Art.
     </description>
 
     <properties>

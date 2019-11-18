@@ -10,9 +10,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.actions.ArsenalRecombineAction;
 import theWeaponMaster.actions.OctopusAction;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.util.TextureLoader;
+
+import java.util.HashSet;
 
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
@@ -35,7 +38,8 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public static boolean leviathanUnlocked = true;
     public static boolean revenantUnlocked = true;
     public static int currentWeapon = 0;
-    public static int leviathanShots = 3;
+    public static int leviathanCharges = 3;
+    private HashSet<String> delete = new HashSet<>();
 
     public AbstractPlayer player = AbstractDungeon.player;
 
@@ -52,8 +56,10 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public void atTurnStart() {
         usedThisTurn = false;
         isPlayerTurn = true;
+        new ArsenalRecombineAction();
         beginLongPulse();
     }
+
 
     @Override
     public void atBattleStart() {

@@ -60,12 +60,12 @@ public class IntimidatePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTION[0] + (10 + getBonusBlock());
+        this.description = DESCRIPTION[0] + (10 + getBonusBlock()) + DESCRIPTION[1];
     }
 
     public int getBonusBlock() {
-        if (source.hasPower("ViciousPower")) {
-            return bonusBlock = source.getPower("ViciousPower").amount / 2;
+        if (AbstractDungeon.player.hasPower(ViciousPower.POWER_ID)) {
+            return bonusBlock = AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount / 5;
         } else return 0;
 
     }

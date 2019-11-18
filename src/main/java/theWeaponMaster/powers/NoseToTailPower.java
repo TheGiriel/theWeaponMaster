@@ -29,10 +29,7 @@ public class NoseToTailPower extends TwoAmountPower {
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     private int damageTaken;
-    private int noseToTailHP;
     private int tempHPModifier;
-    private int totalTemp;
-    private int healAmount;
     public AbstractPlayer player = AbstractDungeon.player;
 
     public NoseToTailPower(AbstractMonster target, int magicNumber) {
@@ -48,7 +45,6 @@ public class NoseToTailPower extends TwoAmountPower {
         this.type = AbstractPower.PowerType.DEBUFF;
 
         updateDescription();
-        healAmount = amount2 / 3;
 
         tempHPModifier = magicNumber;
         owner = target;
@@ -70,14 +66,13 @@ public class NoseToTailPower extends TwoAmountPower {
 
     @Override
     public void onDeath() {
-        AbstractDungeon.actionManager.addToBottom(new HealAction(player, owner, healAmount));
-        AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(AbstractDungeon.player, owner, amount2 - healAmount));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(player, owner, amount2));
     }
 
     @Override
-    public void atEndOfRound() {
+    public void atEndOfTurn(boolean isPlayer) {
         AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(AbstractDungeon.player, owner, amount2));
-        totalTemp = amount = amount2 = healAmount = 0;
+        amount = amount2 = 0;
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
     }
 }

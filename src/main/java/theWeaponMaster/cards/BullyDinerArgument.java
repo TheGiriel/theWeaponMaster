@@ -96,7 +96,7 @@ public class BullyDinerArgument extends AbstractBullyCard {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TauntPower(m, p)));
                 break;
             case 3:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, p, 8, 1)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, p, 8)));
                 break;
             case 4:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, 2)));

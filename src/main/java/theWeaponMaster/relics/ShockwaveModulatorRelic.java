@@ -4,11 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.LeviathanCrush;
-import theWeaponMaster.cards.LeviathanDeepImpact;
-import theWeaponMaster.cards.LeviathanEarthquake;
-import theWeaponMaster.cards.LeviathanGroundSplitter;
-import theWeaponMaster.cards.Not_finished.LeviathanEject;
+import theWeaponMaster.cards.*;
 import theWeaponMaster.util.TextureLoader;
 
 import java.util.HashSet;
@@ -46,7 +42,6 @@ public class ShockwaveModulatorRelic extends CustomRelic {
         if(level2) {
             logger.info("adding Eject");
             weaponUpgrade.add(LeviathanEject.ID);
-            //weaponSetHash.add(LeviathanReload.ID);//unlisted
         }
         if(level3) {
             weaponUpgrade.add(LeviathanGroundSplitter.ID);

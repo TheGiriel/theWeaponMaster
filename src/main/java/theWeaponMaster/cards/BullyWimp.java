@@ -27,34 +27,37 @@ public class BullyWimp extends AbstractBullyCard {
     private static final int COST = 1;
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int BULLY_COST = 10;
-    private static final int UPGRADED_BULLY_NUMBER = 4;
+    private static final int BULLY_COST = 3;
+    private static final int UPGRADED_BULLY_NUMBER = 3;
 
     public BullyWimp() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, CardTarget.ALL_ENEMY);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, CardTarget.ENEMY);
 
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
+
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            flash();
-            for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                if (!monster.isDead && !monster.isDying) {
-                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new WeakPower(monster, magicNumber, false), magicNumber));
-                }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
+        if (!upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
+            return;
+        }
+        for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+            if (!monster.isDead && !monster.isDying) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new WeakPower(monster, magicNumber, false), magicNumber));
             }
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
         }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
+            this.target = CardTarget.ALL_ENEMY;
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             increaseVicious(UPGRADED_BULLY_NUMBER);

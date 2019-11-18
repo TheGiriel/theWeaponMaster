@@ -3,7 +3,6 @@ package theWeaponMaster.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -25,7 +24,7 @@ public class RevenantRavenous extends AbstractDynamicCard {
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
@@ -33,20 +32,24 @@ public class RevenantRavenous extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
-    private static final int MAGIC_NUMBER = 2;
-    private int dmgDEALT = 0;
+    private static final int MAGIC_NUMBER = 3;
+    private static final int UGPRADED_MAGIC_NUMBER = 2;
+    private static int turnCount = 0;
 
     public RevenantRavenous() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+
+        this.retain = true;
     }
 
     @Override
     public void upgrade() {
-        if(!upgraded) {
+        if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
+            upgradeMagicNumber(UGPRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }
@@ -58,22 +61,16 @@ public class RevenantRavenous extends AbstractDynamicCard {
     //TODO: Improve method
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        TheWeaponMaster.logger.info("calculating heal amount.");
-        dmgDEALT = (damage-m.currentBlock)/2;
-
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        TheWeaponMaster.logger.info("dealing damage.");
-        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, dmgDEALT));
-        TheWeaponMaster.logger.info("healing: " + dmgDEALT);
-        dmgDEALT = 0;
+        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, this.magicNumber)));
 
-        TheWeaponMaster.logger.info("Gain Vicious - Ravenous Strikes.");
-
-        TheWeaponMaster.logger.info("Gained Vicious - Ravenous Strikes.");
-
-        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, 15)));
-        this.magicNumber++;
-        TheWeaponMaster.logger.info("updating magic number");
     }
 
+    public void atTurnStart() {
+        this.retain = true;
+        turnCount++;
+        if (AbstractDungeon.player.hand.contains(this) && turnCount > 1) {
+            baseMagicNumber += 2;
+        }
+    }
 }

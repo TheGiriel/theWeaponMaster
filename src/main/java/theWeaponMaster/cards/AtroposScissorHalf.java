@@ -11,12 +11,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.relics.ManaWhetstoneRelic;
+import theWeaponMaster.util.Scissors;
 
 import java.util.HashSet;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class AtroposScissorHalf extends AbstractDynamicCard {
+public class AtroposScissorHalf extends AbstractDynamicCard implements Scissors {
 
     public static final String ID = TheWeaponMaster.makeID(AtroposScissorHalf.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -31,10 +32,12 @@ public class AtroposScissorHalf extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DAMAGE = 3;
     private static final int UPGRADED_DAMAGE = 1;
-    private static final int MAGIC_NUMBER = 2;
+    private static final int BLOCK = 2;
+    private static final int UPGRADED_BLOCK = 1;
+    private static final int MAGIC_NUMBER = 1;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
     private static int scissorCombo = 0;
     private HashSet<String> scissors = new HashSet<>();
@@ -42,14 +45,11 @@ public class AtroposScissorHalf extends AbstractDynamicCard {
     public AtroposScissorHalf() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
+        this.block = baseBlock = BLOCK;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        scissors.add(AtroposScissorHalf.ID);
-        scissors.add(AtroposSeveredScissors.ID);
-    }
 
-    @Override
-    public void atTurnStart() {
-        scissorCombo = 0;
+        this.exhaust = true;
+        addScissors();
     }
 
     @Override
@@ -63,6 +63,7 @@ public class AtroposScissorHalf extends AbstractDynamicCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             upgradeDamage(UPGRADED_DAMAGE);
+            upgradeBlock(UPGRADED_BLOCK);
             initializeDescription();
         }
     }
@@ -71,14 +72,19 @@ public class AtroposScissorHalf extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && scissors.contains(AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).cardID)) {
-            scissorCombo = scissorCombo + magicNumber;
+            damage += block;
         } else {
-            scissorCombo = 0;
+            damage = baseDamage;
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage + scissorCombo, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        ManaBurnAction.ignite(m, p);
+        ManaBurnAction.ignite(m, magicNumber);
+        AtroposSeveredScissors.leftHalf = true;
+    }
 
+    @Override
+    public void addScissors() {
+        scissors.add(AtroposScissorHalf.ID);
+        scissors.add(AtroposSeveredScissors.ID);
     }
 }

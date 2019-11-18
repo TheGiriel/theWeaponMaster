@@ -24,7 +24,7 @@
       " NL Lose a quarter #r(",
       " NL Lose a third #r(",
       ") of your Vicious at the end of the turn.",
-      " NL [#8b0000]Special [#8b0000]Attacks [#8b0000]are [#8b0000]available [#8b0000]to [#8b0000]you."
+      " NL #rSpecial #rAttacks #rare #ravailable #rto #ryou."
     ]
   },
   "EgoPower": {
@@ -54,9 +54,16 @@
   "NoseToTailPower": {
     "NAME": "Nose To Tail",
     "DESCRIPTIONS": [
-      "Gain 1 Temporary HP for every [#e3dac9]",
-      " damage you deal. NL Heal for one third of the gained Temporary HP [#e3dac9](",
-      ") instead when you kill the target before the end of the turn."
+      "Gain 1 Temporary_HP for every [#e3dac9]",
+      " damage you deal at the end of your turn. NL Heal for the gained Temporary HP [#e3dac9](",
+      ") instead when you kill the target."
+    ]
+  },
+  "HungeringPower": {
+    "NAME": "Hungering",
+    "DESCRIPTIONS": [
+      "Gain [#e3dac9]",
+      " Max HP when you kill the enemy before the turn ends."
     ]
   },
   "StaggerPower": {
@@ -99,13 +106,6 @@
       "Taunted creatures are forced to attack and deal base damage equal to 10% of your max HP."
     ]
   },
-  "HungeringPower": {
-    "NAME": "Hungering",
-    "DESCRIPTIONS": [
-      "Gain [#e3dac9]",
-      " Max HP when you kill the enemy before the turn ends."
-    ]
-  },
   "DefensiveStancePower": {
     "NAME": "Defensive Stance",
     "DESCRIPTIONS": [
@@ -117,6 +117,13 @@
     "DESCRIPTIONS": [
       "Discard the top card of your draw Pile counter an opponent's attack for",
       "damage."
+    ]
+  },
+  "BerserkerStancePower": {
+    "NAME": "Berserker Stance",
+    "DESCRIPTIONS": [
+      "Vicious doesn't decay at the end of your turn. Gain #r",
+      " more Vicious every turn."
     ]
   }
 }

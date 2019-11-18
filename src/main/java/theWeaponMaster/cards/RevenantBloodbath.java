@@ -58,7 +58,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return p.hasPower(ViciousPower.POWER_ID) && p.getPower(ViciousPower.POWER_ID).amount >= 5;
+        return p.hasPower(ViciousPower.POWER_ID) && p.getPower(ViciousPower.POWER_ID).amount >= 15;
     }
 
     @Override

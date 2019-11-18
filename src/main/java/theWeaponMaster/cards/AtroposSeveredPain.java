@@ -34,7 +34,6 @@ public class AtroposSeveredPain extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         initializeDescription();
-
     }
 
     @Override

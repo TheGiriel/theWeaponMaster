@@ -42,7 +42,6 @@ public class GhoulskinSheathRelic extends CustomRelic {
         }
         if (level2) {
             weaponUpgrade.add(RevenantChopChopCHOP.ID);
-            //weaponSetHash.add(LeviathanReload.ID);//unlisted
         }
         if (level3) {
             weaponUpgrade.add(RevenantHungrySteel.ID);

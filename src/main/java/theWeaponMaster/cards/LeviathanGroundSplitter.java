@@ -56,14 +56,9 @@ public class LeviathanGroundSplitter extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         //TODO: Hamper and damage enemies based on their total shield.
-        int totalBlock = 0;
-        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            totalBlock += monster.currentBlock;
-        }
-
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             if (!monster.isDead && !monster.isDying) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StaggerPower(monster, p, totalBlock, magicNumber), 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StaggerPower(monster, p, monster.currentBlock)));
             }
         }
     }

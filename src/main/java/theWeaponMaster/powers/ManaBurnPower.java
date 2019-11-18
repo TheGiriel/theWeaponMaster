@@ -4,15 +4,22 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ManaBurnAction;
+import theWeaponMaster.cards.AtroposScissorHalf;
+import theWeaponMaster.cards.AtroposSeveredScissors;
+import theWeaponMaster.cards.AtroposSeveredSoul;
 import theWeaponMaster.util.TextureLoader;
+
+import java.util.HashSet;
+
+import static com.megacrit.cardcrawl.monsters.AbstractMonster.Intent.*;
 
 public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower {
     public static final String POWER_ID = TheWeaponMaster.makeID(ManaBurnPower.class.getSimpleName());
@@ -26,19 +33,18 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
     public static final Texture manablaze_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("manablaze_placeholder_32.png"));
 
     private AbstractCreature source;
-    private int manaBurnIntensity;
+    public static HashSet<AbstractMonster.Intent> intent = new HashSet<>();
     public static AbstractMonster m;
-    public static int igniteDamage;
     public static double IGNITE = 0.03;
+    public static HashSet<String> triggers = new HashSet<>();
+    private int manaBurnTotal;
 
     public ManaBurnPower(AbstractMonster owner, AbstractCreature source, int manaBurn) {
         this.name = NAME;
         this.ID = POWER_ID;
-        m = owner;
-        this.owner = owner;
+        this.owner = m = owner;
         this.amount = manaBurn;
         this.source = source;
-        igniteDamage = amount;
 
         this.region128 = new TextureAtlas.AtlasRegion(manaburn_84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(manaburn_32, 0, 0, 32, 32);
@@ -46,28 +52,39 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
         this.type = AbstractPower.PowerType.DEBUFF;
         m = (AbstractMonster) this.owner;
 
-        this.manaBurnIntensity = manaBurnDamage();
         this.isTurnBased = true;
+
+        intent.add(ATTACK_BUFF);
+        intent.add(ATTACK_DEBUFF);
+        intent.add(DEFEND_BUFF);
+        intent.add(DEFEND_DEBUFF);
+        intent.add(BUFF);
+        intent.add(DEBUFF);
+        intent.add(STRONG_DEBUFF);
+        intent.add(MAGIC);
+
+        triggers.add(AtroposScissorHalf.ID);
+        triggers.add(AtroposSeveredSoul.ID);
+        triggers.add(AtroposSeveredScissors.ID);
+
         getHealthBarAmount();
         updateDescription();
-    }
 
-    public static int IgniteDamage() {
-        return (int) Math.ceil(m.currentHealth * IGNITE * igniteDamage);
+        new ManaBurnAction(owner, (AbstractPlayer) source);
     }
 
     private void updateDamage() {
-        this.manaBurnIntensity = (int) Math.ceil(this.owner.maxHealth * IGNITE * this.amount);
+        this.manaBurnTotal = (int) Math.ceil(this.owner.maxHealth * IGNITE * this.amount);
         getHealthBarAmount();
         updateDescription();
     }
 
-    private int manaBurnDamage() {
+    private int manaBurnDamageTurn() {
         return (int) Math.ceil(this.owner.maxHealth * IGNITE * this.amount);
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTION[0] + manaBurnDamage() + DESCRIPTION[1] + this.amount;
+        this.description = DESCRIPTION[0] + manaBurnDamageTurn() + DESCRIPTION[1] + this.amount;
         if (this.amount >= 3) {
             this.description += DESCRIPTION[2];
         }
@@ -75,8 +92,8 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
     }
 
     public int getHealthBarAmount() {
-        if (ManaBurnAction.intent.contains(m.intent)) {
-            return manaBurnDamage();
+        if (intent.contains(m.intent)) {
+            return manaBurnDamageTurn();
         }
         return 0;
     }
@@ -88,27 +105,20 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
 
     public void stackPower(int stackAmount) {
         this.amount += stackAmount;
-        if (this.amount >= 3) {
-            this.name = "Manablaze";
-            this.region128 = new TextureAtlas.AtlasRegion(manablaze_84, 0, 0, 84, 84);
-            this.region48 = new TextureAtlas.AtlasRegion(manablaze_32, 0, 0, 32, 32);
-        }
         getHealthBarAmount();
         updateDamage();
     }
 
     public void reducePower(int stackAmount) {
         this.amount -= stackAmount;
-        if (this.amount <= 2) {
-            this.name = NAME;
-            this.region128 = new TextureAtlas.AtlasRegion(manaburn_84, 0, 0, 84, 84);
-            this.region48 = new TextureAtlas.AtlasRegion(manaburn_32, 0, 0, 32, 32);
-        }
         getHealthBarAmount();
         updateDamage();
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new ManaBurnAction(this.owner, this.source, this.amount));
+        if (intent.contains(m.intent)) {
+            ManaBurnAction.ignite(m, amount);
+        }
+        getHealthBarAmount();
     }
 }
