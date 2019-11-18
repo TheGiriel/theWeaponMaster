@@ -3,11 +3,15 @@ package theWeaponMaster.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.OctopusAction;
+import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
@@ -37,6 +41,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     public ArsenalRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
+        this.description = DESCRIPTIONS[0];
     }
 
     public void atPreBattle() {
@@ -51,6 +56,11 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     }
 
     @Override
+    public void atBattleStart() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 0)));
+    }
+
+    @Override
     public void onPlayerEndTurn() {
         isPlayerTurn = false; // Not our turn now.
         stopPulse();
@@ -58,30 +68,28 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     public void setCurrentWeapon(int newWeapon) {
         currentWeapon = newWeapon;
-        this.description = DESCRIPTIONS[currentWeapon];
-        TheWeaponMaster.logger.info(DESCRIPTIONS[currentWeapon]);
     }
 
-    public void updateDescription(){
-        this.description = DESCRIPTIONS[currentWeapon];
+    @Override
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        if (targetCard.type == AbstractCard.CardType.ATTACK) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 2)));
+        }
     }
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[currentWeapon];
+        return DESCRIPTIONS[0];
     }
-
-    @Override
-    public void onVictory() {
-        stopPulse();
-    }
-
 
     @Override
     public void onUnequip() {
         AbstractDungeon.player.getRelic(ArsenalRelic.ID);
     }
 
+    public void onVictory() {
+        stopPulse();
+    }
     @Override
     public void onRightClick() {
         if (!isObtained || usedThisTurn || !isPlayerTurn) {

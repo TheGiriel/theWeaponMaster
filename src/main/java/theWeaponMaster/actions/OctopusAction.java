@@ -2,12 +2,14 @@ package theWeaponMaster.actions;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.patches.CenterGridCardSelectScreen;
 import theWeaponMaster.relics.ArsenalRelic;
@@ -18,7 +20,7 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class OctopusAction extends AbstractGameAction {
     private boolean pickCard = false;
-    private AbstractPlayer owner;
+    private AbstractPlayer p = AbstractDungeon.player;
     private ArrayList<AbstractCard> weapon = new ArrayList<>();
 
     public OctopusAction() {
@@ -79,7 +81,8 @@ public class OctopusAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon(5);
             }
-            AbstractDungeon.player.draw(5);
+            AbstractDungeon.player.draw(2);
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawReductionPower(p, 1)));
             isDone = true;
         }
         tickDuration();

@@ -34,7 +34,7 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
 
     private static final int COST = 1;
     private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADED_MAGIC_NUMBER = 3;
+    private static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int BULLY_COST = 15;
     private static final int UPGRADED_BULLY_NUMBER = 3;
     private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
@@ -48,14 +48,6 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
 
         tags.add(TAUNT);
         intents = EnemyForceAction.getIntents(this);
-    }
-
-    @Override
-    public void unhover() {
-        this.bullyNumber = baseBullyNumber = BULLY_COST;
-        if (upgraded) {
-            increaseVicious(UPGRADED_BULLY_NUMBER);
-        }
     }
 
     @Override
@@ -90,7 +82,7 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(-UPGRADED_MAGIC_NUMBER);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             increaseVicious(UPGRADED_BULLY_NUMBER);
             retain = true;
             initializeDescription();

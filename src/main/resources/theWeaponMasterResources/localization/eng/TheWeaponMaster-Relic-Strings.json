@@ -35,12 +35,7 @@
     "NAME": "The Arsenal",
     "FLAVOR": "I might just have the right tool for the job.",
     "DESCRIPTIONS": [
-      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck. NL Current Weapon: None",
-      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck. NL Current Weapon: Fenrir",
-      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck. NL Current Weapon: Cerberus",
-      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck. NL Current Weapon: Revenant_Cleaver",
-      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck. NL Current Weapon: Atropos_Shears",
-      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL This modifies your deck. NL Current Weapon: Leviathan_Gauntlet"
+      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL Gain 2 Vicious every time you use an Attack card. NL Warning: This modifies your deck."
     ]
   },
   "theWeaponMaster:RevolverRelic": {

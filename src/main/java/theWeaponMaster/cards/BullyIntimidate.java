@@ -30,6 +30,7 @@ public class BullyIntimidate extends AbstractBullyCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
+    private static final int UPGRADED_COST = -1;
     private static final int MAGIC_NUMBER = 10;
     private static final int UPGRADED_MAGIC_NUMBER = 3;
     private static final int BULLY_COST = 3;
@@ -47,7 +48,7 @@ public class BullyIntimidate extends AbstractBullyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         //TODO: Force the enemy to defend if they're attacking you.
-        if (m.intent == AbstractMonster.Intent.ATTACK || m.intent == AbstractMonster.Intent.ATTACK_BUFF || m.intent == AbstractMonster.Intent.ATTACK_DEBUFF) {
+        if (intents.contains(m.intent)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new IntimidatePower(m, p)));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
@@ -69,6 +70,7 @@ public class BullyIntimidate extends AbstractBullyCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            updateCost(UPGRADED_COST);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }

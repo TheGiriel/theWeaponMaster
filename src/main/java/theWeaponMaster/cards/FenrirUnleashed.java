@@ -69,6 +69,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
         int j = 0;
         int totalDamage = 0;
         int overKill = 0;
+        boolean dead = false;
         new FenrirUnleashedSelectAction();
         for (AbstractMonster monster : targetList) {
 
@@ -77,19 +78,25 @@ public class FenrirUnleashed extends AbstractDynamicCard {
         for (int i = 0; i < totalAttacks; i++) {
             totalDamage += overKill;
             overKill = 0;
-            if (totalDamage < targetList.get(j).currentHealth) {
-                TheWeaponMaster.logger.info("New target: " + targetList.get(j));
-                totalDamage += this.damage;
-            } else if (totalDamage >= targetList.get(j).currentHealth) {
-                TheWeaponMaster.logger.info(targetList.get(j) + " is dead. select new target:");
+            if (targetList.get(j).currentHealth == 0) {
                 j++;
-                TheWeaponMaster.logger.info("New target: " + targetList.get(j));
-                totalDamage = 0;
-                overKill = totalDamage - targetList.get(j).currentHealth;
-                new FenrirEvolveAction();
-                i--;
+                continue;
+            }
+            TheWeaponMaster.logger.info("New target: " + targetList.get(j));
+            totalDamage += this.damage;
+            if (totalDamage >= targetList.get(j).currentHealth) {
+                dead = true;
             }
             AbstractDungeon.actionManager.addToBottom(new DamageAction(targetList.get(j), new DamageInfo(p, this.damage + overKill, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            if (dead && j < targetList.size() - 1) {
+                totalAttacks++;
+                new FenrirEvolveAction();
+                j++;
+            }
+            if (j == targetList.size()) {
+                totalAttacks = 0;
+            }
+            dead = false;
         }
         targetList.clear();
     }

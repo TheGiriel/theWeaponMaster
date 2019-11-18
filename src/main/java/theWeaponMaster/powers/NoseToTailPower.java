@@ -28,11 +28,11 @@ public class NoseToTailPower extends TwoAmountPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    private static int damageTaken;
-    private static int noseToTailHP;
-    private static int tempHPModifier;
-    private static int totalTemp;
-    private static int healAmount;
+    private int damageTaken;
+    private int noseToTailHP;
+    private int tempHPModifier;
+    private int totalTemp;
+    private int healAmount;
     public AbstractPlayer player = AbstractDungeon.player;
 
     public NoseToTailPower(AbstractMonster target, int magicNumber) {

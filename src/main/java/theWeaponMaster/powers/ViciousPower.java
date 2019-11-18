@@ -18,7 +18,7 @@ public class ViciousPower extends TwoAmountPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ViciousPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
-    private static final int TIER_TWO = 3;
+    private static final int TIER_TWO = 5;
     private static final int TIER_THREE = TIER_TWO*2;
     private static int bonusDamage = 0;
 
@@ -87,8 +87,11 @@ public class ViciousPower extends TwoAmountPower {
     @Override
     public void updateDescription() {
         setBonusDamage();
-        if (this.amount >= TIER_TWO) {
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[3];
+
+        if (this.amount > TIER_THREE) {
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[4] + (this.amount / 3) + DESCRIPTION[5];
+        } else if (this.amount > TIER_TWO) {
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[3] + (this.amount / 4) + DESCRIPTION[5];
         }
         else {
             description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
@@ -115,13 +118,18 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public void atEndOfRound() {
-        int reduceVicious = (this.amount / 3);
-        this.amount -= reduceVicious;
-        setBonusDamage();
+        if (amount > TIER_THREE) {
+            int reduceVicious = (this.amount / 3);
+            this.amount -= reduceVicious;
+            setBonusDamage();
+        } else if (amount > TIER_TWO) {
+            int reduceVicious = (this.amount / 4);
+            this.amount -= reduceVicious;
+            setBonusDamage();
+        }
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        TheWeaponMaster.logger.info("taking extra damage.");
         return damage + amount2;
     }
 }

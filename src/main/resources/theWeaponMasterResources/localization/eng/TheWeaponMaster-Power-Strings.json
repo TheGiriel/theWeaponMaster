@@ -21,7 +21,10 @@
       "Deal #r",
       " and take #r",
       " more damage.",
-      " more damage. NL [#8b0000]Special [#8b0000]Attacks [#8b0000]are [#8b0000]available [#8b0000]to [#8b0000]you."
+      " NL Lose a quarter #r(",
+      " NL Lose a third #r(",
+      ") of your Vicious at the end of the turn.",
+      " NL [#8b0000]Special [#8b0000]Attacks [#8b0000]are [#8b0000]available [#8b0000]to [#8b0000]you."
     ]
   },
   "EgoPower": {
