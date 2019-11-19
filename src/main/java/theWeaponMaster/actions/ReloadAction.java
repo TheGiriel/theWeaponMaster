@@ -2,7 +2,7 @@ package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import theWeaponMaster.cards.*;
+import theWeaponMaster.cards.revolver.*;
 import theWeaponMaster.relics.RevolverRelic;
 
 import java.util.ArrayList;

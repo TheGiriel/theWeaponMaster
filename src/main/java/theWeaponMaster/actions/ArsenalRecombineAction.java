@@ -3,8 +3,8 @@ package theWeaponMaster.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import theWeaponMaster.cards.AtroposScissorHalf;
-import theWeaponMaster.cards.AtroposSeveredScissors;
+import theWeaponMaster.cards.legendary_weapons.AtroposScissorHalf;
+import theWeaponMaster.cards.legendary_weapons.AtroposSeveredScissors;
 
 import java.util.HashSet;
 

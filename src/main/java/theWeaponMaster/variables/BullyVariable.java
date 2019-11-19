@@ -2,7 +2,7 @@ package theWeaponMaster.variables;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import theWeaponMaster.cards.AbstractBullyCard;
+import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 
 public class BullyVariable extends DynamicVariable {
 

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.Not_finished.BerserkerStance;
+import theWeaponMaster.cards.generic.BerserkerStance;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;

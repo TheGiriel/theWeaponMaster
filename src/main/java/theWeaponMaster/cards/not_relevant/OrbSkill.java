@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.AbstractDynamicCard;
+import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.orbs.DefaultOrb;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;

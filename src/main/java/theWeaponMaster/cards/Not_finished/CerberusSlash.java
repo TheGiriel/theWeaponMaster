@@ -2,6 +2,7 @@ package theWeaponMaster.cards.Not_finished;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,7 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.AbstractDynamicCard;
+import theWeaponMaster.actions.FlashAction;
+import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.relics.HellhoundOilRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -32,6 +34,7 @@ public class CerberusSlash extends AbstractDynamicCard {
     private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
+    public static int flashNumber;
 
     public CerberusSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -54,9 +57,17 @@ public class CerberusSlash extends AbstractDynamicCard {
         return AbstractDungeon.player.hasRelic(HellhoundOilRelic.ID);
     }
 
+    //TODO: Figure out how to properly add the number of discarded cards to the damage value and activate flash.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //new FlashAction(this, p, m, 2);
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+        AbstractDungeon.actionManager.addToTop(new FlashAction(magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5F));
+        TheWeaponMaster.logger.info("getting flash number " + FlashAction.getFlashNumber());
+        damageEnemy(p, m);
+    }
+
+    private void damageEnemy(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + FlashAction.getFlashNumber() * 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+
     }
 }

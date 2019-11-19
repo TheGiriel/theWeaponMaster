@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.*;
+import theWeaponMaster.cards.legendary_weapons.*;
 
 import java.util.HashSet;
 import java.util.Iterator;

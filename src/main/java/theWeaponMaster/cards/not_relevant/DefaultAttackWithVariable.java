@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.AbstractDynamicCard;
+import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 

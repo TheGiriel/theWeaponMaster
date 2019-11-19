@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.Collections;
 import java.util.Comparator;
 
-import static theWeaponMaster.cards.FenrirUnleashed.targetList;
+import static theWeaponMaster.cards.legendary_weapons.FenrirUnleashed.targetList;
 
 public class FenrirUnleashedSelectAction extends AbstractGameAction {
 
