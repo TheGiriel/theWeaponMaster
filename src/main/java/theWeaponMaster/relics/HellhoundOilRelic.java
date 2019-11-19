@@ -4,7 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.Not_finished.*;
+import theWeaponMaster.cards.wip.*;
 import theWeaponMaster.util.TextureLoader;
 
 import java.util.HashSet;
