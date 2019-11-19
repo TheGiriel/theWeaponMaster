@@ -1,5 +1,6 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -43,6 +44,7 @@ public class RevenantRavenous extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
         this.retain = true;
+        AlwaysRetainField.alwaysRetain.set(this, true);
     }
 
     @Override
@@ -68,7 +70,6 @@ public class RevenantRavenous extends AbstractDynamicCard {
     }
 
     public void atTurnStart() {
-        this.retain = true;
         turnCount++;
         if (AbstractDungeon.player.hand.contains(this) && turnCount > 1) {
             baseMagicNumber += 2;

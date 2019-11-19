@@ -56,7 +56,6 @@ theWeaponMaster\cards\revolver\RevolverHeavy.class
 theWeaponMaster\actions\FlashAction.class
 theWeaponMaster\characters\TheWeaponMaster.class
 theWeaponMaster\powers\LaceratePower.class
-theWeaponMaster\actions\ArmorPiercingAction.class
 theWeaponMaster\cards\bully\BullyShakedown.class
 theWeaponMaster\cards\generic\Strike_WeaponMaster.class
 theWeaponMaster\cards\legendary_weapons\LeviathanCrush.class
@@ -94,7 +93,6 @@ theWeaponMaster\cards\wip\GenericUncommonPower.class
 theWeaponMaster\cards\wip\GenericPower1.class
 theWeaponMaster\cards\wip\CerberusIaiSlash.class
 theWeaponMaster\cards\wip\GenericRareDraw.class
-theWeaponMaster\variables\MultiShotVariable.class
 theWeaponMaster\relics\HellhoundOilRelic.class
 theWeaponMaster\cards\wip\CerberusDrainSlash.class
 theWeaponMaster\TheWeaponMaster.class
@@ -119,6 +117,7 @@ theWeaponMaster\variables\shieldBuster.class
 theWeaponMaster\cards\wip\GenericDraw.class
 theWeaponMaster\relics\ManaWhetstoneRelic.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredPath.class
+theWeaponMaster\variables\SecondVariable.class
 theWeaponMaster\cards\revolver\RevolverDouble.class
 theWeaponMaster\actions\ThornBypassAction.class
 theWeaponMaster\powers\StaggerPower.class

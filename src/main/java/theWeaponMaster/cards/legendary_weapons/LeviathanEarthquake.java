@@ -2,7 +2,6 @@ package theWeaponMaster.cards.legendary_weapons;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.relics.ShockwaveModulatorRelic;
@@ -57,27 +55,10 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
         return AbstractDungeon.player.hasRelic(ShockwaveModulatorRelic.ID);
     }
 
-    //TODO: Improve method
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster c : AbstractDungeon.getMonsters().monsters) {
-            if (c.hasPower(ThornsPower.POWER_ID)) {
-                //thorns = c.getPower(ThornsPower.POWER_ID).amount;
-                int blockedDamage = damage;
-                //new ThornBypassAction(c, thorns);
-                if (c.currentBlock > 0) {
-                    if (damage > c.currentBlock) {
-                        AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(c, p, c.currentBlock));
-                        blockedDamage = damage - c.currentBlock;
-                    } else {
-                        AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(c, p, damage));
-                    }
-                } else
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(c, new DamageInfo(p, blockedDamage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SMASH));
-
-                //new ThornBypassAction(c, thorns).ThornsReapply();
-            } else
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(c, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(c, new DamageInfo(p, damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
     }
 }

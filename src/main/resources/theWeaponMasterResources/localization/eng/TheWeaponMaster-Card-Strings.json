@@ -75,28 +75,24 @@
 
   "theWeaponMaster:CerberusSlash": {
     "NAME": "Slash",
-    "DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! damage. NL Flash !M!.",
-    "UPGRADE_DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! plus !M! bonus damage for every card you discard. NL Quickdraw 1."
+    "DESCRIPTION": "Cerberus NL Deal !D! damage. NL Flash !M!: Draw a card."
   },
   "theWeaponMaster:CerberusEssenceSlash": {
     "NAME": "Essence Slash",
-    "DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! damage. Enemies take !M! damage for every buff they have. NL Quickdraw 1.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Cerberus NL Deal !D! damage. NL Flash !M!: Enemies take !SV! damage for every unique buff and debuff they have."
   },
   "theWeaponMaster:CerberusModularSlash": {
     "NAME": "Modular Slash",
-    "DESCRIPTION": "Cerberus NL not_implemented NL",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Cerberus NL Modular_Flash 4:  "
   },
   "theWeaponMaster:CerberusIaiSlash": {
     "NAME": "Iai Slash",
-    "DESCRIPTION": "Cerberus NL Deal !D! damage. Discards !M! random cards to deal 2 bonus damage each. NL Quickdraw 2.",
-    "UPGRADE_DESCRIPTION": "Cerberus NL Deal !D! damage. Discards !M! random cards to deal 2 bonus damage each. NL Quickdraw 2."
+    "DESCRIPTION": "Cerberus NL Retain. Deal !D! damage. NL [#cdfcfe]Flash !M!: Increase Flash damage by 25%  for every turn retained ( !SV! ). Resets when discarded or used.",
+    "UPGRADE_DESCRIPTION": "Cerberus NL Retain. Deal !D! damage. NL Flash !M!: Increase Flash damage by 33%  for every turn retained ( !SV! ). Resets when discarded or used."
   },
   "theWeaponMaster:CerberusDrainSlash": {
     "NAME": "Drain Slash",
-    "DESCRIPTION": "Cerberus NL not_implemented NL Deal !D! damage. Exhaust one card and steal !M! random enemy buff. NL Quickdraw 1.",
-    "UPGRADE_DESCRIPTION": "Legendary Weapon NL not_implemented NL Deal !D! damage. Exhaust one card and steal !M! random enemy buffs. NL Quickdraw 1."
+    "DESCRIPTION": "Cerberus NL Deal !D! damage. NL Flash !M!: Steal up to !SV! units of a random enemy buff."
   },
 
   "theWeaponMaster:LeviathanCrush": {
@@ -109,7 +105,7 @@
     "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to random enemies.",
     "EXTENDED_DESCRIPTION": [
       "Eject",
-      "Leviathan_Gauntlet NL Eject all unspent Leviathan cartridges and deal !D! damage X times to random enemies.",
+      "Leviathan_Gauntlet NL Release all remaining Leviathan charges and deal !D! damage !M! times to random enemies.",
       "Reload",
       "Leviathan_Gauntlet NL Reload your Gauntlet and gain !B! block."
     ]

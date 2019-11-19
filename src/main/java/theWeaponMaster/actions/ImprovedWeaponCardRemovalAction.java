@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.cards.legendary_weapons.*;
-import theWeaponMaster.cards.wip.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;

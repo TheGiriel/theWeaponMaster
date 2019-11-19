@@ -30,7 +30,6 @@ import theWeaponMaster.cards.legendary_weapons.*;
 import theWeaponMaster.cards.not_relevant.DefaultCommonPower;
 import theWeaponMaster.cards.not_relevant.OrbSkill;
 import theWeaponMaster.cards.revolver.*;
-import theWeaponMaster.cards.wip.*;
 import theWeaponMaster.events.IdentityCrisisEvent;
 import theWeaponMaster.potions.PlaceholderPotion;
 import theWeaponMaster.relics.*;
@@ -38,6 +37,7 @@ import theWeaponMaster.util.IDCheckDontTouchPls;
 import theWeaponMaster.util.TextureLoader;
 import theWeaponMaster.variables.BullyVariable;
 import theWeaponMaster.variables.DefaultCustomVariable;
+import theWeaponMaster.variables.SecondVariable;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -402,6 +402,7 @@ public class TheWeaponMaster implements
         // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new BullyVariable());
+        BaseMod.addDynamicVariable(new SecondVariable());
         
         logger.info("Adding cards");
         // Add the cards

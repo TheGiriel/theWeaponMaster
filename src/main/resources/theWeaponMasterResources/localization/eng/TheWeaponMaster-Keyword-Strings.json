@@ -116,10 +116,19 @@
   {
     "PROPER_NAME": "[#cdfcfe]Flash",
     "NAMES": [
-      "flash",
-      "flashing"
+      "flash"
     ],
-    "DESCRIPTION": "[#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Gain 2 bonus damage per card, activate the effect when discarding X. Draw one card for every card discarded after the first."
+    "DESCRIPTION": "[#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2 Cards: draw a card. NL X: Activate the extra effect."
+  },
+  {
+    "PROPER_NAME": "[#cdfcfe]Utility [#cdfcfe]Flash",
+    "NAMES": [
+      "Utility Flash",
+      "utility flash",
+      "Utility_Flash",
+      "utility_flash"
+    ],
+    "DESCRIPTION": "[#cdfcfe]Utility [#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Doesn't draw. Bonuses per discard: NL Attack: Gain 2 bonus damage. NL Skill: Gain 5 block. NL 2 Powers: gain 1 Energy NL Status/Curse: Take 1 damage."
   },
   {
     "PROPER_NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
@@ -154,7 +163,7 @@
       "ignite",
       "Ignite"
     ],
-    "DESCRIPTION": "Ignite X: Trigger up to X stacks of target enemy's Mana Burn."
+    "DESCRIPTION": "[#3abfbe]Ignite [#3abfbe]X: Trigger up to X stacks of target enemy's Mana Burn."
   },
   {
     "PROPER_NAME": "[#746550]Leviathan [#746550]Gauntlet",
@@ -172,7 +181,7 @@
       "stagger",
       "staggered"
     ],
-    "DESCRIPTION": "Staggered creatures deal and gain 25-50% less damage and block respectively."
+    "DESCRIPTION": "Staggered creatures deal and gain less damage and block respectively, based on their block."
   },
   {
     "PROPER_NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
@@ -201,7 +210,7 @@
       "split_scissors",
       "Split_Scissors"
     ],
-    "DESCRIPTION": "Split Scissors X: Deal X Bonus damage if the last played card was Severed Scissors or Right/Left Half. NL Recombines to Severed Scissors when Right and Left Half exhaust."
+    "DESCRIPTION": "Split Scissors X: Deal X Bonus damage if the last played card was Severed Scissors or Right/Left Half. NL Recombines to Severed Scissors when Right and Left Half are exhausted."
   },
   {
     "PROPER_NAME": "Weapon Swap",

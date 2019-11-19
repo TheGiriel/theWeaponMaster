@@ -51,7 +51,7 @@ public class OctopusAction extends AbstractGameAction {
             }
 
             CenterGridCardSelectScreen.centerGridSelect = true;
-            AbstractDungeon.gridSelectScreen.open(group, 1, "Choose your Weapon", false);
+            AbstractDungeon.gridSelectScreen.open(group, 1, "Choose your Weapon", false, false, true, false);
         } else if (pickCard && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             pickCard = false;
             AbstractCard cardChoice = AbstractDungeon.gridSelectScreen.selectedCards.get(0);

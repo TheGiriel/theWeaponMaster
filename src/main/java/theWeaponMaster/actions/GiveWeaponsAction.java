@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import theWeaponMaster.cards.legendary_weapons.*;
-import theWeaponMaster.cards.wip.*;
 import theWeaponMaster.relics.*;
 
 import java.util.ArrayList;

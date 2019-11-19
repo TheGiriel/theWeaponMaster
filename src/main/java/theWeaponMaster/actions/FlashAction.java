@@ -2,28 +2,26 @@ package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.abstractcards.AbstractDefaultCard;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.function.BiConsumer;
 
 
 public class FlashAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
-    public static int flashNumber = 0;
-    private static CardGroup group;
     public static final String[] TEXT;
-    private static AbstractDefaultCard card;
-    private static ArrayList<AbstractCard> discardList = new ArrayList<>();
     private boolean pickCard = false;
     private AbstractPlayer p = AbstractDungeon.player;
+    private final Object state;
+    private BiConsumer<Object, ArrayList<AbstractCard>> onDiscard;
+    private boolean anyNumber;
+    private AbstractCard card;
 
     static {
         uiStrings = CardCrawlGame.languagePack.getUIString("DiscardAction");
@@ -31,20 +29,30 @@ public class FlashAction extends AbstractGameAction {
     }
 
 
-    public FlashAction(int amount) {
-        flashNumber = 0;
+    public FlashAction(AbstractCard card, int amount, Object state, BiConsumer<Object, ArrayList<AbstractCard>> discarded) {
+        this(card, amount, state, discarded, true);
+    }
+
+
+    public FlashAction(AbstractCard card, int amount, Object state, BiConsumer<Object, ArrayList<AbstractCard>> discarded, boolean anyNumber) {
+        this.card = card;
+        this.state = state;
+        this.onDiscard = discarded;
         this.amount = amount;
-        actionType = ActionType.CARD_MANIPULATION;
-        duration = Settings.ACTION_DUR_XFAST;
+        this.duration = Settings.ACTION_DUR_XFAST;
+        this.actionType = ActionType.DISCARD;
+        this.anyNumber = anyNumber;
     }
 
 
     @Override
     public void update() {
+        ArrayList<AbstractCard> discarded = new ArrayList<>();
+        discarded.add(card);
         if (duration == Settings.ACTION_DUR_XFAST) {
             pickCard = true;
 
-            AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, false, true, false, false, true);
+            AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, true, true);
         } else if (pickCard && !AbstractDungeon.handCardSelectScreen.selectedCards.isEmpty()) {
             pickCard = false;
             AbstractCard c;
@@ -52,11 +60,16 @@ public class FlashAction extends AbstractGameAction {
             while (var1.hasNext()) {
                 c = (AbstractCard) var1.next();
                 p.hand.moveToDiscardPile(c);
+                c.triggerOnManualDiscard();
+                discarded.add(c);
             }
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
-            AbstractDungeon.handCardSelectScreen.selectedCards.clear();
-
-            TheWeaponMaster.logger.info("Flash Number " + flashNumber);
+            this.onDiscard.accept(this.state, discarded);
+            isDone = true;
+        } else {
+            pickCard = false;
+            AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
+            this.onDiscard.accept(this.state, discarded);
             isDone = true;
         }
         tickDuration();
