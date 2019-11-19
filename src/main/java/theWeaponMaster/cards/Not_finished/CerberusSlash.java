@@ -33,14 +33,14 @@ public class CerberusSlash extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
-    private static final int MAGIC_NUMBER = 1;
-    public static int flashNumber;
+    private static final int MAGIC_NUMBER = 3;
 
     public CerberusSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        defaultSecondMagicNumber = 0;
     }
 
     @Override
@@ -60,14 +60,14 @@ public class CerberusSlash extends AbstractDynamicCard {
     //TODO: Figure out how to properly add the number of discarded cards to the damage value and activate flash.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new FlashAction(magicNumber));
+        AbstractDungeon.actionManager.addToTop(new FlashAction(this.cardID, magicNumber));
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5F));
-        TheWeaponMaster.logger.info("getting flash number " + FlashAction.getFlashNumber());
+        TheWeaponMaster.logger.info("getting flash number " + defaultSecondMagicNumber);
         damageEnemy(p, m);
     }
 
     private void damageEnemy(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + FlashAction.getFlashNumber() * 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + FlashAction.flashNumber, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
+
 }
