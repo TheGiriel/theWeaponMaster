@@ -1,7 +1,10 @@
 package theWeaponMaster.cards.legendary_weapons;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -58,21 +61,19 @@ public class CerberusModularSlash extends AbstractDynamicCard {
     private void Flash(Object state, ArrayList<AbstractCard> discarded) {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = (AbstractMonster) state;
-        int flashBonus = 0;
+        int flashBonus = -2;
         int flashBlock = 0;
         int flashEnergy = 0;
         int flashCurse = 0;
 
         if (state != null && discarded != null) {
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
-            flashBonus = discarded.size() * 2 - 2;
             if (discarded.size() > 1) {
                 for (AbstractCard c : discarded) {
                     if (c.type.equals(CardType.ATTACK)) {
                         flashBonus += 2;
                     }
                     if (c.type.equals(CardType.SKILL)) {
-                        flashBlock += 4;
+                        flashBlock += 5;
                     }
                     if (c.type.equals(CardType.STATUS) || c.type.equals(CardType.CURSE)) {
                         flashCurse++;

@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.actions.LeviathanChargeAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
+import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.ShockwaveModulatorRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -24,7 +26,7 @@ public class LeviathanCrush extends AbstractDynamicCard {
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
@@ -34,11 +36,13 @@ public class LeviathanCrush extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 2;
     private static int MAGIC_NUMBER = 25;
     private static int UPGRADED_MAGIC_NUMBER = 25;
+    private final int CHARGECOST = 1;
 
     public LeviathanCrush() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ArsenalRelic.leviathanCharges;
         tags.add(WeaponMasterTags.LEVIATHAN);
     }
 
@@ -68,7 +72,10 @@ public class LeviathanCrush extends AbstractDynamicCard {
             }
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
-        if (armorCrush != 0) {
+        if (armorCrush != 0 && ArsenalRelic.leviathanCharges >= CHARGECOST) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorCrush * 2, DamageInfo.DamageType.HP_LOSS)));
+            new LeviathanChargeAction(-CHARGECOST);
+        } else if (armorCrush != 0) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorCrush, DamageInfo.DamageType.HP_LOSS)));
         }
     }

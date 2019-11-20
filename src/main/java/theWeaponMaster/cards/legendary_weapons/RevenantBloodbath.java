@@ -1,5 +1,6 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -14,9 +15,11 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.ViciousPower;
+import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.GhoulskinSheathRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
 
 public class RevenantBloodbath extends AbstractDynamicCard {
 
@@ -32,8 +35,8 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     private static final int COST = -1;
     private static final int DAMAGE = 7;
     private static final int UPGRADED_DAMAGE = 3;
-    private static final int MAGIC_NUMBER = 3;
-    private static final int UPGRADED_MAGIC_NUMBER = 2;
+    private static final int MAGIC_NUMBER = 2;
+    private static final int UPGRADED_MAGIC_NUMBER = 1;
 
     public RevenantBloodbath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -41,6 +44,9 @@ public class RevenantBloodbath extends AbstractDynamicCard {
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
+        AlwaysRetainField.alwaysRetain.set(this, true);
+        tags.add(REVENANT);
+        initializeDescription();
     }
 
     @Override
@@ -59,11 +65,12 @@ public class RevenantBloodbath extends AbstractDynamicCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return p.hasPower(ViciousPower.POWER_ID) && p.getPower(ViciousPower.POWER_ID).amount >= 15;
+        return p.hasPower(ViciousPower.POWER_ID) && p.getPower(ViciousPower.POWER_ID).amount >= ViciousPower.TIER_THREE;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int bloodbath = ViciousPower.TIER_TWO;
         int initialDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / 5;
         int totalAttacks = EnergyPanel.totalCount;
         EnergyPanel.useEnergy(totalAttacks);
@@ -71,14 +78,18 @@ public class RevenantBloodbath extends AbstractDynamicCard {
             totalAttacks += 2;
             p.getRelic(ChemicalX.ID).flash();
         }
+        int hungerBonus = 0;
+        if (ArsenalRelic.revenantHunger >= 5) {
+            hungerBonus = 1;
+        }
         p.getPower(ViciousPower.POWER_ID).amount += (this.magicNumber * totalAttacks);
         int j = 0;
         do {
-            int finalDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / 5;
+            int finalDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / (bloodbath - hungerBonus);
             j++;
             AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, (damage - initialDamageBonus + finalDamageBonus), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
-            p.getPower(ViciousPower.POWER_ID).reducePower(5);
-        } while (p.getPower(ViciousPower.POWER_ID).amount >= 5);
+            p.getPower(ViciousPower.POWER_ID).reducePower(bloodbath - hungerBonus);
+        } while (p.getPower(ViciousPower.POWER_ID).amount >= (bloodbath - hungerBonus));
     }
 }

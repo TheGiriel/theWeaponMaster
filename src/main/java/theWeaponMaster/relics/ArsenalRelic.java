@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ArsenalRecombineAction;
+import theWeaponMaster.actions.LeviathanChargeAction;
 import theWeaponMaster.actions.OctopusAction;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.util.TextureLoader;
@@ -19,6 +20,7 @@ import java.util.HashSet;
 
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
+import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
 
 public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
@@ -37,8 +39,9 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public static boolean atroposUnlocked = true;
     public static boolean leviathanUnlocked = true;
     public static boolean revenantUnlocked = true;
-    public static int currentWeapon = 0;
+    public static String currentWeapon = "None";
     public static int leviathanCharges = 3;
+    public static int revenantHunger = 3;
     private HashSet<String> delete = new HashSet<>();
 
     public AbstractPlayer player = AbstractDungeon.player;
@@ -64,15 +67,41 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     @Override
     public void atBattleStart() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 0)));
+        leviathanCharges = Math.min(Math.max(leviathanCharges, 0), 3);
+        revenantHunger = Math.min(Math.max(revenantHunger, -5), 10);
     }
 
     @Override
     public void onPlayerEndTurn() {
+        for (AbstractCard card : player.hand.group) {
+            if (card.hasTag(REVENANT)) {
+                starveRevenant();
+            }
+        }
+        if (leviathanCharges < 3) {
+            chargeGauntlet();
+        }
         isPlayerTurn = false; // Not our turn now.
         stopPulse();
     }
 
-    public void setCurrentWeapon(int newWeapon) {
+    public void chargeGauntlet() {
+        Math.min(Math.max(leviathanCharges, 0), 3);
+        new LeviathanChargeAction(1);
+    }
+
+    private void starveRevenant() {
+        Math.min(Math.max(revenantHunger, -5), 10);
+        revenantHunger++;
+    }
+
+    @Override
+    public void onEnterRoom(AbstractRoom room) {
+        new LeviathanChargeAction(1);
+        leviathanCharges = Math.min(Math.max(leviathanCharges, 0), 3);
+    }
+
+    public void setCurrentWeapon(String newWeapon) {
         currentWeapon = newWeapon;
     }
 
@@ -80,6 +109,9 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         if (targetCard.type == AbstractCard.CardType.ATTACK) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 2)));
+        }
+        if (currentWeapon.equals("Revenant") && !targetCard.hasTag(REVENANT)) {
+            starveRevenant();
         }
     }
 

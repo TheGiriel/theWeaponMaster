@@ -43,7 +43,7 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
         weaponSetHash.add(AtroposSeveredSoul.ID);
 
         weaponSetHash.add(LeviathanCrush.ID);
-        weaponSetHash.add(LeviathanEject.ID);
+        weaponSetHash.add(LeviathanGauntletCharger.ID);
         weaponSetHash.add(LeviathanGroundSplitter.ID);
         weaponSetHash.add(LeviathanDeepImpact.ID);
         weaponSetHash.add(LeviathanEarthquake.ID);

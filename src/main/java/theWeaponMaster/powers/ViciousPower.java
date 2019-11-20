@@ -19,8 +19,8 @@ public class ViciousPower extends TwoAmountPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ViciousPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
-    private static final int TIER_TWO = 5;
-    private static final int TIER_THREE = TIER_TWO * 3;
+    public static final int TIER_TWO = 5;
+    public static final int TIER_THREE = TIER_TWO * 3;
     private static int bonusDamage = 0;
 
 

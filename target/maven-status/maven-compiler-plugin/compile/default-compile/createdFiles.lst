@@ -1,5 +1,4 @@
 theWeaponMaster\cards\generic\BerserkerStance.class
-theWeaponMaster\cards\legendary_weapons\LeviathanEject.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredSource.class
 theWeaponMaster\powers\BerserkerStancePower.class
 theWeaponMaster\cards\revolver\RevolverHollowPoint.class
@@ -12,8 +11,10 @@ theWeaponMaster\cards\abstractcards\AbstractAmmoCard.class
 theWeaponMaster\cards\legendary_weapons\FenrirShieldEater.class
 theWeaponMaster\patches\DefaultInsertPatch.class
 theWeaponMaster\cards\legendary_weapons\LeviathanDeepImpact.class
+theWeaponMaster\actions\LeviathanChargeAction.class
 theWeaponMaster\actions\EnemyForceAction.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredPain.class
+theWeaponMaster\cards\legendary_weapons\CerberusModularSlash.class
 theWeaponMaster\actions\ImprovedWeaponCardRemovalAction.class
 theWeaponMaster\cards\bully\BullyMeanToEveryone.class
 theWeaponMaster\cards\bully\BullyIntimidate.class
@@ -29,7 +30,6 @@ theWeaponMaster\cards\generic\Defend_WeaponMaster.class
 theWeaponMaster\cards\legendary_weapons\RevenantRavenous.class
 theWeaponMaster\util\IDCheckDontTouchPls.class
 theWeaponMaster\cards\revolver\RevolverBuckshot.class
-theWeaponMaster\actions\VariableDiscardAction.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredSoul.class
 theWeaponMaster\powers\IntimidatePower.class
 theWeaponMaster\util\Scissors.class
@@ -41,6 +41,7 @@ theWeaponMaster\cards\generic\CounterBlow.class
 theWeaponMaster\cards\legendary_weapons\RevenantHungrySteel.class
 theWeaponMaster\cards\legendary_weapons\LeviathanGroundSplitter.class
 theWeaponMaster\cards\legendary_weapons\LeviathanEarthquake.class
+theWeaponMaster\cards\legendary_weapons\LeviathanGauntletCharger.class
 theWeaponMaster\cards\bully\BullyTaunt.class
 theWeaponMaster\cards\not_relevant\OrbSkill.class
 theWeaponMaster\actions\OctopusAction.class
@@ -52,13 +53,17 @@ theWeaponMaster\actions\GiveWeaponsAction.class
 theWeaponMaster\cards\legendary_weapons\RevenantNoseToTail.class
 theWeaponMaster\patches\DefaultInsertPatch$Locator.class
 theWeaponMaster\cards\abstractcards\AbstractDefaultCard.class
+theWeaponMaster\cards\legendary_weapons\CerberusDrainSlash.class
 theWeaponMaster\cards\revolver\RevolverHeavy.class
 theWeaponMaster\actions\FlashAction.class
 theWeaponMaster\characters\TheWeaponMaster.class
 theWeaponMaster\powers\LaceratePower.class
+theWeaponMaster\actions\ArmorPiercingAction.class
 theWeaponMaster\cards\bully\BullyShakedown.class
 theWeaponMaster\cards\generic\Strike_WeaponMaster.class
+theWeaponMaster\cards\legendary_weapons\CerberusEssenceSlash.class
 theWeaponMaster\cards\legendary_weapons\LeviathanCrush.class
+theWeaponMaster\actions\RevenantStarveAction.class
 theWeaponMaster\cards\bully\BullyWimp.class
 theWeaponMaster\relics\BottledPlaceholderRelic.class
 theWeaponMaster\actions\UncommonPowerAction.class
@@ -83,6 +88,7 @@ theWeaponMaster\actions\ManaBurnAction.class
 theWeaponMaster\cards\legendary_weapons\AtroposScissorHalf.class
 theWeaponMaster\relics\SplinteringSteelRelic.class
 theWeaponMaster\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
+theWeaponMaster\cards\legendary_weapons\CerberusIaiSlash.class
 theWeaponMaster\cards\legendary_weapons\RevenantBloodbath.class
 theWeaponMaster\cards\revolver\RevolverLowRecoil.class
 theWeaponMaster\relics\GhoulskinSheathRelic.class
@@ -91,10 +97,8 @@ theWeaponMaster\actions\ArsenalRecombineAction.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredScissors.class
 theWeaponMaster\cards\wip\GenericUncommonPower.class
 theWeaponMaster\cards\wip\GenericPower1.class
-theWeaponMaster\cards\wip\CerberusIaiSlash.class
 theWeaponMaster\cards\wip\GenericRareDraw.class
 theWeaponMaster\relics\HellhoundOilRelic.class
-theWeaponMaster\cards\wip\CerberusDrainSlash.class
 theWeaponMaster\TheWeaponMaster.class
 theWeaponMaster\cards\bully\BullyDinerArgument.class
 theWeaponMaster\actions\LacerateAction.class
@@ -102,16 +106,15 @@ theWeaponMaster\actions\FenrirUnleashedSelectAction$MonsterHPComparator.class
 theWeaponMaster\cards\legendary_weapons\FenrirDefensiveStance.class
 theWeaponMaster\actions\ReloadAction.class
 theWeaponMaster\actions\FenrirEvolveAction.class
-theWeaponMaster\cards\wip\CerberusEssenceSlash.class
 theWeaponMaster\cards\wip\GenericAttack.class
 theWeaponMaster\relics\RevolverRelic.class
 theWeaponMaster\cards\legendary_weapons\FenrirUnleashed.class
-theWeaponMaster\cards\wip\CerberusSlash.class
 theWeaponMaster\patches\relics\BottledPlaceholderField.class
 theWeaponMaster\cards\wip\GenericAttackUncommon.class
 theWeaponMaster\cards\abstractcards\AbstractBullyCard.class
 theWeaponMaster\cards\wip\GenericPower2.class
 theWeaponMaster\potions\PlaceholderPotion.class
+theWeaponMaster\cards\legendary_weapons\CerberusSlash.class
 theWeaponMaster\cards\not_relevant\CardTemplate.class
 theWeaponMaster\variables\shieldBuster.class
 theWeaponMaster\cards\wip\GenericDraw.class
@@ -128,5 +131,4 @@ theWeaponMaster\events\IdentityCrisisEvent.class
 theWeaponMaster\patches\WeaponMasterTags.class
 theWeaponMaster\relics\DefaultClickableRelic.class
 theWeaponMaster\powers\SeveredPainPower.class
-theWeaponMaster\cards\wip\CerberusModularSlash.class
 theWeaponMaster\powers\HungeringPower.class

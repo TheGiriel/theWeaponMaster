@@ -2,12 +2,11 @@ package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.legendary_weapons.*;
 
 import java.util.HashSet;
-import java.util.Iterator;
 
 public class FenrirEvolveAction extends AbstractGameAction {
 
@@ -20,15 +19,9 @@ public class FenrirEvolveAction extends AbstractGameAction {
             } else if (c.cardID.equals("theWeaponMaster:FenrirHeavySwing")) {
                 c.baseMagicNumber++;
             } else {
-                if (c.cardID.equals(FenrirUnleashed.ID)) {
-                    TheWeaponMaster.logger.info("Base Damage before Evolve: " + c.baseDamage);
-                }
                 c.baseDamage++;
             }
             c.applyPowers();
-            if (c.cardID.equals(FenrirUnleashed.ID)) {
-                TheWeaponMaster.logger.info("Base Damage after Evolve: " + c.baseDamage);
-            }
         }
         this.isDone = true;
     }
@@ -42,31 +35,24 @@ public class FenrirEvolveAction extends AbstractGameAction {
             fenrirUpgrades.add(card);
         }
 
-        Iterator cardIterator = AbstractDungeon.player.drawPile.group.iterator();
-        addCards(fenrirUpgrades, cardIterator);
+        addCards(fenrirUpgrades, AbstractDungeon.player.drawPile);
 
-        cardIterator = AbstractDungeon.player.discardPile.group.iterator();
-        addCards(fenrirUpgrades, cardIterator);
+        addCards(fenrirUpgrades, AbstractDungeon.player.discardPile);
 
-        cardIterator = AbstractDungeon.player.exhaustPile.group.iterator();
-        addCards(fenrirUpgrades, cardIterator);
+        addCards(fenrirUpgrades, AbstractDungeon.player.exhaustPile);
 
-        cardIterator = AbstractDungeon.player.limbo.group.iterator();
-        addCards(fenrirUpgrades, cardIterator);
+        addCards(fenrirUpgrades, AbstractDungeon.player.limbo);
 
-        cardIterator = AbstractDungeon.player.hand.group.iterator();
-        addCards(fenrirUpgrades, cardIterator);
+        addCards(fenrirUpgrades, AbstractDungeon.player.hand);
 
 
         return fenrirUpgrades;
     }
 
-    private void addCards(HashSet<AbstractCard> fenrirUpgrades, Iterator cardIterator) {
+    private void addCards(HashSet<AbstractCard> fenrirUpgrades, CardGroup cardGroup) {
         update();
 
-        AbstractCard c;
-        while (cardIterator.hasNext()) {
-            c = (AbstractCard) cardIterator.next();
+        for (AbstractCard c : cardGroup.group) {
             if (fenrirSet.contains(c.cardID)) {
                 fenrirUpgrades.add(c);
             }

@@ -58,7 +58,7 @@ public class BullyDinerArgument extends AbstractBullyCard {
         exhaust = true;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
         tags.add(INTIMIDATE);
-        defending = EnemyForceAction.getIntents(this);
+        attacking = EnemyForceAction.getIntents(this);
         tags.remove(INTIMIDATE);
         tags.add(TAUNT);
         defending = EnemyForceAction.getIntents(this);

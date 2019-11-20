@@ -1,5 +1,6 @@
 package theWeaponMaster.cards.bully;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -45,6 +46,7 @@ public class BullyTaunt extends AbstractBullyCard {
 
         tags.add(TAUNT);
         intents = EnemyForceAction.getIntents(this);
+        ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);
     }
 
     @Override

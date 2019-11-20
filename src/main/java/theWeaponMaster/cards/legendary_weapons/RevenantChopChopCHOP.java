@@ -1,6 +1,7 @@
 package theWeaponMaster.cards.legendary_weapons;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,6 +14,7 @@ import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.relics.GhoulskinSheathRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
 
 public class RevenantChopChopCHOP extends AbstractDynamicCard {
 
@@ -36,8 +38,12 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
 
     public RevenantChopChopCHOP() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+
+        AlwaysRetainField.alwaysRetain.set(this, true);
+        tags.add(REVENANT);
         initializeDescription();
     }
 

@@ -1,5 +1,6 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -16,6 +17,7 @@ import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.GhoulskinSheathRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
 
 public class RevenantNoseToTail extends AbstractDynamicCard {
 
@@ -37,8 +39,13 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
 
     public RevenantNoseToTail() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+
+        AlwaysRetainField.alwaysRetain.set(this, true);
+        tags.add(REVENANT);
+        initializeDescription();
     }
 
     @Override

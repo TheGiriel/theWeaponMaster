@@ -16,6 +16,7 @@ import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.GhoulskinSheathRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
 
 public class RevenantRavenous extends AbstractDynamicCard {
 
@@ -40,11 +41,14 @@ public class RevenantRavenous extends AbstractDynamicCard {
 
     public RevenantRavenous() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
-        this.retain = true;
         AlwaysRetainField.alwaysRetain.set(this, true);
+
+        tags.add(REVENANT);
+        initializeDescription();
     }
 
     @Override

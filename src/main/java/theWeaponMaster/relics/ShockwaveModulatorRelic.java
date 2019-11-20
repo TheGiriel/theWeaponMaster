@@ -41,7 +41,7 @@ public class ShockwaveModulatorRelic extends CustomRelic {
         }
         if(level2) {
             logger.info("adding Eject");
-            weaponUpgrade.add(LeviathanEject.ID);
+            weaponUpgrade.add(LeviathanGauntletCharger.ID);
         }
         if(level3) {
             weaponUpgrade.add(LeviathanGroundSplitter.ID);

@@ -49,6 +49,7 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
 
         tags.add(TAUNT);
         intents = EnemyForceAction.getIntents(this);
+        purgeOnUse = true;
     }
 
     @Override

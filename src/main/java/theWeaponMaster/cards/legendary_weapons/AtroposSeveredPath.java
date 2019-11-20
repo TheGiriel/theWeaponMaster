@@ -1,5 +1,6 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,6 +39,7 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
 
         tags.add(INTIMIDATE);
         intents = EnemyForceAction.getIntents(this);
+        ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);
     }
 
     @Override

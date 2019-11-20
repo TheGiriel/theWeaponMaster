@@ -83,7 +83,7 @@
   },
   "theWeaponMaster:CerberusModularSlash": {
     "NAME": "Modular Slash",
-    "DESCRIPTION": "Cerberus NL Modular_Flash 4:  "
+    "DESCRIPTION": "Cerberus NL Deal !D! damage. Utility_Flash 4: Gain special effects for each card you discard."
   },
   "theWeaponMaster:CerberusIaiSlash": {
     "NAME": "Iai Slash",
@@ -97,37 +97,23 @@
 
   "theWeaponMaster:LeviathanCrush": {
     "NAME": "Crush",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Hit the enemy for !D! damage. NL Armor_Piercing: !M!."
+    "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV! NL Hit the enemy for !D! damage. NL Armor_Piercing: !M!. Charged 1: Double Armor_Piercing damage."
   },
-  "theWeaponMaster:LeviathanEject": {
-    "NAME": "Eject",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Eject all spent Leviathan cartridges and deal !D! damage X times to random enemies.",
-    "UPGRADE_DESCRIPTION": "Eject all spent Leviathan cartridges and deal !D! damage X times to random enemies.",
-    "EXTENDED_DESCRIPTION": [
-      "Eject",
-      "Leviathan_Gauntlet NL Release all remaining Leviathan charges and deal !D! damage !M! times to random enemies.",
-      "Reload",
-      "Leviathan_Gauntlet NL Reload your Gauntlet and gain !B! block."
-    ]
-  },
-  "theWeaponMaster:LeviathanReload": {
-    "NAME": "Reload",
-    "DESCIRPTION": "Leviathan_Gauntlet NL Reload your Gauntlet and gain !B! block.",
-    "UPGRADE_DESCRIPTION": "Leviathan_Gauntlet NL Reload your Gauntlet and gain !B! block."
+  "theWeaponMaster:LeviathanGauntletCharger": {
+    "NAME": "Gauntlet Charger",
+    "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV! NL Release all Leviathan charges to deal damage or recharge the Gauntlet to gain block."
   },
   "theWeaponMaster:LeviathanGroundSplitter": {
     "NAME": "Ground Splitter",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Stagger all enemy cards depending on their total block for two turns.",
-    "UPGRADE_DESCRIPTION": "Stagger all enemy cards depending on their total block for three turns."
+    "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV!. NL Stagger all enemy cards depending on their total block for two turns. Charged 1: Apply !M! Vulnerable."
   },
   "theWeaponMaster:LeviathanDeepImpact": {
     "NAME": "Deep Impact",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Deal !D! damage to the first enemy. NL Unstoppable: Enemy Block. NL Armor_Piercing: !M!."
+    "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV! NL Deal !D! damage to the first enemy. NL Unstoppable: Enemy Block. Gain Armor_Piercing: !M! NL Charged: 2. Always activate Unstoppable."
   },
   "theWeaponMaster:LeviathanEarthquake": {
     "NAME": "Earthquake",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Deal !D! damage to all enemies, ignores thorns.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV!. NL Deal !D! damage to all enemies, ignores thorns. NL Charged 3: Attack a second time at half damage."
   },
 
   "theWeaponMaster:RevenantRavenous": {
@@ -136,19 +122,39 @@
   },
   "theWeaponMaster:RevenantChopChopCHOP": {
     "NAME": "Chop Chop CHOP",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and gain !M! Temporary_HP 3 times."
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and gain !M! Temporary_HP 3 times.",
+    "EXTENDED_DESCRIPTION": [
+      "Right Half",
+      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
+      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+    ]
   },
   "theWeaponMaster:RevenantHungrySteel": {
     "NAME": "Hungry Steel",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. Apply Hungering. NL Gain !M! Vicious."
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. Apply Hungering. NL Gain !M! Vicious.",
+    "EXTENDED_DESCRIPTION": [
+      "Right Half",
+      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
+      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+    ]
   },
   "theWeaponMaster:RevenantNoseToTail": {
     "NAME": "Nose To Tail",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious."
+    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious.",
+    "EXTENDED_DESCRIPTION": [
+      "Right Half",
+      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
+      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+    ]
   },
   "theWeaponMaster:RevenantBloodbath": {
     "NAME": "Bloodbath",
-    "DESCRIPTION": "Revenant_Cleaver NL Requires 15+ Vicious. NL Gain !EN_MULT! Vicious. Deal !D! damage to a random enemy. NL Unstoppable: 5+ Vicious. Attack again, lose 5 Vicious."
+    "DESCRIPTION": "Revenant_Cleaver NL Requires 15+ Vicious. Hungry 5: Gain !EN_MULT! Vicious. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
+    "EXTENDED_DESCRIPTION": [
+      "Right Half",
+      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
+      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+    ]
   },
 
   "theWeaponMaster:AtroposSeveredSource": {

@@ -45,6 +45,8 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
 
         tags.add(INTIMIDATE);
         intents = EnemyForceAction.getIntents(this);
+
+        purgeOnUse = true;
     }
 
     @Override

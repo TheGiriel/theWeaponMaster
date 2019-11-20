@@ -73,7 +73,7 @@ public class GiveWeaponsAction extends AbstractGameAction {
 
             case "Leviathan Gauntlet":
                 weaponList.add(new LeviathanCrush());
-                weaponList.add(new LeviathanEject());
+                weaponList.add(new LeviathanGauntletCharger());
                 weaponList.add(new LeviathanGroundSplitter());
                 weaponList.add(new LeviathanDeepImpact());
                 weaponList.add(new LeviathanEarthquake());

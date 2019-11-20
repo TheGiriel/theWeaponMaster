@@ -184,6 +184,14 @@
     "DESCRIPTION": "Staggered creatures deal and gain less damage and block respectively, based on their block."
   },
   {
+    "PROPER_NAME": "[#746550]Charge",
+    "NAMES": [
+      "charge",
+      "charged"
+    ],
+    "DESCRIPTION": "Augment this card's effect if you have enough Charges. Increases by 1 at the end of your turn."
+  },
+  {
     "PROPER_NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
     "NAMES": [
       "Revenant Cleaver",
@@ -195,12 +203,19 @@
     "DESCRIPTION": "Focused on the player's HP and Vicious generation."
   },
   {
-    "PROPER_NAME": "[#e3dac9]Hungering",
+    "PROPER_NAME": "[#e3dac9]Hunger",
     "NAMES": [
-      "hungering",
-      "hunger"
+      "hunger",
+      "hungering"
     ],
-    "DESCRIPTION": "Gain max HP if you kill the target before the end of your turn. Gain more the higher their current HP is."
+    "DESCRIPTION": "Augment this card's effect at the cost of Hunger. Increases by 1 whenever you play a non-Revenant card."
+  },
+  {
+    "PROPER_NAME": "[#e3dac9]Sated",
+    "NAMES": [
+      "sated"
+    ],
+    "DESCRIPTION": "Gain 1/2/3 Temporary_HP at 1/3/5 sated. Decreases by 1 whenever you play a non-Revenant card."
   },
   {
     "PROPER_NAME": "Split Scissors",

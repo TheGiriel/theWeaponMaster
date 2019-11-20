@@ -429,7 +429,7 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new FenrirUnleashed());
         BaseMod.addCard(new FenrirDefensiveStance());
         BaseMod.addCard(new LeviathanCrush());
-        BaseMod.addCard(new LeviathanEject());
+        BaseMod.addCard(new LeviathanGauntletCharger());
         BaseMod.addCard(new LeviathanGroundSplitter());
         BaseMod.addCard(new LeviathanDeepImpact());
         BaseMod.addCard(new LeviathanEarthquake());
@@ -481,7 +481,7 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(FenrirUnleashed.ID);
         UnlockTracker.unlockCard(FenrirDefensiveStance.ID);
         UnlockTracker.unlockCard(LeviathanCrush.ID);
-        UnlockTracker.unlockCard(LeviathanEject.ID);
+        UnlockTracker.unlockCard(LeviathanGauntletCharger.ID);
         UnlockTracker.unlockCard(LeviathanGroundSplitter.ID);
         UnlockTracker.unlockCard(LeviathanDeepImpact.ID);
         UnlockTracker.unlockCard(LeviathanEarthquake.ID);
