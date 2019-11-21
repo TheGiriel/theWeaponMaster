@@ -132,20 +132,20 @@
       "Revenant_Cleaver NL Hungry 5: Sated. NL Deal !D! damage, gain 1 Vicious !M! times."
     ]
   },
+  "theWeaponMaster:RevenantNoseToTail": {
+    "NAME": "Nose To Tail",
+    "DESCRIPTION": "Revenant_Cleaver NL Hungry 6: Reduce Nose to Tail threshold by 1. NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious.",
+    "EXTENDED_DESCRIPTION": [
+      "Revenant_Cleaver NL Hungry 6: Reduce Nose to Tail threshold by 1. NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious.",
+      "Revenant_Cleaver NL Hungry 6: Sated. NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious."
+    ]
+  },
   "theWeaponMaster:RevenantHungrySteel": {
     "NAME": "Hungry Steel",
     "DESCRIPTION": "Revenant_Cleaver NL Hungry 8: Increase base Cattle to Slaughter by 1. NL Deal !D! damage. Apply Cattle to Slaughter. NL Gain !M! Vicious.",
     "EXTENDED_DESCRIPTION": [
-      "Revenant_Cleaver NL Hungry 8: Increase base Cattle to Slaughter by 1. NL Deal !D! damage. Apply Cattle to Slaughter. NL Gain !M! Vicious.",
+      "Revenant_Cleaver NL Hungry 8: Increase base Cattle to Slaughter. by 1. NL Deal !D! damage. Apply Cattle to Slaughter. NL Gain !M! Vicious.",
       "Revenant_Cleaver NL Hungry 8: Sated. NL Deal !D! damage. Apply Cattle to Slaughter. NL Gain !M! Vicious."
-    ]
-  },
-  "theWeaponMaster:RevenantNoseToTail": {
-    "NAME": "Nose To Tail",
-    "DESCRIPTION": "Revenant_Cleaver NL Hungry 8: Reduce Nose to Tail threshold by 1 NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious.",
-    "EXTENDED_DESCRIPTION": [
-      "Revenant_Cleaver NL Hungry 8: Reduce Nose to Tail threshold by 1 NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious.",
-      "Revenant_Cleaver NL Hungry 8: Sated NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious."
     ]
   },
   "theWeaponMaster:RevenantBloodbath": {

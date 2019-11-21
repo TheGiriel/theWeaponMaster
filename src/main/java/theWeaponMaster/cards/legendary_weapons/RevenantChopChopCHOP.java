@@ -61,6 +61,12 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
         }
     }
 
+    @Override
+    public void initializeDescription() {
+        getSated();
+        super.initializeDescription();
+    }
+
     public void getSated() {
         if (ArsenalRelic.revenantHunger < HUNGERCOST) {
             rawDescription = DESCRIPTION[1];

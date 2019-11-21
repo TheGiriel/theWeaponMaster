@@ -42,7 +42,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public static boolean revenantUnlocked = true;
     public static String currentWeapon = "None";
     public static int leviathanCharges = 3;
-    public static int revenantHunger = 6;
+    public static int revenantHunger = 10;
     private HashSet<String> delete = new HashSet<>();
 
     public AbstractPlayer player = AbstractDungeon.player;

@@ -2,12 +2,11 @@
   "modid": "WeaponMaster",
   "name": "Weapon Master Mod",
   "author_list": ["TheGiriel"],
-  "description": "Arsenal Relic, Fenrir, Atropos, Cerberus, Leviathan complete.
-        Remaining: Revolver support cards; Revenant -< Hunger/Sated mechanic.
-        Bully cards & support; 15 Generic Cards set up, more needed;
+  "description": "Arsenal Relic & Legendary Weapons complete.
+        Remaining: Revolver support cards; Bully cards & support; 15 Generic Cards set up, more needed;
         Current State: Legendary Weapons: 25/25(+2); Bully: 9/10?; Revolver 7/12?; Generic 3(+15)/28?;
         total: 44/75?; No Art.",
-  "version": "0.2.0",
+  "version": "0.2.5",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",
   "dependencies": ["basemod", "stslib"],

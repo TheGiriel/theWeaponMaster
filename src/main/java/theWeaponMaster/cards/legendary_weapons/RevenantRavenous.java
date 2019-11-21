@@ -66,10 +66,17 @@ public class RevenantRavenous extends AbstractDynamicCard {
         }
     }
 
+    @Override
+    public void initializeDescription() {
+        getSated();
+        super.initializeDescription();
+    }
+
     public void getSated() {
         if (ArsenalRelic.revenantHunger < HUNGERCOST) {
-            TheWeaponMaster.logger.info("I should get this");
+            TheWeaponMaster.logger.info("I should get this. Arsenal revenant hunger = " + ArsenalRelic.revenantHunger);
             this.rawDescription = DESCRIPTION[1];
+            TheWeaponMaster.logger.info(this.rawDescription);
         } else {
             TheWeaponMaster.logger.info("not this");
             this.rawDescription = DESCRIPTION[0];

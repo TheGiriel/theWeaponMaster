@@ -53,6 +53,12 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     }
 
     @Override
+    public void initializeDescription() {
+        getSated();
+        super.initializeDescription();
+    }
+
+    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();

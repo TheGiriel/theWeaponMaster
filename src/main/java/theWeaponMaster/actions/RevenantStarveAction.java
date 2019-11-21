@@ -26,6 +26,7 @@ public class RevenantStarveAction extends AbstractGameAction {
             TheWeaponMaster.logger.info("Applying the hunger reduction by" + revenantStarve);
             c.defaultBaseSecondMagicNumber += revenantStarve;
             c.applyPowers();
+            c.initializeDescription();
         }
         if (sated) {
             satedAction();
