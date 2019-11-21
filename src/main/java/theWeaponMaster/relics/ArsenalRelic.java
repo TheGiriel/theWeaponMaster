@@ -41,7 +41,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public static boolean revenantUnlocked = true;
     public static String currentWeapon = "None";
     public static int leviathanCharges = 3;
-    public static int revenantHunger = 3;
+    public static int revenantHunger = 10;
     private HashSet<String> delete = new HashSet<>();
 
     public AbstractPlayer player = AbstractDungeon.player;
@@ -68,7 +68,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public void atBattleStart() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 0)));
         leviathanCharges = Math.min(Math.max(leviathanCharges, 0), 3);
-        revenantHunger = Math.min(Math.max(revenantHunger, -5), 10);
+        revenantHunger = Math.min(Math.max(revenantHunger, 0), 10);
     }
 
     @Override

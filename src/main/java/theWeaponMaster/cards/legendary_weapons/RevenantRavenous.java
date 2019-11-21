@@ -11,8 +11,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.actions.RevenantStarveAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.ViciousPower;
+import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.GhoulskinSheathRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -23,7 +25,7 @@ public class RevenantRavenous extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(RevenantRavenous.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
@@ -36,7 +38,8 @@ public class RevenantRavenous extends AbstractDynamicCard {
     private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 3;
-    private static final int UGPRADED_MAGIC_NUMBER = 2;
+    private static final int UPGRADED_MAGIC_NUMBER = 2;
+    private final int HUNGERCOST = 4;
     private static int turnCount = 0;
 
     public RevenantRavenous() {
@@ -44,9 +47,11 @@ public class RevenantRavenous extends AbstractDynamicCard {
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ArsenalRelic.revenantHunger;
 
         AlwaysRetainField.alwaysRetain.set(this, true);
 
+        getSated();
         tags.add(REVENANT);
         initializeDescription();
     }
@@ -56,8 +61,16 @@ public class RevenantRavenous extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            upgradeMagicNumber(UGPRADED_MAGIC_NUMBER);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
+        }
+    }
+
+    public void getSated() {
+        if (ArsenalRelic.revenantHunger < HUNGERCOST) {
+            this.rawDescription = DESCRIPTION[1];
+        } else {
+            this.rawDescription = DESCRIPTION[0];
         }
     }
 
@@ -68,9 +81,16 @@ public class RevenantRavenous extends AbstractDynamicCard {
     //TODO: Improve method
     public void use(AbstractPlayer p, AbstractMonster m) {
 
+        if (ArsenalRelic.revenantHunger >= HUNGERCOST) {
+            new RevenantStarveAction(-HUNGERCOST, false);
+            AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, this.magicNumber)));
+        } else {
+            new RevenantStarveAction(0, true);
+        }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, this.magicNumber)));
 
+        getSated();
     }
 
     public void atTurnStart() {

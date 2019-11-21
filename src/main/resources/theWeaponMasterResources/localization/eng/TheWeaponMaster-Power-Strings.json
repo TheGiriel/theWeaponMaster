@@ -56,11 +56,11 @@
     "DESCRIPTIONS": [
       "Gain 1 Temporary_HP for every [#e3dac9]",
       " damage you deal at the end of your turn. NL Heal for the gained Temporary HP [#e3dac9](",
-      ") instead when you kill the target."
+      ") instead, when you kill the target."
     ]
   },
-  "HungeringPower": {
-    "NAME": "Hungering",
+  "CattleToSlaughterPower": {
+    "NAME": "Like Cattle to Slaughter",
     "DESCRIPTIONS": [
       "Gain [#e3dac9]",
       " Max HP when you kill the enemy before the turn ends."

@@ -118,42 +118,42 @@
 
   "theWeaponMaster:RevenantRavenous": {
     "NAME": "Ravenous",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage, Gain !M! Vicious. NL Retain: Increase Vicious gain by 2 until Weapon_Swap or combat ends."
+    "DESCRIPTION": "Revenant_Cleaver NL Hungry 4: Gain !M! Vicious. NL Deal !D! damage, Gain !M! Vicious. NL Retain: Increase Vicious gain by 2 until Weapon_Swap or combat ends.",
+    "EXTENDED_DESCRIPTION": [
+      "Revenant_Cleaver NL Hungry 4: Gain 3 Vicious. NL Deal !D! damage, Gain !M! Vicious. NL Retain: Increase Vicious gain by 2 until Weapon_Swap or combat ends.",
+      "Revenant_Cleaver NL Hungry 4: Sated. NL Deal !D! damage, Gain !M! Vicious. NL Retain: Increase Vicious gain by 2 until Weapon_Swap or combat ends."
+    ]
   },
   "theWeaponMaster:RevenantChopChopCHOP": {
     "NAME": "Chop Chop CHOP",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage and gain !M! Temporary_HP 3 times.",
+    "DESCRIPTION": "Revenant_Cleaver NL Hungry 5: Gain another Attack. NL Deal !D! damage !M! times.",
     "EXTENDED_DESCRIPTION": [
-      "Right Half",
-      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
-      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+      "Revenant_Cleaver NL Hungry 5: Gain another Attack. NL Deal !D! damage, gain 1 Vicious !M! times.",
+      "Revenant_Cleaver NL Hungry 5: Sated. NL Deal !D! damage, gain 1 Vicious !M! times."
     ]
   },
   "theWeaponMaster:RevenantHungrySteel": {
     "NAME": "Hungry Steel",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. Apply Hungering. NL Gain !M! Vicious.",
+    "DESCRIPTION": "Revenant_Cleaver NL Hungry 8: Increase base Cattle to Slaughter by 1. NL Deal !D! damage. Apply Cattle to Slaughter. NL Gain !M! Vicious.",
     "EXTENDED_DESCRIPTION": [
-      "Right Half",
-      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
-      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+      "Revenant_Cleaver NL Hungry 8: Increase base Cattle to Slaughter by 1. NL Deal !D! damage. Apply Cattle to Slaughter. NL Gain !M! Vicious.",
+      "Revenant_Cleaver NL Hungry 8: Sated. NL Deal !D! damage. Apply Cattle to Slaughter. NL Gain !M! Vicious."
     ]
   },
   "theWeaponMaster:RevenantNoseToTail": {
     "NAME": "Nose To Tail",
-    "DESCRIPTION": "Revenant_Cleaver NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious.",
+    "DESCRIPTION": "Revenant_Cleaver NL Hungry 8: Reduce Nose to Tail threshold by 1 NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious.",
     "EXTENDED_DESCRIPTION": [
-      "Right Half",
-      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
-      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+      "Revenant_Cleaver NL Hungry 8: Reduce Nose to Tail threshold by 1 NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious.",
+      "Revenant_Cleaver NL Hungry 8: Sated NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious."
     ]
   },
   "theWeaponMaster:RevenantBloodbath": {
     "NAME": "Bloodbath",
-    "DESCRIPTION": "Revenant_Cleaver NL Requires 15+ Vicious. Hungry 5: Gain !EN_MULT! Vicious. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
+    "DESCRIPTION": "Revenant_Cleaver NL Hungry 10: Gain 5 times your energy Vicious. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
     "EXTENDED_DESCRIPTION": [
-      "Right Half",
-      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
-      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+      "Revenant_Cleaver NL Hungry 10: Gain !EN_MULT! Vicious. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
+      "Revenant_Cleaver NL Hungry 10: Sated. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious."
     ]
   },
 

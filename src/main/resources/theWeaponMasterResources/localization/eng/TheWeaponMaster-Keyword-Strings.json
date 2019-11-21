@@ -206,16 +206,17 @@
     "PROPER_NAME": "[#e3dac9]Hunger",
     "NAMES": [
       "hunger",
-      "hungering"
+      "hungering",
+      "hungry"
     ],
-    "DESCRIPTION": "Augment this card's effect at the cost of Hunger. Increases by 1 whenever you play a non-Revenant card."
+    "DESCRIPTION": "Augment this card's effect at the cost of Hunger. Hunger Increases by 1 whenever you play a non-Revenant card."
   },
   {
     "PROPER_NAME": "[#e3dac9]Sated",
     "NAMES": [
       "sated"
     ],
-    "DESCRIPTION": "Gain 1/2/3 Temporary_HP at 1/3/5 sated. Decreases by 1 whenever you play a non-Revenant card."
+    "DESCRIPTION": "Hunger bonus effects are disabled. Gain 2 Temporary HP while Sated."
   },
   {
     "PROPER_NAME": "Split Scissors",

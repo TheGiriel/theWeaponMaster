@@ -89,7 +89,7 @@ public class OctopusAction extends AbstractGameAction {
                 new ArsenalRelic().setCurrentWeapon("Leviathan");
             }
             AbstractDungeon.player.draw(2);
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawReductionPower(p, 1)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawReductionPower(p, 0)));
             isDone = true;
         }
         tickDuration();

@@ -71,14 +71,7 @@ public class NoseToTailPower extends TwoAmountPower {
 
     //TODO: Find whatever is wrong with this.
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(AbstractDungeon.player, owner, amount2));
-        amount = amount2 = 0;
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
-    }
-
-    @Override
-    public void atEndOfRound() {
+    public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(AbstractDungeon.player, owner, amount2));
         amount = amount2 = 0;
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));

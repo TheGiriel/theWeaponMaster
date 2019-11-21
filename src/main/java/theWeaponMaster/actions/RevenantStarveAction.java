@@ -1,9 +1,12 @@
 package theWeaponMaster.actions;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDefaultCard;
 import theWeaponMaster.cards.legendary_weapons.*;
 import theWeaponMaster.relics.ArsenalRelic;
@@ -12,38 +15,24 @@ import java.util.HashSet;
 
 public class RevenantStarveAction extends AbstractGameAction {
 
-    public HashSet<String> revenantSet = new HashSet<>();
+    private static AbstractPlayer p = AbstractDungeon.player;
+    private HashSet<String> revenantSet = new HashSet<>();
 
-    public RevenantStarveAction(int revenantStarve) {
+    public RevenantStarveAction(int revenantStarve, boolean sated) {
+        TheWeaponMaster.logger.info("Does this even start?");
         for (AbstractDefaultCard c : getRevenantCards()) {
             c.defaultBaseSecondMagicNumber += revenantStarve;
             c.applyPowers();
         }
         ArsenalRelic.revenantHunger += revenantStarve;
+        if (sated) {
+            satedAction();
+        }
         this.isDone = true;
     }
 
-
-    private HashSet<AbstractDefaultCard> getRevenantCards() {
-        HashSet<AbstractDefaultCard> revenantHunger = new HashSet<>();
-
-        AbstractDefaultCard card = (AbstractDefaultCard) AbstractDungeon.player.cardInUse;
-        if (card != null && card.cardID.equals(this)) {
-            revenantHunger.add(card);
-        }
-
-        addCards(revenantHunger, AbstractDungeon.player.drawPile);
-
-        addCards(revenantHunger, AbstractDungeon.player.discardPile);
-
-        addCards(revenantHunger, AbstractDungeon.player.exhaustPile);
-
-        addCards(revenantHunger, AbstractDungeon.player.limbo);
-
-        addCards(revenantHunger, AbstractDungeon.player.hand);
-
-
-        return revenantHunger;
+    public static void satedAction() {
+        AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, 2));
     }
 
     private void addCards(HashSet<AbstractDefaultCard> revenantHunger, CardGroup cardGroup) {
@@ -55,6 +44,28 @@ public class RevenantStarveAction extends AbstractGameAction {
             }
         }
 
+    }
+
+    private HashSet<AbstractDefaultCard> getRevenantCards() {
+        HashSet<AbstractDefaultCard> revenantHunger = new HashSet<>();
+
+        AbstractDefaultCard card = (AbstractDefaultCard) AbstractDungeon.player.cardInUse;
+        if (card != null && card.cardID.equals(this)) {
+            revenantHunger.add(card);
+        }
+
+        addCards(revenantHunger, p.drawPile);
+
+        addCards(revenantHunger, p.discardPile);
+
+        addCards(revenantHunger, p.exhaustPile);
+
+        addCards(revenantHunger, p.limbo);
+
+        addCards(revenantHunger, p.hand);
+
+
+        return revenantHunger;
     }
 
     @Override

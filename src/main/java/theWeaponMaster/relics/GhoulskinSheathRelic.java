@@ -44,10 +44,10 @@ public class GhoulskinSheathRelic extends CustomRelic {
             weaponUpgrade.add(RevenantChopChopCHOP.ID);
         }
         if (level3) {
-            weaponUpgrade.add(RevenantHungrySteel.ID);
+            weaponUpgrade.add(RevenantNoseToTail.ID);
         }
         if (level4) {
-            weaponUpgrade.add(RevenantNoseToTail.ID);
+            weaponUpgrade.add(RevenantHungrySteel.ID);
         }
         if (level5) {
             weaponUpgrade.add(RevenantBloodbath.ID);

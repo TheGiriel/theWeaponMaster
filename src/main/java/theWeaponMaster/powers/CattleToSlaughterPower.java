@@ -11,10 +11,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
-public class HungeringPower extends AbstractPower {
+public class CattleToSlaughterPower extends AbstractPower {
 
-    public static final String POWER_ID = TheWeaponMaster.makeID(HungeringPower.class.getSimpleName());
-    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(HungeringPower.class.getSimpleName());
+    public static final String POWER_ID = TheWeaponMaster.makeID(CattleToSlaughterPower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(CattleToSlaughterPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
@@ -24,13 +24,12 @@ public class HungeringPower extends AbstractPower {
     private AbstractCreature source;
     private int countDown;
 
-    public HungeringPower(AbstractCreature owner, AbstractCreature source, int countDown) {
+    public CattleToSlaughterPower(AbstractCreature owner, AbstractCreature source, int hungryBoost) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = Math.max(1, (owner.currentHealth / 20 + 1));
+        this.amount = Math.max(1, (owner.currentHealth / 20 + 1)) + hungryBoost;
         this.source = source;
-        this.countDown = countDown;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -52,6 +51,6 @@ public class HungeringPower extends AbstractPower {
 
     @Override
     public void atEndOfRound() {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
     }
 }
