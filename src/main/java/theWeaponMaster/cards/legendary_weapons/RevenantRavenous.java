@@ -68,8 +68,10 @@ public class RevenantRavenous extends AbstractDynamicCard {
 
     public void getSated() {
         if (ArsenalRelic.revenantHunger < HUNGERCOST) {
+            TheWeaponMaster.logger.info("I should get this");
             this.rawDescription = DESCRIPTION[1];
         } else {
+            TheWeaponMaster.logger.info("not this");
             this.rawDescription = DESCRIPTION[0];
         }
     }
@@ -90,6 +92,7 @@ public class RevenantRavenous extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, this.magicNumber)));
 
+        TheWeaponMaster.logger.info("Getting sated change");
         getSated();
     }
 

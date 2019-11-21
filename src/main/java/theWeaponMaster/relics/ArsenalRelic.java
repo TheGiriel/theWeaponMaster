@@ -13,6 +13,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ArsenalRecombineAction;
 import theWeaponMaster.actions.LeviathanChargeAction;
 import theWeaponMaster.actions.OctopusAction;
+import theWeaponMaster.actions.RevenantStarveAction;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.util.TextureLoader;
 
@@ -41,7 +42,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public static boolean revenantUnlocked = true;
     public static String currentWeapon = "None";
     public static int leviathanCharges = 3;
-    public static int revenantHunger = 10;
+    public static int revenantHunger = 6;
     private HashSet<String> delete = new HashSet<>();
 
     public AbstractPlayer player = AbstractDungeon.player;
@@ -86,13 +87,13 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     }
 
     public void chargeGauntlet() {
-        Math.min(Math.max(leviathanCharges, 0), 3);
+        leviathanCharges = Math.min(Math.max(leviathanCharges, 0), 3);
         new LeviathanChargeAction(1);
     }
 
     private void starveRevenant() {
-        Math.min(Math.max(revenantHunger, -5), 10);
-        revenantHunger++;
+        revenantHunger = Math.min(Math.max(revenantHunger, 0), 10);
+        new RevenantStarveAction(1, false);
     }
 
     @Override

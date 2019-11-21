@@ -20,11 +20,13 @@ public class RevenantStarveAction extends AbstractGameAction {
 
     public RevenantStarveAction(int revenantStarve, boolean sated) {
         TheWeaponMaster.logger.info("Does this even start?");
+        ArsenalRelic.revenantHunger += revenantStarve;
+        TheWeaponMaster.logger.info("Arsenal hunger " + ArsenalRelic.revenantHunger);
         for (AbstractDefaultCard c : getRevenantCards()) {
+            TheWeaponMaster.logger.info("Applying the hunger reduction by" + revenantStarve);
             c.defaultBaseSecondMagicNumber += revenantStarve;
             c.applyPowers();
         }
-        ArsenalRelic.revenantHunger += revenantStarve;
         if (sated) {
             satedAction();
         }
