@@ -64,7 +64,7 @@ public class TauntPower extends AbstractPower {
         {
             originalMove = this.m.nextMove;
             originalIntent = this.m.intent;
-            this.m.setMove((byte) -2, AbstractMonster.Intent.DEFEND);
+            this.m.setMove((byte) -2, AbstractMonster.Intent.ATTACK, (int) Math.ceil(source.maxHealth / 10));
             this.m.createIntent();
             updateDescription();
         }

@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ArsenalRecombineAction;
@@ -50,6 +52,8 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public ArsenalRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
         this.description = DESCRIPTIONS[0];
+        tips.clear();
+        tips.add(new PowerTip(name, description));
     }
 
     public void atPreBattle() {
@@ -117,8 +121,16 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     }
 
     @Override
-    public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+    public void update() {
+        super.update();
+        setDescriptionAfterLoading();
+    }
+
+    public void setDescriptionAfterLoading() {
+        this.description = DESCRIPTIONS[0] + FontHelper.colorString(currentWeapon, "r");
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.initializeTips();
     }
 
     @Override

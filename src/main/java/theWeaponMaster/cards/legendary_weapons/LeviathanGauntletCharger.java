@@ -52,7 +52,7 @@ public class LeviathanGauntletCharger extends AbstractDynamicCard implements Fli
         }
     }
 
-    public static int getDamage() {
+    public static int getPublicDamage() {
         return publicDamage;
     }
 

@@ -31,7 +31,7 @@
     "NAMES": [
       "vicious"
     ],
-    "DESCRIPTION": "For every 3 stacks of [#8b0000]Vicious you deal 1 and take 2 extra damage. Certain cards gain new effects based on [#8b0000]Vicious."
+    "DESCRIPTION": "For every 5 stacks of [#8b0000]Vicious you deal and take 1 extra damage."
   },
   {
     "PROPER_NAME": "[#ff4500]Bully",
@@ -80,7 +80,7 @@
       "Unstoppable",
       "unstoppable"
     ],
-    "DESCRIPTION": "Continue attacking if the stated condition is fulfilled."
+    "DESCRIPTION": "Continue attacking if the condition is fulfilled."
   },
   {
     "PROPER_NAME": "[#b7410e]Fenrir",
@@ -95,7 +95,7 @@
       "lacerate",
       "lacerating"
     ],
-    "DESCRIPTION": "[#b7410e]Lacerated creatures lose 2% of their Max HP, per stack, every turn (minimum 1)."
+    "DESCRIPTION": "[#b7410e]Lacerated creatures lose HP at the start of their turn. [#b7410e]Lacerate increases by 1 every turn."
   },
   {
     "PROPER_NAME": "[#b7410e]Evolve",
@@ -104,7 +104,7 @@
       "evolved",
       "evolutions"
     ],
-    "DESCRIPTION": "Increase the power of all Fenrir cards by 1 whenever you meet the condition."
+    "DESCRIPTION": "Increase the power of all Fenrir cards by 1 whenever you fulfill the condition."
   },
   {
     "PROPER_NAME": "[#cdfcfe]Cerberus",
@@ -128,7 +128,7 @@
       "power flash",
       "power_flash"
     ],
-    "DESCRIPTION": "[#cdfcfe]Power [#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the extra effect."
+    "DESCRIPTION": "[#cdfcfe]Power [#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the effect once."
   },
   {
     "PROPER_NAME": "[#cdfcfe]Utility [#cdfcfe]Flash",
@@ -138,7 +138,7 @@
       "Utility_Flash",
       "utility_flash"
     ],
-    "DESCRIPTION": "[#cdfcfe]Utility [#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Doesn't draw. Bonuses per discard: NL Attack: Gain 2 bonus damage. NL Skill: Gain 5 block. NL 2 Powers: gain 1 Energy NL Status/Curse: Take 1 damage."
+    "DESCRIPTION": "[#cdfcfe]Utility [#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Doesn't draw. Bonuses per discard: NL Attack: Gain 2 bonus damage. NL Skill: Gain 5 block. NL 2 Powers: gain 1 Energy NL Status/Curse: Nothing."
   },
   {
     "PROPER_NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
@@ -150,7 +150,7 @@
       "atropos_shears",
       "Atropos Shears"
     ],
-    "DESCRIPTION": "Balanced in offense and defense, specializing in Mana Burn."
+    "DESCRIPTION": "Versatile cards specializing in Mana Burn and damage mitigation."
   },
   {
     "PROPER_NAME": "[#3abfbe]Mana [#3abfbe]Burn",
@@ -161,7 +161,7 @@
       "mana burned",
       "mana_burned"
     ],
-    "DESCRIPTION": "Creatures affected by [#3abfbe]Mana [#3abfbe]burn lose 2% Max HP per stack when casting buffs, debuffs and spells. Certain cards gain new effects against creatures affected by [#3abfbe]Mana [#3abfbe]burn."
+    "DESCRIPTION": "Creatures affected by [#3abfbe]Mana [#3abfbe]burn lose 2% Max HP per stack when casting buffs, debuffs and spells."
   },
   {
     "PROPER_NAME": "[#3abfbe]Igniting",
@@ -183,7 +183,7 @@
       "leviathan_gauntlet",
       "Leviathan_Gauntlet"
     ],
-    "DESCRIPTION": "Cards specializing against enemies with Block and defensive powers."
+    "DESCRIPTION": "Chargeable cards specializing against enemies with Block and defensive powers."
   },
   {
     "PROPER_NAME": "[#746550]Stagger",
@@ -210,7 +210,7 @@
       "revenant_cleaver",
       "Revenant_Cleaver"
     ],
-    "DESCRIPTION": "Focused on the player's HP and Vicious generation."
+    "DESCRIPTION": "Hungry cards specializing on the player's HP and Vicious generation."
   },
   {
     "PROPER_NAME": "[#e3dac9]Hunger",
@@ -251,9 +251,10 @@
   {
     "PROPER_NAME": "Reload",
     "NAMES": [
-      "reload"
+      "reload",
+      "reloading"
     ],
-    "DESCRIPTION": "Return all Ammunition cards from your Discard pile and draw cards for every three cards returned and refund 1 energy."
+    "DESCRIPTION": "Return all Ammunition cards from your Discard pile. Refund 1 energy and draw a card. Draw an additional time for every three cards returned."
   },
   {
     "PROPER_NAME": "Ammunition",
@@ -261,6 +262,6 @@
       "ammunition",
       "ammo"
     ],
-    "DESCRIPTION": "Reduces your Revolver shot count by 1."
+    "DESCRIPTION": "Reduces your Revolver shot count by 1. Requires Reloading when at 0."
   }
 ]

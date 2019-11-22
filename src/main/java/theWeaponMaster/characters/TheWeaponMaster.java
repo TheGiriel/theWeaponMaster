@@ -22,12 +22,9 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.bully.*;
-import theWeaponMaster.cards.generic.GenericDrawSleightOfHand;
-import theWeaponMaster.cards.generic.Strike_WeaponMaster;
-import theWeaponMaster.cards.legendary_weapons.*;
+import theWeaponMaster.cards.generic.FreshApple;
+import theWeaponMaster.cards.generic.SleightOfHand;
 import theWeaponMaster.cards.revolver.*;
-import theWeaponMaster.cards.wip.GenericSkillApple;
-import theWeaponMaster.cards.wip.RevolverSkillUnload;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.RevolverRelic;
@@ -153,22 +150,14 @@ public class TheWeaponMaster extends CustomPlayer {
         //retVal.add(RevenantRavenous.ID);
         //retVal.add(RevenantHungrySteel.ID);
         retVal.add(RevolverBuckshot.ID);
-        retVal.add(RevolverDouble.ID);
-        retVal.add(RevolverDouble.ID);
-        retVal.add(RevolverDouble.ID);
+        retVal.add(RevolverTwinned.ID);
         retVal.add(RevolverFullMetal.ID);
         retVal.add(RevolverLowRecoil.ID);
-        retVal.add(RevolverLowRecoil.ID);
-        retVal.add(RevolverStandard.ID);
-        retVal.add(RevolverStandard.ID);
-        retVal.add(CerberusDrainSlash.ID);
-        retVal.add(CerberusSlash.ID);
-        retVal.add(CerberusEssenceSlash.ID);
-        retVal.add(CerberusIaiSlash.ID);
-        retVal.add(CerberusModularSlash.ID);
-        retVal.add(GenericDrawSleightOfHand.ID);
-        retVal.add(GenericSkillApple.ID);
-        retVal.add(RevolverSkillUnload.ID);
+        retVal.add(RevolverSpecialGradeAmmo.ID);
+        retVal.add(RevolverUnload.ID);
+        retVal.add(Strike_WeaponMaster.ID);
+        retVal.add(SleightOfHand.ID);
+        retVal.add(FreshApple.ID);
         //retVal.add(FenrirLacerate.ID);
         //retVal.add(FenrirShieldEater.ID);
         //retVal.add(FenrirHeavySwing.ID);
@@ -265,7 +254,7 @@ public class TheWeaponMaster extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike_WeaponMaster();
+        return new theWeaponMaster.cards.revolver.Strike_WeaponMaster();
     }
 
     // The class name as it appears next to your player name in-game

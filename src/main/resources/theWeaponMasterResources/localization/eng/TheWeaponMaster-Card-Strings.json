@@ -1,8 +1,4 @@
 {
-  "theWeaponMaster:Strike_WeaponMaster": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
   "theWeaponMaster:Defend_WeaponMaster": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block. NL theWeaponMaster:Multiword_Keyword."
@@ -90,7 +86,7 @@
   "theWeaponMaster:CerberusIaiSlash": {
     "NAME": "[#cdfcfe]Iai [#cdfcfe]Slash",
     "DESCRIPTION": "Retain. Deal !D! damage. NL Flash !M!: Increase Flash damage by 25%  for every turn retained ( !SV! ). Resets when discarded or used.",
-    "UPGRADE_DESCRIPTION": "Retain. Deal !D! damage. NL Power_Flash !M!: Increase Flash damage by 33%  for every turn retained ( !SV! ). Resets when discarded or used."
+    "UPGRADE_DESCRIPTION": "Retain. Deal !D! damage. NL Power_Flash !M!: Increase discard damage by 33%  for every turn retained ( !SV! ). Resets when discarded or used."
   },
   "theWeaponMaster:CerberusDrainSlash": {
     "NAME": "[#cdfcfe]Drain [#cdfcfe]Slash",
@@ -192,33 +188,67 @@
     "NAME": "Severed Soul",
     "DESCRIPTION": "Atropos_Shears NL Costs one less for every Mana Burn target enemy has. Deal !D! damage. NL Ignite \u221E. Consume all Mana_Burn stacks."
   },
-  "theWeaponMaster:RevolverStandard": {
-    "NAME": "Single Shot",
-    "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage."
+  "theWeaponMaster:Strike_WeaponMaster": {
+    "NAME": "Standard Issue",
+    "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage. NL Counts as Basic Strike."
   },
-  "theWeaponMaster:RevolverDouble": {
-    "NAME": "Twin Shot",
+  "theWeaponMaster:RevolverTwinned": {
+    "NAME": "Twinned Shot",
     "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage twice."
   },
-  "theWeaponMaster:RevolverHeavy": {
-    "NAME": "Magnum Shot",
+  "theWeaponMaster:RevolverMagnum": {
+    "NAME": "Magnum Ammo",
     "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage."
   },
-  "theWeaponMaster:RevolverLowRecoil": {
-    "NAME": "Low Recoil Shot",
-    "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage. Play the top card if it's a Revolver card or add it to your hand otherwise."
-  },
   "theWeaponMaster:RevolverFullMetal": {
-    "NAME": "Full Metal Jacket Shot",
+    "NAME": "Full Metal Jacket",
     "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage. NL Armor_Piercing: !M!."
   },
   "theWeaponMaster:RevolverHollowPoint": {
-    "NAME": "Hollow-Point Shot",
+    "NAME": "Hollow-Point Ammo",
     "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage. NL Rending !M!."
   },
   "theWeaponMaster:RevolverBuckshot": {
     "NAME": "Buckshot",
     "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage to all enemies."
+  },
+  "theWeaponMaster:RevolverWarningShot": {
+    "NAME": "Warning Shot",
+    "DESCRIPTION": "Ammunition, Reload. NL Stagger all enemies."
+  },
+  "theWeaponMaster:RevolverLowRecoil": {
+    "NAME": "Low Recoil Ammo",
+    "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage. Play the top card if it's a Revolver card or add it to your hand otherwise."
+  },
+  "theWeaponMaster:RevolverSpecialGradeAmmo": {
+    "NAME": "Special Grade Ammo",
+    "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage and apply either !M! Lacerate or Mana_Burn."
+  },
+  "theWeaponMaster:RevolverDoubleTap": {
+    "NAME": "Double Tap",
+    "DESCRIPTION": "The next Ammunition card this turn is played twice."
+  },
+  "theWeaponMaster:RevolverCustomCartridge": {
+    "NAME": "Custom Cartridge",
+    "DESCRIPTION": "The next Ammunition card played this turn deals double damage and hits the creature behind it for normal damage."
+  },
+  "theWeaponMaster:RevolverPreload": {
+    "NAME": "Preload",
+    "DESCRIPTION": "Purge NL Purge one Ammunition card from your hand. Every time you Reload the Revolver, automatically use that card for free.",
+    "UPGRADE_DESCRIPTION": "Purge, Innate NL Exhaust one Revolver card from your hand. Every time you Reload the Revolver, automatically use that card for free."
+  },
+  "theWeaponMaster:RevolverPowerMarksmanship": {
+    "NAME": "Marksmanship",
+    "DESCRIPTION": "Revolver cards now also scale with Dexterity.",
+    "UPGRADE_DESCRIPTION": "Revolver cards now also scale with Dexterity. Gain 1 Dexterity."
+  },
+  "theWeaponMaster:RevolverUnload": {
+    "NAME": "Unload",
+    "DESCRIPTION": "Exhaust NL Discard Ammunition cards from your hand and deal !D! damage each. If you still have shots left in your Revolver, continue discarding cards from your Draw pile instead."
+  },
+  "theWeaponMaster:RevolverQuickload": {
+    "NAME": "Quickload",
+    "DESCRIPTION": "Immediately Reload your revolver."
   },
 
   "theWeaponMaster:BullyIntimidate": {
@@ -264,7 +294,7 @@
   },
   "theWeaponMaster:BullyReminder": {
     "NAME": "Reminder",
-    "DESCRIPTION": "Bully !BULLY! NL Exhaustive !stslib:ex! Gain !M! Block for every Bully card played this fight."
+    "DESCRIPTION": "Bully !BULLY! NL Exhaustive !stslib:ex! NL Gain !M! Block for every Bully card played this fight."
   },
 
   "theWeaponMaster:CounterBlow": {
@@ -276,47 +306,32 @@
     "DESCRIPTION": "Vicious doesn't decay at the end of the turn anymore. Gain 1 extra Vicious every time you attack.",
     "UPGRADE_DESCRIPTION": "Innate NL Vicious doesn't decay at the end of the turn anymore. Gain 1 extra Vicious every time you attack."
   },
-  "theWeaponMaster:GenericDrawSleightOfHand": {
+  "theWeaponMaster:SleightOfHand": {
     "NAME": "Sleight of Hand",
     "DESCRIPTION": "Gain !B! Block. NL Discard a card. NL Draw a card. NL Return one card from your Discard pile to the top of your Draw pile.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:GenericSkillApple": {
+  "theWeaponMaster:FreshApple": {
     "NAME": "Fresh Apple",
-    "DESCRIPTION": "Heal !M! HP. NL Grave, Purge.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Heal !M! HP. NL Grave, Purge."
   },
   "theWeaponMaster:GenericSkillDodge": {
     "NAME": "Dodge",
     "DESCRIPTION": "Gain !B! Block",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theWeaponMaster:GenericPowerLimberUp": {
+  "theWeaponMaster:LimberUp": {
     "NAME": "Limber Up",
     "DESCRIPTION": "Gain !M! Dexterity."
   },
-  "theWeaponMaster:GenericSkillInvestigate": {
-    "NAME": "Dodge",
-    "DESCRIPTION": "Gain !B! Block",
+  "theWeaponMaster:Investigate": {
+    "NAME": "Investigate",
+    "DESCRIPTION": "Exhaustive !stslib:ex! NL Gain !B! Block. Upon exhaust, choose 1 from 3 Attack and Skill cards each, they cost 0 this turn.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:GenericSkillObserve": {
     "NAME": "Observe",
     "DESCRIPTION": "Gain !B! block if target enemy wants to attack. NL Deal !D! damage if target enemy wants to defend. NL Otherwise draw a card.",
     "UPGRADE_DESCRIPTION": ""
-  },
-  "theWeaponMaster:RevolverSkillPreload": {
-    "NAME": "Preload",
-    "DESCRIPTION": "Purge NL Exhaust one Ammunition card from your hand. Every time you Reload the Revolver, automatically use that card for free.",
-    "UPGRADE_DESCRIPTION": "Purge, Innate NL Exhaust one Revolver card from your hand. Every time you Reload the Revolver, automatically use that card for free."
-  },
-  "theWeaponMaster:RevolverPowerMarksmanship": {
-    "NAME": "Marksmanship",
-    "DESCRIPTION": "Revolver cards now also scale with Dexterity.",
-    "UPGRADE_DESCRIPTION": "Revolver cards now also scale with Dexterity. Gain 1 Dexterity."
-  },
-  "theWeaponMaster:RevolverSkillUnload": {
-    "NAME": "Unload",
-    "DESCRIPTION": "Exhaust NL Quickly Reload your Revolver, then discard Ammunition cards from your hand and deal !D! damage each. If you still have shots left in your Revolver, continue discarding cards from your Draw pile until either it or the Revolver runs out."
   }
 }

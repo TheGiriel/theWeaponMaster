@@ -35,7 +35,7 @@
     "NAME": "The Arsenal",
     "FLAVOR": "I might just have the right tool for the job.",
     "DESCRIPTIONS": [
-      "Right-Click: Exchange ALL your Legendary Weapon cards for a different set. NL Gain 2 Vicious every time you use an Attack card. NL Warning: This modifies your deck."
+      "Right-Click: Exchange ALL your Legendary Weapon cards in your deck for a different set. NL Gain 2 Vicious every time you use an Attack card. NL Current Weapon: "
     ]
   },
   "theWeaponMaster:RevolverRelic": {

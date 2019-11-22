@@ -29,7 +29,7 @@ public class BullyReminder extends AbstractBullyCard {
 
     private static final int COST = 2;
     private static final int BULLY_COST = 3;
-    private static final int MAGIC_NUMBER = 2;
+    private static final int MAGIC_NUMBER = 3;
     private static final int UPGRADED_MAGIC_NUMBER = 2;
 
     public BullyReminder() {

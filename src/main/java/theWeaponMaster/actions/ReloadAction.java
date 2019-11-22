@@ -12,19 +12,20 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 
 public class ReloadAction extends AbstractGameAction {
 
-    public static int extraDraw = 1;
-    HashSet<String> discardedAmmoList = new HashSet<>();
-    ArrayList<AbstractCard> addToDeck = new ArrayList<>();
-
     public ReloadAction() {
         int drawNumber = 0;
-        discardedAmmoList.add(RevolverStandard.ID);
-        discardedAmmoList.add(RevolverDouble.ID);
-        discardedAmmoList.add(RevolverHeavy.ID);
+        HashSet<String> discardedAmmoList = new HashSet<>();
+
+        discardedAmmoList.add(Strike_WeaponMaster.ID);
+        discardedAmmoList.add(RevolverTwinned.ID);
+        discardedAmmoList.add(RevolverMagnum.ID);
         discardedAmmoList.add(RevolverHollowPoint.ID);
         discardedAmmoList.add(RevolverBuckshot.ID);
         discardedAmmoList.add(RevolverFullMetal.ID);
         discardedAmmoList.add(RevolverLowRecoil.ID);
+
+        ArrayList<AbstractCard> addToDeck = new ArrayList<>();
+
         if (!player.discardPile.isEmpty()) {
             for (AbstractCard c : player.discardPile.group) {
                 if (discardedAmmoList.contains(c.cardID)) {
@@ -33,6 +34,7 @@ public class ReloadAction extends AbstractGameAction {
                 }
             }
         }
+        int extraDraw = 1;
         if (drawNumber != 0) {
             for (AbstractCard c : addToDeck) {
                 player.discardPile.removeCard(c);

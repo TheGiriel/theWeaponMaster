@@ -48,5 +48,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="desktop-1.0-beta" level="project" />
+    <orderEntry type="library" name="TheAnimator" level="project" />
   </component>
 </module>

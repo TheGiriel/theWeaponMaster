@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.legendary_weapons.LeviathanGauntletCharger;
+import theWeaponMaster.cards.revolver.RevolverSpecialGradeAmmo;
 import theWeaponMaster.patches.CenterGridCardSelectScreen;
 import theWeaponMaster.relics.ArsenalRelic;
 
@@ -101,7 +102,7 @@ public class OctopusAction extends AbstractGameAction {
             CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
             if (ArsenalRelic.leviathanCharges > 0) {
-                group.addToTop(new ShiftingChoiceCard("Discharge", "Discharge", makeCardPath("Attack.png"), "L Release all remaining Leviathan charges and deal" + LeviathanGauntletCharger.getDamage() + "damage " + ArsenalRelic.leviathanCharges + " times to random enemies.", AbstractCard.CardType.ATTACK));
+                group.addToTop(new ShiftingChoiceCard("Discharge", "Discharge", makeCardPath("Attack.png"), "L Release all remaining Leviathan charges and deal" + LeviathanGauntletCharger.getPublicDamage() + "damage " + ArsenalRelic.leviathanCharges + " times to random enemies.", AbstractCard.CardType.ATTACK));
             }
 
             if (ArsenalRelic.leviathanCharges < 3) {
@@ -120,10 +121,37 @@ public class OctopusAction extends AbstractGameAction {
                 LeviathanGauntletCharger.recharge = false;
                 new LeviathanChargeAction(-ArsenalRelic.leviathanCharges);
                 ArsenalRelic.leviathanCharges = 0;
-            }
-            if (cardChoice.name.equals("Recharge")) {
+            } else if (cardChoice.name.equals("Recharge")) {
                 LeviathanGauntletCharger.recharge = true;
                 new LeviathanChargeAction(3 - ArsenalRelic.leviathanCharges);
+            }
+
+            isDone = true;
+        }
+        tickDuration();
+    }
+
+    public void specialGradeAmmo() {
+        if (duration == Settings.ACTION_DUR_XFAST) {
+            pickCard = true;
+            CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+            group.addToTop(new ShiftingChoiceCard("Splintering Ammo", "Splintering Ammo", makeCardPath("Attack.png"), "Deal " + RevolverSpecialGradeAmmo.getPublicDamage() + "damage and apply " + RevolverSpecialGradeAmmo.getPublicMagic() + " Lacerate to target enemy.", AbstractCard.CardType.ATTACK));
+
+            group.addToTop(new ShiftingChoiceCard("Ethereal Ammo", "Ethereal Ammo", makeCardPath("Attack.png"), "Deal " + RevolverSpecialGradeAmmo.getPublicDamage() + "damage and apply " + RevolverSpecialGradeAmmo.getPublicMagic() + " Mana Burn to target enemy.", AbstractCard.CardType.ATTACK));
+
+            CenterGridCardSelectScreen.centerGridSelect = true;
+            AbstractDungeon.gridSelectScreen.open(group, 1, "Choose the ammo type:", false, false, false, false);
+        } else if (pickCard && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            pickCard = false;
+            AbstractCard cardChoice = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            CenterGridCardSelectScreen.centerGridSelect = false;
+
+            if (cardChoice.name.equals("Splintering Ammo")) {
+                RevolverSpecialGradeAmmo.ethereal = false;
+            } else if (cardChoice.name.equals("Ethereal Ammo")) {
+                RevolverSpecialGradeAmmo.ethereal = true;
             }
 
             isDone = true;
