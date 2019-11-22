@@ -17,6 +17,7 @@ import theWeaponMaster.powers.ViciousPower;
 import java.util.Random;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 
 public class BullyShakedown extends AbstractBullyCard {
 
@@ -45,6 +46,7 @@ public class BullyShakedown extends AbstractBullyCard {
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
+        tags.add(BULLY);
     }
 
     @Override

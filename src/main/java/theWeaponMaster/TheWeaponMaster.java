@@ -22,14 +22,13 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.bully.*;
-import theWeaponMaster.cards.generic.BerserkerStance;
-import theWeaponMaster.cards.generic.CounterBlow;
-import theWeaponMaster.cards.generic.Defend_WeaponMaster;
-import theWeaponMaster.cards.generic.Strike_WeaponMaster;
+import theWeaponMaster.cards.generic.*;
 import theWeaponMaster.cards.legendary_weapons.*;
 import theWeaponMaster.cards.not_relevant.DefaultCommonPower;
 import theWeaponMaster.cards.not_relevant.OrbSkill;
 import theWeaponMaster.cards.revolver.*;
+import theWeaponMaster.cards.wip.GenericSkillApple;
+import theWeaponMaster.cards.wip.RevolverSkillUnload;
 import theWeaponMaster.events.IdentityCrisisEvent;
 import theWeaponMaster.potions.PlaceholderPotion;
 import theWeaponMaster.relics.*;
@@ -441,7 +440,7 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new BullyTaunt());
         BaseMod.addCard(new BullyMeanToEveryone());
-        BaseMod.addCard(new BullyHuh());
+        BaseMod.addCard(new BullyConfident());
         BaseMod.addCard(new BullyWimp());
         BaseMod.addCard(new BullyIntimidate());
         BaseMod.addCard(new BullyTerrifyingHowl());
@@ -455,8 +454,11 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new RevolverBuckshot());
         BaseMod.addCard(new RevolverHollowPoint());
         BaseMod.addCard(new RevolverFullMetal());
+        BaseMod.addCard(new RevolverSkillUnload());
         BaseMod.addCard(new CounterBlow());
         BaseMod.addCard(new BerserkerStance());
+        BaseMod.addCard(new GenericDrawSleightOfHand());
+        BaseMod.addCard(new GenericSkillApple());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -494,7 +496,7 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(DefaultCommonPower.ID);
         UnlockTracker.unlockCard(BullyTaunt.ID);
         UnlockTracker.unlockCard(BullyMeanToEveryone.ID);
-        UnlockTracker.unlockCard(BullyHuh.ID);
+        UnlockTracker.unlockCard(BullyConfident.ID);
         UnlockTracker.unlockCard(BullyWimp.ID);
         UnlockTracker.unlockCard(BullyIntimidate.ID);
         UnlockTracker.unlockCard(BullyTerrifyingHowl.ID);

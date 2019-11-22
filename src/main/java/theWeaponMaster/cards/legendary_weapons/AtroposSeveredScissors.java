@@ -119,7 +119,6 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         ManaBurnAction.ignite(m, magicNumber);
         rightHalf = true;
-
     }
 
     @Override

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.generic.BerserkerStance;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
@@ -89,22 +88,16 @@ public class ViciousPower extends TwoAmountPower {
 
     @Override
     public void updateDescription() {
-        setBonusDamage();
-        if (this.amount > TIER_THREE) {
+        if (this.amount < TIER_TWO || owner.hasPower(BerserkerStancePower.POWER_ID)) {
             description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
-            if (!owner.hasPower(BerserkerStance.ID)) {
-                setReduceVicious(3);
-                description += DESCRIPTION[4] + reduceVicious + DESCRIPTION[5];
-            }
-        } else if (this.amount > TIER_TWO) {
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
-            if (!owner.hasPower(BerserkerStance.ID)) {
-                setReduceVicious(4);
-                description += DESCRIPTION[3] + reduceVicious + DESCRIPTION[5];
-            }
+            return;
         }
-        else {
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
+        if (this.amount >= TIER_THREE) {
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[4] + reduceVicious + DESCRIPTION[5];
+            setReduceVicious(3);
+        } else {
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[3] + reduceVicious + DESCRIPTION[5];
+            setReduceVicious(4);
         }
     }
 
@@ -136,16 +129,17 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public void atEndOfRound() {
-        if (!owner.hasPower(BerserkerStancePower.POWER_ID)) {
-            if (amount > TIER_THREE) {
-                setReduceVicious(3);
-                this.amount -= reduceVicious;
-                setBonusDamage();
-            } else if (amount > TIER_TWO) {
-                setReduceVicious(4);
-                this.amount -= reduceVicious;
-                setBonusDamage();
-            }
+        if (amount > TIER_THREE) {
+            setReduceVicious(3);
+            this.amount -= reduceVicious;
+            setBonusDamage();
+        } else if (amount > TIER_TWO) {
+            setReduceVicious(4);
+            this.amount -= reduceVicious;
+            setBonusDamage();
+        }
+        if (owner.hasPower(BerserkerStancePower.POWER_ID)) {
+            setReduceVicious(1);
         }
     }
 }

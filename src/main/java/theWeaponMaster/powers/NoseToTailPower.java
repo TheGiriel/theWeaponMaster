@@ -52,7 +52,8 @@ public class NoseToTailPower extends TwoAmountPower {
 
 
     public void updateDescription() {
-        description = DESCRIPTION[0] + tempHPModifier + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
+        description = DESCRIPTION[0] + tempHPModifier + DESCRIPTION[1]
+        ;
     }
 
     @Override

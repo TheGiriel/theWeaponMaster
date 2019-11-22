@@ -61,8 +61,7 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
 
     @Override
     public void triggerOnManualDiscard() {
-        defaultBaseSecondMagicNumber = 0;
-        turnCount = 0;
+        defaultBaseSecondMagicNumber = turnCount = 0;
     }
 
     @Override
@@ -87,17 +86,24 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
         if (state != null && discarded != null) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
             flashBonus = discarded.size() * 2 - 2;
-            if (discarded.size() - 1 == magicNumber) {
+            if (upgraded && discarded.size() - 1 >= magicNumber - 1) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (this.damage + (flashBonus * (1 + iaiBonus * (turnCount)))), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+            } else if (discarded.size() - 1 == magicNumber) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (this.damage + (flashBonus * (1 + iaiBonus * (turnCount)))), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+            } else {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (this.damage + flashBonus), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (this.damage + flashBonus), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
-        defaultBaseSecondMagicNumber = 0;
-        turnCount = 0;
+        defaultBaseSecondMagicNumber = turnCount = 0;
     }
 
+    @Override
     public void atTurnStart() {
-        defaultBaseSecondMagicNumber++;
-        turnCount++;
+        if (AbstractDungeon.player.hand.group.contains(this)) {
+            turnCount++;
+            defaultBaseSecondMagicNumber++;
+        }
     }
+
 }
+

@@ -50,7 +50,7 @@ public class EnemyForceAction extends AbstractGameAction {
     }*/
 
     public static String doesntAttack() {
-        return "This enemy isn't defending.";
+        return "This enemy isn't attacking.";
     }
 
     public static String noneDefending() {

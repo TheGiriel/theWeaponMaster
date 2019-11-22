@@ -12,6 +12,7 @@ import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.powers.ViciousPower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 
 public class BullyWimp extends AbstractBullyCard {
 
@@ -33,9 +34,10 @@ public class BullyWimp extends AbstractBullyCard {
 
     public BullyWimp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, CardTarget.ENEMY);
-
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
+
+        tags.add(BULLY);
 
     }
 

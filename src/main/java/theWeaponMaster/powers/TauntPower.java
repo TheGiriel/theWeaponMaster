@@ -2,7 +2,6 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -27,8 +26,8 @@ public class TauntPower extends AbstractPower {
 
     public AbstractCreature source;
     public AbstractMonster m;
-    private byte originalMove;
-    private AbstractMonster.Intent originalIntent;
+    private static byte originalMove;
+    private static AbstractMonster.Intent originalIntent;
     private DamageInfo.DamageType test = DamageInfo.DamageType.NORMAL;
 
     public TauntPower(AbstractCreature owner, AbstractCreature source) {
@@ -46,22 +45,31 @@ public class TauntPower extends AbstractPower {
         updateDescription();
     }
 
+    static byte getOriginalMove() {
+        return originalMove;
+    }
+
+    static AbstractMonster.Intent getOriginalIntent() {
+        return originalIntent;
+    }
+
     @Override
     public void onInitialApplication() {
-        originalMove = this.m.nextMove;
-        originalIntent = this.m.intent;
-        //TODO: Lagavulin special case.
-        if (m.hasPower(IntimidatePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(m, AbstractDungeon.player));
+        /*if (m.hasPower(IntimidatePower.POWER_ID)) {
+            m.setMove(IntimidatePower.getOriginalMove(), IntimidatePower.getOriginalIntent());
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, IntimidatePower.POWER_ID));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
-        }
-
-        if (m.intent != AbstractMonster.Intent.SLEEP) {
-            this.m.setMove((byte) -2, AbstractMonster.Intent.ATTACK, (int) Math.ceil(source.maxHealth / 10));
+            AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(m, AbstractDungeon.player));
+        } else*/
+        {
+            originalMove = this.m.nextMove;
+            originalIntent = this.m.intent;
+            this.m.setMove((byte) -2, AbstractMonster.Intent.DEFEND);
             this.m.createIntent();
+            updateDescription();
         }
     }
+
 
     public void updateDescription() {
         this.description = DESCRIPTION[0];

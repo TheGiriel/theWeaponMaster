@@ -16,6 +16,7 @@ import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.powers.ViciousPower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 
 public class BullySlap extends AbstractBullyCard {
 
@@ -42,6 +43,8 @@ public class BullySlap extends AbstractBullyCard {
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
+
+        tags.add(BULLY);
     }
 
     @Override

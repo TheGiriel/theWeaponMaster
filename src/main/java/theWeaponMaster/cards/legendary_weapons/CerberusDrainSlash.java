@@ -37,8 +37,8 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
     private static final int DAMAGE = 20;
     private static final int UPGRADED_DAMAGE = 5;
     private static final int MAGIC_NUMBER = 3;
+    private static final int UPGRADED_MAGIC_NUMBER = -1;
     private static final int SECOND_VALUE = 3;
-    private static final int UPGRADED_SECOND_VALUE = 1;
     public String NAME = cardStrings.NAME;
     private HashSet<String> stolenPower = new HashSet<>();
 
@@ -71,7 +71,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            upgradeDefaultSecondMagicNumber(UPGRADED_SECOND_VALUE);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }
@@ -91,14 +91,12 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
             flashBonus = discarded.size() * 2 - 2;
             if (discarded.size() - 1 == magicNumber) {
+                stealPowers(p, m);
                 baseMagicNumber++;
                 defaultBaseSecondMagicNumber++;
             }
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + flashBonus, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        if (steal) {
-            stealPowers(p, m);
-        }
     }
 
     private void stealPowers(AbstractPlayer p, AbstractMonster m) {

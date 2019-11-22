@@ -1,8 +1,6 @@
 package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.cards.legendary_weapons.*;
@@ -77,6 +75,7 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
 
         deleteMethod("Discard");
         deleteGroup.clear();
+
     }
 
     public void collectMethod(AbstractCard copyCheck){
@@ -84,6 +83,7 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
             deleteGroup.add(copyCheck);
         }
     }
+
 
     private void deleteMethod(String group){
         switch (group){
@@ -94,8 +94,6 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
                 break;
             case "Hand":
                 for (AbstractCard card : deleteGroup) {
-                    AbstractDungeon.actionManager.addToBottom(new ShowCardAndPoofAction(card));
-                    AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
                     AbstractDungeon.player.hand.removeCard(card);
                 }
                 break;

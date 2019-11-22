@@ -40,7 +40,6 @@ public class BerserkerStance extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.isInnate = true;
-            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -23,8 +23,7 @@
       " more damage.",
       " NL Lose a quarter #r(",
       " NL Lose a third #r(",
-      ") of your Vicious at the end of the turn.",
-      " NL #rSpecial #rAttacks #rare #ravailable #rto #ryou."
+      ") of your Vicious at the end of the turn."
     ]
   },
   "EgoPower": {
@@ -54,9 +53,8 @@
   "NoseToTailPower": {
     "NAME": "Nose To Tail",
     "DESCRIPTIONS": [
-      "Gain 1 Temporary_HP for every [#e3dac9]",
-      " damage you deal at the end of your turn. NL Heal for the gained Temporary HP [#e3dac9](",
-      ") instead, when you kill the target."
+      "Gain 1 Temporary HP at the end of your turn for every [#e3dac9]",
+      " damage you deal. NL Heal for the gained Temporary HP instead, when you kill the target."
     ]
   },
   "CattleToSlaughterPower": {

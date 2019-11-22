@@ -6,16 +6,19 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.EnemyForceAction;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
+import theWeaponMaster.powers.IntimidatePower;
 import theWeaponMaster.powers.TauntPower;
 import theWeaponMaster.powers.ViciousPower;
 
 import java.util.HashSet;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 import static theWeaponMaster.patches.WeaponMasterTags.TAUNT;
 
 public class BullyMeanToEveryone extends AbstractBullyCard {
@@ -28,26 +31,29 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int MAGIC_NUMBER = 1;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int BULLY_COST = 15;
+    private static final int BULLY_COST = 7;
     private static final int UPGRADED_BULLY_NUMBER = 3;
     private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
 
     public BullyMeanToEveryone() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        isInnate = true;
-        exhaust = true;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
 
+        isInnate = true;
+        exhaust = true;
+
         tags.add(TAUNT);
+        tags.add(BULLY);
         intents = EnemyForceAction.getIntents(this);
         purgeOnUse = true;
     }
@@ -56,7 +62,7 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
     public boolean cardPlayable(AbstractMonster m) {
         intents = EnemyForceAction.getIntents(this);
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            if (intents.contains(monster.intent)) {
+            if (intents.contains(monster.intent) && !monster.hasPower(IntimidatePower.POWER_ID)) {
                 return true;
             }
         }
@@ -70,14 +76,19 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int strengthBuff = 0;
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            if (monster.intent != AbstractMonster.Intent.ATTACK && monster.intent != AbstractMonster.Intent.ATTACK_BUFF && monster.intent != AbstractMonster.Intent.ATTACK_DEBUFF && monster.intent != AbstractMonster.Intent.ATTACK_DEFEND) {
+            if (intents.contains(monster.intent) && !monster.hasPower(IntimidatePower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new TauntPower(monster, p)));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StrengthPower(monster, magicNumber)));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
+                strengthBuff++;
             }
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
+        if (strengthBuff > 1) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, strengthBuff / 2)));
+        }
     }
 
     @Override

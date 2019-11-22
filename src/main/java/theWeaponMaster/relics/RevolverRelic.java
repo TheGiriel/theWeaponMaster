@@ -19,6 +19,7 @@ public class RevolverRelic extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
     public static int SHOTS = 6;
+    public static int shotsLeft = SHOTS;
 
     public RevolverRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
@@ -38,13 +39,10 @@ public class RevolverRelic extends CustomRelic {
 
     @Override
     public void atBattleStart() {
-        if (this.counter <= 0) {
+        if (counter <= 0) {
             counter = 0;
         }
     }
 
-    @Override
-    public void onEnterRestRoom() {
-        super.onEnterRestRoom();
-    }
+
 }

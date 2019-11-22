@@ -48,6 +48,8 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ArsenalRelic.leviathanCharges;
+
+        purgeOnUse = true;
     }
 
     @Override

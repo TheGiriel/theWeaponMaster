@@ -16,6 +16,7 @@ import theWeaponMaster.powers.ViciousPower;
 import java.util.HashSet;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 import static theWeaponMaster.patches.WeaponMasterTags.INTIMIDATE;
 
 public class BullyIntimidate extends AbstractBullyCard {
@@ -40,11 +41,14 @@ public class BullyIntimidate extends AbstractBullyCard {
 
     public BullyIntimidate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
 
         tags.add(INTIMIDATE);
+        tags.add(BULLY);
         intents = EnemyForceAction.getIntents(this);
+        ExhaustiveField.ExhaustiveFields.exhaustive.set(this, 2);
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);
     }
 
@@ -60,7 +64,7 @@ public class BullyIntimidate extends AbstractBullyCard {
     @Override
     public boolean cardPlayable(AbstractMonster m) {
         try {
-            if (intents.contains(m.intent)) {
+            if (intents.contains(m.intent) && !m.hasPower(IntimidatePower.POWER_ID)) {
                 return true;
             }
         } catch (NullPointerException e) {

@@ -38,7 +38,7 @@
     "NAMES": [
       "bully"
     ],
-    "DESCRIPTION": "Gain Vicious to debuff your enemies or force their actions."
+    "DESCRIPTION": "Bully X: Gain X Vicious and debuff your enemies or force their actions."
   },
   {
     "PROPER_NAME": "[#ff4500]Taunt",
@@ -118,7 +118,17 @@
     "NAMES": [
       "flash"
     ],
-    "DESCRIPTION": "[#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2 Cards: draw a card. NL X: Activate the extra effect."
+    "DESCRIPTION": "[#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2+ Cards: draw a card. NL X: Activate the extra effect."
+  },
+  {
+    "PROPER_NAME": "[#cdfcfe]Power [#cdfcfe]Flash",
+    "NAMES": [
+      "Power Flash",
+      "Power_Flash",
+      "power flash",
+      "power_flash"
+    ],
+    "DESCRIPTION": "[#cdfcfe]Power [#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the extra effect."
   },
   {
     "PROPER_NAME": "[#cdfcfe]Utility [#cdfcfe]Flash",
@@ -237,5 +247,20 @@
       "Weapon_Swap"
     ],
     "DESCRIPTION": "Remove all of your Legendary Weapon cards from your deck and gain a new Weapon's cards."
+  },
+  {
+    "PROPER_NAME": "Reload",
+    "NAMES": [
+      "reload"
+    ],
+    "DESCRIPTION": "Return all Ammunition cards from your Discard pile and draw cards for every three cards returned and refund 1 energy."
+  },
+  {
+    "PROPER_NAME": "Ammunition",
+    "NAMES": [
+      "ammunition",
+      "ammo"
+    ],
+    "DESCRIPTION": "Reduces your Revolver shot count by 1."
   }
 ]

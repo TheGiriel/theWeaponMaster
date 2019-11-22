@@ -25,8 +25,7 @@ import java.util.HashSet;
 import java.util.Random;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
-import static theWeaponMaster.patches.WeaponMasterTags.INTIMIDATE;
-import static theWeaponMaster.patches.WeaponMasterTags.TAUNT;
+import static theWeaponMaster.patches.WeaponMasterTags.*;
 
 public class BullyDinerArgument extends AbstractBullyCard {
 
@@ -54,9 +53,12 @@ public class BullyDinerArgument extends AbstractBullyCard {
 
     public BullyDinerArgument() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        exhaust = true;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
+
+        exhaust = true;
+        tags.add(BULLY);
         tags.add(INTIMIDATE);
         attacking = EnemyForceAction.getIntents(this);
         tags.remove(INTIMIDATE);

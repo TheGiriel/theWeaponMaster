@@ -10,12 +10,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.EnemyForceAction;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
+import theWeaponMaster.powers.IntimidatePower;
 import theWeaponMaster.powers.TauntPower;
 import theWeaponMaster.powers.ViciousPower;
 
 import java.util.HashSet;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
+import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 import static theWeaponMaster.patches.WeaponMasterTags.TAUNT;
 
 public class BullyTaunt extends AbstractBullyCard {
@@ -41,11 +43,14 @@ public class BullyTaunt extends AbstractBullyCard {
 
     public BullyTaunt() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
 
         tags.add(TAUNT);
+        tags.add(BULLY);
         intents = EnemyForceAction.getIntents(this);
+        ExhaustiveField.ExhaustiveFields.exhaustive.set(this, 2);
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);
     }
 
@@ -61,7 +66,7 @@ public class BullyTaunt extends AbstractBullyCard {
     @Override
     public boolean cardPlayable(AbstractMonster m) {
         try {
-            if (intents.contains(m.intent)) {
+            if (intents.contains(m.intent) && !m.hasPower(IntimidatePower.POWER_ID)) {
                 return true;
             }
         } catch (NullPointerException e) {
@@ -73,7 +78,7 @@ public class BullyTaunt extends AbstractBullyCard {
 
     @Override
     protected String getCantPlayMessage() {
-        return EnemyForceAction.doesntDefend();
+        return "This monster isn't attacking.";
     }
 
     @Override
