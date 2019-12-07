@@ -12,7 +12,6 @@ import theWeaponMaster.actions.EnemyForceAction;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.powers.IntimidatePower;
 import theWeaponMaster.powers.TauntPower;
-import theWeaponMaster.powers.ViciousPower;
 
 import java.util.HashSet;
 
@@ -59,7 +58,6 @@ public class BullyTaunt extends AbstractBullyCard {
         if (m.intent != AbstractMonster.Intent.ATTACK && m.intent != AbstractMonster.Intent.ATTACK_BUFF && m.intent != AbstractMonster.Intent.ATTACK_DEBUFF && m.intent != AbstractMonster.Intent.ATTACK_DEFEND && m.intent != AbstractMonster.Intent.SLEEP && m.intent != AbstractMonster.Intent.STUN) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TauntPower(m, p)));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
     }
 
 

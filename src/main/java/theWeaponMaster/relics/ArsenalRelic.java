@@ -16,6 +16,7 @@ import theWeaponMaster.actions.ArsenalRecombineAction;
 import theWeaponMaster.actions.LeviathanChargeAction;
 import theWeaponMaster.actions.OctopusAction;
 import theWeaponMaster.actions.RevenantStarveAction;
+import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.util.TextureLoader;
 
@@ -23,6 +24,7 @@ import java.util.HashSet;
 
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
+import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
 
 public class ArsenalRelic extends CustomRelic implements ClickableRelic {
@@ -117,6 +119,10 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
         }
         if (currentWeapon.equals("Revenant") && !targetCard.hasTag(REVENANT)) {
             starveRevenant();
+        }
+        if (targetCard.hasTag(BULLY)) {
+            AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, bullyCard.bullyNumber)));
         }
     }
 

@@ -296,7 +296,15 @@
     "NAME": "Reminder",
     "DESCRIPTION": "Bully !BULLY! NL Exhaustive !stslib:ex! NL Gain !M! Block for every Bully card played this fight."
   },
-
+  "theWeaponMaster:BullySuckerPunch": {
+    "NAME": "Sucker Punch",
+    "DESCRIPTION": "Bully !BULLY! NL Deal !D! damage, deal double damage if this is the first card played this combat. Draw, then discard a card.",
+    "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Innate NL Deal !D! damage, deal double damage if this is the first card played this combat. Draw, then discard a card."
+  },
+  "theWeaponMaster:BullyClothesline": {
+    "NAME": "Clothesline",
+    "DESCRIPTION": "Bully !BULLY! NL Deal !D! damage and apply !M! Vulnerable."
+  },
   "theWeaponMaster:CounterBlow": {
     "NAME": "Counter Blow",
     "DESCRIPTION": "Discard the top card of your draw Pile counter an opponent's attack for !M! damage."

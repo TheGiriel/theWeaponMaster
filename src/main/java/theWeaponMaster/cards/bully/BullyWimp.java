@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
-import theWeaponMaster.powers.ViciousPower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
@@ -45,7 +44,6 @@ public class BullyWimp extends AbstractBullyCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
         if (!upgraded) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
             return;

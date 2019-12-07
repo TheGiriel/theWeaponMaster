@@ -19,7 +19,6 @@ import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.powers.IntimidatePower;
 import theWeaponMaster.powers.StaggerPower;
 import theWeaponMaster.powers.TauntPower;
-import theWeaponMaster.powers.ViciousPower;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -117,6 +116,5 @@ public class BullyDinerArgument extends AbstractBullyCard {
                 randomArgument(p, monster);
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
     }
 }

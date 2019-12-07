@@ -11,7 +11,6 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.EnemyForceAction;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.powers.IntimidatePower;
-import theWeaponMaster.powers.ViciousPower;
 
 import java.util.HashSet;
 
@@ -58,7 +57,6 @@ public class BullyIntimidate extends AbstractBullyCard {
         if (intents.contains(m.intent)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new IntimidatePower(m, p)));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
     }
 
     @Override

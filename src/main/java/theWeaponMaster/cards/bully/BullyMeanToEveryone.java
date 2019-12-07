@@ -13,7 +13,6 @@ import theWeaponMaster.actions.EnemyForceAction;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.powers.IntimidatePower;
 import theWeaponMaster.powers.TauntPower;
-import theWeaponMaster.powers.ViciousPower;
 
 import java.util.HashSet;
 
@@ -85,7 +84,6 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
                 strengthBuff++;
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
         if (strengthBuff > 1) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, strengthBuff / 2)));
         }

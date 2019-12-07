@@ -11,6 +11,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="desktop-1.0" level="project" />
+    <orderEntry type="library" name="desktop-1.0-beta" level="project" />
+    <orderEntry type="library" name="TheAnimator" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: com.megacrit.cardcrawl:slaythespire:01-23-2019">
         <CLASSES>
@@ -47,7 +49,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="desktop-1.0-beta" level="project" />
-    <orderEntry type="library" name="TheAnimator" level="project" />
   </component>
 </module>

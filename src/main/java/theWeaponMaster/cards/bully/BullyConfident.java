@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
-import theWeaponMaster.powers.ViciousPower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
@@ -53,7 +52,6 @@ public class BullyConfident extends AbstractBullyCard {
         if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, 10));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, bullyNumber)));
     }
 
     @Override

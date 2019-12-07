@@ -13,10 +13,10 @@ import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class GenericCard19 extends AbstractDynamicCard {
+public class GenericSkillRelaxRecollect extends AbstractDynamicCard {
 
 
-    public static final String ID = TheWeaponMaster.makeID(GenericCard19.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(GenericSkillRelaxRecollect.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -35,7 +35,7 @@ public class GenericCard19 extends AbstractDynamicCard {
     private static final int MAGIC_NUMBER = 0;
     private static final int UPGRADED_MAGIC_NUMBER = 0;
 
-    public GenericCard19() {
+    public GenericSkillRelaxRecollect() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;

@@ -19,7 +19,6 @@ theWeaponMaster\actions\EnemyForceAction.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredPain.class
 theWeaponMaster\cards\legendary_weapons\CerberusModularSlash.class
 theWeaponMaster\actions\ImprovedWeaponCardRemovalAction.class
-theWeaponMaster\cards\bully\BullyAttackSuckerPunch.class
 theWeaponMaster\cards\generic\GenericUncommonSkillFlashbang.class
 theWeaponMaster\cards\bully\BullyMeanToEveryone.class
 theWeaponMaster\cards\revolver\RevolverQuickload.class
@@ -109,6 +108,7 @@ theWeaponMaster\cards\legendary_weapons\CerberusIaiSlash.class
 theWeaponMaster\cards\legendary_weapons\RevenantBloodbath.class
 theWeaponMaster\cards\revolver\RevolverLowRecoil.class
 theWeaponMaster\cards\revolver\RevolverTwinned.class
+theWeaponMaster\cards\generic\GenericSkillRelaxRecollect.class
 theWeaponMaster\relics\GhoulskinSheathRelic.class
 theWeaponMaster\cards\generic\GenericPowerAnticipation.class
 theWeaponMaster\cards\bully\BullyRarePowerIntimidatingPresence.class
@@ -117,7 +117,6 @@ theWeaponMaster\cards\generic\GenericRareSkillRedirectBlow.class
 theWeaponMaster\cards\generic\GenericAttackDoubleStrike.class
 theWeaponMaster\actions\ArsenalRecombineAction.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredScissors.class
-theWeaponMaster\cards\bully\BullyCard14.class
 theWeaponMaster\relics\HellhoundOilRelic.class
 theWeaponMaster\TheWeaponMaster.class
 theWeaponMaster\cards\generic\GenericAttackUncommon.class
@@ -140,6 +139,7 @@ theWeaponMaster\relics\ManaWhetstoneRelic.class
 theWeaponMaster\cards\revolver\RevolverMagnum.class
 theWeaponMaster\cards\generic\LimberUp.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredPath.class
+theWeaponMaster\cards\bully\BullySuckerPunch.class
 theWeaponMaster\variables\SecondVariable.class
 theWeaponMaster\actions\ThornBypassAction.class
 theWeaponMaster\powers\StaggerPower.class
@@ -149,8 +149,8 @@ theWeaponMaster\cards\bully\BullySlap.class
 theWeaponMaster\events\IdentityCrisisEvent.class
 theWeaponMaster\patches\WeaponMasterTags.class
 theWeaponMaster\relics\DefaultClickableRelic.class
+theWeaponMaster\cards\bully\BullyAttackClothesline.class
 theWeaponMaster\cards\revolver\Strike_WeaponMaster.class
 theWeaponMaster\cards\revolver\RevolverSkillDoubleTap.class
 theWeaponMaster\powers\SeveredPainPower.class
-theWeaponMaster\cards\generic\GenericCard19.class
 theWeaponMaster\cards\revolver\RevolverUnload.class
