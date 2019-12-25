@@ -12,9 +12,9 @@ import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class SleightOfHand extends AbstractDynamicCard {
+public class GenericSleightOfHand extends AbstractDynamicCard {
 
-    public static final String ID = TheWeaponMaster.makeID(SleightOfHand.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(GenericSleightOfHand.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -24,7 +24,7 @@ public class SleightOfHand extends AbstractDynamicCard {
     private static final int BLOCK = 5;
     private static final int UPGRADED_BLOCK = 3;
 
-    public SleightOfHand() {
+    public GenericSleightOfHand() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.block = baseBlock = BLOCK;
     }

@@ -13,10 +13,10 @@ import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class Investigate extends AbstractDynamicCard {
+public class GenericInvestigate extends AbstractDynamicCard {
 
 
-    public static final String ID = TheWeaponMaster.makeID(Investigate.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(GenericInvestigate.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -28,7 +28,7 @@ public class Investigate extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int BLOCK = 8;
 
-    public Investigate() {
+    public GenericInvestigate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.block = baseBlock = BLOCK;
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);

@@ -12,9 +12,9 @@ import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class LimberUp extends AbstractDynamicCard {
+public class GenericLimberUp extends AbstractDynamicCard {
 
-    public static final String ID = TheWeaponMaster.makeID(LimberUp.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(GenericLimberUp.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -28,7 +28,7 @@ public class LimberUp extends AbstractDynamicCard {
     private static final int MAGIC = 6;
     private static final int UPGRADE_MAGIC = 1;
 
-    public LimberUp() {
+    public GenericLimberUp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC;
     }

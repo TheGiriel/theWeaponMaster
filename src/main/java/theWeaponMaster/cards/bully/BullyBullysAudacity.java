@@ -14,9 +14,9 @@ import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 
-public class BullyReminder extends AbstractBullyCard {
+public class BullyBullysAudacity extends AbstractBullyCard {
 
-    public static final String ID = TheWeaponMaster.makeID(BullyReminder.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(BullyBullysAudacity.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -32,7 +32,7 @@ public class BullyReminder extends AbstractBullyCard {
     private static final int MAGIC_NUMBER = 3;
     private static final int UPGRADED_MAGIC_NUMBER = 2;
 
-    public BullyReminder() {
+    public BullyBullysAudacity() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 

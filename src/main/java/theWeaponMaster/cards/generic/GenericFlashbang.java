@@ -14,9 +14,9 @@ import theWeaponMaster.powers.StaggerPower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class Flashbang extends AbstractDynamicCard {
+public class GenericFlashbang extends AbstractDynamicCard {
 
-    public static final String ID = TheWeaponMaster.makeID(Flashbang.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(GenericFlashbang.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -29,7 +29,7 @@ public class Flashbang extends AbstractDynamicCard {
     private static final int MAGIC_NUMBER = 1;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
 
-    public Flashbang() {
+    public GenericFlashbang() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;

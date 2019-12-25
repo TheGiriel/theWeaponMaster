@@ -296,8 +296,8 @@
     "DESCRIPTION": "Bully !BULLY! NL Deal !D! damage. Target enemy 'donates' a little random amount of gold (3-6 Gold).",
     "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Deal !D! damage. Target enemy 'donates' a little random amount of gold (6-9 Gold)."
   },
-  "theWeaponMaster:BullyReminder": {
-    "NAME": "Reminder",
+  "theWeaponMaster:BullyBullysAudacity": {
+    "NAME": "The Bully's Audacity",
     "DESCRIPTION": "Bully !BULLY! NL Exhaustive !stslib:ex! NL Gain !M! Block for every Bully card played this fight."
   },
   "theWeaponMaster:BullySuckerPunch": {
@@ -313,48 +313,46 @@
     "NAME": "Trip",
     "DESCRIPTION": "Bully !BULLY! NL Apply !M! Vulnerable. The enemy loses !M! HP for every debuff."
   },
-  "theWeaponMaster:CounterBlow": {
+  "theWeaponMaster:GenericCounterBlow": {
     "NAME": "Counter Blow",
     "DESCRIPTION": "Discard the top card of your draw Pile counter an opponent's attack for !M! damage."
   },
-  "theWeaponMaster:BerserkerStance": {
+  "theWeaponMaster:GenericBerserkerStance": {
     "NAME": "Berserker Stance",
     "DESCRIPTION": "Vicious doesn't decay at the end of the turn anymore. Gain 1 extra Vicious every time you attack.",
     "UPGRADE_DESCRIPTION": "Innate NL Vicious doesn't decay at the end of the turn anymore. Gain 1 extra Vicious every time you attack."
   },
-  "theWeaponMaster:SleightOfHand": {
+  "theWeaponMaster:GenericSleightOfHand": {
     "NAME": "Sleight of Hand",
     "DESCRIPTION": "Gain !B! Block. NL Discard a card. NL Draw a card. NL Return one card from your Discard pile to the bottom of your Draw pile."
   },
-  "theWeaponMaster:FreshApple": {
+  "theWeaponMaster:GenericFreshApple": {
     "NAME": "Fresh Apple",
     "DESCRIPTION": "Heal !M! HP. NL Grave, Purge."
   },
-  "theWeaponMaster:Dodge": {
+  "theWeaponMaster:GenericDodge": {
     "NAME": "Dodge",
     "DESCRIPTION": "Gain !B! Block.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. If your Block isn't broken, the first attack you play next turn costs 1 less."
   },
-  "theWeaponMaster:ThrowingKnives": {
+  "theWeaponMaster:GenericThrowingKnives": {
     "NAME": "Throwing Knives",
     "DESCRIPTION": "Exhaustive !stslib:ex! NL Deal !D! damage. NL If discarded, deal !SV! damage !stslib:ex! times to a random enemy."
   },
-  "theWeaponMaster:LimberUp": {
+  "theWeaponMaster:GenericLimberUp": {
     "NAME": "Limber Up",
     "DESCRIPTION": "Gain !M! Dexterity."
   },
-  "theWeaponMaster:Flashbang": {
+  "theWeaponMaster:GenericFlashbang": {
     "NAME": "Flashbang",
     "DESCRIPTION": "Exhaustive !stslib:ex! NL Stun target enemy. Stagger all other enemies."
   },
-  "theWeaponMaster:Investigate": {
+  "theWeaponMaster:GenericInvestigate": {
     "NAME": "Investigate",
-    "DESCRIPTION": "Exhaustive !stslib:ex! NL Gain !B! Block. If this card is exhausted through the Exhaustive effect, choose 1 from 3 Attack and Skill cards each, they cost 0 this turn.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Exhaustive !stslib:ex! NL Gain !B! Block. If this card is exhausted through the Exhaustive effect, choose 1 from 3 Attack and Skill cards each, they cost 0 this turn."
   },
   "theWeaponMaster:GenericSkillObserve": {
     "NAME": "Observe",
-    "DESCRIPTION": "Gain !B! block if target enemy wants to attack. NL Deal !D! damage if target enemy wants to defend. NL Otherwise draw a card.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Gain !B! block if target enemy wants to attack. NL Deal !D! damage if target enemy wants to defend. NL Otherwise draw a card."
   }
 }

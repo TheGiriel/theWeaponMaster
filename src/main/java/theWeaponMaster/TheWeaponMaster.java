@@ -444,7 +444,7 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new BullyDinerArgument());
         BaseMod.addCard(new BullySlap());
         BaseMod.addCard(new BullyShakedown());
-        BaseMod.addCard(new BullyReminder());
+        BaseMod.addCard(new BullyBullysAudacity());
         //BaseMod.addCard(new BullySuckerPunch());
         BaseMod.addCard(new BullyIntimidatingPresence());
         //BaseMod.addCard(new BullyTrip());
@@ -468,20 +468,20 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new RevolverUnload());
 
         BaseMod.addCard(new Defend_WeaponMaster());
-        BaseMod.addCard(new CounterBlow());
-        BaseMod.addCard(new BerserkerStance());
-        BaseMod.addCard(new SleightOfHand());
-        BaseMod.addCard(new FreshApple());
-        BaseMod.addCard(new LimberUp());
-        BaseMod.addCard(new ThrowingKnives());
+        BaseMod.addCard(new GenericCounterBlow());
+        BaseMod.addCard(new GenericBerserkerStance());
+        BaseMod.addCard(new GenericSleightOfHand());
+        BaseMod.addCard(new GenericFreshApple());
+        BaseMod.addCard(new GenericLimberUp());
+        BaseMod.addCard(new GenericThrowingKnives());
         //BaseMod.addCard(new GenericAttackDoubleStrike());
         //BaseMod.addCard(new GenericAttackUncommon());
         BaseMod.addCard(new GenericPowerAnticipation());
-        BaseMod.addCard(new Flashbang());
+        BaseMod.addCard(new GenericFlashbang());
         //BaseMod.addCard(new GenericRareDraw());
         //BaseMod.addCard(new GenericRareSkillRedirectBlow());
         BaseMod.addCard(new GenericSkillDodge());
-        BaseMod.addCard(new Investigate());
+        BaseMod.addCard(new GenericInvestigate());
         //BaseMod.addCard(new GenericSkillObserve());
         //BaseMod.addCard(new GenericUncommonPower());
         //BaseMod.addCard(new GenericUncommonPowerHuntersIntuition());
@@ -528,7 +528,7 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(BullyDinerArgument.ID);
         UnlockTracker.unlockCard(BullySlap.ID);
         UnlockTracker.unlockCard(BullyShakedown.ID);
-        UnlockTracker.unlockCard(BullyReminder.ID);
+        UnlockTracker.unlockCard(BullyBullysAudacity.ID);
         //UnlockTracker.unlockCard(BullySuckerPunch.ID);
         //UnlockTracker.unlockCard(BullyIntimidatingPresence.ID);
         //UnlockTracker.unlockCard(BullyTrip.ID);
@@ -552,26 +552,26 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(RevolverUnload.ID);
 
         UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
-        UnlockTracker.unlockCard(CounterBlow.ID);
-        UnlockTracker.unlockCard(BerserkerStance.ID);
-        UnlockTracker.unlockCard(SleightOfHand.ID);
-        UnlockTracker.unlockCard(FreshApple.ID);
-        UnlockTracker.unlockCard(LimberUp.ID);
-        UnlockTracker.unlockCard(ThrowingKnives.ID);
+        UnlockTracker.unlockCard(GenericCounterBlow.ID);
+        UnlockTracker.unlockCard(GenericBerserkerStance.ID);
+        UnlockTracker.unlockCard(GenericSleightOfHand.ID);
+        UnlockTracker.unlockCard(GenericFreshApple.ID);
+        UnlockTracker.unlockCard(GenericLimberUp.ID);
+        UnlockTracker.unlockCard(GenericThrowingKnives.ID);
         //UnlockTracker.unlockCard(GenericAttackDoubleStrike.ID);
         //UnlockTracker.unlockCard(GenericAttackUncommon.ID);
         //UnlockTracker.unlockCard(GenericPowerAnticipation.ID);
-        //UnlockTracker.unlockCard(Flashbang.ID);
+        //UnlockTracker.unlockCard(GenericFlashbang.ID);
         //UnlockTracker.unlockCard(GenericRareDraw.ID);
         //UnlockTracker.unlockCard(GenericRareSkillRedirectBlow.ID);
         UnlockTracker.unlockCard(GenericSkillDodge.ID);
-        UnlockTracker.unlockCard(Investigate.ID);
+        UnlockTracker.unlockCard(GenericInvestigate.ID);
         //UnlockTracker.unlockCard(GenericSkillObserve.ID);
         //UnlockTracker.unlockCard(GenericUncommonPower.ID);
         //UnlockTracker.unlockCard(GenericUncommonPowerHuntersIntuition.ID());
         //UnlockTracker.unlockCard(GenericSkillRelaxRecollect.ID);
         //UnlockTracker.unlockCard(GenericCard20.ID);
-        UnlockTracker.unlockCard(BerserkerStance.ID);
+        UnlockTracker.unlockCard(GenericBerserkerStance.ID);
 
         
         logger.info("Done adding cards!");

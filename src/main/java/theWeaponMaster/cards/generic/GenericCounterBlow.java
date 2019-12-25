@@ -12,9 +12,9 @@ import theWeaponMaster.powers.CounterBlowPower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class CounterBlow extends AbstractDynamicCard {
+public class GenericCounterBlow extends AbstractDynamicCard {
 
-    public static final String ID = TheWeaponMaster.makeID(CounterBlow.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(GenericCounterBlow.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -30,7 +30,7 @@ public class CounterBlow extends AbstractDynamicCard {
     private static final int MAGIC = 2;
     private static final int UPGRADED_MAGIC = 1;
 
-    public CounterBlow() {
+    public GenericCounterBlow() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC;
         this.damage = baseDamage = DAMAGE;

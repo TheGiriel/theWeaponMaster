@@ -12,9 +12,9 @@ import theWeaponMaster.powers.BerserkerStancePower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class BerserkerStance extends AbstractDynamicCard {
+public class GenericBerserkerStance extends AbstractDynamicCard {
 
-    public static final String ID = TheWeaponMaster.makeID(BerserkerStance.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(GenericBerserkerStance.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -26,7 +26,7 @@ public class BerserkerStance extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;
     private static final int COST = 3;
 
-    public BerserkerStance() {
+    public GenericBerserkerStance() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }
 

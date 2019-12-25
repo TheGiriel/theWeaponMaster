@@ -10,9 +10,9 @@ import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class FreshApple extends AbstractDynamicCard {
+public class GenericFreshApple extends AbstractDynamicCard {
 
-    public static final String ID = TheWeaponMaster.makeID(FreshApple.class.getSimpleName());
+    public static final String ID = TheWeaponMaster.makeID(GenericFreshApple.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardRarity RARITY = CardRarity.RARE;
@@ -22,7 +22,7 @@ public class FreshApple extends AbstractDynamicCard {
     private static final int MAGIC_NUMBER = 3;
     private static final int UPGRADED_MAGIC_NUMBER = 2;
 
-    public FreshApple() {
+    public GenericFreshApple() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         GraveField.grave.set(this, true);
