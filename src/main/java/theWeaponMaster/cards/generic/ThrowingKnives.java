@@ -27,20 +27,17 @@ public class ThrowingKnives extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    private static final int COST = 0;
 
+    private static final int COST = 0;
     private static final int DAMAGE = 4;
     private static final int UPGRADED_DAMAGE = 2;
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int SECOND_VARIABLE = 2;
-    private static final int UPGRADED_SECOND_VARIABLE = 2;
 
     public ThrowingKnives() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_VARIABLE;
 
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, magicNumber);
         ExhaustiveField.ExhaustiveFields.exhaustive.set(this, magicNumber);
@@ -55,7 +52,9 @@ public class ThrowingKnives extends AbstractDynamicCard {
 
     @Override
     public void triggerOnManualDiscard() {
-        AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, damage * ExhaustiveField.ExhaustiveFields.exhaustive.get(this), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        for (int i = 0; i < ExhaustiveField.ExhaustiveFields.exhaustive.get(this); i++) {
+            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        }
     }
 
     @Override
@@ -64,7 +63,7 @@ public class ThrowingKnives extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeDefaultSecondMagicNumber(UPGRADED_SECOND_VARIABLE);
+            ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
             initializeDescription();
         }
     }

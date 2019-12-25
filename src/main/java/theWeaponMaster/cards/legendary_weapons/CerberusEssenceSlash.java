@@ -39,7 +39,7 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int SECOND_VALUE = 2;
-    private static final int UPGRADED_SECOND_VALUE = 2;
+    private static final int UPGRADED_SECOND_VALUE = 1;
 
     public CerberusEssenceSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -68,17 +68,23 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = (AbstractMonster) state;
         int essenceDamage = 0;
-        int flashBonus = 0;
+        int flashBonus = discarded.size() * 2;
 
         if (state != null && discarded != null) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
-            flashBonus = discarded.size() * 2 - 2;
-            if (discarded.size() - 1 == magicNumber) {
+
+            if (upgraded && discarded.size() - 1 >= magicNumber - 1) {
+                for (AbstractPower power : m.powers) {
+                    essenceDamage++;
+                }
+            } else if (discarded.size() - 1 == magicNumber) {
                 for (AbstractPower power : m.powers) {
                     essenceDamage++;
                 }
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + flashBonus + essenceDamage * defaultSecondMagicNumber, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + flashBonus, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, essenceDamage * defaultSecondMagicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
+
     }
 }

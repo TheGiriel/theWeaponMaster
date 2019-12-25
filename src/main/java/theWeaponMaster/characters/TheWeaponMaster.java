@@ -24,6 +24,7 @@ import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.generic.Flashbang;
 import theWeaponMaster.cards.generic.FreshApple;
 import theWeaponMaster.cards.generic.SleightOfHand;
+import theWeaponMaster.cards.revolver.RevolverSpecialGradeAmmo;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.RevolverRelic;
@@ -154,7 +155,7 @@ public class TheWeaponMaster extends CustomPlayer {
         //retVal.add(RevolverTwinned.ID);
         //retVal.add(RevolverFullMetal.ID);
         //retVal.add(RevolverLowRecoil.ID);
-        //retVal.add(RevolverSpecialGradeAmmo.ID);
+        retVal.add(RevolverSpecialGradeAmmo.ID);
         //retVal.add(RevolverUnload.ID);
         //retVal.add(Strike_WeaponMaster.ID);
         retVal.add(SleightOfHand.ID);

@@ -181,7 +181,8 @@
       "Leviathan Gauntlet",
       "leviathan gauntlet",
       "leviathan_gauntlet",
-      "Leviathan_Gauntlet"
+      "Leviathan_Gauntlet",
+      "Leviathan"
     ],
     "DESCRIPTION": "Chargeable cards specializing against enemies with Block and defensive powers."
   },
@@ -191,7 +192,7 @@
       "stagger",
       "staggered"
     ],
-    "DESCRIPTION": "Staggered creatures deal and gain less damage and block respectively, based on their block."
+    "DESCRIPTION": "Staggered creatures deal less Damage and gain less Block. Leviathan cards inflict increased Stagger based on enemy Block."
   },
   {
     "PROPER_NAME": "[#746550]Charge",
@@ -208,7 +209,8 @@
       "Revenant Cleaver",
       "revenant cleaver",
       "revenant_cleaver",
-      "Revenant_Cleaver"
+      "Revenant_Cleaver",
+      "Revenant"
     ],
     "DESCRIPTION": "Hungry cards specializing on the player's HP and Vicious generation."
   },

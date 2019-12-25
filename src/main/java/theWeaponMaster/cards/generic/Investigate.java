@@ -43,8 +43,10 @@ public class Investigate extends AbstractDynamicCard {
 
     @Override
     public void triggerOnExhaust() {
-        AbstractDungeon.actionManager.addToBottom(new DiscoveryAction(CardType.ATTACK));
-        AbstractDungeon.actionManager.addToBottom(new DiscoveryAction(CardType.SKILL));
+        if (ExhaustiveField.ExhaustiveFields.exhaustive.get(this) == 0) {
+            AbstractDungeon.actionManager.addToBottom(new DiscoveryAction(CardType.ATTACK));
+            AbstractDungeon.actionManager.addToBottom(new DiscoveryAction(CardType.SKILL));
+        }
     }
 
     @Override

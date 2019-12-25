@@ -123,6 +123,7 @@ theWeaponMaster\cards\generic\GenericAttackUncommon.class
 theWeaponMaster\cards\bully\BullyDinerArgument.class
 theWeaponMaster\actions\LacerateAction.class
 theWeaponMaster\actions\FenrirUnleashedSelectAction$MonsterHPComparator.class
+theWeaponMaster\actions\LeviathanGauntletAction.class
 theWeaponMaster\cards\legendary_weapons\FenrirDefensiveStance.class
 theWeaponMaster\actions\ReloadAction.class
 theWeaponMaster\actions\FenrirEvolveAction.class
@@ -151,6 +152,7 @@ theWeaponMaster\cards\bully\BullySlap.class
 theWeaponMaster\events\IdentityCrisisEvent.class
 theWeaponMaster\patches\WeaponMasterTags.class
 theWeaponMaster\relics\DefaultClickableRelic.class
+theWeaponMaster\actions\SpecialGradeAmmoAction.class
 theWeaponMaster\cards\revolver\Strike_WeaponMaster.class
 theWeaponMaster\cards\revolver\RevolverSkillDoubleTap.class
 theWeaponMaster\powers\SeveredPainPower.class

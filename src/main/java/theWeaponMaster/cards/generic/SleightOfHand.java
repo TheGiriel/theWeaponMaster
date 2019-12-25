@@ -36,7 +36,6 @@ public class SleightOfHand extends AbstractDynamicCard {
         }
         AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
-        //AbstractDungeon.actionManager.addToBottom(new DiscardPileToTopOfDeckAction(p));
         new OctopusAction().discardReturn();
     }
 

@@ -75,11 +75,16 @@ public class CerberusSlash extends AbstractDynamicCard {
 
         if (state != null && discarded != null) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
-            if (discarded.size() - 1 == magicNumber) {
+            if (upgraded && discarded.size() - 1 >= magicNumber - 1) {
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+            } else if (!upgraded && discarded.size() - 1 == magicNumber) {
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
             }
+            if (discarded.size() - 1 >= 2) {
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
+            }
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + flashBonus, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + flashBonus, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
 }

@@ -337,8 +337,7 @@
   },
   "theWeaponMaster:ThrowingKnives": {
     "NAME": "Throwing Knives",
-    "DESCRIPTION": "Exhaustive !stslib:ex! NL Deal !D! damage. If discarded, deal !SV! damage !stslib:ex! times.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Exhaustive !stslib:ex! NL Deal !D! damage. NL If discarded, deal !SV! damage !stslib:ex! times to a random enemy."
   },
   "theWeaponMaster:LimberUp": {
     "NAME": "Limber Up",
@@ -350,7 +349,7 @@
   },
   "theWeaponMaster:Investigate": {
     "NAME": "Investigate",
-    "DESCRIPTION": "Exhaustive !stslib:ex! NL Gain !B! Block. Upon exhaust, choose 1 from 3 Attack and Skill cards each, they cost 0 this turn.",
+    "DESCRIPTION": "Exhaustive !stslib:ex! NL Gain !B! Block. If this card is exhausted through the Exhaustive effect, choose 1 from 3 Attack and Skill cards each, they cost 0 this turn.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:GenericSkillObserve": {

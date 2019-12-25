@@ -2,9 +2,9 @@ package theWeaponMaster.cards.legendary_weapons;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -92,7 +92,7 @@ public class CerberusModularSlash extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(flashEnergy / 2));
         }
         if (flashCurse != 0) {
-            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, flashCurse, AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, flashCurse / 2));
         }
 
     }

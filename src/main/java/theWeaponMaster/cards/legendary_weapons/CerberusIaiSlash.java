@@ -77,7 +77,7 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
     private void Flash(Object state, ArrayList<AbstractCard> discarded) {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = (AbstractMonster) state;
-        int flashBonus = 0;
+        int flashBonus = discarded.size() * 2 - 2;
         float iaiBonus = 0.25f;
         if (upgraded) {
             iaiBonus += 0.08f;
@@ -85,7 +85,6 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
 
         if (state != null && discarded != null) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
-            flashBonus = discarded.size() * 2 - 2;
             if (upgraded && discarded.size() - 1 >= magicNumber - 1) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (this.damage + (flashBonus * (1 + iaiBonus * (turnCount)))), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             } else if (discarded.size() - 1 == magicNumber) {
@@ -94,6 +93,7 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (this.damage + flashBonus), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }
         }
+
         defaultBaseSecondMagicNumber = turnCount = 0;
     }
 

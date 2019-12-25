@@ -51,8 +51,10 @@ public class Flashbang extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            //ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
+            ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
+            ExhaustiveField.ExhaustiveFields.exhaustive.set(this, this.magicNumber);
+            ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, this.magicNumber);
             initializeDescription();
         }
     }
