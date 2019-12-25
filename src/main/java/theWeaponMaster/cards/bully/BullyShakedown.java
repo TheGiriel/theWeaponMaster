@@ -64,7 +64,7 @@ public class BullyShakedown extends AbstractBullyCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            increaseVicious(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
             initializeDescription();
         }
     }

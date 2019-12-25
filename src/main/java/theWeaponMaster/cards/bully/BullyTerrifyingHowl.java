@@ -36,7 +36,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 3;
-    private static final int BULLY_COST = 6;
+    private static final int BULLY_COST = 4;
     private static final int UPGRADED_BULLY_NUMBER = 4;
     private static final int MAGIC_NUMBER = 2;
     private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
@@ -66,9 +66,6 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
 
     private void setBullyGain() {
         this.bullyNumber = baseBullyNumber = BULLY_COST;
-        if (upgraded) {
-            increaseVicious(UPGRADED_BULLY_NUMBER);
-        }
         if (AbstractDungeon.isPlayerInDungeon()) {
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
                 if (intents.contains(monster.intent) && !monster.hasPower(TauntPower.POWER_ID)) {
@@ -102,7 +99,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            increaseVicious(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

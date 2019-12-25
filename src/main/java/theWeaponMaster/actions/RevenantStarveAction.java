@@ -19,6 +19,13 @@ public class RevenantStarveAction extends AbstractGameAction {
     private HashSet<String> revenantSet = new HashSet<>();
 
     public RevenantStarveAction(int revenantStarve, boolean sated) {
+
+        revenantSet.add(RevenantRavenous.ID);
+        revenantSet.add(RevenantChopChopCHOP.ID);
+        revenantSet.add(RevenantHungrySteel.ID);
+        revenantSet.add(RevenantNoseToTail.ID);
+        revenantSet.add(RevenantBloodbath.ID);
+
         TheWeaponMaster.logger.info("Does this even start?");
         ArsenalRelic.revenantHunger += revenantStarve;
         TheWeaponMaster.logger.info("Arsenal hunger " + ArsenalRelic.revenantHunger);
@@ -73,10 +80,5 @@ public class RevenantStarveAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        revenantSet.add(RevenantRavenous.ID);
-        revenantSet.add(RevenantChopChopCHOP.ID);
-        revenantSet.add(RevenantHungrySteel.ID);
-        revenantSet.add(RevenantNoseToTail.ID);
-        revenantSet.add(RevenantBloodbath.ID);
     }
 }

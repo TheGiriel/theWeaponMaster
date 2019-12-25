@@ -210,7 +210,11 @@
   },
   "theWeaponMaster:RevolverBuckshot": {
     "NAME": "Buckshot",
-    "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage to all enemies."
+    "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage to all enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "Ammunition, Reload. NL Deal !D! damage to all enemies.",
+      "Ammunition, Reload. NL Reload and draw up to 3 cards."
+    ]
   },
   "theWeaponMaster:RevolverWarningShot": {
     "NAME": "Warning Shot",
@@ -276,12 +280,12 @@
   },
   "theWeaponMaster:BullyMeanToEveryone": {
     "NAME": "Mean to everyone!",
-    "DESCRIPTION": "Bully !BULLY! NL Exhaust. Taunt all enemies. They gain !M! Strength and you gain !M! Strength for every applied Taunt."
+    "DESCRIPTION": "Bully !BULLY! NL Exhaust. Taunt all enemies. They gain !M! Strength and you gain !M! Strength for every applied Taunt. Lose half of the gained Strength at the end of the turn."
   },
   "theWeaponMaster:BullyTerrifyingHowl": {
     "NAME": "Terrifying Howl",
-    "DESCRIPTION": "Bully !BULLY! NL Intimidate all enemies. Gain 4 Vicious per Intimidated enemy.",
-    "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Exhaust. Apply !M! Vulnerable and Intimidate all enemies. Gain 4 Vicious per Intimidated enemy."
+    "DESCRIPTION": "Bully !BULLY! NL Intimidate all enemies. Gain !BULLY! additional Vicious per Intimidated enemy.",
+    "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Exhaust. Apply !M! Vulnerable and Intimidate all enemies. Gain !BULLY! additional Vicious per Intimidated enemy."
   },
   "theWeaponMaster:BullyDinerArgument": {
     "NAME": "Diner Argument",
@@ -298,12 +302,16 @@
   },
   "theWeaponMaster:BullySuckerPunch": {
     "NAME": "Sucker Punch",
-    "DESCRIPTION": "Bully !BULLY! NL Deal !D! damage, deal double damage if this is the first card played this combat. Draw, then discard a card.",
-    "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Innate NL Deal !D! damage, deal double damage if this is the first card played this combat. Draw, then discard a card."
+    "DESCRIPTION": "Bully !BULLY! NL Deal !D! damage, deal double damage and Intimidate if this is the first card played this combat. Draw, then discard a card.",
+    "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Innate NL Deal !D! damage, deal double damage and Intimidate if this is the first card played this combat. Draw, then discard a card."
   },
   "theWeaponMaster:BullyClothesline": {
     "NAME": "Clothesline",
-    "DESCRIPTION": "Bully !BULLY! NL Deal !D! damage and apply !M! Vulnerable."
+    "DESCRIPTION": "Bully !BULLY! NL Deal !D! damage and apply !M! Weak."
+  },
+  "theWeaponMaster:BullyTrip": {
+    "NAME": "Trip",
+    "DESCRIPTION": "Bully !BULLY! NL Apply !M! Vulnerable. The enemy loses !M! HP for every debuff."
   },
   "theWeaponMaster:CounterBlow": {
     "NAME": "Counter Blow",
@@ -316,21 +324,29 @@
   },
   "theWeaponMaster:SleightOfHand": {
     "NAME": "Sleight of Hand",
-    "DESCRIPTION": "Gain !B! Block. NL Discard a card. NL Draw a card. NL Return one card from your Discard pile to the top of your Draw pile.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Gain !B! Block. NL Discard a card. NL Draw a card. NL Return one card from your Discard pile to the bottom of your Draw pile."
   },
   "theWeaponMaster:FreshApple": {
     "NAME": "Fresh Apple",
     "DESCRIPTION": "Heal !M! HP. NL Grave, Purge."
   },
-  "theWeaponMaster:GenericSkillDodge": {
+  "theWeaponMaster:Dodge": {
     "NAME": "Dodge",
-    "DESCRIPTION": "Gain !B! Block",
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. If your Block isn't broken, the first attack you play next turn costs 1 less."
+  },
+  "theWeaponMaster:ThrowingKnives": {
+    "NAME": "Throwing Knives",
+    "DESCRIPTION": "Exhaustive !stslib:ex! NL Deal !D! damage. If discarded, deal !SV! damage !stslib:ex! times.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:LimberUp": {
     "NAME": "Limber Up",
     "DESCRIPTION": "Gain !M! Dexterity."
+  },
+  "theWeaponMaster:Flashbang": {
+    "NAME": "Flashbang",
+    "DESCRIPTION": "Exhaustive !stslib:ex! NL Stun target enemy. Stagger all other enemies."
   },
   "theWeaponMaster:Investigate": {
     "NAME": "Investigate",

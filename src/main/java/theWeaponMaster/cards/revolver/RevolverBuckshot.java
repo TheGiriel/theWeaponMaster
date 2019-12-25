@@ -23,7 +23,7 @@ public class RevolverBuckshot extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(RevolverBuckshot.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
@@ -33,7 +33,7 @@ public class RevolverBuckshot extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 4;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
 

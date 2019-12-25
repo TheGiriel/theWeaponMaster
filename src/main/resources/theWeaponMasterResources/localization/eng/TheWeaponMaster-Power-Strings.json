@@ -113,8 +113,10 @@
   "CounterBlowPower": {
     "NAME": "Counter Blow",
     "DESCRIPTIONS": [
-      "Discard the top card of your draw Pile counter an opponent's attack for",
-      "damage."
+      "Discard the top card of your draw Pile to counter an opponent's attack. Deal damage equal to the card's cost plus ",
+      ". If it is an Attack card, deal the card's base damage (up to ",
+      " damage) or its cost plus ",
+      ", whichever is higher."
     ]
   },
   "BerserkerStancePower": {

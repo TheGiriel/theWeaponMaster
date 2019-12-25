@@ -4,6 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
@@ -41,6 +42,9 @@ public class RevolverRelic extends CustomRelic {
     public void atBattleStart() {
         if (counter <= 0) {
             counter = 0;
+        }
+        if (AbstractDungeon.player.hasRelic(UncommonRelicHeavyDrum.ID)) {
+            SHOTS = 5;
         }
     }
 

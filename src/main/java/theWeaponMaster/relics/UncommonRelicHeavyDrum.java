@@ -3,6 +3,7 @@ package theWeaponMaster.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
@@ -27,7 +28,8 @@ public class UncommonRelicHeavyDrum extends CustomRelic {
 
     @Override
     public void onEquip() {
-
+        RevolverRelic.SHOTS = 5;
+        ReloadAction.baseDraw = 2;
     }
 
     @Override

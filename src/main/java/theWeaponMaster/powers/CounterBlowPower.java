@@ -4,14 +4,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
@@ -27,18 +27,22 @@ public class CounterBlowPower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public AbstractPlayer player = AbstractDungeon.player;
+    private static final AbstractPlayer player = AbstractDungeon.player;
+    public CardGroup drawPile = AbstractDungeon.player.drawPile;
+    private int costBonus;
 
-    public CounterBlowPower(AbstractPlayer p, int counterPower) {
+    public CounterBlowPower(AbstractPlayer p, int counterPower, int costBonus) {
         this.name = NAME;
         this.ID = POWER_ID;
+        this.costBonus = costBonus;
 
-        owner = p;
+        //owner = p;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
+        this.type = PowerType.BUFF;
         this.amount = counterPower;
     }
 /*
@@ -54,20 +58,23 @@ public class CounterBlowPower extends AbstractPower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if (player.drawPile != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
+        if (drawPile != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
             this.flash();
-            player.drawPile.moveToDiscardPile(player.drawPile.getTopCard());
-            AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+            int cardCost = drawPile.getTopCard().cost;
+            if (cardCost < 0) {
+                cardCost = 0;
+            }
+            if (drawPile.getTopCard().type == AbstractCard.CardType.ATTACK) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(info.owner, new DamageInfo(player, Math.min(Math.max(cardCost + costBonus, drawPile.getTopCard().baseDamage), this.amount))));
+            } else
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(info.owner, new DamageInfo(player, cardCost + costBonus, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+            drawPile.moveToDiscardPile(drawPile.getTopCard());
         }
         return damageAmount;
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTION[0] + amount + DESCRIPTION[1];
+        this.description = DESCRIPTION[0] + costBonus + DESCRIPTION[1] + this.amount + DESCRIPTION[2] + costBonus + DESCRIPTION[3];
     }
 
-    @Override
-    public void atEndOfRound() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(player, player, ThornsPower.POWER_ID));
-    }
 }

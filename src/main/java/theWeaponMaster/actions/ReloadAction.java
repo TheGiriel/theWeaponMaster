@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import theWeaponMaster.cards.revolver.*;
 import theWeaponMaster.relics.RevolverRelic;
+import theWeaponMaster.relics.UncommonRelicHeavyDrum;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,7 +13,12 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 
 public class ReloadAction extends AbstractGameAction {
 
+    public static int baseDraw = 1;
+
     public ReloadAction() {
+        if (player.hasRelic(UncommonRelicHeavyDrum.ID)) {
+            baseDraw++;
+        }
         int drawNumber = 0;
         HashSet<String> discardedAmmoList = new HashSet<>();
 
@@ -34,15 +40,14 @@ public class ReloadAction extends AbstractGameAction {
                 }
             }
         }
-        int extraDraw = 1;
         if (drawNumber != 0) {
             for (AbstractCard c : addToDeck) {
                 player.discardPile.removeCard(c);
                 player.drawPile.addToRandomSpot(c);
             }
-            player.draw((drawNumber / 3) + extraDraw);
+            player.draw((drawNumber / 3) + baseDraw);
         } else {
-            player.draw(extraDraw);
+            player.draw(baseDraw);
         }
         player.getRelic(RevolverRelic.ID).counter = RevolverRelic.SHOTS + 1;
         player.energy.use(-1);

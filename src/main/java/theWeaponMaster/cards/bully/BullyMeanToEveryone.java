@@ -94,7 +94,7 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            increaseVicious(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
             retain = true;
             initializeDescription();
         }

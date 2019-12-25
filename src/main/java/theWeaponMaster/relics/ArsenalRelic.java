@@ -41,9 +41,9 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     //Fenrir and Cerberus should be the two basic weapons that the player has access to under normal circumstances.
     public static boolean fenrirUnlocked = true;
     public static boolean cerberusUnlocked = true;
+    public static boolean revenantUnlocked = true;
     public static boolean atroposUnlocked = true;
     public static boolean leviathanUnlocked = true;
-    public static boolean revenantUnlocked = true;
     public static String currentWeapon = "None";
     public static int leviathanCharges = 3;
     public static int revenantHunger = 10;
@@ -100,6 +100,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     private void starveRevenant() {
         revenantHunger = Math.min(Math.max(revenantHunger, 0), 10);
         new RevenantStarveAction(1, false);
+        counter++;
     }
 
     @Override
@@ -115,12 +116,16 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         if (targetCard.type == AbstractCard.CardType.ATTACK) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 2)));
+            if (targetCard.hasTag(BULLY)) {
+                AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, bullyCard.bullyNumber)));
+            } else
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 2)));
         }
         if (currentWeapon.equals("Revenant") && !targetCard.hasTag(REVENANT)) {
             starveRevenant();
         }
-        if (targetCard.hasTag(BULLY)) {
+        if (targetCard.type != AbstractCard.CardType.ATTACK && targetCard.hasTag(BULLY)) {
             AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, bullyCard.bullyNumber)));
         }
@@ -151,7 +156,6 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public void onRightClick() {
         if (!isObtained || usedThisTurn || !isPlayerTurn) {
             return;
-
         }
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             usedThisTurn = true;

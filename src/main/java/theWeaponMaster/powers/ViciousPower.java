@@ -88,7 +88,11 @@ public class ViciousPower extends TwoAmountPower {
 
     @Override
     public void updateDescription() {
-        if (this.amount < TIER_TWO || owner.hasPower(BerserkerStancePower.POWER_ID)) {
+        if (owner.hasPower(BerserkerStancePower.POWER_ID)) {
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
+            return;
+        }
+        if (this.amount < TIER_TWO) {
             description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
             return;
         }

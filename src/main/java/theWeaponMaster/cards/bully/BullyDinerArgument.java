@@ -71,7 +71,7 @@ public class BullyDinerArgument extends AbstractBullyCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            increaseVicious(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
             initializeDescription();
         }
     }
@@ -87,12 +87,21 @@ public class BullyDinerArgument extends AbstractBullyCard {
                     AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, p, 5));
                     break;
                 }
+                if (m.hasPower(TauntPower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, 1)));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LoseStrengthPower(m, 1)));
+                    break;
+                }
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new IntimidatePower(m, p)));
                 break;
             case 2:
                 if (attacking.contains(m.intent)) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, 2)));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LoseStrengthPower(m, 2)));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, 1)));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LoseStrengthPower(m, 1)));
+                    break;
+                }
+                if (m.hasPower(IntimidatePower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, p, 5));
                     break;
                 }
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TauntPower(m, p)));
@@ -102,6 +111,7 @@ public class BullyDinerArgument extends AbstractBullyCard {
                 break;
             case 4:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, 2)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LoseStrengthPower(m, 2)));
                 break;
             case 5:
                 AbstractDungeon.actionManager.addToBottom(new HealAction(m, p, 10));
@@ -112,9 +122,7 @@ public class BullyDinerArgument extends AbstractBullyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {
-            for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-                randomArgument(p, monster);
-            }
+            AbstractDungeon.getMonsters().monsters.forEach(e -> randomArgument(p, e));
         }
     }
 }

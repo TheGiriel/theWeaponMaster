@@ -42,7 +42,14 @@
     "NAME": "The Revolver",
     "FLAVOR": "Your trusty six-shooter.",
     "DESCRIPTIONS": [
-      "Expend one shot every time you use a Revolver card."
+      "Expend one shot every time you use a Revolver card. Reload when the counter hits 0."
+    ]
+  },
+  "theWeaponMaster:UncommonRelicHeavyDrum": {
+    "NAME": "Heavy Drum",
+    "FLAVOR": "Thick walls for big bangs.",
+    "DESCRIPTIONS": [
+      "As long as you own this relic, you reload after 5 shots and increase the Reload base draw by 1 (But still can only draw up to 3 cards)."
     ]
   },
   "theWeaponMaster:SplinteringSteelRelic": {

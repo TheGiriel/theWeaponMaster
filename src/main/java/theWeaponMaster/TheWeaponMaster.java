@@ -368,6 +368,7 @@ public class TheWeaponMaster implements
         BaseMod.addRelicToCustomPool(new ManaWhetstoneRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ShockwaveModulatorRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new GhoulskinSheathRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new UncommonRelicHeavyDrum(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
@@ -379,6 +380,7 @@ public class TheWeaponMaster implements
         UnlockTracker.markRelicAsSeen(ManaWhetstoneRelic.ID);
         UnlockTracker.markRelicAsSeen(ShockwaveModulatorRelic.ID);
         UnlockTracker.markRelicAsSeen(GhoulskinSheathRelic.ID);
+        UnlockTracker.markRelicAsSeen(UncommonRelicHeavyDrum.ID);
         logger.info("Done adding relics!");
     }
     
@@ -444,9 +446,9 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new BullyShakedown());
         BaseMod.addCard(new BullyReminder());
         //BaseMod.addCard(new BullySuckerPunch());
-        //BaseMod.addCard(new BullyRarePowerIntimidatingPresence());
-        //BaseMod.addCard(new BullySkillSmackdown());
-        //BaseMod.addCard(new BullyAttackClothesline());
+        BaseMod.addCard(new BullyIntimidatingPresence());
+        //BaseMod.addCard(new BullyTrip());
+        //BaseMod.addCard(new BullyClothesline());
         //BaseMod.addCard(new BullyCard15());
 
         BaseMod.addCard(new Strike_WeaponMaster());
@@ -471,11 +473,11 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new SleightOfHand());
         BaseMod.addCard(new FreshApple());
         BaseMod.addCard(new LimberUp());
-        //BaseMod.addCard(new GenericAttack2());
+        BaseMod.addCard(new ThrowingKnives());
         //BaseMod.addCard(new GenericAttackDoubleStrike());
         //BaseMod.addCard(new GenericAttackUncommon());
         BaseMod.addCard(new GenericPowerAnticipation());
-        //BaseMod.addCard(new GenericUncommonSkillFlashbang());
+        BaseMod.addCard(new Flashbang());
         //BaseMod.addCard(new GenericRareDraw());
         //BaseMod.addCard(new GenericRareSkillRedirectBlow());
         BaseMod.addCard(new GenericSkillDodge());
@@ -516,6 +518,7 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(LeviathanGroundSplitter.ID);
         UnlockTracker.unlockCard(LeviathanDeepImpact.ID);
         UnlockTracker.unlockCard(LeviathanEarthquake.ID);
+
         UnlockTracker.unlockCard(BullyTaunt.ID);
         UnlockTracker.unlockCard(BullyMeanToEveryone.ID);
         UnlockTracker.unlockCard(BullyConfident.ID);
@@ -527,10 +530,11 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(BullyShakedown.ID);
         UnlockTracker.unlockCard(BullyReminder.ID);
         //UnlockTracker.unlockCard(BullySuckerPunch.ID);
-        //UnlockTracker.unlockCard(BullyRarePowerIntimidatingPresence.ID);
-        //UnlockTracker.unlockCard(BullySkillSmackdown.ID);
-        //UnlockTracker.unlockCard(BullyAttackClothesline.ID);
+        //UnlockTracker.unlockCard(BullyIntimidatingPresence.ID);
+        //UnlockTracker.unlockCard(BullyTrip.ID);
+        //UnlockTracker.unlockCard(BullyClothesline.ID);
         //UnlockTracker.unlockCard(BullyCard15.ID);
+
         UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
         UnlockTracker.unlockCard(RevolverMagnum.ID);
         UnlockTracker.unlockCard(RevolverTwinned.ID);
@@ -546,17 +550,18 @@ public class TheWeaponMaster implements
         //UnlockTracker.unlockCard(RevolverSkillPreload.ID);
         UnlockTracker.unlockCard(RevolverQuickload.ID);
         UnlockTracker.unlockCard(RevolverUnload.ID);
+
         UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
         UnlockTracker.unlockCard(CounterBlow.ID);
         UnlockTracker.unlockCard(BerserkerStance.ID);
         UnlockTracker.unlockCard(SleightOfHand.ID);
         UnlockTracker.unlockCard(FreshApple.ID);
         UnlockTracker.unlockCard(LimberUp.ID);
-        //UnlockTracker.unlockCard(GenericAttack2.ID);
+        UnlockTracker.unlockCard(ThrowingKnives.ID);
         //UnlockTracker.unlockCard(GenericAttackDoubleStrike.ID);
         //UnlockTracker.unlockCard(GenericAttackUncommon.ID);
         //UnlockTracker.unlockCard(GenericPowerAnticipation.ID);
-        //UnlockTracker.unlockCard(GenericUncommonSkillFlashbang.ID);
+        //UnlockTracker.unlockCard(Flashbang.ID);
         //UnlockTracker.unlockCard(GenericRareDraw.ID);
         //UnlockTracker.unlockCard(GenericRareSkillRedirectBlow.ID);
         UnlockTracker.unlockCard(GenericSkillDodge.ID);

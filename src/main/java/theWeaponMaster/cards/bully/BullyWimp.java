@@ -61,7 +61,7 @@ public class BullyWimp extends AbstractBullyCard {
             this.target = CardTarget.ALL_ENEMY;
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            increaseVicious(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
             initializeDescription();
         }
     }
