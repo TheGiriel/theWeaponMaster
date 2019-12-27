@@ -22,7 +22,6 @@ public class CattleToSlaughterPower extends AbstractPower {
     private static final Texture tex32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("designate_placeholder_32.png"));
 
     private AbstractCreature source;
-    private int countDown;
 
     public CattleToSlaughterPower(AbstractCreature owner, AbstractCreature source, int hungryBoost) {
         this.name = NAME;

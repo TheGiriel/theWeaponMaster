@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
@@ -88,7 +89,7 @@ public class ViciousPower extends TwoAmountPower {
 
     @Override
     public void updateDescription() {
-        if (owner.hasPower(BerserkerStancePower.POWER_ID)) {
+        if (AbstractDungeon.isPlayerInDungeon() && owner.hasPower(BerserkerStancePower.POWER_ID)) {
             description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
             return;
         }

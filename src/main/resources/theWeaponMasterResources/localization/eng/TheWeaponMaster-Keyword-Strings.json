@@ -206,13 +206,12 @@
     "PROPER_NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
     "NAMES": [
       "Revenant Cleaver",
-      "Revenant Cleaver",
       "revenant cleaver",
       "revenant_cleaver",
       "Revenant_Cleaver",
       "Revenant"
     ],
-    "DESCRIPTION": "Hungry cards specializing on the player's HP and Vicious generation."
+    "DESCRIPTION": "Self-Retaining cards specializing in Hunger and improving the player's HP."
   },
   {
     "PROPER_NAME": "[#e3dac9]Hunger",
@@ -229,6 +228,26 @@
       "sated"
     ],
     "DESCRIPTION": "Hunger bonus effects are disabled. Gain 2 Temporary HP while Sated."
+  },
+  {
+    "PROPER_NAME": "[#e3dac9]Cattle [#e3dac9]to [#e3dac9]Slaughter",
+    "NAMES": [
+      "Cattle to Slaughter",
+      "Cattle_to_Slaughter",
+      "cattle to slaughter",
+      "cattle_to_slaughter"
+    ],
+    "DESCRIPTION": "If you kill your target before the turn ends, gain 1 Max HP for every 20 current HP your target has when this debuff is applied."
+  },
+  {
+    "PROPER_NAME": "[#e3dac9]Nose [#e3dac9]to [#e3dac9]Tail",
+    "NAMES": [
+      "Nose to Tail",
+      "Nose_to_Tail",
+      "nose to tail",
+      "nose_to_tail"
+    ],
+    "DESCRIPTION": "Gain 1 Temp HP for every [#e3dac9]8(7) damage you deal to target enemy. Heal for half that amount instead if you kill it."
   },
   {
     "PROPER_NAME": "Split Scissors",

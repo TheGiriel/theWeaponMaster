@@ -1,5 +1,6 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -49,6 +50,7 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
         getSated();
         tags.add(REVENANT);
         initializeDescription();
+        AlwaysRetainField.alwaysRetain.set(this, true);
     }
 
     @Override

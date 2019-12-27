@@ -49,9 +49,11 @@ public class ReloadAction extends AbstractGameAction {
         } else {
             player.draw(baseDraw);
         }
-        player.getRelic(RevolverRelic.ID).counter = RevolverRelic.SHOTS + 1;
         player.energy.use(-1);
         new RevolverRelic().stopPulse();
+        if (player.hasRelic(UncommonRelicHeavyDrum.ID)) {
+            player.getRelic(RevolverRelic.ID).counter = 5;
+        } else player.getRelic(RevolverRelic.ID).counter = 6;
         isDone = true;
     }
 

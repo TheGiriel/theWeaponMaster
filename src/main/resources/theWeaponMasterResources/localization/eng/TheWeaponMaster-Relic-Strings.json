@@ -42,7 +42,7 @@
     "NAME": "The Revolver",
     "FLAVOR": "Your trusty six-shooter.",
     "DESCRIPTIONS": [
-      "Expend one shot every time you use a Revolver card. Reload when the counter hits 0."
+      "Expend one shot every time you use a Revolver card. Reload when the counter hits 0, refund one Energy when reloading with an Ammunition card."
     ]
   },
   "theWeaponMaster:UncommonRelicHeavyDrum": {

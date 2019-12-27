@@ -1,5 +1,6 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -50,6 +51,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
         getSated();
         tags.add(REVENANT);
         initializeDescription();
+        AlwaysRetainField.alwaysRetain.set(this, true);
     }
 
     @Override

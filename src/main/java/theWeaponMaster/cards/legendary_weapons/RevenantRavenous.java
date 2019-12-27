@@ -54,6 +54,7 @@ public class RevenantRavenous extends AbstractDynamicCard {
         getSated();
         tags.add(REVENANT);
         initializeDescription();
+        AlwaysRetainField.alwaysRetain.set(this, true);
     }
 
     @Override

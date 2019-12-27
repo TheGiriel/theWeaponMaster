@@ -445,10 +445,10 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new BullySlap());
         BaseMod.addCard(new BullyShakedown());
         BaseMod.addCard(new BullyBullysAudacity());
-        //BaseMod.addCard(new BullySuckerPunch());
+        BaseMod.addCard(new BullySuckerPunch());
         BaseMod.addCard(new BullyIntimidatingPresence());
-        //BaseMod.addCard(new BullyTrip());
-        //BaseMod.addCard(new BullyClothesline());
+        BaseMod.addCard(new BullyTrip());
+        BaseMod.addCard(new BullyClothesline());
         //BaseMod.addCard(new BullyCard15());
 
         BaseMod.addCard(new Strike_WeaponMaster());
@@ -529,10 +529,10 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(BullySlap.ID);
         UnlockTracker.unlockCard(BullyShakedown.ID);
         UnlockTracker.unlockCard(BullyBullysAudacity.ID);
-        //UnlockTracker.unlockCard(BullySuckerPunch.ID);
-        //UnlockTracker.unlockCard(BullyIntimidatingPresence.ID);
-        //UnlockTracker.unlockCard(BullyTrip.ID);
-        //UnlockTracker.unlockCard(BullyClothesline.ID);
+        UnlockTracker.unlockCard(BullySuckerPunch.ID);
+        UnlockTracker.unlockCard(BullyIntimidatingPresence.ID);
+        UnlockTracker.unlockCard(BullyTrip.ID);
+        UnlockTracker.unlockCard(BullyClothesline.ID);
         //UnlockTracker.unlockCard(BullyCard15.ID);
 
         UnlockTracker.unlockCard(Strike_WeaponMaster.ID);

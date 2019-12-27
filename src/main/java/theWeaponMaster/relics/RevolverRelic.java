@@ -2,6 +2,7 @@ package theWeaponMaster.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,6 +33,9 @@ public class RevolverRelic extends CustomRelic {
         if (card.hasTag(AMMUNITION)) {
             this.counter--;
         }
+        if (card.hasTag(AMMUNITION) && counter <= 0) {
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+        }
     }
 
     public String getUpdatedDescription() {
@@ -47,6 +51,5 @@ public class RevolverRelic extends CustomRelic {
             SHOTS = 5;
         }
     }
-
 
 }

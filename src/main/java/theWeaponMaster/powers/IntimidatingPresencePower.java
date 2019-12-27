@@ -45,7 +45,7 @@ public class IntimidatingPresencePower extends AbstractPower implements Cloneabl
     }
 
     @Override
-    public void atEndOfTurn(final boolean isPlayer) {
+    public void atEndOfTurn(boolean isPlayer) {
         AbstractDungeon.getMonsters().monsters.forEach(e -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(e, owner,
                 new StrengthPower(e, 1))));
         this.amount--;

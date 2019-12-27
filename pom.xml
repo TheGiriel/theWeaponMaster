@@ -1,11 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.2.8</version>
-    <description>Arsenal Relic &amp; Legendary Weapons complete.
+    <version>0.2.9</version>
+    <description>Small changes (and bigger Revenant changes).
+        Arsenal Relic &amp; Legendary Weapons complete.
         Remaining: Revolver support cards; Bully card 15; 12 Generic cards;
         Current State: Legendary Weapons: 25/25(+2); Bully: 14/15; Revolver 8/16; Generic 8/20?;
         total: 55/76?; No Art.

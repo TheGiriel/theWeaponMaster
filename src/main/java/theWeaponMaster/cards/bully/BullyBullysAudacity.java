@@ -2,7 +2,6 @@ package theWeaponMaster.cards.bully;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -29,8 +28,8 @@ public class BullyBullysAudacity extends AbstractBullyCard {
 
     private static final int COST = 2;
     private static final int BULLY_COST = 3;
-    private static final int MAGIC_NUMBER = 3;
-    private static final int UPGRADED_MAGIC_NUMBER = 2;
+    private static final int MAGIC_NUMBER = 2;
+    private static final int UPGRADED_MAGIC_NUMBER = 1;
 
     public BullyBullysAudacity() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -47,11 +46,8 @@ public class BullyBullysAudacity extends AbstractBullyCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
-            if (card.hasTag(BULLY)) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, magicNumber));
-            }
-        }
+        int block = (int) AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> card.hasTag(BULLY)).count();
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block * magicNumber));
     }
 
     @Override
