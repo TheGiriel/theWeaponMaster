@@ -5,75 +5,75 @@
   },
 
   "theWeaponMaster:FenrirLacerate": {
-    "NAME": "Lacerate",
+    "NAME": "[#b7410e]Lacerate",
     "DESCRIPTION": "Fenrir NL Deal !D! damage. Apply !M! Lacerate. NL Evolve: Hit enemies with 3+ Lacerate.",
     "UPGRADE_DESCRIPTION": "Fenrir NL Take !M! damage and deal !D! damage. Apply !M! Lacerate. Deal 10% bonus damage per Lacerate stack. NL Evolve: Attack enemy with 3+ Lacerate."
   },
   "theWeaponMaster:FenrirShieldEater": {
-    "NAME": "Shield Eater",
+    "NAME": "[#b7410e]Shield [#b7410e]Eater",
     "DESCRIPTION": "Fenrir NL Deal !D! damage and absorb an equal amount of Block. NL Evolve: Destroy all enemy Block."
   },
   "theWeaponMaster:FenrirDefensiveStance": {
-    "NAME": "Defensive Stance",
+    "NAME": "[#b7410e]Defensive [#b7410e]Stance",
     "DESCRIPTION": "Fenrir NL Gain !B! Block and Defensive Stance. Lose 20% of this Block whenever you play a Fenrir card. NL Evolve: All enemies intend to attack you."
   },
   "theWeaponMaster:FenrirHeavySwing": {
-    "NAME": "Heavy Swing",
+    "NAME": "[#b7410e]Heavy [#b7410e]Swing",
     "DESCRIPTION": "Fenrir NL Deal !D! damage per card in your hand, gains half the Evolution bonuses. NL Evolve: Play holding 3 or fewer cards."
   },
   "theWeaponMaster:FenrirUnleashed": {
-    "NAME": "Fenrir Unleashed",
+    "NAME": "[#b7410e]Fenrir [#b7410e]Unleashed",
     "DESCRIPTION": "Fenrir NL Deal !D! damage to the weakest enemy. Overkill damage is added to the next attack. NL Unstoppable, Evolve: Kill an opponent."
   },
 
   "theWeaponMaster:CerberusSlash": {
-    "NAME": "[#cdfcfe]Slash",
+    "NAME": "[#3a7ebf]Slash",
     "DESCRIPTION": "Deal !D! damage. NL Flash !M!: Draw a card.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Power_Flash !M!: Draw a card."
   },
   "theWeaponMaster:CerberusEssenceSlash": {
-    "NAME": "[#cdfcfe]Essence [#cdfcfe]Slash",
+    "NAME": "[#3a7ebf]Essence [#3a7ebf]Slash",
     "DESCRIPTION": "Deal !D! damage. NL Flash !M!: Enemies take !SV! damage for every unique buff and debuff they have.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Power_Flash !M!: Enemies take !SV! damage for every unique buff and debuff they have."
   },
   "theWeaponMaster:CerberusModularSlash": {
-    "NAME": "[#cdfcfe]Modular [#cdfcfe]Slash",
+    "NAME": "[#3a7ebf]Modular [#3a7ebf]Slash",
     "DESCRIPTION": "Deal !D! damage. Utility_Flash 4: Gain special effects for each card you discard."
   },
   "theWeaponMaster:CerberusIaiSlash": {
-    "NAME": "[#cdfcfe]Iai [#cdfcfe]Slash",
+    "NAME": "[#3a7ebf]Iai [#3a7ebf]Slash",
     "DESCRIPTION": "Retain. Deal !D! damage. NL Flash !M!: Increase Flash damage by 25%  for every turn retained ( !SV! ). Resets when discarded or used.",
     "UPGRADE_DESCRIPTION": "Retain. Deal !D! damage. NL Power_Flash !M!: Increase discard damage by 33%  for every turn retained ( !SV! ). Resets when discarded or used."
   },
   "theWeaponMaster:CerberusDrainSlash": {
-    "NAME": "[#cdfcfe]Drain [#cdfcfe]Slash",
+    "NAME": "[#3a7ebf]Drain [#3a7ebf]Slash",
     "DESCRIPTION": "Cerberus NL Deal !D! damage. NL Flash !M!: Steal up to !SV! units of a random enemy buff.",
     "UPGRADE_DESCRIPTION": "Cerberus NL Deal !D! damage. NL Power_Flash !M!: Steal up to !SV! units of a random enemy buff."
   },
 
   "theWeaponMaster:LeviathanCrush": {
-    "NAME": "Crush",
+    "NAME": "[#746550]Crush",
     "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV! NL Hit the enemy for !D! damage. NL Armor_Piercing: !M!. Charged 1: Double Armor_Piercing damage."
   },
   "theWeaponMaster:LeviathanGauntletCharger": {
-    "NAME": "Gauntlet Charger",
+    "NAME": "[#746550]Gauntlet [#746550]Charger",
     "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV! NL Release all Leviathan charges to deal damage or recharge the Gauntlet to gain Block."
   },
   "theWeaponMaster:LeviathanGroundSplitter": {
-    "NAME": "Ground Splitter",
+    "NAME": "[#746550]Ground [#746550]Splitter",
     "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV!. NL Stagger all enemy cards depending on their total Block for two turns. Charged 1: Apply !M! Vulnerable."
   },
   "theWeaponMaster:LeviathanDeepImpact": {
-    "NAME": "Deep Impact",
+    "NAME": "[#746550]Deep [#746550]Impact",
     "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV! NL Deal !D! damage to the first enemy. NL Unstoppable: Enemy Block. Gain Armor_Piercing: !M! NL Charged: 2. Always activate Unstoppable."
   },
   "theWeaponMaster:LeviathanEarthquake": {
-    "NAME": "Earthquake",
+    "NAME": "[#746550]Earthquake",
     "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV!. NL Deal !D! damage to all enemies, ignores thorns. NL Charged 3: Attack a second time at half damage."
   },
 
   "theWeaponMaster:RevenantRavenous": {
-    "NAME": "Ravenous",
+    "NAME": "[#80ca2d]Ravenous",
     "DESCRIPTION": "Revenant_Cleaver NL Hungry 4: Gain !M! Vicious. NL Deal !D! damage, Gain !M! Vicious. NL Retain: Increase Vicious gain by 2 until Weapon_Swap or combat ends.",
     "EXTENDED_DESCRIPTION": [
       "Revenant_Cleaver NL Hungry 4: Gain !M! Vicious. NL Deal !D! damage, gain !M! Vicious. NL Retain: Increase Vicious gain by 2 until Weapon_Swap or combat ends.",
@@ -81,7 +81,7 @@
     ]
   },
   "theWeaponMaster:RevenantChopChopCHOP": {
-    "NAME": "Chop Chop CHOP",
+    "NAME": "[#80ca2d]Chop [#80ca2d]Chop [#80ca2d]CHOP",
     "DESCRIPTION": "Revenant_Cleaver NL Hungry 5: Gain another Attack. NL Deal !D! damage !M! times.",
     "EXTENDED_DESCRIPTION": [
       "Revenant_Cleaver NL Hungry 5: Gain another Attack. NL Deal !D! damage.",
@@ -89,7 +89,7 @@
     ]
   },
   "theWeaponMaster:RevenantNoseToTail": {
-    "NAME": "Nose To Tail",
+    "NAME": "[#80ca2d]Nose [#80ca2d]To [#80ca2d]Tail",
     "DESCRIPTION": "Revenant_Cleaver NL Hungry 6: Reduce Nose to Tail threshold by 1. NL Deal !D! damage. Apply Nose to Tail. NL Gain !M! Vicious.",
     "EXTENDED_DESCRIPTION": [
       "Revenant_Cleaver NL Hungry 6: Reduce Nose to Tail threshold by 1. NL Deal !D! damage. Apply Nose to Tail",
@@ -97,7 +97,7 @@
     ]
   },
   "theWeaponMaster:RevenantHungrySteel": {
-    "NAME": "Hungry Steel",
+    "NAME": "[#80ca2d]Hungry [#80ca2d]Steel",
     "DESCRIPTION": "Revenant_Cleaver NL Hungry 8: Apply and increase base Cattle_to_Slaughter by 1, deal !D! damage. NL Gain !M! Vicious.",
     "EXTENDED_DESCRIPTION": [
       "Revenant_Cleaver NL Hungry 8: Apply and increase base Cattle_to_Slaughter by 1, deal !D! damage. NL Gain !M! Vicious.",
@@ -105,7 +105,7 @@
     ]
   },
   "theWeaponMaster:RevenantBloodbath": {
-    "NAME": "Bloodbath",
+    "NAME": "[#80ca2d]Bloodbath",
     "DESCRIPTION": "Revenant_Cleaver NL Hungry 10: Gain Vicious equal to 5 times your energy. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
     "EXTENDED_DESCRIPTION": [
       "Revenant_Cleaver NL Hungry 10: Gain !EN_MULT! Vicious. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
@@ -114,11 +114,11 @@
   },
 
   "theWeaponMaster:AtroposSeveredSource": {
-    "NAME": "Severed Source",
+    "NAME": "[#3abfbe]Severed [#3abfbe]Source",
     "DESCRIPTION": "Atropos_Shears NL Deal !D! damage to your target and apply Mana_Burn. NL Ignite !M!"
   },
   "theWeaponMaster:AtroposSeveredScissors": {
-    "NAME": "Severed Scissors",
+    "NAME": "[#3abfbe]Severed [#3abfbe]Scissors",
     "DESCRIPTION": "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
     "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice. NL Ignite !M!.",
     "EXTENDED_DESCRIPTION": [
@@ -128,21 +128,21 @@
     ]
   },
   "theWeaponMaster:AtroposScissorHalf": {
-    "NAME": "Left Half",
+    "NAME": "[#3abfbe]Left [#3abfbe]Half",
     "DESCRIPTION": "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
   },
   "theWeaponMaster:AtroposSeveredPath": {
-    "NAME": "Severed Path",
+    "NAME": "[#3abfbe]Severed [#3abfbe]Path",
     "DESCRIPTION": "Atropos_Shears NL Target Enemy attacks a random enemy this turn. Apply !M! Mana_Burn.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:AtroposSeveredPain": {
-    "NAME": "Severed Pain",
+    "NAME": "[#3abfbe]Severed [#3abfbe]Pain",
     "DESCRIPTION": "Atropos_Shears NL Delay half of the damage you take to next turn.",
     "UPGRADE_DESCRIPTION": "Atropos_Shears NL Delay one third of the damage you take to next turn. The remaining third is dealt to all enemies instead."
   },
   "theWeaponMaster:AtroposSeveredSoul": {
-    "NAME": "Severed Soul",
+    "NAME": "[#3abfbe]Severed [#3abfbe]Soul",
     "DESCRIPTION": "Atropos_Shears NL Costs one less for every Mana Burn target enemy has. Deal !D! damage. NL Ignite All. Consume all Mana_Burn stacks."
   },
 
@@ -159,8 +159,9 @@
     "NAME": "Buckshot"
   },
   "theWeaponMaster:RevolverCustomCartridge": {
-    "DESCRIPTION": "The next Ammunition card played this turn deals double damage and hits the creature behind it for normal damage.",
-    "NAME": "Custom Cartridge"
+    "DESCRIPTION": "Exhaust one non-Buckshot Ammunition card. Deal !M!% damage to the target and hits the creature behind it for !SV!% damage.",
+    "NAME": "Custom Cartridge",
+    "UPGRADE_DESCRIPTION": "Exhaust one non-Buckshot Ammunition card. NL Penetrate all Minions and deal !M! damage to the summoner, else deal !M!% damage to the target and hits the creature behind it for !SV!% damage."
   },
   "theWeaponMaster:RevolverDoubleTap": {
     "DESCRIPTION": "The next Ammunition card this turn is played twice.",
@@ -233,7 +234,7 @@
     "DESCRIPTION": "Bully !BULLY! NL Exhaust. Can only be played as the first card. NL Force every enemy to take a random action.",
     "NAME": "Diner Argument"
   },
-  "theWeaponMaster:BullyIndimidatingPresence": {
+  "theWeaponMaster:BullyIntimidatingPresence": {
     "DESCRIPTION": "Bully !BULLY! NL All enemies lose !M! Strength. At the end of the next !M! turns, they regain 1 Strength.",
     "NAME": "Intimidating Presence"
   },
@@ -278,6 +279,11 @@
     "NAME": "Wimp",
     "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Apply !M! Weak to all enemies."
   },
+  "theWeaponMaster:GenericAnticipation": {
+    "DESCRIPTION": "Gain !B! Block, if your Block isn't broken, the next Attack card costs 1 less Energy.",
+    "NAME": "Anticipation",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block, if your Block isn't broken, the next !M! Attack cards cost 1 less Energy."
+  },
   "theWeaponMaster:GenericBerserkerStance": {
     "DESCRIPTION": "Vicious doesn't decay at the end of the turn anymore. Gain 1 extra Vicious every time you attack.",
     "NAME": "Berserker Stance",
@@ -288,9 +294,9 @@
     "NAME": "Counter Blow"
   },
   "theWeaponMaster:GenericDodge": {
-    "DESCRIPTION": "Gain !B! Block.",
+    "DESCRIPTION": "Gain !B! Block. Return 1 random Common card from your discard pile to your hand.",
     "NAME": "Dodge",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. If your Block isn't broken, the first attack you play next turn costs 1 less."
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Return !M! random Common cards from your discard pile to your hand."
   },
   "theWeaponMaster:GenericFlashbang": {
     "DESCRIPTION": "Exhaustive !stslib:ex! NL Stun target enemy. Stagger all other enemies.",
@@ -313,7 +319,7 @@
     "NAME": "Observe"
   },
   "theWeaponMaster:GenericSleightOfHand": {
-    "DESCRIPTION": "Gain !B! Block. NL Discard a card. NL Draw a card. NL Return one card from your Discard pile to the bottom of your Draw pile.",
+    "DESCRIPTION": "Gain !B! Block. NL Discard a card. NL Draw a card. NL Return one card from your Discard pile to a random spot of your Draw pile.",
     "NAME": "Sleight of Hand"
   },
   "theWeaponMaster:GenericThrowingKnives": {

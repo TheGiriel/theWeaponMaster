@@ -107,38 +107,38 @@
     "DESCRIPTION": "Increase the power of all Fenrir cards by 1 whenever you fulfill the condition."
   },
   {
-    "PROPER_NAME": "[#cdfcfe]Cerberus",
+    "PROPER_NAME": "[#3a7ebf]Cerberus",
     "NAMES": [
       "cerberus"
     ],
     "DESCRIPTION": "Cards specializing in deck cycling and against buffed enemies."
   },
   {
-    "PROPER_NAME": "[#cdfcfe]Flash",
+    "PROPER_NAME": "[#3a7ebf]Flash",
     "NAMES": [
       "flash"
     ],
-    "DESCRIPTION": "[#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2+ Cards: draw a card. NL X: Activate the extra effect."
+    "DESCRIPTION": "[#3a7ebf]Flash [#3a7ebf]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2+ Cards: draw a card. NL X: Activate the extra effect."
   },
   {
-    "PROPER_NAME": "[#cdfcfe]Power [#cdfcfe]Flash",
+    "PROPER_NAME": "[#3a7ebf]Power [#3a7ebf]Flash",
     "NAMES": [
       "Power Flash",
       "Power_Flash",
       "power flash",
       "power_flash"
     ],
-    "DESCRIPTION": "[#cdfcfe]Power [#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the effect once."
+    "DESCRIPTION": "[#3a7ebf]Power [#3a7ebf]Flash [#3a7ebf]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 2 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the effect once."
   },
   {
-    "PROPER_NAME": "[#cdfcfe]Utility [#cdfcfe]Flash",
+    "PROPER_NAME": "[#3a7ebf]Utility [#3a7ebf]Flash",
     "NAMES": [
       "Utility Flash",
       "utility flash",
       "Utility_Flash",
       "utility_flash"
     ],
-    "DESCRIPTION": "[#cdfcfe]Utility [#cdfcfe]Flash [#cdfcfe]X: Discard up to X cards. Doesn't draw. Bonuses per discard: NL Attack: Gain 2 bonus damage. NL Skill: Gain 5 block. NL 2 Powers: gain 1 Energy NL Status/Curse: Nothing."
+    "DESCRIPTION": "[#3a7ebf]Utility [#3a7ebf]Flash [#3a7ebf]X: Discard up to X cards. Doesn't draw. Bonuses per discard: NL Attack: Gain 2 bonus damage. NL Skill: Gain 5 block. NL 2 Powers: gain 1 Energy NL Status/Curse: Nothing."
   },
   {
     "PROPER_NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
@@ -203,7 +203,7 @@
     "DESCRIPTION": "Augment this card's effect if you have enough Charges. Increases by 1 at the end of your turn."
   },
   {
-    "PROPER_NAME": "[#e3dac9]Revenant [#e3dac9]Cleaver",
+    "PROPER_NAME": "[#80ca2d]Revenant [#80ca2d]Cleaver",
     "NAMES": [
       "Revenant Cleaver",
       "revenant cleaver",
@@ -214,7 +214,7 @@
     "DESCRIPTION": "Self-Retaining cards specializing in Hunger and improving the player's HP."
   },
   {
-    "PROPER_NAME": "[#e3dac9]Hunger",
+    "PROPER_NAME": "[#80ca2d]Hunger",
     "NAMES": [
       "hunger",
       "hungering",
@@ -223,14 +223,14 @@
     "DESCRIPTION": "Augment this card's effect at the cost of Hunger. Hunger Increases by 1 whenever you play a non-Revenant card."
   },
   {
-    "PROPER_NAME": "[#e3dac9]Sated",
+    "PROPER_NAME": "[#80ca2d]Sated",
     "NAMES": [
       "sated"
     ],
     "DESCRIPTION": "Hunger bonus effects are disabled. Gain 2 Temporary HP while Sated."
   },
   {
-    "PROPER_NAME": "[#e3dac9]Cattle [#e3dac9]to [#e3dac9]Slaughter",
+    "PROPER_NAME": "[#80ca2d]Cattle [#80ca2d]to [#80ca2d]Slaughter",
     "NAMES": [
       "Cattle to Slaughter",
       "Cattle_to_Slaughter",
@@ -240,14 +240,14 @@
     "DESCRIPTION": "If you kill your target before the turn ends, gain 1 Max HP for every 20 current HP your target has when this debuff is applied."
   },
   {
-    "PROPER_NAME": "[#e3dac9]Nose [#e3dac9]to [#e3dac9]Tail",
+    "PROPER_NAME": "[#80ca2d]Nose [#80ca2d]to [#80ca2d]Tail",
     "NAMES": [
       "Nose to Tail",
       "Nose_to_Tail",
       "nose to tail",
       "nose_to_tail"
     ],
-    "DESCRIPTION": "Gain 1 Temp HP for every [#e3dac9]8(7) damage you deal to target enemy. Heal for half that amount instead if you kill it."
+    "DESCRIPTION": "Gain 1 Temp HP for every [#80ca2d]8(7) damage you deal to target enemy. Heal for half that amount instead if you kill it."
   },
   {
     "PROPER_NAME": "Split Scissors",

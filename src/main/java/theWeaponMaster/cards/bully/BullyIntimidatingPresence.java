@@ -25,6 +25,7 @@ public class BullyIntimidatingPresence extends AbstractBullyCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.POWER;
+
     private static final int COST = 3;
     private static final int DAMAGE = 0;
     private static final int UPGRADED_DAMAGE = 0;
