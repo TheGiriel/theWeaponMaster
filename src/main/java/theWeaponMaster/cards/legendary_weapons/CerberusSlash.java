@@ -44,7 +44,7 @@ public class CerberusSlash extends AbstractDynamicCard {
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        defaultSecondMagicNumber = 0;
+        secondValue = 0;
     }
 
     @Override

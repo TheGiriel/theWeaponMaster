@@ -538,8 +538,8 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(GenericThrowingKnives.ID);
         //BaseMod.addCard(new GenericAttackDoubleStrike());
         //UnlockTracker.unlockCard(GenericAttackDoubleStrike.ID);
-        //BaseMod.addCard(new GenericAttackUncommon());
-        //UnlockTracker.unlockCard(GenericAttackUncommon.ID);
+        //BaseMod.addCard(new GenericPushKick());
+        //UnlockTracker.unlockCard(GenericPushKick.ID);
         BaseMod.addCard(new GenericAnticipation());
         UnlockTracker.unlockCard(GenericAnticipation.ID);
         BaseMod.addCard(new GenericFlashbang());
@@ -558,8 +558,8 @@ public class TheWeaponMaster implements
         //UnlockTracker.unlockCard(GenericUncommonPower.ID);
         //BaseMod.addCard(new GenericUncommonPowerHuntersIntuition());
         //UnlockTracker.unlockCard(GenericUncommonPowerHuntersIntuition.ID());
-        //BaseMod.addcard(new GenericSkillRelaxRecollect());
-        //UnlockTracker.unlockCard(GenericSkillRelaxRecollect.ID);
+        //BaseMod.addcard(new GenericRelaxRecollect());
+        //UnlockTracker.unlockCard(GenericRelaxRecollect.ID);
         //BaseMod.addcard(new GenericCard20());
         //UnlockTracker.unlockCard(GenericCard20.ID);
 
@@ -567,7 +567,7 @@ public class TheWeaponMaster implements
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
-        
+
         logger.info("Done adding cards!");
     }
     

@@ -22,7 +22,7 @@ public class LeviathanChargeAction extends AbstractGameAction {
     public LeviathanChargeAction(int leviathanCharging) {
         Math.min(Math.max(ArsenalRelic.leviathanCharges, 0), 3);
         for (AbstractDefaultCard c : getLeviathanCards()) {
-            c.defaultBaseSecondMagicNumber += leviathanCharging;
+            c.baseSecondValue += leviathanCharging;
             c.applyPowers();
         }
         ArsenalRelic.leviathanCharges += leviathanCharging;
@@ -34,7 +34,7 @@ public class LeviathanChargeAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
         Math.min(Math.max(ArsenalRelic.leviathanCharges, 0), 3);
         for (AbstractDefaultCard c : getLeviathanCards()) {
-            c.defaultBaseSecondMagicNumber += leviathanCharging;
+            c.baseSecondValue += leviathanCharging;
             c.applyPowers();
         }
         if (discharge) {

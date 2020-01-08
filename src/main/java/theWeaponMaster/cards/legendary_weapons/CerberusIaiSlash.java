@@ -43,7 +43,7 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = turnCount;
+        this.secondValue = baseSecondValue = turnCount;
 
         alwaysRetain.set(this, true);
     }
@@ -61,7 +61,7 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
 
     @Override
     public void triggerOnManualDiscard() {
-        defaultBaseSecondMagicNumber = turnCount = 0;
+        baseSecondValue = turnCount = 0;
     }
 
     @Override
@@ -94,14 +94,14 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
             }
         }
 
-        defaultBaseSecondMagicNumber = turnCount = 0;
+        baseSecondValue = turnCount = 0;
     }
 
     @Override
     public void atTurnStart() {
         if (AbstractDungeon.player.hand.group.contains(this)) {
             turnCount++;
-            defaultBaseSecondMagicNumber++;
+            baseSecondValue++;
         }
     }
 

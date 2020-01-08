@@ -47,7 +47,7 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ArsenalRelic.revenantHunger;
+        this.secondValue = baseSecondValue = ArsenalRelic.revenantHunger;
 
         getSated();
         tags.add(REVENANT);

@@ -45,7 +45,7 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_VALUE;
+        this.secondValue = baseSecondValue = SECOND_VALUE;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeDefaultSecondMagicNumber(UPGRADED_SECOND_VALUE);
+            upgradeSecondValue(UPGRADED_SECOND_VALUE);
             initializeDescription();
         }
     }
@@ -84,7 +84,7 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
             }
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + flashBonus, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, essenceDamage * defaultSecondMagicNumber, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, essenceDamage * secondValue, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
 
     }
 }

@@ -60,7 +60,7 @@ public class BullyConfident extends AbstractBullyCard {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            this.rawDescription = DESCRIPTION;
+            this.rawDescription = UPGRADED_DESCRIPTION;
             initializeDescription();
         }
     }

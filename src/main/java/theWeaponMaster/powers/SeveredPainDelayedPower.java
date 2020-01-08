@@ -49,7 +49,7 @@ public class SeveredPainDelayedPower extends AbstractPower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (turns <= 1) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, delayed)));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, delayed, DamageInfo.DamageType.HP_LOSS)));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }

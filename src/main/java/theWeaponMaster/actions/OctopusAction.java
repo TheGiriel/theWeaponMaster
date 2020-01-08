@@ -127,6 +127,40 @@ public class OctopusAction extends AbstractGameAction {
         isDone = true;
     }
 
+    public void discardExhaust(int exhaustNumber, int energyGain) {
+        if (duration == Settings.ACTION_DUR_XFAST) {
+            if (this.p.discardPile.isEmpty()) {
+                this.isDone = true;
+                return;
+            }
+
+            if (this.p.discardPile.size() == 1) {
+                AbstractCard tmp = this.p.discardPile.getTopCard();
+                this.p.discardPile.removeCard(tmp);
+                this.p.discardPile.moveToDeck(tmp, false);
+            }
+
+            if (this.p.discardPile.group.size() > exhaustNumber) {
+                AbstractDungeon.gridSelectScreen.open(this.p.discardPile, exhaustNumber, "Exhaust cards", false, false, false, false);
+                this.tickDuration();
+                return;
+            }
+        } else if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            Iterator var3 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
+
+            while (var3.hasNext()) {
+                AbstractCard c = (AbstractCard) var3.next();
+                this.p.discardPile.removeCard(c);
+                this.p.discardPile.moveToExhaustPile(c);
+            }
+
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            AbstractDungeon.player.hand.refreshHandLayout();
+            AbstractDungeon.player.gainEnergy(energyGain);
+        }
+        isDone = true;
+    }
+
     static class ShiftingChoiceCard extends CustomCard {
         private static final int COST = -2;
         private String baseID;

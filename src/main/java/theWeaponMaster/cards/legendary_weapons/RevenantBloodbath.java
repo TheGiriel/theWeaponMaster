@@ -46,7 +46,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = TIER_TWO;
+        this.secondValue = baseSecondValue = TIER_TWO;
 
         getSated();
         tags.add(REVENANT);

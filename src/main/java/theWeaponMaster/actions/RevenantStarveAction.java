@@ -31,7 +31,7 @@ public class RevenantStarveAction extends AbstractGameAction {
         TheWeaponMaster.logger.info("Arsenal hunger " + ArsenalRelic.revenantHunger);
         for (AbstractDefaultCard c : getRevenantCards()) {
             TheWeaponMaster.logger.info("Applying the hunger reduction by" + revenantStarve);
-            c.defaultBaseSecondMagicNumber += revenantStarve;
+            c.baseSecondValue += revenantStarve;
             c.applyPowers();
             c.initializeDescription();
         }

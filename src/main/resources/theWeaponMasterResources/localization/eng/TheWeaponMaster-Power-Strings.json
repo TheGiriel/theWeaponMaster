@@ -68,15 +68,15 @@
     "NAME": "Staggered",
     "DESCRIPTIONS": [
       "Staggered creatures deal ",
-      "% less damage and have their block reduced by ",
-      "%"
+      "% less damage and take ",
+      "% more damage"
     ]
   },
   "SeveredPainPower": {
     "NAME": "Severed Pain",
     "DESCRIPTIONS": [
-      "Delay half of the damage you take to next turn.",
-      "Delay one third of the damage you take to next turn. The remaining third is dealt to all enemies instead."
+      "Delay half of the damage you take to next turn, it cannot be mitigated.",
+      "Delay one third of the damage you take to next turn, it cannot be mitigated. The remaining third is dealt to all enemies."
     ]
   },
   "SeveredPathPower": {

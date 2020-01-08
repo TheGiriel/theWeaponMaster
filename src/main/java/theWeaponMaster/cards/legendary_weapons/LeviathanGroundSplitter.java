@@ -39,7 +39,7 @@ public class LeviathanGroundSplitter extends AbstractDynamicCard {
     public LeviathanGroundSplitter() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ArsenalRelic.leviathanCharges;
+        this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
     }
 
     @Override

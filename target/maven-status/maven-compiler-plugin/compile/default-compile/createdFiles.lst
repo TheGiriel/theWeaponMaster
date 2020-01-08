@@ -116,12 +116,12 @@ theWeaponMaster\actions\ArsenalRecombineAction.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredScissors.class
 theWeaponMaster\relics\HellhoundOilRelic.class
 theWeaponMaster\TheWeaponMaster.class
-theWeaponMaster\cards\generic\GenericAttackUncommon.class
 theWeaponMaster\cards\bully\BullyDinerArgument.class
 theWeaponMaster\actions\LacerateAction.class
 theWeaponMaster\actions\FenrirUnleashedSelectAction$MonsterHPComparator.class
 theWeaponMaster\actions\LeviathanGauntletAction.class
 theWeaponMaster\cards\legendary_weapons\FenrirDefensiveStance.class
+theWeaponMaster\cards\generic\GenericPushKick.class
 theWeaponMaster\actions\ReloadAction.class
 theWeaponMaster\actions\FenrirEvolveAction.class
 theWeaponMaster\relics\RevolverRelic.class

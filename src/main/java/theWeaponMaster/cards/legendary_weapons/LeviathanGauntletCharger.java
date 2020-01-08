@@ -40,7 +40,7 @@ public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements F
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = publicDamage = baseDamage = DAMAGE;
         this.block = publicBlock = baseBlock = BLOCK;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ArsenalRelic.leviathanCharges;
+        this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
 
         /*if (ArsenalRelic.leviathanCharges == 0) {
             recharge = true;

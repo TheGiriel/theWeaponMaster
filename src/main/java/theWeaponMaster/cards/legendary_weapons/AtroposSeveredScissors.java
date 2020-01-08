@@ -83,7 +83,6 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
         }
     }
 
-
     public void flipCard() {
         if (scissorFlip) {
             this.name = DESCRIPTION[0];

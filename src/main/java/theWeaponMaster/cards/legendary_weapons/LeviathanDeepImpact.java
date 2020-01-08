@@ -41,7 +41,7 @@ public class LeviathanDeepImpact extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ArsenalRelic.leviathanCharges;
+        this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
 
     }
 

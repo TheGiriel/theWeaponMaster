@@ -54,12 +54,12 @@ public class StaggerPower extends AbstractPower {
     }
 
     @Override
-    public float atDamageFinalGive(float damage, DamageInfo.DamageType type) {
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
         return damage * (1 - staggerAmount);
     }
 
     @Override
-    public float modifyBlock(float blockAmount) {
-        return blockAmount * (1 - staggerAmount);
+    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+        return damage * (1 + staggerAmount);
     }
 }

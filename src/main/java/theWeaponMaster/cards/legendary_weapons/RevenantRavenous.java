@@ -47,7 +47,7 @@ public class RevenantRavenous extends AbstractDynamicCard {
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = ArsenalRelic.revenantHunger;
+        this.secondValue = baseSecondValue = ArsenalRelic.revenantHunger;
 
         AlwaysRetainField.alwaysRetain.set(this, true);
 

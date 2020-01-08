@@ -46,7 +46,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_VALUE;
+        this.secondValue = baseSecondValue = SECOND_VALUE;
 
         populatePowers();
     }
@@ -92,11 +92,11 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
             if (upgraded && discarded.size() - 1 >= magicNumber - 1) {
                 stealPowers(p, m);
                 baseMagicNumber++;
-                defaultBaseSecondMagicNumber++;
+                baseSecondValue++;
             } else if (discarded.size() - 1 == magicNumber) {
                 stealPowers(p, m);
                 baseMagicNumber++;
-                defaultBaseSecondMagicNumber++;
+                baseSecondValue++;
             }
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + flashBonus, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
@@ -115,40 +115,40 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
             int i = new Random().nextInt(tempSteal.size());
             switch (tempSteal.get(i)) {
                 case AngryPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AngryPower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AngryPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case ThornsPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case BarricadePower.POWER_ID:
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BarricadePower(p)));
                     break;
                 case ArtifactPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case StrengthPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case MalleablePower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MalleablePower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MalleablePower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case PlatedArmorPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case MetallicizePower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MetallicizePower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MetallicizePower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case IntangiblePower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case RitualPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RitualPower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RitualPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case ThieveryPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThieveryPower(p, Math.min(tempStealValue.get(i), defaultSecondMagicNumber))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThieveryPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
             }
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(m, p, tempSteal.get(i), Math.min(tempStealValue.get(i), defaultSecondMagicNumber)));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(m, p, tempSteal.get(i), Math.min(tempStealValue.get(i), secondValue)));
         }
     }
 }

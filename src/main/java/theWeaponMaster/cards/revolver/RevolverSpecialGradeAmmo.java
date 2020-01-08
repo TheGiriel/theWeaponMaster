@@ -41,11 +41,11 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = publicDamage = baseDamage = DAMAGE;
         this.magicNumber = publicMagic = baseMagicNumber = MAGIC_NUMBER;
-        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_VALUE;
+        this.secondValue = baseSecondValue = SECOND_VALUE;
 
         tags.add(AMMUNITION);
-        ExhaustiveField.ExhaustiveFields.exhaustive.set(this, defaultSecondMagicNumber);
-        ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, defaultSecondMagicNumber);
+        ExhaustiveField.ExhaustiveFields.exhaustive.set(this, secondValue);
+        ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, secondValue);
     }
 
     public static int getPublicDamage() {
@@ -61,7 +61,7 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            upgradeDefaultSecondMagicNumber(UPGRADED_SECOND_VALUE);
+            upgradeSecondValue(UPGRADED_SECOND_VALUE);
             ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
         }
     }

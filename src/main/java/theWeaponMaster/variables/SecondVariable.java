@@ -14,24 +14,24 @@ public class SecondVariable extends DynamicVariable {
     @Override
     public boolean isModified(AbstractCard card) {
         AbstractDynamicCard c = (AbstractDynamicCard) card;
-        return c.isDefaultSecondMagicNumberModified;
+        return c.isSecondValueModified;
     }
 
     @Override
     public int value(AbstractCard card) {
         AbstractDynamicCard c = (AbstractDynamicCard) card;
-        return c.defaultSecondMagicNumber;
+        return c.secondValue;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
         AbstractDynamicCard c = (AbstractDynamicCard) card;
-        return c.defaultBaseSecondMagicNumber;
+        return c.baseSecondValue;
     }
 
     @Override
     public boolean upgraded(AbstractCard card) {
         AbstractDynamicCard c = (AbstractDynamicCard) card;
-        return c.upgradedDefaultSecondMagicNumber;
+        return c.upgradedSecondValue;
     }
 }
