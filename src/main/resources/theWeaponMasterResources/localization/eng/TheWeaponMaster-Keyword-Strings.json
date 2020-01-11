@@ -148,7 +148,9 @@
       "Atropos Shears",
       "atropos shears",
       "atropos_shears",
-      "Atropos Shears"
+      "Atropos Shears",
+      "atropos",
+      "Atropos"
     ],
     "DESCRIPTION": "Versatile cards specializing in Mana Burn and damage mitigation."
   },
@@ -182,7 +184,8 @@
       "leviathan gauntlet",
       "leviathan_gauntlet",
       "Leviathan_Gauntlet",
-      "Leviathan"
+      "Leviathan",
+      "leviathan"
     ],
     "DESCRIPTION": "Chargeable cards specializing against enemies with Block and defensive powers."
   },
@@ -209,7 +212,8 @@
       "revenant cleaver",
       "revenant_cleaver",
       "Revenant_Cleaver",
-      "Revenant"
+      "Revenant",
+      "revenant"
     ],
     "DESCRIPTION": "Self-Retaining cards specializing in Hunger and improving the player's HP."
   },

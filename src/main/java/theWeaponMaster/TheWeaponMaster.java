@@ -369,11 +369,10 @@ public class TheWeaponMaster implements
         BaseMod.addRelicToCustomPool(new ShockwaveModulatorRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new GhoulskinSheathRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new UncommonRelicHeavyDrum(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
-        
+
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
-        
-        // Mark relics as seen (the others are all starters so they're marked as seen in the character file
+
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         UnlockTracker.markRelicAsSeen(SplinteringSteelRelic.ID);
         UnlockTracker.markRelicAsSeen(HellhoundOilRelic.ID);
@@ -392,22 +391,13 @@ public class TheWeaponMaster implements
     @Override
     public void receiveEditCards() {
         logger.info("Adding variables");
-        //Ignore this
         pathCheck();
-        // Add the Custom Dynamic Variables
         logger.info("Add variables");
-        // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new BullyVariable());
         BaseMod.addDynamicVariable(new SecondVariable());
         
         logger.info("Adding cards");
-        // Add the cards
-        // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
-        // when generating card rewards/shop screen items.
-        //TODO: Add new cards whenever they are added to the pool.
-
-        //BaseMod.addCard(new OrbSkill());
 
         BaseMod.addCard(new FenrirLacerate());
         UnlockTracker.unlockCard(FenrirLacerate.ID);
@@ -509,12 +499,12 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(RevolverFullMetal.ID);
         BaseMod.addCard(new RevolverSpecialGradeAmmo());
         UnlockTracker.unlockCard(RevolverSpecialGradeAmmo.ID);
-        //BaseMod.addCard(new RevolverPowerMarksmanship());
-        //UnlockTracker.unlockCard(RevolverPowerMarksmanship.ID);
+        BaseMod.addCard(new RevolverMarksmanship());
+        UnlockTracker.unlockCard(RevolverMarksmanship.ID);
         BaseMod.addCard(new RevolverCustomCartridge());
         UnlockTracker.unlockCard(RevolverCustomCartridge.ID);
-        //BaseMod.addCard(new RevolverSkillDoubleTap());
-        //UnlockTracker.unlockCard(RevolverSkillDoubleTap.ID);
+        BaseMod.addCard(new RevolverDoubleTap());
+        UnlockTracker.unlockCard(RevolverDoubleTap.ID);
         //BaseMod.addCard(new RevolverSkillPreload());
         //UnlockTracker.unlockCard(RevolverSkillPreload.ID);
         BaseMod.addCard(new RevolverQuickload());
@@ -540,26 +530,26 @@ public class TheWeaponMaster implements
         //UnlockTracker.unlockCard(GenericAttackDoubleStrike.ID);
         //BaseMod.addCard(new GenericPushKick());
         //UnlockTracker.unlockCard(GenericPushKick.ID);
-        BaseMod.addCard(new GenericAnticipation());
-        UnlockTracker.unlockCard(GenericAnticipation.ID);
+        BaseMod.addCard(new GenericPreparation());
+        UnlockTracker.unlockCard(GenericPreparation.ID);
         BaseMod.addCard(new GenericFlashbang());
         UnlockTracker.unlockCard(GenericFlashbang.ID);
         //BaseMod.addCard(new GenericRareDraw());
         //UnlockTracker.unlockCard(GenericRareDraw.ID);
-        //BaseMod.addCard(new GenericRareSkillRedirectBlow());
-        //UnlockTracker.unlockCard(GenericRareSkillRedirectBlow.ID);
+        BaseMod.addCard(new GenericRedirectBlows());
+        UnlockTracker.unlockCard(GenericRedirectBlows.ID);
         BaseMod.addCard(new GenericDodge());
         UnlockTracker.unlockCard(GenericDodge.ID);
         BaseMod.addCard(new GenericInvestigate());
         UnlockTracker.unlockCard(GenericInvestigate.ID);
-        //BaseMod.addCard(new GenericSkillObserve());
-        //UnlockTracker.unlockCard(GenericSkillObserve.ID);
+        BaseMod.addCard(new GenericOpportunism());
+        UnlockTracker.unlockCard(GenericOpportunism.ID);
         //BaseMod.addCard(new GenericUncommonPower());
         //UnlockTracker.unlockCard(GenericUncommonPower.ID);
         //BaseMod.addCard(new GenericUncommonPowerHuntersIntuition());
         //UnlockTracker.unlockCard(GenericUncommonPowerHuntersIntuition.ID());
-        //BaseMod.addcard(new GenericRelaxRecollect());
-        //UnlockTracker.unlockCard(GenericRelaxRecollect.ID);
+        BaseMod.addCard(new GenericRelaxRecollect());
+        UnlockTracker.unlockCard(GenericRelaxRecollect.ID);
         //BaseMod.addcard(new GenericCard20());
         //UnlockTracker.unlockCard(GenericCard20.ID);
 

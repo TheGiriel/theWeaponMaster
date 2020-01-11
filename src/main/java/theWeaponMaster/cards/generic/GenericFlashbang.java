@@ -40,11 +40,16 @@ public class GenericFlashbang extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(m, p));
-        AbstractDungeon.getMonsters().monsters.forEach(e -> {
-            if (!e.equals(m))
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(e, p, new StaggerPower(e, p, 0)));
-        });
+        int targetIndex = AbstractDungeon.getMonsters().monsters.indexOf(m);
+        if (targetIndex > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.getMonsters().monsters.get(targetIndex - 1), p, new StaggerPower(m, p, 0)));
+        }
+        AbstractDungeon.actionManager.addToTop(new StunMonsterAction(m, p));
+        try {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.getMonsters().monsters.get(targetIndex + 1), p, new StaggerPower(m, p, 0)));
+        } catch (IndexOutOfBoundsException e) {
+
+        }
     }
 
     @Override

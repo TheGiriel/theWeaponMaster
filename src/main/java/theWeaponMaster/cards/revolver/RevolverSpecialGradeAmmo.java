@@ -7,10 +7,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.actions.SpecialGradeAmmoAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -36,6 +38,8 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
     private static final int UPGRADED_SECOND_VALUE = 1;
     public static int publicDamage;
     public static int publicMagic;
+
+    private int dexBonus = 0;
 
     public RevolverSpecialGradeAmmo() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -64,6 +68,14 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
             upgradeSecondValue(UPGRADED_SECOND_VALUE);
             ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
         }
+    }
+
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
+            return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
+        } else
+            return super.calculateModifiedCardDamage(player, mo, tmp);
     }
 
     @Override

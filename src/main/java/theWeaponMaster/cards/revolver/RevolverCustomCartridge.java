@@ -1,16 +1,13 @@
 package theWeaponMaster.cards.revolver;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.MinionPower;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.actions.CustomCartridgeAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
 
@@ -38,6 +35,7 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
     private static final int UPGRADED_MAGIC_NUMBER = 50;
     private static final int SECOND_VALUE = 75;
     private static final int UPGRADED_SECOND_VALUE = 25;
+    public static int customDamage = 0;
 
 
     public RevolverCustomCartridge() {
@@ -50,11 +48,14 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
     public boolean canPlay(AbstractCard card) {
         ArrayList<AbstractCard> ammunitionCards = new ArrayList();
         ammunitionCards.addAll(AbstractDungeon.player.hand.group);
-        return ammunitionCards.stream().anyMatch(e -> e.hasTag(WeaponMasterTags.AMMUNITION) && !e.cardID.equals(RevolverBuckshot.ID));
+        return ammunitionCards.stream().anyMatch(e -> e.hasTag(WeaponMasterTags.AMMUNITION) && (!e.cardID.equals(RevolverBuckshot.ID) || !e.cardID.equals(RevolverWarningShot.ID)));
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new CustomCartridgeAction(m, magicNumber, secondValue, this));
+        /*new OctopusAction().ammoExhaust();
+
         ArrayList<AbstractMonster> monsterList = AbstractDungeon.getMonsters().monsters;
         boolean hitMinions = false;
 
@@ -63,7 +64,7 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
         if (upgraded) {
             for (AbstractMonster monster : monsterList) {
                 if (m == monster && monster.hasPower(MinionPower.POWER_ID)) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy + 1), new DamageInfo(p, damage * (secondValue / 100), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy + 1), new DamageInfo(p, customDamage * (secondValue / 100), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                     hitMinions = true;
                     continue;
                 }
@@ -72,10 +73,10 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
                 }
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy), new DamageInfo(p, damage * (magicNumber / 100), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy), new DamageInfo(p, customDamage * (magicNumber / 100), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         if (monsterList.size() > firstEnemy + 1 && !hitMinions) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy + 1), new DamageInfo(p, damage * (secondValue / 100), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        }
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy + 1), new DamageInfo(p, customDamage * (secondValue / 100), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        }*/
 
     }
 

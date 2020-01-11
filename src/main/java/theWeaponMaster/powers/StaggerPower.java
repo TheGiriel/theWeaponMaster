@@ -21,6 +21,7 @@ public class StaggerPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(StaggerPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
+
     private float staggerAmount;
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("stagger_placeholder_84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("stagger_placeholder_32.png"));

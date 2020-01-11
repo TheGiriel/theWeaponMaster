@@ -7,8 +7,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.powers.StaggerPower;
+import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
@@ -30,18 +33,20 @@ public class RevolverWarningShot extends AbstractDynamicCard {
     private static final int MAGIC_NUMBER = 8;
     private static final int UPGRADED_MAGIC_NUMBER = 5;
 
-    // /STAT DECLARATION/
-
-
     public RevolverWarningShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
+        tags.add(WeaponMasterTags.AMMUNITION);
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.getRelic(RevolverRelic.ID).counter <= 0) {
+            new ReloadAction();
+            return;
+        }
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StaggerPower(monster, p, magicNumber)));
         }

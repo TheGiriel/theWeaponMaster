@@ -30,7 +30,7 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.RARE;
+    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.SPECIAL;
     private static final AbstractCard.CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;

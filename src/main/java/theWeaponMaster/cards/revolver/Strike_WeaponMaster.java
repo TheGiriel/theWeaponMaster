@@ -9,9 +9,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -33,6 +35,8 @@ public class Strike_WeaponMaster extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
 
+    private int dexBonus = 0;
+
     public Strike_WeaponMaster() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
@@ -46,7 +50,16 @@ public class Strike_WeaponMaster extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
+            initializeDescription();
         }
+    }
+
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
+            return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
+        } else
+            return super.calculateModifiedCardDamage(player, mo, tmp);
     }
 
     @Override
@@ -55,6 +68,6 @@ public class Strike_WeaponMaster extends AbstractDynamicCard {
             new ReloadAction();
             return;
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage + block, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }

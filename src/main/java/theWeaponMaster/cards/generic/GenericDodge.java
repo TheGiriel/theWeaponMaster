@@ -19,9 +19,9 @@ public class GenericDodge extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     private static final int COST = 1;
     private static final int BLOCK = 6;
+    private static final int UPGRADED_BLOCK = 3;
     private static final int MAGIC_NUMBER = 1;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int UPGRADED_BLOCK = 3;
     private static AbstractPlayer player = AbstractDungeon.player;
 
     public GenericDodge() {

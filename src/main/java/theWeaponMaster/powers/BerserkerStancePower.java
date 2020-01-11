@@ -19,7 +19,7 @@ import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 public class BerserkerStancePower extends AbstractPower implements CloneablePowerInterface {
 
     public static final String POWER_ID = TheWeaponMaster.makeID(BerserkerStancePower.class.getSimpleName());
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BerserkerStancePower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
@@ -32,6 +32,8 @@ public class BerserkerStancePower extends AbstractPower implements CloneablePowe
 
         this.owner = owner;
         this.amount = amount;
+
+        ViciousPower.berserkerPower = true;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -47,6 +49,11 @@ public class BerserkerStancePower extends AbstractPower implements CloneablePowe
         if (targetCard.type == AbstractCard.CardType.ATTACK) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, amount)));
         }
+    }
+
+    @Override
+    public void onRemove() {
+        ViciousPower.berserkerPower = false;
     }
 
     @Override

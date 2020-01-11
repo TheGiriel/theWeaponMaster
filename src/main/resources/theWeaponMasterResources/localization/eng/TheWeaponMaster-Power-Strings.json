@@ -119,6 +119,36 @@
       ", whichever is higher."
     ]
   },
+  "RedirectBlowsPower": {
+    "NAME": "Redirect Blows",
+    "DESCRIPTIONS": [
+      "Take ",
+      "% less damage, gain Block equal to HP lost from attacks."
+    ]
+  },
+  "PreparationPower": {
+    "NAME": "Preparation",
+    "DESCRIPTIONS": [
+      "Your next ",
+      "attack costs one less energy.",
+      " attacks cost one less energy."
+    ]
+  },
+  "WeaponMasterDoubleTapPower": {
+    "NAME": "Double Tap",
+    "DESCRIPTIONS": [
+      "Your next Ammunition card is played again for ",
+      "% damage."
+    ]
+  },
+  "MarksmanshipPower": {
+    "NAME": "Marksmanship",
+    "DESCRIPTIONS": [
+      "Ammunition cards deal ",
+      " extra damage (",
+      " for Buckshot & Twinned Shot), based on Dexterity."
+    ]
+  },
   "BerserkerStancePower": {
     "NAME": "Berserker Stance",
     "DESCRIPTIONS": [

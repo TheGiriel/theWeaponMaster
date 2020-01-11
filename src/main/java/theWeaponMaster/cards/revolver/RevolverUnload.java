@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.relics.RevolverRelic;
@@ -28,12 +29,14 @@ public class RevolverUnload extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     private static final int COST = 3;
-    private static final int MAGIC_NUMBER = 3;
-    private static final int UPGRADED_MAGIC_NUMBER = 2;
+    private static final int DAMAGE = 4;
+    private static final int UPGRADE_DAMAGE = 2;
+
+    private int dexBonus = 0;
 
     public RevolverUnload() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.damage = baseDamage = DAMAGE;
 
         isInnate = true;
         purgeOnUse = true;
@@ -41,7 +44,17 @@ public class RevolverUnload extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
+        upgradeName();
+        upgradeDamage(UPGRADE_DAMAGE);
+        initializeDescription();
+    }
 
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (player.hasPower(DexterityPower.POWER_ID)) {
+            return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount / 2);
+        } else
+            return super.calculateModifiedCardDamage(player, mo, tmp);
     }
 
     @Override
@@ -50,8 +63,8 @@ public class RevolverUnload extends AbstractDynamicCard {
         ammoDrawPile.addAll(player.drawPile.group);
 
         for (AbstractCard card : player.hand.group) {
-            if (card.hasTag(AMMUNITION) && player.getRelic(RevolverRelic.ID).counter > 0) {
-                actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, magicNumber, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            if (card.hasTag(AMMUNITION) && card.type.equals(CardType.ATTACK) && player.getRelic(RevolverRelic.ID).counter > 0) {
+                actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 actionManager.addToBottom(new DiscardSpecificCardAction(card));
                 player.getRelic(RevolverRelic.ID).counter--;
             } else if (player.getRelic(RevolverRelic.ID).counter == 0) {
@@ -63,7 +76,7 @@ public class RevolverUnload extends AbstractDynamicCard {
         for (AbstractCard card : ammoDrawPile) {
             if (player.getRelic(RevolverRelic.ID).counter > 0 && player.drawPile.size() > 0) {
                 if (card.hasTag(AMMUNITION)) {
-                    actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, magicNumber, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                    actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                     actionManager.addToBottom(new DiscardSpecificCardAction(card, player.drawPile));
                     player.getRelic(RevolverRelic.ID).counter--;
                     //RevolverRelic.shotsLeft--;

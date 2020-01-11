@@ -9,10 +9,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -37,6 +39,8 @@ public class RevolverBuckshot extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
 
+    private int dexBonus = 0;
+
     public RevolverBuckshot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
@@ -54,11 +58,21 @@ public class RevolverBuckshot extends AbstractDynamicCard {
     }
 
     @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
+            return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount / 2);
+        } else
+            return super.calculateModifiedCardDamage(player, mo, tmp);
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
         if (p.getRelic(RevolverRelic.ID).counter <= 0) {
             new ReloadAction();
             return;
         }
+
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(
                 AbstractDungeon.getMonsters().shouldFlipVfx()), 0.1F));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));

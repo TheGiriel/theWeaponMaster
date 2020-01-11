@@ -8,9 +8,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -33,6 +35,8 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
     private static final int MAGIC_NUMBER = 25;
     private static final int UPGRADED_MAGIC_NUMBER = 25;
 
+    private int dexBonus = 0;
+
     public RevolverHollowPoint() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
@@ -49,6 +53,15 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
         }
     }
+
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
+            return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
+        } else
+            return super.calculateModifiedCardDamage(player, mo, tmp);
+    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

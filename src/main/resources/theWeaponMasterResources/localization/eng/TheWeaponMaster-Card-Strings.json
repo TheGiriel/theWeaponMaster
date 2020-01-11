@@ -1,7 +1,7 @@
 {
   "theWeaponMaster:Defend_WeaponMaster": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block.."
+    "DESCRIPTION": "Gain !B! Block."
   },
 
   "theWeaponMaster:FenrirLacerate": {
@@ -57,7 +57,7 @@
   },
   "theWeaponMaster:LeviathanGauntletCharger": {
     "NAME": "[#746550]Gauntlet [#746550]Charger",
-    "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV! NL Release all Leviathan charges to deal damage or recharge the Gauntlet to gain Block."
+    "DESCRIPTION": "Leviathan_Gauntlet NL Charges: !SV! NL Discharge the Leviathan to deal !D! damage randomly or recharge the Gauntlet to gain !B! Block per charge."
   },
   "theWeaponMaster:LeviathanGroundSplitter": {
     "NAME": "[#746550]Ground [#746550]Splitter",
@@ -133,7 +133,7 @@
   },
   "theWeaponMaster:AtroposSeveredPath": {
     "NAME": "[#3abfbe]Severed [#3abfbe]Path",
-    "DESCRIPTION": "Atropos_Shears NL Target Enemy attacks a random enemy this turn. Apply !M! Mana_Burn.",
+    "DESCRIPTION": "Atropos_Shears NL Target Enemy attacks a random enemy this turn. Apply !M! Mana_Burn. Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "theWeaponMaster:AtroposSeveredPain": {
@@ -165,7 +165,8 @@
   },
   "theWeaponMaster:RevolverDoubleTap": {
     "NAME": "Double Tap",
-    "DESCRIPTION": "The next Ammunition card this turn is played twice."
+    "DESCRIPTION": "The next Ammunition card this turn is played a second time for half damage.",
+    "UPGRADE_DESCRIPTION": "The next Ammunition card this turn is played a second time for two-thirds damage."
   },
   "theWeaponMaster:RevolverFullMetal": {
     "NAME": "Full Metal Jacket",
@@ -183,7 +184,7 @@
     "NAME": "Magnum Ammo",
     "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage."
   },
-  "theWeaponMaster:RevolverPowerMarksmanship": {
+  "theWeaponMaster:RevolverMarksmanship": {
     "NAME": "Marksmanship",
     "DESCRIPTION": "Revolver cards now also scale with Dexterity.",
     "UPGRADE_DESCRIPTION": "Revolver cards now also scale with Dexterity. Gain 1 Dexterity."
@@ -213,6 +214,7 @@
     "NAME": "Warning Shot",
     "DESCRIPTION": "Ammunition, Reload. NL Stagger all enemies."
   },
+
   "theWeaponMaster:BullyBullysAudacity": {
     "NAME": "The Bully's Audacity",
     "DESCRIPTION": "Bully !BULLY! NL Exhaustive !stslib:ex! NL Gain !M! Block for every Bully card played this fight."
@@ -279,8 +281,8 @@
     "DESCRIPTION": "Bully !BULLY! NL Apply !M! Weak.",
     "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Apply !M! Weak to all enemies."
   },
-  "theWeaponMaster:GenericAnticipation": {
-    "NAME": "Anticipation",
+  "theWeaponMaster:GenericPreparation": {
+    "NAME": "Preparation",
     "DESCRIPTION": "Gain !B! Block, if your Block isn't broken, the next Attack card costs 1 less Energy.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block, if your Block isn't broken, the next !M! Attack cards cost 1 less Energy."
   },
@@ -295,20 +297,20 @@
   },
   "theWeaponMaster:GenericDodge": {
     "NAME": "Dodge",
-    "DESCRIPTION": "Gain !B! Block. Return 1 random Common card from your discard pile to your hand.",
+    "DESCRIPTION": "Gain !B! Block. Return !M! random Common card from your discard pile to your hand.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. Return !M! random Common cards from your discard pile to your hand."
   },
   "theWeaponMaster:GenericFlashbang": {
     "NAME": "Flashbang",
-    "DESCRIPTION": "Exhaustive !stslib:ex! NL Stun target enemy. Stagger all other enemies."
+    "DESCRIPTION": "Exhaustive !stslib:ex! NL Stun target enemy. Stagger both adjacent enemies."
   },
   "theWeaponMaster:GenericFreshApple": {
     "NAME": "Fresh Apple",
     "DESCRIPTION": "Heal !M! HP. NL Grave, Purge."
   },
   "theWeaponMaster:GenericFrontKick": {
-    "NAME": "Fresh Apple",
-    "DESCRIPTION": "Heal !M! HP. NL Grave, Purge."
+    "NAME": "Front Kick",
+    "DESCRIPTION": "Deal !D! damage."
   },
   "theWeaponMaster:GenericInvestigate": {
     "NAME": "Investigate",
@@ -318,25 +320,22 @@
     "NAME": "Limber Up",
     "DESCRIPTION": "Gain !M! Dexterity."
   },
-  "theWeaponMaster:GenericRelaxRecollect": {
-    "NAME": "Relax",
-    "DESCRIPTION": "Gain !B! plus an additional Block for every 5 Vicious.",
-    "EXTENDED_DESCRIPTION": [
-      "Recollect",
-      "Exhaust !M! cards from your discard pile, gain !SV! Energy."
-    ]
-  },
-  "theWeaponMaster:GenericRelaxRecollect": {
-    "NAME": "Relax",
-    "DESCRIPTION": "Gain !B! plus an additional Block for every 5 Vicious.",
-    "EXTENDED_DESCRIPTION": [
-      "Recollect",
-      "Exhaust !M! cards from your discard pile, gain !SV! Energy."
-    ]
-  },
-  "theWeaponMaster:GenericSkillObserve": {
-    "NAME": "Observe",
+  "theWeaponMaster:GenericOpportunism": {
+    "NAME": "Opportunism",
     "DESCRIPTION": "Gain !B! block if target enemy wants to attack. NL Deal !D! damage if target enemy wants to defend. NL Otherwise draw a card."
+  },
+  "theWeaponMaster:GenericRelaxRecollect": {
+    "NAME": "Relax",
+    "DESCRIPTION": "Gain !B! plus an additional Block for every 3 Vicious.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! plus an additional Block for every 3 Vicious.",
+      "Recollect",
+      "Exhaust !M! cards from your discard pile, gain !SV! Energy."
+    ]
+  },
+  "theWeaponMaster:GenericRedirectBlows": {
+    "NAME": "Redirect Blows",
+    "DESCRIPTION": "Exhaustive !stslib:ex! Gain !B! Block. Until the next turn you take !SV! % less damage, then gain Block equal to the damage taken."
   },
   "theWeaponMaster:GenericSleightOfHand": {
     "NAME": "Sleight of Hand",

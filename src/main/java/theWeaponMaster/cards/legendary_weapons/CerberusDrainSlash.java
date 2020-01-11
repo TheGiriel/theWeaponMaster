@@ -30,7 +30,9 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     private static final int COST = 3;
@@ -72,6 +74,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

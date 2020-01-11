@@ -2,17 +2,20 @@ package theWeaponMaster.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
+import basemod.interfaces.PostInitializeSubscriber;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -21,7 +24,16 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theWeaponMaster.cards.bully.*;
+import theWeaponMaster.cards.generic.Defend_WeaponMaster;
+import theWeaponMaster.cards.generic.GenericOpportunism;
+import theWeaponMaster.cards.generic.GenericPreparation;
+import theWeaponMaster.cards.generic.GenericRelaxRecollect;
+import theWeaponMaster.cards.legendary_weapons.*;
+import theWeaponMaster.cards.revolver.RevolverMarksmanship;
+import theWeaponMaster.cards.revolver.RevolverUnload;
+import theWeaponMaster.cards.revolver.RevolverWarningShot;
+import theWeaponMaster.cards.revolver.Strike_WeaponMaster;
+import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.RevolverRelic;
@@ -35,7 +47,7 @@ import static theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in TheWeaponMaster-character-Strings.json in the resources
 
-public class TheWeaponMaster extends CustomPlayer {
+public class TheWeaponMaster extends CustomPlayer implements PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(theWeaponMaster.TheWeaponMaster.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
@@ -136,18 +148,15 @@ public class TheWeaponMaster extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(BullyMeanToEveryone.ID);
-        retVal.add(BullyConfident.ID);
-        retVal.add(BullyIntimidate.ID);
-        retVal.add(BullyTaunt.ID);
-        retVal.add(BullyShakedown.ID);
-        retVal.add(BullySlap.ID);
-        retVal.add(BullySuckerPunch.ID);
-        retVal.add(BullyIntimidatingPresence.ID);
-        retVal.add(BullyBullysAudacity.ID);
-        retVal.add(BullyClothesline.ID);
-        retVal.add(BullyDinerArgument.ID);
-        //retVal.add(GenericFlashbang.ID);
+        retVal.add(Strike_WeaponMaster.ID);
+        retVal.add(Strike_WeaponMaster.ID);
+        retVal.add(Defend_WeaponMaster.ID);
+        retVal.add(GenericRelaxRecollect.ID);
+        retVal.add(RevolverWarningShot.ID);
+        retVal.add(GenericPreparation.ID);
+        retVal.add(GenericOpportunism.ID);
+        retVal.add(RevolverUnload.ID);
+        retVal.add(RevolverMarksmanship.ID);
         //retVal.add(RevolverSpecialGradeAmmo.ID);
         //retVal.add(GenericSleightOfHand.ID);
         //retVal.add(GenericFreshApple.ID);
@@ -185,11 +194,13 @@ public class TheWeaponMaster extends CustomPlayer {
         return retVal;
     }
 
-    /*public void preBattlePrep(){
+
+    public void preBattlePrep() {
         super.preBattlePrep();
-        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EgoPower(AbstractDungeon.player)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EgoPower(AbstractDungeon.player)));
-    }*/
+        if (!AbstractDungeon.player.hasPower(ViciousPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ViciousPower(AbstractDungeon.player, 1)));
+        }
+    }
 
     // character Select screen effect
     @Override
@@ -262,6 +273,38 @@ public class TheWeaponMaster extends CustomPlayer {
         return theWeaponMaster.TheWeaponMaster.DEFAULT_GRAY;
     }
 
+    @Override
+    public void receivePostInitialize() {
+        ArrayList<AbstractCard> removeLegendary = new ArrayList<>();
+        removeLegendary.add(new FenrirLacerate());
+        removeLegendary.add(new FenrirShieldEater());
+        removeLegendary.add(new FenrirHeavySwing());
+        removeLegendary.add(new FenrirUnleashed());
+        removeLegendary.add(new FenrirDefensiveStance());
+        removeLegendary.add(new CerberusSlash());
+        removeLegendary.add(new CerberusEssenceSlash());
+        removeLegendary.add(new CerberusModularSlash());
+        removeLegendary.add(new CerberusIaiSlash());
+        removeLegendary.add(new CerberusDrainSlash());
+        removeLegendary.add(new RevenantRavenous());
+        removeLegendary.add(new RevenantChopChopCHOP());
+        removeLegendary.add(new RevenantHungrySteel());
+        removeLegendary.add(new RevenantNoseToTail());
+        removeLegendary.add(new RevenantBloodbath());
+        removeLegendary.add(new AtroposSeveredSource());
+        removeLegendary.add(new AtroposSeveredScissors());
+        removeLegendary.add(new AtroposSeveredPath());
+        removeLegendary.add(new AtroposSeveredPain());
+        removeLegendary.add(new AtroposSeveredSoul());
+        removeLegendary.add(new LeviathanCrush());
+        removeLegendary.add(new LeviathanGauntletCharger());
+        removeLegendary.add(new LeviathanGroundSplitter());
+        removeLegendary.add(new LeviathanDeepImpact());
+        removeLegendary.add(new LeviathanEarthquake());
+
+
+    }
+
     public static class Enums {
         @SpireEnum
         public static AbstractPlayer.PlayerClass THE_WEAPON_MASTER;
@@ -278,9 +321,13 @@ public class TheWeaponMaster extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY};
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL};
     }
 
     // Should return a string containing what text is shown when your character is
