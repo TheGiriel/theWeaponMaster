@@ -4,36 +4,35 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.LacerateAction;
 import theWeaponMaster.util.TextureLoader;
 
 public class LaceratePower extends AbstractPower implements HealthBarRenderPower {
 
-    public static final Color bleed = new Color((float) (1), (float) (128 / 255), (float) (17 / 255), 1.0F);
-    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LaceratePower");
+    public static final Color bleed = new Color((float) (250 / 255), (float) (128 / 255), (float) (17 / 255), 1.0F);
+    public static final String POWER_ID = TheWeaponMaster.makeID(LaceratePower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(LaceratePower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String POWER_ID = TheWeaponMaster.makeID(LaceratePower.class.getSimpleName());
     public static final Texture lacerate_84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Lacerate_placeholder_84.png"));
     public static final Texture lacerate_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Lacerate_placeholder_32.png"));
     public static final Texture hemorrhage_84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Hemorrhage_placeholder_84.png"));
 
-    private AbstractCreature source;
     private int bleedDamage;
     private static final Texture hemorrhage_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Hemorrhage_placeholder_32.png"));
 
-    public LaceratePower(AbstractCreature owner, AbstractCreature source, int bleedStack) {
+    public LaceratePower(AbstractCreature owner, int bleedStack) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = bleedStack;
-        this.source = source;
 
         this.region128 = new TextureAtlas.AtlasRegion(lacerate_84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(lacerate_32, 0, 0, 32, 32);
@@ -59,7 +58,7 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
             this.region128 = new TextureAtlas.AtlasRegion(hemorrhage_84, 0, 0, 84, 84);
             this.region48 = new TextureAtlas.AtlasRegion(hemorrhage_32, 0, 0, 32, 32);
         }
-        this.bleedDamage = (int) Math.ceil(this.owner.maxHealth * 0.02D * this.amount);
+        this.bleedDamage = (int) Math.ceil(owner.maxHealth * 0.02D * this.amount);
         updateDescription();
     }
 
@@ -73,7 +72,7 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new LacerateAction(this.owner, this.source, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(owner, owner, (int) (Math.ceil(this.owner.maxHealth * 0.02D * this.amount)), AbstractGameAction.AttackEffect.POISON));
     }
 
     @Override
@@ -83,6 +82,6 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
 
     @Override
     public Color getColor() {
-        return bleed;
+        return Color.valueOf("#640d0d");
     }
 }

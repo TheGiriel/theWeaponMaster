@@ -40,8 +40,7 @@ public class SleightOfHandAction extends AbstractGameAction {
 
             while (var3.hasNext()) {
                 AbstractCard c = (AbstractCard) var3.next();
-                this.p.discardPile.removeCard(c);
-                this.p.hand.moveToDeck(c, true);
+                this.p.discardPile.moveToHand(c, p.discardPile);
             }
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

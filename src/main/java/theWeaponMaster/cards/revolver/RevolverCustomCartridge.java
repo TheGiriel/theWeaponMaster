@@ -43,7 +43,7 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
     }
 
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    public boolean cardPlayable(AbstractMonster m) {
         ArrayList<AbstractCard> ammunitionCards = new ArrayList(AbstractDungeon.player.hand.group);
         boolean canUse = ammunitionCards.stream().anyMatch(e -> e.hasTag(WeaponMasterTags.AMMUNITION) && (!e.cardID.equals(RevolverBuckshot.ID) || !e.cardID.equals(RevolverWarningShot.ID) || !e.cardID.equals(RevolverKneecap.ID)));
         if (canUse) {

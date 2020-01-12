@@ -76,7 +76,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
     }
 
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    public boolean cardPlayable(AbstractMonster m) {
         boolean canUse = AbstractDungeon.getMonsters().monsters.stream().anyMatch(e -> intents.contains(e.intent) && e.hasPower(IntimidatePower.POWER_ID));
         if (canUse) {
             return true;

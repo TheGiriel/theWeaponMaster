@@ -50,7 +50,7 @@ public class WeaponMasterDoubleTapPower extends AbstractPower implements Cloneab
 
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
-        if (card.hasTag(WeaponMasterTags.AMMUNITION)) {
+        if (card.hasTag(WeaponMasterTags.AMMUNITION) && card.type.equals(AbstractCard.CardType.ATTACK)) {
             AbstractCard tmp = card.makeSameInstanceOf();
 
             AbstractMonster target = (AbstractMonster) action.target;

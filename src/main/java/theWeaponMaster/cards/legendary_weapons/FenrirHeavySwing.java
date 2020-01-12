@@ -1,6 +1,7 @@
 package theWeaponMaster.cards.legendary_weapons;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.powers.LaceratePower;
+import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.SplinteringSteelRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -49,22 +52,24 @@ public class FenrirHeavySwing extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
-        if(!upgraded) {
+        if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
     }
 
-    private int heavySwing(AbstractPlayer player) {
-        if (player.hasPower("ViciousPower")) {
-            return damage * player.hand.size() + player.getPower("ViciousPower").amount;
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
+        if (player.hasPower(ViciousPower.POWER_ID)) {
+            return damage * player.hand.size() + player.getPower(ViciousPower.POWER_ID).amount;
         } else return damage * player.hand.size();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, heavySwing(p), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(p, p.hand.size() / 2)));
         if (p.hand.size() > 3) {
             new FenrirEvolveAction();
         }

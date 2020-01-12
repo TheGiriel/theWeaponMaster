@@ -88,4 +88,15 @@ public class AtroposScissorHalf extends AbstractDynamicCard implements Scissors 
         scissors.add(AtroposScissorHalf.ID);
         scissors.add(AtroposSeveredScissors.ID);
     }
+
+
+    @Override
+    public void triggerOnExhaust() {
+        AbstractDungeon.player.exhaustPile.group.stream().anyMatch(e -> {
+            if (e.cardID.equals(AtroposSeveredScissors.ID)) {
+                AbstractDungeon.player.exhaustPile.moveToBottomOfDeck(e);
+            }
+            return true;
+        });
+    }
 }

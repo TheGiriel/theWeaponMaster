@@ -2,7 +2,6 @@ package theWeaponMaster.cards.generic;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -45,9 +44,8 @@ public class GenericOpportunism extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m.intent.toString().contains("ATTACK")) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        } else if (m.intent.toString().contains("DEFEND")) {
+        } else
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        } else AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
     }
 
     @Override

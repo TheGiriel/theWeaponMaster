@@ -24,7 +24,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.generic.*;
-import theWeaponMaster.cards.revolver.RevolverQuickload;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.RevolverRelic;
@@ -140,19 +139,12 @@ public class TheWeaponMaster extends CustomPlayer {
         logger.info("Begin loading starter Deck Strings");
 
 
-        retVal.add(GenericBobWeave.ID);
-        //retVal.add(GenericPushKick.ID);
-        retVal.add(GenericPreparation.ID);
-        retVal.add(GenericFlashbang.ID);
-        retVal.add(RevolverQuickload.ID);
-        //retVal.add(GenericRareDraw.ID);
+        retVal.add(GenericBobAndWeave.ID);
+        retVal.add(GenericFrontKick.ID);
+        //retVal.add(GenericHeavyPockets.ID);
         retVal.add(GenericRedirectBlows.ID);
-        retVal.add(GenericDodge.ID);
-        retVal.add(GenericInvestigate.ID);
-        retVal.add(GenericOpportunism.ID);
-        //retVal.add(GenericUncommonPower.ID);
-        retVal.add(GenericRecklessness.ID);
-        retVal.add(GenericRelaxRecollect.ID);
+        retVal.add(GenericGrazingThrow.ID);
+        retVal.add(GenericRelaxAndRecollect.ID);
         return retVal;
     }
 
@@ -191,7 +183,7 @@ public class TheWeaponMaster extends CustomPlayer {
     public void preBattlePrep() {
         super.preBattlePrep();
         if (!AbstractDungeon.player.hasPower(ViciousPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ViciousPower(AbstractDungeon.player, 1)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ViciousPower(AbstractDungeon.player, 0)));
         }
     }
 

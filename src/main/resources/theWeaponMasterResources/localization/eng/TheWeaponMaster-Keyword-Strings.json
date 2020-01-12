@@ -95,7 +95,7 @@
       "lacerate",
       "lacerating"
     ],
-    "DESCRIPTION": "[#b7410e]Lacerated creatures lose HP at the start of their turn."
+    "DESCRIPTION": "[#b7410e]Lacerated creatures lose HP at the start of their turn based on their Max HP."
   },
   {
     "PROPER_NAME": "[#b7410e]Kneecap",
@@ -104,7 +104,14 @@
       "kneecap",
       "kneecapped"
     ],
-    "DESCRIPTION": "[#b7410e]Kneecapped creatures lose HP at the start of their turn based on their missing HP."
+    "DESCRIPTION": "[#b7410e]Kneecapped creatures lose HP based on their missing HP at the start of their turn for three turns. Counts as Lacerate."
+  },
+  {
+    "PROPER_NAME": "[#b7410e]Nicked",
+    "NAMES": [
+      "nicked"
+    ],
+    "DESCRIPTION": "[#b7410e]Nicked creatures lose HP based on their Max HP at the start of their turn for three turns. Counts as Lacerate."
   },
   {
     "PROPER_NAME": "[#b7410e]Evolve",

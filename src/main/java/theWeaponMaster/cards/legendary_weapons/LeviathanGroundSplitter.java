@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.LeviathanChargeAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.powers.StaggerPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.ShockwaveModulatorRelic;
@@ -40,6 +41,8 @@ public class LeviathanGroundSplitter extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
+
+        tags.add(WeaponMasterTags.LEVIATHAN);
     }
 
     @Override
@@ -63,7 +66,7 @@ public class LeviathanGroundSplitter extends AbstractDynamicCard {
         }
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             if (!monster.isDead && !monster.isDying) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StaggerPower(monster, p, monster.currentBlock)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StaggerPower(monster, this, monster.currentBlock)));
             }
             if (chargeBonus) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new VulnerablePower(monster, magicNumber, false)));

@@ -22,11 +22,12 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     private static final int COST = 1;
     private static final int BLOCK = 5;
-    private static final int UPGRADED_BLOCK = 3;
+    private static final int MAGIC_NUMBER = 2;
 
     public GenericSleightOfHand() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.block = baseBlock = BLOCK;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
     }
 
     @Override
@@ -35,7 +36,7 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         }
         AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
         AbstractDungeon.actionManager.addToBottom(new SleightOfHandAction());
     }
 
@@ -43,7 +44,6 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADED_BLOCK);
             initializeDescription();
         }
     }

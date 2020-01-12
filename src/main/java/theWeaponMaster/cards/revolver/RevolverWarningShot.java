@@ -24,18 +24,14 @@ public class RevolverWarningShot extends AbstractDynamicCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int MAGIC_NUMBER = 8;
-    private static final int UPGRADED_MAGIC_NUMBER = 5;
-
     public RevolverWarningShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
         tags.add(WeaponMasterTags.AMMUNITION);
     }
@@ -48,7 +44,7 @@ public class RevolverWarningShot extends AbstractDynamicCard {
             return;
         }
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StaggerPower(monster, p, magicNumber)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StaggerPower(monster, this, 0)));
         }
     }
 
@@ -57,7 +53,6 @@ public class RevolverWarningShot extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }

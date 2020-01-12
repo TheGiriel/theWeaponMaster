@@ -21,13 +21,13 @@ public class RevolverRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
-    public static int SHOTS = 6;
-    public static int shotsLeft = SHOTS;
+    public static final int SHOTS = 6;
+    public static int shotsLeft;
     public static AbstractCard preloaded;
 
     public RevolverRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
-        this.counter = SHOTS;
+        this.counter = shotsLeft = SHOTS;
         this.description = DESCRIPTIONS[0];
     }
 
@@ -39,9 +39,9 @@ public class RevolverRelic extends CustomRelic {
         } else if (card.hasTag(AMMUNITION)) {
             this.counter--;
         }
-        counter = Math.min(Math.max(counter, 0), 6);
+        counter = shotsLeft = Math.min(Math.max(counter, 0), 6);
         if (AbstractDungeon.player.hasRelic(HeavyDrum.ID)) {
-            counter = Math.min(Math.max(counter, 0), 5);
+            counter = shotsLeft = Math.min(Math.max(counter, 0), 5);
         }
     }
 
@@ -51,11 +51,9 @@ public class RevolverRelic extends CustomRelic {
 
     @Override
     public void atBattleStart() {
-        if (counter <= 0) {
-            counter = 0;
-        }
+        counter = shotsLeft = Math.min(Math.max(counter, 0), 6);
         if (AbstractDungeon.player.hasRelic(HeavyDrum.ID)) {
-            SHOTS = 5;
+            counter = shotsLeft = Math.min(Math.max(counter, 0), 5);
         }
     }
 

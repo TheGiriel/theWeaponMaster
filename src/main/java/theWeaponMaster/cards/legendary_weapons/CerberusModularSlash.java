@@ -61,7 +61,7 @@ public class CerberusModularSlash extends AbstractDynamicCard {
     private void Flash(Object state, ArrayList<AbstractCard> discarded) {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = (AbstractMonster) state;
-        int flashBonus = -1;
+        int flashBonus = 0;
         int flashBlock = 0;
         int flashEnergy = 0;
         int flashCurse = 0;

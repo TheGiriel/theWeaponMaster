@@ -119,13 +119,13 @@
     "UPGRADE_DESCRIPTION": "Atropos_Shears NL Deal !D! damage twice. NL Ignite !M!.",
     "EXTENDED_DESCRIPTION": [
       "Right Half",
-      "Atropos_Shears NL Deal !D! damage and Ignite !M! twice.",
-      "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+      "Atropos_Shears NL Deal !D! damage and apply 1 Mana_Burn, then Deal !D! damage and Ignite 1.",
+      "Atropos_Shears NL Deal !D! damage and apply 1 Mana_Burn. !M!. NL Split_Scissors !B!, Exhaust."
     ]
   },
   "theWeaponMaster:AtroposScissorHalf": {
     "NAME": "[#3abfbe]Left [#3abfbe]Half",
-    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage. Ignite !M!. NL Split_Scissors !B!, Exhaust."
+    "DESCRIPTION": "Atropos_Shears NL Deal !D! damage, Ignite !M!. NL Split_Scissors !B!, Exhaust."
   },
   "theWeaponMaster:AtroposSeveredPath": {
     "NAME": "[#3abfbe]Severed [#3abfbe]Path",
@@ -147,17 +147,14 @@
     "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage. NL (Counts as Basic Strike)."
   },
   "theWeaponMaster:RevolverBuckshot": {
+    "NAME": "Buckshot",
     "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage to all enemies.",
-    "EXTENDED_DESCRIPTION": [
-      "Ammunition, Reload. NL Deal !D! damage to all enemies.",
-      "Ammunition, Reload. NL Reload and draw up to 3 cards."
-    ],
-    "NAME": "Buckshot"
+    "UPGRADE_DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage to all enemies."
   },
   "theWeaponMaster:RevolverCustomCartridge": {
     "NAME": "Custom Cartridge",
-    "DESCRIPTION": "Exhaust one non-Buckshot or Warning Shot Ammo. NL Deal !M! % damage to the target and !SV! % damage to the creature behind it.",
-    "UPGRADE_DESCRIPTION": "Exhaust one non-Buckshot or Warning Shot Ammo. NL Deal !M! % damage to the target and !SV! % damage to the creature behind it. NL Unstoppable: Enemy Minions ( !SV! % damage)."
+    "DESCRIPTION": "Exhaust one single target Attack Ammo. NL Deal !M! % damage to the target and !SV! % damage to the creature behind it.",
+    "UPGRADE_DESCRIPTION": "Exhaust one single target Attack Ammo. NL Deal !M! % damage to the target and !SV! % damage to the creature behind it. NL Unstoppable: Enemy Minions ( !SV! % damage)."
   },
   "theWeaponMaster:RevolverDoubleTap": {
     "NAME": "Double Tap",
@@ -203,7 +200,7 @@
   },
   "theWeaponMaster:RevolverUnload": {
     "NAME": "Unload",
-    "DESCRIPTION": "Exhaust NL Discard Ammunition cards from your hand and deal !D! damage each. If you still have shots left in your Revolver, continue discarding cards from your Draw pile instead."
+    "DESCRIPTION": "Exhaust NL Discard Ammunition cards from your hand and deal !D! damage each. If you still have shots left in your Revolver, continue discarding cards from your draw pile instead."
   },
   "theWeaponMaster:RevolverWarningShot": {
     "NAME": "Warning Shot",
@@ -267,8 +264,8 @@
     "DESCRIPTION": "Bully !BULLY! NL Intimidate all enemies. Gain !BULLY! additional Vicious per Intimidated enemy.",
     "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Exhaust. Apply !M! Vulnerable and Intimidate all enemies. Gain !BULLY! additional Vicious per Intimidated enemy."
   },
-  "theWeaponMaster:BullyTrip": {
-    "NAME": "Trip",
+  "theWeaponMaster:BullyPushover": {
+    "NAME": "Pushover",
     "DESCRIPTION": "Bully !BULLY! NL Apply !M! Vulnerable. The enemy takes !M! Damage for every debuff."
   },
   "theWeaponMaster:BullyWimp": {
@@ -285,28 +282,34 @@
     "DESCRIPTION": "Vicious doesn't decay at the end of the turn anymore. Gain 1 extra Vicious every time you attack.",
     "UPGRADE_DESCRIPTION": "Innate NL Vicious doesn't decay at the end of the turn anymore. Gain 1 extra Vicious every time you attack."
   },
-  "theWeaponMaster:GenericBobWeave": {
-    "NAME": "Bob ...",
-    "DESCRIPTION": "Gain !B! Block plus an additional 3 Block for every attacking enemy.",
+  "theWeaponMaster:GenericBobAndWeave": {
+    "NAME": "Bob and Weave",
+    "DESCRIPTION": "Gain !B! Block. NL Bob: gain additional !M! Block for every attacking enemy. NL Weave: 1 energy if all enemies are attacking.",
     "EXTENDED_DESCRIPTION": [
-      "Bob ...",
-      "Gain !B! Block plus an additional !M! Block for every attacking enemy.",
-      "... and Weave",
+      "Bob",
+      "Gain !B! Block, gain additional !M! Block for every attacking enemy.",
+      "Weave",
       "Gain !B! Block, gain 1 Energy if all enemies are attacking."
     ]
   },
   "theWeaponMaster:GenericCounterBlow": {
     "NAME": "Counter Blow",
-    "DESCRIPTION": "Discard the top card of your draw Pile counter an enemy's attack for !M! plus the cards cost damage, or up to !D! damage if you discarded an Attack."
+    "DESCRIPTION": "Discard the top card of your draw pile to immediately counter an enemy's attack for !M! plus the cards cost, or up to !D! damage if you discarded an Attack (and it's higher.)."
   },
   "theWeaponMaster:GenericDodge": {
     "NAME": "Dodge",
     "DESCRIPTION": "Gain !B! Block. NL Return a random Attack card from your discard pile to your hand.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Return a random Attack and Skill card from your discard pile to your hand."
   },
+  "theWeaponMaster:GenericHeavyPockets": {
+    "NAME": "Heavy Pockets",
+    "DESCRIPTION": "Gain !B! Block, draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block, draw !M! cards."
+  },
   "theWeaponMaster:GenericFlashbang": {
     "NAME": "Flashbang",
-    "DESCRIPTION": "Exhaustive !stslib:ex! NL Stun target enemy. Stagger both adjacent enemies."
+    "DESCRIPTION": "Exhaustive !stslib:ex! NL Stun target enemy. Stagger both adjacent enemies.",
+    "UPGRADE_DESCRIPTION": "Exhaustive !stslib:ex! NL Stun target enemy. Stagger both adjacent enemies and draw a card."
   },
   "theWeaponMaster:GenericFreshApple": {
     "NAME": "Fresh Apple",
@@ -314,7 +317,15 @@
   },
   "theWeaponMaster:GenericFrontKick": {
     "NAME": "Front Kick",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage, gain !B! Block."
+  },
+  "theWeaponMaster:GenericGrazingThrow": {
+    "NAME": "Grazing Throw",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Nicked to target enemy."
+  },
+  "theWeaponMaster:GenericGuillotineChoke": {
+    "NAME": "Guillotine Choke",
+    "DESCRIPTION": "Apply !SV! Weak and !M! Mana_Burn to target enemy. Gain !B! Block."
   },
   "theWeaponMaster:GenericInvestigate": {
     "NAME": "Investigate",
@@ -326,7 +337,7 @@
   },
   "theWeaponMaster:GenericOpportunism": {
     "NAME": "Opportunism",
-    "DESCRIPTION": "Gain !B! block if target enemy wants to attack. NL Deal !D! damage if target enemy wants to defend. NL Otherwise draw a card."
+    "DESCRIPTION": "Gain !B! block if target enemy wants to attack, otherwise deal !D! damage."
   },
   "theWeaponMaster:GenericPreparation": {
     "NAME": "Preparation",
@@ -335,16 +346,16 @@
   },
   "theWeaponMaster:GenericRecklessness": {
     "NAME": "Recklessness",
-    "DESCRIPTION": "Draw an extra card for the next !M! turns, gain !SV! Vulnerable."
+    "DESCRIPTION": "Draw an extra card for the next !M! turns, gain !M! Vulnerable."
   },
-  "theWeaponMaster:GenericRelaxRecollect": {
-    "NAME": "Relax",
-    "DESCRIPTION": "Gain !B! plus an additional Block for every 3 Vicious.",
+  "theWeaponMaster:GenericRelaxAndRecollect": {
+    "NAME": "Relax and Recollect",
+    "DESCRIPTION": "Relax: Gain !B! Block, gain 1 Block for every 3 Vicious. NL Recollect: Exhaust !M! cards from your discard pile, gain !SV! Energy.",
     "EXTENDED_DESCRIPTION": [
       "Relax",
-      "Gain !B! plus an additional Block for every 3 Vicious.",
+      "Gain !B! Block and draw a card. Gain an additional 2 Block for every 3 Vicious.",
       "Recollect",
-      "Exhaust !M! cards from your discard pile, gain !SV! Energy."
+      "Draw a card. Exhaust !M! cards from your discard pile, gain !SV! Energy."
     ]
   },
   "theWeaponMaster:GenericRedirectBlows": {
@@ -353,7 +364,7 @@
   },
   "theWeaponMaster:GenericSleightOfHand": {
     "NAME": "Sleight of Hand",
-    "DESCRIPTION": "Gain !B! Block. NL Discard a card. NL Draw a card. NL Return one card from your Discard pile to a random spot of your Draw pile."
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Discard a card then return one card to your hand."
   },
   "theWeaponMaster:GenericThrowingKnives": {
     "NAME": "Throwing Knives",

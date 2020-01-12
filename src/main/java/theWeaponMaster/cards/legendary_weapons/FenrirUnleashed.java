@@ -57,12 +57,21 @@ public class FenrirUnleashed extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
-        if(!upgraded) {
+        if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
 
+    }
+
+    @Override
+    public boolean cardPlayable(AbstractMonster m) {
+        if (AbstractDungeon.player.energy.energy != 0 || AbstractDungeon.player.hasRelic(ChemicalX.ID)) {
+            return true;
+        }
+        cantUseMessage = "I don't have enough energy.";
+        return false;
     }
 
     private void weakestMonster(AbstractPlayer p) {

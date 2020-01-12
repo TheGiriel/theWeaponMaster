@@ -12,7 +12,10 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.*;
+import theWeaponMaster.actions.FenrirEvolveAction;
+import theWeaponMaster.actions.LeviathanChargeAction;
+import theWeaponMaster.actions.OctopusAction;
+import theWeaponMaster.actions.RevenantStarveAction;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.cards.legendary_weapons.RevenantRavenous;
 import theWeaponMaster.powers.ViciousPower;
@@ -62,7 +65,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public void atTurnStart() {
         usedThisTurn = false;
         isPlayerTurn = true;
-        new ArsenalRecombineAction();
+        //new ArsenalRecombineAction();
         beginLongPulse();
     }
 
@@ -120,7 +123,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
                 AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, bullyCard.bullyNumber)));
             } else if (!targetCard.equals(RevenantRavenous.ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 2)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 2 + ViciousPower.berserkerStanceBonus)));
             }
 
         }

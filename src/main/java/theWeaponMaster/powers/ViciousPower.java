@@ -4,15 +4,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.generic.GenericBerserkerStance;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
@@ -23,22 +20,20 @@ public class ViciousPower extends TwoAmountPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ViciousPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
-    public static final int TIER_TWO = 5;
-    public static final int TIER_THREE = TIER_TWO * 3;
-    private static int bonusDamage = 0;
-
 
     private static final Texture vicious1_84 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_84.png"));
     private static final Texture vicious1_32 = TextureLoader.getTexture(makePowerPath("vicious1_placeholder_32.png"));
+    public static final int TIER_TWO = 5;
     private static final Texture vicious2_84 = TextureLoader.getTexture(makePowerPath("vicious2_placeholder_84.png"));
     private static final Texture vicious2_32 = TextureLoader.getTexture(makePowerPath("vicious2_placeholder_32.png"));
+    public static final int TIER_THREE = TIER_TWO * 3;
     private static final Texture vicious3_84 = TextureLoader.getTexture(makePowerPath("vicious3_placeholder_84.png"));
     private static final Texture vicious3_32 = TextureLoader.getTexture(makePowerPath("vicious3_placeholder_32.png"));
 
     private static Texture tex84;
     private static Texture tex32;
     private int reduceVicious;
-    public static boolean berserkerPower = false;
+    public static int berserkerStanceBonus = 0;
 
 
     public ViciousPower(final AbstractCreature owner, int amnt) {
@@ -65,8 +60,15 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     @Override
+    public void onInitialApplication() {
+        if (owner.hasPower(BerserkerStancePower.POWER_ID)) {
+            berserkerStanceBonus = 1;
+        }
+    }
+
+    @Override
     public void onRemove() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, 1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, 0)));
     }
 
     public void stackPower(int stackAmount) {
@@ -98,24 +100,16 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     @Override
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card.equals(GenericBerserkerStance.ID)) {
-            berserkerPower = true;
-            updateDescription();
-        }
-    }
-
-    @Override
     public void updateDescription() {
         if (this.amount <= TIER_TWO) {
             description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
             setReduceVicious(1);
         } else if (this.amount > TIER_THREE) {
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[4] + reduceVicious + DESCRIPTION[5];
-            setReduceVicious(3);
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[3] + reduceVicious + DESCRIPTION[4];
+            setReduceVicious(3 + berserkerStanceBonus);
         } else {
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[3] + reduceVicious + DESCRIPTION[5];
-            setReduceVicious(4);
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[3] + reduceVicious + DESCRIPTION[4];
+            setReduceVicious(4 + berserkerStanceBonus);
         }
     }
 
@@ -148,11 +142,11 @@ public class ViciousPower extends TwoAmountPower {
 
     public void atEndOfRound() {
         if (amount > TIER_THREE) {
-            setReduceVicious(3);
+            setReduceVicious(3 + berserkerStanceBonus);
             this.amount -= reduceVicious;
             setBonusDamage();
         } else if (amount > TIER_TWO) {
-            setReduceVicious(4);
+            setReduceVicious(4 + berserkerStanceBonus);
             this.amount -= reduceVicious;
             setBonusDamage();
         }

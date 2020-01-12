@@ -33,7 +33,7 @@ public class BerserkerStancePower extends AbstractPower implements CloneablePowe
         this.owner = owner;
         this.amount = amount;
 
-        ViciousPower.berserkerPower = true;
+        ViciousPower.berserkerStanceBonus = 1;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -53,7 +53,7 @@ public class BerserkerStancePower extends AbstractPower implements CloneablePowe
 
     @Override
     public void onRemove() {
-        ViciousPower.berserkerPower = false;
+        ViciousPower.berserkerStanceBonus = 0;
     }
 
     @Override

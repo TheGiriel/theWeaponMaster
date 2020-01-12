@@ -31,7 +31,7 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int MAGIC_NUMBER = 1;
     public String NAME = cardStrings.NAME;
-    private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
+    private HashSet<AbstractMonster.Intent> intents;
 
     public AtroposSeveredPath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -40,11 +40,6 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
         tags.add(INTIMIDATE);
         intents = EnemyForceAction.getIntents(this);
         exhaust = true;
-    }
-
-    @Override
-    protected String getCantPlayMessage() {
-        return "No Enemy is attacking.";
     }
 
     @Override
@@ -62,8 +57,8 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
                 return true;
             }
         } catch (NullPointerException e) {
-            TheWeaponMaster.logger.info("Some error happened: " + e);
         }
+        cantUseMessage = "This enemy isn't attacking.";
         return false;
     }
 

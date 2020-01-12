@@ -41,7 +41,6 @@ public class GenericRecklessness extends AbstractDynamicCard {
             playerVicious = 0;
         }
         this.magicNumber = baseMagicNumber = Math.max(1, playerVicious);
-        this.secondValue = baseSecondValue = Math.max(1, playerVicious * 2);
 
         initializeDescription();
     }
@@ -50,13 +49,12 @@ public class GenericRecklessness extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RecklessnessPower(p, p)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, secondValue, false)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, magicNumber, false)));
     }
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        this.magicNumber = baseMagicNumber = Math.max(1, AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount / 10);
-        this.secondValue = baseSecondValue = Math.max(1, AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount / 5);
+        this.magicNumber = baseMagicNumber = Math.max(1, AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount / 5);
         super.onPlayCard(c, m);
     }
 

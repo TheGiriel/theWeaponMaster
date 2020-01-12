@@ -75,15 +75,9 @@ public class BullyTaunt extends AbstractBullyCard {
                 return true;
             }
         } catch (NullPointerException e) {
-            TheWeaponMaster.logger.info("Some error happened: " + e);
         }
+        cantUseMessage = "This enemy already attacking me.";
         return false;
-    }
-
-
-    @Override
-    protected String getCantPlayMessage() {
-        return "This monster isn't attacking.";
     }
 
     @Override

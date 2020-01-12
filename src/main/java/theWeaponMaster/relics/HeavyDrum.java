@@ -29,11 +29,6 @@ public class HeavyDrum extends CustomRelic {
     }
 
     @Override
-    public void onEquip() {
-        RevolverRelic.SHOTS = 5;
-    }
-
-    @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (c.hasTag(WeaponMasterTags.AMMUNITION) && c.type == AbstractCard.CardType.ATTACK) {
             c.damage++;

@@ -72,11 +72,11 @@ public class LeviathanCrush extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
         if (armorPiercingDamage != 0 && ArsenalRelic.leviathanCharges >= CHARGECOST) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (armorPiercingDamage * 1.5), DamageInfo.DamageType.HP_LOSS)));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, p, (int) (m.currentBlock * 1.5))));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, this, (int) (m.currentBlock * 1.5))));
             new LeviathanChargeAction(-CHARGECOST);
         } else if (armorPiercingDamage != 0) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage, DamageInfo.DamageType.HP_LOSS)));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, p, m.currentBlock)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, this, m.currentBlock)));
         }
     }
 }

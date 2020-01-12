@@ -46,6 +46,7 @@ public class BullyIntimidate extends AbstractBullyCard {
 
         tags.add(INTIMIDATE);
         tags.add(BULLY);
+
         intents = EnemyForceAction.getIntents(this);
         ExhaustiveField.ExhaustiveFields.exhaustive.set(this, 2);
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);
@@ -59,14 +60,6 @@ public class BullyIntimidate extends AbstractBullyCard {
         }
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (intents.contains(m.intent) && !m.hasPower(IntimidatePower.POWER_ID)) {
-            return true;
-        } else
-            cantUseMessage = "This enemy isn't attacking.";
-        return false;
-    }
-
     @Override
     public boolean cardPlayable(AbstractMonster m) {
         try {
@@ -74,8 +67,8 @@ public class BullyIntimidate extends AbstractBullyCard {
                 return true;
             }
         } catch (NullPointerException e) {
-            TheWeaponMaster.logger.info("Some error happened: " + e);
         }
+        cantUseMessage = "This enemy isn't attacking.";
         return false;
     }
 

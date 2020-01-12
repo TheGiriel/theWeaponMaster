@@ -21,9 +21,8 @@
       "Deal #r",
       " and take #r",
       " more damage.",
-      " NL Lose a quarter #r(",
-      " NL Lose a third #r(",
-      ") of your Vicious at the end of the turn."
+      " NL Lose #r",
+      " Vicious at the end of the turn."
     ]
   },
   "EgoPower": {
@@ -52,8 +51,17 @@
     "NAME": "Kneecapped",
     "DESCRIPTIONS": [
       "This creature loses ",
-      "% Max HP #r(",
-      ") every turn. NL This counts as one stack of Lacerate."
+      "% of their missing HP #r(",
+      ") every turn. Turns remaining: ",
+      " NL This counts as Lacerate."
+    ]
+  },
+  "NickedPower": {
+    "NAME": "Nicked",
+    "DESCRIPTIONS": [
+      "This creature loses #r2 % of their Max HP #r(",
+      ") every turn. Turns remaining: ",
+      " NL This counts as Lacerate."
     ]
   },
   "NoseToTailPower": {
@@ -164,8 +172,8 @@
   "BerserkerStancePower": {
     "NAME": "Berserker Stance",
     "DESCRIPTIONS": [
-      "Vicious doesn't decay at the end of your turn. Gain #r",
-      " more Vicious every turn."
+      "Vicious decays slower. Gain #r",
+      " more Vicious when you attack."
     ]
   }
 }

@@ -70,6 +70,16 @@ public class RevenantBloodbath extends AbstractDynamicCard {
         }
     }
 
+
+    @Override
+    public boolean cardPlayable(AbstractMonster m) {
+        if (AbstractDungeon.player.energy.energy != 0 || AbstractDungeon.player.hasRelic(ChemicalX.ID) || AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount >= TIER_TWO) {
+            return true;
+        }
+        cantUseMessage = "I don't have enough Energy or Vicious.";
+        return false;
+    }
+
     public void getSated() {
         if (ArsenalRelic.revenantHunger < HUNGERCOST) {
             rawDescription = DESCRIPTION[1];

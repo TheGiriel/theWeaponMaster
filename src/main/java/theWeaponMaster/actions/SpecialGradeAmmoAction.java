@@ -50,7 +50,7 @@ public class SpecialGradeAmmoAction extends AbstractGameAction {
 
             if (cardChoice.name.equals("Splintering")) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, getPublicDamage(), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, getPublicMagic())));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, getPublicMagic())));
             } else if (cardChoice.name.equals("Ethereal")) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, getPublicDamage(), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, getPublicMagic())));

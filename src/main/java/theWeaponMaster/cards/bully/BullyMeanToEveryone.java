@@ -58,7 +58,7 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
     }
 
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    public boolean cardPlayable(AbstractMonster m) {
         boolean canUse = AbstractDungeon.getMonsters().monsters.stream().anyMatch(e -> intents.contains(e.intent) && !e.hasPower(TauntPower.POWER_ID));
         if (canUse) {
             return true;

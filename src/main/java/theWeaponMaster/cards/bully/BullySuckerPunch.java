@@ -33,10 +33,12 @@ public class BullySuckerPunch extends AbstractBullyCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 2;
     private static final int BULLY_NUMBER = 3;
     private static final int UPGRADED_BULLY_NUMBER = 2;
+    private static final int SECOND_VALUE = 4;
+    private static final int UPGRADED_SECOND_VALUE = 4;
     private final HashSet<AbstractMonster.Intent> intents;
 
     public BullySuckerPunch() {
@@ -57,7 +59,7 @@ public class BullySuckerPunch extends AbstractBullyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() <= 1) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage * 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            if (intents.contains(m.intent)) {
+            if (intents.contains(m.intent) && !m.hasPower(IntimidatePower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new IntimidatePower(m, p)));
             }
         } else {

@@ -14,6 +14,7 @@ import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.KneecappedPower;
 import theWeaponMaster.powers.LaceratePower;
+import theWeaponMaster.powers.NickedPower;
 import theWeaponMaster.relics.SplinteringSteelRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -46,15 +47,19 @@ public class FenrirLacerate extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, this.magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, this.magicNumber), magicNumber));
+        int evolveThreshold = 0;
         if (m.hasPower(LaceratePower.POWER_ID)) {
-            int evolveThreshold = m.getPower(LaceratePower.POWER_ID).amount;
-            if (m.hasPower(KneecappedPower.POWER_ID)) {
-                evolveThreshold += m.getPower(KneecappedPower.POWER_ID).amount;
-            }
-            if (evolveThreshold > 3) {
-                new FenrirEvolveAction(); //works properly now
-            }
+            evolveThreshold = m.getPower(LaceratePower.POWER_ID).amount;
+        }
+        if (m.hasPower(KneecappedPower.POWER_ID)) {
+            evolveThreshold++;
+        }
+        if (m.hasPower(NickedPower.POWER_ID)) {
+            evolveThreshold++;
+        }
+        if (evolveThreshold > 3) {
+            new FenrirEvolveAction(); //works properly now
         }
     }
 
