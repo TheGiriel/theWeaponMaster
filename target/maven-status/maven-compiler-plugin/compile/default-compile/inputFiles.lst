@@ -46,17 +46,16 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ac
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\revolver\RevolverCustomCartridge.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\PlaceholderRelic2.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\Defend_WeaponMaster.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericCard20.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericFrontKick.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericFlashbang.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\abstractcards\AbstractBullyCard.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\RevenantChopChopCHOP.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\HellhoundOilRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\AtroposSeveredScissors.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericHeavyPockets.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericLimberUp.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\DefaultClickableRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\revolver\RevolverKneecap.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericRareDraw.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericBerserkerStance.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\AtroposSeveredPath.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\EnemyForceAction.java
@@ -89,6 +88,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ca
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\SleightOfHandAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\ManaWhetstoneRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericOpportunism.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericGuillotineChoke.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\RecollectAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\util\EnemyIntentInterface.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\abstractcards\AbstractRevolverCard.java
@@ -130,7 +130,6 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ca
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\util\FlipCard.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\ArsenalRecombineAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\revolver\RevolverBuckshot.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\EgoPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\NickedPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyMeanToEveryone.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\FenrirUnleashed.java

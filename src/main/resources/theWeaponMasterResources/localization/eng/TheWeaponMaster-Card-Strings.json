@@ -15,7 +15,7 @@
   },
   "theWeaponMaster:FenrirHeavySwing": {
     "NAME": "[#b7410e]Heavy [#b7410e]Swing",
-    "DESCRIPTION": "Fenrir NL Deal !D! damage per card in your hand, gains half the Evolution bonuses. NL Evolve: Play while holding more than 3 cards."
+    "DESCRIPTION": "Fenrir NL Deal !D! damage for every card in your hand, apply Lacerate equal to half the cards in your hand.NL Evolve: Play while holding more than 3 cards. Gains half the Evolution bonuses."
   },
   "theWeaponMaster:FenrirUnleashed": {
     "NAME": "[#b7410e]Fenrir [#b7410e]Unleashed",
@@ -179,8 +179,7 @@
   },
   "theWeaponMaster:RevolverMarksmanship": {
     "NAME": "Marksmanship",
-    "DESCRIPTION": "Revolver cards now also scale with Dexterity.",
-    "UPGRADE_DESCRIPTION": "Revolver cards now also scale with Dexterity. Gain 1 Dexterity."
+    "DESCRIPTION": "Revolver cards now also scale with Dexterity. Gain !M! Dexterity."
   },
   "theWeaponMaster:RevolverKneecap": {
     "NAME": "Kneecap",
@@ -341,8 +340,8 @@
   },
   "theWeaponMaster:GenericPreparation": {
     "NAME": "Preparation",
-    "DESCRIPTION": "Gain !B! Block, if your Block isn't broken, the next Attack card costs 1 less Energy.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block, if your Block isn't broken, the next !M! Attack cards cost 1 less Energy."
+    "DESCRIPTION": "Gain !B! Block, and !M! Dexterity. If your Block isn't broken, the next Attack card costs 1 less Energy.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block, and !M! Dexterity. If your Block isn't broken, the next !M! Attack cards cost 1 less Energy."
   },
   "theWeaponMaster:GenericRecklessness": {
     "NAME": "Recklessness",

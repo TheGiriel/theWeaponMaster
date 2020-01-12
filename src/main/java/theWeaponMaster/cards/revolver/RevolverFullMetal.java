@@ -38,13 +38,19 @@ public class RevolverFullMetal extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 2;
     private static final int MAGIC_NUMBER = 25;
     private static final int UPGRADED_MAGIC_NUMBER = 25;
+    int armorPiercingDamage;
+
+    private float armorPiercingBonus;
 
     public RevolverFullMetal() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+
+        armorPiercingBonus = ((float) magicNumber / 100);
         tags.add(AMMUNITION);
+        initializeDescription();
     }
 
     @Override
@@ -56,7 +62,6 @@ public class RevolverFullMetal extends AbstractDynamicCard {
         }
     }
 
-
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
         if (player.hasRelic(HeavyDrum.ID)) {
@@ -64,8 +69,21 @@ public class RevolverFullMetal extends AbstractDynamicCard {
         }
         if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
             return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
-        } else
-            return super.calculateModifiedCardDamage(player, mo, tmp);
+        }
+        try {
+            if (mo.currentBlock > 0) {
+                armorPiercingDamage = (int) Math.min(mo.currentBlock, (float) Math.ceil((double) tmp * armorPiercingBonus));
+                rawDescription = DESCRIPTION + " NL AP Damage: " + armorPiercingDamage;
+                initializeDescription();
+                return super.calculateModifiedCardDamage(player, mo, tmp);
+            }
+        } catch (Exception e) {
+
+        }
+        armorPiercingDamage = 0;
+        rawDescription = DESCRIPTION;
+        initializeDescription();
+        return super.calculateModifiedCardDamage(player, mo, tmp);
     }
 
     @Override
@@ -74,13 +92,11 @@ public class RevolverFullMetal extends AbstractDynamicCard {
             new ReloadAction();
             return;
         }
-        int armorPiercingDamage = 0;
-        if (m.currentBlock > 0) {
-            armorPiercingDamage = (int) (Math.min(m.currentBlock, damage) * ((double) magicNumber / 100));
-        }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (armorPiercingDamage != 0) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
+        rawDescription = DESCRIPTION;
+        initializeDescription();
     }
 }

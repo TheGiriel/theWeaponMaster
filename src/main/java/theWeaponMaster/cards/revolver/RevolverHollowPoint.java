@@ -35,12 +35,16 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 2;
     private static final int MAGIC_NUMBER = 25;
     private static final int UPGRADED_MAGIC_NUMBER = 25;
+    private float hollowPointBonus;
 
     public RevolverHollowPoint() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+
+        hollowPointBonus = ((float) magicNumber / 100);
+
         tags.add(AMMUNITION);
     }
 
@@ -60,8 +64,15 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
         }
         if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
             return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
-        } else
-            return super.calculateModifiedCardDamage(player, mo, tmp);
+        }
+        try {
+            if (mo.currentBlock == 0) {
+                return super.calculateModifiedCardDamage(player, mo, (float) Math.ceil((double) tmp * (1 + hollowPointBonus)));
+            }
+        } catch (Exception e) {
+
+        }
+        return super.calculateModifiedCardDamage(player, mo, tmp);
     }
 
 
@@ -75,7 +86,7 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
         if (m.currentBlock == 0) {
             bonusDamge += ((double) magicNumber / 100);
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) Math.ceil(damage * bonusDamge), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
     }
 

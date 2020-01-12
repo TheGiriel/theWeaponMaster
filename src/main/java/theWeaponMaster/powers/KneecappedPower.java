@@ -37,7 +37,7 @@ public class KneecappedPower extends AbstractPower implements HealthBarRenderPow
         ID = POWER_ID;
 
         this.owner = m;
-        this.amount = 1;
+        this.amount = 3;
 
         if (upgraded) {
             bleedfactor = 0.12;
@@ -85,7 +85,7 @@ public class KneecappedPower extends AbstractPower implements HealthBarRenderPow
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + (int) bleedfactor * 100 + DESCRIPTIONS[1] + bleedDamage + DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
+        this.description = DESCRIPTIONS[0] + (int) (bleedfactor * 100) + DESCRIPTIONS[1] + bleedDamage + DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
     }
 
     @Override

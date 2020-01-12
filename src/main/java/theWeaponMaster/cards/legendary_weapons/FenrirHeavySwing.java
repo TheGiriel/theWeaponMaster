@@ -40,7 +40,7 @@ public class FenrirHeavySwing extends AbstractDynamicCard {
     public FenrirHeavySwing() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.damage = baseDamage = DAMAGE + magicNumber / 2;
+        this.damage = baseDamage = DAMAGE + (magicNumber / 2);
 
         initializeDescription();
     }
@@ -62,8 +62,8 @@ public class FenrirHeavySwing extends AbstractDynamicCard {
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
         if (player.hasPower(ViciousPower.POWER_ID)) {
-            return damage * player.hand.size() + player.getPower(ViciousPower.POWER_ID).amount;
-        } else return damage * player.hand.size();
+            return tmp * player.hand.size() + (float) player.getPower(ViciousPower.POWER_ID).amount / 5;
+        } else return tmp * player.hand.size();
     }
 
     @Override

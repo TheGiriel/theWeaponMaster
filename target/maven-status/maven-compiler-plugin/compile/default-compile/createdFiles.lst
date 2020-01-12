@@ -85,7 +85,6 @@ theWeaponMaster\characters\TheWeaponMaster$Enums.class
 theWeaponMaster\actions\SleightOfHandAction.class
 theWeaponMaster\powers\ViciousPower.class
 theWeaponMaster\powers\SeveredPainDelayedPower.class
-theWeaponMaster\powers\EgoPower.class
 theWeaponMaster\powers\TauntPower.class
 theWeaponMaster\powers\CattleToSlaughterPower.class
 theWeaponMaster\powers\DefensiveStancePower.class

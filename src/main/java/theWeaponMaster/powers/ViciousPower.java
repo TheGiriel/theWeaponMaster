@@ -68,7 +68,7 @@ public class ViciousPower extends TwoAmountPower {
 
     @Override
     public void onRemove() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, 0)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, 1)));
     }
 
     public void stackPower(int stackAmount) {
@@ -86,7 +86,7 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public void reducePower(int stackAmount){
-        this.amount -= stackAmount - 1;
+        this.amount -= stackAmount;
         setBonusDamage();
         if (this.amount < TIER_THREE && this.amount > TIER_TWO) {
             setTierTwo();

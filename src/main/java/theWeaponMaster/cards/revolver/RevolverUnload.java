@@ -12,8 +12,6 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.relics.RevolverRelic;
 
-import java.util.ArrayList;
-
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -49,15 +47,13 @@ public class RevolverUnload extends AbstractDynamicCard {
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
         if (player.hasPower(DexterityPower.POWER_ID)) {
-            return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount / 2);
+            return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
         } else
             return super.calculateModifiedCardDamage(player, mo, tmp);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> ammoDrawPile = new ArrayList<>();
-        ammoDrawPile.addAll(player.drawPile.group);
 
         for (AbstractCard card : player.hand.group) {
             if (card.hasTag(AMMUNITION) && card.type.equals(CardType.ATTACK) && player.getRelic(RevolverRelic.ID).counter > 0) {
@@ -69,13 +65,12 @@ public class RevolverUnload extends AbstractDynamicCard {
             }
         }
 
-        for (AbstractCard card : ammoDrawPile) {
+        for (AbstractCard card : player.drawPile.group) {
             if (player.getRelic(RevolverRelic.ID).counter > 0 && player.drawPile.size() > 0) {
                 if (card.hasTag(AMMUNITION)) {
                     actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                     actionManager.addToBottom(new DiscardSpecificCardAction(card, player.drawPile));
                     player.getRelic(RevolverRelic.ID).counter--;
-                    //RevolverRelic.shotsLeft--;
                 } else {
                     actionManager.addToBottom(new DiscardSpecificCardAction(card, player.drawPile));
                 }

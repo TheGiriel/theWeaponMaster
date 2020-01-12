@@ -53,14 +53,6 @@ public class BullyTaunt extends AbstractBullyCard {
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (intents.contains(m.intent) && !m.hasPower(TauntPower.POWER_ID)) {
-            return true;
-        } else
-            cantUseMessage = "This enemy is already attacking me.";
-        return false;
-    }
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (intents.contains(m.intent)) {
@@ -75,6 +67,7 @@ public class BullyTaunt extends AbstractBullyCard {
                 return true;
             }
         } catch (NullPointerException e) {
+
         }
         cantUseMessage = "This enemy already attacking me.";
         return false;
