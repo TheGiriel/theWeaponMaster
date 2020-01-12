@@ -23,10 +23,10 @@ __15 cards: 5 Attacks, 7 Skills, 3 Powers__
 While these cards are powerful and often give you an extra turn of breathing room, you cannot play _Intimidate_ or _Taunt_ cards them if none of your opponents are attacking or defending respectively.
 
 # The Revolver (Support relic: _Heavy Drum_)  
-__15 cards -> 10 Attacks, 4 Skills, 1 Power__ 
+__15 cards -> 10 Attacks, 4 Skills, 1 Power__   
 This relic allows you to use six _Ammo_ cards before you have to _Reload_, allowing you to return the three bottom cards of your discard pile and drawing one card - but you don't deal damage with the reloading Ammo card!
 The support cards allow you to _Reload_ prematurely, scale _Ammo_ cards with Dexterity or even exhaust one card to deal increased damage to the first target, while dealing collateral damage to the one behind it!  
 
-# The Generics
-__20 cards -> 3 Attacks, 12 Skills, 5 Powers__
+# The Generics  
+__20 cards -> 3 Attacks, 12 Skills, 5 Powers__  
 These last 20 cards finish off the character's pool and give you extra options for both damage and survivability, with a few buffs, debuffs and card manipulation sprinkled in - two of these cards even come in a double pack: Bob and Weave, as well as Relax and Recollect are two defense-oriented cards that switch effects after being played!
