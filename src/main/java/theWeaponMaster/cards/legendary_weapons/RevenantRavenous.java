@@ -35,18 +35,19 @@ public class RevenantRavenous extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int UPGRADED_DAMAGE = 3;
-    private static final int MAGIC_NUMBER = 3;
+    //use damage as magic number and vice versa since I'm lazy
+    private static final int DAMAGE_TO_MAGIC = 3;
+    private static final int UPGRADED_DAMAGE = 2;
+    private static final int MAGIC_NUMBER_TO_DAMAGE = 6;
     private static final int UPGRADED_MAGIC_NUMBER = 2;
     private final int HUNGERCOST = 4;
-    private static int turnCount = 0;
+    private int turnCount = 0;
 
     public RevenantRavenous() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        this.damage = baseDamage = DAMAGE;
-        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.damage = baseDamage = DAMAGE_TO_MAGIC;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER_TO_DAMAGE;
         this.secondValue = baseSecondValue = ArsenalRelic.revenantHunger;
 
         AlwaysRetainField.alwaysRetain.set(this, true);
@@ -86,26 +87,33 @@ public class RevenantRavenous extends AbstractDynamicCard {
         return AbstractDungeon.player.hasRelic(GhoulskinSheathRelic.ID);
     }
 
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (turnCount > 0) {
+            return super.calculateModifiedCardDamage(player, mo, tmp + turnCount);
+        } else
+            return super.calculateModifiedCardDamage(player, mo, tmp);
+    }
+
     //TODO: Improve method
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         if (ArsenalRelic.revenantHunger >= HUNGERCOST) {
             new RevenantStarveAction(-HUNGERCOST, false);
-            AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, this.magicNumber)));
+            AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, 3)));
         } else {
             new RevenantStarveAction(0, true);
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, this.magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, this.damage)));
 
         TheWeaponMaster.logger.info("Getting sated change");
         getSated();
     }
 
     public void atTurnStart() {
-        turnCount++;
-        if (AbstractDungeon.player.hand.contains(this) && turnCount > 1) {
-            baseMagicNumber += 2;
+        if (AbstractDungeon.player.hand.contains(this)) {
+            turnCount++;
         }
     }
 }

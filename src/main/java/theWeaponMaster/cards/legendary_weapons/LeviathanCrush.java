@@ -1,5 +1,6 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +12,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.LeviathanChargeAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
+import theWeaponMaster.powers.StaggerPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.ShockwaveModulatorRelic;
 
@@ -34,9 +36,9 @@ public class LeviathanCrush extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int DAMAGE = 8;
     private static final int UPGRADED_DAMAGE = 2;
-    private static int MAGIC_NUMBER = 25;
-    private static int UPGRADED_MAGIC_NUMBER = 25;
-    private final int CHARGECOST = 1;
+    private static final int MAGIC_NUMBER = 25;
+    private static final int UPGRADED_MAGIC_NUMBER = 25;
+    private static final int CHARGECOST = 1;
 
     public LeviathanCrush() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -62,21 +64,19 @@ public class LeviathanCrush extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int armorCrush = 0;
+        int armorPiercingDamage = 0;
         //TODO: Review the code and write something better.
         if (m.currentBlock > 0) {
-            if (this.damage > m.currentBlock) {
-                armorCrush = (int) Math.ceil((this.damage - m.currentBlock) * (magicNumber / 100));
-            } else {
-                armorCrush = (int) Math.ceil((this.damage) * (magicNumber / 100));
-            }
+            armorPiercingDamage = (int) (Math.min(m.currentBlock, damage) * ((double) magicNumber / 100));
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
-        if (armorCrush != 0 && ArsenalRelic.leviathanCharges >= CHARGECOST) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorCrush * 2, DamageInfo.DamageType.HP_LOSS)));
+        if (armorPiercingDamage != 0 && ArsenalRelic.leviathanCharges >= CHARGECOST) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (armorPiercingDamage * 1.5), DamageInfo.DamageType.HP_LOSS)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, p, (int) (m.currentBlock * 1.5))));
             new LeviathanChargeAction(-CHARGECOST);
-        } else if (armorCrush != 0) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorCrush, DamageInfo.DamageType.HP_LOSS)));
+        } else if (armorPiercingDamage != 0) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage, DamageInfo.DamageType.HP_LOSS)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, p, m.currentBlock)));
         }
     }
 }

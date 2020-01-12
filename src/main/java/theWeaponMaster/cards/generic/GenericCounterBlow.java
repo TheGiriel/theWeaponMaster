@@ -46,6 +46,7 @@ public class GenericCounterBlow extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC);
+            upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
     }

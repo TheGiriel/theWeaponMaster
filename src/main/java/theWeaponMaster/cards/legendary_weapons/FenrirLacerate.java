@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.powers.KneecappedPower;
 import theWeaponMaster.powers.LaceratePower;
 import theWeaponMaster.relics.SplinteringSteelRelic;
 
@@ -33,11 +34,7 @@ public class FenrirLacerate extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
-    private static final int MAGIC_NUMBER = 2;
-    private static final int EVOLUTION = 1;
-    private String lacerate = LaceratePower.POWER_ID;
-
-    public static final String weapon = "Fenrir";
+    private static final int MAGIC_NUMBER = 1;
 
     public FenrirLacerate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -50,8 +47,14 @@ public class FenrirLacerate extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, p, this.magicNumber), magicNumber));
-        if (m.hasPower(lacerate) && m.getPower(lacerate).amount >= 3) {
-            new FenrirEvolveAction(); //works properly now
+        if (m.hasPower(LaceratePower.POWER_ID)) {
+            int evolveThreshold = m.getPower(LaceratePower.POWER_ID).amount;
+            if (m.hasPower(KneecappedPower.POWER_ID)) {
+                evolveThreshold += m.getPower(KneecappedPower.POWER_ID).amount;
+            }
+            if (evolveThreshold > 3) {
+                new FenrirEvolveAction(); //works properly now
+            }
         }
     }
 

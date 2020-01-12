@@ -39,7 +39,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
     private static final int BULLY_COST = 4;
     private static final int UPGRADED_BULLY_NUMBER = 4;
     private static final int MAGIC_NUMBER = 2;
-    private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
+    private HashSet<AbstractMonster.Intent> intents;
 
     public BullyTerrifyingHowl() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -76,16 +76,12 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
     }
 
     @Override
-    public boolean cardPlayable(AbstractMonster m) {
-        try {
-            for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-                if (intents.contains(monster.intent) && !monster.hasPower(TauntPower.POWER_ID)) {
-                    return true;
-                }
-            }
-        } catch (NullPointerException e) {
-            TheWeaponMaster.logger.info("Some error happened: " + e);
-        }
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = AbstractDungeon.getMonsters().monsters.stream().anyMatch(e -> intents.contains(e.intent) && e.hasPower(IntimidatePower.POWER_ID));
+        if (canUse) {
+            return true;
+        } else
+            cantUseMessage = "Nobody is attacking me!";
         return false;
     }
 

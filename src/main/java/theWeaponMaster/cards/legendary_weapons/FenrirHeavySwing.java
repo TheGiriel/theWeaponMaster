@@ -33,10 +33,6 @@ public class FenrirHeavySwing extends AbstractDynamicCard {
     private static final int DAMAGE = 3;
     private static final int UPGRADED_DAMAGE = 1;
     private static final int MAGIC_NUMBER = 0;
-    private static final int EVOLUTION = 1;
-    private static final int d = 0;
-
-    public static final String weapon = "Fenrir";
 
     public FenrirHeavySwing() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -69,7 +65,7 @@ public class FenrirHeavySwing extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, heavySwing(p), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        if (p.hand.size() <= 3) {
+        if (p.hand.size() > 3) {
             new FenrirEvolveAction();
         }
     }

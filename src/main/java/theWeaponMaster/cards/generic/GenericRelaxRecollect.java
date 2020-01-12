@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.OctopusAction;
+import theWeaponMaster.actions.RecollectAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.util.FlipCard;
@@ -16,7 +16,6 @@ import theWeaponMaster.util.FlipCard;
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class GenericRelaxRecollect extends AbstractDynamicCard implements FlipCard {
-
 
     public static final String ID = TheWeaponMaster.makeID(GenericRelaxRecollect.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
@@ -32,7 +31,7 @@ public class GenericRelaxRecollect extends AbstractDynamicCard implements FlipCa
 
     private static final int BLOCK = 3;
     private static final int UPGRADED_BLOCK = 2;
-    private static final int MAGIC_NUMBER = 2;
+    private static final int MAGIC_NUMBER = 3;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int SECOND_VALUE = 1;
     private static final int UPGRADED_SECOND_VALUE = 1;
@@ -61,24 +60,35 @@ public class GenericRelaxRecollect extends AbstractDynamicCard implements FlipCa
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeSecondValue(UPGRADED_SECOND_VALUE);
             upgradeBlock(UPGRADED_BLOCK);
+            upgradeMagicNumber(-UPGRADED_MAGIC_NUMBER);
+            upgradeSecondValue(UPGRADED_SECOND_VALUE);
             initializeDescription();
         }
     }
 
     @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = AbstractDungeon.player.discardPile.size() >= magicNumber;
+        if (!flipped) {
+            return true;
+        } else if (!canUse) {
+            cantUseMessage = "There aren't enough cards to exhaust for this.";
+            return false;
+        } else return true;
+    }
+
+    @Override
     public void flipCard() {
         if (!flipped) {
-            this.name = DESCRIPTIONS[1];
-            rawDescription = DESCRIPTIONS[2];
+            this.name = DESCRIPTIONS[2];
+            rawDescription = DESCRIPTIONS[3];
             this.cost = 0;
             this.secondValue = baseSecondValue = SECOND_VALUE;
             flipped = true;
         } else {
-            this.name = cardStrings.NAME;
-            rawDescription = DESCRIPTIONS[0];
+            this.name = DESCRIPTIONS[0];
+            rawDescription = DESCRIPTIONS[1];
             this.cost = COST;
             this.secondValue = baseSecondValue = AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount / 3;
             flipped = false;
@@ -86,32 +96,22 @@ public class GenericRelaxRecollect extends AbstractDynamicCard implements FlipCa
         initializeDescription();
     }
 
-    /*@Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if (!flipped && c.type.equals(CardType.ATTACK)) {
-            if (AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount==0){
-                return;
-            }
-            this.secondValue = baseSecondValue = AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount / 5;
-        }
-    }*/
-
     @Override
     public void standardUse(AbstractPlayer p, AbstractMonster m) {
         int viciousBonus = 0;
         if (p.hasPower(ViciousPower.POWER_ID)) {
             viciousBonus = p.getPower(ViciousPower.POWER_ID).amount / 3;
         }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block + viciousBonus));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block + viciousBonus * secondValue));
         if (p.hasPower(ViciousPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, ViciousPower.POWER_ID, (p.getPower(ViciousPower.POWER_ID).amount - p.getPower(ViciousPower.POWER_ID).amount % 5)));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, ViciousPower.POWER_ID, (p.getPower(ViciousPower.POWER_ID).amount - p.getPower(ViciousPower.POWER_ID).amount % 3)));
         }
         flipCard();
     }
 
     @Override
     public void flipUse(AbstractPlayer p, AbstractMonster m) {
-        new OctopusAction().discardExhaust(magicNumber);
+        AbstractDungeon.actionManager.addToBottom(new RecollectAction(magicNumber));
         flipCard();
     }
 }

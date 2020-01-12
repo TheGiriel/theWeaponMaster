@@ -13,6 +13,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.MarksmanshipPower;
+import theWeaponMaster.relics.HeavyDrum;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -33,12 +34,10 @@ public class RevolverFullMetal extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
-    private static final int UPGRADED_DAMAGE = 3;
+    private static final int DAMAGE = 6;
+    private static final int UPGRADED_DAMAGE = 2;
     private static final int MAGIC_NUMBER = 25;
     private static final int UPGRADED_MAGIC_NUMBER = 25;
-
-    private int dexBonus = 0;
 
     public RevolverFullMetal() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -57,8 +56,12 @@ public class RevolverFullMetal extends AbstractDynamicCard {
         }
     }
 
+
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (player.hasRelic(HeavyDrum.ID)) {
+            tmp++;
+        }
         if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
             return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
         } else
@@ -71,10 +74,13 @@ public class RevolverFullMetal extends AbstractDynamicCard {
             new ReloadAction();
             return;
         }
-        double bonusDamge = 1;
-        if (m.currentBlock != 0) {
-            bonusDamge += ((double) magicNumber / 100);
+        int armorPiercingDamage = 0;
+        if (m.currentBlock > 0) {
+            armorPiercingDamage = (int) (Math.min(m.currentBlock, damage) * ((double) magicNumber / 100));
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) Math.ceil(damage * bonusDamge), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        if (armorPiercingDamage != 0) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        }
     }
 }

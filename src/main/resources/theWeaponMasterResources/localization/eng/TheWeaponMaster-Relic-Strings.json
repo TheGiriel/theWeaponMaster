@@ -45,11 +45,11 @@
       "Expend one shot every time you use a Revolver card. Reload when the counter hits 0, refund one Energy when reloading with an Ammunition card."
     ]
   },
-  "theWeaponMaster:UncommonRelicHeavyDrum": {
+  "theWeaponMaster:HeavyDrum": {
     "NAME": "Heavy Drum",
     "FLAVOR": "Thick walls for big bangs.",
     "DESCRIPTIONS": [
-      "As long as you own this relic, you reload after 5 shots and increase the Reload base draw by 1 (But still can only draw up to 3 cards)."
+      "As long as you own this relic, you reload after 5 shots and deal 1 extra damage with Ammunition cards."
     ]
   },
   "theWeaponMaster:SplinteringSteelRelic": {

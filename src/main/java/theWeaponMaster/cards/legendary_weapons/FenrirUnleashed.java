@@ -111,7 +111,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
             totalAttacks += 2;
             p.getRelic(ChemicalX.ID).flash();
         }
-        //TODO: Automatically switch target when weakest monster is dying
+        //TODO: Kinda works?
         weakestMonster(p);
         targetList.clear();
     }

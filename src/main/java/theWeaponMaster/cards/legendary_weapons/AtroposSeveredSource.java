@@ -3,7 +3,6 @@ package theWeaponMaster.cards.legendary_weapons;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,7 +33,7 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;
-    private static final int UPGRADED_DAMAGE = 3;
+    private static final int UPGRADED_DAMAGE = 2;
     private static final int MAGIC_NUMBER = 1;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
 
@@ -63,9 +62,7 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.2F));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.2F));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, 1)));
         ManaBurnAction.ignite(m, magicNumber);
     }

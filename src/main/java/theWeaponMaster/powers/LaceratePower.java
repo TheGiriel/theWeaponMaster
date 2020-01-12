@@ -15,10 +15,10 @@ import theWeaponMaster.util.TextureLoader;
 
 public class LaceratePower extends AbstractPower implements HealthBarRenderPower {
 
-    public static final Color bleed = new Color((float) (255 / 255), (float) (128 / 255), (float) (17 / 255), 1.0F);
+    public static final Color bleed = new Color((float) (1), (float) (128 / 255), (float) (17 / 255), 1.0F);
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("LaceratePower");
     public static final String NAME = powerStrings.NAME;
-    public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String POWER_ID = TheWeaponMaster.makeID(LaceratePower.class.getSimpleName());
     public static final Texture lacerate_84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Lacerate_placeholder_84.png"));
     public static final Texture lacerate_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Lacerate_placeholder_32.png"));
@@ -40,7 +40,7 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
 
         updateDamage();
         updateDescription();
-        this.type = AbstractPower.PowerType.DEBUFF;
+        this.type = PowerType.DEBUFF;
         this.isTurnBased = true;
     }
 
@@ -50,11 +50,7 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
     }
 
     public void updateDescription() {
-        if (this.amount < 3) {
-            this.description = DESCRIPTION[0] + (this.amount * 2) + DESCRIPTION[1] + this.bleedDamage + DESCRIPTION[2] + this.amount;
-        } else {
-            this.description = DESCRIPTION[0] + (this.amount * 2) + DESCRIPTION[1] + this.bleedDamage + DESCRIPTION[3];
-        }
+        this.description = DESCRIPTIONS[0] + (this.amount * 2) + DESCRIPTIONS[1] + this.bleedDamage + DESCRIPTIONS[2] + this.amount;
     }
 
     public void stackPower(int stackAmount) {

@@ -32,8 +32,8 @@ public class CerberusModularSlash extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     private static final int COST = 2;
-    private static final int DAMAGE = 12;
-    private static final int UPGRADED_DAMAGE = 3;
+    private static final int DAMAGE = 7;
+    private static final int UPGRADED_DAMAGE = 2;
     private static final int MAGIC_NUMBER = 4;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
 
@@ -61,7 +61,7 @@ public class CerberusModularSlash extends AbstractDynamicCard {
     private void Flash(Object state, ArrayList<AbstractCard> discarded) {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = (AbstractMonster) state;
-        int flashBonus = -2;
+        int flashBonus = -1;
         int flashBlock = 0;
         int flashEnergy = 0;
         int flashCurse = 0;
@@ -70,10 +70,10 @@ public class CerberusModularSlash extends AbstractDynamicCard {
             if (discarded.size() > 1) {
                 for (AbstractCard c : discarded) {
                     if (c.type.equals(CardType.ATTACK)) {
-                        flashBonus += 2;
+                        flashBonus++;
                     }
                     if (c.type.equals(CardType.SKILL)) {
-                        flashBlock += 5;
+                        flashBlock += 3;
                     }
                     if (c.type.equals(CardType.STATUS) || c.type.equals(CardType.CURSE)) {
                         flashCurse++;

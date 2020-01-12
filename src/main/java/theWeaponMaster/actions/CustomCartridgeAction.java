@@ -53,7 +53,7 @@ public class CustomCartridgeAction extends AbstractGameAction {
 
             //ammoSelection.clear();
             if (ammoSelection.size() >= 1) {
-                AbstractDungeon.gridSelectScreen.open(ammoSelection, 1, "Exhaust one Ammo card:", false);
+                AbstractDungeon.gridSelectScreen.open(ammoSelection, 1, "Purge one Ammo card:", false, false, true, true);
                 this.tickDuration();
                 return;
             }
@@ -96,6 +96,5 @@ public class CustomCartridgeAction extends AbstractGameAction {
         if (monsterList.size() > firstEnemy + 1 && !hitMinions) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy + 1), new DamageInfo(p, (customDamge / 2), DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_LIGHT));
         }
-        hitMinions = false;
     }
 }

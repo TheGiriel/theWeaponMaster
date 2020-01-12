@@ -360,15 +360,14 @@ public class TheWeaponMaster implements
         
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new RevolverRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new HeavyDrum(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ArsenalRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new SplinteringSteelRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new HellhoundOilRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ManaWhetstoneRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new ShockwaveModulatorRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new GhoulskinSheathRelic(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new UncommonRelicHeavyDrum(), theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
@@ -379,7 +378,7 @@ public class TheWeaponMaster implements
         UnlockTracker.markRelicAsSeen(ManaWhetstoneRelic.ID);
         UnlockTracker.markRelicAsSeen(ShockwaveModulatorRelic.ID);
         UnlockTracker.markRelicAsSeen(GhoulskinSheathRelic.ID);
-        UnlockTracker.markRelicAsSeen(UncommonRelicHeavyDrum.ID);
+        UnlockTracker.markRelicAsSeen(HeavyDrum.ID);
         logger.info("Done adding relics!");
     }
     
@@ -454,8 +453,8 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(BullyTaunt.ID);
         BaseMod.addCard(new BullyMeanToEveryone());
         UnlockTracker.unlockCard(BullyMeanToEveryone.ID);
-        BaseMod.addCard(new BullyConfident());
-        UnlockTracker.unlockCard(BullyConfident.ID);
+        BaseMod.addCard(new BullyConfidence());
+        UnlockTracker.unlockCard(BullyConfidence.ID);
         BaseMod.addCard(new BullyWimp());
         UnlockTracker.unlockCard(BullyWimp.ID);
         BaseMod.addCard(new BullyIntimidate());
@@ -478,8 +477,8 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(BullyTrip.ID);
         BaseMod.addCard(new BullyClothesline());
         UnlockTracker.unlockCard(BullyClothesline.ID);
-        //BaseMod.addCard(new BullyCard15());
-        //UnlockTracker.unlockCard(BullyCard15.ID);
+        BaseMod.addCard(new BullyMockery());
+        UnlockTracker.unlockCard(BullyMockery.ID);
 
         BaseMod.addCard(new Strike_WeaponMaster());
         UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
@@ -505,8 +504,8 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(RevolverCustomCartridge.ID);
         BaseMod.addCard(new RevolverDoubleTap());
         UnlockTracker.unlockCard(RevolverDoubleTap.ID);
-        //BaseMod.addCard(new RevolverSkillPreload());
-        //UnlockTracker.unlockCard(RevolverSkillPreload.ID);
+        //BaseMod.addCard(new RevolverKneecap());
+        //UnlockTracker.unlockCard(RevolverKneecap.ID);
         BaseMod.addCard(new RevolverQuickload());
         UnlockTracker.unlockCard(RevolverQuickload.ID);
         BaseMod.addCard(new RevolverUnload());
@@ -526,8 +525,8 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(GenericLimberUp.ID);
         BaseMod.addCard(new GenericThrowingKnives());
         UnlockTracker.unlockCard(GenericThrowingKnives.ID);
-        //BaseMod.addCard(new GenericAttackDoubleStrike());
-        //UnlockTracker.unlockCard(GenericAttackDoubleStrike.ID);
+        BaseMod.addCard(new GenericBobWeave());
+        UnlockTracker.unlockCard(GenericBobWeave.ID);
         //BaseMod.addCard(new GenericPushKick());
         //UnlockTracker.unlockCard(GenericPushKick.ID);
         BaseMod.addCard(new GenericPreparation());
@@ -546,8 +545,8 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(GenericOpportunism.ID);
         //BaseMod.addCard(new GenericUncommonPower());
         //UnlockTracker.unlockCard(GenericUncommonPower.ID);
-        //BaseMod.addCard(new GenericUncommonPowerHuntersIntuition());
-        //UnlockTracker.unlockCard(GenericUncommonPowerHuntersIntuition.ID());
+        BaseMod.addCard(new GenericRecklessness());
+        UnlockTracker.unlockCard(GenericRecklessness.ID);
         BaseMod.addCard(new GenericRelaxRecollect());
         UnlockTracker.unlockCard(GenericRelaxRecollect.ID);
         //BaseMod.addcard(new GenericCard20());

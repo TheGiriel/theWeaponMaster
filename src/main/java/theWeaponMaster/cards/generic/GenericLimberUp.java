@@ -25,7 +25,7 @@ public class GenericLimberUp extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     private static final int COST = 3;
-    private static final int MAGIC = 6;
+    private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
 
     public GenericLimberUp() {

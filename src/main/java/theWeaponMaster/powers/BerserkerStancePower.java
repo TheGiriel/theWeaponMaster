@@ -57,6 +57,11 @@ public class BerserkerStancePower extends AbstractPower implements CloneablePowe
     }
 
     @Override
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1];
+    }
+
+    @Override
     public AbstractPower makeCopy() {
         return new BerserkerStancePower(owner, amount);
     }

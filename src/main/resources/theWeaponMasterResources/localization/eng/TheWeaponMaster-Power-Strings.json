@@ -45,9 +45,15 @@
     "DESCRIPTIONS": [
       "This creature loses ",
       "% Max HP #r(",
-      ") every turn. NL [#990055]Lacerate Stacks: #r",
-      ") every turn. NL [#990000]This [#990000]creature [#990000]is [#990000]susceptible [#990000]to [#990000]special [#990000]attacks.",
-      "Creatures affected by [#990000]Lacerate lose 2-6% Max HP every turn."
+      ") every turn. NL [#990055]Lacerate Stacks: #r"
+    ]
+  },
+  "KneecappedPower": {
+    "NAME": "Kneecapped",
+    "DESCRIPTIONS": [
+      "This creature loses ",
+      "% Max HP #r(",
+      ") every turn. NL This counts as one stack of Lacerate."
     ]
   },
   "NoseToTailPower": {
@@ -124,6 +130,12 @@
     "DESCRIPTIONS": [
       "Take ",
       "% less damage, gain Block equal to HP lost from attacks."
+    ]
+  },
+  "RecklessnessPower": {
+    "NAME": "Recklessness",
+    "DESCRIPTIONS": [
+      "Draw 1 extra card at the start of your turn."
     ]
   },
   "PreparationPower": {

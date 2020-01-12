@@ -2,7 +2,6 @@ package theWeaponMaster.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
-import basemod.interfaces.PostInitializeSubscriber;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -24,18 +23,10 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theWeaponMaster.cards.generic.Defend_WeaponMaster;
-import theWeaponMaster.cards.generic.GenericOpportunism;
-import theWeaponMaster.cards.generic.GenericPreparation;
-import theWeaponMaster.cards.generic.GenericRelaxRecollect;
-import theWeaponMaster.cards.legendary_weapons.*;
-import theWeaponMaster.cards.revolver.RevolverMarksmanship;
-import theWeaponMaster.cards.revolver.RevolverUnload;
-import theWeaponMaster.cards.revolver.RevolverWarningShot;
-import theWeaponMaster.cards.revolver.Strike_WeaponMaster;
+import theWeaponMaster.cards.generic.*;
+import theWeaponMaster.cards.revolver.RevolverQuickload;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.ArsenalRelic;
-import theWeaponMaster.relics.DefaultClickableRelic;
 import theWeaponMaster.relics.RevolverRelic;
 
 import java.util.ArrayList;
@@ -47,7 +38,7 @@ import static theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in TheWeaponMaster-character-Strings.json in the resources
 
-public class TheWeaponMaster extends CustomPlayer implements PostInitializeSubscriber {
+public class TheWeaponMaster extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(theWeaponMaster.TheWeaponMaster.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
@@ -148,18 +139,20 @@ public class TheWeaponMaster extends CustomPlayer implements PostInitializeSubsc
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(Defend_WeaponMaster.ID);
-        retVal.add(GenericRelaxRecollect.ID);
-        retVal.add(RevolverWarningShot.ID);
+
+        retVal.add(GenericBobWeave.ID);
+        //retVal.add(GenericPushKick.ID);
         retVal.add(GenericPreparation.ID);
+        retVal.add(GenericFlashbang.ID);
+        retVal.add(RevolverQuickload.ID);
+        //retVal.add(GenericRareDraw.ID);
+        retVal.add(GenericRedirectBlows.ID);
+        retVal.add(GenericDodge.ID);
+        retVal.add(GenericInvestigate.ID);
         retVal.add(GenericOpportunism.ID);
-        retVal.add(RevolverUnload.ID);
-        retVal.add(RevolverMarksmanship.ID);
-        //retVal.add(RevolverSpecialGradeAmmo.ID);
-        //retVal.add(GenericSleightOfHand.ID);
-        //retVal.add(GenericFreshApple.ID);
+        //retVal.add(GenericUncommonPower.ID);
+        retVal.add(GenericRecklessness.ID);
+        retVal.add(GenericRelaxRecollect.ID);
         return retVal;
     }
 
@@ -185,11 +178,11 @@ public class TheWeaponMaster extends CustomPlayer implements PostInitializeSubsc
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(ArsenalRelic.ID);
         retVal.add(RevolverRelic.ID);
-        retVal.add(DefaultClickableRelic.ID);
+        //retVal.add(DefaultClickableRelic.ID);
 
         UnlockTracker.markRelicAsSeen(ArsenalRelic.ID);
         UnlockTracker.markRelicAsSeen(RevolverRelic.ID);
-        UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
+        //UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 
         return retVal;
     }
@@ -201,6 +194,7 @@ public class TheWeaponMaster extends CustomPlayer implements PostInitializeSubsc
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ViciousPower(AbstractDungeon.player, 1)));
         }
     }
+
 
     // character Select screen effect
     @Override
@@ -273,37 +267,6 @@ public class TheWeaponMaster extends CustomPlayer implements PostInitializeSubsc
         return theWeaponMaster.TheWeaponMaster.DEFAULT_GRAY;
     }
 
-    @Override
-    public void receivePostInitialize() {
-        ArrayList<AbstractCard> removeLegendary = new ArrayList<>();
-        removeLegendary.add(new FenrirLacerate());
-        removeLegendary.add(new FenrirShieldEater());
-        removeLegendary.add(new FenrirHeavySwing());
-        removeLegendary.add(new FenrirUnleashed());
-        removeLegendary.add(new FenrirDefensiveStance());
-        removeLegendary.add(new CerberusSlash());
-        removeLegendary.add(new CerberusEssenceSlash());
-        removeLegendary.add(new CerberusModularSlash());
-        removeLegendary.add(new CerberusIaiSlash());
-        removeLegendary.add(new CerberusDrainSlash());
-        removeLegendary.add(new RevenantRavenous());
-        removeLegendary.add(new RevenantChopChopCHOP());
-        removeLegendary.add(new RevenantHungrySteel());
-        removeLegendary.add(new RevenantNoseToTail());
-        removeLegendary.add(new RevenantBloodbath());
-        removeLegendary.add(new AtroposSeveredSource());
-        removeLegendary.add(new AtroposSeveredScissors());
-        removeLegendary.add(new AtroposSeveredPath());
-        removeLegendary.add(new AtroposSeveredPain());
-        removeLegendary.add(new AtroposSeveredSoul());
-        removeLegendary.add(new LeviathanCrush());
-        removeLegendary.add(new LeviathanGauntletCharger());
-        removeLegendary.add(new LeviathanGroundSplitter());
-        removeLegendary.add(new LeviathanDeepImpact());
-        removeLegendary.add(new LeviathanEarthquake());
-
-
-    }
 
     public static class Enums {
         @SpireEnum

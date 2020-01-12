@@ -35,7 +35,7 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
@@ -70,9 +70,9 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = (AbstractMonster) state;
         int essenceDamage = 0;
-        int flashBonus = discarded.size() * 2;
+        int flashBonus = discarded.size() - 1;
 
-        if (state != null && discarded != null) {
+        if (state != null) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
 
             if (upgraded && discarded.size() - 1 >= magicNumber - 1) {

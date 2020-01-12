@@ -1,7 +1,6 @@
 package theWeaponMaster.cards.legendary_weapons;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.RevenantStarveAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
-import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.GhoulskinSheathRelic;
 
@@ -83,17 +81,17 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        boolean hungering = (ArsenalRelic.revenantHunger >= HUNGERCOST);
         int hungryBoost = 0;
-        if (ArsenalRelic.revenantHunger >= HUNGERCOST) {
+        if (hungering) {
             hungryBoost++;
             new RevenantStarveAction(-HUNGERCOST, false);
-        } else {
-            new RevenantStarveAction(0, true);
         }
         for (int i = 0; i < magicNumber + hungryBoost; i++) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage)));
-            AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, 1)));
+        }
+        if (!hungering) {
+            new RevenantStarveAction(0, true);
         }
         getSated();
     }

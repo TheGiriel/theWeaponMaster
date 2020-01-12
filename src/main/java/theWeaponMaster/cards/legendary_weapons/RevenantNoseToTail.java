@@ -14,7 +14,6 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.RevenantStarveAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.NoseToTailPower;
-import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.GhoulskinSheathRelic;
 
@@ -91,7 +90,6 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new NoseToTailPower(m, magicNumber - hungryBoost), 1));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, 3)));
         getSated();
     }
 }

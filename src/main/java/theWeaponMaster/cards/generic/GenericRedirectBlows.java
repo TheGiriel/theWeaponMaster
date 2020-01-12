@@ -16,7 +16,6 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class GenericRedirectBlows extends AbstractDynamicCard {
 
-
     public static final String ID = TheWeaponMaster.makeID(GenericRedirectBlows.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
@@ -44,7 +43,6 @@ public class GenericRedirectBlows extends AbstractDynamicCard {
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, magicNumber);
         ExhaustiveField.ExhaustiveFields.exhaustive.set(this, magicNumber);
     }
-
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

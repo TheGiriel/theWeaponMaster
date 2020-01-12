@@ -35,11 +35,11 @@ public class EnemyForceAction extends AbstractGameAction {
 
     public static HashSet<AbstractMonster.Intent> getIntents(AbstractCard card) {
         HashSet<AbstractMonster.Intent> intents = new HashSet<>();
-        intents.add(BUFF);
-        intents.add(DEBUFF);
-        intents.add(STRONG_DEBUFF);
-        intents.add(MAGIC);
         if (card.hasTag(TAUNT)) {
+            intents.add(BUFF);
+            intents.add(DEBUFF);
+            intents.add(STRONG_DEBUFF);
+            intents.add(MAGIC);
             intents.add(DEFEND);
             intents.add(DEFEND_BUFF);
             intents.add(DEFEND_DEBUFF);
@@ -51,6 +51,10 @@ public class EnemyForceAction extends AbstractGameAction {
             intents.add(ATTACK_DEBUFF);
         }
         if (card.hasTag(IGNITE)) {
+            intents.add(BUFF);
+            intents.add(DEBUFF);
+            intents.add(STRONG_DEBUFF);
+            intents.add(MAGIC);
             intents.add(ATTACK_BUFF);
             intents.add(ATTACK_DEBUFF);
             intents.add(DEFEND_BUFF);

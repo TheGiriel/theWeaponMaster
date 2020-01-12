@@ -33,14 +33,11 @@ public class GenericThrowingKnives extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 2;
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int SECOND_VALUE = 2;
-    private static final int UPGRADED_SECOND_VALUE = 1;
 
     public GenericThrowingKnives() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.secondValue = baseSecondValue = SECOND_VALUE;
 
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, magicNumber);
         ExhaustiveField.ExhaustiveFields.exhaustive.set(this, magicNumber);
@@ -56,7 +53,7 @@ public class GenericThrowingKnives extends AbstractDynamicCard {
     @Override
     public void triggerOnManualDiscard() {
         for (int i = 0; i < ExhaustiveField.ExhaustiveFields.exhaustive.get(this); i++) {
-            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, secondValue, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
     }
 
@@ -66,7 +63,6 @@ public class GenericThrowingKnives extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeSecondValue(UPGRADED_SECOND_VALUE);
             ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
             initializeDescription();
         }

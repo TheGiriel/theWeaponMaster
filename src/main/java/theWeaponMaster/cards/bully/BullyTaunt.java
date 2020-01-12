@@ -38,7 +38,7 @@ public class BullyTaunt extends AbstractBullyCard {
     private static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int BULLY_COST = 15;
     private static final int UPGRADED_BULLY_NUMBER = 3;
-    private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
+    private HashSet<AbstractMonster.Intent> intents;
 
     public BullyTaunt() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -53,13 +53,20 @@ public class BullyTaunt extends AbstractBullyCard {
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);
     }
 
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (intents.contains(m.intent) && !m.hasPower(TauntPower.POWER_ID)) {
+            return true;
+        } else
+            cantUseMessage = "This enemy is already attacking me.";
+        return false;
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m.intent != AbstractMonster.Intent.ATTACK && m.intent != AbstractMonster.Intent.ATTACK_BUFF && m.intent != AbstractMonster.Intent.ATTACK_DEBUFF && m.intent != AbstractMonster.Intent.ATTACK_DEFEND && m.intent != AbstractMonster.Intent.SLEEP && m.intent != AbstractMonster.Intent.STUN) {
+        if (intents.contains(m.intent)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TauntPower(m, p)));
         }
     }
-
 
     @Override
     public boolean cardPlayable(AbstractMonster m) {

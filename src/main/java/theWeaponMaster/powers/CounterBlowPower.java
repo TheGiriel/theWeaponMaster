@@ -36,14 +36,15 @@ public class CounterBlowPower extends AbstractPower {
         this.ID = POWER_ID;
         this.costBonus = costBonus;
 
-        //owner = p;
+        this.owner = p;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
-        updateDescription();
         this.type = PowerType.BUFF;
         this.amount = counterPower;
+
+        updateDescription();
     }
 /*
     @Override
@@ -58,17 +59,21 @@ public class CounterBlowPower extends AbstractPower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if (drawPile != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
-            this.flash();
-            int cardCost = drawPile.getTopCard().cost;
-            if (cardCost < 0) {
-                cardCost = 0;
+        try {
+            if (AbstractDungeon.player.drawPile != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
+                this.flash();
+                int cardCost = drawPile.getTopCard().cost;
+                if (cardCost < 0) {
+                    cardCost = 0;
+                }
+                if (AbstractDungeon.player.drawPile.getTopCard().type == AbstractCard.CardType.ATTACK) {
+                    AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, new DamageInfo(player, Math.min(Math.max(cardCost + costBonus, drawPile.getTopCard().baseDamage), this.amount))));
+                } else
+                    AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, new DamageInfo(player, cardCost + costBonus, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+                AbstractDungeon.player.drawPile.moveToDiscardPile(drawPile.getTopCard());
             }
-            if (drawPile.getTopCard().type == AbstractCard.CardType.ATTACK) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(info.owner, new DamageInfo(player, Math.min(Math.max(cardCost + costBonus, drawPile.getTopCard().baseDamage), this.amount))));
-            } else
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(info.owner, new DamageInfo(player, cardCost + costBonus, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-            drawPile.moveToDiscardPile(drawPile.getTopCard());
+        } catch (ArrayIndexOutOfBoundsException e) {
+
         }
         return damageAmount;
     }

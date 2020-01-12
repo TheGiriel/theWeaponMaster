@@ -3,7 +3,6 @@ package theWeaponMaster.cards.revolver;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,16 +22,14 @@ import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 public class RevolverUnload extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevolverUnload.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     private static final int COST = 3;
     private static final int DAMAGE = 4;
     private static final int UPGRADE_DAMAGE = 2;
-
-    private int dexBonus = 0;
 
     public RevolverUnload() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -70,7 +67,6 @@ public class RevolverUnload extends AbstractDynamicCard {
             } else if (player.getRelic(RevolverRelic.ID).counter == 0) {
                 return;
             }
-            actionManager.addToBottom(new WaitAction(0.1F));
         }
 
         for (AbstractCard card : ammoDrawPile) {
@@ -84,7 +80,6 @@ public class RevolverUnload extends AbstractDynamicCard {
                     actionManager.addToBottom(new DiscardSpecificCardAction(card, player.drawPile));
                 }
             } else return;
-            actionManager.addToBottom(new WaitAction(0.08F));
         }
     }
 

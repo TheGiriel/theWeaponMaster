@@ -36,7 +36,7 @@ public class BullyIntimidate extends AbstractBullyCard {
     private static final int MAGIC_NUMBER = 10;
     private static final int UPGRADED_MAGIC_NUMBER = 3;
     private static final int BULLY_COST = 3;
-    private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
+    private HashSet<AbstractMonster.Intent> intents;
 
     public BullyIntimidate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -57,6 +57,14 @@ public class BullyIntimidate extends AbstractBullyCard {
         if (intents.contains(m.intent)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new IntimidatePower(m, p)));
         }
+    }
+
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (intents.contains(m.intent) && !m.hasPower(IntimidatePower.POWER_ID)) {
+            return true;
+        } else
+            cantUseMessage = "This enemy isn't attacking.";
+        return false;
     }
 
     @Override

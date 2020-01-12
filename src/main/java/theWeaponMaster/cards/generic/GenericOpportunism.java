@@ -38,7 +38,6 @@ public class GenericOpportunism extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.block = baseBlock = BLOCK;
-
     }
 
 

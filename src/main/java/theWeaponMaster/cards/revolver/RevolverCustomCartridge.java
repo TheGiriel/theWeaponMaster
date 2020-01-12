@@ -35,8 +35,6 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
     private static final int UPGRADED_MAGIC_NUMBER = 50;
     private static final int SECOND_VALUE = 75;
     private static final int UPGRADED_SECOND_VALUE = 25;
-    public static int customDamage = 0;
-
 
     public RevolverCustomCartridge() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -45,39 +43,20 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
     }
 
     @Override
-    public boolean canPlay(AbstractCard card) {
-        ArrayList<AbstractCard> ammunitionCards = new ArrayList();
-        ammunitionCards.addAll(AbstractDungeon.player.hand.group);
-        return ammunitionCards.stream().anyMatch(e -> e.hasTag(WeaponMasterTags.AMMUNITION) && (!e.cardID.equals(RevolverBuckshot.ID) || !e.cardID.equals(RevolverWarningShot.ID)));
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        ArrayList<AbstractCard> ammunitionCards = new ArrayList(AbstractDungeon.player.hand.group);
+        boolean canUse = ammunitionCards.stream().anyMatch(e -> e.hasTag(WeaponMasterTags.AMMUNITION) && (!e.cardID.equals(RevolverBuckshot.ID) || !e.cardID.equals(RevolverWarningShot.ID) || !e.cardID.equals(RevolverKneecap.ID)));
+        if (canUse) {
+            return true;
+        } else {
+            cantUseMessage = "I don't have any appropriate ammo...";
+            return false;
+        }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new CustomCartridgeAction(m, magicNumber, secondValue, this));
-        /*new OctopusAction().ammoExhaust();
-
-        ArrayList<AbstractMonster> monsterList = AbstractDungeon.getMonsters().monsters;
-        boolean hitMinions = false;
-
-        int firstEnemy = monsterList.indexOf(m);
-
-        if (upgraded) {
-            for (AbstractMonster monster : monsterList) {
-                if (m == monster && monster.hasPower(MinionPower.POWER_ID)) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy + 1), new DamageInfo(p, customDamage * (secondValue / 100), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-                    hitMinions = true;
-                    continue;
-                }
-                if (!m.hasPower(MinionPower.POWER_ID)) {
-                    break;
-                }
-            }
-        }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy), new DamageInfo(p, customDamage * (magicNumber / 100), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        if (monsterList.size() > firstEnemy + 1 && !hitMinions) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy + 1), new DamageInfo(p, customDamage * (secondValue / 100), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        }*/
-
     }
 
     @Override

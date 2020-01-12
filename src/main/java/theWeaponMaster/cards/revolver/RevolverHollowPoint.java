@@ -13,6 +13,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.MarksmanshipPower;
+import theWeaponMaster.relics.HeavyDrum;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -30,12 +31,10 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
-    private static final int UPGRADED_DAMAGE = 3;
+    private static final int DAMAGE = 6;
+    private static final int UPGRADED_DAMAGE = 2;
     private static final int MAGIC_NUMBER = 25;
     private static final int UPGRADED_MAGIC_NUMBER = 25;
-
-    private int dexBonus = 0;
 
     public RevolverHollowPoint() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -56,6 +55,9 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
 
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (player.hasRelic(HeavyDrum.ID)) {
+            tmp++;
+        }
         if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
             return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
         } else

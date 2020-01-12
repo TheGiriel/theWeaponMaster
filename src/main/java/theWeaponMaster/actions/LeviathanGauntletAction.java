@@ -1,7 +1,8 @@
 package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -9,6 +10,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import theWeaponMaster.patches.CenterGridCardSelectScreen;
 import theWeaponMaster.relics.ArsenalRelic;
 
@@ -33,7 +36,7 @@ public class LeviathanGauntletAction extends AbstractGameAction {
             CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
             if (ArsenalRelic.leviathanCharges > 0) {
-                group.addToTop(new OctopusAction.ShiftingChoiceCard("Discharge", "Discharge", makeCardPath("Attack.png"), "L Release all remaining Leviathan charges and deal #r" + getPublicDamage() + " damage " + ArsenalRelic.leviathanCharges + " times to random enemies.", AbstractCard.CardType.ATTACK));
+                group.addToTop(new OctopusAction.ShiftingChoiceCard("Discharge", "Discharge", makeCardPath("Attack.png"), "L Release all remaining Leviathan charges and deal " + getPublicDamage() + " damage " + ArsenalRelic.leviathanCharges + " times to random enemies.", AbstractCard.CardType.ATTACK));
             }
 
             if (ArsenalRelic.leviathanCharges < 3) {
@@ -50,7 +53,9 @@ public class LeviathanGauntletAction extends AbstractGameAction {
 
             if (cardChoice.name.equals("Discharge")) {
                 for (int i = 0; i < ArsenalRelic.leviathanCharges; i++) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, getPublicDamage()), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                    AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster();
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(AbstractDungeon.player, getPublicDamage(), DamageInfo.DamageType.THORNS)));
+                    AbstractDungeon.actionManager.addToBottom(new VFXAction(new LightningEffect(m.drawX, m.drawY), 0.2F));
                 }
                 AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-ArsenalRelic.leviathanCharges));
             } else if (cardChoice.name.equals("Recharge")) {

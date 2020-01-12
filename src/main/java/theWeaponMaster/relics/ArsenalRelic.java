@@ -12,15 +12,11 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.ArsenalRecombineAction;
-import theWeaponMaster.actions.LeviathanChargeAction;
-import theWeaponMaster.actions.OctopusAction;
-import theWeaponMaster.actions.RevenantStarveAction;
+import theWeaponMaster.actions.*;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
+import theWeaponMaster.cards.legendary_weapons.RevenantRavenous;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.util.TextureLoader;
-
-import java.util.HashSet;
 
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
@@ -47,7 +43,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public static String currentWeapon = "None";
     public static int leviathanCharges = 3;
     public static int revenantHunger = 10;
-    private HashSet<String> delete = new HashSet<>();
+    public static int fenrirEvolutions = 0;
 
     public AbstractPlayer player = AbstractDungeon.player;
 
@@ -78,7 +74,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onPlayerEndTurn() {
-        if (revenantHunger < 10 && currentWeapon.equals("Revenant")) {
+        if (revenantHunger < 10) {
             for (AbstractCard card : player.hand.group) {
                 if (card.hasTag(REVENANT)) {
                     starveRevenant();
@@ -92,7 +88,6 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
         stopPulse();
     }
 
-
     public void chargeGauntlet() {
         leviathanCharges = Math.min(Math.max(leviathanCharges, 0), 3);
         new LeviathanChargeAction(1);
@@ -100,7 +95,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     private void starveRevenant() {
         revenantHunger = Math.min(Math.max(revenantHunger, 0), 10);
-        new RevenantStarveAction(1, false);
+        AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(1, false));
         counter++;
     }
 
@@ -108,6 +103,9 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public void onEnterRoom(AbstractRoom room) {
         if (leviathanCharges < 3) {
             chargeGauntlet();
+        }
+        if (revenantHunger < 10) {
+            new RevenantStarveAction(2, false);
         }
     }
 
@@ -117,13 +115,14 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        int berserkerStanceBonus = 0;
         if (targetCard.type == AbstractCard.CardType.ATTACK) {
             if (targetCard.hasTag(BULLY)) {
                 AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, bullyCard.bullyNumber)));
-            } else
+            } else if (!targetCard.equals(RevenantRavenous.ID)) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 2)));
+            }
+
         }
         if (currentWeapon.equals("Revenant") && !targetCard.hasTag(REVENANT) && revenantHunger < 10) {
             starveRevenant();
@@ -140,6 +139,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
         setDescriptionAfterLoading();
     }
 
+
     public void setDescriptionAfterLoading() {
         this.description = DESCRIPTIONS[0] + FontHelper.colorString(currentWeapon, "r");
         this.tips.clear();
@@ -153,6 +153,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     }
 
     public void onVictory() {
+        new FenrirEvolveAction(fenrirEvolutions);
         stopPulse();
     }
     @Override

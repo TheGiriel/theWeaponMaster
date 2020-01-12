@@ -40,7 +40,7 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
     private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 1;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
-    private final int HUNGERCOST = 8;
+    private final int HUNGERCOST = 9;
 
     public RevenantHungrySteel() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

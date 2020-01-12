@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.OctopusAction;
+import theWeaponMaster.actions.SleightOfHandAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -36,7 +36,7 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
         }
         AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
-        new OctopusAction().discardReturn();
+        AbstractDungeon.actionManager.addToBottom(new SleightOfHandAction());
     }
 
     @Override

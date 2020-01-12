@@ -40,7 +40,7 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
     private static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int BULLY_COST = 7;
     private static final int UPGRADED_BULLY_NUMBER = 3;
-    private HashSet<AbstractMonster.Intent> intents = new HashSet<>();
+    private HashSet<AbstractMonster.Intent> intents;
 
     public BullyMeanToEveryone() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -58,13 +58,12 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
     }
 
     @Override
-    public boolean cardPlayable(AbstractMonster m) {
-        intents = EnemyForceAction.getIntents(this);
-        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            if (intents.contains(monster.intent) && !monster.hasPower(IntimidatePower.POWER_ID)) {
-                return true;
-            }
-        }
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = AbstractDungeon.getMonsters().monsters.stream().anyMatch(e -> intents.contains(e.intent) && !e.hasPower(TauntPower.POWER_ID));
+        if (canUse) {
+            return true;
+        } else
+            cantUseMessage = "I already pissed everyone off!";
         return false;
     }
 

@@ -7,10 +7,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.actions.EnemyForceAction;
 import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.powers.DefensiveStancePower;
 import theWeaponMaster.relics.SplinteringSteelRelic;
+
+import java.util.HashSet;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
@@ -32,11 +36,15 @@ public class FenrirDefensiveStance extends AbstractDynamicCard {
     private static final int BLOCK = 6;
     private static final int UPGRADED_BLOCK = 3;
 
-    public static final String weapon = "Fenrir";
+    private static HashSet<AbstractMonster.Intent> intents;
 
     public FenrirDefensiveStance() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.block = baseBlock = BLOCK;
+
+        tags.add(WeaponMasterTags.INTIMIDATE);
+
+        intents = EnemyForceAction.getIntents(this);
     }
 
 
@@ -58,14 +66,14 @@ public class FenrirDefensiveStance extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DefensiveStancePower(p, block)));
-        int attacking = 0;
-        int numbMonsters = AbstractDungeon.getMonsters().monsters.size();
+        boolean evolve = true;
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            if (monster.intent == AbstractMonster.Intent.ATTACK || monster.intent == AbstractMonster.Intent.ATTACK_DEFEND || monster.intent == AbstractMonster.Intent.ATTACK_DEBUFF || monster.intent == AbstractMonster.Intent.ATTACK_BUFF) {
-                attacking++;
+            if (!intents.contains(monster.intent)) {
+                evolve = false;
+                break;
             }
         }
-        if (attacking == numbMonsters) {
+        if (evolve) {
             new FenrirEvolveAction();
         }
     }

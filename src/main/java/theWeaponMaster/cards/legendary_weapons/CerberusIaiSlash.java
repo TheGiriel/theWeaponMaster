@@ -33,8 +33,8 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     private static final int COST = 2;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADED_DAMAGE = 4;
+    private static final int DAMAGE = 7;
+    private static final int UPGRADED_DAMAGE = 3;
     private static final int MAGIC_NUMBER = 2;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
     int turnCount = 0;
@@ -83,7 +83,7 @@ public class CerberusIaiSlash extends AbstractDynamicCard {
             iaiBonus += 0.08f;
         }
 
-        if (state != null && discarded != null) {
+        if (state != null) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
             if (upgraded && discarded.size() - 1 >= magicNumber - 1) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (this.damage + (flashBonus * (1 + iaiBonus * (turnCount)))), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

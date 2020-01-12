@@ -47,13 +47,6 @@ public class ViciousPower extends TwoAmountPower {
         this.owner = owner;
         this.amount = amnt;
         this.amount2 = amount / 5;
-        try {
-            if (owner.hasPower(BerserkerStancePower.POWER_ID)) {
-                berserkerPower = true;
-            }
-        } catch (NullPointerException e) {
-
-        }
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -162,10 +155,6 @@ public class ViciousPower extends TwoAmountPower {
             setReduceVicious(4);
             this.amount -= reduceVicious;
             setBonusDamage();
-        }
-        if (berserkerPower) {
-            setReduceVicious(1);
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
         }
     }
 }

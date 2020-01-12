@@ -13,13 +13,41 @@ public class FenrirEvolveAction extends AbstractGameAction {
     public HashSet<String> fenrirSet = new HashSet<>();
 
     public FenrirEvolveAction() {
+
+        fenrirSet.add(FenrirLacerate.ID);
+        fenrirSet.add(FenrirHeavySwing.ID);
+        fenrirSet.add(FenrirShieldEater.ID);
+        fenrirSet.add(FenrirDefensiveStance.ID);
+        fenrirSet.add(FenrirUnleashed.ID);
+
         for (AbstractCard c : getFenrirCards()) {
-            if (c.cardID.equals("theWeaponMaster:FenrirDefensiveStance")) {
+            if (c.cardID.equals(FenrirDefensiveStance.ID)) {
                 c.baseBlock++;
-            } else if (c.cardID.equals("theWeaponMaster:FenrirHeavySwing")) {
+            } else if (c.cardID.equals(FenrirHeavySwing.ID) || c.cardID.equals(FenrirShieldEater.ID)) {
                 c.baseMagicNumber++;
             } else {
                 c.baseDamage++;
+            }
+            c.applyPowers();
+        }
+        this.isDone = true;
+    }
+
+    public FenrirEvolveAction(int devolveCount) {
+
+        fenrirSet.add(FenrirLacerate.ID);
+        fenrirSet.add(FenrirHeavySwing.ID);
+        fenrirSet.add(FenrirShieldEater.ID);
+        fenrirSet.add(FenrirDefensiveStance.ID);
+        fenrirSet.add(FenrirUnleashed.ID);
+
+        for (AbstractCard c : getFenrirCards()) {
+            if (c.cardID.equals(FenrirDefensiveStance.ID)) {
+                c.baseBlock -= devolveCount;
+            } else if (c.cardID.equals(FenrirHeavySwing.ID) || c.cardID.equals(FenrirShieldEater.ID)) {
+                c.baseMagicNumber -= devolveCount;
+            } else {
+                c.baseDamage -= devolveCount;
             }
             c.applyPowers();
         }
@@ -61,10 +89,6 @@ public class FenrirEvolveAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        fenrirSet.add(FenrirLacerate.ID);
-        fenrirSet.add(FenrirHeavySwing.ID);
-        fenrirSet.add(FenrirShieldEater.ID);
-        fenrirSet.add(FenrirDefensiveStance.ID);
-        fenrirSet.add(FenrirUnleashed.ID);
+
     }
 }

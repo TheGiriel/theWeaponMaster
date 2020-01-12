@@ -13,6 +13,7 @@ import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.actions.SpecialGradeAmmoAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.MarksmanshipPower;
+import theWeaponMaster.relics.HeavyDrum;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -39,8 +40,6 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
     public static int publicDamage;
     public static int publicMagic;
 
-    private int dexBonus = 0;
-
     public RevolverSpecialGradeAmmo() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = publicDamage = baseDamage = DAMAGE;
@@ -65,6 +64,7 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             upgradeSecondValue(UPGRADED_SECOND_VALUE);
             ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
         }
@@ -72,6 +72,9 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
 
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (player.hasRelic(HeavyDrum.ID)) {
+            tmp++;
+        }
         if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
             return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
         } else

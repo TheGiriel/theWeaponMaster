@@ -32,8 +32,8 @@ public class AtroposSeveredSoul extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     private static final int COST = 3;
-    private static final int DAMAGE = 23;
-    private static final int UPGRADED_DAMAGE = 7;
+    private static final int DAMAGE = 12;
+    private static final int UPGRADED_DAMAGE = 3;
 
     public AtroposSeveredSoul() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
