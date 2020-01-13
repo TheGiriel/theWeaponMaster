@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.RevenantStarveAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
@@ -28,17 +27,17 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(RevenantBloodbath.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final int COST = -1;
-    private static final int DAMAGE = 7;
-    private static final int UPGRADED_DAMAGE = 3;
-    private static final int MAGIC_NUMBER = 2;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
+    public static final int COST = 3;
+    public static final int DAMAGE = 7;
+    public static final int UPGRADED_DAMAGE = 3;
+    public static final int MAGIC_NUMBER = 2;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
     private final int HUNGERCOST = 10;
 
     public RevenantBloodbath() {
@@ -96,12 +95,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int bloodbath = TIER_TWO;
         int initialDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / 5;
-        int totalAttacks = EnergyPanel.totalCount;
-        EnergyPanel.useEnergy(totalAttacks);
-        if (p.hasRelic(ChemicalX.ID)) {
-            totalAttacks += 2;
-            p.getRelic(ChemicalX.ID).flash();
-        }
+        int totalAttacks = 3;
         if (ArsenalRelic.revenantHunger >= HUNGERCOST) {
             p.getPower(ViciousPower.POWER_ID).amount += (this.magicNumber * totalAttacks);
             new RevenantStarveAction(-HUNGERCOST, false);

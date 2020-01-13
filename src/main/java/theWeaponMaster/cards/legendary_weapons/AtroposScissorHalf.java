@@ -21,25 +21,25 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 public class AtroposScissorHalf extends AbstractDynamicCard implements Scissors {
 
     public static final String ID = TheWeaponMaster.makeID(AtroposScissorHalf.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 0;
-    private static final int DAMAGE = 3;
-    private static final int UPGRADED_DAMAGE = 1;
+    public static final int COST = 0;
+    public static final int DAMAGE = 3;
+    public static final int UPGRADED_DAMAGE = 1;
     private static final int BLOCK = 2;
     private static final int UPGRADED_BLOCK = 1;
-    private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int MAGIC_NUMBER = 1;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
     private static int scissorCombo = 0;
     private HashSet<String> scissors = new HashSet<>();
 

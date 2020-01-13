@@ -24,20 +24,21 @@ import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 public class RevolverBuckshot extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevolverBuckshot.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    public static final CardRarity RARITY = CardRarity.UNCOMMON;
+    public static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 4;
-    private static final int UPGRADED_DAMAGE = 3;
+    public static final int COST = 1;
+    public static final int DAMAGE = 4;
+    public static final int UPGRADED_DAMAGE = 3;
+
     public RevolverBuckshot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 

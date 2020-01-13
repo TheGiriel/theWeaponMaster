@@ -23,8 +23,12 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theWeaponMaster.cards.revolver.RevolverFullMetal;
-import theWeaponMaster.cards.revolver.RevolverHollowPoint;
+import theWeaponMaster.cards.bully.BullyIntimidate;
+import theWeaponMaster.cards.bully.BullyMock;
+import theWeaponMaster.cards.bully.BullyTaunt;
+import theWeaponMaster.cards.generic.Defend_WeaponMaster;
+import theWeaponMaster.cards.legendary_weapons.FenrirLacerate;
+import theWeaponMaster.cards.revolver.Strike_WeaponMaster;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.RevolverRelic;
@@ -139,43 +143,21 @@ public class TheWeaponMaster extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
+        ArsenalRelic.currentWeapon = "Fenrir";
 
-        //retVal.add(Strike_WeaponMaster.ID);
-        //retVal.add(RevolverMagnum.ID);
-        //retVal.add(RevolverTwinned.ID);
-        //retVal.add(RevolverLowRecoil.ID);
-        //retVal.add(RevolverBuckshot.ID);
-        //retVal.add(RevolverWarningShot.ID);
-        retVal.add(RevolverHollowPoint.ID);
-        retVal.add(RevolverFullMetal.ID);
-        //retVal.add(RevolverSpecialGradeAmmo.ID);
-        //retVal.add(RevolverMarksmanship.ID);
-        //retVal.add(RevolverCustomCartridge.ID);
-        //retVal.add(RevolverDoubleTap.ID);
-        //retVal.add(RevolverKneecap.ID);
-        //retVal.add(RevolverQuickload.ID);
-        //retVal.add(RevolverUnload.ID);
-//
-        //retVal.add(Defend_WeaponMaster.ID);
-        //retVal.add(GenericBerserkerStance.ID);
-        //retVal.add(GenericBobAndWeave.ID);
-        //retVal.add(GenericCounterBlow.ID);
-        //retVal.add(GenericDodge.ID);
-        //retVal.add(GenericFreshApple.ID);
-        //retVal.add(GenericFlashbang.ID);
-        //retVal.add(GenericFrontKick.ID);
-        //retVal.add(GenericGrazingThrow.ID);
-        //retVal.add(GenericGuillotineChoke.ID);
-        //retVal.add(GenericHeavyPockets.ID);
-        //retVal.add(GenericInvestigate.ID);
-        //retVal.add(GenericLimberUp.ID);
-        //retVal.add(GenericOpportunism.ID);
-        //retVal.add(GenericPreparation.ID);
-        //retVal.add(GenericRecklessness.ID);
-        //retVal.add(GenericRelaxAndRecollect.ID);
-        //retVal.add(GenericRedirectBlows.ID);
-        //retVal.add(GenericSleightOfHand.ID);
-        //retVal.add(GenericThrowingKnives.ID);
+        retVal.add(Strike_WeaponMaster.ID);
+        retVal.add(Strike_WeaponMaster.ID);
+        retVal.add(Strike_WeaponMaster.ID);
+        retVal.add(Strike_WeaponMaster.ID);
+        retVal.add(FenrirLacerate.ID);
+        retVal.add(Defend_WeaponMaster.ID);
+        retVal.add(Defend_WeaponMaster.ID);
+        retVal.add(Defend_WeaponMaster.ID);
+        retVal.add(Defend_WeaponMaster.ID);
+        retVal.add(BullyMock.ID);
+        retVal.add(BullyTaunt.ID);
+        retVal.add(BullyIntimidate.ID);
+
         return retVal;
     }
 

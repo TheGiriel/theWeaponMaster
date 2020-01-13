@@ -21,18 +21,18 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(RevolverCustomCartridge.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final int COST = 2;
+    public static final CardRarity RARITY = CardRarity.UNCOMMON;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
+    public static final int COST = 2;
     private static final int UPGRADED_COST = 1;
 
-    private static final int MAGIC_NUMBER = 150;
-    private static final int UPGRADED_MAGIC_NUMBER = 50;
+    public static final int MAGIC_NUMBER = 150;
+    public static final int UPGRADED_MAGIC_NUMBER = 50;
     private static final int SECOND_VALUE = 75;
     private static final int UPGRADED_SECOND_VALUE = 25;
 

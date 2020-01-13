@@ -22,21 +22,21 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 public class FenrirUnleashed extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(FenrirUnleashed.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     public static final String IMG = makeCardPath("fenrirunleashed.png");
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = -1;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADED_DAMAGE =5;
+    public static final int COST = -1;
+    public static final int DAMAGE = 8;
+    public static final int UPGRADED_DAMAGE = 5;
     private static int totalAttacks;
     public static int baseDamageStatic;
     public static ArrayList<AbstractMonster> targetList = new ArrayList<>();
@@ -75,7 +75,6 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     }
 
     private void weakestMonster(AbstractPlayer p) {
-        targetList.clear();
         int j = 0;
         int totalDamage = 0;
         int overKill = 0;
@@ -108,7 +107,6 @@ public class FenrirUnleashed extends AbstractDynamicCard {
             }
             dead = false;
         }
-        targetList.clear();
     }
 
 

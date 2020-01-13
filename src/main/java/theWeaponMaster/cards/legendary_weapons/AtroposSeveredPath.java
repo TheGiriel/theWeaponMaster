@@ -11,6 +11,7 @@ import theWeaponMaster.actions.EnemyForceAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.ManaBurnPower;
 import theWeaponMaster.powers.SeveredPathPower;
+import theWeaponMaster.relics.ManaWhetstoneRelic;
 
 import java.util.HashSet;
 
@@ -21,16 +22,18 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(AtroposSeveredPath.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(AtroposSeveredPath.class.getSimpleName());
+    public static final String NAME = cardStrings.NAME;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
-    private static final int COST = 1;
-    private static final int MAGIC_NUMBER = 1;
-    public String NAME = cardStrings.NAME;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.SKILL;
+    public static final int COST = 1;
+    public static final int UPGRADED_COST = 0;
+    public static final int MAGIC_NUMBER = 1;
+
     private HashSet<AbstractMonster.Intent> intents;
 
     public AtroposSeveredPath() {
@@ -46,6 +49,7 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }
@@ -62,6 +66,10 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
         return false;
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(ManaWhetstoneRelic.ID);
+    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

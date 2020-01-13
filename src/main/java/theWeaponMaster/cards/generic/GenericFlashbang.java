@@ -19,15 +19,15 @@ public class GenericFlashbang extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(GenericFlashbang.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
-    private static final int COST = 0;
-    private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final CardRarity RARITY = CardRarity.UNCOMMON;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.SKILL;
+    public static final int COST = 0;
+    public static final int MAGIC_NUMBER = 1;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
 
     public GenericFlashbang() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

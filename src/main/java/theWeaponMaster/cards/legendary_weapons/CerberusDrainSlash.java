@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.powers.*;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.FlashAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.relics.HellhoundOilRelic;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -28,18 +29,18 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(CerberusDrainSlash.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final int COST = 3;
-    private static final int DAMAGE = 12;
-    private static final int UPGRADED_DAMAGE = 2;
-    private static final int MAGIC_NUMBER = 3;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
+    public static final int COST = 3;
+    public static final int DAMAGE = 12;
+    public static final int UPGRADED_DAMAGE = 2;
+    public static final int MAGIC_NUMBER = 3;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int SECOND_VALUE = 3;
     public String NAME = cardStrings.NAME;
     private HashSet<String> stolenPower = new HashSet<>();
@@ -67,6 +68,10 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
         stolenPower.add(ThieveryPower.POWER_ID);
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(HellhoundOilRelic.ID);
+    }
 
     @Override
     public void upgrade() {
@@ -93,12 +98,12 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
             if (upgraded && discarded.size() - 1 >= magicNumber - 1) {
                 stealPowers(p, m);
-                baseMagicNumber++;
-                baseSecondValue++;
+                baseMagicNumber += 2;
+                baseSecondValue += 2;
             } else if (discarded.size() - 1 == magicNumber) {
                 stealPowers(p, m);
-                baseMagicNumber++;
-                baseSecondValue++;
+                baseMagicNumber += 2;
+                baseSecondValue += 2;
             }
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + flashBonus, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
@@ -108,7 +113,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
         ArrayList<String> tempSteal = new ArrayList<>();
         ArrayList<Integer> tempStealValue = new ArrayList<>();
         for (AbstractPower power : m.powers) {
-            if (stolenPower.contains(power.ID)) {
+            if (stolenPower.contains(power.ID) && power.amount > 0) {
                 tempSteal.add(power.ID);
                 tempStealValue.add(power.amount);
             }

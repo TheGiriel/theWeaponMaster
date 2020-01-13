@@ -24,9 +24,9 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
     public static final Texture lacerate_84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Lacerate_placeholder_84.png"));
     public static final Texture lacerate_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Lacerate_placeholder_32.png"));
     public static final Texture hemorrhage_84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Hemorrhage_placeholder_84.png"));
+    private static final Texture hemorrhage_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Hemorrhage_placeholder_32.png"));
 
     private int bleedDamage;
-    private static final Texture hemorrhage_32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("Hemorrhage_placeholder_32.png"));
 
     public LaceratePower(AbstractCreature owner, int bleedStack) {
         this.name = NAME;
@@ -34,22 +34,39 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
         this.owner = owner;
         this.amount = bleedStack;
 
+        this.type = PowerType.DEBUFF;
+        this.isTurnBased = true;
+
         this.region128 = new TextureAtlas.AtlasRegion(lacerate_84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(lacerate_32, 0, 0, 32, 32);
 
         updateDamage();
         updateDescription();
-        this.type = PowerType.DEBUFF;
-        this.isTurnBased = true;
     }
 
     private void updateDamage() {
-        this.bleedDamage = (int)Math.ceil(this.owner.maxHealth * 0.02D * this.amount);
+        this.bleedDamage = (int) Math.ceil(this.owner.maxHealth * 0.02D * this.amount);
+        getHealthBarAmount();
         updateDescription();
     }
 
+    @Override
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.ID.equals(NickedPower.POWER_ID) || power.ID.equals(KneecappedPower.POWER_ID)) {
+            updateDescription();
+        }
+        super.onApplyPower(power, target, source);
+    }
+
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + (this.amount * 2) + DESCRIPTIONS[1] + this.bleedDamage + DESCRIPTIONS[2] + this.amount;
+        int bonusStacks = 0;
+        if (owner.hasPower(NickedPower.POWER_ID)) {
+            bonusStacks++;
+        }
+        if (owner.hasPower(KneecappedPower.POWER_ID)) {
+            bonusStacks++;
+        }
+        this.description = DESCRIPTIONS[0] + (this.amount * 2) + DESCRIPTIONS[1] + this.bleedDamage + DESCRIPTIONS[2] + (bonusStacks + amount);
     }
 
     public void stackPower(int stackAmount) {

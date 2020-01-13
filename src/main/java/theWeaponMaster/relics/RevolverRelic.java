@@ -36,7 +36,7 @@ public class RevolverRelic extends CustomRelic {
             AbstractDungeon.actionManager.addToBottom(new ReloadAction());
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
             return;
-        } else if (card.hasTag(AMMUNITION) && counter > 1) {
+        } else if (card.hasTag(AMMUNITION) && counter >= 1) {
             this.counter--;
         }
         counter = shotsLeft = Math.min(Math.max(counter, 0), 6);

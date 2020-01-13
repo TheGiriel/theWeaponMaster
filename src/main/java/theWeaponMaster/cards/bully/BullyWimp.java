@@ -17,17 +17,17 @@ public class BullyWimp extends AbstractBullyCard {
 
     public static final String ID = TheWeaponMaster.makeID(BullyWimp.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    public static final CardRarity RARITY = CardRarity.COMMON;
+    public static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    public static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int MAGIC_NUMBER = 2;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int COST = 1;
+    public static final int MAGIC_NUMBER = 2;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int BULLY_COST = 3;
     private static final int UPGRADED_BULLY_NUMBER = 3;
 

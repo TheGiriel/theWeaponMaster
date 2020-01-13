@@ -19,22 +19,22 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 public class LeviathanDeepImpact extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(LeviathanDeepImpact.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADED_DAMAGE = 2;
-    private static final int MAGIC_NUMBER = 25;
-    private static final int UPGRADED_MAGIC_NUMBER = 8;
+    public static final int COST = 2;
+    public static final int DAMAGE = 8;
+    public static final int UPGRADED_DAMAGE = 2;
+    public static final int MAGIC_NUMBER = 25;
+    public static final int UPGRADED_MAGIC_NUMBER = 8;
     private final int CHARGECOST = 2;
 
     public LeviathanDeepImpact() {

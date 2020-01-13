@@ -13,6 +13,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.ManaBurnPower;
+import theWeaponMaster.relics.ManaWhetstoneRelic;
 
 import static com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField.grave;
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -20,20 +21,20 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 public class AtroposSeveredSoul extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(AtroposSeveredSoul.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 3;
-    private static final int DAMAGE = 12;
-    private static final int UPGRADED_DAMAGE = 3;
+    public static final int COST = 3;
+    public static final int DAMAGE = 15;
+    public static final int UPGRADED_DAMAGE = 5;
 
     public AtroposSeveredSoul() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -41,6 +42,11 @@ public class AtroposSeveredSoul extends AbstractDynamicCard {
         this.damage = baseDamage = DAMAGE;
 
         grave.set(this, true);
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(ManaWhetstoneRelic.ID);
     }
 
     @Override
@@ -53,9 +59,15 @@ public class AtroposSeveredSoul extends AbstractDynamicCard {
     }
 
     @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
+        return super.calculateModifiedCardDamage(player, tmp);
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int manaBurn = 0;
         if (m.hasPower(ManaBurnPower.POWER_ID)) {
+            this.modifyCostForTurn(-m.getPower(ManaBurnPower.POWER_ID).amount);
             manaBurn = m.getPower(ManaBurnPower.POWER_ID).amount;
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));

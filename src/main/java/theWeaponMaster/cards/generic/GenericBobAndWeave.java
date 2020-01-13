@@ -22,24 +22,24 @@ public class GenericBobAndWeave extends AbstractDynamicCard implements FlipCard 
 
     public static final String ID = TheWeaponMaster.makeID(GenericBobAndWeave.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    public static final CardRarity RARITY = CardRarity.UNCOMMON;
+    public static final CardTarget TARGET = CardTarget.SELF;
+    public static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
+    public static final int COST = 1;
     private static final int UPGRADED_COST = 1;
 
     private static final int BLOCK = 6;
     private static final int UPGRADED_BLOCK = 2;
 
-    private static final int MAGIC_NUMBER = 3;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int MAGIC_NUMBER = 3;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
 
     private static boolean flipped = false;
     private boolean initializeCard = false;

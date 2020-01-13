@@ -26,7 +26,6 @@ import theWeaponMaster.cards.generic.*;
 import theWeaponMaster.cards.legendary_weapons.*;
 import theWeaponMaster.cards.revolver.*;
 import theWeaponMaster.events.IdentityCrisisEvent;
-import theWeaponMaster.potions.PlaceholderPotion;
 import theWeaponMaster.relics.*;
 import theWeaponMaster.util.IDCheckDontTouchPls;
 import theWeaponMaster.util.TextureLoader;
@@ -344,7 +343,6 @@ public class TheWeaponMaster implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_WEAPON_MASTER".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, theWeaponMaster.characters.TheWeaponMaster.Enums.THE_WEAPON_MASTER);
         
         logger.info("Done editing potions");
     }
@@ -442,7 +440,7 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new BullyIntimidatingPresence());
         BaseMod.addCard(new BullyPushover());
         BaseMod.addCard(new BullyClothesline());
-        BaseMod.addCard(new BullyMockery());
+        BaseMod.addCard(new BullyMock());
 
         BaseMod.addCard(new Strike_WeaponMaster());
         BaseMod.addCard(new RevolverMagnum());
@@ -530,7 +528,7 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(BullyIntimidatingPresence.ID);
         UnlockTracker.unlockCard(BullyPushover.ID);
         UnlockTracker.unlockCard(BullyClothesline.ID);
-        UnlockTracker.unlockCard(BullyMockery.ID);
+        UnlockTracker.unlockCard(BullyMock.ID);
 
         UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
         UnlockTracker.unlockCard(RevolverMagnum.ID);

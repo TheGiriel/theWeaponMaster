@@ -53,19 +53,12 @@ public class GiveWeaponsAction extends AbstractGameAction {
                 }
                 break;
 
-                //Atropos cards
             case "Atropos' Shears":
                 weaponList.add(new AtroposSeveredSource());
                 weaponList.add(new AtroposSeveredScissors());
                 weaponList.add(new AtroposSeveredPath());
                 weaponList.add(new AtroposSeveredPain());
                 weaponList.add(new AtroposSeveredSoul());
-                if (owner.hasRelic(ManaWhetstoneRelic.ID)) {
-                    upgradeWeapons.addAll(ManaWhetstoneRelic.getWeaponUpgrade());
-                }
-                break;
-            case "Scissor Half":
-                weaponList.add(new AtroposSeveredScissors());
                 if (owner.hasRelic(ManaWhetstoneRelic.ID)) {
                     upgradeWeapons.addAll(ManaWhetstoneRelic.getWeaponUpgrade());
                 }

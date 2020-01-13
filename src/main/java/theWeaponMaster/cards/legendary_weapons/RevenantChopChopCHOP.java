@@ -26,16 +26,16 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 2;
-    private static final int UPGRADED_DAMAGE = 1;
-    private static final int MAGIC_NUMBER = 3;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int COST = 1;
+    public static final int DAMAGE = 2;
+    public static final int UPGRADED_DAMAGE = 1;
+    public static final int MAGIC_NUMBER = 3;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
     private final int HUNGERCOST = 5;
 
     public RevenantChopChopCHOP() {

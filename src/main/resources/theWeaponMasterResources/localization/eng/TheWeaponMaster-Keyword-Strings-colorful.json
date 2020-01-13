@@ -31,14 +31,14 @@
     "NAMES": [
       "vicious"
     ],
-    "DESCRIPTION": "For every #b5 stacks of #yVicious you deal #b1 extra damage on attacks and take #b1 extra damage when attacked."
+    "DESCRIPTION": "For every 5 stacks of [#8b0000]Vicious you deal and take 1 extra damage."
   },
   {
     "PROPER_NAME": "[#ff4500]Bully",
     "NAMES": [
       "bully"
     ],
-    "DESCRIPTION": "Bully X: Gain X #yVicious."
+    "DESCRIPTION": "Bully X: Gain X Vicious and debuff your enemies or force their actions."
   },
   {
     "PROPER_NAME": "[#ff4500]Taunt",
@@ -46,7 +46,7 @@
       "taunt",
       "taunted"
     ],
-    "DESCRIPTION": "Can only be applied to non-attacking enemies. NL #yTaunted enemies are forced to attack."
+    "DESCRIPTION": "Can only be applied to non-attacking enemies. NL Taunted enemies are forced to attack."
   },
   {
     "PROPER_NAME": "[#ff4500]Intimidate",
@@ -54,7 +54,7 @@
       "intimidate",
       "intimidated"
     ],
-    "DESCRIPTION": "Can only be applied to attacking enemies. NL #yIntimidated enemies are forced to defend and gain Block equal to #b10 plus half your Vicious."
+    "DESCRIPTION": "Can only be applied to attacking enemies. NL Intimidated enemies are forced to defend and gain Block equal to 10 plus half your Vicious."
   },
   {
     "PROPER_NAME": "[#808080]Armor [#808080]Piercing",
@@ -64,7 +64,15 @@
       "Armor_Piercing",
       "armor_piercing"
     ],
-    "DESCRIPTION": "#yArmor #yPiercing X: NL Enemies lose HP equal to #bX% of their destroyed Block."
+    "DESCRIPTION": "Armor Piercing X: NL Enemies lose HP equal to X% their destroyed Block."
+  },
+  {
+    "PROPER_NAME": "[#808080]Rending",
+    "NAMES": [
+      "Rending",
+      "rending"
+    ],
+    "DESCRIPTION": "Rending X: NL Enemies take X% extra damage if they don't have block."
   },
   {
     "PROPER_NAME": "[#808080]Unstoppable",
@@ -79,7 +87,7 @@
     "NAMES": [
       "fenrir"
     ],
-    "DESCRIPTION": "#yEvolving Cards specializing in #yLacerate."
+    "DESCRIPTION": "Evolving Cards specializing in Lacerate."
   },
   {
     "PROPER_NAME": "[#b7410e]Lacerate",
@@ -87,7 +95,7 @@
       "lacerate",
       "lacerating"
     ],
-    "DESCRIPTION": "#yLacerated creatures lose #b2% of their Max HP at the start of their turn."
+    "DESCRIPTION": "[#b7410e]Lacerated creatures lose HP at the start of their turn based on their Max HP."
   },
   {
     "PROPER_NAME": "[#b7410e]Kneecap",
@@ -96,14 +104,14 @@
       "kneecap",
       "kneecapped"
     ],
-    "DESCRIPTION": "#yKneecapped creatures take damage equal to #b5% of their missing HP at the start of their turn, for three turns. Counts as Lacerate."
+    "DESCRIPTION": "[#b7410e]Kneecapped creatures lose HP based on their missing HP at the start of their turn for three turns. Counts as Lacerate."
   },
   {
     "PROPER_NAME": "[#b7410e]Nicked",
     "NAMES": [
       "nicked"
     ],
-    "DESCRIPTION": "#yNicked creatures take damage equal to #b3.3% of their Max HP at the start of their turn, for three turns. Counts as Lacerate."
+    "DESCRIPTION": "[#b7410e]Nicked creatures lose HP based on their Max HP at the start of their turn for three turns. Counts as Lacerate."
   },
   {
     "PROPER_NAME": "[#b7410e]Evolve",
@@ -113,7 +121,7 @@
       "evolutions",
       "evolving"
     ],
-    "DESCRIPTION": "Increase the power of all Fenrir cards by #b1 whenever you fulfill the #yEvolve condition."
+    "DESCRIPTION": "Increase the power of all Fenrir cards by 1 whenever you fulfill the condition."
   },
   {
     "PROPER_NAME": "[#3a7ebf]Cerberus",
@@ -128,7 +136,7 @@
       "flash",
       "flashy"
     ],
-    "DESCRIPTION": "#yFlash #bX: Discard up to #bX cards. Bonuses per discard: NL 1+ Card: Gain #b1 bonus damage. NL 2+ Cards: draw a card. NL X: Activate the Flash effect."
+    "DESCRIPTION": "[#3a7ebf]Flash [#3a7ebf]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 1 bonus damage. NL 2+ Cards: draw a card. NL X: Activate the extra effect."
   },
   {
     "PROPER_NAME": "[#3a7ebf]Power [#3a7ebf]Flash",
@@ -138,7 +146,7 @@
       "power flash",
       "power_flash"
     ],
-    "DESCRIPTION": "#yPower #yFlash #bX: Discard up to #bX cards. Bonuses per discard: NL 1+ Card: Gain 1 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the Flash effect once."
+    "DESCRIPTION": "[#3a7ebf]Power [#3a7ebf]Flash [#3a7ebf]X: Discard up to X cards. Bonuses per discard: NL 1+ Card: Gain 1 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the effect once."
   },
   {
     "PROPER_NAME": "[#3a7ebf]Utility [#3a7ebf]Flash",
@@ -148,10 +156,10 @@
       "Utility_Flash",
       "utility_flash"
     ],
-    "DESCRIPTION": "#yUtility #yFlash #bX: Discard up to #bX cards. Doesn't draw. Bonuses per discard: NL Attack: Deal #b1 bonus damage. NL Skill: Gain #b3 #yBlock. NL 2 Powers: gain #b1 #yEnergy NL 2 Status/Curse: Draw #b1 card."
+    "DESCRIPTION": "[#3a7ebf]Utility [#3a7ebf]Flash [#3a7ebf]X: Discard up to X cards. Doesn't draw. Bonuses per discard: NL Attack: Gain 1 bonus damage. NL Skill: Gain 3 block. NL 2 Powers: gain 1 Energy NL 2 Status/Curse: Draw 1 card."
   },
   {
-    "PROPER_NAME": "#yAtropos' #yShears",
+    "PROPER_NAME": "[#3abfbe]Atropos' [#3abfbe]Shears",
     "NAMES": [
       "Atropos' Shears",
       "Atropos_Shears",
@@ -162,10 +170,10 @@
       "atropos",
       "Atropos"
     ],
-    "DESCRIPTION": "Versatile cards specializing in #yMana #yBurn and damage mitigation."
+    "DESCRIPTION": "Versatile cards specializing in Mana Burn and damage mitigation."
   },
   {
-    "PROPER_NAME": "#yMana #yBurn",
+    "PROPER_NAME": "[#3abfbe]Mana [#3abfbe]Burn",
     "NAMES": [
       "Mana Burn",
       "mana_burn",
@@ -175,10 +183,10 @@
       "mana burning",
       "mana_burning"
     ],
-    "DESCRIPTION": "Creatures affected by #yMana #yBurn lose #b3% Max HP per stack when casting buffs, debuffs and spells."
+    "DESCRIPTION": "Creatures affected by [#3abfbe]Mana [#3abfbe]burn lose 2% Max HP per stack when casting buffs, debuffs and spells."
   },
   {
-    "PROPER_NAME": "#yIgnite",
+    "PROPER_NAME": "[#3abfbe]Igniting",
     "NAMES": [
       "Igniting",
       "ignites",
@@ -187,7 +195,7 @@
       "ignite",
       "Ignite"
     ],
-    "DESCRIPTION": "Ignite X: Trigger up to #bX stacks of target enemy's #yMana #yBurn."
+    "DESCRIPTION": "[#3abfbe]Ignite [#3abfbe]X: Trigger up to X stacks of target enemy's Mana Burn."
   },
   {
     "PROPER_NAME": "[#746550]Leviathan [#746550]Gauntlet",
@@ -199,7 +207,7 @@
       "Leviathan",
       "leviathan"
     ],
-    "DESCRIPTION": "#yChargeable cards specializing against enemies with #yBlock and defensive powers."
+    "DESCRIPTION": "Chargeable cards specializing against enemies with Block and defensive powers."
   },
   {
     "PROPER_NAME": "[#746550]Stagger",
@@ -207,7 +215,7 @@
       "stagger",
       "staggered"
     ],
-    "DESCRIPTION": "Staggered creatures deal less and take more Damage. Leviathan cards apply a stronger Stagger based on enemy Block."
+    "DESCRIPTION": "Staggered creatures deal less and take more Damage. Leviathan cards inflict additional Stagger based on enemy Block."
   },
   {
     "PROPER_NAME": "[#746550]Charge",
@@ -216,7 +224,7 @@
       "charged",
       "charges"
     ],
-    "DESCRIPTION": "Augment this card's effect if you have enough #yCharges. NL Increases by #b1 at the end of your turn."
+    "DESCRIPTION": "Augment this card's effect if you have enough Charges. NL Increases by 1 at the end of your turn."
   },
   {
     "PROPER_NAME": "[#80ca2d]Revenant [#80ca2d]Cleaver",
@@ -228,7 +236,7 @@
       "Revenant",
       "revenant"
     ],
-    "DESCRIPTION": "Cards specializing in #yHunger and improving the player's HP."
+    "DESCRIPTION": "Cards specializing in [#80ca2d]Hunger and improving the player's HP."
   },
   {
     "PROPER_NAME": "[#80ca2d]Hunger",
@@ -237,14 +245,14 @@
       "hungering",
       "hungry"
     ],
-    "DESCRIPTION": "Augment this card's effect at the cost of #yHunger. NL #yHunger Increases by #b1 whenever you play a non-Revenant card."
+    "DESCRIPTION": "Augment this card's effect at the cost of [#80ca2d]Hunger. NL [#80ca2d]Hunger Increases by 1 whenever you play a non-Revenant card."
   },
   {
     "PROPER_NAME": "[#80ca2d]Sated",
     "NAMES": [
       "sated"
     ],
-    "DESCRIPTION": "[#80ca2d]Hunger bonus effects are disabled. NL Gain #b2 Temporary HP while [#80ca2d]Sated."
+    "DESCRIPTION": "[#80ca2d]Hunger bonus effects are disabled. NL Gain 2 Temporary HP while [#80ca2d]Sated."
   },
   {
     "PROPER_NAME": "[#80ca2d]Chopping [#80ca2d]Block",
@@ -254,7 +262,7 @@
       "chopping block",
       "chopping_block"
     ],
-    "DESCRIPTION": "If you kill the target before the turn ends, gain #b1 Max HP for every #b20 damage you deal. NL Does not work on minions."
+    "DESCRIPTION": "If you kill the target before the turn ends, gain [#80ca2d]1 Max HP for every 20 current HP your target has, when applying this debuff. NL Doesn't work on minions."
   },
   {
     "PROPER_NAME": "[#80ca2d]Nose [#80ca2d]to [#80ca2d]Tail",
@@ -264,7 +272,7 @@
       "nose to tail",
       "nose_to_tail"
     ],
-    "DESCRIPTION": "Gain #b1 #yTemporary HP for every #b8 damage you deal. NL If you kill it, heal for half that amount instead."
+    "DESCRIPTION": "Gain 1 Temp HP for every [#80ca2d]8 [#80ca2d](7) damage you deal. NL Heal for half that amount instead if you kill it."
   },
   {
     "PROPER_NAME": "Split Scissors",
@@ -274,7 +282,7 @@
       "split_scissors",
       "Split_Scissors"
     ],
-    "DESCRIPTION": "Split Scissors X: Deal #bX Bonus damage if the last played card was Severed Scissors or Right/Left Half. NL Recombines to Severed Scissors when Right Half and Left Half are exhausted."
+    "DESCRIPTION": "Split Scissors X: Deal X Bonus damage if the last played card was Severed Scissors or Right/Left Half. NL Recombines to Severed Scissors when Right and Left Half are exhausted."
   },
   {
     "PROPER_NAME": "Weapon Swap",
@@ -292,7 +300,7 @@
       "reload",
       "reloading"
     ],
-    "DESCRIPTION": "Return up to #b3 cards from the bottom of your discard pile to your draw pile. NL Draw #b1 card."
+    "DESCRIPTION": "Return up to three cards from the bottom of your discard pile to your draw pile. NL Draw one card."
   },
   {
     "PROPER_NAME": "Ammunition",
@@ -300,6 +308,6 @@
       "ammunition",
       "ammo"
     ],
-    "DESCRIPTION": "Reduces your #yRevolver shot count by #b1. NL Requires Reloading when at #b0 shots."
+    "DESCRIPTION": "Reduces your #yRevolver shot count by 1. NL Requires Reloading when at 0."
   }
 ]

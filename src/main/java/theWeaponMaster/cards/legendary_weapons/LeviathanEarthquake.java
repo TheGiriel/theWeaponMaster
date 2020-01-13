@@ -24,7 +24,7 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 public class LeviathanEarthquake extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(LeviathanEarthquake.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
@@ -35,10 +35,10 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 3;
-    private static final int DAMAGE = 12;
-    private static final int UPGRADED_DAMAGE = 5;
-    private static final int MAGIC_NUMBER = 1;
+    public static final int COST = 3;
+    public static final int DAMAGE = 12;
+    public static final int UPGRADED_DAMAGE = 5;
+    public static final int MAGIC_NUMBER = 1;
     private final int CHARGECOST = 3;
 
     private static int thorns;

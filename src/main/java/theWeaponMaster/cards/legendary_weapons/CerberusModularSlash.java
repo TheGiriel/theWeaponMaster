@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.FlashAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.relics.HellhoundOilRelic;
 
 import java.util.ArrayList;
 
@@ -25,17 +26,17 @@ public class CerberusModularSlash extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(CerberusModularSlash.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final int COST = 2;
-    private static final int DAMAGE = 7;
-    private static final int UPGRADED_DAMAGE = 2;
-    private static final int MAGIC_NUMBER = 4;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
+    public static final int COST = 2;
+    public static final int DAMAGE = 7;
+    public static final int UPGRADED_DAMAGE = 2;
+    public static final int MAGIC_NUMBER = 4;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
 
     public CerberusModularSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -51,6 +52,11 @@ public class CerberusModularSlash extends AbstractDynamicCard {
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(HellhoundOilRelic.ID);
     }
 
     @Override

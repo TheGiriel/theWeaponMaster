@@ -28,20 +28,17 @@ public class KneecappedPower extends AbstractPower implements HealthBarRenderPow
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
-    private static double bleedfactor = 0.1;
+    private static double bleedfactor = 0.5;
     public AbstractCreature source;
     private int bleedDamage;
 
-    public KneecappedPower(AbstractMonster m, boolean upgraded) {
+    public KneecappedPower(AbstractMonster m) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = m;
         this.amount = 3;
 
-        if (upgraded) {
-            bleedfactor = 0.12;
-        }
         this.bleedDamage = (int) Math.ceil((this.owner.maxHealth - this.owner.currentHealth) * bleedfactor);
 
 

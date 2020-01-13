@@ -19,6 +19,7 @@ import theWeaponMaster.util.TextureLoader;
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 
+
 public class NickedPower extends AbstractPower implements HealthBarRenderPower {
     public static final String POWER_ID = TheWeaponMaster.makeID(NickedPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(NickedPower.class.getSimpleName());
@@ -28,11 +29,12 @@ public class NickedPower extends AbstractPower implements HealthBarRenderPower {
 
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+
     private int bleedDamage;
 
     public NickedPower(final AbstractCreature owner) {
-        name = NAME;
-        ID = POWER_ID;
+        this.name = NAME;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = 3;
@@ -49,7 +51,7 @@ public class NickedPower extends AbstractPower implements HealthBarRenderPower {
 
 
     private void updateDamage() {
-        this.bleedDamage = (int) Math.round(this.owner.maxHealth * 0.02D * this.amount);
+        this.bleedDamage = (int) Math.ceil(this.owner.maxHealth * 0.033D);
         getHealthBarAmount();
         updateDescription();
     }
@@ -57,7 +59,7 @@ public class NickedPower extends AbstractPower implements HealthBarRenderPower {
     @Override
     public void atStartOfTurn() {
         updateDamage();
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(owner, owner, (int) (Math.round(this.owner.maxHealth * 0.02D * this.amount)), AbstractGameAction.AttackEffect.POISON));
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(owner, owner, bleedDamage, AbstractGameAction.AttackEffect.POISON));
         amount--;
         if (amount <= 0) {
             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, this));

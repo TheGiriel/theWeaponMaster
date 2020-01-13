@@ -23,24 +23,24 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 public class AtroposSeveredScissors extends AbstractDynamicCard implements Scissors, FlipCard {
 
     public static final String ID = TheWeaponMaster.makeID(AtroposSeveredScissors.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 3;
-    private static final int UPGRADED_DAMAGE = 1;
+    public static final int COST = 1;
+    public static final int DAMAGE = 3;
+    public static final int UPGRADED_DAMAGE = 1;
     private static final int BLOCK = 2;
     private static final int UPGRADED_BLOCK = 1;
-    private static final int MAGIC_NUMBER = 1;
+    public static final int MAGIC_NUMBER = 1;
 
     public static boolean scissorFlip = false;
     public static boolean leftHalf = false;
@@ -101,10 +101,8 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, magicNumber)));
-
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         ManaBurnAction.ignite(m, magicNumber);
-
         AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new AtroposScissorHalf(), true, false));
         scissorFlip = true;
         flipCard();
@@ -119,7 +117,7 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, magicNumber)));
-        rightHalf = true;
+        scissorFlip = true;
     }
 
     @Override

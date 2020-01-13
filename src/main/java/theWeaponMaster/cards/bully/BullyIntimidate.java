@@ -22,34 +22,34 @@ public class BullyIntimidate extends AbstractBullyCard {
 
     public static final String ID = TheWeaponMaster.makeID(BullyIntimidate.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    public static final CardRarity RARITY = CardRarity.COMMON;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
+    public static final int COST = 1;
     private static final int UPGRADED_COST = -1;
-    private static final int MAGIC_NUMBER = 10;
-    private static final int UPGRADED_MAGIC_NUMBER = 3;
     private static final int BULLY_COST = 3;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int MAGIC_NUMBER = 2;
     private HashSet<AbstractMonster.Intent> intents;
 
     public BullyIntimidate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.bullyNumber = baseBullyNumber = BULLY_COST;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
         tags.add(INTIMIDATE);
         tags.add(BULLY);
 
         intents = EnemyForceAction.getIntents(this);
-        ExhaustiveField.ExhaustiveFields.exhaustive.set(this, 2);
-        ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);
+        ExhaustiveField.ExhaustiveFields.exhaustive.set(this, magicNumber);
+        ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, magicNumber);
     }
 
     @Override
@@ -76,8 +76,10 @@ public class BullyIntimidate extends AbstractBullyCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            updateCost(UPGRADED_COST);
+            ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
+            updateCost(UPGRADED_COST);
+            upgradeBullyNumber(BULLY_COST);
             initializeDescription();
         }
     }

@@ -5,10 +5,9 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.2.9</version>
-    <description>Small changes (and bigger Revenant changes).
-        Arsenal, Weapon &amp; Revolver relics complete; All cards complete.
-        Remaining: 4 Generic cards; art (not happening anytime soon)
+    <version>0.3.2</version>
+    <description>Card Complete test version.
+        Art (not happening anytime soon)
         Current State: Legendary Weapons: 25/25(+2); Bully: 15/15; Revolver 15/15(+1); Generic 20/20(+2);
         total: 75/75(+5); No Art.
     </description>

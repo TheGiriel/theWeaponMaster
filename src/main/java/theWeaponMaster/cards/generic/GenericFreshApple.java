@@ -15,12 +15,12 @@ public class GenericFreshApple extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(GenericFreshApple.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
-    private static final int COST = 0;
-    private static final int MAGIC_NUMBER = 3;
-    private static final int UPGRADED_MAGIC_NUMBER = 2;
+    public static final CardRarity RARITY = CardRarity.RARE;
+    public static final CardTarget TARGET = CardTarget.SELF;
+    public static final CardType TYPE = CardType.SKILL;
+    public static final int COST = 0;
+    public static final int MAGIC_NUMBER = 3;
+    public static final int UPGRADED_MAGIC_NUMBER = 2;
 
     public GenericFreshApple() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -35,28 +35,28 @@
     "NAME": "The Arsenal",
     "FLAVOR": "I might just have the right tool for the job.",
     "DESCRIPTIONS": [
-      "Right-Click: Exchange ALL your Legendary Weapon cards in your deck for a different set. NL Gain 2 Vicious every time you use an Attack card. NL Current Weapon: "
+      "Right-Click: #yWeapon #ySwap. NL Gain 2 #yVicious every time you use an #yAttack card. NL Current Weapon: "
     ]
   },
   "theWeaponMaster:RevolverRelic": {
     "NAME": "The Revolver",
     "FLAVOR": "Your trusty six-shooter.",
     "DESCRIPTIONS": [
-      "Expend one shot every time you use a Revolver card. Reload when the counter hits 0, refund one Energy when reloading with an Ammunition card."
+      "Expend one shot every time you use an #yAmmunition card. #yReload when the counter hits 0, refund one Energy when reloading with an Ammunition card."
     ]
   },
   "theWeaponMaster:HeavyDrum": {
     "NAME": "Heavy Drum",
     "FLAVOR": "Thick walls for big bangs.",
     "DESCRIPTIONS": [
-      "As long as you own this relic, you reload after 5 shots and deal 1 extra damage with Ammunition cards."
+      "As long as you own this relic, you reload after 5 shots and deal #B1 extra damage with Ammunition cards."
     ]
   },
   "theWeaponMaster:SplinteringSteelRelic": {
     "NAME": "Splintering Steel",
     "FLAVOR": "The best offense is a layer of sharp steel shards.",
     "DESCRIPTIONS": [
-      "Upgrades Fenrir cards upon switching weapons.",
+      "Upgrades #yFenrir cards upon switching weapons.",
       "dadadada"
     ]
   },
@@ -64,7 +64,7 @@
     "NAME": "Mana Whetstone",
     "FLAVOR": "To keep those ethereal edges extra sharp.",
     "DESCRIPTIONS": [
-      "Upgrades Atropos cards upon switching weapons.",
+      "Upgrades #yAtropos cards upon switching weapons.",
       ""
     ]
   },
@@ -72,7 +72,7 @@
     "NAME": "Ghoulskin Sheath",
     "FLAVOR": "Makes transporting the cleaver much more safe.",
     "DESCRIPTIONS": [
-      "Upgrades Revenant cards upon switching weapons.",
+      "Upgrades #yRevenant cards upon switching weapons.",
       ""
     ]
   },
@@ -80,7 +80,7 @@
     "NAME": "Hellhound Oil(tm)",
     "FLAVOR": "The very best in keeping your favorite edge sharp for only 24.99 for a can!",
     "DESCRIPTIONS": [
-      "Upgrades Cerberus cards upon switching weapons.",
+      "Upgrades #yCerberus cards upon switching weapons.",
       ""
     ]
   },
@@ -88,7 +88,7 @@
     "NAME": "Shockwave Modulator",
     "FLAVOR": "What do you mean \"this has been underclocked all along\"?",
     "DESCRIPTIONS": [
-      "Upgrades Leviathan cards upon switching weapons.",
+      "Upgrades #yLeviathan cards upon switching weapons.",
       ""
     ]
   }

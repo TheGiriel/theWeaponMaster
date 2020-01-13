@@ -23,23 +23,23 @@ import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
 public class RevenantRavenous extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevenantRavenous.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
+    public static final int COST = 1;
     //use damage as magic number and vice versa since I'm lazy
-    private static final int DAMAGE_TO_MAGIC = 3;
-    private static final int UPGRADED_DAMAGE = 2;
-    private static final int MAGIC_NUMBER_TO_DAMAGE = 6;
-    private static final int UPGRADED_MAGIC_NUMBER = 2;
+    public static final int DAMAGE_TO_MAGIC = 3;
+    public static final int UPGRADED_DAMAGE = 2;
+    public static final int MAGIC_NUMBER_TO_DAMAGE = 6;
+    public static final int UPGRADED_MAGIC_NUMBER = 2;
     private final int HUNGERCOST = 4;
     private int turnCount = 0;
 

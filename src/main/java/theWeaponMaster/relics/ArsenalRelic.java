@@ -119,16 +119,16 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         if (targetCard.type == AbstractCard.CardType.ATTACK) {
+            if (currentWeapon.equals("Revenant") && !targetCard.hasTag(REVENANT) && revenantHunger < 10) {
+                starveRevenant();
+            }
             if (targetCard.hasTag(BULLY)) {
                 AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, bullyCard.bullyNumber)));
+                return;
             } else if (!targetCard.equals(RevenantRavenous.ID)) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 2 + ViciousPower.berserkerStanceBonus)));
             }
-
-        }
-        if (currentWeapon.equals("Revenant") && !targetCard.hasTag(REVENANT) && revenantHunger < 10) {
-            starveRevenant();
         }
         if (targetCard.type != AbstractCard.CardType.ATTACK && targetCard.hasTag(BULLY)) {
             AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;

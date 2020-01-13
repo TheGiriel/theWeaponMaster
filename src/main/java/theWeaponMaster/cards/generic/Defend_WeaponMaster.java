@@ -15,12 +15,12 @@ public class Defend_WeaponMaster extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(Defend_WeaponMaster.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    public static final CardRarity RARITY = CardRarity.BASIC;
+    public static final CardTarget TARGET = CardTarget.SELF;
+    public static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
+    public static final int COST = 1;
     private static final int BLOCK = 5;
     private static final int UPGRADED_BLOCK = 3;
 

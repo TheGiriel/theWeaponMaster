@@ -36,6 +36,7 @@ public class TauntPower extends AbstractPower {
         this.owner = owner;
         this.m = (AbstractMonster) owner;
         this.source = source;
+        this.amount = source.maxHealth / 10;
 
         type = AbstractPower.PowerType.DEBUFF;
         isTurnBased = true;
@@ -70,7 +71,6 @@ public class TauntPower extends AbstractPower {
         }
     }
 
-
     public void updateDescription() {
         this.description = DESCRIPTION[0];
     }
@@ -78,7 +78,7 @@ public class TauntPower extends AbstractPower {
     @Override
     public void atEndOfRound() {
         updateDescription();
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(source, (int) Math.ceil(source.maxHealth / 10), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(source, amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
         this.m.setMove(originalMove, originalIntent);
         this.m.createIntent();

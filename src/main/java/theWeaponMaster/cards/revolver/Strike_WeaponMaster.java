@@ -23,15 +23,15 @@ public class Strike_WeaponMaster extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(Strike_WeaponMaster.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final int COST = 1;
-    private static final int DAMAGE = 7;
-    private static final int UPGRADED_DAMAGE = 3;
+    public static final CardRarity RARITY = CardRarity.BASIC;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
+    public static final int COST = 1;
+    public static final int DAMAGE = 8;
+    public static final int UPGRADED_DAMAGE = 3;
 
     public Strike_WeaponMaster() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

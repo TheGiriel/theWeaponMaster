@@ -18,17 +18,17 @@ public class GenericHeavyPockets extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(GenericHeavyPockets.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(GenericHeavyPockets.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(GenericHeavyPockets.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
-    private static final int COST = 1;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final CardRarity RARITY = CardRarity.COMMON;
+    public static final CardTarget TARGET = CardTarget.SELF;
+    public static final CardType TYPE = CardType.SKILL;
+    public static final int COST = 1;
 
-    private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int MAGIC_NUMBER = 1;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int BLOCK = 8;
     private static final int UPGRADED_BLOCK = 2;
 
@@ -37,9 +37,7 @@ public class GenericHeavyPockets extends AbstractDynamicCard {
 
         this.block = baseBlock = BLOCK;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-
     }
-
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

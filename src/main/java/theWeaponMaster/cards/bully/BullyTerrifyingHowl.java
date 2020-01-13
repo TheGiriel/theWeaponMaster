@@ -30,15 +30,15 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    public static final CardRarity RARITY = CardRarity.RARE;
+    public static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    public static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 3;
+    public static final int COST = 3;
     private static final int BULLY_COST = 4;
     private static final int UPGRADED_BULLY_NUMBER = 4;
-    private static final int MAGIC_NUMBER = 2;
+    public static final int MAGIC_NUMBER = 2;
     private HashSet<AbstractMonster.Intent> intents;
 
     public BullyTerrifyingHowl() {

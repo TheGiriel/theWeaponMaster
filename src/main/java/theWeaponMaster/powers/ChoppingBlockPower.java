@@ -11,10 +11,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
-public class CattleToSlaughterPower extends AbstractPower {
+public class ChoppingBlockPower extends AbstractPower {
 
-    public static final String POWER_ID = TheWeaponMaster.makeID(CattleToSlaughterPower.class.getSimpleName());
-    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(CattleToSlaughterPower.class.getSimpleName());
+    public static final String POWER_ID = TheWeaponMaster.makeID(ChoppingBlockPower.class.getSimpleName());
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ChoppingBlockPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTION = powerStrings.DESCRIPTIONS;
 
@@ -23,7 +23,7 @@ public class CattleToSlaughterPower extends AbstractPower {
 
     private AbstractCreature source;
 
-    public CattleToSlaughterPower(AbstractCreature owner, AbstractCreature source, int hungryBoost) {
+    public ChoppingBlockPower(AbstractCreature owner, AbstractCreature source, int hungryBoost) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

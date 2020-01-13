@@ -20,16 +20,16 @@ public class GenericOpportunism extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(GenericOpportunism.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final int COST = 1;
+    public static final CardRarity RARITY = CardRarity.COMMON;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
+    public static final int COST = 1;
 
-    private static final int DAMAGE = 5;
-    private static final int UPGRADED_DAMAGE = 3;
+    public static final int DAMAGE = 5;
+    public static final int UPGRADED_DAMAGE = 3;
     private static final int BLOCK = 5;
     private static final int UPGRADED_BLOCK = 3;
 

@@ -21,19 +21,19 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
     public static final String ID = TheWeaponMaster.makeID(GenericRelaxAndRecollect.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
-    private static final int COST = 1;
+    public static final CardRarity RARITY = CardRarity.COMMON;
+    public static final CardTarget TARGET = CardTarget.SELF;
+    public static final CardType TYPE = CardType.SKILL;
+    public static final int COST = 1;
 
     private static final int BLOCK = 3;
     private static final int UPGRADED_BLOCK = 2;
-    private static final int MAGIC_NUMBER = 2;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int MAGIC_NUMBER = 2;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int SECOND_VALUE = 1;
     private static final int UPGRADED_SECOND_VALUE = 1;
 
@@ -95,18 +95,19 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
         int viciousBonus = 0;
 
         if (p.hasPower(ViciousPower.POWER_ID)) {
-            viciousBonus = p.getPower(ViciousPower.POWER_ID).amount / 3;
+            viciousBonus = p.getPower(ViciousPower.POWER_ID).amount / 2;
         }
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        if (p.hasPower(ViciousPower.POWER_ID) && p.getPower(ViciousPower.POWER_ID).amount >= 3) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, viciousBonus * 2));
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, ViciousPower.POWER_ID, (p.getPower(ViciousPower.POWER_ID).amount - p.getPower(ViciousPower.POWER_ID).amount % 3)));
+        if (p.hasPower(ViciousPower.POWER_ID) && p.getPower(ViciousPower.POWER_ID).amount >= 2) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, viciousBonus));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, ViciousPower.POWER_ID, viciousBonus));
         }
         flipCard();
     }
 
     @Override
     public void flipUse(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
         AbstractDungeon.actionManager.addToBottom(new RecollectAction(magicNumber));
         flipCard();
     }
@@ -123,7 +124,7 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
             this.name = DESCRIPTIONS[0];
             rawDescription = DESCRIPTIONS[1];
             this.cost = COST;
-            this.secondValue = baseSecondValue = AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount / 3;
+            this.secondValue = baseSecondValue = AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount / 2;
             flipped = false;
         }
         initializeDescription();

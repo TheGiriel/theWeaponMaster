@@ -10,10 +10,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.MinionPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.RevenantStarveAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
-import theWeaponMaster.powers.CattleToSlaughterPower;
+import theWeaponMaster.powers.ChoppingBlockPower;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.GhoulskinSheathRelic;
@@ -24,23 +25,23 @@ import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
 public class RevenantHungrySteel extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevenantHungrySteel.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    public static final CardRarity RARITY = CardRarity.SPECIAL;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int UPGRADED_DAMAGE = 3;
-    private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADED_MAGIC_NUMBER = 1;
-    private final int HUNGERCOST = 9;
+    public static final int COST = 1;
+    public static final int DAMAGE = 6;
+    public static final int UPGRADED_DAMAGE = 3;
+    public static final int MAGIC_NUMBER = 1;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
+    public final int HUNGERCOST = 9;
 
     public RevenantHungrySteel() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -93,7 +94,9 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
         } else {
             new RevenantStarveAction(0, true);
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new CattleToSlaughterPower(m, p, hungryBoost)));
+        if (!m.hasPower(MinionPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ChoppingBlockPower(m, p, hungryBoost)));
+        }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, this.magicNumber)));
         getSated();

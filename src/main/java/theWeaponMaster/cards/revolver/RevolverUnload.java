@@ -22,11 +22,11 @@ public class RevolverUnload extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(RevolverUnload.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final int COST = 3;
-    private static final int DAMAGE = 4;
+    public static final CardRarity RARITY = CardRarity.RARE;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final CardType TYPE = CardType.ATTACK;
+    public static final int COST = 3;
+    public static final int DAMAGE = 4;
     private static final int UPGRADE_DAMAGE = 2;
 
     public RevolverUnload() {

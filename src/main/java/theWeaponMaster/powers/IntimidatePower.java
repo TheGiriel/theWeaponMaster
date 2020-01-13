@@ -36,6 +36,7 @@ public class IntimidatePower extends AbstractPower implements EnemyIntentInterfa
         this.owner = owner;
         this.m = (AbstractMonster) owner;
         this.source = source;
+        this.amount = source.getPower(ViciousPower.POWER_ID).amount / 3;
 
         type = AbstractPower.PowerType.DEBUFF;
         isTurnBased = true;
