@@ -1,5 +1,7 @@
 All cards are (tentatively) complete!  
 
+go get it here: https://github.com/TheGiriel/theWeaponMaster/releases/tag/v0.3.2-beta.2
+
 # The Arsenal
 The linchpin Relic of this mod: the Arsenal allows you to exchange your currently equipped weapon, by removing the old Legendary Weapon cards from your deck and adding new ones. However, every time you attack, your _Vicious_ counter increases! For every 5 Vicious you have, you deal and take 1 extra damage.  
 While it may seem alluring, be careful that you don't bite off more than you can chew!
