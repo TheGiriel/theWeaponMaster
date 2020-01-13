@@ -1,7 +1,9 @@
 All cards are (tentatively) complete!  
 
+go get it here: https://github.com/TheGiriel/theWeaponMaster/releases/tag/v0.3.2-beta.2
+
 # The Arsenal
-The linchpin Relic of this mod: the Arsenal allows you to exchange your currently equipped weapon, by removing the old Legendary Weapon cards from your deck and adding new ones. However, every time you attack, your _Vicious_ counter increases! For every 5 Vicious you have, you deal and take 1 extra damage.  
+The linchpin Relic of this mod: the Arsenal allows you to exchange your currently equipped weapon, by removing the old Legendary Weapon cards from your deck and adding new ones. However, every time you attack, your _Vicious_ counter increases! For every 5 Vicious you have, you deal and take 1 extra damage on attacks.  
 While it may seem alluring, be careful that you don't bite off more than you can chew!
 ## Legendary Weapons:  
 __25 cards: 19 Attacks, 6 Skills__  
@@ -9,7 +11,7 @@ These versatile cards can offer you everything you need, but in return, they can
 ### Fenrir (Upgrade Relic: _Splintering Steel_)  
 These cards _Evolve_ and grow stronger the longer you fight! Make your enemies permanently bleed out with _Lacerate_, steal their Block or even mercilessly attack them all in an onslaught of attacks - Everything is possible!  
 ### Cerberus (Upgrade Relic: _Hellhound Oil_)  
-Let this sharp edge _Flash_ by discarding cards to empower your attacks, and if you discard enough you even get to activate special effects such as extra card draws, stronger attacks the longer you wait or possibly even power stealing!  
+Let this sharp edge _Flash_ by discarding cards to empower your attacks! If you discard enough, you even get to activate special effects, such as extra card draws, stronger attacks the longer you wait or possibly even power stealing!  
 ### Revenant Cleaver (Upgrade Relic: _Ghoulskin Sheath_)  
 Cleverly use this card's _Hunger_ to improve its effects or gain a bit of Temporary HP when it's _Sated_. Heal, gain temporary HP or even increase your max HP, but be wary, many of its effects only last for one turn!  
 ### Atropos' Shears (Upgrade Relic: _Mana Whetstone_)  
@@ -19,8 +21,8 @@ Destroy defensive enemies and _Stagger_ them with this powerful Gauntlet! Gain _
   
 # The Bully   
 __15 cards: 5 Attacks, 7 Skills, 3 Powers__  
-"Crowd Control" via intent manipulation and debuffs. _Taunt_ your enemies into attacking you or _Intimidate_ them into defending, all the while you keep applying more and more debuffs on them. But be careful, Bully cards exhaust quickly and increase your Vicious counter even more than any other cards!  
-While these cards are powerful and often give you an extra turn of breathing room, you cannot play _Intimidate_ or _Taunt_ cards them if none of your opponents are attacking or defending respectively.
+"Crowd Control" via intent manipulation and debuffs. _Taunt_ your enemies into attacking you or _Intimidate_ them into defending, all the while you keep applying more and more debuffs on them. But be careful, Bully cards exhaust quickly and increase your Vicious counter even more than others!  
+While these cards are powerful and often give you an extra turn of breathing room, you cannot play _Intimidate_ or _Taunt_ cards, if none of your opponents are attacking or defending respectively.
 
 # The Revolver (Support relic: _Heavy Drum_)  
 __15 cards -> 10 Attacks, 4 Skills, 1 Power__   
