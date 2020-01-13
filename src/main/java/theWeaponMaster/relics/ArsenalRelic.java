@@ -3,7 +3,6 @@ package theWeaponMaster.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,14 +15,10 @@ import theWeaponMaster.actions.FenrirEvolveAction;
 import theWeaponMaster.actions.LeviathanChargeAction;
 import theWeaponMaster.actions.OctopusAction;
 import theWeaponMaster.actions.RevenantStarveAction;
-import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
-import theWeaponMaster.cards.legendary_weapons.RevenantRavenous;
-import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
-import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
 
 public class ArsenalRelic extends CustomRelic implements ClickableRelic {
@@ -122,17 +117,6 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
             if (currentWeapon.equals("Revenant") && !targetCard.hasTag(REVENANT) && revenantHunger < 10) {
                 starveRevenant();
             }
-            if (targetCard.hasTag(BULLY)) {
-                AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, bullyCard.bullyNumber)));
-                return;
-            } else if (!targetCard.equals(RevenantRavenous.ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, 2 + ViciousPower.berserkerStanceBonus)));
-            }
-        }
-        if (targetCard.type != AbstractCard.CardType.ATTACK && targetCard.hasTag(BULLY)) {
-            AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ViciousPower(player, bullyCard.bullyNumber)));
         }
     }
 

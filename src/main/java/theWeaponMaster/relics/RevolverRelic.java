@@ -13,6 +13,7 @@ import theWeaponMaster.util.TextureLoader;
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
 import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
+import static theWeaponMaster.patches.WeaponMasterTags.TEMPORARY;
 
 public class RevolverRelic extends CustomRelic {
 
@@ -23,7 +24,7 @@ public class RevolverRelic extends CustomRelic {
 
     public static final int SHOTS = 6;
     public static int shotsLeft;
-    public static AbstractCard preloaded;
+    public static boolean mustReload = false;
 
     public RevolverRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
@@ -32,12 +33,19 @@ public class RevolverRelic extends CustomRelic {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(AMMUNITION) && counter <= 0) {
+        if (card.hasTag(TEMPORARY)) {
+            return;
+        }
+        if (card.hasTag(AMMUNITION) && counter >= 1) {
+            this.counter--;
+            if (counter == 0) {
+                mustReload = true;
+            }
+            return;
+        } else if (card.hasTag(AMMUNITION) && counter <= 0) {
             AbstractDungeon.actionManager.addToBottom(new ReloadAction());
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
             return;
-        } else if (card.hasTag(AMMUNITION) && counter >= 1) {
-            this.counter--;
         }
         counter = shotsLeft = Math.min(Math.max(counter, 0), 6);
         if (AbstractDungeon.player.hasRelic(HeavyDrum.ID)) {

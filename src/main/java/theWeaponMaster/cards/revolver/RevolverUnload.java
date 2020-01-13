@@ -26,7 +26,7 @@ public class RevolverUnload extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
     public static final int COST = 3;
-    public static final int DAMAGE = 4;
+    public static final int DAMAGE = 6;
     private static final int UPGRADE_DAMAGE = 2;
 
     public RevolverUnload() {
@@ -65,7 +65,7 @@ public class RevolverUnload extends AbstractDynamicCard {
             }
         }
 
-        for (AbstractCard card : player.drawPile.group) {
+        /*for (AbstractCard card : player.drawPile.group) {
             if (player.getRelic(RevolverRelic.ID).counter > 0 && player.drawPile.size() > 0) {
                 if (card.hasTag(AMMUNITION)) {
                     actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
@@ -75,7 +75,7 @@ public class RevolverUnload extends AbstractDynamicCard {
                     actionManager.addToBottom(new DiscardSpecificCardAction(card, player.drawPile));
                 }
             } else return;
-        }
+        }*/
     }
 
 }

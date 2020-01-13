@@ -26,7 +26,7 @@ public class RevolverDoubleTap extends AbstractDynamicCard {
     public static final int COST = 1;
     private static final int UPGRADED_COST = 1;
     public static final int MAGIC_NUMBER = 50;
-    public static final int UPGRADED_MAGIC_NUMBER = 17;
+    public static final int UPGRADED_MAGIC_NUMBER = 25;
 
 
     public RevolverDoubleTap() {

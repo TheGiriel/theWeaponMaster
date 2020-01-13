@@ -28,7 +28,7 @@ public class BullyMock extends AbstractBullyCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.COMMON;
     public static final CardTarget TARGET = CardTarget.ENEMY;
-    public static final CardType TYPE = CardType.ATTACK;
+    public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 1;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
@@ -44,6 +44,7 @@ public class BullyMock extends AbstractBullyCard {
         this.bullyNumber = baseBullyNumber = BULLY_COST;
 
         tags.add(WeaponMasterTags.INTIMIDATE);
+        tags.add(WeaponMasterTags.BULLY);
         intents = EnemyForceAction.getIntents(this);
 
         initializeDescription();

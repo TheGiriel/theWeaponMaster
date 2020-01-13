@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.actions.SpecialGradeAmmoAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.MarksmanshipPower;
@@ -84,7 +83,6 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.getRelic(RevolverRelic.ID).counter <= 0) {
-            new ReloadAction();
             AbstractDungeon.actionManager.addToBottom(new ModifyExhaustiveAction(this, 1));
             return;
         }

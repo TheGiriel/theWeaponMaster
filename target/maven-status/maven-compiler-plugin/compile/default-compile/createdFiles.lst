@@ -66,13 +66,11 @@ theWeaponMaster\actions\FlashAction.class
 theWeaponMaster\characters\TheWeaponMaster.class
 theWeaponMaster\powers\LaceratePower.class
 theWeaponMaster\actions\ArmorPiercingAction.class
-theWeaponMaster\actions\PreloadAction.class
 theWeaponMaster\cards\bully\BullyConfidence.class
 theWeaponMaster\cards\bully\BullyShakedown.class
 theWeaponMaster\cards\legendary_weapons\CerberusEssenceSlash.class
 theWeaponMaster\cards\legendary_weapons\LeviathanCrush.class
 theWeaponMaster\actions\RevenantStarveAction.class
-theWeaponMaster\cards\bully\BullyMockery.class
 theWeaponMaster\cards\bully\BullyWimp.class
 theWeaponMaster\relics\BottledPlaceholderRelic.class
 theWeaponMaster\actions\UncommonPowerAction.class
@@ -86,7 +84,6 @@ theWeaponMaster\actions\SleightOfHandAction.class
 theWeaponMaster\powers\ViciousPower.class
 theWeaponMaster\powers\SeveredPainDelayedPower.class
 theWeaponMaster\powers\TauntPower.class
-theWeaponMaster\powers\CattleToSlaughterPower.class
 theWeaponMaster\powers\DefensiveStancePower.class
 theWeaponMaster\util\EnemyIntentInterface.class
 theWeaponMaster\cards\legendary_weapons\FenrirHeavySwing.class
@@ -115,6 +112,7 @@ theWeaponMaster\cards\legendary_weapons\AtroposSeveredScissors.class
 theWeaponMaster\relics\HellhoundOilRelic.class
 theWeaponMaster\TheWeaponMaster.class
 theWeaponMaster\cards\bully\BullyDinerArgument.class
+theWeaponMaster\cards\bully\BullyMock.class
 theWeaponMaster\actions\FenrirUnleashedSelectAction$MonsterHPComparator.class
 theWeaponMaster\powers\RedirectBlowsPower.class
 theWeaponMaster\actions\LeviathanGauntletAction.class
@@ -132,7 +130,6 @@ theWeaponMaster\potions\PlaceholderPotion.class
 theWeaponMaster\cards\legendary_weapons\CerberusSlash.class
 theWeaponMaster\cards\generic\GenericCounterBlow.class
 theWeaponMaster\variables\shieldBuster.class
-theWeaponMaster\powers\IntimidatingPresencePower.class
 theWeaponMaster\cards\generic\GenericPreparation.class
 theWeaponMaster\cards\generic\GenericLimberUp.class
 theWeaponMaster\relics\ManaWhetstoneRelic.class
@@ -145,6 +142,7 @@ theWeaponMaster\variables\SecondVariable.class
 theWeaponMaster\actions\ThornBypassAction.class
 theWeaponMaster\powers\RecklessnessPower.class
 theWeaponMaster\powers\StaggerPower.class
+theWeaponMaster\powers\ChoppingBlockPower.class
 theWeaponMaster\relics\ShockwaveModulatorRelic.class
 theWeaponMaster\cards\abstractcards\AbstractRevolverCard.class
 theWeaponMaster\patches\CenterGridCardSelectScreen.class

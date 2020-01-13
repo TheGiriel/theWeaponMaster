@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.HeavyDrum;
@@ -69,9 +68,7 @@ public class RevolverBuckshot extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         if (p.getRelic(RevolverRelic.ID).counter <= 0) {
-            new ReloadAction();
             return;
         }
 

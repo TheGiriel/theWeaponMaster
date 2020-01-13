@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.HeavyDrum;
@@ -78,14 +77,10 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasRelic(RevolverRelic.ID) && p.getRelic(RevolverRelic.ID).counter <= 0) {
-            new ReloadAction();
+        if (p.getRelic(RevolverRelic.ID).counter <= 0) {
             return;
         }
-        double bonusDamge = 1;
-        if (m.currentBlock == 0) {
-            bonusDamge += ((double) magicNumber / 100);
-        }
+
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
     }

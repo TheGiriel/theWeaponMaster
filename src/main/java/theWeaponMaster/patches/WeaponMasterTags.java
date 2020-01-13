@@ -8,7 +8,8 @@ public class WeaponMasterTags extends BaseModCardTags {
 
     @SpireEnum
     public static AbstractCard.CardTags AMMUNITION;
-    @SpireEnum public static AbstractCard.CardTags BULLY;
+    @SpireEnum
+    public static AbstractCard.CardTags BULLY;
     @SpireEnum
     public static AbstractCard.CardTags FENRIR;
     @SpireEnum
@@ -25,6 +26,8 @@ public class WeaponMasterTags extends BaseModCardTags {
     public static AbstractCard.CardTags TAUNT;
     @SpireEnum
     public static AbstractCard.CardTags IGNITE;
+    @SpireEnum
+    public static AbstractCard.CardTags TEMPORARY;
 
 
 }

@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -28,7 +29,7 @@ public class TauntPower extends AbstractPower {
     public AbstractMonster m;
     private static byte originalMove;
     private static AbstractMonster.Intent originalIntent;
-    private DamageInfo.DamageType test = DamageInfo.DamageType.NORMAL;
+    private int baseDamage;
 
     public TauntPower(AbstractCreature owner, AbstractCreature source) {
         this.name = NAME;
@@ -36,7 +37,8 @@ public class TauntPower extends AbstractPower {
         this.owner = owner;
         this.m = (AbstractMonster) owner;
         this.source = source;
-        this.amount = source.maxHealth / 10;
+        baseDamage = source.maxHealth / 10;
+        this.amount = baseDamage + source.getPower(ViciousPower.POWER_ID).amount;
 
         type = AbstractPower.PowerType.DEBUFF;
         isTurnBased = true;
@@ -46,33 +48,23 @@ public class TauntPower extends AbstractPower {
         updateDescription();
     }
 
-    static byte getOriginalMove() {
-        return originalMove;
-    }
-
-    static AbstractMonster.Intent getOriginalIntent() {
-        return originalIntent;
-    }
-
     @Override
     public void onInitialApplication() {
-        /*if (m.hasPower(IntimidatePower.POWER_ID)) {
-            m.setMove(IntimidatePower.getOriginalMove(), IntimidatePower.getOriginalIntent());
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, IntimidatePower.POWER_ID));
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
-            AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(m, AbstractDungeon.player));
-        } else*/
-        {
-            originalMove = this.m.nextMove;
-            originalIntent = this.m.intent;
-            this.m.setMove((byte) -2, AbstractMonster.Intent.ATTACK, (int) Math.ceil(source.maxHealth / 10));
-            this.m.createIntent();
-            updateDescription();
-        }
+        originalMove = this.m.nextMove;
+        originalIntent = this.m.intent;
+        this.m.setMove((byte) -2, AbstractMonster.Intent.ATTACK, amount);
+        this.m.createIntent();
+        updateDescription();
     }
 
     public void updateDescription() {
         this.description = DESCRIPTION[0];
+    }
+
+    @Override
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+        amount = baseDamage + source.getPower(ViciousPower.POWER_ID).amount;
+        super.onPlayCard(card, m);
     }
 
     @Override

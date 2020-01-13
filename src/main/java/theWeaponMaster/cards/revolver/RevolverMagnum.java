@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.HeavyDrum;
@@ -34,8 +33,8 @@ public class RevolverMagnum extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    public static final int DAMAGE = 7;
-    public static final int UPGRADED_DAMAGE = 3;
+    public static final int DAMAGE = 8;
+    public static final int UPGRADED_DAMAGE = 4;
 
     public RevolverMagnum() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -65,11 +64,10 @@ public class RevolverMagnum extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         if (p.getRelic(RevolverRelic.ID).counter <= 0) {
-            new ReloadAction();
             return;
         }
+
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }

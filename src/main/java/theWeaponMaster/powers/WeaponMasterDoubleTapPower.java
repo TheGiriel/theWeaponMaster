@@ -29,7 +29,6 @@ public class WeaponMasterDoubleTapPower extends AbstractPower implements Cloneab
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
     public AbstractCreature source;
-    private int amount;
 
     public WeaponMasterDoubleTapPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -51,23 +50,20 @@ public class WeaponMasterDoubleTapPower extends AbstractPower implements Cloneab
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
         if (card.hasTag(WeaponMasterTags.AMMUNITION) && card.type.equals(AbstractCard.CardType.ATTACK)) {
-            AbstractCard tmp = card.makeSameInstanceOf();
+            AbstractCard tempCard = card.makeSameInstanceOf();
+            tempCard.tags.add(WeaponMasterTags.TEMPORARY);
 
             AbstractMonster target = (AbstractMonster) action.target;
 
-            tmp.current_x = tmp.target_x = Settings.WIDTH / 2.0f - 300.0f * Settings.scale;
-            tmp.current_y = tmp.target_y = Settings.HEIGHT / 2.0f;
-            tmp.freeToPlayOnce = true;
+            tempCard.current_x = tempCard.target_x = Settings.WIDTH / 2.0f - 300.0f * Settings.scale;
+            tempCard.current_y = tempCard.target_y = Settings.HEIGHT / 2.0f;
+            tempCard.freeToPlayOnce = true;
             if (target != null) {
-                tmp.calculateCardDamage(target);
-                int baseDamageTry = tmp.baseDamage;
-                baseDamageTry *= amount;
-                baseDamageTry /= 100;
-                TheWeaponMaster.logger.info("Trying this: basedamage " + baseDamageTry);
-                tmp.baseDamage = baseDamageTry;
+                tempCard.baseDamage *= ((double) amount / 100);
+                TheWeaponMaster.logger.info("bonus damage: " + tempCard.baseDamage);
             }
-            tmp.purgeOnUse = true;
-            AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(tmp, target));
+            tempCard.purgeOnUse = true;
+            AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(tempCard, target));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }

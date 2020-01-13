@@ -3,7 +3,6 @@ package theWeaponMaster.cards.legendary_weapons;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -36,9 +35,8 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     public static final int COST = 3;
     public static final int DAMAGE = 7;
     public static final int UPGRADED_DAMAGE = 3;
-    public static final int MAGIC_NUMBER = 2;
-    public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private final int HUNGERCOST = 10;
+    public static final int MAGIC_NUMBER = 10;
+    private final int HUNGERCOST = 0;
 
     public RevenantBloodbath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -64,7 +62,6 @@ public class RevenantBloodbath extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }
@@ -80,11 +77,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     }
 
     public void getSated() {
-        if (ArsenalRelic.revenantHunger < HUNGERCOST) {
-            rawDescription = DESCRIPTION[1];
-        } else {
-            rawDescription = DESCRIPTION[0];
-        }
+        rawDescription = DESCRIPTION[0];
     }
 
     public boolean canUpgrade() {
@@ -93,22 +86,17 @@ public class RevenantBloodbath extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int bloodbath = TIER_TWO;
         int initialDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / 5;
-        int totalAttacks = 3;
-        if (ArsenalRelic.revenantHunger >= HUNGERCOST) {
-            p.getPower(ViciousPower.POWER_ID).amount += (this.magicNumber * totalAttacks);
-            new RevenantStarveAction(-HUNGERCOST, false);
-        } else {
-            new RevenantStarveAction(0, true);
+        double upgradeBonus = 1;
+        if (upgraded) {
+            upgradeBonus = 1.5;
         }
-        int j = 0;
-        do {
-            int finalDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / (bloodbath);
-            j++;
+        p.getPower(ViciousPower.POWER_ID).amount += ArsenalRelic.revenantHunger * upgradeBonus;
+        new RevenantStarveAction(-ArsenalRelic.revenantHunger, false);
+        for (int i = p.getPower(ViciousPower.POWER_ID).amount; i >= 5; i -= 5) {
+            int finalDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / TIER_TWO;
             AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, (damage - initialDamageBonus + finalDamageBonus), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.33F));
-            p.getPower(ViciousPower.POWER_ID).reducePower(bloodbath);
-        } while (p.getPower(ViciousPower.POWER_ID).amount >= (bloodbath));
+            p.getPower(ViciousPower.POWER_ID).amount -= TIER_TWO;
+        }
     }
 }

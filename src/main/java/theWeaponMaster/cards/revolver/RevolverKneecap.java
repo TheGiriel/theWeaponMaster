@@ -12,6 +12,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.powers.KneecappedPower;
+import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
@@ -47,6 +48,9 @@ public class RevolverKneecap extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.getRelic(RevolverRelic.ID).counter <= 0) {
+            return;
+        }
         AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new KneecappedPower(m)));

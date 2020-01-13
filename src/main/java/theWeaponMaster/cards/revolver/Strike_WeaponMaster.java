@@ -14,6 +14,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.HeavyDrum;
+import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
@@ -30,7 +31,7 @@ public class Strike_WeaponMaster extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
     public static final int COST = 1;
-    public static final int DAMAGE = 8;
+    public static final int DAMAGE = 6;
     public static final int UPGRADED_DAMAGE = 3;
 
     public Strike_WeaponMaster() {
@@ -63,6 +64,9 @@ public class Strike_WeaponMaster extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.getRelic(RevolverRelic.ID).counter <= 0) {
+            return;
+        }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage + block, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }

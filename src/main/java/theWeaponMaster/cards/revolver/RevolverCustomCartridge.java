@@ -10,6 +10,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.CustomCartridgeAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
+import theWeaponMaster.relics.RevolverRelic;
 
 import java.util.ArrayList;
 
@@ -56,6 +57,9 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.getRelic(RevolverRelic.ID).counter <= 0) {
+            return;
+        }
         AbstractDungeon.actionManager.addToBottom(new CustomCartridgeAction(m, magicNumber, secondValue, this));
     }
 

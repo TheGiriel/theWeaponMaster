@@ -25,7 +25,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.bully.BullyIntimidate;
 import theWeaponMaster.cards.bully.BullyMock;
-import theWeaponMaster.cards.bully.BullyTaunt;
+import theWeaponMaster.cards.bully.BullyWimp;
 import theWeaponMaster.cards.generic.Defend_WeaponMaster;
 import theWeaponMaster.cards.legendary_weapons.FenrirLacerate;
 import theWeaponMaster.cards.revolver.Strike_WeaponMaster;
@@ -155,8 +155,8 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(Defend_WeaponMaster.ID);
         retVal.add(Defend_WeaponMaster.ID);
         retVal.add(BullyMock.ID);
-        retVal.add(BullyTaunt.ID);
         retVal.add(BullyIntimidate.ID);
+        retVal.add(BullyWimp.ID);
 
         return retVal;
     }

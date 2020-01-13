@@ -102,10 +102,10 @@
   },
   "theWeaponMaster:RevenantBloodbath": {
     "NAME": "[#80ca2d]Bloodbath",
-    "DESCRIPTION": "Hungry 10: Gain Vicious equal to 5 times your energy. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
+    "DESCRIPTION": "Hungry X: Gain Vicious equal to Hunger. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
     "EXTENDED_DESCRIPTION": [
-      "Hungry 10: Gain !EN_MULT! Vicious. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
-      "Hungry 10: Sated. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious."
+      "Hungry X: Gain Vicious equal to Hunger. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
+      "Hungry X: Gain Vicious equal to 150% of Hunger. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious."
     ]
   },
 
@@ -157,8 +157,7 @@
   },
   "theWeaponMaster:RevolverDoubleTap": {
     "NAME": "Double Tap",
-    "DESCRIPTION": "This turn, your next Ammunition card is played a second time for 50% damage.",
-    "UPGRADE_DESCRIPTION": "This turn, your next Ammunition card is played a second time for 66% damage."
+    "DESCRIPTION": "This turn, your next Ammunition card is played a second time for !M! % damage."
   },
   "theWeaponMaster:RevolverFullMetal": {
     "NAME": "Full Metal Jacket",
@@ -235,7 +234,7 @@
     "DESCRIPTION": "Bully !BULLY! NL Taunt all enemies. NL They gain !M! Strength until the end of the turn. NL Gain !M! Strength for every applied Taunt, lose half of the gained Strength at the end of the turn. NL Exhaust."
   },
   "theWeaponMaster:BullyMock": {
-    "NAME": "Mockery",
+    "NAME": "Mock",
     "DESCRIPTION": "Bully !BULLY! NL If target enemy intends to attack, apply !M! Weak. Otherwise apply !M! Vulnerable.",
     "UPGRADE_DESCRIPTION": "Bully !BULLY! NL All enemies gain !M! Weak if they're attacking. Otherwise apply !M! Vulnerable."
   },

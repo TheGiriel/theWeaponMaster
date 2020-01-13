@@ -4,15 +4,22 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
+import theWeaponMaster.cards.legendary_weapons.RevenantBloodbath;
+import theWeaponMaster.cards.legendary_weapons.RevenantRavenous;
+import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
+import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
 
 public class ViciousPower extends TwoAmountPower {
 
@@ -69,6 +76,15 @@ public class ViciousPower extends TwoAmountPower {
     @Override
     public void onRemove() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, 1)));
+    }
+
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        if (targetCard.hasTag(BULLY)) {
+            AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, bullyCard.bullyNumber)));
+        } else if (targetCard.type == AbstractCard.CardType.ATTACK && (!targetCard.equals(RevenantRavenous.ID) || !targetCard.equals(RevenantBloodbath.ID)) && !targetCard.hasTag(WeaponMasterTags.TEMPORARY)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, 2 + ViciousPower.berserkerStanceBonus)));
+        }
     }
 
     public void stackPower(int stackAmount) {
