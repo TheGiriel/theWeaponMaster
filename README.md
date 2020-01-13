@@ -11,7 +11,7 @@ These versatile cards can offer you everything you need, but in return, they can
 ### Fenrir (Upgrade Relic: _Splintering Steel_)  
 These cards _Evolve_ and grow stronger the longer you fight! Make your enemies permanently bleed out with _Lacerate_, steal their Block or even mercilessly attack them all in an onslaught of attacks - Everything is possible!  
 ### Cerberus (Upgrade Relic: _Hellhound Oil_)  
-Let this sharp edge _Flash_ by discarding cards to empower your attacks, and if you discard enough you even get to activate special effects such as extra card draws, stronger attacks the longer you wait or possibly even power stealing!  
+Let this sharp edge _Flash_ by discarding cards to empower your attacks! If you discard enough, you even get to activate special effects, such as extra card draws, stronger attacks the longer you wait or possibly even power stealing!  
 ### Revenant Cleaver (Upgrade Relic: _Ghoulskin Sheath_)  
 Cleverly use this card's _Hunger_ to improve its effects or gain a bit of Temporary HP when it's _Sated_. Heal, gain temporary HP or even increase your max HP, but be wary, many of its effects only last for one turn!  
 ### Atropos' Shears (Upgrade Relic: _Mana Whetstone_)  
