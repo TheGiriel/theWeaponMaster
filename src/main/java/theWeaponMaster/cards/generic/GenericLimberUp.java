@@ -30,7 +30,10 @@ public class GenericLimberUp extends AbstractDynamicCard {
 
     public GenericLimberUp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.magicNumber = baseMagicNumber = MAGIC;
+
+        initializeDescription();
     }
 
     @Override

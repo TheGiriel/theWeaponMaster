@@ -3,10 +3,10 @@ package theWeaponMaster.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnMyBlockBrokenPower;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,7 +18,7 @@ import theWeaponMaster.util.TextureLoader;
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 
-public class PreparationPower extends AbstractPower implements CloneablePowerInterface {
+public class PreparationPower extends AbstractPower implements CloneablePowerInterface, OnMyBlockBrokenPower {
     public static final String POWER_ID = TheWeaponMaster.makeID(PreparationPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(PreparationPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
@@ -83,15 +83,12 @@ public class PreparationPower extends AbstractPower implements CloneablePowerInt
     }
 
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        if (damageAmount > owner.currentBlock) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
-        }
-        return damageAmount;
+    public AbstractPower makeCopy() {
+        return new CommonPower(owner, source, amount);
     }
 
     @Override
-    public AbstractPower makeCopy() {
-        return new CommonPower(owner, source, amount);
+    public void onMyBlockBroken() {
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
     }
 }

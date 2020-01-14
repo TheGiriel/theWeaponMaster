@@ -38,10 +38,14 @@ public class AtroposSeveredSoul extends AbstractDynamicCard {
 
     public AtroposSeveredSoul() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.cost = COST;
+
         this.damage = baseDamage = DAMAGE;
 
         grave.set(this, true);
+
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_atropos_attack.png", "theWeaponMasterResources/images/1024/bg_atropos_attack.png");
+
+        initializeDescription();
     }
 
     @Override

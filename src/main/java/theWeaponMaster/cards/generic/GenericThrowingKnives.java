@@ -36,12 +36,14 @@ public class GenericThrowingKnives extends AbstractDynamicCard {
 
     public GenericThrowingKnives() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, magicNumber);
         ExhaustiveField.ExhaustiveFields.exhaustive.set(this, magicNumber);
 
+        initializeDescription();
     }
 
 

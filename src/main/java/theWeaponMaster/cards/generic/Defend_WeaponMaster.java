@@ -29,6 +29,7 @@ public class Defend_WeaponMaster extends AbstractDynamicCard {
         this.block = baseBlock = BLOCK;
 
         this.tags.add(BaseModCardTags.BASIC_DEFEND);
+        initializeDescription();
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

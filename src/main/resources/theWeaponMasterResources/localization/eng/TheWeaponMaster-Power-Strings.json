@@ -15,6 +15,12 @@
       " enemies."
     ]
   },
+  "ArsenalDrawReducePower": {
+    "NAME": "Weapon Swap Penalty",
+    "DESCRIPTIONS": [
+      "Draw one fewer card next turn."
+    ]
+  },
   "ViciousPower": {
     "NAME": "Vicious",
     "DESCRIPTIONS": [
@@ -118,19 +124,19 @@
       "Taunted creatures are forced to attack and deal base damage equal to 10% of your max HP."
     ]
   },
-  "DefensiveStancePower": {
-    "NAME": "Defensive Stance",
+  "ProtectingBladePower": {
+    "NAME": "Protecting Blade",
     "DESCRIPTIONS": [
-      "Rewording needed: Using Fenrir cards other than 'Defensive Stance' will lower the block gained from this card by 20%."
+      "For the next ",
+      " turns, you gain ",
+      " Block whenever you would gain Vicious. NL Reapplying refreshes the duration."
     ]
   },
   "CounterBlowPower": {
     "NAME": "Counter Blow",
     "DESCRIPTIONS": [
-      "Discard the top card of your draw Pile to counter an opponent's attack. Deal damage equal to the card's cost plus ",
-      ". If it is an Attack card, deal the card's base damage (up to ",
-      " damage) or its cost plus ",
-      ", whichever is higher."
+      "Discard the top card when you are attacked. Deal damage equal to the discarded card's cost plus #b",
+      "."
     ]
   },
   "RedirectBlowsPower": {

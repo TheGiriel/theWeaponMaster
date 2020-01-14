@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.HeavyDrum;
 import theWeaponMaster.relics.RevolverRelic;
@@ -18,7 +18,7 @@ import theWeaponMaster.relics.RevolverRelic;
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 
-public class RevolverHollowPoint extends AbstractDynamicCard {
+public class RevolverHollowPoint extends AbstractRevolverCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevolverHollowPoint.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
@@ -68,7 +68,7 @@ public class RevolverHollowPoint extends AbstractDynamicCard {
             if (mo.currentBlock == 0) {
                 return super.calculateModifiedCardDamage(player, mo, (float) Math.ceil((double) tmp * (1 + hollowPointBonus)));
             }
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
 
         }
         return super.calculateModifiedCardDamage(player, mo, tmp);

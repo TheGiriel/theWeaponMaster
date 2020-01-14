@@ -34,10 +34,11 @@ public class RevolverQuickload extends AbstractDynamicCard {
     public RevolverQuickload() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        initializeDescription();
         if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(HeavyDrum.ID)) {
             reloadThreshold = 5;
         }
+
+        initializeDescription();
     }
 
     @Override

@@ -39,10 +39,14 @@ public class LeviathanDeepImpact extends AbstractDynamicCard {
 
     public LeviathanDeepImpact() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
 
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_attack.png", "theWeaponMasterResources/images/1024/bg_leviathan_attack.png");
+
+        initializeDescription();
     }
 
     @Override

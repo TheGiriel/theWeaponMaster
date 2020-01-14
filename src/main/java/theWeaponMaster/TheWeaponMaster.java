@@ -400,7 +400,7 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new FenrirShieldEater());
         BaseMod.addCard(new FenrirHeavySwing());
         BaseMod.addCard(new FenrirUnleashed());
-        BaseMod.addCard(new FenrirDefensiveStance());
+        BaseMod.addCard(new FenrirProtectingBlade());
 
         BaseMod.addCard(new CerberusSlash());
         BaseMod.addCard(new CerberusEssenceSlash());
@@ -488,7 +488,7 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(FenrirShieldEater.ID);
         UnlockTracker.unlockCard(FenrirHeavySwing.ID);
         UnlockTracker.unlockCard(FenrirUnleashed.ID);
-        UnlockTracker.unlockCard(FenrirDefensiveStance.ID);
+        UnlockTracker.unlockCard(FenrirProtectingBlade.ID);
 
         UnlockTracker.unlockCard(CerberusSlash.ID);
         UnlockTracker.unlockCard(CerberusEssenceSlash.ID);

@@ -31,9 +31,13 @@ public class GenericInvestigate extends AbstractDynamicCard {
 
     public GenericInvestigate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.block = baseBlock = BLOCK;
+
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, 2);
         ExhaustiveField.ExhaustiveFields.exhaustive.set(this, 2);
+
+        initializeDescription();
     }
 
 

@@ -25,27 +25,25 @@ public class GenericCounterBlow extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.POWER;
     public static final int COST = 3;
-    public static final int DAMAGE = 5;
+    public static final int DAMAGE = 4;
     public static final int UPGRADED_DAMAGE = 2;
-    private static final int MAGIC = 2;
-    private static final int UPGRADED_MAGIC = 1;
 
     public GenericCounterBlow() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = baseMagicNumber = MAGIC;
         this.damage = baseDamage = DAMAGE;
+
+        initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CounterBlowPower(p, damage, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CounterBlowPower(p, damage)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_MAGIC);
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }

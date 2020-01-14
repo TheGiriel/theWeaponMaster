@@ -38,11 +38,16 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
 
     public AtroposSeveredPath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
         tags.add(INTIMIDATE);
         intents = EnemyForceAction.getIntents(this);
         exhaust = true;
+
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_atropos_skill.png", "theWeaponMasterResources/images/1024/bg_atropos_skill.png");
+
+        initializeDescription();
     }
 
     @Override

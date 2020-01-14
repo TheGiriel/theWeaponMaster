@@ -143,7 +143,7 @@ public class TheWeaponMaster extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        ArsenalRelic.currentWeapon = "Fenrir";
+        //ArsenalRelic.currentWeapon = "Fenrir";
 
         retVal.add(Strike_WeaponMaster.ID);
         retVal.add(Strike_WeaponMaster.ID);

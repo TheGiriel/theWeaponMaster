@@ -32,19 +32,19 @@ public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements F
     private static final int BLOCK = 4;
     private static final int UPGRADED_BLOCK = 2;
 
-    public static boolean recharge = false;
     private static int publicDamage;
     private static int publicBlock;
 
     public LeviathanGauntletCharger() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = publicDamage = baseDamage = DAMAGE;
         this.block = publicBlock = baseBlock = BLOCK;
         this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
 
-        /*if (ArsenalRelic.leviathanCharges == 0) {
-            recharge = true;
-        }*/
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_attack.png", "theWeaponMasterResources/images/1024/bg_leviathan_attack.png");
+
+        initializeDescription();
     }
 
     public static int getPublicDamage() {
@@ -67,42 +67,6 @@ public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements F
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //TODO: fix this commented line.
         AbstractDungeon.actionManager.addToBottom(new LeviathanGauntletAction());
-        //new OctopusAction().leviathanCharge();
-        /*if (recharge) {
-            flipUse(p, m);
-        } else {
-            standardUse(p, m);
-        }*/
     }
-/*
-    @Override
-    public void flipCard() {
-        if (recharge) {
-            this.cost = 0;
-        } else {
-            this.cost = COST;
-        }
-        initializeDescription();
-    }
-
-    @Override
-    public void standardUse(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < ArsenalRelic.leviathanCharges; i++) {
-            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(m, this.damage), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        }
-        recharge = true;
-        this.cost = 0;
-        AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-ArsenalRelic.leviathanCharges, this.damage ,true));
-        ArsenalRelic.leviathanCharges = 0;
-    }
-
-    @Override
-    public void flipUse(AbstractPlayer p, AbstractMonster m) {
-        //AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block * (3 - ArsenalRelic.leviathanCharges)));
-        AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(3 - ArsenalRelic.leviathanCharges, this.block, false));
-        this.cost = COST;
-        recharge = false;
-    }*/
 }

@@ -40,6 +40,8 @@ public class NoseToTailPower extends TwoAmountPower {
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
+        isTurnBased = true;
+
         this.amount = 0;
         this.amount2 = 0;
         this.type = AbstractPower.PowerType.DEBUFF;
@@ -52,8 +54,7 @@ public class NoseToTailPower extends TwoAmountPower {
 
 
     public void updateDescription() {
-        description = DESCRIPTION[0] + tempHPModifier + DESCRIPTION[1]
-        ;
+        description = DESCRIPTION[0] + tempHPModifier + DESCRIPTION[1];
     }
 
     @Override

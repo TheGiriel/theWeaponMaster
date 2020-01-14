@@ -40,6 +40,8 @@ public class GenericGrazingThrow extends AbstractDynamicCard {
 
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.block = baseBlock = BLOCK;
+
+        initializeDescription();
     }
 
 

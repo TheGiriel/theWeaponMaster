@@ -54,6 +54,7 @@ public class GenericBobAndWeave extends AbstractDynamicCard implements FlipCard 
         tags.add(WeaponMasterTags.INTIMIDATE);
 
         intents = EnemyForceAction.getIntents(this);
+        initializeDescription();
     }
 
 

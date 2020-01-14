@@ -28,6 +28,8 @@ public class GenericBerserkerStance extends AbstractDynamicCard {
 
     public GenericBerserkerStance() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+        initializeDescription();
     }
 
     @Override

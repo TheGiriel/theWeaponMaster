@@ -15,8 +15,8 @@ public class ReloadAction extends AbstractGameAction {
             for (int i = Math.min(player.discardPile.size(), 3); i > 0; i--) {
                 player.discardPile.moveToDeck(player.discardPile.getBottomCard(), true);
             }
-            player.draw(1);
         }
+        player.draw(1);
 
         if (player.hasRelic(HeavyDrum.ID)) {
             player.getRelic(RevolverRelic.ID).counter = 5;

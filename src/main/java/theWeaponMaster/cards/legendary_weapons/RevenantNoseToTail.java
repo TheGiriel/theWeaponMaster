@@ -46,9 +46,13 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.revenantHunger;
 
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_attack.png");
+
         getSated();
         tags.add(REVENANT);
         AlwaysRetainField.alwaysRetain.set(this, true);
+
+        initializeDescription();
     }
 
     @Override
@@ -80,7 +84,6 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         int hungryBoost = 0;
         if (ArsenalRelic.revenantHunger >= HUNGERCOST) {
             new RevenantStarveAction(-HUNGERCOST, false);
@@ -88,8 +91,9 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
         } else {
             new RevenantStarveAction(0, true);
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new NoseToTailPower(m, magicNumber - hungryBoost), 1));
+
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         getSated();
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new NoseToTailPower(m, magicNumber - hungryBoost), 1));
     }
 }

@@ -28,7 +28,7 @@ public class KneecappedPower extends AbstractPower implements HealthBarRenderPow
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
-    private static double bleedfactor = 0.5;
+    private static double bleedfactor = 0.05;
     public AbstractCreature source;
     private int bleedDamage;
 
@@ -43,7 +43,7 @@ public class KneecappedPower extends AbstractPower implements HealthBarRenderPow
 
 
         type = PowerType.DEBUFF;
-        isTurnBased = false;
+        isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);

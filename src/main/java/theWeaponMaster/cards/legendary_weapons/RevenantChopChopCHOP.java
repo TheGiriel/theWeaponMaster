@@ -32,10 +32,9 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    public static final int DAMAGE = 2;
+    public static final int DAMAGE = 3;
     public static final int UPGRADED_DAMAGE = 1;
     public static final int MAGIC_NUMBER = 3;
-    public static final int UPGRADED_MAGIC_NUMBER = 1;
     private final int HUNGERCOST = 5;
 
     public RevenantChopChopCHOP() {
@@ -45,10 +44,14 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.revenantHunger;
 
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_attack.png");
+
         getSated();
         tags.add(REVENANT);
         initializeDescription();
         AlwaysRetainField.alwaysRetain.set(this, true);
+
+        initializeDescription();
     }
 
     @Override
@@ -56,7 +59,6 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }

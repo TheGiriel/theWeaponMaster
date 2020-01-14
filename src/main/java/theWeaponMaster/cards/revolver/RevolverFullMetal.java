@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.HeavyDrum;
 import theWeaponMaster.relics.RevolverRelic;
@@ -18,7 +18,7 @@ import theWeaponMaster.relics.RevolverRelic;
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 
-public class RevolverFullMetal extends AbstractDynamicCard {
+public class RevolverFullMetal extends AbstractRevolverCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevolverFullMetal.class.getSimpleName());
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -49,6 +49,7 @@ public class RevolverFullMetal extends AbstractDynamicCard {
 
         armorPiercingBonus = ((float) magicNumber / 100);
         tags.add(AMMUNITION);
+
         initializeDescription();
     }
 

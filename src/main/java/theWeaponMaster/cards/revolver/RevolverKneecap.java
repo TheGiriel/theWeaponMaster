@@ -1,7 +1,7 @@
 package theWeaponMaster.cards.revolver;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,14 +9,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.powers.KneecappedPower;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class RevolverKneecap extends AbstractDynamicCard {
+public class RevolverKneecap extends AbstractRevolverCard {
 
 
     public static final String ID = TheWeaponMaster.makeID(RevolverKneecap.class.getSimpleName());
@@ -30,8 +30,8 @@ public class RevolverKneecap extends AbstractDynamicCard {
     public static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
-    public static final int COST = 3;
-    private static final int UPGRADED_COST = -1;
+    public static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
     public static final int MAGIC_NUMBER = -2;
     public static final int UPGRADED_MAGIC_NUMBER = -1;
@@ -43,6 +43,8 @@ public class RevolverKneecap extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
         tags.add(WeaponMasterTags.AMMUNITION);
+
+        initializeDescription();
     }
 
 
@@ -51,7 +53,7 @@ public class RevolverKneecap extends AbstractDynamicCard {
         if (p.getRelic(RevolverRelic.ID).counter <= 0) {
             return;
         }
-        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, 1, false));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new KneecappedPower(m)));
     }

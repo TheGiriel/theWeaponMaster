@@ -7,18 +7,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.SpecialGradeAmmoAction;
-import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
-import theWeaponMaster.powers.MarksmanshipPower;
-import theWeaponMaster.relics.HeavyDrum;
+import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 
-public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
+public class RevolverSpecialGradeAmmo extends AbstractRevolverCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevolverSpecialGradeAmmo.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
@@ -41,6 +38,7 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
 
     public RevolverSpecialGradeAmmo() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = publicDamage = baseDamage = DAMAGE;
         this.magicNumber = publicMagic = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = SECOND_VALUE;
@@ -48,6 +46,8 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
         tags.add(AMMUNITION);
         ExhaustiveField.ExhaustiveFields.exhaustive.set(this, secondValue);
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, secondValue);
+
+        initializeDescription();
     }
 
     public static int getPublicDamage() {
@@ -67,17 +67,6 @@ public class RevolverSpecialGradeAmmo extends AbstractDynamicCard {
             upgradeSecondValue(UPGRADED_SECOND_VALUE);
             ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
         }
-    }
-
-    @Override
-    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-        if (player.hasRelic(HeavyDrum.ID)) {
-            tmp++;
-        }
-        if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
-            return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
-        } else
-            return super.calculateModifiedCardDamage(player, mo, tmp);
     }
 
     @Override

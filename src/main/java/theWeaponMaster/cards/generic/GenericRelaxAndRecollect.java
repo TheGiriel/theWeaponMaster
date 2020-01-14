@@ -37,7 +37,7 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
     private static final int SECOND_VALUE = 1;
     private static final int UPGRADED_SECOND_VALUE = 1;
 
-    private static boolean flipped = false;
+    private boolean flipped = false;
     private boolean initializeCard = false;
 
     public GenericRelaxAndRecollect() {
@@ -46,13 +46,14 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = SECOND_VALUE;
         this.block = baseBlock = BLOCK;
+
+        initializeDescription();
     }
 
 
     @Override
     public void atTurnStart() {
         if (!initializeCard) {
-            flipped = true;
             initializeCard = true;
             flipCard();
         }
@@ -63,7 +64,7 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADED_BLOCK);
-            upgradeMagicNumber(-UPGRADED_MAGIC_NUMBER);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             upgradeSecondValue(UPGRADED_SECOND_VALUE);
             initializeDescription();
         }
@@ -82,7 +83,6 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
         if (flipped) {
             flipUse(p, m);
         } else {

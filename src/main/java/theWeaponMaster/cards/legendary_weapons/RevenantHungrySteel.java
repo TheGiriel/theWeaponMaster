@@ -50,10 +50,14 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.revenantHunger;
 
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_attack.png");
+
         getSated();
         tags.add(REVENANT);
         initializeDescription();
         AlwaysRetainField.alwaysRetain.set(this, true);
+
+        initializeDescription();
     }
 
     @Override

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.CustomCartridgeAction;
-import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.relics.RevolverRelic;
 
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class RevolverCustomCartridge extends AbstractDynamicCard {
+public class RevolverCustomCartridge extends AbstractRevolverCard {
 
 
     public static final String ID = TheWeaponMaster.makeID(RevolverCustomCartridge.class.getSimpleName());
@@ -39,8 +39,11 @@ public class RevolverCustomCartridge extends AbstractDynamicCard {
 
     public RevolverCustomCartridge() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = SECOND_VALUE;
+
+        initializeDescription();
     }
 
     @Override

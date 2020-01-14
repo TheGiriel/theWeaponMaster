@@ -17,11 +17,11 @@ public class FenrirEvolveAction extends AbstractGameAction {
         fenrirSet.add(FenrirLacerate.ID);
         fenrirSet.add(FenrirHeavySwing.ID);
         fenrirSet.add(FenrirShieldEater.ID);
-        fenrirSet.add(FenrirDefensiveStance.ID);
+        fenrirSet.add(FenrirProtectingBlade.ID);
         fenrirSet.add(FenrirUnleashed.ID);
 
         for (AbstractCard c : getFenrirCards()) {
-            if (c.cardID.equals(FenrirDefensiveStance.ID)) {
+            if (c.cardID.equals(FenrirProtectingBlade.ID)) {
                 c.baseBlock++;
             } else if (c.cardID.equals(FenrirHeavySwing.ID) || c.cardID.equals(FenrirShieldEater.ID)) {
                 c.baseMagicNumber++;
@@ -38,11 +38,11 @@ public class FenrirEvolveAction extends AbstractGameAction {
         fenrirSet.add(FenrirLacerate.ID);
         fenrirSet.add(FenrirHeavySwing.ID);
         fenrirSet.add(FenrirShieldEater.ID);
-        fenrirSet.add(FenrirDefensiveStance.ID);
+        fenrirSet.add(FenrirProtectingBlade.ID);
         fenrirSet.add(FenrirUnleashed.ID);
 
         for (AbstractCard c : getFenrirCards()) {
-            if (c.cardID.equals(FenrirDefensiveStance.ID)) {
+            if (c.cardID.equals(FenrirProtectingBlade.ID)) {
                 c.baseBlock -= devolveCount;
             } else if (c.cardID.equals(FenrirHeavySwing.ID) || c.cardID.equals(FenrirShieldEater.ID)) {
                 c.baseMagicNumber -= devolveCount;

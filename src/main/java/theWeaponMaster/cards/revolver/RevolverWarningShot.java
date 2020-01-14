@@ -8,14 +8,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
-import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.powers.StaggerPower;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class RevolverWarningShot extends AbstractDynamicCard {
+public class RevolverWarningShot extends AbstractRevolverCard {
 
 
     public static final String ID = TheWeaponMaster.makeID(RevolverWarningShot.class.getSimpleName());

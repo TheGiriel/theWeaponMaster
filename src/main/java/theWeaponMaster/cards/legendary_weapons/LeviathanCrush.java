@@ -42,10 +42,16 @@ public class LeviathanCrush extends AbstractDynamicCard {
 
     public LeviathanCrush() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
+
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_attack.png", "theWeaponMasterResources/images/1024/bg_leviathan_attack.png");
+
         tags.add(WeaponMasterTags.LEVIATHAN);
+
+        initializeDescription();
     }
 
     @Override
@@ -71,8 +77,7 @@ public class LeviathanCrush extends AbstractDynamicCard {
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
         if (armorPiercingDamage != 0 && ArsenalRelic.leviathanCharges >= CHARGECOST) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, (int) (armorPiercingDamage * 1.5), DamageInfo.DamageType.HP_LOSS)));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, this, (int) (m.currentBlock * 1.5))));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage * 2, DamageInfo.DamageType.HP_LOSS)));
             new LeviathanChargeAction(-CHARGECOST);
         } else if (armorPiercingDamage != 0) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage, DamageInfo.DamageType.HP_LOSS)));

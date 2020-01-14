@@ -39,9 +39,13 @@ public class AtroposSeveredSource extends AbstractDynamicCard {
 
     public AtroposSeveredSource() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         isInnate = true;
+
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_atropos_attack.png", "theWeaponMasterResources/images/1024/bg_atropos_attack.png");
+
         initializeDescription();
     }
 

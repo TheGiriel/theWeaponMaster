@@ -45,9 +45,14 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
 
     public CerberusEssenceSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = SECOND_VALUE;
+
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_cerberus_attack.png", "theWeaponMasterResources/images/1024/bg_cerberus_attack.png");
+
+        initializeDescription();
     }
 
     @Override

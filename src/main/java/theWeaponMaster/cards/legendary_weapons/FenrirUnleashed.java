@@ -43,11 +43,13 @@ public class FenrirUnleashed extends AbstractDynamicCard {
 
     public FenrirUnleashed() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        isInnate = true;
 
         this.damage = baseDamage = DAMAGE;
-        baseDamageStatic = baseDamage;
         isMultiDamage = true;
+
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_fenrir_attack.png", "theWeaponMasterResources/images/1024/bg_fenrir_attack.png");
+
+        initializeDescription();
     }
 
     @Override
@@ -77,7 +79,6 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     private void weakestMonster(AbstractPlayer p) {
         int j = 0;
         int totalDamage = 0;
-        int overKill = 0;
         boolean dead = false;
         new FenrirUnleashedSelectAction();
         for (AbstractMonster monster : targetList) {
@@ -85,8 +86,6 @@ public class FenrirUnleashed extends AbstractDynamicCard {
             TheWeaponMaster.logger.info("Target List: " + monster + " Monster HP: " + monster.currentHealth);
         }
         for (int i = 0; i < totalAttacks; i++) {
-            totalDamage += overKill;
-            overKill = 0;
             if (targetList.get(j).currentHealth == 0) {
                 j++;
                 continue;
@@ -95,8 +94,9 @@ public class FenrirUnleashed extends AbstractDynamicCard {
             totalDamage += this.damage;
             if (totalDamage >= targetList.get(j).currentHealth) {
                 dead = true;
+                totalDamage = 0;
             }
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(targetList.get(j), new DamageInfo(p, this.damage + overKill, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(targetList.get(j), new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
             if (dead && j < targetList.size() - 1) {
                 totalAttacks++;
                 new FenrirEvolveAction();
@@ -118,6 +118,9 @@ public class FenrirUnleashed extends AbstractDynamicCard {
             totalAttacks += 2;
             p.getRelic(ChemicalX.ID).flash();
         }
+        /*for (int i = 0; i < totalAttacks; i++){
+            AbstractDungeon.actionManager.addToBottom(new FenrirUnleashedBetterAction(this, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        }*/
         //TODO: Kinda works?
         weakestMonster(p);
         targetList.clear();

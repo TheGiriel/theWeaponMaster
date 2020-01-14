@@ -36,12 +36,15 @@ public class GenericRedirectBlows extends AbstractDynamicCard {
 
     public GenericRedirectBlows() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.block = baseBlock = BLOCK;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = SECOND_VALUE;
 
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, magicNumber);
         ExhaustiveField.ExhaustiveFields.exhaustive.set(this, magicNumber);
+
+        initializeDescription();
     }
 
     @Override

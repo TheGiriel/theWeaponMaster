@@ -88,31 +88,28 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public void stackPower(int stackAmount) {
+        if (owner.hasPower(ProtectingBladePower.POWER_ID)) {
+            return;
+        }
         this.amount += stackAmount;
         setBonusDamage();
         if (this.amount >= TIER_THREE) {
             setTierThree();
-            updateDescription();
         } else if (this.amount >= TIER_TWO) {
             setTierTwo();
-            updateDescription();
-        } else {
-            updateDescription();
         }
+        updateDescription();
     }
 
-    public void reducePower(int stackAmount){
+    public void reducePower(int stackAmount) {
         this.amount -= stackAmount;
         setBonusDamage();
         if (this.amount < TIER_THREE && this.amount > TIER_TWO) {
             setTierTwo();
-            updateDescription();
         } else if (this.amount < TIER_TWO) {
             setTierOne();
-            updateDescription();
-        } else {
-            updateDescription();
         }
+        updateDescription();
     }
 
     @Override
@@ -166,5 +163,6 @@ public class ViciousPower extends TwoAmountPower {
             this.amount -= reduceVicious;
             setBonusDamage();
         }
+        updateDescription();
     }
 }

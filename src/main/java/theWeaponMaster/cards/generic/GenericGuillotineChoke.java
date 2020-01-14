@@ -35,9 +35,12 @@ public class GenericGuillotineChoke extends AbstractDynamicCard {
 
     public GenericGuillotineChoke() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.block = baseBlock = BLOCK;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = SECOND_VALUE;
+
+        initializeDescription();
     }
 
     @Override

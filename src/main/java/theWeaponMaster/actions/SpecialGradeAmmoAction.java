@@ -36,9 +36,9 @@ public class SpecialGradeAmmoAction extends AbstractGameAction {
             pickCard = true;
             CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
-            group.addToTop(new OctopusAction.ShiftingChoiceCard("Splintering", "Splintering", makeCardPath("Attack.png"), "Deal " + getPublicDamage() + "damage and apply " + getPublicMagic() + " Lacerate to target enemy.", AbstractCard.CardType.ATTACK));
+            group.addToTop(new OctopusAction.ShiftingChoiceCard("Splintering", "Splintering", makeCardPath("Attack.png"), "Deal " + getPublicDamage() + " damage and apply " + getPublicMagic() + " Lacerate to target enemy.", AbstractCard.CardType.ATTACK));
 
-            group.addToTop(new OctopusAction.ShiftingChoiceCard("Ethereal", "Ethereal", makeCardPath("Attack.png"), "Deal " + getPublicDamage() + "damage and apply " + getPublicMagic() + " Mana_Burn to target enemy.", AbstractCard.CardType.ATTACK));
+            group.addToTop(new OctopusAction.ShiftingChoiceCard("Ethereal", "Ethereal", makeCardPath("Attack.png"), "Deal " + getPublicDamage() + " damage and apply " + getPublicMagic() + " Mana_Burn to target enemy.", AbstractCard.CardType.ATTACK));
 
             CenterGridCardSelectScreen.centerGridSelect = true;
             AbstractDungeon.gridSelectScreen.open(group, 1, "Choose the ammo type:", false, false, false, false);

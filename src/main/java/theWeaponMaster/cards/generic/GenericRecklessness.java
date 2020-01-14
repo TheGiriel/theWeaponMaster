@@ -34,6 +34,7 @@ public class GenericRecklessness extends AbstractDynamicCard {
 
     public GenericRecklessness() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         int playerVicious;
         try {
             playerVicious = AbstractDungeon.player.getPower(ViciousPower.POWER_ID).amount / 10;

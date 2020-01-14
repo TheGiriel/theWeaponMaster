@@ -31,7 +31,10 @@ public class RevolverDoubleTap extends AbstractDynamicCard {
 
     public RevolverDoubleTap() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+
+        initializeDescription();
     }
 
     @Override

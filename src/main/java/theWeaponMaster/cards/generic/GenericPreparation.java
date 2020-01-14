@@ -33,8 +33,11 @@ public class GenericPreparation extends AbstractDynamicCard {
 
     public GenericPreparation() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.magicNumber = baseMagicNumber = MAGIC;
         this.block = baseBlock = BLOCK;
+
+        initializeDescription();
     }
 
     @Override

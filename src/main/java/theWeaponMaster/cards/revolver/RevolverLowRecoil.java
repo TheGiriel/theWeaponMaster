@@ -10,17 +10,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
-import theWeaponMaster.powers.MarksmanshipPower;
-import theWeaponMaster.relics.HeavyDrum;
+import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 
-public class RevolverLowRecoil extends AbstractDynamicCard {
+public class RevolverLowRecoil extends AbstractRevolverCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevolverLowRecoil.class.getSimpleName());
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -43,6 +40,8 @@ public class RevolverLowRecoil extends AbstractDynamicCard {
 
         this.damage = baseDamage = DAMAGE;
         tags.add(AMMUNITION);
+
+        initializeDescription();
     }
 
     @Override
@@ -53,16 +52,6 @@ public class RevolverLowRecoil extends AbstractDynamicCard {
         }
     }
 
-    @Override
-    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-        if (player.hasRelic(HeavyDrum.ID)) {
-            tmp++;
-        }
-        if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {
-            return super.calculateModifiedCardDamage(player, mo, tmp + player.getPower(DexterityPower.POWER_ID).amount);
-        } else
-            return super.calculateModifiedCardDamage(player, mo, tmp);
-    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

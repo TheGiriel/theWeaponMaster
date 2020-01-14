@@ -1,6 +1,5 @@
 package theWeaponMaster.cards.legendary_weapons;
 
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -35,27 +34,26 @@ public class RevenantRavenous extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    //use damage as magic number and vice versa since I'm lazy
-    public static final int DAMAGE_TO_MAGIC = 3;
+    public static final int DAMAGE = 6;
     public static final int UPGRADED_DAMAGE = 2;
-    public static final int MAGIC_NUMBER_TO_DAMAGE = 6;
+    public static final int MAGIC_NUMBER = 3;
     public static final int UPGRADED_MAGIC_NUMBER = 2;
     private final int HUNGERCOST = 4;
-    private int turnCount = 0;
 
     public RevenantRavenous() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        this.damage = baseDamage = DAMAGE_TO_MAGIC;
-        this.magicNumber = baseMagicNumber = MAGIC_NUMBER_TO_DAMAGE;
+        this.damage = baseDamage = DAMAGE;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.revenantHunger;
 
-        AlwaysRetainField.alwaysRetain.set(this, true);
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_attack.png");
 
         getSated();
         tags.add(REVENANT);
         initializeDescription();
-        AlwaysRetainField.alwaysRetain.set(this, true);
+
+        initializeDescription();
     }
 
     @Override
@@ -87,14 +85,6 @@ public class RevenantRavenous extends AbstractDynamicCard {
         return AbstractDungeon.player.hasRelic(GhoulskinSheathRelic.ID);
     }
 
-    @Override
-    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-        if (turnCount > 0) {
-            return super.calculateModifiedCardDamage(player, mo, tmp + turnCount);
-        } else
-            return super.calculateModifiedCardDamage(player, mo, tmp);
-    }
-
     //TODO: Improve method
     public void use(AbstractPlayer p, AbstractMonster m) {
 
@@ -104,16 +94,10 @@ public class RevenantRavenous extends AbstractDynamicCard {
         } else {
             new RevenantStarveAction(0, true);
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, this.damage)));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, magicNumber)));
 
         TheWeaponMaster.logger.info("Getting sated change");
         getSated();
-    }
-
-    public void atTurnStart() {
-        if (AbstractDungeon.player.hand.contains(this)) {
-            turnCount++;
-        }
     }
 }

@@ -16,12 +16,14 @@ theWeaponMaster\actions\EnemyForceAction.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredPain.class
 theWeaponMaster\cards\legendary_weapons\CerberusModularSlash.class
 theWeaponMaster\actions\ImprovedWeaponCardRemovalAction.class
+theWeaponMaster\actions\FenrirUnleashedBetterAction.class
 theWeaponMaster\cards\bully\BullyMeanToEveryone.class
 theWeaponMaster\cards\revolver\RevolverQuickload.class
 theWeaponMaster\cards\bully\BullyIntimidate.class
 theWeaponMaster\actions\FenrirUnleashedSelectAction.class
 theWeaponMaster\variables\BullyVariable.class
 theWeaponMaster\powers\CounterBlowPower.class
+theWeaponMaster\cards\legendary_weapons\FenrirProtectingBlade.class
 theWeaponMaster\powers\NoseToTailPower.class
 theWeaponMaster\relics\PlaceholderRelic2.class
 theWeaponMaster\cards\generic\GenericDodge.class
@@ -84,7 +86,6 @@ theWeaponMaster\actions\SleightOfHandAction.class
 theWeaponMaster\powers\ViciousPower.class
 theWeaponMaster\powers\SeveredPainDelayedPower.class
 theWeaponMaster\powers\TauntPower.class
-theWeaponMaster\powers\DefensiveStancePower.class
 theWeaponMaster\util\EnemyIntentInterface.class
 theWeaponMaster\cards\legendary_weapons\FenrirHeavySwing.class
 theWeaponMaster\cards\generic\GenericGuillotineChoke.class
@@ -116,7 +117,6 @@ theWeaponMaster\cards\bully\BullyMock.class
 theWeaponMaster\actions\FenrirUnleashedSelectAction$MonsterHPComparator.class
 theWeaponMaster\powers\RedirectBlowsPower.class
 theWeaponMaster\actions\LeviathanGauntletAction.class
-theWeaponMaster\cards\legendary_weapons\FenrirDefensiveStance.class
 theWeaponMaster\actions\ReloadAction.class
 theWeaponMaster\actions\FenrirEvolveAction.class
 theWeaponMaster\relics\RevolverRelic.class
@@ -147,6 +147,7 @@ theWeaponMaster\relics\ShockwaveModulatorRelic.class
 theWeaponMaster\cards\abstractcards\AbstractRevolverCard.class
 theWeaponMaster\patches\CenterGridCardSelectScreen.class
 theWeaponMaster\powers\PreparationPower.class
+theWeaponMaster\powers\ArsenalDrawReducePower.class
 theWeaponMaster\cards\bully\BullySlap.class
 theWeaponMaster\events\IdentityCrisisEvent.class
 theWeaponMaster\patches\WeaponMasterTags.class
@@ -156,4 +157,5 @@ theWeaponMaster\actions\CustomCartridgeAction.class
 theWeaponMaster\cards\generic\GenericGrazingThrow.class
 theWeaponMaster\cards\revolver\Strike_WeaponMaster.class
 theWeaponMaster\powers\SeveredPainPower.class
+theWeaponMaster\powers\ProtectingBladePower.class
 theWeaponMaster\cards\revolver\RevolverUnload.class

@@ -116,14 +116,14 @@
     "DESCRIPTION": "Increase the power of all Fenrir cards by #b1 whenever you fulfill the #yEvolve condition."
   },
   {
-    "PROPER_NAME": "[#3a7ebf]Cerberus",
+    "PROPER_NAME": "Cerberus",
     "NAMES": [
       "cerberus"
     ],
     "DESCRIPTION": "Cards specializing in deck cycling and against buffed enemies."
   },
   {
-    "PROPER_NAME": "[#3a7ebf]Flash",
+    "PROPER_NAME": "Flash",
     "NAMES": [
       "flash",
       "flashy"
@@ -131,7 +131,7 @@
     "DESCRIPTION": "#yFlash #bX: Discard up to #bX cards. Bonuses per discard: NL 1+ Card: Gain #b1 bonus damage. NL 2+ Cards: draw a card. NL X: Activate the Flash effect."
   },
   {
-    "PROPER_NAME": "[#3a7ebf]Power [#3a7ebf]Flash",
+    "PROPER_NAME": "Power Flash",
     "NAMES": [
       "Power Flash",
       "Power_Flash",
@@ -141,7 +141,7 @@
     "DESCRIPTION": "#yPower #yFlash #bX: Discard up to #bX cards. Bonuses per discard: NL 1+ Card: Gain 1 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the Flash effect once."
   },
   {
-    "PROPER_NAME": "[#3a7ebf]Utility [#3a7ebf]Flash",
+    "PROPER_NAME": "Utility Flash",
     "NAMES": [
       "Utility Flash",
       "utility flash",
@@ -190,7 +190,7 @@
     "DESCRIPTION": "Ignite X: Trigger up to #bX stacks of target enemy's #yMana #yBurn."
   },
   {
-    "PROPER_NAME": "[#746550]Leviathan [#746550]Gauntlet",
+    "PROPER_NAME": "Leviathan Gauntlet",
     "NAMES": [
       "Leviathan Gauntlet",
       "leviathan gauntlet",
@@ -202,15 +202,15 @@
     "DESCRIPTION": "#yChargeable cards specializing against enemies with #yBlock and defensive powers."
   },
   {
-    "PROPER_NAME": "[#746550]Stagger",
+    "PROPER_NAME": "Stagger",
     "NAMES": [
       "stagger",
       "staggered"
     ],
-    "DESCRIPTION": "Staggered creatures deal less and take more Damage. Leviathan cards apply a stronger Stagger based on enemy Block."
+    "DESCRIPTION": "Staggered creatures deal less and take more Damage. #yLeviathan cards apply a stronger Stagger based on enemy Block."
   },
   {
-    "PROPER_NAME": "[#746550]Charge",
+    "PROPER_NAME": "Charge",
     "NAMES": [
       "charge",
       "charged",
@@ -219,7 +219,7 @@
     "DESCRIPTION": "Augment this card's effect if you have enough #yCharges. NL Increases by #b1 at the end of your turn."
   },
   {
-    "PROPER_NAME": "[#80ca2d]Revenant [#80ca2d]Cleaver",
+    "PROPER_NAME": "Revenant Cleaver",
     "NAMES": [
       "Revenant Cleaver",
       "revenant cleaver",
@@ -231,7 +231,7 @@
     "DESCRIPTION": "Cards specializing in #yHunger and improving the player's HP."
   },
   {
-    "PROPER_NAME": "[#80ca2d]Hunger",
+    "PROPER_NAME": "Hunger",
     "NAMES": [
       "hunger",
       "hungering",
@@ -240,14 +240,14 @@
     "DESCRIPTION": "Augment this card's effect at the cost of #yHunger. NL #yHunger Increases by #b1 whenever you play a non-Revenant card."
   },
   {
-    "PROPER_NAME": "[#80ca2d]Sated",
+    "PROPER_NAME": "Sated",
     "NAMES": [
       "sated"
     ],
-    "DESCRIPTION": "[#80ca2d]Hunger bonus effects are disabled. NL Gain #b2 Temporary HP while [#80ca2d]Sated."
+    "DESCRIPTION": "Hunger bonus effects are disabled. NL Gain #b2 Temporary HP while Sated."
   },
   {
-    "PROPER_NAME": "[#80ca2d]Chopping [#80ca2d]Block",
+    "PROPER_NAME": "Chopping Block",
     "NAMES": [
       "Chopping Block",
       "Chopping_Block",
@@ -257,7 +257,7 @@
     "DESCRIPTION": "If you kill the target before the turn ends, gain #b1 Max HP for every #b20 damage you deal. NL Does not work on minions."
   },
   {
-    "PROPER_NAME": "[#80ca2d]Nose [#80ca2d]to [#80ca2d]Tail",
+    "PROPER_NAME": "Nose to Tail",
     "NAMES": [
       "Nose to Tail",
       "Nose_to_Tail",
@@ -285,6 +285,16 @@
       "Weapon_Swap"
     ],
     "DESCRIPTION": "Remove all of your Legendary Weapon cards from your deck and gain a new Weapon's cards."
+  },
+  {
+    "PROPER_NAME": "Protecting Blade",
+    "NAMES": [
+      "Protecting Blade",
+      "protecting blade",
+      "Protecting_Blade",
+      "protecting_blade"
+    ],
+    "DESCRIPTION": "While Defensive Stance is active, gain Block instead of Vicious."
   },
   {
     "PROPER_NAME": "Reload",

@@ -36,6 +36,8 @@ public class GenericFlashbang extends AbstractDynamicCard {
 
         ExhaustiveField.ExhaustiveFields.exhaustive.set(this, this.magicNumber);
         ExhaustiveField.ExhaustiveFields.baseExhaustive.set(this, this.magicNumber);
+
+        initializeDescription();
     }
 
     @Override

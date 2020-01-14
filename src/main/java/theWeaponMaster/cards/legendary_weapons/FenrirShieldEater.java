@@ -1,9 +1,12 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -29,18 +32,24 @@ public class FenrirShieldEater extends AbstractDynamicCard {
 
     public static final CardRarity RARITY = CardRarity.SPECIAL;
     public static final CardTarget TARGET = CardTarget.ENEMY;
-    public static final CardType TYPE = CardType.SKILL;
+    public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
     public static final int MAGIC_NUMBER = 6;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int DAMAGE = 8;
+    public static final int UPGRADED_DAMAGE = 4;
 
     public FenrirShieldEater() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.damage = baseDamage = DAMAGE;
 
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_fenrir_attack.png", "theWeaponMasterResources/images/1024/bg_fenrir_attack.png");
+
+        initializeDescription();
     }
 
     @Override
@@ -70,6 +79,7 @@ public class FenrirShieldEater extends AbstractDynamicCard {
         if (canEvolve) {
             AbstractDungeon.actionManager.addToBottom(new FenrirEvolveAction());
         }
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
@@ -77,6 +87,7 @@ public class FenrirShieldEater extends AbstractDynamicCard {
         if(!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
+            upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
     }

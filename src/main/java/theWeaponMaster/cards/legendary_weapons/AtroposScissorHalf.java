@@ -51,6 +51,8 @@ public class AtroposScissorHalf extends AbstractDynamicCard implements Scissors 
 
         this.exhaust = true;
         addScissors();
+
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_atropos_skill.png", "theWeaponMasterResources/images/1024/bg_atropos_skill.png");
     }
 
     @Override

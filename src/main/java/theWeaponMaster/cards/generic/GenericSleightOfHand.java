@@ -25,8 +25,11 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
 
     public GenericSleightOfHand() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.block = baseBlock = BLOCK;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+
+        initializeDescription();
     }
 
     @Override
