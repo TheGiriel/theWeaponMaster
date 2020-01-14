@@ -60,7 +60,6 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     public void atTurnStart() {
         usedThisTurn = false;
         isPlayerTurn = true;
-        //new ArsenalRecombineAction();
         beginLongPulse();
     }
 
@@ -88,7 +87,7 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     public void chargeGauntlet() {
         leviathanCharges = Math.min(Math.max(leviathanCharges, 0), 3);
-        new LeviathanChargeAction(1);
+        AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(1));
     }
 
     private void starveRevenant() {

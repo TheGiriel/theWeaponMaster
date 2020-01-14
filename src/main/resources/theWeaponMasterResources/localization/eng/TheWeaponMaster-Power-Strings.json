@@ -15,7 +15,7 @@
       " enemies."
     ]
   },
-  "ArsenalDrawReducePower": {
+  "WeaponSwapPenaltyPower": {
     "NAME": "Weapon Swap Penalty",
     "DESCRIPTIONS": [
       "Draw one fewer card next turn."
@@ -124,12 +124,11 @@
       "Taunted creatures are forced to attack and deal base damage equal to 10% of your max HP."
     ]
   },
-  "ProtectingBladePower": {
-    "NAME": "Protecting Blade",
+  "ProtectiveBladePower": {
+    "NAME": "Protective Blade",
     "DESCRIPTIONS": [
       "For the next ",
-      " turns, you gain ",
-      " Block whenever you would gain Vicious. NL Reapplying refreshes the duration."
+      " turns, you gain Block instead of Vicious. NL Reapplying refreshes the duration for up to three turns."
     ]
   },
   "CounterBlowPower": {

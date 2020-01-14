@@ -44,7 +44,8 @@ public class LeviathanDeepImpact extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
 
-        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_attack.png", "theWeaponMasterResources/images/1024/bg_leviathan_attack.png");
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_skill_3_charge_sm.png",
+                "theWeaponMasterResources/images/1024/bg_leviathan_skill_3_charge.png");
 
         initializeDescription();
     }
@@ -72,20 +73,18 @@ public class LeviathanDeepImpact extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean chargeBonus = false;
+        boolean charged = false;
         if (ArsenalRelic.leviathanCharges >= CHARGECOST) {
-            chargeBonus = true;
+            charged = true;
+            AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-CHARGECOST));
         }
         for (AbstractMonster target : AbstractDungeon.getMonsters().monsters) {
-            if (target.currentBlock != 0 || chargeBonus) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, new DamageInfo(p, impactDamage(target) ), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            if (target.currentBlock != 0 || charged) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, new DamageInfo(p, impactDamage(target)), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             } else {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, new DamageInfo(p, impactDamage(target) ), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, new DamageInfo(p, impactDamage(target)), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 break;
             }
-        }
-        if (chargeBonus) {
-            new LeviathanChargeAction(-CHARGECOST);
         }
     }
 }

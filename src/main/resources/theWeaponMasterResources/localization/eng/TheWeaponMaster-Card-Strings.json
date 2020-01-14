@@ -8,9 +8,9 @@
     "NAME": "Shield Eater",
     "DESCRIPTION": "Absorb up to !M! Block from target enemy. NL Evolve: Destroy all enemy Block."
   },
-  "theWeaponMaster:FenrirProtectingBlade": {
-    "NAME": "Protecting Blade",
-    "DESCRIPTION": "Gain !B! Block and Protecting_Blade !M!. NL Evolve: All enemies intend to attack you."
+  "theWeaponMaster:FenrirProtectiveBlade": {
+    "NAME": "Protective Blade",
+    "DESCRIPTION": "Gain !B! Block and Protective_Blade !M!. NL Evolve: All enemies intend to attack you."
   },
   "theWeaponMaster:FenrirHeavySwing": {
     "NAME": "Heavy Swing",
@@ -23,7 +23,7 @@
   },
   "theWeaponMaster:FenrirUnleashed": {
     "NAME": "Fenrir Unleashed",
-    "DESCRIPTION": "Deal !D! damage to the weakest enemy. Overkill damage is added to the next attack. NL Unstoppable, Evolve: Kill an enemy."
+    "DESCRIPTION": "Deal !D! damage to the weakest enemy !SV! times. NL Unstoppable, Evolve: Kill an enemy."
   },
 
   "theWeaponMaster:CerberusSlash": {
@@ -69,7 +69,7 @@
   },
   "theWeaponMaster:LeviathanEarthquake": {
     "NAME": "Earthquake",
-    "DESCRIPTION": "Charges: !SV!. NL Deal !D! damage to all enemies, ignores thorns. NL Charged 3: Attack a second time for half damage."
+    "DESCRIPTION": "Charges: !SV!. NL Deal !D! damage to all enemies, ignores thorns. NL Charged 3: Attack a second time for half damage. NL Purge"
   },
 
   "theWeaponMaster:RevenantRavenous": {
@@ -335,7 +335,7 @@
   },
   "theWeaponMaster:GenericLimberUp": {
     "NAME": "Limber Up",
-    "DESCRIPTION": "Gain !M! Dexterity."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Choose 1 of 3 random Attacks to add to your hand. It costs 0 this turn."
   },
   "theWeaponMaster:GenericOpportunism": {
     "NAME": "Opportunism",

@@ -79,6 +79,9 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        if (owner.hasPower(ProtectiveBladePower.POWER_ID)) {
+            return;
+        }
         if (targetCard.hasTag(BULLY)) {
             AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, bullyCard.bullyNumber)));
@@ -88,7 +91,7 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public void stackPower(int stackAmount) {
-        if (owner.hasPower(ProtectingBladePower.POWER_ID)) {
+        if (owner.hasPower(ProtectiveBladePower.POWER_ID)) {
             return;
         }
         this.amount += stackAmount;

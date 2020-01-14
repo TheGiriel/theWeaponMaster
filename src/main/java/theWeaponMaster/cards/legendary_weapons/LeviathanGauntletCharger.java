@@ -9,6 +9,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.LeviathanGauntletAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.relics.ArsenalRelic;
+import theWeaponMaster.relics.ShockwaveModulatorRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
@@ -42,7 +43,8 @@ public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements F
         this.block = publicBlock = baseBlock = BLOCK;
         this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
 
-        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_attack.png", "theWeaponMasterResources/images/1024/bg_leviathan_attack.png");
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_skill_3_charge_sm.png",
+                "theWeaponMasterResources/images/1024/bg_leviathan_skill_3_charge.png");
 
         initializeDescription();
     }
@@ -55,6 +57,10 @@ public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements F
         return publicBlock;
     }
 
+    public boolean canUpgrade() {
+        return AbstractDungeon.player.hasRelic(ShockwaveModulatorRelic.ID);
+    }
+    
     @Override
     public void upgrade() {
         if (!upgraded) {
@@ -68,5 +74,6 @@ public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements F
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new LeviathanGauntletAction());
+
     }
 }

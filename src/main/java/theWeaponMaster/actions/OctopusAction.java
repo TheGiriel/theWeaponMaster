@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.patches.CenterGridCardSelectScreen;
-import theWeaponMaster.powers.ArsenalDrawReducePower;
+import theWeaponMaster.powers.WeaponSwapPenaltyPower;
 import theWeaponMaster.relics.ArsenalRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -77,7 +77,7 @@ public class OctopusAction extends AbstractGameAction {
                 new ArsenalRelic().setCurrentWeapon("Leviathan");
             }
             AbstractDungeon.player.draw(2);
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArsenalDrawReducePower(p)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeaponSwapPenaltyPower(p)));
             isDone = true;
         }
         tickDuration();

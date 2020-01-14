@@ -43,7 +43,8 @@ public class LeviathanGroundSplitter extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
 
-        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_skill.png", "theWeaponMasterResources/images/1024/bg_leviathan_skill.png");
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_skill_3_charge_sm.png",
+                "theWeaponMasterResources/images/1024/bg_leviathan_skill_3_charge.png");
 
         tags.add(WeaponMasterTags.LEVIATHAN);
 
@@ -78,7 +79,7 @@ public class LeviathanGroundSplitter extends AbstractDynamicCard {
             }
         }
         if (chargeBonus) {
-            new LeviathanChargeAction(-CHARGECOST);
+            AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-CHARGECOST));
         }
     }
 }

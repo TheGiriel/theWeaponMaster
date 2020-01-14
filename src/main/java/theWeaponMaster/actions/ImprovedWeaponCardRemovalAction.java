@@ -18,7 +18,7 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
         weaponSetHash.add(FenrirLacerate.ID);
         weaponSetHash.add(FenrirHeavySwing.ID);
         weaponSetHash.add(FenrirShieldEater.ID);
-        weaponSetHash.add(FenrirProtectingBlade.ID);
+        weaponSetHash.add(FenrirProtectiveBlade.ID);
         weaponSetHash.add(FenrirUnleashed.ID);
 
         weaponSetHash.add(CerberusSlash.ID);

@@ -61,7 +61,7 @@ public class FenrirShieldEater extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int shieldEater = 0;
         boolean canEvolve = false;
-        if (m.currentBlock != 0) {
+        if (m.currentBlock > 0) {
             if (magicNumber >= m.currentBlock) {
                 shieldEater = m.currentBlock;
                 canEvolve = true;

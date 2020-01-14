@@ -25,7 +25,7 @@ public class GiveWeaponsAction extends AbstractGameAction {
                 weaponList.add(new FenrirHeavySwing());
                 weaponList.add(new FenrirUnleashed());
                 weaponList.add(new FenrirShieldEater());
-                weaponList.add(new FenrirProtectingBlade());
+                weaponList.add(new FenrirProtectiveBlade());
                 if (owner.hasRelic(SplinteringSteelRelic.ID)) {
                     upgradeWeapons.addAll(SplinteringSteelRelic.getWeaponUpgrade());
                 }

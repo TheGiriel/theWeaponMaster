@@ -287,14 +287,14 @@
     "DESCRIPTION": "Remove all of your Legendary Weapon cards from your deck and gain a new Weapon's cards."
   },
   {
-    "PROPER_NAME": "Protecting Blade",
+    "PROPER_NAME": "Protective Blade",
     "NAMES": [
-      "Protecting Blade",
-      "protecting blade",
-      "Protecting_Blade",
-      "protecting_blade"
+      "Protective Blade",
+      "protective blade",
+      "Protective_Blade",
+      "protective_blade"
     ],
-    "DESCRIPTION": "While Defensive Stance is active, gain Block instead of Vicious."
+    "DESCRIPTION": "While Protective Blade is active, gain Block instead of Vicious."
   },
   {
     "PROPER_NAME": "Reload",

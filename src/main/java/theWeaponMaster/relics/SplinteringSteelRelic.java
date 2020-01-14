@@ -43,7 +43,7 @@ public class SplinteringSteelRelic extends CustomRelic {
             weaponUpgrade.add(FenrirShieldEater.ID);
         }
         if (level3) {
-            weaponUpgrade.add(FenrirProtectingBlade.ID);
+            weaponUpgrade.add(FenrirProtectiveBlade.ID);
         }
         if (level4) {
             weaponUpgrade.add(FenrirHeavySwing.ID);

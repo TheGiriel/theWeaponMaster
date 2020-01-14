@@ -23,12 +23,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theWeaponMaster.cards.bully.BullyIntimidate;
-import theWeaponMaster.cards.bully.BullyMock;
-import theWeaponMaster.cards.bully.BullyWimp;
-import theWeaponMaster.cards.generic.Defend_WeaponMaster;
-import theWeaponMaster.cards.legendary_weapons.FenrirLacerate;
-import theWeaponMaster.cards.revolver.Strike_WeaponMaster;
+import theWeaponMaster.cards.legendary_weapons.*;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.RevolverRelic;
@@ -145,18 +140,21 @@ public class TheWeaponMaster extends CustomPlayer {
 
         //ArsenalRelic.currentWeapon = "Fenrir";
 
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(FenrirLacerate.ID);
-        retVal.add(Defend_WeaponMaster.ID);
-        retVal.add(Defend_WeaponMaster.ID);
-        retVal.add(Defend_WeaponMaster.ID);
-        retVal.add(Defend_WeaponMaster.ID);
-        retVal.add(BullyMock.ID);
-        retVal.add(BullyIntimidate.ID);
-        retVal.add(BullyWimp.ID);
+        //retVal.add(Strike_WeaponMaster.ID);
+        //retVal.add(Strike_WeaponMaster.ID);
+        //retVal.add(Strike_WeaponMaster.ID);
+        //retVal.add(Strike_WeaponMaster.ID);
+        //retVal.add(FenrirLacerate.ID);
+        //retVal.add(Defend_WeaponMaster.ID);
+        //retVal.add(Defend_WeaponMaster.ID);
+        //retVal.add(Defend_WeaponMaster.ID);
+        //retVal.add(Defend_WeaponMaster.ID);
+        //retVal.add(BullyMock.ID);
+        retVal.add(LeviathanGroundSplitter.ID);
+        retVal.add(LeviathanGauntletCharger.ID);
+        retVal.add(LeviathanCrush.ID);
+        retVal.add(LeviathanEarthquake.ID);
+        retVal.add(LeviathanDeepImpact.ID);
 
         return retVal;
     }

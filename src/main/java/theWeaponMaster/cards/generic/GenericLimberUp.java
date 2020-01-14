@@ -1,6 +1,7 @@
 package theWeaponMaster.cards.generic;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.unique.DiscoveryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,8 +25,8 @@ public class GenericLimberUp extends AbstractDynamicCard {
     public static final CardRarity RARITY = CardRarity.RARE;
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.POWER;
-    public static final int COST = 3;
-    private static final int MAGIC = 1;
+    public static final int COST = 2;
+    private static final int MAGIC = 2;
     private static final int UPGRADE_MAGIC = 1;
 
     public GenericLimberUp() {
@@ -39,6 +40,7 @@ public class GenericLimberUp extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new DiscoveryAction(CardType.ATTACK));
     }
 
     @Override

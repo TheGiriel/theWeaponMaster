@@ -47,7 +47,8 @@ public class LeviathanCrush extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = ArsenalRelic.leviathanCharges;
 
-        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_attack.png", "theWeaponMasterResources/images/1024/bg_leviathan_attack.png");
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_skill_3_charge_sm.png",
+                "theWeaponMasterResources/images/1024/bg_leviathan_skill_3_charge.png");
 
         tags.add(WeaponMasterTags.LEVIATHAN);
 
@@ -71,17 +72,27 @@ public class LeviathanCrush extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int armorPiercingDamage = 0;
+        boolean charged = false;
         //TODO: Review the code and write something better.
+
         if (m.currentBlock > 0) {
             armorPiercingDamage = (int) (Math.min(m.currentBlock, damage) * ((double) magicNumber / 100));
         }
+
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
-        if (armorPiercingDamage != 0 && ArsenalRelic.leviathanCharges >= CHARGECOST) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage * 2, DamageInfo.DamageType.HP_LOSS)));
-            new LeviathanChargeAction(-CHARGECOST);
-        } else if (armorPiercingDamage != 0) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage, DamageInfo.DamageType.HP_LOSS)));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, this, m.currentBlock)));
+
+        if (ArsenalRelic.leviathanCharges >= CHARGECOST) {
+            charged = true;
+            AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-CHARGECOST));
         }
+        if (armorPiercingDamage != 0) {
+            if (charged) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage * 2, DamageInfo.DamageType.HP_LOSS)));
+            } else {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage, DamageInfo.DamageType.HP_LOSS)));
+            }
+        }
+
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StaggerPower(m, this, m.currentBlock)));
     }
 }
