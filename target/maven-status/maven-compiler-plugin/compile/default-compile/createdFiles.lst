@@ -25,6 +25,7 @@ theWeaponMaster\variables\BullyVariable.class
 theWeaponMaster\powers\CounterBlowPower.class
 theWeaponMaster\powers\NoseToTailPower.class
 theWeaponMaster\relics\PlaceholderRelic2.class
+theWeaponMaster\cards\abstractcards\AbstractRevenantCard.class
 theWeaponMaster\cards\generic\GenericDodge.class
 theWeaponMaster\cards\generic\Defend_WeaponMaster.class
 theWeaponMaster\cards\legendary_weapons\RevenantRavenous.class
@@ -104,7 +105,6 @@ theWeaponMaster\cards\revolver\RevolverCustomCartridge.class
 theWeaponMaster\cards\generic\GenericFrontKick.class
 theWeaponMaster\cards\revolver\RevolverDoubleTap.class
 theWeaponMaster\cards\legendary_weapons\RevenantBloodbath.class
-theWeaponMaster\cards\abstractcards\AbstractLeviathanCard.class
 theWeaponMaster\powers\NickedPower.class
 theWeaponMaster\cards\revolver\RevolverLowRecoil.class
 theWeaponMaster\cards\revolver\RevolverTwinned.class

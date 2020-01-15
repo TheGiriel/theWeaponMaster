@@ -37,7 +37,7 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
     public static final int UPGRADED_DAMAGE = 3;
     public static final int MAGIC_NUMBER = 8;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private final int HUNGERCOST = 6;
+    public static final int HUNGERCOST = 6;
 
     public RevenantNoseToTail() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -72,8 +72,10 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
 
     public void getSated() {
         if (ArsenalRelic.revenantHunger < HUNGERCOST) {
+            this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_sated_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_sated_attack.png");
             rawDescription = DESCRIPTION[1];
         } else {
+            this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_attack.png");
             rawDescription = DESCRIPTION[0];
         }
     }

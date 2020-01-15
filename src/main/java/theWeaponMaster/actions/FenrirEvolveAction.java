@@ -64,13 +64,9 @@ public class FenrirEvolveAction extends AbstractGameAction {
         }
 
         addCards(fenrirUpgrades, AbstractDungeon.player.drawPile);
-
         addCards(fenrirUpgrades, AbstractDungeon.player.discardPile);
-
         addCards(fenrirUpgrades, AbstractDungeon.player.exhaustPile);
-
         addCards(fenrirUpgrades, AbstractDungeon.player.limbo);
-
         addCards(fenrirUpgrades, AbstractDungeon.player.hand);
 
 

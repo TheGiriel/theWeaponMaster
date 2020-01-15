@@ -70,14 +70,13 @@ public class CustomCartridgeAction extends AbstractGameAction {
     }
 
     public void bigBoomShot(AbstractCard card, AbstractMonster m) {
-
         ArrayList<AbstractMonster> monsterList = AbstractDungeon.getMonsters().monsters;
         boolean hitMinions = false;
 
         int firstEnemy = monsterList.indexOf(m);
         ArrayList<AbstractMonster> minionList = new ArrayList<>();
 
-        int customDamge = card.damage * (magicNumber / 100);
+        int customDamage = (int) (card.damage * ((double) magicNumber / 100));
 
         if (upgraded) {
             for (AbstractMonster monster : monsterList) {
@@ -86,15 +85,17 @@ public class CustomCartridgeAction extends AbstractGameAction {
                 } else firstEnemy = monsterList.indexOf(monster);
             }
             for (AbstractMonster monster : minionList) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, customDamge / 2, DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_LIGHT));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, customDamage / 2, DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_LIGHT));
                 hitMinions = true;
             }
             minionList.clear();
         }
-        TheWeaponMaster.logger.info("CustomDamage: " + customDamge);
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy), new DamageInfo(p, customDamge, DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_HEAVY));
-        if (monsterList.size() > firstEnemy + 1 && !hitMinions) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().monsters.get(firstEnemy + 1), new DamageInfo(p, (customDamge / 2), DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_LIGHT));
+        TheWeaponMaster.logger.info("CustomDamage: " + customDamage);
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(monsterList.get(firstEnemy), new DamageInfo(p, customDamage, DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_HEAVY));
+        if (!hitMinions) try {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(monsterList.get(firstEnemy + 1), new DamageInfo(p, (customDamage / 2), DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_LIGHT));
+        } catch (Exception e) {
+
         }
     }
 }

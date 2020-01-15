@@ -40,7 +40,7 @@ public class GenericLimberUp extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new DiscoveryAction(CardType.ATTACK));
+        AbstractDungeon.actionManager.addToBottom(new DiscoveryAction(CardType.ATTACK, 1));
     }
 
     @Override

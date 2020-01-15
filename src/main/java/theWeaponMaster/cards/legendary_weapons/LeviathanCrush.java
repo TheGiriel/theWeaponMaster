@@ -74,6 +74,10 @@ public class LeviathanCrush extends AbstractDynamicCard {
         int armorPiercingDamage = 0;
         boolean charged = false;
         //TODO: Review the code and write something better.
+        if (ArsenalRelic.leviathanCharges >= CHARGECOST) {
+            charged = true;
+            AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-CHARGECOST));
+        }
 
         if (m.currentBlock > 0) {
             armorPiercingDamage = (int) (Math.min(m.currentBlock, damage) * ((double) magicNumber / 100));
@@ -81,10 +85,6 @@ public class LeviathanCrush extends AbstractDynamicCard {
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
 
-        if (ArsenalRelic.leviathanCharges >= CHARGECOST) {
-            charged = true;
-            AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-CHARGECOST));
-        }
         if (armorPiercingDamage != 0) {
             if (charged) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, armorPiercingDamage * 2, DamageInfo.DamageType.HP_LOSS)));

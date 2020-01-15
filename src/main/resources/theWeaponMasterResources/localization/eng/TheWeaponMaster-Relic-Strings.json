@@ -42,14 +42,14 @@
     "NAME": "The Revolver",
     "FLAVOR": "Your trusty six-shooter.",
     "DESCRIPTIONS": [
-      "Expend one shot every time you use an #yAmmunition card. #yReload when the counter hits 0, refund one Energy when reloading with an Ammunition card."
+      "Every #yAmmo card reduces the counter by #b1. #yReload when the counter hits #b0."
     ]
   },
   "theWeaponMaster:HeavyDrum": {
     "NAME": "Heavy Drum",
     "FLAVOR": "Thick walls for big bangs.",
     "DESCRIPTIONS": [
-      "As long as you own this relic, you reload after 5 shots and deal #B1 extra damage with Ammunition cards."
+      "Reload after 5 shots and deal #b1 extra damage with Ammunition cards."
     ]
   },
   "theWeaponMaster:SplinteringSteelRelic": {

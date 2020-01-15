@@ -17,6 +17,8 @@ import theWeaponMaster.powers.LaceratePower;
 import theWeaponMaster.powers.NickedPower;
 import theWeaponMaster.relics.SplinteringSteelRelic;
 
+import java.util.Random;
+
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class FenrirLacerate extends AbstractDynamicCard {
@@ -49,9 +51,22 @@ public class FenrirLacerate extends AbstractDynamicCard {
         initializeDescription();
     }
 
+    public AbstractGameAction.AttackEffect randomSlash() {
+        Random rand = new Random();
+        switch (rand.nextInt(2)) {
+            case 0:
+                return AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
+            case 1:
+                return AbstractGameAction.AttackEffect.SLASH_HORIZONTAL;
+            case 2:
+                return AbstractGameAction.AttackEffect.SLASH_VERTICAL;
+        }
+        return AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, damageTypeForTurn), randomSlash()));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new LaceratePower(m, this.magicNumber), magicNumber));
         int evolveThreshold = 0;
         if (m.hasPower(LaceratePower.POWER_ID)) {

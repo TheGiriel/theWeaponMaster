@@ -35,7 +35,7 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
     public static final int DAMAGE = 3;
     public static final int UPGRADED_DAMAGE = 1;
     public static final int MAGIC_NUMBER = 3;
-    private final int HUNGERCOST = 5;
+    public static final int HUNGERCOST = 5;
 
     public RevenantChopChopCHOP() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -71,8 +71,10 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
 
     public void getSated() {
         if (ArsenalRelic.revenantHunger < HUNGERCOST) {
+            this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_sated_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_sated_attack.png");
             rawDescription = DESCRIPTION[1];
         } else {
+            this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_attack.png");
             rawDescription = DESCRIPTION[0];
         }
     }

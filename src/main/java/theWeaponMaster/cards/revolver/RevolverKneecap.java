@@ -33,8 +33,8 @@ public class RevolverKneecap extends AbstractRevolverCard {
     public static final int COST = 2;
     private static final int UPGRADED_COST = 1;
 
-    public static final int MAGIC_NUMBER = -2;
-    public static final int UPGRADED_MAGIC_NUMBER = -1;
+    public static final int MAGIC_NUMBER = 2;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
 
 
     public RevolverKneecap() {
@@ -53,8 +53,8 @@ public class RevolverKneecap extends AbstractRevolverCard {
         if (p.getRelic(RevolverRelic.ID).counter <= 0) {
             return;
         }
-        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, 1, false));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(1, false, false, false));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new KneecappedPower(m)));
     }
 

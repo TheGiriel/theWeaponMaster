@@ -65,7 +65,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
     }
 
     private void setBullyGain() {
-        this.bullyNumber = baseBullyNumber = BULLY_COST;
+        baseBullyNumber = 0;
         if (AbstractDungeon.isPlayerInDungeon()) {
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
                 if (intents.contains(monster.intent) && !monster.hasPower(TauntPower.POWER_ID)) {
@@ -77,12 +77,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
 
     @Override
     public boolean cardPlayable(AbstractMonster m) {
-        boolean canUse = AbstractDungeon.getMonsters().monsters.stream().anyMatch(e -> intents.contains(e.intent) && e.hasPower(IntimidatePower.POWER_ID));
-        if (canUse) {
-            return true;
-        } else
-            cantUseMessage = "Nobody is attacking me!";
-        return false;
+        return AbstractDungeon.getMonsters().monsters.stream().anyMatch(e -> intents.contains(e.intent) && !e.hasPower(IntimidatePower.POWER_ID));
     }
 
 

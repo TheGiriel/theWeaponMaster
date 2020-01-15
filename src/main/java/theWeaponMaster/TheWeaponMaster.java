@@ -83,32 +83,32 @@ public class TheWeaponMaster implements
     private static final String MODNAME = "Weapon Master";
     private static final String AUTHOR = "TheGiriel"; // And pretty soon - You!
     private static final String DESCRIPTION = "A new character that focuses on using his revolver and different weapons.";
-    
+
     // =============== INPUT TEXTURE LOCATION =================
-    
+
     // Colors (RGB)
     // Character Color
-    public static final Color DEFAULT_GRAY = CardHelper.getColor(100.0f, 53.0f, 59.0f);
-    
+    public static final Color DEFAULT_GRAY = CardHelper.getColor(100, 53, 59);
+
     // Potion Colors in RGB
-    public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
-    public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
-    public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
+    //public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
+    //public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
+    //public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
 
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-  
+
     // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_DEFAULT_GRAY = "theWeaponMasterResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "theWeaponMasterResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "theWeaponMasterResources/images/512/bg_power_default_gray.png";
-    
-    private static final String ENERGY_ORB_DEFAULT_GRAY = "theWeaponMasterResources/images/512/card_default_gray_orb.png";
-    private static final String CARD_ENERGY_ORB = "theWeaponMasterResources/images/512/card_small_orb.png";
-    
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "theWeaponMasterResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "theWeaponMasterResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "theWeaponMasterResources/images/1024/bg_power_default_gray.png";
-    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "theWeaponMasterResources/images/1024/card_default_gray_orb.png";
+    private static final String ATTACK_DEFAULT_GRAY = "theWeaponMasterResources/images/512/bg_attack_weaponmaster.png";
+    private static final String SKILL_DEFAULT_GRAY = "theWeaponMasterResources/images/512/bg_skill_weaponmaster.png";
+    private static final String POWER_DEFAULT_GRAY = "theWeaponMasterResources/images/512/bg_power_weaponmaster.png";
+
+    private static final String ENERGY_ORB_DEFAULT_GRAY = "theWeaponMasterResources/images/512/card_weaponmaster_orb.png";
+    private static final String CARD_ENERGY_ORB = "theWeaponMasterResources/images/512/card_small_weaponmaster_orb.png";
+
+    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "theWeaponMasterResources/images/1024/bg_attack_weaponmaster.png";
+    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "theWeaponMasterResources/images/1024/bg_skill_weaponmaster.png";
+    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "theWeaponMasterResources/images/1024/bg_power_weaponmaster.png";
+    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "theWeaponMasterResources/images/1024/card_weaponmaster_orb.png";
     public static final String THE_WEAPON_MASTER_SHOULDER_2 = "theWeaponMasterResources/images/char/defaultCharacter/shoulder2.png";
     public static final String THE_WEAPON_MASTER_CORPSE = "theWeaponMasterResources/images/char/defaultCharacter/corpse.png";
     // Atlas and JSON files for the Animations
@@ -116,7 +116,7 @@ public class TheWeaponMaster implements
     public static final String THE_WEAPON_MASTER_SKELETON_JSON = "theWeaponMasterResources/images/char/defaultCharacter/skeleton.json";
     // Character assets
     private static final String THE_WEAPON_MASTER_BUTTON = "theWeaponMasterResources/images/charSelect/stupidCharacterButton.png";
-    
+
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "theWeaponMasterResources/images/Badge.png";
     private static final String THE_WEAPON_MASTER_PORTRAIT = "theWeaponMasterResources/images/charSelect/DefaultCharacterPortraitBG.png";

@@ -72,7 +72,7 @@
       "Unstoppable",
       "unstoppable"
     ],
-    "DESCRIPTION": "Continue attacking if the condition is fulfilled."
+    "DESCRIPTION": "If the condition is fulfilled, attack the next enemy."
   },
   {
     "PROPER_NAME": "[#b7410e]Fenrir",

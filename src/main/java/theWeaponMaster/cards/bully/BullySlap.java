@@ -3,7 +3,6 @@ package theWeaponMaster.cards.bully;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -24,6 +23,7 @@ public class BullySlap extends AbstractBullyCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.COMMON;
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
@@ -34,7 +34,7 @@ public class BullySlap extends AbstractBullyCard {
     public static final int UPGRADED_DAMAGE = -2;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int BULLY_COST = 5;
+    public static final int BULLY_COST = 5;
 
     public BullySlap() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -50,7 +50,6 @@ public class BullySlap extends AbstractBullyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25F));
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
@@ -63,6 +62,7 @@ public class BullySlap extends AbstractBullyCard {
             this.name = "Double Slap+";
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

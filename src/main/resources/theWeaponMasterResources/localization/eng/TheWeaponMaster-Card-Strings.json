@@ -6,7 +6,7 @@
   },
   "theWeaponMaster:FenrirShieldEater": {
     "NAME": "Shield Eater",
-    "DESCRIPTION": "Absorb up to !M! Block from target enemy. NL Evolve: Destroy all enemy Block."
+    "DESCRIPTION": "Absorb up to !M! Block from target. NL Evolve: Destroy all enemy Block."
   },
   "theWeaponMaster:FenrirProtectiveBlade": {
     "NAME": "Protective Blade",
@@ -23,7 +23,7 @@
   },
   "theWeaponMaster:FenrirUnleashed": {
     "NAME": "Fenrir Unleashed",
-    "DESCRIPTION": "Deal !D! damage to the weakest enemy !SV! times. NL Unstoppable, Evolve: Kill an enemy."
+    "DESCRIPTION": "Deal !D! damage to the weakest enemy X times. NL Unstoppable, Evolve: Kill an enemy."
   },
 
   "theWeaponMaster:CerberusSlash": {
@@ -53,23 +53,23 @@
 
   "theWeaponMaster:LeviathanCrush": {
     "NAME": "Crush",
-    "DESCRIPTION": "Charges: !SV! NL Deal !D! damage. NL Apply Stagger based on enemy Block. NL Armor_Piercing: !M!. NL Charged 1: Double Armor_Piercing."
+    "DESCRIPTION": "Deal !D! damage. NL Apply Stagger based on enemy Block. NL Armor_Piercing: !M!. NL Charged 1: Double Armor_Piercing."
   },
   "theWeaponMaster:LeviathanGauntletCharger": {
     "NAME": "Gauntlet Charger",
-    "DESCRIPTION": "Charges: !SV! NL Discharge the Leviathan to deal !D! random damage per charge or recharge it to gain !B! Block per charge."
+    "DESCRIPTION": "Discharge the Leviathan to deal !D! random damage per charge or recharge it to gain !B! Block per charge."
   },
   "theWeaponMaster:LeviathanGroundSplitter": {
     "NAME": "Ground Splitter",
-    "DESCRIPTION": "Charges: !SV!. NL Stagger all enemies depending on their total Block. NL Charged 1: Apply !M! Vulnerable."
+    "DESCRIPTION": "Stagger all enemies depending on their total Block. NL Charged 1: Apply !M! Vulnerable."
   },
   "theWeaponMaster:LeviathanDeepImpact": {
     "NAME": "Deep Impact",
-    "DESCRIPTION": "Charges: !SV! NL Deal !D! damage to the first enemy. NL Unstoppable: Enemy Block. Gain Armor_Piercing: !M! NL Charged: 2. Always activate Unstoppable."
+    "DESCRIPTION": "Deal !D! damage. NL Armor_Piercing: !M! NL Unstoppable: Enemy Block. NL Charged: 2. Always activate Unstoppable."
   },
   "theWeaponMaster:LeviathanEarthquake": {
     "NAME": "Earthquake",
-    "DESCRIPTION": "Charges: !SV!. NL Deal !D! damage to all enemies, ignores thorns. NL Charged 3: Attack a second time for half damage. NL Purge"
+    "DESCRIPTION": "Deal !D! damage to all enemies, ignores thorns. NL Charged 3: Attack a second time for half damage. NL Purge."
   },
 
   "theWeaponMaster:RevenantRavenous": {
@@ -82,9 +82,9 @@
   },
   "theWeaponMaster:RevenantChopChopCHOP": {
     "NAME": "Chop Chop CHOP",
-    "DESCRIPTION": "Hungry 5: Gain another Attack. NL Deal !D! damage !M! times.",
+    "DESCRIPTION": "Hungry 5: Deal damage one more time. NL Deal !D! damage !M! times.",
     "EXTENDED_DESCRIPTION": [
-      "Hungry 5: Attack once more. NL Deal !D! damage !M! times.",
+      "Hungry 5: Deal damage one more time. NL Deal !D! damage !M! times.",
       "Hungry 5: Sated. NL Deal !D! damage."
     ]
   },
@@ -109,7 +109,7 @@
     "DESCRIPTION": "Hungry X: Gain Vicious equal to Hunger. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
     "EXTENDED_DESCRIPTION": [
       "Hungry X: Gain Vicious equal to Hunger. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious.",
-      "Hungry X: Gain Vicious equal to 150% of Hunger. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious."
+      "Hungry X: Gain Vicious equal to Hunger +5. NL Deal !D! damage to a random enemy and lose 5 Vicious. NL Unstoppable: 5+ Vicious."
     ]
   },
 
@@ -133,7 +133,7 @@
   },
   "theWeaponMaster:AtroposSeveredPath": {
     "NAME": "Severed Path",
-    "DESCRIPTION": "Target Enemy attacks a random enemy this turn. NL Apply !M! Mana_Burn. NL Exhaust."
+    "DESCRIPTION": "Target attacks a random enemy this turn. NL Apply !M! Mana_Burn. NL Exhaust."
   },
   "theWeaponMaster:AtroposSeveredPain": {
     "NAME": "Severed Pain",
@@ -185,7 +185,7 @@
   },
   "theWeaponMaster:RevolverKneecap": {
     "NAME": "Kneecap",
-    "DESCRIPTION": "Exhaust a card. NL Kneecap target enemy for three turns and reduce their Strength by !M!."
+    "DESCRIPTION": "Exhaust a card. NL Apply Kneecap. NL Enemy loses !M! Strength."
   },
   "theWeaponMaster:RevolverQuickload": {
     "NAME": "Quickload",
@@ -239,7 +239,7 @@
   },
   "theWeaponMaster:BullyMock": {
     "NAME": "Mock",
-    "DESCRIPTION": "Bully !BULLY! NL If target enemy intends to attack, apply !M! Weak. Otherwise apply !M! Vulnerable.",
+    "DESCRIPTION": "Bully !BULLY! NL If the enemy intends to attack, apply !M! Weak. Otherwise apply !M! Vulnerable.",
     "UPGRADE_DESCRIPTION": "Bully !BULLY! NL All enemies gain !M! Weak if they're attacking. Otherwise apply !M! Vulnerable."
   },
   "theWeaponMaster:BullyShakedown": {
@@ -259,12 +259,12 @@
   },
   "theWeaponMaster:BullyTaunt": {
     "NAME": "Taunt",
-    "DESCRIPTION": "Bully !BULLY! NL Taunt target enemy."
+    "DESCRIPTION": "Bully !BULLY! NL Taunt."
   },
   "theWeaponMaster:BullyTerrifyingHowl": {
     "NAME": "Terrifying Howl",
-    "DESCRIPTION": "Bully !BULLY! NL Intimidate all enemies. NL Gain !BULLY! additional Vicious per Intimidated enemy. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Bully !BULLY! Apply !M! Vulnerable and Intimidate all enemies. Gain !BULLY! additional Vicious per Intimidated enemy. NL Exhaust. "
+    "DESCRIPTION": "Intimidate all enemies. NL Gain !BULLY! Vicious per Intimidated enemy. NL Purge",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable and Intimidate all enemies. Gain !BULLY! Vicious per Intimidated enemy. NL Purge "
   },
   "theWeaponMaster:BullyPushover": {
     "NAME": "Pushover",
@@ -286,17 +286,17 @@
   },
   "theWeaponMaster:GenericBobAndWeave": {
     "NAME": "Bob and Weave",
-    "DESCRIPTION": "Gain !B! Block. NL Bob: Gain additional !M! Block for every enemy that intends to attack. NL Weave: 1 energy if all enemies are attacking.",
+    "DESCRIPTION": "Gain !B! Block. NL #yBob: Gain additional !M! Block for every enemy that intends to attack. NL #yWeave: !SV! energy if all enemies intend to attack.",
     "EXTENDED_DESCRIPTION": [
       "Bob",
       "Gain !B! Block. NL Gain additional !M! Block for every enemy that intends to attack.",
       "Weave",
-      "Gain !B! Block. NL Gain 1 Energy if all enemies intend to attack."
+      "Gain !B! Block. NL Gain !SV! Energy if all enemies intend to attack."
     ]
   },
   "theWeaponMaster:GenericCounterBlow": {
     "NAME": "Counter Blow",
-    "DESCRIPTION": "Discard the top card of your draw pile to immediately counter an enemy's attack for !M! plus the cards cost, or up to !D! damage if you discarded an Attack (and it's higher.)."
+    "DESCRIPTION": "Discard the top card of your draw pile when you are attacked to deal damage equal to !D! plus the card's cost."
   },
   "theWeaponMaster:GenericDodge": {
     "NAME": "Dodge",
@@ -343,7 +343,7 @@
   },
   "theWeaponMaster:GenericPreparation": {
     "NAME": "Preparation",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Dexterity. NL If your Block isn't broken until your next turn, the first Attack you play costs 1 less Energy."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Dexterity. NL If your Block isn't broken, the first Attack next turn costs 1 less Energy."
   },
   "theWeaponMaster:GenericRecklessness": {
     "NAME": "Recklessness",
@@ -353,9 +353,9 @@
     "NAME": "Relax and Recollect",
     "DESCRIPTION": "Relax: Gain !B! Block. NL Lose half your Vicious. Gain that much Block. NL Recollect: Exhaust !M! cards from your discard pile, gain !SV! Energy.",
     "EXTENDED_DESCRIPTION": [
-      "#yRelax",
+      "Relax",
       "Gain !B! Block and draw a card. NL Lose half your Vicious. Gain that much Block.",
-      "#yRecollect",
+      "Recollect",
       "Draw a card. NL Exhaust !M! cards from your discard pile, then gain !SV! Energy."
     ]
   },

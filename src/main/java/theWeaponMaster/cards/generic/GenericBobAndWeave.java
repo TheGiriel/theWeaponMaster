@@ -33,13 +33,15 @@ public class GenericBobAndWeave extends AbstractDynamicCard implements FlipCard 
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
+    public static final int SECOND_VALUE = 1;
 
     private static final int BLOCK = 6;
-    private static final int UPGRADED_BLOCK = 2;
+    public static final int UPGRADED_SECOND_VALUE = 1;
 
     public static final int MAGIC_NUMBER = 3;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
+    private static final int UPGRADED_COST = 0;
+    private static final int UPGRADED_BLOCK = 0;
 
     private static boolean flipped = false;
     private boolean initializeCard = false;
@@ -50,6 +52,7 @@ public class GenericBobAndWeave extends AbstractDynamicCard implements FlipCard 
 
         this.block = baseBlock = BLOCK;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.secondValue = baseSecondValue = SECOND_VALUE;
 
         tags.add(WeaponMasterTags.INTIMIDATE);
 
@@ -73,6 +76,8 @@ public class GenericBobAndWeave extends AbstractDynamicCard implements FlipCard 
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
             upgradeBlock(UPGRADED_BLOCK);
+            upgradeSecondValue(UPGRADED_SECOND_VALUE);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }
@@ -116,7 +121,7 @@ public class GenericBobAndWeave extends AbstractDynamicCard implements FlipCard 
             }
         }
         if (draw) {
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(secondValue));
         }
         flipCard();
     }

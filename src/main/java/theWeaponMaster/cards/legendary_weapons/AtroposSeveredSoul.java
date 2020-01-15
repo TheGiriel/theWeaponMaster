@@ -71,7 +71,6 @@ public class AtroposSeveredSoul extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int manaBurn = 0;
         if (m.hasPower(ManaBurnPower.POWER_ID)) {
-            this.modifyCostForTurn(-m.getPower(ManaBurnPower.POWER_ID).amount);
             manaBurn = m.getPower(ManaBurnPower.POWER_ID).amount;
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));

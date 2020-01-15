@@ -153,7 +153,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case RitualPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RitualPower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RitualPower(p, Math.min(tempStealValue.get(i), secondValue), true)));
                     break;
                 case ThieveryPower.POWER_ID:
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThieveryPower(p, Math.min(tempStealValue.get(i), secondValue))));

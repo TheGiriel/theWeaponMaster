@@ -14,6 +14,8 @@ import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.ShockwaveModulatorRelic;
 
+import java.util.ArrayList;
+
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class LeviathanDeepImpact extends AbstractDynamicCard {
@@ -26,7 +28,7 @@ public class LeviathanDeepImpact extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Attack.png");
 
     public static final CardRarity RARITY = CardRarity.SPECIAL;
-    public static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
@@ -64,11 +66,11 @@ public class LeviathanDeepImpact extends AbstractDynamicCard {
         return AbstractDungeon.player.hasRelic(ShockwaveModulatorRelic.ID);
     }
 
-    public int impactDamage(AbstractMonster monster){
-        if (monster.currentBlock>0){
-            this.damage += magicNumber;
+    public int armorPiercingDamage(AbstractMonster monster) {
+        if (monster.currentBlock > 0) {
+            return (int) Math.min(monster.currentBlock, (float) Math.ceil(damage * ((double) magicNumber / 100)));
         }
-        return this.damage;
+        return 0;
     }
 
     @Override
@@ -78,11 +80,27 @@ public class LeviathanDeepImpact extends AbstractDynamicCard {
             charged = true;
             AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-CHARGECOST));
         }
-        for (AbstractMonster target : AbstractDungeon.getMonsters().monsters) {
-            if (target.currentBlock != 0 || charged) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, new DamageInfo(p, impactDamage(target)), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            } else {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, new DamageInfo(p, impactDamage(target)), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+
+        ArrayList<AbstractMonster> monsterArrayList = AbstractDungeon.getMonsters().monsters;
+
+        ArrayList<AbstractMonster> mList = new ArrayList<>();
+        mList.add(m);
+        TheWeaponMaster.logger.info("Current Monster: " + m + ", Monster Position: " + monsterArrayList.indexOf(m));
+        for (AbstractMonster monster : monsterArrayList) {
+            TheWeaponMaster.logger.info("Current Monster: " + monster + ", Monster Position: " + monsterArrayList.indexOf(monster));
+            if (monsterArrayList.indexOf(monster) > monsterArrayList.indexOf(m)) {
+                mList.add(monster);
+            }
+        }
+
+        for (AbstractMonster monster : mList) {
+            if (monster.currentBlock > 0 || charged) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                if (monster.currentBlock > 0) {
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, armorPiercingDamage(monster), DamageInfo.DamageType.HP_LOSS)));
+                }
+            } else if (monster.currentBlock == 0) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 break;
             }
         }

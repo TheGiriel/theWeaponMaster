@@ -16,6 +16,7 @@ import theWeaponMaster.actions.FenrirUnleashedSelectAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
@@ -37,6 +38,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     public static final int COST = -1;
     public static final int DAMAGE = 8;
     public static final int UPGRADED_DAMAGE = 5;
+    public static final int MAGIC_NUMBER = 3;
     private static int totalAttacks;
     public static int baseDamageStatic;
     public static ArrayList<AbstractMonster> targetList = new ArrayList<>();
@@ -76,6 +78,21 @@ public class FenrirUnleashed extends AbstractDynamicCard {
         return false;
     }
 
+    public AbstractGameAction.AttackEffect randomSlash() {
+        Random rand = new Random();
+        switch (rand.nextInt(4)) {
+            case 0:
+                return AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
+            case 1:
+                return AbstractGameAction.AttackEffect.SLASH_HORIZONTAL;
+            case 2:
+                return AbstractGameAction.AttackEffect.SLASH_VERTICAL;
+            case 3:
+                return AbstractGameAction.AttackEffect.SLASH_HEAVY;
+        }
+        return AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
+    }
+
     private void weakestMonster(AbstractPlayer p) {
         int j = 0;
         int totalDamage = 0;
@@ -96,7 +113,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
                 dead = true;
                 totalDamage = 0;
             }
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(targetList.get(j), new DamageInfo(p, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(targetList.get(j), new DamageInfo(p, this.damage, damageTypeForTurn), randomSlash()));
             if (dead && j < targetList.size() - 1) {
                 totalAttacks++;
                 new FenrirEvolveAction();

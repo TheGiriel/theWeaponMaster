@@ -17,6 +17,8 @@ import theWeaponMaster.actions.OctopusAction;
 import theWeaponMaster.actions.RevenantStarveAction;
 import theWeaponMaster.util.TextureLoader;
 
+import java.util.ArrayList;
+
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
 import static theWeaponMaster.patches.WeaponMasterTags.REVENANT;
@@ -34,10 +36,15 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
     //as the name implies this is where the respective weapons are marked as (un)locked
     //Fenrir and Cerberus should be the two basic weapons that the player has access to under normal circumstances.
     public static boolean fenrirUnlocked = true;
+    public static ArrayList<Boolean> fenrirCardsUnlocked = new ArrayList<>();
     public static boolean cerberusUnlocked = true;
+    public static ArrayList<Boolean> cerberusCardsUnlocked = new ArrayList<>();
     public static boolean revenantUnlocked = true;
+    public static ArrayList<Boolean> revenantCardsUnlocked = new ArrayList<>();
     public static boolean atroposUnlocked = true;
+    public static ArrayList<Boolean> atroposcardsCardsUnlocked = new ArrayList<>();
     public static boolean leviathanUnlocked = true;
+    public static ArrayList<Boolean> leviathanCardsUnlocked = new ArrayList<>();
     public static String currentWeapon = "None";
     public static int leviathanCharges = 3;
     public static int revenantHunger = 10;
@@ -125,13 +132,13 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
         setDescriptionAfterLoading();
     }
 
-
     public void setDescriptionAfterLoading() {
         this.description = DESCRIPTIONS[0] + FontHelper.colorString(currentWeapon, "r");
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
     }
+
 
     @Override
     public void onUnequip() {
@@ -155,4 +162,5 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
         stopPulse();
         getUpdatedDescription();
     }
+
 }

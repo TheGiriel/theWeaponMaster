@@ -36,7 +36,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     public static final int DAMAGE = 7;
     public static final int UPGRADED_DAMAGE = 3;
     public static final int MAGIC_NUMBER = 10;
-    private final int HUNGERCOST = 0;
+    public static final int HUNGERCOST = 0;
 
     public RevenantBloodbath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -45,7 +45,8 @@ public class RevenantBloodbath extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.secondValue = baseSecondValue = TIER_TWO;
 
-        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_attack.png");
+        this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_attack.png",
+                "theWeaponMasterResources/images/1024/bg_revenant_attack.png");
 
         getSated();
         tags.add(REVENANT);
@@ -91,12 +92,10 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int initialDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / 5;
-        double upgradeBonus = 1;
-        if (upgraded) {
-            upgradeBonus = 1.5;
-        }
-        p.getPower(ViciousPower.POWER_ID).amount += ArsenalRelic.revenantHunger * upgradeBonus;
+
+        p.getPower(ViciousPower.POWER_ID).amount += ArsenalRelic.revenantHunger + 5;
         new RevenantStarveAction(-ArsenalRelic.revenantHunger, false);
+
         for (int i = p.getPower(ViciousPower.POWER_ID).amount; i >= 5; i -= 5) {
             int finalDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / TIER_TWO;
             AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, (damage - initialDamageBonus + finalDamageBonus), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));

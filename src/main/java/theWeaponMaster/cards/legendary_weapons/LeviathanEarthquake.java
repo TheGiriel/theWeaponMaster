@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.LeviathanChargeAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
@@ -77,14 +76,11 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
 
         AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.25F, ScreenShake.ShakeDur.LONG, ScreenShake.ShakeIntensity.HIGH));
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            if (monster.hasPower(ThornsPower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            } else
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SMASH));
         }
 
         if (ArsenalRelic.leviathanCharges >= CHARGECOST) {
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25F));
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.15F));
             AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.25F, ScreenShake.ShakeDur.SHORT, ScreenShake.ShakeIntensity.LOW));
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage / 2, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));

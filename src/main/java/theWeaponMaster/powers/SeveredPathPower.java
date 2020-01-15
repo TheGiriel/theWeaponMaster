@@ -15,8 +15,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
-import java.util.ArrayList;
-
 public class SeveredPathPower extends AbstractPower {
 
     public static final String POWER_ID = TheWeaponMaster.makeID(SeveredPathPower.class.getSimpleName());
@@ -31,7 +29,6 @@ public class SeveredPathPower extends AbstractPower {
     private byte originalMove;
     private AbstractMonster.Intent originalIntent;
     private DamageInfo.DamageType test = DamageInfo.DamageType.NORMAL;
-    private ArrayList<AbstractMonster.Intent> intents;
 
     public SeveredPathPower(AbstractCreature owner, AbstractCreature source) {
         this.name = NAME;
@@ -39,11 +36,6 @@ public class SeveredPathPower extends AbstractPower {
         this.owner = owner;
         this.m = (AbstractMonster) owner;
         this.source = source;
-        intents.add(AbstractMonster.Intent.ATTACK);
-        intents.add(AbstractMonster.Intent.ATTACK_BUFF);
-        intents.add(AbstractMonster.Intent.ATTACK_DEBUFF);
-        intents.add(AbstractMonster.Intent.ATTACK_DEFEND);
-
 
         type = AbstractPower.PowerType.DEBUFF;
         isTurnBased = true;
@@ -59,10 +51,10 @@ public class SeveredPathPower extends AbstractPower {
         originalIntent = this.m.intent;
         intentDamage = this.m.getIntentDmg();
         //TODO: Lagavulin special case.
-        if (intents.contains(m.intent)) {
-            this.m.setMove((byte) -2, AbstractMonster.Intent.ATTACK, intentDamage);
-            this.m.createIntent();
-        }
+
+        this.m.setMove((byte) -2, AbstractMonster.Intent.ATTACK, intentDamage);
+        this.m.createIntent();
+
     }
 
     public void updateDescription() {

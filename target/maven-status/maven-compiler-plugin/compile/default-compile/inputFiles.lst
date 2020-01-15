@@ -23,7 +23,6 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\pa
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\ArsenalRelic.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\FenrirHeavySwing.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\patches\WeaponMasterTags.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\abstractcards\AbstractLeviathanCard.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyDinerArgument.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\LeviathanGauntletCharger.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\patches\DefaultInsertPatch.java
@@ -41,7 +40,6 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ac
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\revolver\RevolverWarningShot.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyPushover.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\CerberusIaiSlash.java
-C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\ArsenalDrawReducePower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\KneecappedPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\bully\BullyConfidence.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\FenrirProtectiveBlade.java
@@ -76,6 +74,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\ca
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\UncommonRelicImprovedGunpowder.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\events\IdentityCrisisEvent.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\BottledPlaceholderRelic.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\WeaponSwapPenaltyPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\abstractcards\AbstractDynamicCard.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\util\IDCheckDontTouchPls.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\legendary_weapons\RevenantNoseToTail.java
@@ -118,6 +117,7 @@ C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\re
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\generic\GenericRelaxAndRecollect.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\powers\MarksmanshipPower.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\relics\PlaceholderRelic.java
+C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\abstractcards\AbstractRevenantCard.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\UncommonPowerAction.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\cards\revolver\RevolverSpecialGradeAmmo.java
 C:\Users\TheGiriel\IdeaProjects\theWeaponMaster\src\main\java\theWeaponMaster\actions\FenrirEvolveAction.java

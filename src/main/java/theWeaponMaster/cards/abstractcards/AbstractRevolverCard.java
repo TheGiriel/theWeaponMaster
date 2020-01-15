@@ -31,7 +31,7 @@ public abstract class AbstractRevolverCard extends AbstractDynamicCard {
     }
 
     @Override
-    public void modifyCostForTurn(int amt) {
+    public void modifyCostForCombat(int amt) {
         if (AbstractDungeon.player.hasRelic(RevolverRelic.ID) && AbstractDungeon.player.getRelic(RevolverRelic.ID).counter <= 0) {
             this.costForTurn = 0;
         } else {

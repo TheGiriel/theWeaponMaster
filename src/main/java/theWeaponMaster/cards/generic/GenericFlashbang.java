@@ -25,7 +25,7 @@ public class GenericFlashbang extends AbstractDynamicCard {
     public static final CardRarity RARITY = CardRarity.UNCOMMON;
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.SKILL;
-    public static final int COST = 0;
+    public static final int COST = 1;
     public static final int MAGIC_NUMBER = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
 

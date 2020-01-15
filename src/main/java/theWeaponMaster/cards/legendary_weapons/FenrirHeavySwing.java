@@ -43,6 +43,7 @@ public class FenrirHeavySwing extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE + (magicNumber / 2);
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
         this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_fenrir_attack.png", "theWeaponMasterResources/images/1024/bg_fenrir_attack.png");
 

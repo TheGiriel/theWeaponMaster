@@ -47,6 +47,7 @@ public class LeviathanChargeAction extends AbstractGameAction {
         addCards(leviathanCharges, AbstractDungeon.player.exhaustPile);
         addCards(leviathanCharges, AbstractDungeon.player.limbo);
         addCards(leviathanCharges, AbstractDungeon.player.hand);
+        addCards(leviathanCharges, AbstractDungeon.player.masterDeck);
 
         return leviathanCharges;
     }
