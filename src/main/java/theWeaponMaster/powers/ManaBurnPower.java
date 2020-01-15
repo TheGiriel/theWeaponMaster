@@ -85,9 +85,6 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
 
     public void updateDescription() {
         this.description = DESCRIPTION[0] + manaBurnDamageTurn() + DESCRIPTION[1] + this.amount;
-        if (this.amount >= 3) {
-            this.description += DESCRIPTION[2];
-        }
         getHealthBarAmount();
     }
 

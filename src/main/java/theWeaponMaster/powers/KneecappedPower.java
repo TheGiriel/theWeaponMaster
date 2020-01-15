@@ -92,6 +92,11 @@ public class KneecappedPower extends AbstractPower implements HealthBarRenderPow
 
     @Override
     public Color getColor() {
-        return Color.valueOf("#500a0a");
+        if (owner.hasPower(NickedPower.POWER_ID) && owner.hasPower(LaceratePower.POWER_ID)) {
+            return Color.valueOf("#6d0000");
+        } else if (owner.hasPower(NickedPower.POWER_ID) || owner.hasPower(LaceratePower.POWER_ID)) {
+            return Color.valueOf("#860000");
+        }
+        return Color.valueOf("#9f0000");
     }
 }

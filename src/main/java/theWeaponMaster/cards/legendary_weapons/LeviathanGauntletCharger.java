@@ -16,7 +16,7 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements FlipCard*/ {
 
     public static final String ID = TheWeaponMaster.makeID(LeviathanGauntletCharger.class.getSimpleName());
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(LeviathanGauntletCharger.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
@@ -24,7 +24,7 @@ public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements F
 
     public static final CardRarity RARITY = CardRarity.SPECIAL;
     public static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    public static final CardType TYPE = CardType.ATTACK;
+    public static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;

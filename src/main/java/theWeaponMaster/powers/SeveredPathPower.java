@@ -49,7 +49,8 @@ public class SeveredPathPower extends AbstractPower {
     public void onInitialApplication() {
         originalMove = this.m.nextMove;
         originalIntent = this.m.intent;
-        intentDamage = this.m.getIntentDmg();
+        intentDamage = this.m.getIntentBaseDmg();
+
         //TODO: Lagavulin special case.
 
         this.m.setMove((byte) -2, AbstractMonster.Intent.ATTACK, intentDamage);

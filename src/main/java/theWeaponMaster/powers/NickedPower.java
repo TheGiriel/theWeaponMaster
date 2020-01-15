@@ -90,6 +90,9 @@ public class NickedPower extends AbstractPower implements HealthBarRenderPower {
 
     @Override
     public Color getColor() {
-        return Color.valueOf("#9f0000");
+        if (owner.hasPower(LaceratePower.POWER_ID)) {
+            return Color.valueOf("#860000");
+        } else
+            return Color.valueOf("#9f0000");
     }
 }

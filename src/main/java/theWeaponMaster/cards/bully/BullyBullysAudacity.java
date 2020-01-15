@@ -18,7 +18,7 @@ public class BullyBullysAudacity extends AbstractBullyCard {
     public static final String ID = TheWeaponMaster.makeID(BullyBullysAudacity.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullyBullysAudacity.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final CardTarget TARGET = CardTarget.SELF;

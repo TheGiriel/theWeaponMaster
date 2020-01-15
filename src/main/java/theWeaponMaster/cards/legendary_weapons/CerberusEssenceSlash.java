@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.FlashAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
@@ -36,7 +35,7 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    public static final int DAMAGE = 6;
+    public static final int DAMAGE = 8;
     public static final int UPGRADED_DAMAGE = 3;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
@@ -81,19 +80,15 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = (AbstractMonster) state;
         int essenceDamage = 0;
-        int flashBonus = discarded.size() - 1;
+        int flashBonus = discarded.size() * 2 - 2;
 
         if (state != null) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
 
             if (upgraded && discarded.size() - 1 >= magicNumber - 1) {
-                for (AbstractPower power : m.powers) {
-                    essenceDamage++;
-                }
+                essenceDamage = m.powers.size();
             } else if (discarded.size() - 1 == magicNumber) {
-                for (AbstractPower power : m.powers) {
-                    essenceDamage++;
-                }
+                essenceDamage = m.powers.size();
             }
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + flashBonus, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

@@ -103,8 +103,9 @@ public class FenrirUnleashed extends AbstractDynamicCard {
             TheWeaponMaster.logger.info("Target List: " + monster + " Monster HP: " + monster.currentHealth);
         }
         for (int i = 0; i < totalAttacks; i++) {
-            if (targetList.get(j).currentHealth == 0) {
+            if (targetList.get(j).currentHealth == 0 || targetList.get(j).isDead) {
                 j++;
+                i--;
                 continue;
             }
             TheWeaponMaster.logger.info("New target: " + targetList.get(j));

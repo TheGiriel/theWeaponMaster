@@ -31,7 +31,7 @@ public class BullyDinerArgument extends AbstractBullyCard {
     public static final String ID = TheWeaponMaster.makeID(BullyDinerArgument.class.getSimpleName());
     public static final String IMG = makeCardPath("bullydinerargument.png");
 
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullyDinerArgument.class.getSimpleName());
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

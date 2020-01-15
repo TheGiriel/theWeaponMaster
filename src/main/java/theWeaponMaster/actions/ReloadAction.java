@@ -10,7 +10,6 @@ public class ReloadAction extends AbstractGameAction {
 
 
     public ReloadAction() {
-
         if (!player.discardPile.isEmpty()) {
             for (int i = Math.min(player.discardPile.size(), 3); i > 0; i--) {
                 player.discardPile.moveToDeck(player.discardPile.getBottomCard(), true);

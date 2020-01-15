@@ -24,7 +24,7 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
 
     public static final String ID = TheWeaponMaster.makeID(AtroposSeveredScissors.class.getSimpleName());
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public String NAME = cardStrings.NAME;
+    public static final String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -90,11 +90,11 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
 
     public void flipCard() {
         if (scissorFlip) {
-            this.name = DESCRIPTION[0];
-            rawDescription = DESCRIPTION[2];
+            this.name = DESCRIPTION[2];
+            rawDescription = DESCRIPTION[3];
             this.cost = 0;
         } else {
-            this.name = cardStrings.NAME;
+            this.name = DESCRIPTION[0];
             rawDescription = DESCRIPTION[1];
             this.cost = COST;
         }
@@ -103,7 +103,6 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
 
     @Override
     public void standardUse(AbstractPlayer p, AbstractMonster m) {
-
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
@@ -129,17 +128,5 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
     public void addScissors() {
         scissors.add(AtroposScissorHalf.ID);
         scissors.add(AtroposSeveredScissors.ID);
-    }
-
-    @Override
-    public void triggerOnExhaust() {
-        AbstractDungeon.player.exhaustPile.group.stream().anyMatch(e -> {
-            if (e.cardID.equals(AtroposScissorHalf.ID)) {
-                scissorFlip = false;
-                flipCard();
-                AbstractDungeon.player.hand.moveToBottomOfDeck(this);
-            }
-            return true;
-        });
     }
 }

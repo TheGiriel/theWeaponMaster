@@ -45,7 +45,7 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
     }
 
     private void updateDamage() {
-        this.bleedDamage = (int) Math.ceil(this.owner.maxHealth * 0.02D * this.amount);
+        this.bleedDamage = (int) Math.round(this.owner.maxHealth * 0.02D * this.amount);
         getHealthBarAmount();
         updateDescription();
     }
@@ -99,6 +99,6 @@ public class LaceratePower extends AbstractPower implements HealthBarRenderPower
 
     @Override
     public Color getColor() {
-        return Color.valueOf("#640d0d");
+        return Color.valueOf("#9f0000");
     }
 }

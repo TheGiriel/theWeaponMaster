@@ -49,6 +49,7 @@ public class AtroposScissorHalf extends AbstractDynamicCard implements Scissors 
         this.block = baseBlock = BLOCK;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
+        this.isEthereal = true;
         this.exhaust = true;
         addScissors();
 
@@ -82,23 +83,11 @@ public class AtroposScissorHalf extends AbstractDynamicCard implements Scissors 
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage + scissorCombo, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         ManaBurnAction.ignite(m, magicNumber);
-        AtroposSeveredScissors.leftHalf = true;
     }
 
     @Override
     public void addScissors() {
         scissors.add(AtroposScissorHalf.ID);
         scissors.add(AtroposSeveredScissors.ID);
-    }
-
-
-    @Override
-    public void triggerOnExhaust() {
-        AbstractDungeon.player.exhaustPile.group.stream().anyMatch(e -> {
-            if (e.cardID.equals(AtroposSeveredScissors.ID)) {
-                AbstractDungeon.player.exhaustPile.moveToBottomOfDeck(e);
-            }
-            return true;
-        });
     }
 }

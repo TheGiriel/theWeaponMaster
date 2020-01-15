@@ -24,7 +24,7 @@ import static theWeaponMaster.patches.WeaponMasterTags.INTIMIDATE;
 public class BullyTerrifyingHowl extends AbstractBullyCard {
 
     public static final String ID = TheWeaponMaster.makeID(BullyTerrifyingHowl.class.getSimpleName());
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullyTerrifyingHowl.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

@@ -20,7 +20,7 @@ public class BullySlap extends AbstractBullyCard {
 
     public static final String ID = TheWeaponMaster.makeID(BullySlap.class.getSimpleName());
     public static final String IMG = makeCardPath("bullyslap.png");
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullySlap.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

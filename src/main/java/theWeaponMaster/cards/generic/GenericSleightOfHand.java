@@ -20,14 +20,16 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 1;
-    private static final int BLOCK = 5;
     public static final int MAGIC_NUMBER = 2;
+    public static final int SECOND_VALUE = 1;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int UPGRADED_SECOND_VALUE = 1;
 
     public GenericSleightOfHand() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        this.block = baseBlock = BLOCK;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.secondValue = baseSecondValue = SECOND_VALUE;
 
         initializeDescription();
     }
@@ -43,6 +45,8 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
+            upgradeSecondValue(UPGRADED_SECOND_VALUE);
             initializeDescription();
         }
     }

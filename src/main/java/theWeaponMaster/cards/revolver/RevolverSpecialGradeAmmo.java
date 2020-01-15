@@ -20,9 +20,11 @@ public class RevolverSpecialGradeAmmo extends AbstractRevolverCard {
     public static final String ID = TheWeaponMaster.makeID(RevolverSpecialGradeAmmo.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(RevolverSpecialGradeAmmo.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.RARE;
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
@@ -65,8 +67,21 @@ public class RevolverSpecialGradeAmmo extends AbstractRevolverCard {
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             upgradeSecondValue(UPGRADED_SECOND_VALUE);
+            rawDescription = UPGRADE_DESCRIPTION;
             ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
         }
+    }
+
+    @Override
+    public void setNormalDescription() {
+        this.cost = COST;
+        if (upgraded) {
+            rawDescription = DESCRIPTIONS[0];
+        } else {
+            rawDescription = DESCRIPTIONS[1];
+        }
+        type = CardType.ATTACK;
+        target = TARGET;
     }
 
     @Override

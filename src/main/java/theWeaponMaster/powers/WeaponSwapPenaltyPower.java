@@ -1,6 +1,5 @@
 package theWeaponMaster.powers;
 
-import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -15,7 +14,7 @@ import theWeaponMaster.util.TextureLoader;
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 
-public class WeaponSwapPenaltyPower extends AbstractPower implements CloneablePowerInterface {
+public class WeaponSwapPenaltyPower extends AbstractPower {
     public static final String POWER_ID = TheWeaponMaster.makeID(WeaponSwapPenaltyPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(WeaponSwapPenaltyPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
@@ -55,8 +54,4 @@ public class WeaponSwapPenaltyPower extends AbstractPower implements CloneablePo
         AbstractDungeon.player.gameHandSize++;
     }
 
-    @Override
-    public AbstractPower makeCopy() {
-        return new CommonPower(owner, source, amount);
-    }
 }

@@ -27,21 +27,21 @@
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
   },
   {
-    "PROPER_NAME": "[#8b0000]Vicious",
+    "PROPER_NAME": "Vicious",
     "NAMES": [
       "vicious"
     ],
     "DESCRIPTION": "For every #b5 stacks of #yVicious you deal #b1 extra damage on attacks and take #b1 extra damage when attacked."
   },
   {
-    "PROPER_NAME": "[#ff4500]Bully",
+    "PROPER_NAME": "Bully",
     "NAMES": [
       "bully"
     ],
     "DESCRIPTION": "Bully X: Gain X #yVicious."
   },
   {
-    "PROPER_NAME": "[#ff4500]Taunt",
+    "PROPER_NAME": "Taunt",
     "NAMES": [
       "taunt",
       "taunted"
@@ -49,7 +49,7 @@
     "DESCRIPTION": "Can only be applied to non-attacking enemies. NL #yTaunted enemies are forced to attack."
   },
   {
-    "PROPER_NAME": "[#ff4500]Intimidate",
+    "PROPER_NAME": "Intimidate",
     "NAMES": [
       "intimidate",
       "intimidated"
@@ -57,7 +57,7 @@
     "DESCRIPTION": "Can only be applied to attacking enemies. NL #yIntimidated enemies are forced to defend and gain Block equal to #b10 plus half your Vicious."
   },
   {
-    "PROPER_NAME": "[#808080]Armor [#808080]Piercing",
+    "PROPER_NAME": "Armor Piercing",
     "NAMES": [
       "Armor Piercing",
       "armor piercing",
@@ -67,7 +67,7 @@
     "DESCRIPTION": "#yArmor #yPiercing X: NL Enemies lose HP equal to #bX% of their destroyed Block."
   },
   {
-    "PROPER_NAME": "[#808080]Unstoppable",
+    "PROPER_NAME": "Unstoppable",
     "NAMES": [
       "Unstoppable",
       "unstoppable"
@@ -75,14 +75,14 @@
     "DESCRIPTION": "If the condition is fulfilled, attack the next enemy."
   },
   {
-    "PROPER_NAME": "[#b7410e]Fenrir",
+    "PROPER_NAME": "Fenrir",
     "NAMES": [
       "fenrir"
     ],
     "DESCRIPTION": "#yEvolving Cards specializing in #yLacerate."
   },
   {
-    "PROPER_NAME": "[#b7410e]Lacerate",
+    "PROPER_NAME": "Lacerate",
     "NAMES": [
       "lacerate",
       "lacerating"
@@ -90,7 +90,7 @@
     "DESCRIPTION": "#yLacerated creatures lose #b2% of their Max HP at the start of their turn."
   },
   {
-    "PROPER_NAME": "[#b7410e]Kneecap",
+    "PROPER_NAME": "Kneecap",
     "NAMES": [
       "Kneecap",
       "kneecap",
@@ -99,14 +99,14 @@
     "DESCRIPTION": "#yKneecapped creatures take damage equal to #b5% of their missing HP at the start of their turn, for three turns. Counts as Lacerate."
   },
   {
-    "PROPER_NAME": "[#b7410e]Nicked",
+    "PROPER_NAME": "Nicked",
     "NAMES": [
       "nicked"
     ],
     "DESCRIPTION": "#yNicked creatures take damage equal to #b3.3% of their Max HP at the start of their turn, for three turns. Counts as Lacerate."
   },
   {
-    "PROPER_NAME": "[#b7410e]Evolve",
+    "PROPER_NAME": "Evolve",
     "NAMES": [
       "evolve",
       "evolved",
@@ -139,6 +139,16 @@
       "power_flash"
     ],
     "DESCRIPTION": "#yPower #yFlash #bX: Discard up to #bX cards. Bonuses per discard: NL 1+ Card: Gain 1 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the Flash effect once."
+  },
+  {
+    "PROPER_NAME": "Single Shot",
+    "NAMES": [
+      "Single Shot",
+      "Single_Shot",
+      "single shot",
+      "single_shot"
+    ],
+    "DESCRIPTION": "0-cost attack card with #yEthereal and #yExhaust"
   },
   {
     "PROPER_NAME": "Utility Flash",
@@ -267,14 +277,34 @@
     "DESCRIPTION": "Gain #b1 #yTemporary HP for every #b8 damage you deal. NL If you kill it, heal for half that amount instead."
   },
   {
-    "PROPER_NAME": "Split Scissors",
+    "PROPER_NAME": "Split Up",
     "NAMES": [
-      "Split Scissors",
-      "split scissors",
-      "split_scissors",
-      "Split_Scissors"
+      "Split Up",
+      "split up",
+      "split_up",
+      "Split_Up"
     ],
-    "DESCRIPTION": "Split Scissors X: Deal #bX Bonus damage if the last played card was Severed Scissors or Right/Left Half. NL Recombines to Severed Scissors when Right Half and Left Half are exhausted."
+    "DESCRIPTION": "Splits into two 0-cost attack cards."
+  },
+  {
+    "PROPER_NAME": "Right Half",
+    "NAMES": [
+      "Right Half",
+      "right half",
+      "right_half",
+      "Right_Half"
+    ],
+    "DESCRIPTION": "Double damage if the last played card was Left Half. NL Becomes Severed Scissors after use."
+  },
+  {
+    "PROPER_NAME": "Left Half",
+    "NAMES": [
+      "Left Half",
+      "left half",
+      "left_half",
+      "Left_Half"
+    ],
+    "DESCRIPTION": "Double damage if the last played card was Right Half."
   },
   {
     "PROPER_NAME": "Weapon Swap",

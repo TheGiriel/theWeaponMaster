@@ -15,7 +15,7 @@ public class GenericDodge extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(GenericDodge.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(GenericDodge.class.getSimpleName());
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;

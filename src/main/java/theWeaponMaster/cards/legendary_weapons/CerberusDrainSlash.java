@@ -38,7 +38,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
     public static final CardType TYPE = CardType.ATTACK;
     public static final int COST = 3;
     public static final int DAMAGE = 12;
-    public static final int UPGRADED_DAMAGE = 2;
+    public static final int UPGRADED_DAMAGE = 4;
     public static final int MAGIC_NUMBER = 3;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
     private static final int SECOND_VALUE = 3;
@@ -68,6 +68,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
         stolenPower.add(AngryPower.POWER_ID);
         stolenPower.add(IntangiblePower.POWER_ID);
         stolenPower.add(ThornsPower.POWER_ID);
+        stolenPower.add(SharpHidePower.POWER_ID);
         stolenPower.add(RitualPower.POWER_ID);
         stolenPower.add(ThieveryPower.POWER_ID);
     }
@@ -96,7 +97,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
     private void Flash(Object state, ArrayList<AbstractCard> discarded) {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = (AbstractMonster) state;
-        int flashBonus = discarded.size() - 1;
+        int flashBonus = discarded.size() * 2 - 2;
 
         if (state != null) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, discarded.size() - 2));
@@ -129,6 +130,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AngryPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case ThornsPower.POWER_ID:
+                case SharpHidePower.POWER_ID:
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case BarricadePower.POWER_ID:

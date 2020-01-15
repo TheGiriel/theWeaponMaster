@@ -8,7 +8,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
+import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.util.TextureLoader;
+
+import java.util.ArrayList;
 
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
@@ -24,7 +27,7 @@ public class RevolverRelic extends CustomRelic {
 
     public static final int SHOTS = 6;
     public static int shotsLeft;
-    public static boolean mustReload = false;
+    public static ArrayList<AbstractCard> ammoCards = new ArrayList<>();
 
     public RevolverRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
@@ -39,17 +42,31 @@ public class RevolverRelic extends CustomRelic {
         if (card.hasTag(AMMUNITION) && counter >= 1) {
             this.counter--;
             if (counter == 0) {
-                mustReload = true;
+                setReload();
             }
             return;
         } else if (card.hasTag(AMMUNITION) && counter <= 0) {
             AbstractDungeon.actionManager.addToBottom(new ReloadAction());
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+            resetCards();
             return;
         }
         counter = shotsLeft = Math.min(Math.max(counter, 0), 6);
         if (AbstractDungeon.player.hasRelic(HeavyDrum.ID)) {
             counter = shotsLeft = Math.min(Math.max(counter, 0), 5);
+        }
+    }
+
+    private void resetCards() {
+        ammoCards.addAll(AbstractDungeon.player.drawPile.group);
+        ammoCards.addAll(AbstractDungeon.player.hand.group);
+        ammoCards.addAll(AbstractDungeon.player.discardPile.group);
+        ammoCards.addAll(AbstractDungeon.player.exhaustPile.group);
+        for (AbstractCard c : ammoCards) {
+            if (c instanceof AbstractRevolverCard) {
+                c.type = AbstractCard.CardType.ATTACK;
+                ((AbstractRevolverCard) c).setNormalDescription();
+            }
         }
     }
 
@@ -65,4 +82,19 @@ public class RevolverRelic extends CustomRelic {
         }
     }
 
+    public void setReload() {
+        ammoCards.addAll(AbstractDungeon.player.drawPile.group);
+        ammoCards.addAll(AbstractDungeon.player.hand.group);
+        ammoCards.addAll(AbstractDungeon.player.discardPile.group);
+        ammoCards.addAll(AbstractDungeon.player.exhaustPile.group);
+        for (AbstractCard c : ammoCards) {
+            if (c instanceof AbstractRevolverCard) {
+                c.rawDescription = "Reload";
+                c.type = AbstractCard.CardType.SKILL;
+                c.target = AbstractCard.CardTarget.SELF;
+                c.costForTurn = 0;
+                c.initializeDescription();
+            }
+        }
+    }
 }

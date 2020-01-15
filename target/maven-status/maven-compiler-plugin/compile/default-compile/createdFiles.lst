@@ -55,6 +55,7 @@ theWeaponMaster\cards\generic\GenericOpportunism.class
 theWeaponMaster\actions\OctopusAction.class
 theWeaponMaster\cards\legendary_weapons\FenrirProtectiveBlade.class
 theWeaponMaster\cards\generic\GenericInvestigate.class
+theWeaponMaster\cards\revolver\RevolverSingleShot.class
 theWeaponMaster\cards\generic\GenericThrowingKnives.class
 theWeaponMaster\powers\SeveredPathPower.class
 theWeaponMaster\util\TextureLoader.class

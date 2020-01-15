@@ -21,7 +21,7 @@ public class RevolverKneecap extends AbstractRevolverCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevolverKneecap.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(RevolverKneecap.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
@@ -56,6 +56,13 @@ public class RevolverKneecap extends AbstractRevolverCard {
         AbstractDungeon.actionManager.addToBottom(new ExhaustAction(1, false, false, false));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new KneecappedPower(m)));
+    }
+
+    @Override
+    public void setNormalDescription() {
+        this.cost = COST;
+        rawDescription = DESCRIPTION;
+        target = TARGET;
     }
 
     @Override

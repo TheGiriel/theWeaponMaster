@@ -118,14 +118,14 @@ public class ViciousPower extends TwoAmountPower {
     @Override
     public void updateDescription() {
         if (this.amount <= TIER_TWO) {
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
             setReduceVicious(1);
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2];
         } else if (this.amount > TIER_THREE) {
-            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[3] + reduceVicious + DESCRIPTION[4];
             setReduceVicious(3 + berserkerStanceBonus);
-        } else {
             description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[3] + reduceVicious + DESCRIPTION[4];
+        } else {
             setReduceVicious(4 + berserkerStanceBonus);
+            description = DESCRIPTION[0] + amount2 + DESCRIPTION[1] + amount2 + DESCRIPTION[2] + DESCRIPTION[3] + reduceVicious + DESCRIPTION[4];
         }
     }
 
@@ -157,6 +157,10 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public void atEndOfRound() {
+        if (owner.hasPower(BerserkerStancePower.POWER_ID)) {
+            berserkerStanceBonus = 1;
+        } else berserkerStanceBonus = 0;
+        updateDescription();
         if (amount > TIER_THREE) {
             setReduceVicious(3 + berserkerStanceBonus);
             this.amount -= reduceVicious;

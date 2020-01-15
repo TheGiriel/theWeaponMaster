@@ -23,7 +23,7 @@ public class BullyTaunt extends AbstractBullyCard {
 
     public static final String ID = TheWeaponMaster.makeID(BullyTaunt.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullyTaunt.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

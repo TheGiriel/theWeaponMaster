@@ -26,6 +26,7 @@ public class RevolverCustomCartridge extends AbstractRevolverCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.UNCOMMON;
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
@@ -56,6 +57,14 @@ public class RevolverCustomCartridge extends AbstractRevolverCard {
             cantUseMessage = "I don't have any appropriate ammo...";
             return false;
         }
+    }
+
+    @Override
+    public void setNormalDescription() {
+        this.cost = COST;
+        rawDescription = DESCRIPTIONS[0];
+        type = TYPE;
+        target = TARGET;
     }
 
     @Override

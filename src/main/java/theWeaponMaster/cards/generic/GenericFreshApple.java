@@ -27,7 +27,7 @@ public class GenericFreshApple extends AbstractDynamicCard {
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         GraveField.grave.set(this, true);
         purgeOnUse = true;
-
+        tags.add(CardTags.HEALING);
         initializeDescription();
     }
 

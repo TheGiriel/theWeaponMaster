@@ -1,6 +1,5 @@
 package theWeaponMaster.cards.revolver;
 
-import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -21,9 +20,10 @@ public class Strike_WeaponMaster extends AbstractRevolverCard {
     public static final String ID = TheWeaponMaster.makeID(Strike_WeaponMaster.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(Strike_WeaponMaster.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.BASIC;
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
@@ -36,7 +36,7 @@ public class Strike_WeaponMaster extends AbstractRevolverCard {
 
         this.damage = baseDamage = DAMAGE;
         this.tags.add(AMMUNITION);
-        this.tags.add(BaseModCardTags.BASIC_STRIKE);
+        this.tags.add(CardTags.STARTER_STRIKE);
     }
 
     @Override
@@ -46,6 +46,14 @@ public class Strike_WeaponMaster extends AbstractRevolverCard {
             upgradeDamage(UPGRADED_DAMAGE);
             initializeDescription();
         }
+    }
+
+    @Override
+    public void setNormalDescription() {
+        this.cost = COST;
+        rawDescription = DESCRIPTIONS[0];
+        type = TYPE;
+        target = TARGET;
     }
 
     @Override

@@ -33,7 +33,7 @@ public class CerberusModularSlash extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
     public static final int COST = 2;
-    public static final int DAMAGE = 7;
+    public static final int DAMAGE = 10;
     public static final int UPGRADED_DAMAGE = 2;
     public static final int MAGIC_NUMBER = 4;
     public static final int UPGRADED_MAGIC_NUMBER = 1;

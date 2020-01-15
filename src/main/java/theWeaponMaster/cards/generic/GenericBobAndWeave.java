@@ -22,7 +22,7 @@ public class GenericBobAndWeave extends AbstractDynamicCard implements FlipCard 
 
     public static final String ID = TheWeaponMaster.makeID(GenericBobAndWeave.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(GenericBobAndWeave.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;

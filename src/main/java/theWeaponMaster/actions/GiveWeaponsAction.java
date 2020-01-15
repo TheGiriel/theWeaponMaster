@@ -1,11 +1,12 @@
 package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import theWeaponMaster.cards.legendary_weapons.*;
+import theWeaponMaster.powers.WeaponSwapPenaltyPower;
 import theWeaponMaster.relics.*;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class GiveWeaponsAction extends AbstractGameAction {
                     upgradeWeapons.addAll(SplinteringSteelRelic.getWeaponUpgrade());
                 }
                 break;
+
 
             case "Cerberus":
                 weaponList.add(new CerberusSlash());
@@ -76,17 +78,28 @@ public class GiveWeaponsAction extends AbstractGameAction {
                 break;
         }
         giveWeapons();
+        addToDeck();
         weaponList.clear();
+        AbstractDungeon.player.draw(2);
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new WeaponSwapPenaltyPower(owner)));
         isDone = true;
     }
 
-    private void giveWeapons(){
-        for (AbstractCard c : weaponList){
-            owner.masterDeck.addToBottom(c);
-            AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
-            if (upgradeWeapons.contains(c.cardID)) {
-                c.upgrade();
+    private void addToDeck() {
+        for (AbstractCard deckCard : weaponList) {
+            if (upgradeWeapons.contains(deckCard.cardID)) {
+                deckCard.upgrade();
             }
+            owner.masterDeck.addToBottom(deckCard);
+        }
+    }
+
+    private void giveWeapons() {
+        for (AbstractCard combatCard : weaponList) {
+            if (upgradeWeapons.contains(combatCard.cardID)) {
+                combatCard.upgrade();
+            }
+            owner.drawPile.addToRandomSpot(combatCard);
         }
     }
 

@@ -41,8 +41,7 @@
     "NAME": "Mana Burn",
     "DESCRIPTIONS": [
       "[#3abfbe]Mana [#3abfbe]Burn deals [#3abfbe](",
-      ") HP damage to enemies with Strategic intent. NL [#3abfbe]Mana [#3abfbe]burn stacks: ",
-      " NL [#3abfbe]This [#3abfbe]creature [#3abfbe]is [#3abfbe]susceptible [#3abfbe]to [#3abfbe]special [#3abfbe]attacks."
+      ") HP damage to enemies with Strategic intent. NL [#3abfbe]Mana [#3abfbe]Burn stacks: "
     ]
   },
   "LaceratePower": {
@@ -102,7 +101,7 @@
   "SeveredPathPower": {
     "NAME": "Severed Path",
     "DESCRIPTIONS": [
-      "This enemy attacks a random opponent instead this turn."
+      "This enemy attacks a random opponent instead this turn. NL (WIP, currently only uses a single attack.)"
     ]
   },
   "SeveredPainDelayedPower": {

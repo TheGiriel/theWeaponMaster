@@ -23,9 +23,10 @@ public class RevolverHollowPoint extends AbstractRevolverCard {
     public static final String ID = TheWeaponMaster.makeID(RevolverHollowPoint.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(RevolverHollowPoint.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.UNCOMMON;
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
@@ -74,15 +75,20 @@ public class RevolverHollowPoint extends AbstractRevolverCard {
         return super.calculateModifiedCardDamage(player, mo, tmp);
     }
 
+    @Override
+    public void setNormalDescription() {
+        this.cost = COST;
+        rawDescription = DESCRIPTIONS[0];
+        type = TYPE;
+        target = TARGET;
+    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.getRelic(RevolverRelic.ID).counter <= 0) {
             return;
         }
-
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
     }
 
 }

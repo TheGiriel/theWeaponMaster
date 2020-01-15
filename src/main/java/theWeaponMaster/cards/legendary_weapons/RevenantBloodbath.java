@@ -67,6 +67,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
+            rawDescription = DESCRIPTION[1];
             initializeDescription();
         }
     }
@@ -82,7 +83,9 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     }
 
     public void getSated() {
-        rawDescription = DESCRIPTION[0];
+        if (upgraded) {
+            rawDescription = DESCRIPTION[1];
+        } else rawDescription = DESCRIPTION[0];
     }
 
     public boolean canUpgrade() {

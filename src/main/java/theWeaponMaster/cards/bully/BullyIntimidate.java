@@ -22,7 +22,7 @@ public class BullyIntimidate extends AbstractBullyCard {
 
     public static final String ID = TheWeaponMaster.makeID(BullyIntimidate.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullyIntimidate.class.getSimpleName());
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
@@ -32,10 +32,10 @@ public class BullyIntimidate extends AbstractBullyCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    private static final int UPGRADED_COST = -1;
-    private static final int BULLY_COST = 3;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
+    private static final int BULLY_COST = 3;
     public static final int MAGIC_NUMBER = 2;
+    private static final int UPGRADED_COST = 0;
     private HashSet<AbstractMonster.Intent> intents;
 
     public BullyIntimidate() {

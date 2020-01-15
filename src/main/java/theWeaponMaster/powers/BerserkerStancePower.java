@@ -33,8 +33,6 @@ public class BerserkerStancePower extends AbstractPower implements CloneablePowe
         this.owner = owner;
         this.amount = amount;
 
-        ViciousPower.berserkerStanceBonus = 1;
-
         type = PowerType.BUFF;
         isTurnBased = false;
 
