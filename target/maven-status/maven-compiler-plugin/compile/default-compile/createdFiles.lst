@@ -138,7 +138,6 @@ theWeaponMaster\cards\legendary_weapons\RevenantBloodbath.class
 theWeaponMaster\cards\revolver\RevolverLowRecoil.class
 theWeaponMaster\relics\GhoulskinSheathRelic.class
 theWeaponMaster\util\FlipCard.class
-theWeaponMaster\actions\ArsenalRecombineAction.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredScissors.class
 theWeaponMaster\cards\bully\BullyDinerArgument.class
 theWeaponMaster\cards\bully\BullyMock.class

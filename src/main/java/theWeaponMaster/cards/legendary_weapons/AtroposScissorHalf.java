@@ -36,8 +36,8 @@ public class AtroposScissorHalf extends AbstractDynamicCard implements Scissors 
     public static final int COST = 0;
     public static final int DAMAGE = 3;
     public static final int UPGRADED_DAMAGE = 1;
-    private static final int BLOCK = 2;
-    private static final int UPGRADED_BLOCK = 1;
+    public static final int BLOCK = 2;
+    public static final int UPGRADED_BLOCK = 1;
     public static final int MAGIC_NUMBER = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
     private static int scissorCombo = 0;
@@ -74,13 +74,18 @@ public class AtroposScissorHalf extends AbstractDynamicCard implements Scissors 
 
     //TODO: improve code
 
+
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
+        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).cardID.equals(AtroposSeveredScissors.ID)) {
+            return tmp * 2;
+        } else {
+            return super.calculateModifiedCardDamage(player, tmp);
+        }
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && scissors.contains(AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).cardID)) {
-            damage += block;
-        } else {
-            damage = baseDamage;
-        }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage + scissorCombo, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         ManaBurnAction.ignite(m, magicNumber);
     }

@@ -24,7 +24,7 @@ public class RevolverSpecialGradeAmmo extends AbstractRevolverCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.RARE;
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
@@ -33,8 +33,8 @@ public class RevolverSpecialGradeAmmo extends AbstractRevolverCard {
     public static final int UPGRADED_DAMAGE = 3;
     public static final int MAGIC_NUMBER = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int SECOND_VALUE = 1;
-    private static final int UPGRADED_SECOND_VALUE = 1;
+    public static final int SECOND_VALUE = 1;
+    public static final int UPGRADED_SECOND_VALUE = 1;
     public static int publicDamage;
     public static int publicMagic;
 

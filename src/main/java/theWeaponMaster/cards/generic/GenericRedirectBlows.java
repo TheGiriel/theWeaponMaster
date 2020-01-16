@@ -27,12 +27,12 @@ public class GenericRedirectBlows extends AbstractDynamicCard {
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 1;
 
-    private static final int BLOCK = 4;
-    private static final int UPGRADED_BLOCK = 2;
+    public static final int BLOCK = 4;
+    public static final int UPGRADED_BLOCK = 2;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int SECOND_VALUE = 25;
-    private static final int UPGRADED_SECOND_VALUE = 8;
+    public static final int SECOND_VALUE = 25;
+    public static final int UPGRADED_SECOND_VALUE = 8;
 
     public GenericRedirectBlows() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

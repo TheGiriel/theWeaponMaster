@@ -19,8 +19,8 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Skill.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.COMMON;
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.SKILL;

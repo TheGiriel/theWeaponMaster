@@ -26,8 +26,8 @@ public class GenericInvestigate extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
-    private static final int BLOCK = 8;
+    public static final int UPGRADE_COST = 0;
+    public static final int BLOCK = 8;
 
     public GenericInvestigate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

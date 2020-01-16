@@ -26,10 +26,10 @@ public class GenericPreparation extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 1;
-    private static final int MAGIC = 1;
-    private static final int UPGRADED_MAGIC = 1;
-    private static final int BLOCK = 5;
-    private static final int UPGRADED_BLOCK = 3;
+    public static final int MAGIC = 1;
+    public static final int UPGRADED_MAGIC = 1;
+    public static final int BLOCK = 5;
+    public static final int UPGRADED_BLOCK = 3;
 
     public GenericPreparation() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

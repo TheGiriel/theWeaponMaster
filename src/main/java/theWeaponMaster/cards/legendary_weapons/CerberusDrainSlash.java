@@ -41,7 +41,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
     public static final int UPGRADED_DAMAGE = 4;
     public static final int MAGIC_NUMBER = 3;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int SECOND_VALUE = 3;
+    public static final int SECOND_VALUE = 3;
     public String NAME = cardStrings.NAME;
     private HashSet<String> stolenPower = new HashSet<>();
 

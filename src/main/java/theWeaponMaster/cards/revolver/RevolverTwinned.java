@@ -33,7 +33,7 @@ public class RevolverTwinned extends AbstractRevolverCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     public static final int UPGRADED_DAMAGE = 2;
 
     public RevolverTwinned() {

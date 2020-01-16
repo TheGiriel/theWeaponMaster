@@ -23,8 +23,8 @@ public class Defend_WeaponMaster extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    private static final int BLOCK = 5;
-    private static final int UPGRADED_BLOCK = 3;
+    public static final int BLOCK = 5;
+    public static final int UPGRADED_BLOCK = 3;
 
     public Defend_WeaponMaster() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -33,6 +33,7 @@ public class Defend_WeaponMaster extends AbstractDynamicCard {
         this.tags.add(CardTags.STARTER_DEFEND);
         initializeDescription();
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));

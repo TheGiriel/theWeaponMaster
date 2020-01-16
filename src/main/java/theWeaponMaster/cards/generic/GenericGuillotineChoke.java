@@ -26,12 +26,12 @@ public class GenericGuillotineChoke extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 0;
-    private static final int UPGRADED_COST = 0;
+    public static final int UPGRADED_COST = 0;
     public static final int MAGIC_NUMBER = 1;
-    private static final int BLOCK = 6;
-    private static final int UPGRADED_BLOCK = 3;
-    private static final int SECOND_VALUE = 2;
-    private static final int UPGRADED_SECOND_VALUE = 1;
+    public static final int BLOCK = 6;
+    public static final int UPGRADED_BLOCK = 3;
+    public static final int SECOND_VALUE = 2;
+    public static final int UPGRADED_SECOND_VALUE = 1;
 
     public GenericGuillotineChoke() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

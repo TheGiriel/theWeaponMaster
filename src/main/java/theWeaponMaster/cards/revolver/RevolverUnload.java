@@ -25,7 +25,7 @@ public class RevolverUnload extends AbstractRevolverCard {
     public static final CardType TYPE = CardType.ATTACK;
     public static final int COST = 3;
     public static final int DAMAGE = 6;
-    private static final int UPGRADE_DAMAGE = 2;
+    public static final int UPGRADE_DAMAGE = 2;
     public static int SECOND_VALUE = 6;
 
     public RevolverUnload() {

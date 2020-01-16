@@ -29,8 +29,8 @@ public class GenericFrontKick extends AbstractDynamicCard {
 
     public static final int DAMAGE = 7;
     public static final int UPGRADED_DAMAGE = 3;
-    private static final int BLOCK = 7;
-    private static final int UPGRADED_BLOCK = 3;
+    public static final int BLOCK = 7;
+    public static final int UPGRADED_BLOCK = 3;
 
     public GenericFrontKick() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

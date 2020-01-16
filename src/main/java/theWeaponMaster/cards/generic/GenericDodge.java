@@ -23,8 +23,8 @@ public class GenericDodge extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 1;
-    private static final int BLOCK = 6;
-    private static final int UPGRADED_BLOCK = 3;
+    public static final int BLOCK = 6;
+    public static final int UPGRADED_BLOCK = 3;
     public static final int MAGIC_NUMBER = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
 

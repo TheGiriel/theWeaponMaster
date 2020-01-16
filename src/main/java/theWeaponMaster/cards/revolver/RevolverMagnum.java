@@ -21,7 +21,7 @@ public class RevolverMagnum extends AbstractRevolverCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
 

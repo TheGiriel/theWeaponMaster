@@ -24,12 +24,12 @@ public class RevolverWarningShot extends AbstractRevolverCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.COMMON;
     public static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    public static final int UPGRADED_COST = 0;
 
     public RevolverWarningShot() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

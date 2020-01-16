@@ -30,7 +30,7 @@ public class BullyIntimidatingPresence extends AbstractBullyCard {
     public static final int UPGRADED_DAMAGE = 0;
     public static final int MAGIC_NUMBER = 3;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int BULLY_NUMBER = 8;
+    public static final int BULLY_NUMBER = 8;
 
     public BullyIntimidatingPresence() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

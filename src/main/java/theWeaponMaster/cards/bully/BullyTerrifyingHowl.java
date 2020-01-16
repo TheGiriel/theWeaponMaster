@@ -36,8 +36,8 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 3;
-    private static final int BULLY_COST = 4;
-    private static final int UPGRADED_BULLY_NUMBER = 4;
+    public static final int BULLY_COST = 4;
+    public static final int UPGRADED_BULLY_NUMBER = 4;
     public static final int MAGIC_NUMBER = 2;
     private HashSet<AbstractMonster.Intent> intents;
 

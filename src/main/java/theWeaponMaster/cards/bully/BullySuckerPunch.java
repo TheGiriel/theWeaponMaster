@@ -35,10 +35,10 @@ public class BullySuckerPunch extends AbstractBullyCard {
     public static final int COST = 0;
     public static final int DAMAGE = 6;
     public static final int UPGRADED_DAMAGE = 2;
-    private static final int BULLY_NUMBER = 3;
-    private static final int UPGRADED_BULLY_NUMBER = 2;
-    private static final int SECOND_VALUE = 4;
-    private static final int UPGRADED_SECOND_VALUE = 4;
+    public static final int BULLY_NUMBER = 3;
+    public static final int UPGRADED_BULLY_NUMBER = 2;
+    public static final int SECOND_VALUE = 4;
+    public static final int UPGRADED_SECOND_VALUE = 4;
     private final HashSet<AbstractMonster.Intent> intents;
 
     public BullySuckerPunch() {

@@ -33,9 +33,9 @@ public class BullyIntimidate extends AbstractBullyCard {
 
     public static final int COST = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int BULLY_COST = 3;
+    public static final int BULLY_COST = 3;
     public static final int MAGIC_NUMBER = 2;
-    private static final int UPGRADED_COST = 0;
+    public static final int UPGRADED_COST = 0;
     private HashSet<AbstractMonster.Intent> intents;
 
     public BullyIntimidate() {

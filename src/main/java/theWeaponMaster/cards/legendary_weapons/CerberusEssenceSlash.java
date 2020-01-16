@@ -39,8 +39,8 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
     public static final int UPGRADED_DAMAGE = 3;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int SECOND_VALUE = 2;
-    private static final int UPGRADED_SECOND_VALUE = 1;
+    public static final int SECOND_VALUE = 2;
+    public static final int UPGRADED_SECOND_VALUE = 1;
 
     public CerberusEssenceSlash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

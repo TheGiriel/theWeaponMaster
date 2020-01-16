@@ -37,9 +37,7 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
     public static final int DAMAGE = 12;
     public static final int UPGRADED_DAMAGE = 5;
     public static final int MAGIC_NUMBER = 1;
-    private static final int CHARGECOST = 3;
-
-    private static int thorns;
+    public static final int CHARGECOST = 3;
 
     public LeviathanEarthquake() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

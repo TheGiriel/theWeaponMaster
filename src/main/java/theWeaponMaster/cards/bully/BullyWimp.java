@@ -28,8 +28,8 @@ public class BullyWimp extends AbstractBullyCard {
     public static final int COST = 1;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int BULLY_COST = 3;
-    private static final int UPGRADED_BULLY_NUMBER = 3;
+    public static final int BULLY_COST = 3;
+    public static final int UPGRADED_BULLY_NUMBER = 3;
 
     public BullyWimp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, CardTarget.ENEMY);

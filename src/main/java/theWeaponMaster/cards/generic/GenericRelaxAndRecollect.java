@@ -30,12 +30,12 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
     public static final CardType TYPE = CardType.SKILL;
 
     public static final int COST = 1;
-    private static final int BLOCK = 3;
-    private static final int UPGRADED_BLOCK = 2;
+    public static final int BLOCK = 3;
+    public static final int UPGRADED_BLOCK = 2;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int SECOND_VALUE = 1;
-    private static final int UPGRADED_SECOND_VALUE = 1;
+    public static final int SECOND_VALUE = 1;
+    public static final int UPGRADED_SECOND_VALUE = 1;
 
     private boolean flipped = false;
     private boolean initializeCard = false;

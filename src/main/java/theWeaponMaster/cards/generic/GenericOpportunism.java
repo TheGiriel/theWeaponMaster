@@ -30,8 +30,8 @@ public class GenericOpportunism extends AbstractDynamicCard {
 
     public static final int DAMAGE = 5;
     public static final int UPGRADED_DAMAGE = 3;
-    private static final int BLOCK = 5;
-    private static final int UPGRADED_BLOCK = 3;
+    public static final int BLOCK = 5;
+    public static final int UPGRADED_BLOCK = 3;
 
     public GenericOpportunism() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

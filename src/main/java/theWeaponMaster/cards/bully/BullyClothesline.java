@@ -32,8 +32,8 @@ public class BullyClothesline extends AbstractBullyCard {
     public static final int UPGRADED_DAMAGE = 4;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int BULLY_NUMBER = 4;
-    private static final int UPGRADED_BULLY_NUMBER = 2;
+    public static final int BULLY_NUMBER = 4;
+    public static final int UPGRADED_BULLY_NUMBER = 2;
 
     public BullyClothesline() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

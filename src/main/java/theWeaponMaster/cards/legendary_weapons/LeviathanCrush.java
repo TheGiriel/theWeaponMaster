@@ -38,7 +38,7 @@ public class LeviathanCrush extends AbstractDynamicCard {
     public static final int UPGRADED_DAMAGE = 2;
     public static final int MAGIC_NUMBER = 25;
     public static final int UPGRADED_MAGIC_NUMBER = 25;
-    private static final int CHARGECOST = 1;
+    public static final int CHARGECOST = 1;
 
     public LeviathanCrush() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

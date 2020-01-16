@@ -27,7 +27,7 @@ public class RevolverQuickload extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    public static final int UPGRADED_COST = 0;
 
     private int reloadThreshold = 6;
 

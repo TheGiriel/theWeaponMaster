@@ -30,7 +30,7 @@ public class GenericRecklessness extends AbstractDynamicCard {
     public static final CardType TYPE = CardType.POWER;
 
     public static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    public static final int UPGRADED_COST = 1;
 
     public GenericRecklessness() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -28,10 +28,10 @@ public class GenericGrazingThrow extends AbstractDynamicCard {
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 0;
-    private static final int UPGRADED_COST = 0;
+    public static final int UPGRADED_COST = 0;
 
-    private static final int BLOCK = 4;
-    private static final int UPGRADED_BLOCK = 2;
+    public static final int BLOCK = 4;
+    public static final int UPGRADED_BLOCK = 2;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
 
