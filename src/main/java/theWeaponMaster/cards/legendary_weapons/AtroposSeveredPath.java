@@ -22,7 +22,7 @@ public class AtroposSeveredPath extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(AtroposSeveredPath.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(AtroposSeveredPath.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;

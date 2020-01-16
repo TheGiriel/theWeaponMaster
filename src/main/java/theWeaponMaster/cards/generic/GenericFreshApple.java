@@ -3,7 +3,9 @@ package theWeaponMaster.cards.generic;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
@@ -15,6 +17,7 @@ public class GenericFreshApple extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(GenericFreshApple.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final CardRarity RARITY = CardRarity.RARE;
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.SKILL;
@@ -26,7 +29,7 @@ public class GenericFreshApple extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         GraveField.grave.set(this, true);
-        purgeOnUse = true;
+        exhaust = true;
         tags.add(CardTags.HEALING);
         initializeDescription();
     }
@@ -40,7 +43,7 @@ public class GenericFreshApple extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADED_MAGIC_NUMBER);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }

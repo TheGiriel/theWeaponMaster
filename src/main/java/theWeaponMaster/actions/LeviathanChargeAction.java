@@ -19,6 +19,7 @@ public class LeviathanChargeAction extends AbstractGameAction {
         Math.min(Math.max(ArsenalRelic.leviathanCharges, 0), 3);
         TheWeaponMaster.logger.info("Increase Charge by: " + ArsenalRelic.leviathanCharges);
         ArsenalRelic.leviathanCharges += leviathanCharging;
+        Math.min(Math.max(ArsenalRelic.leviathanCharges, 0), 3);
         for (AbstractDynamicCard c : getLeviathanCards()) {
             if (c.cardID.equals(LeviathanGroundSplitter.ID)) {
                 c.setBackgroundTexture("theWeaponMasterResources/images/512/bg_leviathan_skill_" + ArsenalRelic.leviathanCharges + "_charge_sm.png",

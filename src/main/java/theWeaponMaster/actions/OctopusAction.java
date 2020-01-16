@@ -35,7 +35,7 @@ public class OctopusAction extends AbstractGameAction {
                 group.addToTop(new ShiftingChoiceCard("Cerberus", "Cerberus", makeCardPath("Power.png"), "Equip the flashy Cerberus.", AbstractCard.CardType.POWER));
             }
             if (!(ArsenalRelic.currentWeapon.equals("Revenant")) && ArsenalRelic.revenantUnlocked) {
-                group.addToTop(new ShiftingChoiceCard("Revenant Cleaver", "Revenant Cleaver", makeCardPath("Power.png"), "Equip the hungry Revenant_Cleaver", AbstractCard.CardType.POWER));
+                group.addToTop(new ShiftingChoiceCard("Revenant Cleaver", "Revenant Cleaver", makeCardPath("Power.png"), "Equip the hungry Revenant_Cleaver.", AbstractCard.CardType.POWER));
             }
             if (!(ArsenalRelic.currentWeapon.equals("Atropos")) && ArsenalRelic.atroposUnlocked) {
                 group.addToTop(new ShiftingChoiceCard("Atropos' Shears", "Atropos' Shears", makeCardPath("Power.png"), "Equip the mana burning Atropos_Shears.", AbstractCard.CardType.POWER));

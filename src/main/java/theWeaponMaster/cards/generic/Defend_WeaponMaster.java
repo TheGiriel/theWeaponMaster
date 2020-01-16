@@ -2,7 +2,9 @@ package theWeaponMaster.cards.generic;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
@@ -13,6 +15,7 @@ public class Defend_WeaponMaster extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(Defend_WeaponMaster.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final CardRarity RARITY = CardRarity.BASIC;
     public static final CardTarget TARGET = CardTarget.SELF;

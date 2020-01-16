@@ -128,7 +128,7 @@
       "flash",
       "flashy"
     ],
-    "DESCRIPTION": "#yFlash #bX: Discard up to #bX cards. Bonuses per discard: NL 1+ Card: Gain #b1 bonus damage. NL 2+ Cards: draw a card. NL X: Activate the Flash effect."
+    "DESCRIPTION": "#yFlash #bX: Discard up to #bX cards. Bonuses per discard: NL 1+ Card: Gain #b1 bonus damage per card. NL 2+ Cards: draw a card. NL X: Activate the Flash effect."
   },
   {
     "PROPER_NAME": "Power Flash",

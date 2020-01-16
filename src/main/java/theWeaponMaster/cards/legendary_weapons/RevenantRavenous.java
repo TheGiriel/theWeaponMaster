@@ -50,7 +50,6 @@ public class RevenantRavenous extends AbstractRevenantCard {
 
         getSated();
         tags.add(REVENANT);
-        initializeDescription();
 
         initializeDescription();
     }
@@ -87,12 +86,11 @@ public class RevenantRavenous extends AbstractRevenantCard {
 
     //TODO: Improve method
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         if (ArsenalRelic.revenantHunger >= HUNGER) {
-            new RevenantStarveAction(-HUNGER, false);
+            AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(-HUNGER, false));
             AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, 3)));
         } else {
-            new RevenantStarveAction(0, true);
+            AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(0, true));
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         AbstractDungeon.actionManager.addToTurnStart(new ApplyPowerAction(p, p, new ViciousPower(p, magicNumber)));

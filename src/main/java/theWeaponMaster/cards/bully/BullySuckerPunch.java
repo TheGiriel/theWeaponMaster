@@ -25,7 +25,7 @@ public class BullySuckerPunch extends AbstractBullyCard {
     public static final String ID = TheWeaponMaster.makeID(BullySuckerPunch.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullySuckerPunch.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.RARE;

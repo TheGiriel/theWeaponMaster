@@ -19,7 +19,7 @@ public class BullyConfidence extends AbstractBullyCard {
     public static final String ID = TheWeaponMaster.makeID(BullyConfidence.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullyConfidence.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

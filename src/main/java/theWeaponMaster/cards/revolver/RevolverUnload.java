@@ -3,6 +3,8 @@ package theWeaponMaster.cards.revolver;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
@@ -16,6 +18,7 @@ public class RevolverUnload extends AbstractRevolverCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevolverUnload.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
     public static final CardRarity RARITY = CardRarity.RARE;
     public static final CardTarget TARGET = CardTarget.ENEMY;

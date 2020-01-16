@@ -17,7 +17,7 @@ public class BullyWimp extends AbstractBullyCard {
 
     public static final String ID = TheWeaponMaster.makeID(BullyWimp.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullyWimp.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.COMMON;

@@ -1,6 +1,5 @@
 package theWeaponMaster.cards.legendary_weapons;
 
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -41,7 +40,7 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
     public static final int UPGRADED_DAMAGE = 3;
     public static final int MAGIC_NUMBER = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    public static final int HUNGERCOST = 8;
+    public static final int HUNGER = 8;
 
     public RevenantHungrySteel() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -55,7 +54,6 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
         getSated();
         tags.add(REVENANT);
         initializeDescription();
-        AlwaysRetainField.alwaysRetain.set(this, true);
 
         initializeDescription();
     }
@@ -77,7 +75,7 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
     }
 
     public void getSated() {
-        if (ArsenalRelic.revenantHunger < HUNGERCOST) {
+        if (ArsenalRelic.revenantHunger < HUNGER) {
             this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_sated_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_sated_attack.png");
             rawDescription = DESCRIPTION[1];
         } else {
@@ -94,11 +92,11 @@ public class RevenantHungrySteel extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         int hungryBoost = 0;
-        if (ArsenalRelic.revenantHunger >= HUNGERCOST) {
-            new RevenantStarveAction(-HUNGERCOST, false);
+        if (ArsenalRelic.revenantHunger >= HUNGER) {
+            AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(-HUNGER, false));
             hungryBoost++;
         } else {
-            new RevenantStarveAction(0, true);
+            AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(0, true));
         }
         if (!m.hasPower(MinionPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ChoppingBlockPower(m, p, hungryBoost)));

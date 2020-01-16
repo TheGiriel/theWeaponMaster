@@ -18,7 +18,7 @@ import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
 public class RevolverMagnum extends AbstractRevolverCard {
 
     public static final String ID = TheWeaponMaster.makeID(RevolverMagnum.class.getSimpleName());
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(RevolverMagnum.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;

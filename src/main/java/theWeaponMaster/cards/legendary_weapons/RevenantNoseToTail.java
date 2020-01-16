@@ -1,6 +1,5 @@
 package theWeaponMaster.cards.legendary_weapons;
 
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -50,7 +49,6 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
 
         getSated();
         tags.add(REVENANT);
-        AlwaysRetainField.alwaysRetain.set(this, true);
 
         initializeDescription();
     }
@@ -91,7 +89,7 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
             new RevenantStarveAction(-HUNGERCOST, false);
             hungryBoost++;
         } else {
-            new RevenantStarveAction(0, true);
+            AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(0, true));
         }
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));

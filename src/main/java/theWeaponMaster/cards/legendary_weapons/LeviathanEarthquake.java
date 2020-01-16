@@ -3,7 +3,6 @@ package theWeaponMaster.cards.legendary_weapons;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -38,7 +37,7 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
     public static final int DAMAGE = 12;
     public static final int UPGRADED_DAMAGE = 5;
     public static final int MAGIC_NUMBER = 1;
-    private final int CHARGECOST = 3;
+    private static final int CHARGECOST = 3;
 
     private static int thorns;
 
@@ -73,19 +72,22 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        boolean charged = false;
+        if (ArsenalRelic.leviathanCharges >= CHARGECOST) {
+            charged = true;
+            AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-CHARGECOST));
+        }
 
         AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.25F, ScreenShake.ShakeDur.LONG, ScreenShake.ShakeIntensity.HIGH));
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SMASH));
         }
 
-        if (ArsenalRelic.leviathanCharges >= CHARGECOST) {
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.15F));
-            AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.25F, ScreenShake.ShakeDur.SHORT, ScreenShake.ShakeIntensity.LOW));
+        if (charged) {
+            AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.25F, ScreenShake.ShakeDur.SHORT, ScreenShake.ShakeIntensity.HIGH));
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage / 2, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage / 2, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SMASH));
             }
-            AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(-CHARGECOST));
         }
     }
 }

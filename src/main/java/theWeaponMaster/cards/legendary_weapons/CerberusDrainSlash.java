@@ -127,41 +127,41 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
             int i = new Random().nextInt(tempSteal.size());
             switch (tempSteal.get(i)) {
                 case AngryPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AngryPower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new AngryPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case ThornsPower.POWER_ID:
                 case SharpHidePower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ThornsPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case BarricadePower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BarricadePower(p)));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new BarricadePower(p)));
                     break;
                 case ArtifactPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ArtifactPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case StrengthPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case MalleablePower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MalleablePower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new MalleablePower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case PlatedArmorPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new PlatedArmorPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case MetallicizePower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MetallicizePower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new MetallicizePower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case IntangiblePower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new IntangiblePower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
                 case RitualPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RitualPower(p, Math.min(tempStealValue.get(i), secondValue), true)));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new RitualPower(p, Math.min(tempStealValue.get(i), secondValue), true)));
                     break;
                 case ThieveryPower.POWER_ID:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThieveryPower(p, Math.min(tempStealValue.get(i), secondValue))));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ThieveryPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
             }
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(m, p, tempSteal.get(i), Math.min(tempStealValue.get(i), secondValue)));
+            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(m, p, tempSteal.get(i), Math.min(tempStealValue.get(i), secondValue)));
         }
     }
 }

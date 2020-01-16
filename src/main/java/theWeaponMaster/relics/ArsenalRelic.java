@@ -68,11 +68,20 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
         usedThisTurn = false;
         isPlayerTurn = true;
         beginLongPulse();
+        if (leviathanCharges < 3) {
+            chargeGauntlet();
+        }
+        if (currentWeapon.equals("Revenant")) {
+            counter = revenantHunger;
+        } else {
+            counter = -2;
+        }
     }
 
     @Override
     public void atBattleStart() {
         leviathanCharges = Math.min(Math.max(leviathanCharges, 0), 3);
+        AbstractDungeon.actionManager.addToBottom(new LeviathanChargeAction(0));
         revenantHunger = Math.min(Math.max(revenantHunger, 0), 10);
     }
 
@@ -82,14 +91,25 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
             for (AbstractCard card : player.hand.group) {
                 if (card.hasTag(REVENANT)) {
                     starveRevenant();
+                    counter = revenantHunger;
                 }
             }
         }
+        isPlayerTurn = false; // Not our turn now.
+        stopPulse();
+    }
+
+    @Override
+    public void onEnterRoom(AbstractRoom room) {
+        leviathanCharges = Math.min(Math.max(leviathanCharges, 0), 3);
         if (leviathanCharges < 3) {
             chargeGauntlet();
         }
-        isPlayerTurn = false; // Not our turn now.
-        stopPulse();
+        Math.max(revenantHunger, 0);
+        if (revenantHunger < 10) {
+            new RevenantStarveAction(2, false);
+        }
+        revenantHunger = Math.min(Math.max(revenantHunger, 0), 10);
     }
 
     public void chargeGauntlet() {
@@ -99,19 +119,10 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     private void starveRevenant() {
         revenantHunger = Math.min(Math.max(revenantHunger, 0), 10);
+        counter = revenantHunger;
         AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(1, false));
-        counter++;
     }
 
-    @Override
-    public void onEnterRoom(AbstractRoom room) {
-        if (leviathanCharges < 3) {
-            chargeGauntlet();
-        }
-        if (revenantHunger < 10) {
-            new RevenantStarveAction(2, false);
-        }
-    }
 
     public void setCurrentWeapon(String newWeapon) {
         currentWeapon = newWeapon;
@@ -119,10 +130,11 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        if (targetCard.type == AbstractCard.CardType.ATTACK) {
-            if (currentWeapon.equals("Revenant") && !targetCard.hasTag(REVENANT) && revenantHunger < 10) {
+        if (currentWeapon.equals("Revenant")) {
+            if (!targetCard.hasTag(REVENANT) && revenantHunger < 10) {
                 starveRevenant();
             }
+            counter = revenantHunger;
         }
     }
 
@@ -139,6 +151,33 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
         this.initializeTips();
     }
 
+    @Override
+    public void atBattleStartPreDraw() {
+        AbstractDungeon.player.masterDeck.group.stream().anyMatch(e -> {
+            if (e.cardID.startsWith("theWeaponMaster:Fenrir")) {
+                currentWeapon = "Fenrir";
+                return true;
+            }
+            if (e.cardID.startsWith("theWeaponMaster:Cerberus")) {
+                currentWeapon = "Cerberus";
+                return true;
+            }
+            if (e.cardID.startsWith("theWeaponMaster:Revenant")) {
+                currentWeapon = "Revenant";
+                return true;
+            }
+            if (e.cardID.startsWith("theWeaponMaster:Atropos")) {
+                currentWeapon = "Atropos";
+                return true;
+            }
+            if (e.cardID.startsWith("theWeaponMaster:Leviathan")) {
+                currentWeapon = "Leviathan";
+                return true;
+            }
+            currentWeapon = "None";
+            return false;
+        });
+    }
 
     @Override
     public void onUnequip() {

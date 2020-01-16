@@ -19,7 +19,7 @@ public class GenericFlashbang extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(GenericFlashbang.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(GenericFlashbang.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

@@ -1,6 +1,5 @@
 package theWeaponMaster.cards.legendary_weapons;
 
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -36,7 +35,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
     public static final int DAMAGE = 7;
     public static final int UPGRADED_DAMAGE = 3;
     public static final int MAGIC_NUMBER = 10;
-    public static final int HUNGERCOST = 0;
+    public static final int HUNGER = 0;
 
     public RevenantBloodbath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -51,7 +50,6 @@ public class RevenantBloodbath extends AbstractDynamicCard {
         getSated();
         tags.add(REVENANT);
         initializeDescription();
-        AlwaysRetainField.alwaysRetain.set(this, true);
 
         initializeDescription();
     }
@@ -97,7 +95,7 @@ public class RevenantBloodbath extends AbstractDynamicCard {
         int initialDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / 5;
 
         p.getPower(ViciousPower.POWER_ID).amount += ArsenalRelic.revenantHunger + 5;
-        new RevenantStarveAction(-ArsenalRelic.revenantHunger, false);
+        AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(-HUNGER, false));
 
         for (int i = p.getPower(ViciousPower.POWER_ID).amount; i >= 5; i -= 5) {
             int finalDamageBonus = p.getPower(ViciousPower.POWER_ID).amount / TIER_TWO;

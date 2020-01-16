@@ -71,7 +71,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
 
     @Override
     public boolean cardPlayable(AbstractMonster m) {
-        if (AbstractDungeon.player.energy.energy != 0 || AbstractDungeon.player.hasRelic(ChemicalX.ID)) {
+        if ((EnergyPanel.getCurrentEnergy() > 0) || AbstractDungeon.player.hasRelic(ChemicalX.ID)) {
             return true;
         }
         cantUseMessage = "I don't have enough energy.";
@@ -109,12 +109,12 @@ public class FenrirUnleashed extends AbstractDynamicCard {
                 continue;
             }
             TheWeaponMaster.logger.info("New target: " + targetList.get(j));
-            totalDamage += this.damage;
-            if (totalDamage >= targetList.get(j).currentHealth) {
+            totalDamage += damage;
+            if (totalDamage >= targetList.get(j).currentHealth + targetList.get(j).currentBlock) {
                 dead = true;
                 totalDamage = 0;
             }
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(targetList.get(j), new DamageInfo(p, this.damage, damageTypeForTurn), randomSlash()));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(targetList.get(j), new DamageInfo(p, damage, damageTypeForTurn), randomSlash()));
             if (dead && j < targetList.size() - 1) {
                 totalAttacks++;
                 new FenrirEvolveAction();

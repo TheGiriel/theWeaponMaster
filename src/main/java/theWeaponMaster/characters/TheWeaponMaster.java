@@ -159,6 +159,18 @@ public class TheWeaponMaster extends CustomPlayer {
         retVal.add(Defend_WeaponMaster.ID);
         retVal.add(BullyMock.ID);
 
+        //retVal.add(RevolverBuckshot.ID);
+        //retVal.add(RevolverCustomCartridge.ID);
+        //retVal.add(RevolverFullMetal.ID);
+        //retVal.add(RevolverHollowPoint.ID);
+        //retVal.add(RevolverKneecap.ID);
+        //retVal.add(RevolverLowRecoil.ID);
+        //retVal.add(RevolverMagnum.ID);
+        //retVal.add(RevolverSpecialGradeAmmmo.ID);
+        //retVal.add(RevolverTwinned.ID);
+        //retVal.add(RevolverWarningShot.ID;
+        //retVal.add(Strike_WeaponMaster.ID);
+
         return retVal;
     }
 

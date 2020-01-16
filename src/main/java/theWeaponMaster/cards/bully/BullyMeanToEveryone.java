@@ -25,7 +25,7 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
     public static final String ID = TheWeaponMaster.makeID(BullyMeanToEveryone.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullyMeanToEveryone.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

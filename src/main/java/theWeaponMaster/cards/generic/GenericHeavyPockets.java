@@ -16,7 +16,7 @@ public class GenericHeavyPockets extends AbstractDynamicCard {
 
 
     public static final String ID = TheWeaponMaster.makeID(GenericHeavyPockets.class.getSimpleName());
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(GenericHeavyPockets.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -31,8 +31,8 @@ public class GenericHeavyPockets extends AbstractDynamicCard {
     public static final int COST = 1;
     public static final int MAGIC_NUMBER = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    private static final int BLOCK = 8;
-    private static final int UPGRADED_BLOCK = 2;
+    public static final int BLOCK = 8;
+    public static final int UPGRADED_BLOCK = 2;
 
     public GenericHeavyPockets() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

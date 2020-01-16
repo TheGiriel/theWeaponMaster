@@ -22,7 +22,7 @@ public class BullyPushover extends AbstractBullyCard {
     public static final String ID = TheWeaponMaster.makeID(BullyPushover.class.getSimpleName());
     public static final String IMG = makeCardPath("bullyslap.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullyPushover.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.COMMON;

@@ -61,7 +61,7 @@ public class CerberusEssenceSlash extends AbstractDynamicCard {
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             upgradeSecondValue(UPGRADED_SECOND_VALUE);
-            rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

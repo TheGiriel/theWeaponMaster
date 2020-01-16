@@ -1,6 +1,5 @@
 package theWeaponMaster.cards.legendary_weapons;
 
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -35,7 +34,7 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
     public static final int DAMAGE = 3;
     public static final int UPGRADED_DAMAGE = 1;
     public static final int MAGIC_NUMBER = 3;
-    public static final int HUNGERCOST = 5;
+    public static final int HUNGER = 5;
 
     public RevenantChopChopCHOP() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -49,7 +48,6 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
         getSated();
         tags.add(REVENANT);
         initializeDescription();
-        AlwaysRetainField.alwaysRetain.set(this, true);
 
         initializeDescription();
     }
@@ -70,7 +68,7 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
     }
 
     public void getSated() {
-        if (ArsenalRelic.revenantHunger < HUNGERCOST) {
+        if (ArsenalRelic.revenantHunger < HUNGER) {
             this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_sated_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_sated_attack.png");
             rawDescription = DESCRIPTION[1];
         } else {
@@ -85,18 +83,16 @@ public class RevenantChopChopCHOP extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean hungering = (ArsenalRelic.revenantHunger >= HUNGERCOST);
         int hungryBoost = 0;
-        if (hungering) {
+        if (ArsenalRelic.revenantHunger >= HUNGER) {
+            AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(-HUNGER, false));
             hungryBoost++;
-            new RevenantStarveAction(-HUNGERCOST, false);
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(0, true));
         }
         for (int i = 0; i < magicNumber + hungryBoost; i++) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage)));
+            getSated();
         }
-        if (!hungering) {
-            new RevenantStarveAction(0, true);
-        }
-        getSated();
     }
 }

@@ -16,7 +16,7 @@ import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements FlipCard*/ {
 
     public static final String ID = TheWeaponMaster.makeID(LeviathanGauntletCharger.class.getSimpleName());
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(LeviathanGauntletCharger.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 

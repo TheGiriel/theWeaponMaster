@@ -66,6 +66,7 @@ public class FenrirHeavySwing extends AbstractDynamicCard {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
+        baseDamage = DAMAGE + (magicNumber / 2);
         initializeDescription();
     }
 

@@ -20,10 +20,11 @@ public class BullySlap extends AbstractBullyCard {
 
     public static final String ID = TheWeaponMaster.makeID(BullySlap.class.getSimpleName());
     public static final String IMG = makeCardPath("bullyslap.png");
-    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(BullySlap.class.getSimpleName());
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.COMMON;
     public static final CardTarget TARGET = CardTarget.ENEMY;
     public static final CardType TYPE = CardType.ATTACK;
@@ -31,7 +32,7 @@ public class BullySlap extends AbstractBullyCard {
 
     public static final int COST = 1;
     public static final int DAMAGE = 6;
-    public static final int UPGRADED_DAMAGE = -2;
+    public static final int UPGRADED_DAMAGE = -1;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
     public static final int BULLY_COST = 5;
@@ -59,10 +60,10 @@ public class BullySlap extends AbstractBullyCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            this.name = "Double Slap+";
+            this.name = DESCRIPTIONS[0];
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = DESCRIPTIONS[1];
             initializeDescription();
         }
     }

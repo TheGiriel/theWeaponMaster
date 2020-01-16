@@ -3,7 +3,9 @@ package theWeaponMaster.cards.generic;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.SleightOfHandAction;
@@ -16,6 +18,9 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
     public static final String ID = TheWeaponMaster.makeID(GenericSleightOfHand.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final CardRarity RARITY = CardRarity.COMMON;
     public static final CardTarget TARGET = CardTarget.SELF;
     public static final CardType TYPE = CardType.SKILL;
@@ -36,8 +41,8 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
+        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
         AbstractDungeon.actionManager.addToBottom(new SleightOfHandAction());
     }
 
@@ -47,6 +52,7 @@ public class GenericSleightOfHand extends AbstractDynamicCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             upgradeSecondValue(UPGRADED_SECOND_VALUE);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
