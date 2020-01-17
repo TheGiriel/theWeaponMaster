@@ -57,6 +57,7 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
         this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_atropos_attack.png", "theWeaponMasterResources/images/1024/bg_atropos_attack.png");
 
         initializeDescription();
+        this.cardsToPreview = new AtroposRightHalf();
     }
 
     @Override
@@ -88,7 +89,7 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
 
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
-        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).cardID.equals(AtroposScissorHalf.ID)) {
+        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).cardID.equals(AtroposRightHalf.ID)) {
             return tmp * 2;
         } else {
             return super.calculateModifiedCardDamage(player, tmp);
@@ -114,7 +115,7 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         ManaBurnAction.ignite(m, magicNumber);
-        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new AtroposScissorHalf(), true, false));
+        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new AtroposRightHalf(), true, false));
         scissorFlip = true;
         flipCard();
     }
@@ -128,7 +129,7 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
 
     @Override
     public void addScissors() {
-        scissors.add(AtroposScissorHalf.ID);
+        scissors.add(AtroposRightHalf.ID);
         scissors.add(AtroposSeveredScissors.ID);
     }
 }

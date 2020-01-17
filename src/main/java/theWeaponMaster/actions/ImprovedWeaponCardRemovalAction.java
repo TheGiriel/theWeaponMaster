@@ -35,7 +35,7 @@ public class ImprovedWeaponCardRemovalAction extends AbstractGameAction {
 
         weaponSetHash.add(AtroposSeveredSource.ID);
         weaponSetHash.add(AtroposSeveredScissors.ID);
-        weaponSetHash.add(AtroposScissorHalf.ID);
+        weaponSetHash.add(AtroposRightHalf.ID);
         weaponSetHash.add(AtroposSeveredPath.ID);
         weaponSetHash.add(AtroposSeveredPain.ID);
         weaponSetHash.add(AtroposSeveredSoul.ID);

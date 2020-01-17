@@ -24,7 +24,7 @@
   "ViciousPower": {
     "NAME": "Vicious",
     "DESCRIPTIONS": [
-      "Deal #r",
+      "Increases by 2 whenever you play an attack. NL Deal #r",
       " and take #r",
       " more damage.",
       " NL Lose #r",
@@ -80,7 +80,7 @@
     "NAME": "On the Chopping Block",
     "DESCRIPTIONS": [
       "Gain [#e3dac9]",
-      " Max HP if you kill the enemy before the turn ends."
+      " Max HP if you kill the enemy. NL Total damage dealt: "
     ]
   },
   "StaggerPower": {
@@ -168,9 +168,7 @@
   "MarksmanshipPower": {
     "NAME": "Marksmanship",
     "DESCRIPTIONS": [
-      "Ammunition cards deal ",
-      " extra damage (",
-      " for Buckshot & Twinned Shot), based on Dexterity."
+      "Ammunition cards scale with Dexterity in addition to Strength."
     ]
   },
   "BerserkerStancePower": {

@@ -58,13 +58,13 @@ public class RevolverCustomCartridge extends AbstractRevolverCard {
             return false;
         }
     }
-
     @Override
     public void setNormalDescription() {
-        this.cost = COST;
+        cost = COST;
         rawDescription = DESCRIPTIONS[0];
         type = TYPE;
         target = TARGET;
+        initializeDescription();
     }
 
     @Override

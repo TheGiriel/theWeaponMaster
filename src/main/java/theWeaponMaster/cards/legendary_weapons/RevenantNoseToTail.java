@@ -36,7 +36,7 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
     public static final int UPGRADED_DAMAGE = 3;
     public static final int MAGIC_NUMBER = 8;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    public static final int HUNGERCOST = 6;
+    public static final int HUNGER = 6;
 
     public RevenantNoseToTail() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -69,7 +69,7 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
     }
 
     public void getSated() {
-        if (ArsenalRelic.revenantHunger < HUNGERCOST) {
+        if (ArsenalRelic.revenantHunger < HUNGER) {
             this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_revenant_sated_attack.png", "theWeaponMasterResources/images/1024/bg_revenant_sated_attack.png");
             rawDescription = DESCRIPTION[1];
         } else {
@@ -85,15 +85,14 @@ public class RevenantNoseToTail extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int hungryBoost = 0;
-        if (ArsenalRelic.revenantHunger >= HUNGERCOST) {
-            new RevenantStarveAction(-HUNGERCOST, false);
+        if (ArsenalRelic.revenantHunger >= HUNGER) {
+            new RevenantStarveAction(-HUNGER, false);
             hungryBoost++;
         } else {
             AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(0, true));
         }
-
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new NoseToTailPower(m, magicNumber - hungryBoost), 1));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         getSated();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new NoseToTailPower(m, magicNumber - hungryBoost), 1));
     }
 }

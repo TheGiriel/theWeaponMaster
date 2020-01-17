@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
+import theWeaponMaster.cards.revolver.RevolverUnloadShot;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.util.TextureLoader;
 
@@ -52,6 +53,9 @@ public class ProtectiveBladePower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.cardID.equals(RevolverUnloadShot.ID)) {
+            return;
+        }
         if (card.hasTag(BULLY)) {
             AbstractBullyCard bullyCard = (AbstractBullyCard) card;
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, bullyCard.bullyNumber));

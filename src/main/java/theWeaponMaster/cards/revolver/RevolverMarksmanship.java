@@ -42,8 +42,8 @@ public class RevolverMarksmanship extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MarksmanshipPower(p, p)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
     }
 
     @Override

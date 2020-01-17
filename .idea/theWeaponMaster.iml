@@ -12,9 +12,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="desktop-1.0" level="project" />
     <orderEntry type="library" name="desktop-1.0-beta" level="project" />
-    <orderEntry type="library" name="TheAnimator" level="project" />
+    <orderEntry type="library" name="yUi" level="project" />
     <orderEntry type="module-library">
-      <library name="Maven: com.megacrit.cardcrawl:slaythespire:01-23-2019">
+      <library name="Maven: com.megacrit.cardcrawl:slaythespire:2.0">
         <CLASSES>
           <root url="jar://E:/SteamLibrary/steamapps/common/SlayTheSpire/desktop-1.0.jar!/" />
         </CLASSES>

@@ -15,6 +15,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.cards.legendary_weapons.RevenantBloodbath;
 import theWeaponMaster.cards.legendary_weapons.RevenantRavenous;
+import theWeaponMaster.cards.revolver.RevolverUnloadShot;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.util.TextureLoader;
 
@@ -79,7 +80,7 @@ public class ViciousPower extends TwoAmountPower {
     }
 
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        if (owner.hasPower(ProtectiveBladePower.POWER_ID)) {
+        if (owner.hasPower(ProtectiveBladePower.POWER_ID) || targetCard.cardID.equals(RevolverUnloadShot.ID)) {
             return;
         }
         if (targetCard.hasTag(BULLY)) {

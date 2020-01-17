@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
+import theWeaponMaster.cards.revolver.RevolverUnload;
 import theWeaponMaster.util.TextureLoader;
 
 import java.util.ArrayList;
@@ -16,7 +17,6 @@ import java.util.ArrayList;
 import static theWeaponMaster.TheWeaponMaster.makeRelicOutlinePath;
 import static theWeaponMaster.TheWeaponMaster.makeRelicPath;
 import static theWeaponMaster.patches.WeaponMasterTags.AMMUNITION;
-import static theWeaponMaster.patches.WeaponMasterTags.TEMPORARY;
 
 public class RevolverRelic extends CustomRelic {
 
@@ -36,10 +36,7 @@ public class RevolverRelic extends CustomRelic {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(TEMPORARY)) {
-            return;
-        }
-        if (card.hasTag(AMMUNITION) && counter >= 1) {
+        if (!card.cardID.equals(RevolverUnload.ID) && card.hasTag(AMMUNITION) && counter >= 1) {
             this.counter--;
             if (counter == 0) {
                 setReload();
@@ -56,6 +53,7 @@ public class RevolverRelic extends CustomRelic {
             counter = shotsLeft = Math.min(Math.max(counter, 0), 5);
         }
     }
+
 
     private void resetCards() {
         ammoCards.addAll(AbstractDungeon.player.drawPile.group);

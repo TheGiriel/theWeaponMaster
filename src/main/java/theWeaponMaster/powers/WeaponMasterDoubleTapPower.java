@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
+import theWeaponMaster.cards.revolver.RevolverUnload;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.util.TextureLoader;
 
@@ -49,7 +50,7 @@ public class WeaponMasterDoubleTapPower extends AbstractPower implements Cloneab
 
     @Override
     public void onUseCard(final AbstractCard card, final UseCardAction action) {
-        if (card.hasTag(WeaponMasterTags.AMMUNITION) && card.type.equals(AbstractCard.CardType.ATTACK)) {
+        if (card.hasTag(WeaponMasterTags.AMMUNITION) && card.type.equals(AbstractCard.CardType.ATTACK) && !card.cardID.equals(RevolverUnload.ID)) {
             AbstractCard tempCard = card.makeSameInstanceOf();
             tempCard.tags.add(WeaponMasterTags.TEMPORARY);
 
@@ -63,7 +64,7 @@ public class WeaponMasterDoubleTapPower extends AbstractPower implements Cloneab
                 TheWeaponMaster.logger.info("bonus damage: " + tempCard.baseDamage);
             }
             tempCard.purgeOnUse = true;
-            AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(tempCard, target));
+            AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(tempCard, target, card.energyOnUse, true));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }
@@ -72,7 +73,6 @@ public class WeaponMasterDoubleTapPower extends AbstractPower implements Cloneab
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
-
     }
 
     @Override

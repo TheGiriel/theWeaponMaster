@@ -3,6 +3,7 @@ package theWeaponMaster.cards.abstractcards;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.powers.MarksmanshipPower;
 import theWeaponMaster.relics.HeavyDrum;
 
@@ -19,6 +20,7 @@ public abstract class AbstractRevolverCard extends AbstractDynamicCard {
                                 CardTarget target) {
 
         super(id, img, cost, type, color, rarity, target);
+        tags.add(WeaponMasterTags.AMMUNITION);
     }
 
     public void displayUpgrades() {

@@ -2,14 +2,15 @@
   "modid": "WeaponMaster",
   "name": "Weapon Master Mod",
   "author_list": ["TheGiriel"],
-  "description": "Card Complete test version. Hotfix ten, maybe?
+  "description": "Card Complete test version. Hotfix eight at least. maybe?
         Art (not happening anytime soon)
         Current State: Legendary Weapons: 25/25(+2); Bully: 15/15; Revolver 15/15(+1); Generic 20/20(+2);
         total: 75/75(+5); No Art.",
-  "version": "0.3.4",
-  "sts_version": "01-23-2019",
+  "version": "0.3.8+ hotfix edition",
+  "sts_version": "2.0",
   "mts_version": "3.8.0",
   "dependencies": ["basemod", "stslib"],
+  "credits": "The StS discord in general, and the following people in particular: DarkVexon for showing me how to properly use the GridSelectScreen, EatYourBeetS for helping me with the Flash Action, Levender for his extensive beta-testing and feedback.",
   "update_json": ""
 }
 

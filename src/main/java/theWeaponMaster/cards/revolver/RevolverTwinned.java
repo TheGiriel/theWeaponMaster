@@ -53,13 +53,13 @@ public class RevolverTwinned extends AbstractRevolverCard {
             initializeDescription();
         }
     }
-
     @Override
     public void setNormalDescription() {
-        this.cost = COST;
+        cost = COST;
         rawDescription = DESCRIPTIONS[0];
         type = TYPE;
         target = TARGET;
+        initializeDescription();
     }
 
     @Override

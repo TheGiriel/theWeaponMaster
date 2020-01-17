@@ -13,6 +13,7 @@ theWeaponMaster\cards\bully\BullyMeanToEveryone.class
 theWeaponMaster\cards\bully\BullyIntimidate.class
 theWeaponMaster\actions\FenrirUnleashedSelectAction.class
 theWeaponMaster\powers\CounterBlowPower.class
+theWeaponMaster\cards\legendary_weapons\AtroposLeftHalf.class
 theWeaponMaster\cards\generic\GenericDodge.class
 theWeaponMaster\cards\generic\Defend_WeaponMaster.class
 theWeaponMaster\cards\revolver\RevolverWarningShot.class
@@ -71,6 +72,7 @@ theWeaponMaster\potions\PlaceholderPotion.class
 theWeaponMaster\cards\legendary_weapons\CerberusSlash.class
 theWeaponMaster\variables\shieldBuster.class
 theWeaponMaster\cards\generic\GenericPreparation.class
+theWeaponMaster\cards\legendary_weapons\AtroposRightHalf.class
 theWeaponMaster\cards\revolver\RevolverMagnum.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredPath.class
 theWeaponMaster\variables\SecondVariable.class
@@ -123,6 +125,7 @@ theWeaponMaster\cards\legendary_weapons\LeviathanCrush.class
 theWeaponMaster\cards\generic\GenericFreshApple.class
 theWeaponMaster\relics\PlaceholderRelic.class
 theWeaponMaster\characters\TheWeaponMaster$Enums.class
+theWeaponMaster\cards\revolver\RevolverUnloadShot.class
 theWeaponMaster\powers\TauntPower.class
 theWeaponMaster\util\EnemyIntentInterface.class
 theWeaponMaster\cards\legendary_weapons\FenrirHeavySwing.class
@@ -130,7 +133,6 @@ theWeaponMaster\cards\generic\GenericGuillotineChoke.class
 theWeaponMaster\cards\abstractcards\AbstractDynamicCard.class
 theWeaponMaster\powers\ProtectiveBladePower.class
 theWeaponMaster\actions\ManaBurnAction.class
-theWeaponMaster\cards\legendary_weapons\AtroposScissorHalf.class
 theWeaponMaster\cards\legendary_weapons\CerberusIaiSlash.class
 theWeaponMaster\cards\revolver\RevolverCustomCartridge.class
 theWeaponMaster\cards\generic\GenericFrontKick.class

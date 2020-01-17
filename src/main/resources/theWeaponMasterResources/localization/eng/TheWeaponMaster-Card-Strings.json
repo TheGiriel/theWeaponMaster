@@ -128,7 +128,7 @@
       "Deal !D! damage. NL Apply !M! Mana_Burn. NL Right_Half."
     ]
   },
-  "theWeaponMaster:AtroposScissorHalf": {
+  "theWeaponMaster:AtroposLeftHalf": {
     "NAME": "Left Half",
     "DESCRIPTION": "Deal !D! damage, Ignite !M!. NL Exhaust, Ethereal."
   },
@@ -241,7 +241,17 @@
   },
   "theWeaponMaster:RevolverUnload": {
     "NAME": "Unload",
-    "DESCRIPTION": "Send up to !SV! cards from the top of your draw pile to your discard pile. Deal !D! damage for each card. NL Exhaust."
+    "DESCRIPTION": "Send the top !SV! cards from your draw pile to your discard pile. Play [#efc851]Unload! for each card. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Send the top !SV! cards from your draw pile to your discard pile. Play [#efc851]Unload! for each card. NL Exhaust."
+    ]
+  },
+  "theWeaponMaster:RevolverUnloadShot": {
+    "NAME": "Unload!",
+    "DESCRIPTION": "Deal !D! damage. NL Purge.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage. NL Purge."
+    ]
   },
   "theWeaponMaster:RevolverWarningShot": {
     "NAME": "Warning Shot",
@@ -250,7 +260,6 @@
       "Ammunition, Reload. NL Stagger all enemies."
     ]
   },
-
   "theWeaponMaster:BullyBullysAudacity": {
     "NAME": "The Bully's Audacity",
     "DESCRIPTION": "Bully !BULLY! NL Gain !M! Block for every Bully card played this fight. NL Exhaustive !stslib:ex!."

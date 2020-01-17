@@ -1,6 +1,8 @@
 package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.relics.HeavyDrum;
 import theWeaponMaster.relics.RevolverRelic;
 
@@ -13,6 +15,26 @@ public class ReloadAction extends AbstractGameAction {
         if (!player.discardPile.isEmpty()) {
             for (int i = Math.min(player.discardPile.size(), 3); i > 0; i--) {
                 player.discardPile.moveToDeck(player.discardPile.getBottomCard(), true);
+            }
+        }
+        for (AbstractCard c : player.drawPile.group) {
+            if (c instanceof AbstractRevolverCard) {
+                ((AbstractRevolverCard) c).setNormalDescription();
+            }
+        }
+        for (AbstractCard c : player.hand.group) {
+            if (c instanceof AbstractRevolverCard) {
+                ((AbstractRevolverCard) c).setNormalDescription();
+            }
+        }
+        for (AbstractCard c : player.discardPile.group) {
+            if (c instanceof AbstractRevolverCard) {
+                ((AbstractRevolverCard) c).setNormalDescription();
+            }
+        }
+        for (AbstractCard c : player.exhaustPile.group) {
+            if (c instanceof AbstractRevolverCard) {
+                ((AbstractRevolverCard) c).setNormalDescription();
             }
         }
         player.draw(1);

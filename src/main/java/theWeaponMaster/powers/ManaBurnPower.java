@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ManaBurnAction;
-import theWeaponMaster.cards.legendary_weapons.AtroposScissorHalf;
+import theWeaponMaster.cards.legendary_weapons.AtroposRightHalf;
 import theWeaponMaster.cards.legendary_weapons.AtroposSeveredScissors;
 import theWeaponMaster.cards.legendary_weapons.AtroposSeveredSoul;
 import theWeaponMaster.util.TextureLoader;
@@ -63,7 +63,7 @@ public class ManaBurnPower extends AbstractPower implements HealthBarRenderPower
         intent.add(STRONG_DEBUFF);
         intent.add(MAGIC);
 
-        triggers.add(AtroposScissorHalf.ID);
+        triggers.add(AtroposRightHalf.ID);
         triggers.add(AtroposSeveredSoul.ID);
         triggers.add(AtroposSeveredScissors.ID);
 

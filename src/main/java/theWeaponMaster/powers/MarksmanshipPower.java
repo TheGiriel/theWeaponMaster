@@ -54,7 +54,6 @@ public class MarksmanshipPower extends AbstractPower implements CloneablePowerIn
             card.isDamageModified = true;
             card.calculateCardDamage((AbstractMonster) action.target);
         }
-
         updateDescription();
     }
 
@@ -71,10 +70,7 @@ public class MarksmanshipPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public void updateDescription() {
-        if (owner.hasPower(DexterityPower.POWER_ID)) {
-            description = DESCRIPTIONS[0] + owner.getPower(DexterityPower.POWER_ID).amount + DESCRIPTIONS[1] + owner.getPower(DexterityPower.POWER_ID).amount / 2 + DESCRIPTIONS[2];
-        } else
-            description = DESCRIPTIONS[0] + 0 + DESCRIPTIONS[1] + 0 + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0];
     }
 
     @Override
@@ -84,7 +80,8 @@ public class MarksmanshipPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public void receivePostPowerApplySubscriber(AbstractPower abstractPower, AbstractCreature abstractCreature, AbstractCreature abstractCreature1) {
-        if (abstractPower.equals(DexterityPower.POWER_ID)) {
+        if (abstractPower.ID.equals(DexterityPower.POWER_ID)) {
+            amount = owner.getPower(DexterityPower.POWER_ID).amount;
             updateDescription();
         }
     }

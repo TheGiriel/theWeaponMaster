@@ -2,7 +2,9 @@ package theWeaponMaster.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,7 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.util.TextureLoader;
 
-public class ChoppingBlockPower extends AbstractPower {
+public class ChoppingBlockPower extends TwoAmountPower {
 
     public static final String POWER_ID = TheWeaponMaster.makeID(ChoppingBlockPower.class.getSimpleName());
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ChoppingBlockPower.class.getSimpleName());
@@ -22,12 +24,13 @@ public class ChoppingBlockPower extends AbstractPower {
     private static final Texture tex32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("designate_placeholder_32.png"));
 
     private AbstractCreature source;
+    static int baseInc = 0;
 
     public ChoppingBlockPower(AbstractCreature owner, AbstractCreature source, int hungryBoost) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = Math.max(1, (owner.currentHealth / 20 + 1)) + hungryBoost;
+        this.amount = baseInc = hungryBoost;
         this.source = source;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -42,7 +45,15 @@ public class ChoppingBlockPower extends AbstractPower {
     @Override
     public void updateDescription() {
 
-        this.description = DESCRIPTION[0] + amount + DESCRIPTION[1];
+        this.description = DESCRIPTION[0] + amount + DESCRIPTION[1] + amount2;
+    }
+
+    @Override
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        amount2 += damageAmount;
+        amount = (int) Math.floor((double) amount2 / 20) + baseInc;
+        updateDescription();
+        return super.onAttacked(info, damageAmount);
     }
 
     @Override

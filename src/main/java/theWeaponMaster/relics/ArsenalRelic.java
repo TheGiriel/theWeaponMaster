@@ -87,14 +87,6 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onPlayerEndTurn() {
-        if (revenantHunger < 10) {
-            for (AbstractCard card : player.hand.group) {
-                if (card.hasTag(REVENANT)) {
-                    starveRevenant();
-                    counter = revenantHunger;
-                }
-            }
-        }
         isPlayerTurn = false; // Not our turn now.
         stopPulse();
     }

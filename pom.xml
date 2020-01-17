@@ -5,8 +5,8 @@
     <groupId>theWeaponMaster</groupId>
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
-    <version>0.3.4</version>
-    <description>Card Complete test version. Hotfix ten, maybe?
+    <version>0.3.8+ hotfix edition</version>
+    <description>Card Complete test version. Hotfix eight at least. maybe?
         Art (not happening anytime soon)
         Current State: Legendary Weapons: 25/25(+2); Bully: 15/15; Revolver 15/15(+1); Generic 20/20(+2);
         total: 75/75(+5); No Art.
@@ -15,7 +15,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
+        <SlayTheSpire.version>2.0</SlayTheSpire.version>
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
         <Steam.path>E:/SteamLibrary</Steam.path>
     </properties>
