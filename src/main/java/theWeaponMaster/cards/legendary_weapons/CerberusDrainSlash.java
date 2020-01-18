@@ -71,6 +71,8 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
         stolenPower.add(SharpHidePower.POWER_ID);
         stolenPower.add(RitualPower.POWER_ID);
         stolenPower.add(ThieveryPower.POWER_ID);
+        stolenPower.add(AngerPower.POWER_ID);
+        stolenPower.add(RegenPower.POWER_ID);
     }
 
     @Override
@@ -139,6 +141,7 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
                 case ArtifactPower.POWER_ID:
                     AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ArtifactPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
+                case AngerPower.POWER_ID:
                 case StrengthPower.POWER_ID:
                     AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
@@ -160,6 +163,8 @@ public class CerberusDrainSlash extends AbstractDynamicCard {
                 case ThieveryPower.POWER_ID:
                     AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ThieveryPower(p, Math.min(tempStealValue.get(i), secondValue))));
                     break;
+                case RegenPower.POWER_ID:
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new RegenPower(p, tempStealValue.get(i))));
             }
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(m, p, tempSteal.get(i), Math.min(tempStealValue.get(i), secondValue)));
         }

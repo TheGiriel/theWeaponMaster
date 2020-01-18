@@ -47,9 +47,11 @@ public class SeveredPathPower extends AbstractPower {
 
     @Override
     public void onInitialApplication() {
-        originalMove = this.m.nextMove;
-        originalIntent = this.m.intent;
-        intentDamage = this.m.getIntentBaseDmg();
+        if (!owner.id.equals("TheGuardian")) {
+            originalMove = this.m.nextMove;
+            originalIntent = this.m.intent;
+            intentDamage = this.m.getIntentBaseDmg();
+        }
 
         //TODO: Lagavulin special case.
 

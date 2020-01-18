@@ -27,6 +27,16 @@
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
   },
   {
+    "PROPER_NAME": "Weapon Swap",
+    "NAMES": [
+      "Weapon Swap",
+      "weapon swap",
+      "weapon_swap",
+      "Weapon_Swap"
+    ],
+    "DESCRIPTION": "Remove all of your Legendary Weapon cards from your deck and gain a new Weapon's cards."
+  },
+  {
     "PROPER_NAME": "Vicious",
     "NAMES": [
       "vicious"
@@ -90,6 +100,16 @@
     "DESCRIPTION": "#yLacerated creatures lose #b2% of their Max HP at the start of their turn."
   },
   {
+    "PROPER_NAME": "Protective Blade",
+    "NAMES": [
+      "Protective Blade",
+      "protective blade",
+      "Protective_Blade",
+      "protective_blade"
+    ],
+    "DESCRIPTION": "While Protective Blade is active, gain Block instead of Vicious."
+  },
+  {
     "PROPER_NAME": "Kneecap",
     "NAMES": [
       "Kneecap",
@@ -141,14 +161,14 @@
     "DESCRIPTION": "#yPower #yFlash #bX: Discard up to #bX cards. Bonuses per discard: NL 1+ Card: Gain 1 bonus damage. NL 2+ Cards: draw a card. NL X-1: Activate the Flash effect once."
   },
   {
-    "PROPER_NAME": "Single Shot",
+    "PROPER_NAME": "Stoic Flash",
     "NAMES": [
-      "Single Shot",
-      "Single_Shot",
-      "single shot",
-      "single_shot"
+      "Stoic Flash",
+      "Stoic_Flash",
+      "stoic flash",
+      "stoic_flash"
     ],
-    "DESCRIPTION": "0-cost attack card with #yEthereal and #yExhaust"
+    "DESCRIPTION": "#yStoic #yFlash #bX: Discard up to #bX cards. Always activate the Flash effect. Bonuses per discard: Gain 2 bonus damage."
   },
   {
     "PROPER_NAME": "Utility Flash",
@@ -173,6 +193,26 @@
       "Atropos"
     ],
     "DESCRIPTION": "Versatile cards specializing in #yMana #yBurn and damage mitigation."
+  },
+  {
+    "PROPER_NAME": "Right Half",
+    "NAMES": [
+      "Right Half",
+      "right half",
+      "right_half",
+      "Right_Half"
+    ],
+    "DESCRIPTION": "Double damage if the last played card was Left Half. NL Becomes Severed Scissors after use."
+  },
+  {
+    "PROPER_NAME": "Left Half",
+    "NAMES": [
+      "Left Half",
+      "left half",
+      "left_half",
+      "Left_Half"
+    ],
+    "DESCRIPTION": "Double damage if the last played card was Right Half."
   },
   {
     "PROPER_NAME": "#yMana #yBurn",
@@ -287,46 +327,6 @@
     "DESCRIPTION": "Splits into two 0-cost attack cards."
   },
   {
-    "PROPER_NAME": "Right Half",
-    "NAMES": [
-      "Right Half",
-      "right half",
-      "right_half",
-      "Right_Half"
-    ],
-    "DESCRIPTION": "Double damage if the last played card was Left Half. NL Becomes Severed Scissors after use."
-  },
-  {
-    "PROPER_NAME": "Left Half",
-    "NAMES": [
-      "Left Half",
-      "left half",
-      "left_half",
-      "Left_Half"
-    ],
-    "DESCRIPTION": "Double damage if the last played card was Right Half."
-  },
-  {
-    "PROPER_NAME": "Weapon Swap",
-    "NAMES": [
-      "Weapon Swap",
-      "weapon swap",
-      "weapon_swap",
-      "Weapon_Swap"
-    ],
-    "DESCRIPTION": "Remove all of your Legendary Weapon cards from your deck and gain a new Weapon's cards."
-  },
-  {
-    "PROPER_NAME": "Protective Blade",
-    "NAMES": [
-      "Protective Blade",
-      "protective blade",
-      "Protective_Blade",
-      "protective_blade"
-    ],
-    "DESCRIPTION": "While Protective Blade is active, gain Block instead of Vicious."
-  },
-  {
     "PROPER_NAME": "Reload",
     "NAMES": [
       "reload",
@@ -341,5 +341,15 @@
       "ammo"
     ],
     "DESCRIPTION": "Reduces your #yRevolver shot count by #b1. NL Requires Reloading when at #b0 shots."
+  },
+  {
+    "PROPER_NAME": "Single Shot",
+    "NAMES": [
+      "Single Shot",
+      "Single_Shot",
+      "single shot",
+      "single_shot"
+    ],
+    "DESCRIPTION": "0-cost attack card with #yEthereal and #yExhaust"
   }
 ]

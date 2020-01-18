@@ -42,8 +42,8 @@
   },
   "theWeaponMaster:CerberusIaiSlash": {
     "NAME": "Iai Slash",
-    "DESCRIPTION": "Retain. Deal !D! damage. NL Flash !M!: Increase Flash damage by 25% for every turn retained. Resets when discarded or used. NL Turns retained: !SV!.",
-    "UPGRADE_DESCRIPTION": "Retain. Deal !D! damage. NL Power_Flash !M!: Increase discard damage by 33% for every turn retained. Resets when discarded or used. NL Turns retained: !SV!."
+    "DESCRIPTION": "Retain. Deal !D! damage. NL Stoic_Flash !M!: Increase Flash damage by 50% for every turn retained. Resets when discarded or used. NL Turns retained: !SV!.",
+    "UPGRADE_DESCRIPTION": "Retain. Deal !D! damage. NL Stoic_Flash !M!: Increase discard damage by 100% for every turn retained. Resets when discarded or used. NL Turns retained: !SV!."
   },
   "theWeaponMaster:CerberusDrainSlash": {
     "NAME": "Drain Slash",
@@ -131,6 +131,10 @@
   "theWeaponMaster:AtroposLeftHalf": {
     "NAME": "Left Half",
     "DESCRIPTION": "Deal !D! damage, Ignite !M!. NL Exhaust, Ethereal."
+  },
+  "theWeaponMaster:AtroposRightHalf": {
+    "NAME": "Right Half",
+    "DESCRIPTION": "Deal !D! damage, Mana_Burn !M!. NL Exhaust, Ethereal."
   },
   "theWeaponMaster:AtroposSeveredPath": {
     "NAME": "Severed Path",

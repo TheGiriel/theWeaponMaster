@@ -3,6 +3,7 @@ package theWeaponMaster.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
+import theWeaponMaster.cards.revolver.RevolverUnload;
 import theWeaponMaster.relics.HeavyDrum;
 import theWeaponMaster.relics.RevolverRelic;
 
@@ -42,6 +43,21 @@ public class ReloadAction extends AbstractGameAction {
         if (player.hasRelic(HeavyDrum.ID)) {
             player.getRelic(RevolverRelic.ID).counter = 5;
         } else player.getRelic(RevolverRelic.ID).counter = 6;
+        for (AbstractCard card : player.hand.group) {
+            if (card.cardID.equals(RevolverUnload.ID)) {
+                ((AbstractRevolverCard) card).baseSecondValue = RevolverRelic.shotsLeft;
+            }
+        }
+        for (AbstractCard card : player.drawPile.group) {
+            if (card.cardID.equals(RevolverUnload.ID)) {
+                ((AbstractRevolverCard) card).baseSecondValue = RevolverRelic.shotsLeft;
+            }
+        }
+        for (AbstractCard card : player.discardPile.group) {
+            if (card.cardID.equals(RevolverUnload.ID)) {
+                ((AbstractRevolverCard) card).baseSecondValue = RevolverRelic.shotsLeft;
+            }
+        }
 
         isDone = true;
     }

@@ -75,7 +75,12 @@ public class RevolverTwinned extends AbstractRevolverCard {
                 c.upgrade();
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c));
             } else {
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new RevolverSingleShot()));
+                if (upgraded) {
+                    AbstractCard tempCard = new RevolverSingleShot();
+                    tempCard.upgrade();
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(tempCard));
+                } else
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new RevolverSingleShot()));
                 return;
             }
         } else

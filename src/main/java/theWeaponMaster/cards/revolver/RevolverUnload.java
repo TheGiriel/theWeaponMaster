@@ -67,7 +67,9 @@ public class RevolverUnload extends AbstractRevolverCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        exhaust = true;
         if (RevolverRelic.shotsLeft <= 0) {
+            exhaust = false;
             return;
         }
         baseSecondValue = RevolverRelic.shotsLeft;
