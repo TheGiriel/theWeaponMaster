@@ -29,7 +29,7 @@ public class LeviathanChargeAction extends AbstractGameAction {
                         "theWeaponMasterResources/images/1024/bg_leviathan_attack_" + ArsenalRelic.leviathanCharges + "_charge.png");
             }
             c.baseSecondValue += leviathanCharging;
-            c.applyPowers();
+            //c.applyPowers();
             c.initializeDescription();
             c.getCardBg();
         }

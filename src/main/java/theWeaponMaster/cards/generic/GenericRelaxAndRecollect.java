@@ -37,7 +37,7 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
     public static final int SECOND_VALUE = 1;
     public static final int UPGRADED_SECOND_VALUE = 1;
 
-    private boolean flipped = false;
+    private static boolean flipped = false;
     private boolean initializeCard = false;
 
     public GenericRelaxAndRecollect() {
@@ -118,7 +118,11 @@ public class GenericRelaxAndRecollect extends AbstractDynamicCard implements Fli
             this.name = DESCRIPTIONS[2];
             rawDescription = DESCRIPTIONS[3];
             this.cost = 0;
-            this.secondValue = baseSecondValue = SECOND_VALUE;
+            if (upgraded) {
+                this.secondValue = baseSecondValue = SECOND_VALUE + UPGRADED_SECOND_VALUE;
+            } else {
+                this.secondValue = baseSecondValue = SECOND_VALUE;
+            }
             flipped = true;
         } else {
             this.name = DESCRIPTIONS[0];

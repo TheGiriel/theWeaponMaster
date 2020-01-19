@@ -53,9 +53,11 @@ public class RevolverBuckshot extends AbstractRevolverCard {
             upgradeDamage(UPGRADED_DAMAGE);
         }
     }
+
     @Override
     public void setNormalDescription() {
         cost = COST;
+        costForTurn = COST;
         rawDescription = DESCRIPTIONS[0];
         type = TYPE;
         target = TARGET;

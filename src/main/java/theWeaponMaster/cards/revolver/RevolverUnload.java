@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
+import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -33,37 +34,61 @@ public class RevolverUnload extends AbstractRevolverCard {
 
         this.damage = baseDamage = DAMAGE;
         this.secondValue = baseSecondValue = SECOND_VALUE;
-        initializeDescription();
 
         exhaust = true;
-        this.cardsToPreview = new RevolverUnloadShot();
+        AbstractRevolverCard unloadShot = new RevolverUnloadShot();
         if (upgraded) {
-            this.cardsToPreview.upgraded = true;
+            this.cardsToPreview.upgrade();
+        } else {
+            this.cardsToPreview = unloadShot;
         }
+        tags.remove(WeaponMasterTags.AMMUNITION);
+        initializeDescription();
     }
 
     @Override
     public void upgrade() {
         upgradeName();
         upgradeDamage(UPGRADED_DAMAGE);
+        this.cardsToPreview.upgrade();
+        rawDescription = DESCRIPTIONS[1];
         initializeDescription();
+    }
+
+    @Override
+    public boolean cardPlayable(AbstractMonster m) {
+        if (AbstractDungeon.player.drawPile.size() > 0) {
+            baseSecondValue = Math.min(AbstractDungeon.player.drawPile.size(), RevolverRelic.shotsLeft);
+            initializeDescription();
+            return true;
+        }
+        baseSecondValue = Math.min(AbstractDungeon.player.drawPile.size(), RevolverRelic.shotsLeft);
+        initializeDescription();
+        cantUseMessage = "I don't have any cards in my draw pile!";
+        return false;
     }
 
     @Override
     public void setNormalDescription() {
         cost = COST;
-        rawDescription = DESCRIPTIONS[0];
+        costForTurn = COST;
+        if (upgraded) {
+            rawDescription = DESCRIPTIONS[1];
+        } else {
+            rawDescription = DESCRIPTIONS[0];
+        }
         type = TYPE;
         target = TARGET;
-        baseSecondValue = RevolverRelic.shotsLeft;
+        baseSecondValue = Math.min(AbstractDungeon.player.drawPile.size(), RevolverRelic.shotsLeft);
         initializeDescription();
     }
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        baseSecondValue = RevolverRelic.shotsLeft;
+        baseSecondValue = Math.min(AbstractDungeon.player.drawPile.size(), RevolverRelic.shotsLeft);
         initializeDescription();
     }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -72,17 +97,25 @@ public class RevolverUnload extends AbstractRevolverCard {
             exhaust = false;
             return;
         }
-        baseSecondValue = RevolverRelic.shotsLeft;
-        //actionManager.addToBottom(new Discard(p.discardPile, p.drawPile, secondValue));
-        for (int i = 0; i < RevolverRelic.shotsLeft; i++) {
+        baseSecondValue = Math.min(AbstractDungeon.player.drawPile.size(), RevolverRelic.shotsLeft);
+        for (int i = 0; i < baseSecondValue; i++) {
+            if (p.drawPile.group.isEmpty()) {
+                return;
+            }
+            AbstractRevolverCard unloadShot = new RevolverUnloadShot();
+            unloadShot.upgrade();
             p.drawPile.moveToDiscardPile(p.drawPile.getTopCard());
-            AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(new RevolverUnloadShot(), m, 0, true));
+            AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(unloadShot, m, 0, true));
         }
     }
 
     @Override
     public void initializeDescription() {
-        baseSecondValue = RevolverRelic.shotsLeft;
+        if (!AbstractDungeon.isPlayerInDungeon()) {
+            baseSecondValue = SECOND_VALUE;
+        } else {
+            baseSecondValue = Math.min(AbstractDungeon.player.drawPile.size(), RevolverRelic.shotsLeft);
+        }
         super.initializeDescription();
     }
 

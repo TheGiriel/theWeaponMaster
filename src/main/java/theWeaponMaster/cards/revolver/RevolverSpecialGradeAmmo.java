@@ -74,7 +74,7 @@ public class RevolverSpecialGradeAmmo extends AbstractRevolverCard {
 
     @Override
     public void setNormalDescription() {
-        this.cost = COST;
+        this.costForTurn = COST;
         if (upgraded) {
             rawDescription = DESCRIPTIONS[0];
         } else {
@@ -82,6 +82,7 @@ public class RevolverSpecialGradeAmmo extends AbstractRevolverCard {
         }
         type = CardType.ATTACK;
         target = TARGET;
+        initializeDescription();
     }
 
     @Override

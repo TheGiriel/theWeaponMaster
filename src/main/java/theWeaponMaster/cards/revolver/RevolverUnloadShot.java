@@ -30,7 +30,6 @@ public class RevolverUnloadShot extends AbstractRevolverCard {
     public static final CardType TYPE = CardType.ATTACK;
     public static final int COST = 0;
     public static final int DAMAGE = RevolverUnload.DAMAGE;
-
     public static final int UPGRADED_DAMAGE = RevolverUnload.UPGRADED_DAMAGE;
 
     public RevolverUnloadShot() {
@@ -55,6 +54,7 @@ public class RevolverUnloadShot extends AbstractRevolverCard {
     @Override
     public void setNormalDescription() {
         cost = COST;
+        costForTurn = COST;
         rawDescription = DESCRIPTIONS[0];
         type = TYPE;
         target = TARGET;

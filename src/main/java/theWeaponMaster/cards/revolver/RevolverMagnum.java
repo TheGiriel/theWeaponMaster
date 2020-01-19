@@ -53,6 +53,7 @@ public class RevolverMagnum extends AbstractRevolverCard {
     @Override
     public void setNormalDescription() {
         cost = COST;
+        costForTurn = COST;
         rawDescription = DESCRIPTIONS[0];
         type = TYPE;
         target = TARGET;

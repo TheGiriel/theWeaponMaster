@@ -47,11 +47,7 @@ public class SeveredPathPower extends AbstractPower {
 
     @Override
     public void onInitialApplication() {
-        if (!owner.id.equals("TheGuardian")) {
-            originalMove = this.m.nextMove;
-            originalIntent = this.m.intent;
-            intentDamage = this.m.getIntentBaseDmg();
-        }
+        intentDamage = this.m.getIntentBaseDmg();
 
         //TODO: Lagavulin special case.
 
@@ -69,7 +65,6 @@ public class SeveredPathPower extends AbstractPower {
         updateDescription();
         AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(source, intentDamage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
-        this.m.setMove(originalMove, originalIntent);
-        this.m.createIntent();
+        m.rollMove();
     }
 }

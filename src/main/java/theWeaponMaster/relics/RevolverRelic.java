@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
-import theWeaponMaster.cards.revolver.RevolverUnload;
 import theWeaponMaster.util.TextureLoader;
 
 import java.util.ArrayList;
@@ -33,11 +32,13 @@ public class RevolverRelic extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
         this.counter = shotsLeft = SHOTS;
         this.description = DESCRIPTIONS[0];
+
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.cardID.equals(RevolverUnload.ID) && card.hasTag(AMMUNITION) && counter >= 1) {
+        if (card.hasTag(AMMUNITION) && counter >= 1) {
             this.counter--;
+            shotsLeft = counter;
             if (counter == 0) {
                 setReload();
             }
@@ -54,6 +55,12 @@ public class RevolverRelic extends CustomRelic {
         }
     }
 
+    @Override
+    public void atBattleStartPreDraw() {
+        if (counter >= 1) {
+            resetCards();
+        }
+    }
 
     private void resetCards() {
         ammoCards.addAll(AbstractDungeon.player.drawPile.group);
@@ -77,6 +84,9 @@ public class RevolverRelic extends CustomRelic {
         counter = shotsLeft = Math.min(Math.max(counter, 0), 6);
         if (AbstractDungeon.player.hasRelic(HeavyDrum.ID)) {
             counter = shotsLeft = Math.min(Math.max(counter, 0), 5);
+        }
+        if (counter == 0) {
+            setReload();
         }
     }
 

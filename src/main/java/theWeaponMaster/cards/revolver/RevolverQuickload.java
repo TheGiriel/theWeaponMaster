@@ -53,20 +53,20 @@ public class RevolverQuickload extends AbstractDynamicCard {
     }
 
     @Override
-    public boolean cardPlayable(AbstractMonster m) {
-        if (RevolverRelic.shotsLeft != reloadThreshold) {
-            return true;
-        } else
-            cantUseMessage = "There's no point reloading a full gun!";
-        return false;
-    }
-
-    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
+    }
+
+    @Override
+    public boolean cardPlayable(AbstractMonster m) {
+        if (RevolverRelic.shotsLeft != reloadThreshold) {
+            return true;
+        } else
+            cantUseMessage = "There's no point reloading a full gun!";
+        return false;
     }
 }

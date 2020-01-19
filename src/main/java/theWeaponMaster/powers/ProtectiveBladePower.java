@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.cards.revolver.RevolverUnloadShot;
@@ -18,6 +19,7 @@ import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
+import static theWeaponMaster.powers.ViciousPower.viciousBonusOnAttack;
 
 public class ProtectiveBladePower extends AbstractPower {
 
@@ -28,16 +30,20 @@ public class ProtectiveBladePower extends AbstractPower {
 
     private static final Texture tex84 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("fenrir_placeholder_84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("fenrir_placeholder_32.png"));
+    public static int evolveBonus;
+    private static int dexBonus;
+    private static int baseBlock;
 
     public ProtectiveBladePower(AbstractPlayer player, int turns) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = player;
         this.amount = turns;
+        evolveBonus = evolveBonus;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-        this.description = DESCRIPTION[0] + amount + DESCRIPTION[1];
+        this.description = DESCRIPTION[0] + (amount + dexBonus) + DESCRIPTION[1];
 
         isTurnBased = true;
 
@@ -53,6 +59,9 @@ public class ProtectiveBladePower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (owner.hasPower(DexterityPower.POWER_ID)) {
+            dexBonus = owner.getPower(DexterityPower.POWER_ID).amount;
+        }
         if (card.cardID.equals(RevolverUnloadShot.ID)) {
             return;
         }
@@ -60,7 +69,7 @@ public class ProtectiveBladePower extends AbstractPower {
             AbstractBullyCard bullyCard = (AbstractBullyCard) card;
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, bullyCard.bullyNumber));
         } else if (!card.hasTag(WeaponMasterTags.BULLY) && card.type == AbstractCard.CardType.ATTACK) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, 2));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, viciousBonusOnAttack + dexBonus + evolveBonus));
         }
     }
 

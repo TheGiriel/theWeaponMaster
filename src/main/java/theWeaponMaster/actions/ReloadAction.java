@@ -2,15 +2,19 @@ package theWeaponMaster.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.cards.revolver.RevolverUnload;
 import theWeaponMaster.relics.HeavyDrum;
 import theWeaponMaster.relics.RevolverRelic;
 
+import java.util.ArrayList;
+
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 
 public class ReloadAction extends AbstractGameAction {
 
+    public static ArrayList<AbstractCard> ammoCards = new ArrayList<>();
 
     public ReloadAction() {
         if (!player.discardPile.isEmpty()) {
@@ -42,7 +46,12 @@ public class ReloadAction extends AbstractGameAction {
 
         if (player.hasRelic(HeavyDrum.ID)) {
             player.getRelic(RevolverRelic.ID).counter = 5;
-        } else player.getRelic(RevolverRelic.ID).counter = 6;
+            RevolverRelic.shotsLeft = 5;
+        } else {
+            player.getRelic(RevolverRelic.ID).counter = 6;
+            RevolverRelic.shotsLeft = 6;
+        }
+
         for (AbstractCard card : player.hand.group) {
             if (card.cardID.equals(RevolverUnload.ID)) {
                 ((AbstractRevolverCard) card).baseSecondValue = RevolverRelic.shotsLeft;
@@ -59,7 +68,20 @@ public class ReloadAction extends AbstractGameAction {
             }
         }
 
+        resetCost();
         isDone = true;
+    }
+
+    private void resetCost() {
+        ammoCards.addAll(AbstractDungeon.player.drawPile.group);
+        ammoCards.addAll(AbstractDungeon.player.hand.group);
+        ammoCards.addAll(AbstractDungeon.player.discardPile.group);
+        ammoCards.addAll(AbstractDungeon.player.exhaustPile.group);
+        for (AbstractCard c : ammoCards) {
+            if (c instanceof AbstractRevolverCard) {
+                ((AbstractRevolverCard) c).setNormalDescription();
+            }
+        }
     }
 
     @Override

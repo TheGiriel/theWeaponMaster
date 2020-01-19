@@ -42,6 +42,8 @@ public class ViciousPower extends TwoAmountPower {
     private static Texture tex32;
     private int reduceVicious;
     public static int berserkerStanceBonus = 0;
+    public static int publicAmount;
+    public static int viciousBonusOnAttack = 2;
 
 
     public ViciousPower(final AbstractCreature owner, int amnt) {
@@ -50,6 +52,7 @@ public class ViciousPower extends TwoAmountPower {
         this.owner = owner;
         this.amount = amnt;
         this.amount2 = amount / 5;
+        viciousBonusOnAttack = publicAmount = 2;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -74,6 +77,10 @@ public class ViciousPower extends TwoAmountPower {
         }
     }
 
+    public static int getPublicAmount() {
+        return publicAmount;
+    }
+
     @Override
     public void onRemove() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, 1)));
@@ -87,7 +94,7 @@ public class ViciousPower extends TwoAmountPower {
             AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, bullyCard.bullyNumber)));
         } else if (targetCard.type == AbstractCard.CardType.ATTACK && (!targetCard.equals(RevenantRavenous.ID) || !targetCard.equals(RevenantBloodbath.ID)) && !targetCard.hasTag(WeaponMasterTags.TEMPORARY)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, 2 + ViciousPower.berserkerStanceBonus)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, viciousBonusOnAttack + ViciousPower.berserkerStanceBonus)));
         }
     }
 

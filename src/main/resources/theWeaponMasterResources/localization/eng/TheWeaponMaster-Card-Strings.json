@@ -6,7 +6,7 @@
   },
   "theWeaponMaster:FenrirShieldEater": {
     "NAME": "Shield Eater",
-    "DESCRIPTION": "Absorb up to !M! Block from target. NL Evolve: Destroy all enemy Block."
+    "DESCRIPTION": "Absorb !M! Block. NL Deal !D! damage. NL Evolve: Destroy all enemy Block."
   },
   "theWeaponMaster:FenrirProtectiveBlade": {
     "NAME": "Protective Blade",
@@ -42,8 +42,8 @@
   },
   "theWeaponMaster:CerberusIaiSlash": {
     "NAME": "Iai Slash",
-    "DESCRIPTION": "Retain. Deal !D! damage. NL Stoic_Flash !M!: Increase Flash damage by 50% for every turn retained. Resets when discarded or used. NL Turns retained: !SV!.",
-    "UPGRADE_DESCRIPTION": "Retain. Deal !D! damage. NL Stoic_Flash !M!: Increase discard damage by 100% for every turn retained. Resets when discarded or used. NL Turns retained: !SV!."
+    "DESCRIPTION": "Deal !D! damage. NL Stoic_Flash !M!: Increase Stoic_Flash damage by 50% for every turn retained. Resets when discarded or used. NL Turns retained: !SV!.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Stoic_Flash !M!: Increase Stoic_Flash damage by 100% for every turn retained. Resets when discarded or used. NL Turns retained: !SV!."
   },
   "theWeaponMaster:CerberusDrainSlash": {
     "NAME": "Drain Slash",
@@ -247,15 +247,23 @@
     "NAME": "Unload",
     "DESCRIPTION": "Send the top !SV! cards from your draw pile to your discard pile. Play [#efc851]Unload! for each card. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Send the top !SV! cards from your draw pile to your discard pile. Play [#efc851]Unload! for each card. NL Exhaust."
+      "Send the top !SV! cards from your draw pile to your discard pile. Play [#efc851]Unload! for each card. NL Exhaust.",
+      "Send the top !SV! cards from your draw pile to your discard pile. Play [#efc851]Unload!+ for each card. NL Exhaust."
     ]
   },
   "theWeaponMaster:RevolverUnloadShot": {
     "NAME": "Unload!",
-    "DESCRIPTION": "Deal !D! damage. NL Purge.",
+    "DESCRIPTION": "Ammunition NL Deal !D! damage. NL Purge.",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage. NL Purge."
-    ]
+      "Ammunition NL Deal !D! damage. NL Purge."
+    ],
+    "theWeaponMaster:RevolverUnloadShotUpgraded": {
+      "NAME": "Unload!+",
+      "DESCRIPTION": "Deal !D! damage. NL Purge.",
+      "EXTENDED_DESCRIPTION": [
+        "Deal !D! damage. NL Purge."
+      ]
+    }
   },
   "theWeaponMaster:RevolverWarningShot": {
     "NAME": "Warning Shot",

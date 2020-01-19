@@ -34,6 +34,7 @@ public abstract class AbstractRevolverCard extends AbstractDynamicCard {
 
     public void setNormalDescription() {
         this.cost = COST;
+        this.costForTurn = COST;
     }
 
 

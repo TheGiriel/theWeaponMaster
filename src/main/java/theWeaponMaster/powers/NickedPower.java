@@ -39,7 +39,7 @@ public class NickedPower extends AbstractPower implements HealthBarRenderPower {
         this.owner = owner;
         this.amount = 3;
 
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
         isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);

@@ -34,7 +34,7 @@ public class LeviathanEarthquake extends AbstractDynamicCard {
     public static final AbstractCard.CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 3;
-    public static final int DAMAGE = 12;
+    public static final int DAMAGE = 20;
     public static final int UPGRADED_DAMAGE = 5;
     public static final int MAGIC_NUMBER = 1;
     public static final int CHARGECOST = 3;

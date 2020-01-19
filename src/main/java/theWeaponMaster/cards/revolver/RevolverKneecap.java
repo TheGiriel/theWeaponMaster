@@ -24,6 +24,7 @@ public class RevolverKneecap extends AbstractRevolverCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final String[] DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
 
     public static final CardRarity RARITY = CardRarity.RARE;
     public static final CardTarget TARGET = CardTarget.ENEMY;
@@ -60,9 +61,12 @@ public class RevolverKneecap extends AbstractRevolverCard {
 
     @Override
     public void setNormalDescription() {
-        this.cost = COST;
-        rawDescription = DESCRIPTION;
+        cost = COST;
+        costForTurn = COST;
+        rawDescription = DESCRIPTIONS[0];
+        type = TYPE;
         target = TARGET;
+        initializeDescription();
     }
 
     @Override

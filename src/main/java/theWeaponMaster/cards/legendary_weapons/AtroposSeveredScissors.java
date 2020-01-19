@@ -129,7 +129,7 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
 
     @Override
     public void addScissors() {
-        scissors.add(AtroposRightHalf.ID);
+        scissors.add(AtroposLeftHalf.ID);
         scissors.add(AtroposSeveredScissors.ID);
     }
 }

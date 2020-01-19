@@ -41,6 +41,7 @@ public class RevolverTwinned extends AbstractRevolverCard {
 
         this.damage = baseDamage = DAMAGE;
         tags.add(AMMUNITION);
+        this.cardsToPreview = new RevolverSingleShot();
 
         initializeDescription();
     }
@@ -50,12 +51,14 @@ public class RevolverTwinned extends AbstractRevolverCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
+            cardsToPreview.upgrade();
             initializeDescription();
         }
     }
     @Override
     public void setNormalDescription() {
         cost = COST;
+        costForTurn = COST;
         rawDescription = DESCRIPTIONS[0];
         type = TYPE;
         target = TARGET;

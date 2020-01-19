@@ -35,13 +35,13 @@ public class OctopusAction extends AbstractGameAction {
                 group.addToTop(new ShiftingChoiceCard("Cerberus", "Cerberus", makeCardPath("Power.png"), "Equip the flashy Cerberus.", AbstractCard.CardType.POWER));
             }
             if (!(ArsenalRelic.currentWeapon.equals("Revenant")) && ArsenalRelic.revenantUnlocked) {
-                group.addToTop(new ShiftingChoiceCard("Revenant Cleaver", "Revenant Cleaver", makeCardPath("Power.png"), "Equip the hungry Revenant_Cleaver.", AbstractCard.CardType.POWER));
+                group.addToTop(new ShiftingChoiceCard("Revenant", "Revenant", makeCardPath("Power.png"), "Equip the hungry Revenant_Cleaver.", AbstractCard.CardType.POWER));
             }
             if (!(ArsenalRelic.currentWeapon.equals("Atropos")) && ArsenalRelic.atroposUnlocked) {
-                group.addToTop(new ShiftingChoiceCard("Atropos' Shears", "Atropos' Shears", makeCardPath("Power.png"), "Equip the mana burning Atropos_Shears.", AbstractCard.CardType.POWER));
+                group.addToTop(new ShiftingChoiceCard("Atropos", "Atropos", makeCardPath("Power.png"), "Equip the mana burning Atropos_Shears.", AbstractCard.CardType.POWER));
             }
             if (!(ArsenalRelic.currentWeapon.equals("Leviathan")) && ArsenalRelic.leviathanUnlocked) {
-                group.addToTop(new ShiftingChoiceCard("Leviathan Gauntlet", "Leviathan Gauntlet", makeCardPath("Power.png"), "Equip the charged Leviathan_Gauntlet.", AbstractCard.CardType.POWER));
+                group.addToTop(new ShiftingChoiceCard("Leviathan", "Leviathan", makeCardPath("Power.png"), "Equip the charged Leviathan_Gauntlet.", AbstractCard.CardType.POWER));
             }
 
             CenterGridCardSelectScreen.centerGridSelect = true;
@@ -62,15 +62,15 @@ public class OctopusAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Cerberus");
             }
-            if (cardChoice.name.equals("Revenant Cleaver")) {
+            if (cardChoice.name.equals("Revenant")) {
                 AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Revenant");
             }
-            if (cardChoice.name.equals("Atropos' Shears")) {
+            if (cardChoice.name.equals("Atropos")) {
                 AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Atropos");
             }
-            if (cardChoice.name.equals("Leviathan Gauntlet")) {
+            if (cardChoice.name.equals("Leviathan")) {
                 AbstractDungeon.actionManager.addToBottom(new GiveWeaponsAction(cardChoice.toString()));
                 new ArsenalRelic().setCurrentWeapon("Leviathan");
             }

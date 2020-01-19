@@ -1,19 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3ab729c-7e9b-45c9-b7c7-8dcc8c4be2eb" name="Default Changelist" comment="">
+    <list default="true" id="5290adbb-9b1c-4bf9-abc6-c8a156515df3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/WeaponUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/EndOfCombatWeaponSwap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverUnloadShotUpgraded.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/FenrirEvolveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/FenrirEvolveAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/ImprovedWeaponCardRemovalAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/ImprovedWeaponCardRemovalAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/LeviathanChargeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/LeviathanChargeAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/OctopusAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/OctopusAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/ReloadAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/actions/ReloadAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/generic/GenericRelaxAndRecollect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/generic/GenericRelaxAndRecollect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/AtroposSeveredScissors.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/AtroposSeveredScissors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/CerberusDrainSlash.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/CerberusDrainSlash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/CerberusIaiSlash.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/CerberusIaiSlash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/FenrirProtectiveBlade.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/FenrirProtectiveBlade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/FenrirShieldEater.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/FenrirShieldEater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/LeviathanEarthquake.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/LeviathanEarthquake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantBloodbath.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantBloodbath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantChopChopCHOP.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantChopChopCHOP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantHungrySteel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantHungrySteel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantNoseToTail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantNoseToTail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantRavenous.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/legendary_weapons/RevenantRavenous.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverBuckshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverBuckshot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverCustomCartridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverCustomCartridge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverFullMetal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverFullMetal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverHollowPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverHollowPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverKneecap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverKneecap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverLowRecoil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverLowRecoil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverMagnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverMagnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverQuickload.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverQuickload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverSingleShot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverSingleShot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverSpecialGradeAmmo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverSpecialGradeAmmo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverTwinned.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverTwinned.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverUnload.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverUnload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverUnloadShot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverUnloadShot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverWarningShot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/RevolverWarningShot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/Strike_WeaponMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/cards/revolver/Strike_WeaponMaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/characters/TheWeaponMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/characters/TheWeaponMaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/KneecappedPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/KneecappedPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/NickedPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/NickedPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/ProtectiveBladePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/ProtectiveBladePower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/SeveredPathPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/SeveredPathPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/ViciousPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/powers/ViciousPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/relics/ArsenalRelic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/relics/ArsenalRelic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/relics/RevolverRelic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/theWeaponMaster/relics/RevolverRelic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/resources/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/resources/ModTheSpire.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/resources/theWeaponMasterResources/localization/eng/TheWeaponMaster-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/resources/theWeaponMasterResources/localization/eng/TheWeaponMaster-Card-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/main/resources/theWeaponMasterResources/localization/eng/TheWeaponMaster-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/resources/theWeaponMasterResources/localization/eng/TheWeaponMaster-Keyword-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../target/WeaponMaster.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/WeaponMaster.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/ModTheSpire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +61,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1WDnzsOVdOgsldFw56Fw6rDe4Id" />
+  <component name="ProjectId" id="1WcziLHrqGYsNaJhrFtUxPxpnmW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -52,28 +90,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d3ab729c-7e9b-45c9-b7c7-8dcc8c4be2eb" name="Default Changelist" comment="" />
-      <created>1578693298938</created>
+      <changelist id="5290adbb-9b1c-4bf9-abc6-c8a156515df3" name="Default Changelist" comment="" />
+      <created>1579463796464</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1578693298938</updated>
-      <workItem from="1578693300158" duration="113000" />
-      <workItem from="1578700416177" duration="2183000" />
-      <workItem from="1578710099650" duration="5000" />
-      <workItem from="1578767946031" duration="801000" />
-      <workItem from="1578833865425" duration="625000" />
-      <workItem from="1578863389461" duration="1654000" />
-      <workItem from="1578956066156" duration="3438000" />
-      <workItem from="1578964698522" duration="964000" />
-      <workItem from="1578970022926" duration="2576000" />
-      <workItem from="1579010326672" duration="1480000" />
-      <workItem from="1579023778563" duration="445000" />
-      <workItem from="1579036759071" duration="3035000" />
-      <workItem from="1579079031968" duration="2812000" />
-      <workItem from="1579097873488" duration="1312000" />
-      <workItem from="1579212362129" duration="1931000" />
-      <workItem from="1579269959715" duration="661000" />
-      <workItem from="1579371830116" duration="1435000" />
+      <updated>1579463796464</updated>
+      <workItem from="1579463798731" duration="862000" />
     </task>
     <servers />
   </component>
@@ -81,17 +103,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="717" y="184" key="#Images" timestamp="1579023843344">
+    <state x="553" y="32" width="854" height="990" key="find.popup" timestamp="1579464053138">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="717" y="184" key="#Images/0.0.1920.1050@0.0.1920.1050" timestamp="1579023843344" />
-    <state x="792" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579212424047">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="792" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1579212424047" />
-    <state x="105" y="23" width="1815" height="814" key="find.popup" timestamp="1579088453191">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="105" y="23" width="1815" height="814" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579088453191" />
+    <state x="553" y="32" width="854" height="990" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579464053138" />
   </component>
 </project>

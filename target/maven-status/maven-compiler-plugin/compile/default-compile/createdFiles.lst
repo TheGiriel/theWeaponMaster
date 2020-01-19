@@ -6,6 +6,7 @@ theWeaponMaster\cards\bully\BullyBullysAudacity.class
 theWeaponMaster\cards\legendary_weapons\FenrirShieldEater.class
 theWeaponMaster\cards\bully\BullyIntimidatingPresence.class
 theWeaponMaster\actions\EnemyForceAction.class
+theWeaponMaster\cards\revolver\RevolverUnloadShotUpgraded.class
 theWeaponMaster\cards\legendary_weapons\AtroposSeveredPain.class
 theWeaponMaster\cards\legendary_weapons\CerberusModularSlash.class
 theWeaponMaster\actions\ImprovedWeaponCardRemovalAction.class
@@ -14,6 +15,7 @@ theWeaponMaster\cards\bully\BullyIntimidate.class
 theWeaponMaster\actions\FenrirUnleashedSelectAction.class
 theWeaponMaster\powers\CounterBlowPower.class
 theWeaponMaster\cards\legendary_weapons\AtroposLeftHalf.class
+theWeaponMaster\actions\EndOfCombatWeaponSwap.class
 theWeaponMaster\cards\generic\GenericDodge.class
 theWeaponMaster\cards\generic\Defend_WeaponMaster.class
 theWeaponMaster\cards\revolver\RevolverWarningShot.class
@@ -118,6 +120,7 @@ theWeaponMaster\powers\SeveredPathPower.class
 theWeaponMaster\actions\GiveWeaponsAction.class
 theWeaponMaster\cards\legendary_weapons\RevenantNoseToTail.class
 theWeaponMaster\cards\abstractcards\AbstractDefaultCard.class
+theWeaponMaster\WeaponUI.class
 theWeaponMaster\characters\TheWeaponMaster.class
 theWeaponMaster\powers\LaceratePower.class
 theWeaponMaster\cards\bully\BullyShakedown.class

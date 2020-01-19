@@ -39,10 +39,11 @@ public class RevolverWarningShot extends AbstractRevolverCard {
 
     @Override
     public void setNormalDescription() {
-        this.cost = COST;
+        this.costForTurn = COST;
         rawDescription = DESCRIPTION;
         type = TYPE;
         target = TARGET;
+        initializeDescription();
     }
 
     @Override

@@ -27,14 +27,13 @@
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
   },
   {
-    "PROPER_NAME": "Weapon Swap",
+    "PROPER_NAME": "Weapon Swap",
     "NAMES": [
-      "Weapon Swap",
-      "weapon swap",
+      "Weapon Swap",
       "weapon_swap",
-      "Weapon_Swap"
+      "weapon swap"
     ],
-    "DESCRIPTION": "Remove all of your Legendary Weapon cards from your deck and gain a new Weapon's cards."
+    "DESCRIPTION": "Remove all of your #yLegendary #yWeapon cards from your deck and gain a new Weapon's cards. NL #yDraw #b2 cards. NL #yDraw #b1 fewer card next turn."
   },
   {
     "PROPER_NAME": "Vicious",
@@ -56,7 +55,7 @@
       "taunt",
       "taunted"
     ],
-    "DESCRIPTION": "Can only be applied to non-attacking enemies. NL #yTaunted enemies are forced to attack."
+    "DESCRIPTION": "Can only be applied to non-attacking enemies. NL #yTaunted enemies are forced to attack on their next turn."
   },
   {
     "PROPER_NAME": "Intimidate",
@@ -64,7 +63,7 @@
       "intimidate",
       "intimidated"
     ],
-    "DESCRIPTION": "Can only be applied to attacking enemies. NL #yIntimidated enemies are forced to defend and gain Block equal to #b10 plus half your Vicious."
+    "DESCRIPTION": "Can only be applied to attacking enemies. NL #yIntimidated enemies are forced to defend and gain Block equal to #b10 plus half your Vicious on their next turn."
   },
   {
     "PROPER_NAME": "Armor Piercing",
@@ -168,7 +167,7 @@
       "stoic flash",
       "stoic_flash"
     ],
-    "DESCRIPTION": "#yStoic #yFlash #bX: Discard up to #bX cards. Always activate the Flash effect. Bonuses per discard: Gain 2 bonus damage."
+    "DESCRIPTION": "#yStoic #yFlash #bX: Discard up to #bX cards. Always activate the Flash effect. NL Doesn't draw. NL Bonuses per discard: Gain 2 bonus damage."
   },
   {
     "PROPER_NAME": "Utility Flash",

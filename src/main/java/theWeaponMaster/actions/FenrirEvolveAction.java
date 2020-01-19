@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.cards.legendary_weapons.*;
+import theWeaponMaster.powers.ProtectiveBladePower;
 
 import java.util.HashSet;
 
@@ -29,6 +30,9 @@ public class FenrirEvolveAction extends AbstractGameAction {
                 c.baseDamage++;
             }
             c.applyPowers();
+        }
+        if (AbstractDungeon.player.hasPower(ProtectiveBladePower.POWER_ID)) {
+
         }
         this.isDone = true;
     }

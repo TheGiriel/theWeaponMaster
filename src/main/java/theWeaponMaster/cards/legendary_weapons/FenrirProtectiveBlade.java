@@ -34,10 +34,11 @@ public class FenrirProtectiveBlade extends AbstractDynamicCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    public static final int BLOCK = 5;
+    public static final int BLOCK = 8;
     public static final int UPGRADED_BLOCK = 2;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int SECOND_VALUE = 0;
 
     private static HashSet<AbstractMonster.Intent> intents;
 
@@ -46,6 +47,7 @@ public class FenrirProtectiveBlade extends AbstractDynamicCard {
 
         this.block = baseBlock = BLOCK;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        this.secondValue = baseSecondValue = SECOND_VALUE;
 
         tags.add(WeaponMasterTags.INTIMIDATE);
         intents = EnemyForceAction.getIntents(this);

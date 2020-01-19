@@ -58,10 +58,14 @@ public class KneecappedPower extends AbstractPower implements HealthBarRenderPow
         updateDescription();
     }
 
+    public int getBleedDamage() {
+        return bleedDamage;
+    }
+
     @Override
     public void atStartOfTurn() {
         updateDamage();
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, bleedDamage, AbstractGameAction.AttackEffect.POISON));
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.source, getBleedDamage(), AbstractGameAction.AttackEffect.POISON));
         amount--;
         if (amount <= 0) {
             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, this));
@@ -82,7 +86,7 @@ public class KneecappedPower extends AbstractPower implements HealthBarRenderPow
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + (int) (bleedfactor * 100) + DESCRIPTIONS[1] + bleedDamage + DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
+        this.description = DESCRIPTIONS[0] + (int) (bleedfactor * 100) + DESCRIPTIONS[1] + getBleedDamage() + DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
     }
 
     @Override

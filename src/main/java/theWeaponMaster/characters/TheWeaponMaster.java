@@ -41,6 +41,35 @@ import static theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in TheWeaponMaster-character-Strings.json in the resources
 
 public class TheWeaponMaster extends CustomPlayer {
+
+    private static final String[] orbTextures = {
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer1.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer2.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer3.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer4.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer5.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/weapon_master_energy_.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer1d.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer2d.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer3d.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer4d.png",
+            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer5d.png",};
+    /*
+     */
+    public static boolean fenrirUnlocked = true;
+    public static ArrayList<Boolean> fenrirCardsUnlocked = new ArrayList<>();
+    public static boolean cerberusUnlocked = true;
+    public static ArrayList<Boolean> cerberusCardsUnlocked = new ArrayList<>();
+    public static boolean revenantUnlocked = true;
+    public static ArrayList<Boolean> revenantCardsUnlocked = new ArrayList<>();
+    public static boolean atroposUnlocked = true;
+    public static ArrayList<Boolean> atroposcardsCardsUnlocked = new ArrayList<>();
+    public static boolean leviathanUnlocked = true;
+    public static ArrayList<Boolean> leviathanCardsUnlocked = new ArrayList<>();
+    public static String currentWeapon = "None";
+    public static int leviathanCharges = 3;
+    public static int revenantHunger = 10;
+
     public static final Logger logger = LogManager.getLogger(theWeaponMaster.TheWeaponMaster.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
@@ -121,19 +150,7 @@ public class TheWeaponMaster extends CustomPlayer {
 
 
     // =============== TEXTURES OF BIG ENERGY ORB ===============
-
-    private static final String[] orbTextures = {
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer1.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer2.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer3.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer4.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer5.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer6.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer1d.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer2d.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer3d.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer4d.png",
-            "theWeaponMasterResources/images/char/defaultCharacter/orb/layer5d.png",};
+    public static int fenrirEvolutions = 0;
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
