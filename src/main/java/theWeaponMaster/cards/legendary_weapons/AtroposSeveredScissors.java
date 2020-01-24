@@ -6,26 +6,26 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import theWeaponMaster.TheWeaponMaster;
-import theWeaponMaster.actions.ManaBurnAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
+import theWeaponMaster.cards.tempCards.AtroposLeftHalf;
+import theWeaponMaster.cards.tempCards.AtroposRightHalf;
+import theWeaponMaster.cards.tempCards.AtroposScissorHalf;
 import theWeaponMaster.powers.ManaBurnPower;
 import theWeaponMaster.relics.ManaWhetstoneRelic;
-import theWeaponMaster.util.FlipCard;
-import theWeaponMaster.util.Scissors;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
-public class AtroposSeveredScissors extends AbstractDynamicCard implements Scissors, FlipCard {
+public class AtroposSeveredScissors extends AbstractDynamicCard {
 
     public static final String ID = TheWeaponMaster.makeID(AtroposSeveredScissors.class.getSimpleName());
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
-    public static final String[] DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     public static final String IMG = makeCardPath("Attack.png");
@@ -42,8 +42,6 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
     public static final int UPGRADED_BLOCK = 1;
     public static final int MAGIC_NUMBER = 1;
 
-    public static boolean scissorFlip = false;
-
     public AtroposSeveredScissors() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
@@ -51,13 +49,10 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
         this.block = baseBlock = BLOCK;
 
-        addScissors();
-        exhaust = false;
-
         this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_atropos_attack.png", "theWeaponMasterResources/images/1024/bg_atropos_attack.png");
 
         initializeDescription();
-        this.cardsToPreview = new AtroposRightHalf();
+        this.cardsToPreview = new AtroposScissorHalf();
     }
 
     @Override
@@ -66,6 +61,7 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeBlock(UPGRADED_BLOCK);
+            this.cardsToPreview.upgrade();
             initializeDescription();
         }
     }
@@ -79,57 +75,12 @@ public class AtroposSeveredScissors extends AbstractDynamicCard implements Sciss
     //TODO: Improve Code
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (scissorFlip) {
-            exhaust = true;
-            flipUse(p, m);
-        } else {
-            standardUse(p, m);
-        }
-    }
-
-    @Override
-    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
-        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).cardID.equals(AtroposRightHalf.ID)) {
-            return tmp * 2;
-        } else {
-            return super.calculateModifiedCardDamage(player, tmp);
-        }
-    }
-
-    public void flipCard() {
-        if (scissorFlip) {
-            this.name = DESCRIPTION[2];
-            rawDescription = DESCRIPTION[3];
-            this.cost = 0;
-        } else {
-            this.name = DESCRIPTION[0];
-            rawDescription = DESCRIPTION[1];
-            this.cost = COST;
-        }
-        initializeDescription();
-    }
-
-    @Override
-    public void standardUse(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        ManaBurnAction.ignite(m, magicNumber);
-        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new AtroposRightHalf(), true, false));
-        scissorFlip = true;
-        flipCard();
-    }
 
-    @Override
-    public void flipUse(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, magicNumber)));
-        scissorFlip = true;
-    }
-
-    @Override
-    public void addScissors() {
-        scissors.add(AtroposLeftHalf.ID);
-        scissors.add(AtroposSeveredScissors.ID);
+        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new AtroposRightHalf(), Settings.WIDTH * 0.6F, Settings.HEIGHT * 0.5F, false));
+        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new AtroposLeftHalf(), Settings.WIDTH * 0.4F, Settings.HEIGHT * 0.5F, false));
     }
 }

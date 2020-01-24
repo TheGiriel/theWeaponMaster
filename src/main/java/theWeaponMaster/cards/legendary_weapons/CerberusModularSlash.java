@@ -1,5 +1,6 @@
 package theWeaponMaster.cards.legendary_weapons;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -46,6 +47,7 @@ public class CerberusModularSlash extends AbstractDynamicCard {
 
         this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_cerberus_attack.png", "theWeaponMasterResources/images/1024/bg_cerberus_attack.png");
 
+        AlwaysRetainField.alwaysRetain.set(this, true);
         initializeDescription();
     }
 

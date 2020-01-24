@@ -15,7 +15,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.cards.legendary_weapons.RevenantBloodbath;
 import theWeaponMaster.cards.legendary_weapons.RevenantRavenous;
-import theWeaponMaster.cards.revolver.RevolverUnloadShot;
+import theWeaponMaster.cards.tempCards.RevolverUnloadShot;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.util.TextureLoader;
 
@@ -92,9 +92,9 @@ public class ViciousPower extends TwoAmountPower {
         }
         if (targetCard.hasTag(BULLY)) {
             AbstractBullyCard bullyCard = (AbstractBullyCard) targetCard;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, bullyCard.bullyNumber)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, bullyCard.bullyNumber + berserkerStanceBonus)));
         } else if (targetCard.type == AbstractCard.CardType.ATTACK && (!targetCard.equals(RevenantRavenous.ID) || !targetCard.equals(RevenantBloodbath.ID)) && !targetCard.hasTag(WeaponMasterTags.TEMPORARY)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, viciousBonusOnAttack + ViciousPower.berserkerStanceBonus)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ViciousPower(owner, viciousBonusOnAttack + berserkerStanceBonus)));
         }
     }
 

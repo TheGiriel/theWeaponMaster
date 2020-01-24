@@ -1,6 +1,5 @@
 package theWeaponMaster.powers;
 
-import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnMyBlockBrokenPower;
@@ -18,7 +17,7 @@ import theWeaponMaster.util.TextureLoader;
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 
-public class PreparationPower extends AbstractPower implements CloneablePowerInterface, OnMyBlockBrokenPower {
+public class PreparationPower extends AbstractPower implements OnMyBlockBrokenPower {
     public static final String POWER_ID = TheWeaponMaster.makeID(PreparationPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(PreparationPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
@@ -80,11 +79,6 @@ public class PreparationPower extends AbstractPower implements CloneablePowerInt
         } else if (amount > 1) {
             description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
-    }
-
-    @Override
-    public AbstractPower makeCopy() {
-        return new CommonPower(owner, source, amount);
     }
 
     @Override

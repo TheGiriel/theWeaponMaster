@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
-import theWeaponMaster.cards.revolver.RevolverUnloadShot;
+import theWeaponMaster.cards.tempCards.RevolverUnloadShot;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.util.TextureLoader;
 

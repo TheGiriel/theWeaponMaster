@@ -62,7 +62,7 @@
     ]
   },
   "NickedPower": {
-    "NAME": "Nicked",
+    "NAME": "Nicked Artery",
     "DESCRIPTIONS": [
       "This creature loses 3.3% Max HP #r(",
       ") every turn. Turns remaining: ",
@@ -88,14 +88,14 @@
     "DESCRIPTIONS": [
       "Staggered creatures deal ",
       "% less damage and take ",
-      "% more damage"
+      "% more damage. NL (Creatures with Vulnerable take half as much extra damage from Stagger)."
     ]
   },
   "SeveredPainPower": {
     "NAME": "Severed Pain",
     "DESCRIPTIONS": [
-      "Delay half of the damage you take to next turn, it cannot be mitigated.",
-      "Delay one third of the damage you take to next turn, it cannot be mitigated. The remaining third is dealt to all enemies."
+      "Delay half of the damage you take to next turn.",
+      "Delay half of the damage you take to next turn."
     ]
   },
   "SeveredPathPower": {
@@ -107,14 +107,21 @@
   "SeveredPainDelayedPower": {
     "NAME": "Delayed Pain",
     "DESCRIPTIONS": [
-      "Take ", " damage this turn."
+      "Take #b",
+      " damage this turn."
     ]
   },
   "IntimidatePower": {
     "NAME": "Intimidated",
     "DESCRIPTIONS": [
-      "Intimidated Creatures defend, gaining ",
+      "Intimidated Creatures defend, gaining #b",
       " Block."
+    ]
+  },
+  "ImprovisedToolsPower": {
+    "NAME": "Improvised Tools",
+    "DESCRIPTIONS": [
+      "Gain a new Improvised card at the start of your turn."
     ]
   },
   "TauntPower": {
@@ -126,8 +133,8 @@
   "ProtectiveBladePower": {
     "NAME": "Protective Blade",
     "DESCRIPTIONS": [
-      "For the next ",
-      " turns, you gain Block instead of Vicious. NL Reapplying refreshes the duration for up to three turns."
+      "For the next #b",
+      " turns, you gain #yBlock instead of Vicious. NL Reapplying refreshes the duration for up to three turns."
     ]
   },
   "CounterBlowPower": {
@@ -140,29 +147,36 @@
   "RedirectBlowsPower": {
     "NAME": "Redirect Blows",
     "DESCRIPTIONS": [
-      "Take ",
-      "% less damage, gain Block equal to HP lost from attacks."
+      "Take #b",
+      "% less damage, gain #yBlock equal to HP lost from attacks."
     ]
   },
   "RecklessnessPower": {
     "NAME": "Recklessness",
     "DESCRIPTIONS": [
-      "Draw 1 extra card at the start of your turn."
+      "Draw #b1 extra card at the start of your turn."
     ]
   },
   "PreparationPower": {
     "NAME": "Preparation",
     "DESCRIPTIONS": [
       "Your next ",
-      "attack costs one less energy.",
-      " attacks cost one less energy."
+      "attack costs #b1 less energy.",
+      " attacks cost #b1 less energy."
     ]
   },
   "WeaponMasterDoubleTapPower": {
     "NAME": "Double Tap",
     "DESCRIPTIONS": [
-      "Your next Ammunition card is played again for ",
+      "Your next Ammunition card is played again for #b",
       "% damage."
+    ]
+  },
+  "CrippledPower": {
+    "NAME": "Crippled",
+    "DESCRIPTIONS": [
+      "#yAttacks deal #b",
+      "% less damage. NL Counts as Weak."
     ]
   },
   "MarksmanshipPower": {

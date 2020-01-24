@@ -1,8 +1,5 @@
 package theWeaponMaster.powers;
 
-import basemod.interfaces.CloneablePowerInterface;
-import basemod.interfaces.OnPowersModifiedSubscriber;
-import basemod.interfaces.PostPowerApplySubscriber;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -21,7 +18,7 @@ import theWeaponMaster.util.TextureLoader;
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 
-public class MarksmanshipPower extends AbstractPower implements CloneablePowerInterface, PostPowerApplySubscriber, OnPowersModifiedSubscriber {
+public class MarksmanshipPower extends AbstractPower {
     public static final String POWER_ID = TheWeaponMaster.makeID(MarksmanshipPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(MarksmanshipPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
@@ -73,21 +70,4 @@ public class MarksmanshipPower extends AbstractPower implements CloneablePowerIn
         description = DESCRIPTIONS[0];
     }
 
-    @Override
-    public AbstractPower makeCopy() {
-        return new CommonPower(owner, source, amount);
-    }
-
-    @Override
-    public void receivePostPowerApplySubscriber(AbstractPower abstractPower, AbstractCreature abstractCreature, AbstractCreature abstractCreature1) {
-        if (abstractPower.ID.equals(DexterityPower.POWER_ID)) {
-            amount = owner.getPower(DexterityPower.POWER_ID).amount;
-            updateDescription();
-        }
-    }
-
-    @Override
-    public void receivePowersModified() {
-        updateDescription();
-    }
 }

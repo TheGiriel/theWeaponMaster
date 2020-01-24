@@ -32,7 +32,7 @@ public class NickedPower extends AbstractPower implements HealthBarRenderPower {
 
     private int bleedDamage;
 
-    public NickedPower(final AbstractCreature owner) {
+    public NickedPower(final AbstractCreature owner, int turns) {
         this.name = NAME;
         this.ID = POWER_ID;
 

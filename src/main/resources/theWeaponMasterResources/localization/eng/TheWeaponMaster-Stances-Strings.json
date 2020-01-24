@@ -1,0 +1,26 @@
+{
+  "Neutral": {
+    "NAME": "",
+    "DESCRIPTION": [
+      ""
+    ]
+  },
+  "Berserker": {
+    "NAME": "",
+    "DESCRIPTION": [
+      "Whenever you gain Vicious, gain 1 more Vicious. Vicious decays slower."
+    ]
+  },
+  "Reckless": {
+    "NAME": "Reckless",
+    "DESCRIPTION": [
+      "Draw one more card each turn. Take 15% more damage from attacks."
+    ]
+  },
+  "Redirecting": {
+    "NAME": "Redirecting",
+    "DESCRIPTION": [
+      "Take 15% less damage from attacks. Gain Block equal to half the damage taken."
+    ]
+  }
+}

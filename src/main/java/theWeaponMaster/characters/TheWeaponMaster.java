@@ -23,10 +23,12 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import theWeaponMaster.cards.Defend_WeaponMaster;
+import theWeaponMaster.cards.Strike_WeaponMaster;
 import theWeaponMaster.cards.bully.BullyMock;
-import theWeaponMaster.cards.generic.Defend_WeaponMaster;
-import theWeaponMaster.cards.legendary_weapons.FenrirLacerate;
-import theWeaponMaster.cards.revolver.Strike_WeaponMaster;
+import theWeaponMaster.cards.legendary_weapons.AtroposSeveredScissors;
+import theWeaponMaster.cards.martialarts.MartialJab;
+import theWeaponMaster.cards.martialarts.MartialOverheadThrow;
 import theWeaponMaster.powers.ViciousPower;
 import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.relics.RevolverRelic;
@@ -165,16 +167,23 @@ public class TheWeaponMaster extends CustomPlayer {
 
         //ArsenalRelic.currentWeapon = "Fenrir";
 
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(Strike_WeaponMaster.ID);
-        retVal.add(FenrirLacerate.ID);
+        //retVal.add(Strike_WeaponMaster.ID);
+        //retVal.add(Strike_WeaponMaster.ID);
+        //retVal.add(Strike_WeaponMaster.ID);
+        //retVal.add(Strike_WeaponMaster.ID);
+        //retVal.add(FenrirLacerate.ID);
         retVal.add(Defend_WeaponMaster.ID);
         retVal.add(Defend_WeaponMaster.ID);
         retVal.add(Defend_WeaponMaster.ID);
         retVal.add(Defend_WeaponMaster.ID);
         retVal.add(BullyMock.ID);
+        retVal.add(MartialJab.ID);
+        retVal.add(MartialJab.ID);
+        retVal.add(MartialJab.ID);
+        retVal.add(MartialJab.ID);
+        retVal.add(MartialOverheadThrow.ID);
+        retVal.add(AtroposSeveredScissors.ID);
+
 
         //retVal.add(RevolverBuckshot.ID);
         //retVal.add(RevolverCustomCartridge.ID);
@@ -280,7 +289,7 @@ public class TheWeaponMaster extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new theWeaponMaster.cards.revolver.Strike_WeaponMaster();
+        return new Strike_WeaponMaster();
     }
 
     // The class name as it appears next to your player name in-game

@@ -21,10 +21,14 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import theWeaponMaster.cards.Defend_WeaponMaster;
+import theWeaponMaster.cards.Strike_WeaponMaster;
 import theWeaponMaster.cards.bully.*;
-import theWeaponMaster.cards.generic.*;
+import theWeaponMaster.cards.investigation_equipment.*;
 import theWeaponMaster.cards.legendary_weapons.*;
+import theWeaponMaster.cards.martialarts.*;
 import theWeaponMaster.cards.revolver.*;
+import theWeaponMaster.cards.tempCards.ImprovisedFlashbang;
 import theWeaponMaster.events.IdentityCrisisEvent;
 import theWeaponMaster.relics.*;
 import theWeaponMaster.util.IDCheckDontTouchPls;
@@ -393,8 +397,11 @@ public class TheWeaponMaster implements
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new BullyVariable());
         BaseMod.addDynamicVariable(new SecondVariable());
-        
+
         logger.info("Adding cards");
+
+        BaseMod.addCard(new Strike_WeaponMaster());
+        BaseMod.addCard(new Defend_WeaponMaster());
 
         BaseMod.addCard(new FenrirLacerate());
         BaseMod.addCard(new FenrirShieldEater());
@@ -426,64 +433,79 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new LeviathanDeepImpact());
         BaseMod.addCard(new LeviathanEarthquake());
 
-        BaseMod.addCard(new BullyTaunt());
-        BaseMod.addCard(new BullyMeanToEveryone());
-        BaseMod.addCard(new BullyConfidence());
-        BaseMod.addCard(new BullyWimp());
-        BaseMod.addCard(new BullyIntimidate());
-        BaseMod.addCard(new BullyTerrifyingHowl());
-        BaseMod.addCard(new BullyDinerArgument());
-        BaseMod.addCard(new BullySlap());
-        BaseMod.addCard(new BullyShakedown());
         BaseMod.addCard(new BullyBullysAudacity());
-        BaseMod.addCard(new BullySuckerPunch());
-        BaseMod.addCard(new BullyIntimidatingPresence());
-        BaseMod.addCard(new BullyPushover());
         BaseMod.addCard(new BullyClothesline());
+        BaseMod.addCard(new BullyConfidence());
+        BaseMod.addCard(new BullyDinerArgument());
+        BaseMod.addCard(new BullyIntimidate());
+        BaseMod.addCard(new BullyIntimidatingPresence());
+        BaseMod.addCard(new BullyMeanToEveryone());
         BaseMod.addCard(new BullyMock());
+        BaseMod.addCard(new BullyPushover());
+        BaseMod.addCard(new BullyShakedown());
+        BaseMod.addCard(new BullySlap());
+        BaseMod.addCard(new BullySuckerPunch());
+        BaseMod.addCard(new BullyTaunt());
+        BaseMod.addCard(new BullyTerrifyingHowl());
+        BaseMod.addCard(new BullyWimp());
 
-        BaseMod.addCard(new Strike_WeaponMaster());
-        BaseMod.addCard(new RevolverMagnum());
-        BaseMod.addCard(new RevolverTwinned());
-        BaseMod.addCard(new RevolverLowRecoil());
+
         BaseMod.addCard(new RevolverBuckshot());
-        BaseMod.addCard(new RevolverWarningShot());
-        BaseMod.addCard(new RevolverHollowPoint());
-        BaseMod.addCard(new RevolverFullMetal());
-        BaseMod.addCard(new RevolverSpecialGradeAmmo());
-        BaseMod.addCard(new RevolverMarksmanship());
         BaseMod.addCard(new RevolverCustomCartridge());
         BaseMod.addCard(new RevolverDoubleTap());
+        BaseMod.addCard(new RevolverFullMetal());
+        BaseMod.addCard(new RevolverHollowPoint());
         BaseMod.addCard(new RevolverKneecap());
+        BaseMod.addCard(new RevolverLowRecoil());
+        BaseMod.addCard(new RevolverMagnum());
+        BaseMod.addCard(new RevolverMarksmanship());
         BaseMod.addCard(new RevolverQuickload());
+        BaseMod.addCard(new RevolverSpecialGradeAmmo());
+        BaseMod.addCard(new RevolverTwinned());
         BaseMod.addCard(new RevolverUnload());
+        BaseMod.addCard(new RevolverWarningShot());
 
 
-        BaseMod.addCard(new Defend_WeaponMaster());
-        BaseMod.addCard(new GenericBerserkerStance());
-        BaseMod.addCard(new GenericBobAndWeave());
-        BaseMod.addCard(new GenericCounterBlow());
-        BaseMod.addCard(new GenericDodge());
         BaseMod.addCard(new GenericFreshApple());
         BaseMod.addCard(new GenericFlashbang());
-        BaseMod.addCard(new GenericFrontKick());
         BaseMod.addCard(new GenericGrazingThrow());
-        BaseMod.addCard(new GenericGuillotineChoke());
         BaseMod.addCard(new GenericHeavyPockets());
+        BaseMod.addCard(new GenericImprovisedTools());
         BaseMod.addCard(new GenericInvestigate());
-        BaseMod.addCard(new GenericLimberUp());
         BaseMod.addCard(new GenericOpportunism());
         BaseMod.addCard(new GenericPreparation());
-        BaseMod.addCard(new GenericRecklessness());
         BaseMod.addCard(new GenericRelaxAndRecollect());
-        BaseMod.addCard(new GenericRedirectBlows());
         BaseMod.addCard(new GenericSleightOfHand());
         BaseMod.addCard(new GenericThrowingKnives());
+
+
+        BaseMod.addCard(new MartialBerserkerStance());
+        BaseMod.addCard(new MartialBeatdown());
+        BaseMod.addCard(new MartialBobAndWeave());
+        BaseMod.addCard(new MartialCounterBlow());
+        BaseMod.addCard(new MartialDodge());
+        BaseMod.addCard(new MartialFrontKick());
+        BaseMod.addCard(new MartialGuillotineChoke());
+        BaseMod.addCard(new MartialJab());
+        BaseMod.addCard(new MartialKimuraLock());
+        BaseMod.addCard(new MartialKneeBomb());
+        BaseMod.addCard(new MartialLimberUp());
+        BaseMod.addCard(new MartialLiverBlow());
+        BaseMod.addCard(new MartialOverheadThrow());
+        BaseMod.addCard(new MartialRecklessness());
+        BaseMod.addCard(new MartialRedirectBlows());
+        BaseMod.addCard(new MartialThroatStrike());
+
+        BaseMod.addCard(new ImprovisedFlashbang());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
+
+        UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
+        UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
+
         UnlockTracker.unlockCard(FenrirLacerate.ID);
         UnlockTracker.unlockCard(FenrirShieldEater.ID);
         UnlockTracker.unlockCard(FenrirHeavySwing.ID);
@@ -530,7 +552,6 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(BullyClothesline.ID);
         UnlockTracker.unlockCard(BullyMock.ID);
 
-        UnlockTracker.unlockCard(Strike_WeaponMaster.ID);
         UnlockTracker.unlockCard(RevolverMagnum.ID);
         UnlockTracker.unlockCard(RevolverTwinned.ID);
         UnlockTracker.unlockCard(RevolverLowRecoil.ID);
@@ -546,26 +567,32 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(RevolverQuickload.ID);
         UnlockTracker.unlockCard(RevolverUnload.ID);
 
-        UnlockTracker.unlockCard(Defend_WeaponMaster.ID);
-        UnlockTracker.unlockCard(GenericBerserkerStance.ID);
-        UnlockTracker.unlockCard(GenericBobAndWeave.ID);
-        UnlockTracker.unlockCard(GenericCounterBlow.ID);
-        UnlockTracker.unlockCard(GenericDodge.ID);
         UnlockTracker.unlockCard(GenericFreshApple.ID);
         UnlockTracker.unlockCard(GenericFlashbang.ID);
-        UnlockTracker.unlockCard(GenericFrontKick.ID);
         UnlockTracker.unlockCard(GenericGrazingThrow.ID);
-        UnlockTracker.unlockCard(GenericGuillotineChoke.ID);
         UnlockTracker.unlockCard(GenericHeavyPockets.ID);
         UnlockTracker.unlockCard(GenericInvestigate.ID);
-        UnlockTracker.unlockCard(GenericLimberUp.ID);
         UnlockTracker.unlockCard(GenericOpportunism.ID);
         UnlockTracker.unlockCard(GenericPreparation.ID);
-        UnlockTracker.unlockCard(GenericRecklessness.ID);
         UnlockTracker.unlockCard(GenericRelaxAndRecollect.ID);
-        UnlockTracker.unlockCard(GenericRedirectBlows.ID);
         UnlockTracker.unlockCard(GenericSleightOfHand.ID);
         UnlockTracker.unlockCard(GenericThrowingKnives.ID);
+
+        UnlockTracker.unlockCard(MartialBerserkerStance.ID);
+        UnlockTracker.unlockCard(MartialBobAndWeave.ID);
+        UnlockTracker.unlockCard(MartialCounterBlow.ID);
+        UnlockTracker.unlockCard(MartialDodge.ID);
+        UnlockTracker.unlockCard(MartialFrontKick.ID);
+        UnlockTracker.unlockCard(MartialGuillotineChoke.ID);
+        UnlockTracker.unlockCard(MartialJab.ID);
+        UnlockTracker.unlockCard(MartialKimuraLock.ID);
+        UnlockTracker.unlockCard(MartialKneeBomb.ID);
+        UnlockTracker.unlockCard(MartialLimberUp.ID);
+        UnlockTracker.unlockCard(MartialLiverBlow.ID);
+        UnlockTracker.unlockCard(MartialRecklessness.ID);
+        UnlockTracker.unlockCard(MartialRedirectBlows.ID);
+
+        UnlockTracker.unlockCard(ImprovisedFlashbang.ID);
 
         logger.info("Done adding cards!");
     }

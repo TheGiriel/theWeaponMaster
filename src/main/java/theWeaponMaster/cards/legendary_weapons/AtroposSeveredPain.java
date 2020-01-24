@@ -1,6 +1,7 @@
 package theWeaponMaster.cards.legendary_weapons;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -60,5 +61,8 @@ public class AtroposSeveredPain extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SeveredPainPower(p)));
+        if (upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
+        }
     }
 }

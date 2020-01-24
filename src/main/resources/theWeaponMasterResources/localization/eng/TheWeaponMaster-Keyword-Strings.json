@@ -58,6 +58,14 @@
     "DESCRIPTION": "Can only be applied to non-attacking enemies. NL #yTaunted enemies are forced to attack on their next turn."
   },
   {
+    "PROPER_NAME": "Debilitated",
+    "NAMES": [
+      "debilitated",
+      "debilitating"
+    ],
+    "DESCRIPTION": "This includes debuffs such as Vulnerable, Stagger or other debuffs that increase damage dealt to this creature."
+  },
+  {
     "PROPER_NAME": "Intimidate",
     "NAMES": [
       "intimidate",
@@ -194,6 +202,16 @@
     "DESCRIPTION": "Versatile cards specializing in #yMana #yBurn and damage mitigation."
   },
   {
+    "PROPER_NAME": "Scissor Half",
+    "NAMES": [
+      "Scissor Half",
+      "scissor half",
+      "scissor_half",
+      "Scissor_Half"
+    ],
+    "DESCRIPTION": "Double damage if the last played card was the other Half."
+  },
+  {
     "PROPER_NAME": "Right Half",
     "NAMES": [
       "Right Half",
@@ -201,7 +219,7 @@
       "right_half",
       "Right_Half"
     ],
-    "DESCRIPTION": "Double damage if the last played card was Left Half. NL Becomes Severed Scissors after use."
+    "DESCRIPTION": "Double damage if the last played card was Left Half."
   },
   {
     "PROPER_NAME": "Left Half",
@@ -256,7 +274,7 @@
       "stagger",
       "staggered"
     ],
-    "DESCRIPTION": "Staggered creatures deal less and take more Damage. #yLeviathan cards apply a stronger Stagger based on enemy Block."
+    "DESCRIPTION": "#yStaggered creatures deal less and take more Damage. #yLeviathan cards apply a stronger Stagger based on enemy Block. NL (Half as bonus damage from #yStagger if also affected by #yVulnerable)"
   },
   {
     "PROPER_NAME": "Charge",
@@ -287,6 +305,14 @@
       "hungry"
     ],
     "DESCRIPTION": "Augment this card's effect at the cost of #yHunger. NL #yHunger Increases by #b1 whenever you play a non-Revenant card."
+  },
+  {
+    "PROPER_NAME": "Crippled",
+    "NAMES": [
+      "crippled",
+      "crippling"
+    ],
+    "DESCRIPTION": "The enemy is affected by a permanent #yWeak. NL Cannot apply #yWeak while #yCrippled is active."
   },
   {
     "PROPER_NAME": "Sated",
@@ -323,7 +349,14 @@
       "split_up",
       "Split_Up"
     ],
-    "DESCRIPTION": "Splits into two 0-cost attack cards."
+    "DESCRIPTION": "Adds two Ethereal 0-cost attack cards to the top of your deck."
+  },
+  {
+    "PROPER_NAME": "Improvised",
+    "NAMES": [
+      "improvised"
+    ],
+    "DESCRIPTION": "Ethereal 0-cost cards that deal damage, give you block or debuff enemies."
   },
   {
     "PROPER_NAME": "Reload",
@@ -332,6 +365,13 @@
       "reloading"
     ],
     "DESCRIPTION": "Return up to #b3 cards from the bottom of your discard pile to your draw pile. NL Draw #b1 card."
+  },
+  {
+    "PROPER_NAME": "Martial",
+    "NAMES": [
+      "martial"
+    ],
+    "DESCRIPTION": "Martial arts moves."
   },
   {
     "PROPER_NAME": "Ammunition",

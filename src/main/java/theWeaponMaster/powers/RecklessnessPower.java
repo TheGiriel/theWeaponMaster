@@ -1,6 +1,5 @@
 package theWeaponMaster.powers;
 
-import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -16,7 +15,7 @@ import theWeaponMaster.util.TextureLoader;
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
 
-public class RecklessnessPower extends AbstractPower implements CloneablePowerInterface {
+public class RecklessnessPower extends AbstractPower {
     public static final String POWER_ID = TheWeaponMaster.makeID(RecklessnessPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -61,8 +60,4 @@ public class RecklessnessPower extends AbstractPower implements CloneablePowerIn
 
     }
 
-    @Override
-    public AbstractPower makeCopy() {
-        return new CommonPower(owner, source, amount);
-    }
 }

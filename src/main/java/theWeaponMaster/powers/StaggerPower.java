@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.relics.ShockwaveModulatorRelic;
@@ -72,6 +73,9 @@ public class StaggerPower extends AbstractPower {
 
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+        if (owner.hasPower(VulnerablePower.POWER_ID)) {
+            return damage * (1 - staggerAmount / 2);
+        }
         return damage * (1 + staggerAmount);
     }
 }

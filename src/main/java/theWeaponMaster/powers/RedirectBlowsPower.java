@@ -1,6 +1,5 @@
 package theWeaponMaster.powers;
 
-import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -16,7 +15,7 @@ import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.TheWeaponMaster.makePowerPath;
 
-public class RedirectBlowsPower extends AbstractPower implements CloneablePowerInterface {
+public class RedirectBlowsPower extends AbstractPower {
     public static final String POWER_ID = TheWeaponMaster.makeID(RedirectBlowsPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(RedirectBlowsPower.class.getSimpleName());
     public static final String NAME = powerStrings.NAME;
@@ -69,9 +68,5 @@ public class RedirectBlowsPower extends AbstractPower implements CloneablePowerI
         description = DESCRIPTIONS[0] + (int) damageReduction + DESCRIPTIONS[1];
     }
 
-    @Override
-    public AbstractPower makeCopy() {
-        return new CommonPower(owner, source, amount);
-    }
 
 }

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
+import theWeaponMaster.cards.tempCards.RevolverUnloadShot;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.relics.RevolverRelic;
 

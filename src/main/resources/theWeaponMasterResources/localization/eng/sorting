@@ -16,23 +16,23 @@
   //retVal.add(RevolverUnload.ID);
   //
   //retVal.add(Defend_WeaponMaster.ID);
-  //retVal.add(GenericBerserkerStance.ID);
-  //retVal.add(GenericBobAndWeave.ID);
-  //retVal.add(GenericCounterBlow.ID);
-  //retVal.add(GenericDodge.ID);
+  //retVal.add(MartialBerserkerStance.ID);
+  //retVal.add(MartialBobAndWeave.ID);
+  //retVal.add(MartialCounterBlow.ID);
+  //retVal.add(MartialDodge.ID);
   //retVal.add(GenericFreshApple.ID);
   //retVal.add(GenericFlashbang.ID);
-  //retVal.add(GenericFrontKick.ID);
+  //retVal.add(MartialFrontKick.ID);
   //retVal.add(GenericGrazingThrow.ID);
-  //retVal.add(GenericGuillotineChoke.ID);
+  //retVal.add(MartialGuillotineChoke.ID);
   //retVal.add(GenericHeavyPockets.ID);
   //retVal.add(GenericInvestigate.ID);
-  //retVal.add(GenericLimberUp.ID);
+  //retVal.add(MartialLimberUp.ID);
   //retVal.add(GenericOpportunism.ID);
   //retVal.add(GenericPreparation.ID);
-  //retVal.add(GenericRecklessness.ID);
+  //retVal.add(MartialRecklessness.ID);
   //retVal.add(GenericRelaxAndRecollect.ID);
-  //retVal.add(GenericRedirectBlows.ID);
+  //retVal.add(MartialRedirectBlows.ID);
   //retVal.add(GenericSleightOfHand.ID);
   //retVal.add(GenericThrowingKnives.ID);
 }
