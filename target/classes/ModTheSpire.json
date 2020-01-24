@@ -4,12 +4,13 @@
   "author_list": [
     "TheGiriel"
   ],
-  "description": "Card Complete test version. Tons of hotfixes. Time for a break.
-        More cards next? Target: Bully 5, Generic 10.
-        Art (not happening anytime soon)
-        Current State: Legendary Weapons: 25/25(+2); Bully: 15/15; Revolver 15/15(+1); Generic 20/20(+2);
-        total: 75/75(+5); No Art.",
-  "version": "0.3.20+ hotfix edition",
+  "description": "Many little Changes
+More cards next? Target: Investigate: 4; Martial Arts: 4;
+Art (not happening anytime soon)
+Current State: Legendary Weapons: 25/25(+2); Bully: 15/15; Investigate 11/15 (+2); Martial Arts \"14\"/15;
+Revolver 14/15(+1);
+total: 75/85(+5); No Art.",
+  "version": "0.3.25+ hotfix edition",
   "sts_version": "2.0",
   "mts_version": "3.8.0",
   "dependencies": [

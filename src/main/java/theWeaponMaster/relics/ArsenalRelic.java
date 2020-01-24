@@ -136,8 +136,9 @@ public class ArsenalRelic extends CustomRelic implements ClickableRelic {
         setDescriptionAfterLoading();
     }
 
+
     public void setDescriptionAfterLoading() {
-        this.description = DESCRIPTIONS[0] + FontHelper.colorString(currentWeapon, "r");
+        this.description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + FontHelper.colorString(currentWeapon, "r");
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();

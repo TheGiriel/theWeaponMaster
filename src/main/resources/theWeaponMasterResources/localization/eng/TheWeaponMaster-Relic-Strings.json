@@ -35,61 +35,57 @@
     "NAME": "The Arsenal",
     "FLAVOR": "I might just have the right tool for the job.",
     "DESCRIPTIONS": [
-      "Right-Click: Weapon_Swap. NL Current Weapon: "
+      "Allows you to carry all five Legendary Weapons. NL Right-Click: Weapon_Swap.",
+      " NL Current Weapon: "
     ]
   },
   "theWeaponMaster:RevolverRelic": {
     "NAME": "The Revolver",
     "FLAVOR": "Your trusty six-shooter.",
     "DESCRIPTIONS": [
-      "Every #yAmmo card reduces the counter by #b1. #yReload when the counter hits #b0."
+      "Every #yAmmo card reduces the counter by #b1. NL #yAmmo cards #yReload when the counter is at #b0."
     ]
   },
   "theWeaponMaster:HeavyDrum": {
     "NAME": "Heavy Drum",
     "FLAVOR": "Thick walls for big bangs.",
     "DESCRIPTIONS": [
-      "Reload after 5 shots and deal #b1 extra damage with Ammunition cards."
+      "#yReload after 5 shots and deal #b1 extra damage with #yAmmunition cards."
     ]
   },
   "theWeaponMaster:SplinteringSteelRelic": {
     "NAME": "Splintering Steel",
     "FLAVOR": "The best offense is a layer of sharp steel shards.",
     "DESCRIPTIONS": [
-      "Upgrades #yFenrir cards upon switching weapons.",
-      "dadadada"
+      "Upgrades #yFenrir cards upon switching weapons."
     ]
   },
   "theWeaponMaster:ManaWhetstoneRelic": {
     "NAME": "Mana Whetstone",
     "FLAVOR": "To keep those ethereal edges extra sharp.",
     "DESCRIPTIONS": [
-      "Upgrades #yAtropos cards upon switching weapons.",
-      ""
+      "Upgrades #yAtropos cards upon switching weapons."
     ]
   },
   "theWeaponMaster:GhoulskinSheathRelic": {
     "NAME": "Ghoulskin Sheath",
     "FLAVOR": "Makes transporting the cleaver much more safe.",
     "DESCRIPTIONS": [
-      "Upgrades #yRevenant cards upon switching weapons.",
-      ""
+      "Upgrades #yRevenant cards upon switching weapons."
     ]
   },
   "theWeaponMaster:HellhoundOilRelic": {
     "NAME": "Hellhound Oil(tm)",
     "FLAVOR": "The very best in keeping your favorite edge sharp for only 24.99 for a can!",
     "DESCRIPTIONS": [
-      "Upgrades #yCerberus cards upon switching weapons.",
-      ""
+      "Upgrades #yCerberus cards upon switching weapons."
     ]
   },
   "theWeaponMaster:ShockwaveModulatorRelic": {
     "NAME": "Shockwave Modulator",
     "FLAVOR": "What do you mean \"this has been underclocked all along\"?",
     "DESCRIPTIONS": [
-      "Upgrades #yLeviathan cards upon switching weapons.",
-      ""
+      "Upgrades #yLeviathan cards upon switching weapons."
     ]
   }
 }

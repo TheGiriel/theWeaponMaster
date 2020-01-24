@@ -364,7 +364,7 @@
       "reload",
       "reloading"
     ],
-    "DESCRIPTION": "Return up to #b3 cards from the bottom of your discard pile to your draw pile. NL Draw #b1 card."
+    "DESCRIPTION": "Return up to #b3 cards from the bottom of your discard pile to your draw pile. NL #yDraw #b1 card."
   },
   {
     "PROPER_NAME": "Martial",
@@ -379,7 +379,7 @@
       "ammunition",
       "ammo"
     ],
-    "DESCRIPTION": "Reduces your #yRevolver shot count by #b1. NL Requires Reloading when at #b0 shots."
+    "DESCRIPTION": "Reduces your #yRevolver shot count by #b1."
   },
   {
     "PROPER_NAME": "Single Shot",

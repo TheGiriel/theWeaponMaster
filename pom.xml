@@ -6,12 +6,12 @@
     <artifactId>WeaponMaster</artifactId>
     <name>Weapon Master Mod</name>
     <version>0.3.25+ hotfix edition</version>
-    <description>Many little Changes(TM)
+    <description>Many little Changes
         More cards next? Target: Investigate: 4; Martial Arts: 4;
         Art (not happening anytime soon)
-        Current State: Legendary Weapons: 25/25(+2); Bully: 15/15; Investigate 11/15 (+2); Martial Arts "14"/15;
+        Current State: Legendary Weapons: 25/25(+2); Bully: 15/15; Investigate 11/15 (+2); Martial Arts \"14\"/15;
         Revolver 14/15(+1);
-        total: 75/75(+5); No Art.
+        total: 75/85(+5); No Art.
     </description>
 
     <properties>
