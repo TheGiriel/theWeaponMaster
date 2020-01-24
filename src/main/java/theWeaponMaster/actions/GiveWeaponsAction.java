@@ -44,7 +44,7 @@ public class GiveWeaponsAction extends AbstractGameAction {
                 }
                 break;
 
-            case "Revenant Cleaver":
+            case "Revenant":
                 weaponList.add(new RevenantRavenous());
                 weaponList.add(new RevenantChopChopCHOP());
                 weaponList.add(new RevenantHungrySteel());
@@ -55,7 +55,7 @@ public class GiveWeaponsAction extends AbstractGameAction {
                 }
                 break;
 
-            case "Atropos' Shears":
+            case "Atropos":
                 weaponList.add(new AtroposSeveredSource());
                 weaponList.add(new AtroposSeveredScissors());
                 weaponList.add(new AtroposSeveredPath());
@@ -66,7 +66,7 @@ public class GiveWeaponsAction extends AbstractGameAction {
                 }
                 break;
 
-            case "Leviathan Gauntlet":
+            case "Leviathan":
                 weaponList.add(new LeviathanCrush());
                 weaponList.add(new LeviathanGauntletCharger());
                 weaponList.add(new LeviathanGroundSplitter());

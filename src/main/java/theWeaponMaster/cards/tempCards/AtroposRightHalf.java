@@ -45,6 +45,7 @@ public class AtroposRightHalf extends AbstractDynamicCard {
         this.isEthereal = true;
         this.purgeOnUse = true;
 
+        this.cardsToPreview = new AtroposLeftHalf();
         this.setBackgroundTexture("theWeaponMasterResources/images/512/bg_atropos_skill.png", "theWeaponMasterResources/images/1024/bg_atropos_skill.png");
     }
 
@@ -54,20 +55,10 @@ public class AtroposRightHalf extends AbstractDynamicCard {
     }
 
     @Override
-    public void triggerOnEndOfPlayerTurn() {
-        try {
-            AbstractDungeon.player.drawPile.removeCard(this);
-            AbstractDungeon.player.discardPile.removeCard(this);
-            AbstractDungeon.player.exhaustPile.removeCard(this);
-        } catch (NullPointerException e) {
-
-        }
-    }
-
-    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.cardsToPreview.upgrade();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             upgradeBlock(UPGRADED_BLOCK);
             initializeDescription();

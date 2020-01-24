@@ -1,6 +1,8 @@
 package theWeaponMaster.stances;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.powers.ViciousPower;
@@ -14,10 +16,15 @@ public class BerserkerStance extends AbstractStance {
     }
 
     @Override
-    public void onPlayCard(AbstractCard card) {
-        if (card.type.equals(AbstractCard.CardType.ATTACK))
+    public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ViciousPower(AbstractDungeon.player, 1)));
+        return super.atDamageReceive(damage, damageType);
+    }
 
-            super.onPlayCard(card);
+    @Override
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ViciousPower(AbstractDungeon.player, 1)));
+        return super.atDamageGive(damage, type);
     }
 
     @Override

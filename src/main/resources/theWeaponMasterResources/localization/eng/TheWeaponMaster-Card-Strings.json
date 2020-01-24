@@ -134,15 +134,15 @@
   },
   "theWeaponMaster:AtroposScissorHalf": {
     "NAME": "Left/Right Half",
-    "DESCRIPTION": "Deal !D! damage, Ignite !M!. NL Deal double damage if the last played card was the other half. NL Purge. Disappears after your turn."
+    "DESCRIPTION": "Deal !D! damage, Ignite !M!. NL Deal double damage if the last played card was the other half. NL Ethereal. Purge."
   },
   "theWeaponMaster:AtroposLeftHalf": {
     "NAME": "Left Half",
-    "DESCRIPTION": "Left_Half NL Deal !D! damage, Ignite !M!. NL Purge. Disappears after your turn."
+    "DESCRIPTION": "Left_Half NL Deal !D! damage, Ignite !M!. NL Ethereal. Purge."
   },
   "theWeaponMaster:AtroposRightHalf": {
     "NAME": "Right Half",
-    "DESCRIPTION": "Right_Half NL Deal !D! damage, Ignite !M!. NL Purge. Disappears after your turn."
+    "DESCRIPTION": "Right_Half NL Deal !D! damage, Ignite !M!. NL Ethereal. Purge."
   },
   "theWeaponMaster:AtroposSeveredPath": {
     "NAME": "Severed Path",

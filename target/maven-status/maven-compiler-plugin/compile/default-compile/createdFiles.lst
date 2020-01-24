@@ -67,6 +67,7 @@ theWeaponMaster\powers\NickedPower.class
 theWeaponMaster\cards\revolver\RevolverTwinned.class
 theWeaponMaster\cards\investigation_equipment\GenericOpportunism.class
 theWeaponMaster\cards\tempCards\ImprovisedShank.class
+theWeaponMaster\actions\BloodbathAction.class
 theWeaponMaster\cards\Defend_WeaponMaster.class
 theWeaponMaster\stances\DefensiveStance.class
 theWeaponMaster\relics\HellhoundOilRelic.class

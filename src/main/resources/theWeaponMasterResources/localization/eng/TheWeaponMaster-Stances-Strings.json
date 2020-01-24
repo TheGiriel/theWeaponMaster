@@ -8,7 +8,7 @@
   "Berserker": {
     "NAME": "",
     "DESCRIPTION": [
-      "Whenever you gain Vicious, gain 1 more Vicious. Vicious decays slower."
+      "Increase Vicious by 1 whenever you take or deal damage. NL Vicious decays slower."
     ]
   },
   "Reckless": {
