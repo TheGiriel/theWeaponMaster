@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.powers.MarksmanshipPower;
-import theWeaponMaster.relics.HeavyDrum;
+import theWeaponMaster.relics.HeavyDrumRelic;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -59,7 +59,7 @@ public class RevolverHollowPoint extends AbstractRevolverCard {
 
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-        if (player.hasRelic(HeavyDrum.ID)) {
+        if (player.hasRelic(HeavyDrumRelic.ID)) {
             tmp++;
         }
         if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {

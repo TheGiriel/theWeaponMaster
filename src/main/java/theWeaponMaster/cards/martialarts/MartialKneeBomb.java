@@ -1,6 +1,7 @@
 package theWeaponMaster.cards.martialarts;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
+import theWeaponMaster.powers.RecklessnessPower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
@@ -31,10 +33,13 @@ public class MartialKneeBomb extends AbstractDynamicCard {
 
     private static final int DAMAGE = 7;
     private static final int UPGRADED_DAMAGE = 4;
+    private static final int MAGIC_NUMBER = 2;
+    private static final int UPGRADED_MAGIC_NUMBER = 1;
 
     public MartialKneeBomb() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
+        this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
 
         tags.add(WeaponMasterTags.MARTIAL);
     }
@@ -52,6 +57,7 @@ public class MartialKneeBomb extends AbstractDynamicCard {
         } else {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RecklessnessPower(p, magicNumber)));
     }
 
     @Override
@@ -60,6 +66,7 @@ public class MartialKneeBomb extends AbstractDynamicCard {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
             upgradeDamage(UPGRADED_DAMAGE);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             initializeDescription();
         }
     }

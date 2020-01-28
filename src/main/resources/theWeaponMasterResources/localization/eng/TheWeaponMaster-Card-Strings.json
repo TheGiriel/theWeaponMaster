@@ -158,6 +158,7 @@
     "DESCRIPTION": "Deal !D! damage. NL Ignite All. NL Consume all Mana_Burn stacks."
   },
 
+
   "theWeaponMaster:RevolverBuckshot": {
     "NAME": "Buckshot",
     "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage to all enemies.",
@@ -232,9 +233,9 @@
   },
   "theWeaponMaster:RevolverTwinned": {
     "NAME": "Twinned Shot",
-    "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage twice. NL If the first hit kills the enemy, gain Single_Shot.",
+    "DESCRIPTION": "Ammunition, Reload. NL Deal !D! damage twice. NL If the first hit kills the enemy, gain [#efc851]Single [#efc851]Shot.",
     "EXTENDED_DESCRIPTION": [
-      "Ammunition, Reload. NL Deal !D! damage twice. NL If the first hit kills the enemy, gain Single_Shot."
+      "Ammunition, Reload. NL Deal !D! damage twice. NL If the first hit kills the enemy, gain [#efc851]Single [#efc851]Shot."
     ]
   },
   "theWeaponMaster:RevolverSingleShot": {
@@ -273,6 +274,7 @@
       "Ammunition, Reload. NL Stagger all enemies."
     ]
   },
+
 
   "theWeaponMaster:BullyBullysAudacity": {
     "NAME": "The Bully's Audacity",
@@ -345,46 +347,6 @@
     "DESCRIPTION": "Bully !BULLY! NL Apply !M! Weak.",
     "UPGRADE_DESCRIPTION": "Bully !BULLY! NL Apply !M! Weak to all enemies."
   },
-  "theWeaponMaster:GenericRelaxAndRecollect": {
-    "NAME": "Relax and Recollect",
-    "DESCRIPTION": "Relax: Gain !B! Block. NL Lose half your Vicious. Gain that much Block. NL Recollect: Exhaust !M! cards from your discard pile, gain !SV! Energy.",
-    "EXTENDED_DESCRIPTION": [
-      "Relax",
-      "Gain !B! Block and draw a card. NL Lose half your Vicious. Gain that much Block.",
-      "Recollect",
-      "Draw a card. NL Exhaust !M! cards from your discard pile, then gain !SV! Energy."
-    ]
-  },
-  "theWeaponMaster:GenericSleightOfHand": {
-    "NAME": "Sleight of Hand",
-    "DESCRIPTION": "Draw !M! cards. NL Discard !SV! card. NL Select one card from your discard pile and add it to your hand.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Discard !SV! cards. NL Select one card from your discard pile and add it to your hand."
-  },
-  "theWeaponMaster:GenericThrowingKnives": {
-    "NAME": "Throwing Knives",
-    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded from your hand, deal !D! damage to a random enemy. NL Exhaustive !stslib:ex!."
-  },
-  "theWeaponMaster:GenericOpportunism": {
-    "NAME": "Opportunism",
-    "DESCRIPTION": "If the enemy intends to attack, gain !B! Block, otherwise deal !D! damage."
-  },
-  "theWeaponMaster:GenericPreparation": {
-    "NAME": "Preparation",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Dexterity. NL If your Block isn't broken, the first Attack next turn costs 1 less Energy."
-  },
-  "theWeaponMaster:GenericImprovisedTools": {
-    "NAME": "Improvised Tools",
-    "DESCRIPTION": "At the start of your turn, gain one random Improvised card."
-  },
-  "theWeaponMaster:GenericInvestigate": {
-    "NAME": "Investigate",
-    "DESCRIPTION": "Gain !B! Block. NL If this card is played twice, choose 1 of 3 random Attack cards and Skill cards, then add them to your hand. They cost 0 this turn. NL Exhaustive !stslib:ex!."
-  },
-  "theWeaponMaster:GenericHeavyPockets": {
-    "NAME": "Heavy Pockets",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards."
-  },
   "theWeaponMaster:GenericFlashbang": {
     "NAME": "Flashbang",
     "DESCRIPTION": "Stun. NL Stagger adjacent enemies. NL Exhaust.",
@@ -399,25 +361,56 @@
     "NAME": "Grazing Throw",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! Nicked."
   },
+  "theWeaponMaster:GenericHeavyPockets": {
+    "NAME": "Heavy Pockets",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards."
+  },
+  "theWeaponMaster:GenericImprovisedTools": {
+    "NAME": "Improvised Tools",
+    "DESCRIPTION": "At the start of your turn, gain one random Improvised card."
+  },
+  "theWeaponMaster:GenericInvestigate": {
+    "NAME": "Investigate",
+    "DESCRIPTION": "Gain !B! Block. NL If this card is played twice, choose 1 of 3 random Attack cards and Skill cards, then add them to your hand. They cost 0 this turn. NL Exhaustive !stslib:ex!."
+  },
+  "theWeaponMaster:GenericOpportunism": {
+    "NAME": "Opportunism",
+    "DESCRIPTION": "If the enemy intends to attack, gain !B! Block, otherwise deal !D! damage."
+  },
+  "theWeaponMaster:GenericPreparation": {
+    "NAME": "Preparation",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Dexterity. NL If your Block isn't broken, the first Attack next turn costs 1 less Energy."
+  },
+  "theWeaponMaster:GenericRelax": {
+    "NAME": "Relax",
+    "DESCRIPTION": "Gain !B! Block. NL Lose half your Vicious. Gain that much Block. NL Transforms into Recollect until the end of combat."
+  },
+  "theWeaponMaster:GenericRiggedGame": {
+    "NAME": "Rigged Game",
+    "DESCRIPTION": "Scry !M! and gain !B! Block at the start of your turn."
+  },
+  "theWeaponMaster:GenericSleightOfHand": {
+    "NAME": "Sleight of Hand",
+    "DESCRIPTION": "Draw !M! cards. NL Discard !SV! card. NL Select one card from your discard pile and add it to your hand.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Discard !SV! cards. NL Select one card from your discard pile and add it to your hand."
+  },
+  "theWeaponMaster:GenericThrowingKnives": {
+    "NAME": "Throwing Knives",
+    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded from your hand, deal !D! damage to a random enemy. NL Exhaustive !stslib:ex!."
+  },
+  "theWeaponMaster:GenericToughCase": {
+    "NAME": "Tough Case",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card if your block is broken next turn.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards if your block is broken next turn."
+  },
   "theWeaponMaster:MartialBeatdown": {
     "NAME": "Beatdown",
-    "DESCRIPTION": "Enter Berserker stance. NL Deal !D! damage !M! times.",
-    "UPGRADE_DESCRIPTION": "Innate NL Vicious decays slower. Gain 1 extra Vicious every time you attack."
+    "DESCRIPTION": "Gain !SV! Malice. NL Deal !D! damage !M! times."
   },
-  "theWeaponMaster:MartialBerserkerStance": {
-    "NAME": "Berserker Stance",
-    "DESCRIPTION": "Vicious decays slower. Gain 1 extra Vicious every time you attack.",
-    "UPGRADE_DESCRIPTION": "Innate NL Vicious decays slower. Gain 1 extra Vicious every time you attack."
-  },
-  "theWeaponMaster:MartialBobAndWeave": {
-    "NAME": "Bob and Weave",
-    "DESCRIPTION": "Enter Defensive stance. NL Gain !B! Block. NL [#efc851]Bob: Gain additional !M! Block for every enemy that intends to attack. NL [#efc851]Weave: !SV! energy if all enemies intend to attack.",
-    "EXTENDED_DESCRIPTION": [
-      "Bob",
-      "Enter Defensive stance. NL Gain !B! Block. NL Gain additional !M! Block for every enemy that intends to attack.",
-      "Weave",
-      "Enter Defensive stance. NL Gain !B! Block. NL Gain !SV! Energy if all enemies intend to attack."
-    ]
+  "theWeaponMaster:MartialBob": {
+    "NAME": "Bob",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Block for every attacking enemy. NL Transforms into Weave until the end of combat."
   },
   "theWeaponMaster:MartialCounterBlow": {
     "NAME": "Counter Blow",
@@ -434,7 +427,7 @@
   },
   "theWeaponMaster:MartialGuillotineChoke": {
     "NAME": "Guillotine Choke",
-    "DESCRIPTION": "Enter Defensive stance. NL Apply !SV! Weak. NL Gain !B! Block."
+    "DESCRIPTION": "Gain !M! Redirecting. NL Apply !SV! Weak. NL Gain !B! Block."
   },
   "theWeaponMaster:MartialJab": {
     "NAME": "Jab",
@@ -442,7 +435,7 @@
   },
   "theWeaponMaster:MartialKneeBomb": {
     "NAME": "Knee Bomb",
-    "DESCRIPTION": "Enter Reckless stance NL Deal !D! damage. NL Deals double damage to Block."
+    "DESCRIPTION": "Gain !M! Recklessness. NL Deal !D! damage. NL Deals double damage to Block."
   },
   "theWeaponMaster:MartialKimuraLock": {
     "NAME": "Kimura Lock",
@@ -455,15 +448,11 @@
   },
   "theWeaponMaster:MartialLiverBlow": {
     "NAME": "Liver Blow",
-    "DESCRIPTION": "Deal !D! damage. NL Stuns if enemy is Debilitated and remove Debilitating debuffs."
+    "DESCRIPTION": "Gain !M! Malice. NL Deal !D! damage. NL Stuns if enemy is Debilitated and remove Debilitating debuffs."
   },
   "theWeaponMaster:MartialOverheadThrow": {
     "NAME": "Overhead Throw",
-    "DESCRIPTION": "Enter Defensive stance. NL Gain !B! Block. NL Deal !D! Damage. NL Increase damage by !SV! for every Martial card played this turn."
-  },
-  "theWeaponMaster:MartialRecklessness": {
-    "NAME": "Recklessness",
-    "DESCRIPTION": "Draw an extra card for the next !M! turns. NL Gain !M! Vulnerable."
+    "DESCRIPTION": "Gain !M! Recklessness. NL Gain !B! Block. NL Deal !D! Damage. NL Increase damage by !SV! for every Martial card played this turn."
   },
   "theWeaponMaster:MartialRedirectBlows": {
     "NAME": "Redirect Blows",
@@ -471,11 +460,11 @@
   },
   "theWeaponMaster:MartialThroatStrike": {
     "NAME": "Throat Strike",
-    "DESCRIPTION": "Enter Defensive stance. NL Gain !B! Block. NL Your enemy loses !M! HP whenever you play a card this turn."
+    "DESCRIPTION": "Gain !B! Block. NL Your enemy loses !M! HP whenever you play a card this turn."
   },
   "theWeaponMaster:MartialTightGuard": {
     "NAME": "Tight Guard",
-    "DESCRIPTION": "Enter Defensive stance. NL Gain !B! Block."
+    "DESCRIPTION": "Gain !M! Redirecting. NL Gain !B! Block."
   },
   "theWeaponMaster:ImprovisedAmmo": {
     "NAME": "Improvised Ammo",
@@ -496,5 +485,29 @@
   "theWeaponMaster:ImprovisedSpear": {
     "NAME": "Improvised Spear",
     "DESCRIPTION": "Ethereal NL Deal !D! damage. NL Gain !B! Block."
+  },
+  "theWeaponMaster:TemporaryWeave": {
+    "NAME": "Weave",
+    "DESCRIPTION": "Gain !B! Block. NL Gain 1 energy for every attacking enemy (Max !M!). NL Transforms into Bob until the end of combat."
+  },
+  "theWeaponMaster:TemporaryWeavePreview": {
+    "NAME": "Weave",
+    "DESCRIPTION": "Gain !B! Block. NL Gain 1 energy for every attacking enemy (Max !M!). NL Transforms into Bob until the end of combat."
+  },
+  "theWeaponMaster:TemporaryRecollect": {
+    "NAME": "Recollect",
+    "DESCRIPTION": "Draw a card. NL Exhaust !M! cards from your discard pile, then gain !SV! Energy. NL Transforms into Relax until the end of combat."
+  },
+  "theWeaponMaster:TemporaryRecollectPreview": {
+    "NAME": "Recollect",
+    "DESCRIPTION": "Draw a card. NL Exhaust !M! cards from your discard pile, then gain !SV! Energy. NL Transforms into Relax until the end of combat."
+  },
+  "theWeaponMaster:TemporaryBobPreview": {
+    "NAME": "Bob",
+    "DESCRIPTION": "Enter Defensive stance. NL Gain !B! Block. NL Gain !M! Block for every attacking enemy. NL Transforms into Weave until the end of combat."
+  },
+  "theWeaponMaster:TemporaryRelaxPreview": {
+    "NAME": "Relax",
+    "DESCRIPTION": "Gain !B! Block. NL Lose half your Vicious. Gain that much Block. NL Transforms into Recollect until the end of combat."
   }
 }

@@ -24,24 +24,18 @@
   "ViciousPower": {
     "NAME": "Vicious",
     "DESCRIPTIONS": [
-      "Increases by 2 whenever you play an attack. NL Deal #r",
-      " and take #r",
+      "Increases by 2 whenever you play an attack. NL Deal #b",
+      " and take #b",
       " more damage.",
-      " NL Lose #r",
+      " NL Lose #b",
       " Vicious at the end of the turn."
-    ]
-  },
-  "EgoPower": {
-    "NAME": "[#ffc200]Ego: ",
-    "DESCRIPTIONS": [
-      "afgadggh"
     ]
   },
   "ManaBurnPower": {
     "NAME": "Mana Burn",
     "DESCRIPTIONS": [
-      "[#3abfbe]Mana [#3abfbe]Burn deals [#3abfbe](",
-      ") HP damage to enemies with Strategic intent. NL [#3abfbe]Mana [#3abfbe]Burn stacks: "
+      "#yMana #yBurn deals [#3abfbe](",
+      ") HP damage to enemies with Strategic intent. NL #yMana #yBurn stacks: "
     ]
   },
   "LaceratePower": {
@@ -49,7 +43,7 @@
     "DESCRIPTIONS": [
       "This creature loses ",
       "% Max HP #r(",
-      ") every turn. NL [#990055]Lacerate Stacks: #r"
+      ") every turn. NL #yLacerate Stacks: #r"
     ]
   },
   "KneecappedPower": {
@@ -58,7 +52,7 @@
       "Takes ",
       "% of their missing HP #r(",
       ") as damage every turn. Turns remaining: ",
-      " NL This counts as Lacerate."
+      " NL This counts as #yLacerate."
     ]
   },
   "NickedPower": {
@@ -66,7 +60,7 @@
     "DESCRIPTIONS": [
       "This creature loses 3.3% Max HP #r(",
       ") every turn. Turns remaining: ",
-      " NL This counts as Lacerate."
+      " NL This counts as #yLacerate."
     ]
   },
   "NoseToTailPower": {
@@ -94,7 +88,6 @@
   "SeveredPainPower": {
     "NAME": "Severed Pain",
     "DESCRIPTIONS": [
-      "Delay half of the damage you take to next turn.",
       "Delay half of the damage you take to next turn."
     ]
   },
@@ -144,17 +137,24 @@
       "."
     ]
   },
-  "RedirectBlowsPower": {
-    "NAME": "Redirect Blows",
+  "RedirectingPower": {
+    "NAME": "Redirecting Blows",
     "DESCRIPTIONS": [
-      "Take #b",
+      "Deal #b15% less damage. NL Take #b",
       "% less damage, gain #yBlock equal to HP lost from attacks."
     ]
   },
   "RecklessnessPower": {
-    "NAME": "Recklessness",
+    "NAME": "Reckless",
     "DESCRIPTIONS": [
-      "Draw #b1 extra card at the start of your turn."
+      "Draw #b1 extra card at the start of your turn. NL Take #b20% more damage."
+    ]
+  },
+  "MalicePower": {
+    "NAME": "Malicious",
+    "DESCRIPTIONS": [
+      "Vicious decays slower. NL Gain #b",
+      " more Vicious when you attack."
     ]
   },
   "PreparationPower": {
@@ -183,13 +183,6 @@
     "NAME": "Marksmanship",
     "DESCRIPTIONS": [
       "Ammunition cards scale with Dexterity in addition to Strength."
-    ]
-  },
-  "BerserkerStancePower": {
-    "NAME": "Berserker Stance",
-    "DESCRIPTIONS": [
-      "Vicious decays slower. Gain #r",
-      " more Vicious when you attack."
     ]
   }
 }

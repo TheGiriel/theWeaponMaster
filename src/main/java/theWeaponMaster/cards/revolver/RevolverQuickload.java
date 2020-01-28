@@ -10,7 +10,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.actions.ReloadAction;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
-import theWeaponMaster.relics.HeavyDrum;
+import theWeaponMaster.relics.HeavyDrumRelic;
 import theWeaponMaster.relics.RevolverRelic;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
@@ -29,14 +29,11 @@ public class RevolverQuickload extends AbstractDynamicCard {
     public static final int COST = 1;
     public static final int UPGRADED_COST = 0;
 
-    private int reloadThreshold = 6;
+    public static int reloadThreshold = 6;
 
     public RevolverQuickload() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(HeavyDrum.ID)) {
-            reloadThreshold = 5;
-        }
 
         initializeDescription();
     }
@@ -63,7 +60,10 @@ public class RevolverQuickload extends AbstractDynamicCard {
 
     @Override
     public boolean cardPlayable(AbstractMonster m) {
-        if (RevolverRelic.shotsLeft != reloadThreshold) {
+        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(HeavyDrumRelic.ID)) {
+            reloadThreshold = 5;
+        }
+        if (RevolverRelic.shotsLeft < reloadThreshold) {
             return true;
         } else
             cantUseMessage = "There's no point reloading a full gun!";

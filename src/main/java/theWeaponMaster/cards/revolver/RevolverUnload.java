@@ -37,12 +37,7 @@ public class RevolverUnload extends AbstractRevolverCard {
         this.secondValue = baseSecondValue = SECOND_VALUE;
 
         exhaust = true;
-        AbstractRevolverCard unloadShot = new RevolverUnloadShot();
-        if (upgraded) {
-            this.cardsToPreview.upgrade();
-        } else {
-            this.cardsToPreview = unloadShot;
-        }
+        this.cardsToPreview = new RevolverUnloadShot();
         tags.remove(WeaponMasterTags.AMMUNITION);
         initializeDescription();
     }

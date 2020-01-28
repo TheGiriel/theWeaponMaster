@@ -50,7 +50,7 @@ public class RevolverRelic extends CustomRelic {
             return;
         }
         counter = shotsLeft = Math.min(Math.max(counter, 0), 6);
-        if (AbstractDungeon.player.hasRelic(HeavyDrum.ID)) {
+        if (AbstractDungeon.player.hasRelic(HeavyDrumRelic.ID)) {
             counter = shotsLeft = Math.min(Math.max(counter, 0), 5);
         }
     }
@@ -82,7 +82,7 @@ public class RevolverRelic extends CustomRelic {
     @Override
     public void atBattleStart() {
         counter = shotsLeft = Math.min(Math.max(counter, 0), 6);
-        if (AbstractDungeon.player.hasRelic(HeavyDrum.ID)) {
+        if (AbstractDungeon.player.hasRelic(HeavyDrumRelic.ID)) {
             counter = shotsLeft = Math.min(Math.max(counter, 0), 5);
         }
         if (counter == 0) {

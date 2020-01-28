@@ -2,6 +2,7 @@ package theWeaponMaster.cards.martialarts;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
+import theWeaponMaster.powers.MalicePower;
 import theWeaponMaster.powers.StaggerPower;
 
 import java.util.HashSet;
@@ -38,10 +40,8 @@ public class MartialLiverBlow extends AbstractDynamicCard {
 
     private static final int DAMAGE = 8;
     private static final int UPGRADED_DAMAGE = 2;
-    private static final int BLOCK = 0;
-    private static final int UPGRADED_BLOCK = 0;
-    private static final int MAGIC_NUMBER = 13;
-    private static final int UPGRADED_MAGIC_NUMBER = 0;
+    private static final int MAGIC_NUMBER = 2;
+    private static final int UPGRADED_MAGIC_NUMBER = 1;
 
     private static HashSet<String> debilitatePowers = new HashSet<>();
 
@@ -49,7 +49,6 @@ public class MartialLiverBlow extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.block = baseBlock = BLOCK;
 
         debilitatePowers.add(VulnerablePower.POWER_ID);
         debilitatePowers.add(StaggerPower.POWER_ID);
@@ -69,6 +68,7 @@ public class MartialLiverBlow extends AbstractDynamicCard {
                 }
             }
         }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MalicePower(p, magicNumber)));
     }
 
     @Override
@@ -78,7 +78,6 @@ public class MartialLiverBlow extends AbstractDynamicCard {
             upgradeBaseCost(UPGRADED_COST);
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeBlock(UPGRADED_BLOCK);
             initializeDescription();
         }
     }

@@ -47,7 +47,7 @@ public class RecollectAction extends AbstractGameAction {
                 this.p.discardPile.moveToExhaustPile(c);
             }
 
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(exhaustNumber - 1));
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             AbstractDungeon.player.hand.refreshHandLayout();

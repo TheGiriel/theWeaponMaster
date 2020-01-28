@@ -1,8 +1,8 @@
 package theWeaponMaster.cards.martialarts;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,12 +12,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
-import theWeaponMaster.stances.BerserkerStance;
+import theWeaponMaster.powers.MalicePower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
 public class MartialBeatdown extends AbstractDynamicCard {
-
 
     public static final String ID = TheWeaponMaster.makeID(MartialBeatdown.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
@@ -32,29 +31,28 @@ public class MartialBeatdown extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 1;
 
     private static final int DAMAGE = 3;
-    private static final int UPGRADED_DAMAGE = 0;
-    private static final int BLOCK = 0;
-    private static final int UPGRADED_BLOCK = 0;
     private static final int MAGIC_NUMBER = 3;
     private static final int UPGRADED_MAGIC_NUMBER = 1;
+    private static final int SECOND_VALUE = 2;
+    private static final int UPGRADED_SECOND_VALUE = 1;
 
     public MartialBeatdown() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.block = baseBlock = BLOCK;
+        this.secondValue = baseSecondValue = SECOND_VALUE;
 
         tags.add(WeaponMasterTags.MARTIAL);
 
+        initializeDescription();
     }
-
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new ChangeStanceAction(BerserkerStance.stanceID));
         for (int i = 0; i < magicNumber; i++) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MalicePower(p, secondValue)));
     }
 
     @Override
@@ -62,9 +60,8 @@ public class MartialBeatdown extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            upgradeDamage(UPGRADED_DAMAGE);
+            upgradeSecondValue(UPGRADED_SECOND_VALUE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeBlock(UPGRADED_BLOCK);
             initializeDescription();
         }
     }

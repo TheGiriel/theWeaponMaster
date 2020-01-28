@@ -1,12 +1,5 @@
 [
   {
-    "NAMES": [
-      "keyword",
-      "keywords"
-    ],
-    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
-  },
-  {
     "PROPER_NAME": "Not Implemented",
     "NAMES": [
       "Not Implemented",
@@ -374,21 +367,32 @@
     "DESCRIPTION": "Martial arts moves."
   },
   {
+    "PROPER_NAME": "Redirecting",
+    "NAMES": [
+      "redirecting"
+    ],
+    "DESCRIPTION": "Take #b25% less and deal #b15% less damage. NL Gain #yBlock equal to damage taken. NL Removes #yMalice and #yRecklessness"
+  },
+  {
+    "PROPER_NAME": "Recklessness",
+    "NAMES": [
+      "recklessness"
+    ],
+    "DESCRIPTION": "Take #b20% more damage, draw #b1 extra card every turn. NL Removes #yMalice and #yRedirecting."
+  },
+  {
+    "PROPER_NAME": "Malice",
+    "NAMES": [
+      "malice"
+    ],
+    "DESCRIPTION": "Gain #b1 more #yVicious when you attack. NL #yVicious decays slower. NL Removes #yRedirecting and #yRecklessness"
+  },
+  {
     "PROPER_NAME": "Ammunition",
     "NAMES": [
       "ammunition",
       "ammo"
     ],
     "DESCRIPTION": "Reduces your #yRevolver shot count by #b1."
-  },
-  {
-    "PROPER_NAME": "Single Shot",
-    "NAMES": [
-      "Single Shot",
-      "Single_Shot",
-      "single shot",
-      "single_shot"
-    ],
-    "DESCRIPTION": "0-cost attack card with #yEthereal and #yExhaust"
   }
 ]

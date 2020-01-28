@@ -42,6 +42,7 @@ public class RevolverTwinned extends AbstractRevolverCard {
 
         this.damage = baseDamage = DAMAGE;
         tags.add(AMMUNITION);
+
         this.cardsToPreview = new RevolverSingleShot();
 
         initializeDescription();

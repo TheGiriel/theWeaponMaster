@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theWeaponMaster.patches.WeaponMasterTags;
 import theWeaponMaster.powers.MarksmanshipPower;
-import theWeaponMaster.relics.HeavyDrum;
+import theWeaponMaster.relics.HeavyDrumRelic;
 
 public abstract class AbstractRevolverCard extends AbstractDynamicCard {
 
@@ -43,7 +43,7 @@ public abstract class AbstractRevolverCard extends AbstractDynamicCard {
         if (this.type != CardType.ATTACK) {
             return tmp;
         }
-        if (player.hasRelic(HeavyDrum.ID)) {
+        if (player.hasRelic(HeavyDrumRelic.ID)) {
             tmp++;
         }
         if (player.hasPower(DexterityPower.POWER_ID) && player.hasPower(MarksmanshipPower.POWER_ID)) {

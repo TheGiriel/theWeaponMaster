@@ -54,11 +54,7 @@ public class SeveredPainPower extends AbstractPower {
     }
 
     public void updateDescription(){
-        if (manaWhetstone){
-            description = DESCRIPTION[1];
-        } else {
-            description = DESCRIPTION[0];
-        }
+        description = DESCRIPTION[0];
     }
 
     @Override

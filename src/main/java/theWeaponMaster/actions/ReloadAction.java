@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theWeaponMaster.cards.abstractcards.AbstractRevolverCard;
 import theWeaponMaster.cards.revolver.RevolverUnload;
-import theWeaponMaster.relics.HeavyDrum;
+import theWeaponMaster.relics.HeavyDrumRelic;
 import theWeaponMaster.relics.RevolverRelic;
 
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class ReloadAction extends AbstractGameAction {
         }
         player.draw(1);
 
-        if (player.hasRelic(HeavyDrum.ID)) {
+        if (player.hasRelic(HeavyDrumRelic.ID)) {
             player.getRelic(RevolverRelic.ID).counter = 5;
             RevolverRelic.shotsLeft = 5;
         } else {

@@ -5,19 +5,19 @@
       ""
     ]
   },
-  "Berserker": {
-    "NAME": "",
+  "BerserkerStance": {
+    "NAME": "Berserk",
     "DESCRIPTION": [
       "Increase Vicious by 1 whenever you take or deal damage. NL Vicious decays slower."
     ]
   },
-  "Reckless": {
+  "RecklessStance": {
     "NAME": "Reckless",
     "DESCRIPTION": [
       "Draw one more card each turn. Take 15% more damage from attacks."
     ]
   },
-  "Redirecting": {
+  "RedirectingStance": {
     "NAME": "Redirecting",
     "DESCRIPTION": [
       "Take 15% less damage from attacks. Gain Block equal to half the damage taken."

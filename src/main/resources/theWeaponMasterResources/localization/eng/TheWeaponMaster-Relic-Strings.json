@@ -46,7 +46,7 @@
       "Every #yAmmo card reduces the counter by #b1. NL #yAmmo cards #yReload when the counter is at #b0."
     ]
   },
-  "theWeaponMaster:HeavyDrum": {
+  "theWeaponMaster:HeavyDrumRelic": {
     "NAME": "Heavy Drum",
     "FLAVOR": "Thick walls for big bangs.",
     "DESCRIPTIONS": [

@@ -16,6 +16,7 @@ import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractBullyCard;
 import theWeaponMaster.cards.tempCards.RevolverUnloadShot;
 import theWeaponMaster.patches.WeaponMasterTags;
+import theWeaponMaster.relics.ArsenalRelic;
 import theWeaponMaster.util.TextureLoader;
 
 import static theWeaponMaster.patches.WeaponMasterTags.BULLY;
@@ -32,14 +33,13 @@ public class ProtectiveBladePower extends AbstractPower {
     private static final Texture tex32 = TextureLoader.getTexture(TheWeaponMaster.makePowerPath("fenrir_placeholder_32.png"));
     public static int evolveBonus;
     private static int dexBonus;
-    private static int baseBlock;
+    private static int maliceBonus;
 
     public ProtectiveBladePower(AbstractPlayer player, int turns) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = player;
         this.amount = turns;
-        evolveBonus = evolveBonus;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -59,6 +59,7 @@ public class ProtectiveBladePower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
+        evolveBonus = ArsenalRelic.fenrirEvolutions;
         if (owner.hasPower(DexterityPower.POWER_ID)) {
             dexBonus = owner.getPower(DexterityPower.POWER_ID).amount;
         }
@@ -67,9 +68,9 @@ public class ProtectiveBladePower extends AbstractPower {
         }
         if (card.hasTag(BULLY)) {
             AbstractBullyCard bullyCard = (AbstractBullyCard) card;
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, bullyCard.bullyNumber));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, bullyCard.bullyNumber + maliceBonus));
         } else if (!card.hasTag(WeaponMasterTags.BULLY) && card.type == AbstractCard.CardType.ATTACK) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, viciousBonusOnAttack + dexBonus + evolveBonus));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, viciousBonusOnAttack + dexBonus + evolveBonus + maliceBonus));
         }
     }
 

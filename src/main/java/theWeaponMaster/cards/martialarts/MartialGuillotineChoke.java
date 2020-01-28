@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
 import theWeaponMaster.patches.WeaponMasterTags;
+import theWeaponMaster.powers.RedirectingPower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
@@ -28,7 +29,8 @@ public class MartialGuillotineChoke extends AbstractDynamicCard {
     public static final CardType TYPE = CardType.SKILL;
     public static final int COST = 0;
     public static final int UPGRADED_COST = 0;
-    public static final int MAGIC_NUMBER = 1;
+    public static final int MAGIC_NUMBER = 2;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
     public static final int BLOCK = 6;
     public static final int UPGRADED_BLOCK = 3;
     public static final int SECOND_VALUE = 2;
@@ -48,7 +50,7 @@ public class MartialGuillotineChoke extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, secondValue, false)));
-        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ManaBurnPower(m, p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RedirectingPower(p, magicNumber)));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 
@@ -58,6 +60,7 @@ public class MartialGuillotineChoke extends AbstractDynamicCard {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
             upgradeSecondValue(UPGRADED_SECOND_VALUE);
+            upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             upgradeBlock(UPGRADED_BLOCK);
             initializeDescription();
         }

@@ -214,11 +214,9 @@ public class TheWeaponMaster extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(ArsenalRelic.ID);
         retVal.add(RevolverRelic.ID);
-        //retVal.add(DefaultClickableRelic.ID);
 
         UnlockTracker.markRelicAsSeen(ArsenalRelic.ID);
         UnlockTracker.markRelicAsSeen(RevolverRelic.ID);
-        //UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 
         return retVal;
     }
