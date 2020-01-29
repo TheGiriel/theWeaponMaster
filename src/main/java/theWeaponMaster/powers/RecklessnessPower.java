@@ -46,7 +46,12 @@ public class RecklessnessPower extends AbstractPower {
 
     @Override
     public void onInitialApplication() {
-        super.onInitialApplication();
+        if (owner.hasPower(RedirectingPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, RedirectingPower.POWER_ID));
+        }
+        if (owner.hasPower(MalicePower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, MalicePower.POWER_ID));
+        }
     }
 
     @Override

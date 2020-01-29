@@ -29,7 +29,7 @@ public class BullyWimp extends AbstractBullyCard {
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
     public static final int BULLY_COST = 3;
-    public static final int UPGRADED_BULLY_NUMBER = 3;
+    public static final int UPGRADED_BULLY_COST = 3;
 
     public BullyWimp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, CardTarget.ENEMY);
@@ -61,7 +61,7 @@ public class BullyWimp extends AbstractBullyCard {
             this.target = CardTarget.ALL_ENEMY;
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_COST);
             initializeDescription();
         }
     }

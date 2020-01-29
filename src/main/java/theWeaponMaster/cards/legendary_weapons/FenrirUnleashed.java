@@ -39,7 +39,7 @@ public class FenrirUnleashed extends AbstractDynamicCard {
     public static final int DAMAGE = 8;
     public static final int UPGRADED_DAMAGE = 5;
     public static final int MAGIC_NUMBER = 3;
-    private static int totalAttacks;
+    public static int totalAttacks;
     public static int baseDamageStatic;
     public static ArrayList<AbstractMonster> targetList = new ArrayList<>();
 
@@ -136,9 +136,6 @@ public class FenrirUnleashed extends AbstractDynamicCard {
             totalAttacks += 2;
             p.getRelic(ChemicalX.ID).flash();
         }
-        /*for (int i = 0; i < totalAttacks; i++){
-            AbstractDungeon.actionManager.addToBottom(new FenrirUnleashedBetterAction(this, AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        }*/
         //TODO: Kinda works?
         weakestMonster(p);
         targetList.clear();

@@ -35,8 +35,8 @@ public class BullyShakedown extends AbstractBullyCard {
     public static final int UPGRADED_DAMAGE = 2;
     public static final int MAGIC_NUMBER = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    public static final int BULLY_COST = 8;
-    public static final int UPGRADED_BULLY_NUMBER = 3;
+    public static final int BULLY_COST = 2;
+    public static final int UPGRADED_BULLY_COST = 2;
 
     public BullyShakedown() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -64,7 +64,7 @@ public class BullyShakedown extends AbstractBullyCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_COST);
             initializeDescription();
         }
     }

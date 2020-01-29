@@ -32,15 +32,15 @@ public class BullyClothesline extends AbstractBullyCard {
     public static final int UPGRADED_DAMAGE = 4;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    public static final int BULLY_NUMBER = 4;
-    public static final int UPGRADED_BULLY_NUMBER = 2;
+    public static final int BULLY_COST = 4;
+    public static final int UPGRADED_BULLY_COST = 2;
 
     public BullyClothesline() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.bullyNumber = baseBullyNumber = BULLY_NUMBER;
+        this.bullyNumber = baseBullyNumber = BULLY_COST;
 
         tags.add(BULLY);
     }
@@ -58,7 +58,7 @@ public class BullyClothesline extends AbstractBullyCard {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_COST);
             initializeDescription();
         }
     }

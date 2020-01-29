@@ -38,8 +38,8 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
     public static final int COST = 2;
     public static final int MAGIC_NUMBER = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    public static final int BULLY_COST = 7;
-    public static final int UPGRADED_BULLY_NUMBER = 3;
+    public static final int BULLY_COST = 5;
+    public static final int UPGRADED_BULLY_COST = 2;
     private HashSet<AbstractMonster.Intent> intents;
 
     public BullyMeanToEveryone() {
@@ -93,7 +93,7 @@ public class BullyMeanToEveryone extends AbstractBullyCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
-            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_COST);
             retain = true;
             initializeDescription();
         }

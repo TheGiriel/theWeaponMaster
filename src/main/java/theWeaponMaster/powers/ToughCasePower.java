@@ -42,14 +42,13 @@ public class ToughCasePower extends AbstractPower {
     }
 
     @Override
-    public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        if (damage >= owner.currentBlock) {
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (damageAmount >= owner.currentBlock) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
         }
-        return super.atDamageReceive(damage, damageType);
+        return super.onAttacked(info, damageAmount);
     }
-
 
     @Override
     public void atEndOfTurn(final boolean isPlayer) {

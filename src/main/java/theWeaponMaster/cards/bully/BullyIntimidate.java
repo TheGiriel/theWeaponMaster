@@ -32,10 +32,11 @@ public class BullyIntimidate extends AbstractBullyCard {
     public static final CardColor COLOR = theWeaponMaster.characters.TheWeaponMaster.Enums.COLOR_GRAY;
 
     public static final int COST = 1;
-    public static final int UPGRADED_MAGIC_NUMBER = 1;
-    public static final int BULLY_COST = 3;
-    public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_COST = 0;
+    public static final int BULLY_COST = 3;
+    public static final int UPGRADED_MAGIC_NUMBER = 1;
+    public static final int MAGIC_NUMBER = 2;
+    public static final int UPGRADED_BULLY_COST = 2;
     private HashSet<AbstractMonster.Intent> intents;
 
     public BullyIntimidate() {
@@ -79,7 +80,7 @@ public class BullyIntimidate extends AbstractBullyCard {
             ExhaustiveField.ExhaustiveFields.isExhaustiveUpgraded.set(this, true);
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
             updateCost(UPGRADED_COST);
-            upgradeBullyNumber(BULLY_COST);
+            upgradeBullyNumber(UPGRADED_BULLY_COST);
             initializeDescription();
         }
     }

@@ -37,7 +37,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
 
     public static final int COST = 3;
     public static final int BULLY_COST = 4;
-    public static final int UPGRADED_BULLY_NUMBER = 4;
+    public static final int UPGRADED_BULLY_COST = 4;
     public static final int MAGIC_NUMBER = 2;
     private HashSet<AbstractMonster.Intent> intents;
 
@@ -69,7 +69,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
         if (AbstractDungeon.isPlayerInDungeon()) {
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
                 if (intents.contains(monster.intent) && !monster.hasPower(TauntPower.POWER_ID)) {
-                    baseBullyNumber += UPGRADED_BULLY_NUMBER;
+                    baseBullyNumber += UPGRADED_BULLY_COST;
                 }
             }
         }
@@ -90,7 +90,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_COST);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
@@ -102,7 +102,7 @@ public class BullyTerrifyingHowl extends AbstractBullyCard {
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             if (intents.contains(monster.intent)) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new IntimidatePower(monster, p)));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, UPGRADED_BULLY_NUMBER)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ViciousPower(p, UPGRADED_BULLY_COST)));
             }
             if (upgraded) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new VulnerablePower(monster, magicNumber, false)));

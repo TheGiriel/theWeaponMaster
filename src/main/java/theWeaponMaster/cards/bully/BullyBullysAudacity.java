@@ -27,6 +27,7 @@ public class BullyBullysAudacity extends AbstractBullyCard {
 
     public static final int COST = 2;
     public static final int BULLY_COST = 3;
+    public static final int UPGRADED_BULLY_COST = 2;
     public static final int MAGIC_NUMBER = 2;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
 
@@ -54,6 +55,7 @@ public class BullyBullysAudacity extends AbstractBullyCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_COST);
             this.rawDescription = DESCRIPTION;
             initializeDescription();
         }

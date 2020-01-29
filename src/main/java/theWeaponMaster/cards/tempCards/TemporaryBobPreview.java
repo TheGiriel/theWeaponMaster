@@ -37,7 +37,7 @@ public class TemporaryBobPreview extends AbstractDynamicCard {
     public static final int MAGIC_NUMBER = 3;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
 
-    private static HashSet<AbstractMonster.Intent> intents;
+    public static HashSet<AbstractMonster.Intent> intents;
 
     public TemporaryBobPreview() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

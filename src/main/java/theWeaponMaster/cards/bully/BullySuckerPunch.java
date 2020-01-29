@@ -35,8 +35,8 @@ public class BullySuckerPunch extends AbstractBullyCard {
     public static final int COST = 0;
     public static final int DAMAGE = 6;
     public static final int UPGRADED_DAMAGE = 2;
-    public static final int BULLY_NUMBER = 3;
-    public static final int UPGRADED_BULLY_NUMBER = 2;
+    public static final int BULLY_COST = 3;
+    public static final int UPGRADED_BULLY_COST = 2;
     public static final int SECOND_VALUE = 4;
     public static final int UPGRADED_SECOND_VALUE = 4;
     private final HashSet<AbstractMonster.Intent> intents;
@@ -45,7 +45,7 @@ public class BullySuckerPunch extends AbstractBullyCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;
-        this.bullyNumber = baseBullyNumber = BULLY_NUMBER;
+        this.bullyNumber = baseBullyNumber = BULLY_COST;
 
         tags.add(BULLY);
         tags.add(INTIMIDATE);
@@ -73,7 +73,7 @@ public class BullySuckerPunch extends AbstractBullyCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADED_DAMAGE);
-            upgradeBullyNumber(UPGRADED_BULLY_NUMBER);
+            upgradeBullyNumber(UPGRADED_BULLY_COST);
             isInnate = true;
             initializeDescription();
         }

@@ -39,42 +39,4 @@ public abstract class AbstractRevenantCard extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new RevenantStarveAction(1, false));
         }
     }
-
-    /*@SpireOverride
-    public void renderAttackPortrait(SpriteBatch sb, float x, float y){
-        if (revenantHunger>= hungerThreshold){
-            renderHelper(sb, getRenderColor(), REVENANT_HUNGRY_SMALL_FRAME, x, y);
-        } else {
-            renderHelper(sb, getRenderColor(), REVENANT_SATED_SMALL_FRAME, x, y);
-        }
-    }
-
-    @SpireOverride
-    public void renderHelper(SpriteBatch sb, Color renderColor, TextureAtlas.AtlasRegion img , float x, float y) {
-        SpireSuper.call(sb, renderColor, img, x,y);
-    }
-
-    private Field renderColorField = null;
-
-    private Color getRenderColor(){
-        Color reflectedColor = null;
-        if (renderColorField == null){
-            try{
-                renderColorField = AbstractCard.class.getDeclaredField("renderColor");
-                renderColorField.setAccessible(true);
-            }catch (NoSuchFieldException e){
-                e.printStackTrace();
-            }
-        }
-        try {
-            reflectedColor = (Color)renderColorField.get(this);
-        } catch (IllegalAccessException e){
-            e.printStackTrace();
-        }
-        if (reflectedColor == null){
-            return Color.WHITE.cpy();
-        } else {
-            return reflectedColor;
-        }
-    }*/
 }

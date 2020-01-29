@@ -32,6 +32,7 @@ public class BullyConfidence extends AbstractBullyCard {
     public static final int COST = 1;
     public static final int UPGRADED_COST = 1;
     public static final int BULLY_COST = 3;
+    public static final int UPGRADED_BULLY_COST = 2;
     public static final int MAGIC_NUMBER = 1;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
 

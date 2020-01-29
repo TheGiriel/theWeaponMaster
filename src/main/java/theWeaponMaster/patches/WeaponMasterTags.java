@@ -30,5 +30,7 @@ public class WeaponMasterTags extends BaseModCardTags {
     public static AbstractCard.CardTags IGNITE;
     @SpireEnum
     public static AbstractCard.CardTags TEMPORARY;
+    @SpireEnum
+    public static AbstractCard.CardTags COLOR_CHANGE;
 
 }

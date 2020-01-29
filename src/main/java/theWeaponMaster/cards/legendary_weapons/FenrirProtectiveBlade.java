@@ -40,7 +40,7 @@ public class FenrirProtectiveBlade extends AbstractDynamicCard {
     public static final int UPGRADED_MAGIC_NUMBER = 1;
     public static final int SECOND_VALUE = 0;
 
-    private static HashSet<AbstractMonster.Intent> intents;
+    public static HashSet<AbstractMonster.Intent> intents;
 
     public FenrirProtectiveBlade() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

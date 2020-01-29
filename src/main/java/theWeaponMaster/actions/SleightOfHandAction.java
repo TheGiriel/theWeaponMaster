@@ -14,7 +14,7 @@ public class SleightOfHandAction extends AbstractGameAction {
 
     public SleightOfHandAction() {
         duration = Settings.ACTION_DUR_XFAST;
-        actionType = ActionType.WAIT;
+        actionType = ActionType.CARD_MANIPULATION;
     }
 
     @Override

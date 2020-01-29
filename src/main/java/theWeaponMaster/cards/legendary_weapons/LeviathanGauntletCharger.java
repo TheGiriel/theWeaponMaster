@@ -33,8 +33,8 @@ public class LeviathanGauntletCharger extends AbstractDynamicCard /*implements F
     public static final int BLOCK = 4;
     public static final int UPGRADED_BLOCK = 2;
 
-    private static int publicDamage;
-    private static int publicBlock;
+    public static int publicDamage;
+    public static int publicBlock;
 
     public LeviathanGauntletCharger() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -30,14 +30,14 @@ public class BullyIntimidatingPresence extends AbstractBullyCard {
     public static final int UPGRADED_DAMAGE = 0;
     public static final int MAGIC_NUMBER = 3;
     public static final int UPGRADED_MAGIC_NUMBER = 1;
-    public static final int BULLY_NUMBER = 8;
+    public static final int BULLY_COST = 8;
 
     public BullyIntimidatingPresence() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.damage = baseDamage = DAMAGE;
         this.magicNumber = baseMagicNumber = MAGIC_NUMBER;
-        this.bullyNumber = baseBullyNumber = BULLY_NUMBER;
+        this.bullyNumber = baseBullyNumber = BULLY_COST;
 
         tags.add(BULLY);
         exhaust = true;

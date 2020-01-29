@@ -1,16 +1,11 @@
 package theWeaponMaster.cards.tempCards;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theWeaponMaster.TheWeaponMaster;
 import theWeaponMaster.cards.abstractcards.AbstractDynamicCard;
-import theWeaponMaster.powers.ViciousPower;
 
 import static theWeaponMaster.TheWeaponMaster.makeCardPath;
 
@@ -61,16 +56,6 @@ public class TemporaryRelaxPreview extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int viciousBonus = 0;
 
-        if (p.hasPower(ViciousPower.POWER_ID) && p.getPower(ViciousPower.POWER_ID).amount >= 2) {
-            viciousBonus = p.getPower(ViciousPower.POWER_ID).amount / 2;
-        }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        if (viciousBonus != 0) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, viciousBonus));
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, ViciousPower.POWER_ID, viciousBonus));
-        }
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new TemporaryRecollect(), 1));
     }
 }

@@ -9,7 +9,7 @@ import theWeaponMaster.relics.HeavyDrumRelic;
 
 public abstract class AbstractRevolverCard extends AbstractDynamicCard {
 
-    private static int COST;
+    public static int COST;
 
     public AbstractRevolverCard(String id,
                                 String img,

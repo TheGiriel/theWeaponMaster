@@ -22,10 +22,10 @@ import org.apache.logging.log4j.Logger;
 import theWeaponMaster.cards.Defend_WeaponMaster;
 import theWeaponMaster.cards.Strike_WeaponMaster;
 import theWeaponMaster.cards.bully.*;
-import theWeaponMaster.cards.investigation_equipment.*;
 import theWeaponMaster.cards.legendary_weapons.*;
 import theWeaponMaster.cards.martialarts.*;
 import theWeaponMaster.cards.revolver.*;
+import theWeaponMaster.cards.trickster.*;
 import theWeaponMaster.relics.*;
 import theWeaponMaster.util.IDCheckDontTouchPls;
 import theWeaponMaster.util.TextureLoader;
@@ -428,7 +428,6 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new LeviathanEarthquake());
 
         BaseMod.addCard(new BullyBullysAudacity());
-        BaseMod.addCard(new BullyClothesline());
         BaseMod.addCard(new BullyConfidence());
         BaseMod.addCard(new BullyDinerArgument());
         BaseMod.addCard(new BullyIntimidate());
@@ -467,21 +466,21 @@ public class TheWeaponMaster implements
         BaseMod.addCard(new GenericOpportunism());
         BaseMod.addCard(new GenericPreparation());
         BaseMod.addCard(new GenericRelax());
-        BaseMod.addCard(new GenericRiggedGame());
+        BaseMod.addCard(new GenericRiggedDraw());
         BaseMod.addCard(new GenericSleightOfHand());
         BaseMod.addCard(new GenericThrowingKnives());
         BaseMod.addCard(new GenericToughCase());
 
         BaseMod.addCard(new MartialBeatdown());
         BaseMod.addCard(new MartialBob());
-        BaseMod.addCard(new MartialCounterBlow());
+        BaseMod.addCard(new MartialCrossCounter());
         BaseMod.addCard(new MartialDodge());
         BaseMod.addCard(new MartialFrontKick());
         BaseMod.addCard(new MartialGuillotineChoke());
         BaseMod.addCard(new MartialJab());
         BaseMod.addCard(new MartialKimuraLock());
         BaseMod.addCard(new MartialKneeBomb());
-        BaseMod.addCard(new MartialLimberUp());
+        BaseMod.addCard(new MartialWarmup());
         BaseMod.addCard(new MartialLiverBlow());
         BaseMod.addCard(new MartialOverheadThrow());
         BaseMod.addCard(new MartialThroatStrike());
@@ -539,7 +538,6 @@ public class TheWeaponMaster implements
         UnlockTracker.unlockCard(BullySuckerPunch.ID);
         UnlockTracker.unlockCard(BullyIntimidatingPresence.ID);
         UnlockTracker.unlockCard(BullyPushover.ID);
-        UnlockTracker.unlockCard(BullyClothesline.ID);
         UnlockTracker.unlockCard(BullyMock.ID);
 
         UnlockTracker.unlockCard(RevolverMagnum.ID);
@@ -570,14 +568,14 @@ public class TheWeaponMaster implements
 
         UnlockTracker.unlockCard(MartialBeatdown.ID);
         UnlockTracker.unlockCard(MartialBob.ID);
-        UnlockTracker.unlockCard(MartialCounterBlow.ID);
+        UnlockTracker.unlockCard(MartialCrossCounter.ID);
         UnlockTracker.unlockCard(MartialDodge.ID);
         UnlockTracker.unlockCard(MartialFrontKick.ID);
         UnlockTracker.unlockCard(MartialGuillotineChoke.ID);
         UnlockTracker.unlockCard(MartialJab.ID);
         UnlockTracker.unlockCard(MartialKimuraLock.ID);
         UnlockTracker.unlockCard(MartialKneeBomb.ID);
-        UnlockTracker.unlockCard(MartialLimberUp.ID);
+        UnlockTracker.unlockCard(MartialWarmup.ID);
         UnlockTracker.unlockCard(MartialLiverBlow.ID);
         UnlockTracker.unlockCard(MartialOverheadThrow.ID);
         UnlockTracker.unlockCard(MartialThroatStrike.ID);

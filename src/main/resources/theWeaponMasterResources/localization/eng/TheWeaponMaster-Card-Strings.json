@@ -282,7 +282,7 @@
   },
   "theWeaponMaster:BullyClothesline": {
     "NAME": "Clothesline",
-    "DESCRIPTION": "Bully !BULLY! NL Deal !D! damage. Apply !M! Weak."
+    "DESCRIPTION": "Bully !BULLY! NL Deal !D! damage. NL Apply !M! Weak."
   },
   "theWeaponMaster:BullyConfidence": {
     "NAME": "Confidence",
@@ -350,12 +350,11 @@
   "theWeaponMaster:GenericFlashbang": {
     "NAME": "Flashbang",
     "DESCRIPTION": "Stun. NL Stagger adjacent enemies. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Stun. NL Stagger adjacent enemies. Draw a card. NL Exhaustive !stslib:ex!."
+    "UPGRADE_DESCRIPTION": "Stun. NL Stagger adjacent enemies. NL Exhaustive !stslib:ex!."
   },
   "theWeaponMaster:GenericFreshApple": {
     "NAME": "Fresh Apple",
-    "DESCRIPTION": "Heal !M! HP. NL Grave, Exhaust.",
-    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Grave, Exhaust."
+    "DESCRIPTION": "Heal !M! HP. NL Grave, Exhaust."
   },
   "theWeaponMaster:GenericGrazingThrow": {
     "NAME": "Grazing Throw",
@@ -372,7 +371,7 @@
   },
   "theWeaponMaster:GenericInvestigate": {
     "NAME": "Investigate",
-    "DESCRIPTION": "Gain !B! Block. NL If this card is played twice, choose 1 of 3 random Attack cards and Skill cards, then add them to your hand. They cost 0 this turn. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Gain !B! Block. NL When Exhausted, choose 1 of 3 random Attack cards and Skill cards, then add them to your hand. They cost 0 this turn. NL Exhaustive !stslib:ex!."
   },
   "theWeaponMaster:GenericOpportunism": {
     "NAME": "Opportunism",
@@ -386,8 +385,8 @@
     "NAME": "Relax",
     "DESCRIPTION": "Gain !B! Block. NL Lose half your Vicious. Gain that much Block. NL Transforms into Recollect until the end of combat."
   },
-  "theWeaponMaster:GenericRiggedGame": {
-    "NAME": "Rigged Game",
+  "theWeaponMaster:GenericRiggedDraw": {
+    "NAME": "Rigged Draw",
     "DESCRIPTION": "Scry !M! and gain !B! Block at the start of your turn."
   },
   "theWeaponMaster:GenericSleightOfHand": {
@@ -401,70 +400,69 @@
   },
   "theWeaponMaster:GenericToughCase": {
     "NAME": "Tough Case",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card if your block is broken next turn.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards if your block is broken next turn."
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card if your Block is broken.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards if your Block is broken."
   },
   "theWeaponMaster:MartialBeatdown": {
     "NAME": "Beatdown",
-    "DESCRIPTION": "Gain !SV! Malice. NL Deal !D! damage !M! times."
+    "DESCRIPTION": "Martial NL Gain !SV! Malice. NL Deal !D! damage !M! times."
   },
   "theWeaponMaster:MartialBob": {
     "NAME": "Bob",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Block for every attacking enemy. NL Transforms into Weave until the end of combat."
+    "DESCRIPTION": "Martial NL Gain !B! Block. NL Gain !M! Block for every attacking enemy. NL Transforms into Weave until the end of combat."
   },
-  "theWeaponMaster:MartialCounterBlow": {
-    "NAME": "Counter Blow",
-    "DESCRIPTION": "Discard the top card of your draw pile when you are attacked to deal damage equal to !D! plus the card's cost."
+  "theWeaponMaster:MartialCrossCounter": {
+    "NAME": "Cross Counter",
+    "DESCRIPTION": "Martial NL Discard the top card of your draw pile when you are attacked to deal damage equal to !D! plus the card's cost."
   },
   "theWeaponMaster:MartialDodge": {
     "NAME": "Dodge",
-    "DESCRIPTION": "Gain !B! Block. NL Add a random Attack card from your discard pile to your hand.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add an Attack card from your discard pile to your hand."
+    "DESCRIPTION": "Martial NL Gain !B! Block. NL Add a random Attack card from your discard pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Martial NL Gain !B! Block. NL Add an Attack card from your discard pile to your hand."
   },
   "theWeaponMaster:MartialFrontKick": {
     "NAME": "Front Kick",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block."
+    "DESCRIPTION": "Martial NL Deal !D! damage. NL Gain !B! Block."
   },
   "theWeaponMaster:MartialGuillotineChoke": {
     "NAME": "Guillotine Choke",
-    "DESCRIPTION": "Gain !M! Redirecting. NL Apply !SV! Weak. NL Gain !B! Block."
+    "DESCRIPTION": "Martial NL Gain !M! Redirecting. NL Apply !SV! Weak. NL Gain !B! Block."
   },
   "theWeaponMaster:MartialJab": {
     "NAME": "Jab",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card."
+    "DESCRIPTION": "Martial NL Deal !D! damage. NL Draw !M! card."
   },
   "theWeaponMaster:MartialKneeBomb": {
     "NAME": "Knee Bomb",
-    "DESCRIPTION": "Gain !M! Recklessness. NL Deal !D! damage. NL Deals double damage to Block."
+    "DESCRIPTION": "Martial NL Gain !M! Recklessness. NL Deal !D! damage. NL Deals double damage to Block."
   },
   "theWeaponMaster:MartialKimuraLock": {
     "NAME": "Kimura Lock",
-    "DESCRIPTION": "Deal Block damage equal to your Block. NL If you break your enemy's block apply Crippled.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Deal Block damage equal to your Block. NL If you break your enemy's block apply Crippled."
+    "DESCRIPTION": "Martial NL Gain !B! Block NL Deal damage equal to your Block. NL If you break your enemy's Block apply !M! Weak."
   },
-  "theWeaponMaster:MartialLimberUp": {
-    "NAME": "Limber Up",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Choose 1 of 3 random Attacks to add to your hand. It costs 0 this turn."
+  "theWeaponMaster:MartialWarmup": {
+    "NAME": "Warm-up",
+    "DESCRIPTION": "Gain !M! Dexterity. NL Choose 1 of 3 random Attacks to add to your hand, it costs 0 this turn."
   },
   "theWeaponMaster:MartialLiverBlow": {
     "NAME": "Liver Blow",
-    "DESCRIPTION": "Gain !M! Malice. NL Deal !D! damage. NL Stuns if enemy is Debilitated and remove Debilitating debuffs."
+    "DESCRIPTION": "Martial NL Gain !M! Malice. NL Deal !D! damage. NL Stuns if enemy is Debilitated and remove Debilitating debuffs."
   },
   "theWeaponMaster:MartialOverheadThrow": {
     "NAME": "Overhead Throw",
-    "DESCRIPTION": "Gain !M! Recklessness. NL Gain !B! Block. NL Deal !D! Damage. NL Increase damage by !SV! for every Martial card played this turn."
+    "DESCRIPTION": "Martial NL Gain !M! Recklessness. NL Gain !B! Block. NL Deal !D! Damage. NL Increase damage by !SV! for every Martial card played this turn."
   },
   "theWeaponMaster:MartialRedirectBlows": {
     "NAME": "Redirect Blows",
-    "DESCRIPTION": "Gain !B! Block. NL Take !SV! % less damage until your next turn. NL Gain Block equal to unblocked damage taken. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Martial NL Gain !B! Block. NL Take !SV! % less damage until your next turn. NL Gain Block equal to unblocked damage taken. NL Exhaustive !stslib:ex!."
   },
   "theWeaponMaster:MartialThroatStrike": {
     "NAME": "Throat Strike",
-    "DESCRIPTION": "Gain !B! Block. NL Your enemy loses !M! HP whenever you play a card this turn."
+    "DESCRIPTION": "Martial NL Gain !B! Block. NL Your enemy loses !M! HP whenever you play a card this turn."
   },
   "theWeaponMaster:MartialTightGuard": {
     "NAME": "Tight Guard",
-    "DESCRIPTION": "Gain !M! Redirecting. NL Gain !B! Block."
+    "DESCRIPTION": "Martial NL Gain !M! Redirecting. NL Gain !B! Block."
   },
   "theWeaponMaster:ImprovisedAmmo": {
     "NAME": "Improvised Ammo",
@@ -496,11 +494,11 @@
   },
   "theWeaponMaster:TemporaryRecollect": {
     "NAME": "Recollect",
-    "DESCRIPTION": "Draw a card. NL Exhaust !M! cards from your discard pile, then gain !SV! Energy. NL Transforms into Relax until the end of combat."
+    "DESCRIPTION": "Exhaust !M! cards from your discard pile, then gain !SV! Energy. NL Draw a card. NL Transforms into Relax until the end of combat."
   },
   "theWeaponMaster:TemporaryRecollectPreview": {
     "NAME": "Recollect",
-    "DESCRIPTION": "Draw a card. NL Exhaust !M! cards from your discard pile, then gain !SV! Energy. NL Transforms into Relax until the end of combat."
+    "DESCRIPTION": "Exhaust !M! cards from your discard pile, then gain !SV! Energy. NL Draw a card. NL Transforms into Relax until the end of combat."
   },
   "theWeaponMaster:TemporaryBobPreview": {
     "NAME": "Bob",

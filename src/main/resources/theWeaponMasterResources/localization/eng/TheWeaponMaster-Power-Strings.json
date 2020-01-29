@@ -111,6 +111,14 @@
       " Block."
     ]
   },
+  "RiggedDrawPower": {
+    "NAME": "Rigged Draw",
+    "DESCRIPTIONS": [
+      "#yScry #b",
+      " and gain #b",
+      " #yBlock at the end of your turn."
+    ]
+  },
   "ImprovisedToolsPower": {
     "NAME": "Improvised Tools",
     "DESCRIPTIONS": [
